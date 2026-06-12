@@ -1,4 +1,4 @@
 ---
 permalink: "/agendar/"
-redirect_to: "https://calendly.com/efremfilho/videoconferencia"
+redirect_to: "https://cal.com/efrem.filho/30min"
 ---
