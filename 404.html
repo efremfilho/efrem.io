@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>404 — efrem.io</title>
+	<meta name="robots" content="noindex">
+	<meta name="theme-color" content="#0b0d14">
+	<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg: #0b0d14;
+			--surface: rgba(255, 255, 255, .045);
+			--border: rgba(255, 255, 255, .11);
+			--text: #e9ecf4;
+			--muted: #98a1b4;
+			--accent: #8da2ff;
+		}
+		@media (prefers-color-scheme: light) {
+			:root {
+				--bg: #f7f8fb;
+				--surface: #ffffff;
+				--border: #e3e6ee;
+				--text: #161a26;
+				--muted: #5c6577;
+				--accent: #3447c7;
+			}
+		}
+		* { box-sizing: border-box; }
+		body {
+			display: grid;
+			place-items: center;
+			min-height: 100svh;
+			margin: 0;
+			background: var(--bg);
+			color: var(--text);
+			font: 400 1.0625rem/1.65 "Inter", system-ui, sans-serif;
+			text-align: center;
+		}
+		main { padding: 2rem 1.5rem; max-width: 34rem; }
+		h1 {
+			margin: 0 0 .3rem;
+			font-size: clamp(3.5rem, 12vw, 5.5rem);
+			font-weight: 800;
+			letter-spacing: -.04em;
+			background: linear-gradient(120deg, #8da2ff, #5eead4);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+		}
+		p { margin: 0 0 1.6rem; color: var(--muted); }
+		a.btn {
+			display: inline-block;
+			padding: .6rem 1.2rem;
+			border: 1px solid var(--border);
+			border-radius: 999px;
+			background: var(--surface);
+			color: var(--text);
+			font-weight: 500;
+			text-decoration: none;
+			transition: border-color .18s;
+		}
+		a.btn:hover { border-color: var(--accent); }
+	</style>
+</head>
+<body>
+	<main>
+		<h1>404</h1>
+		<p>This short link doesn&rsquo;t exist (or moved). Double-check the path — or head home.</p>
+		<a class="btn" href="/">&larr; efrem.io</a>
+	</main>
+</body>
+</html>

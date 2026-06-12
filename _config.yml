@@ -1,0 +1,11 @@
+title: "Hi, I'm Éfrem."
+description: "Whatever I'm working on."
+url: "https://efrem.io"
+
+plugins:
+  - jekyll-redirect-from
+
+# A página principal e os assets do Carrd são servidos como arquivos
+# estáticos. Os atalhos /algo ficam em redirects/, um arquivo por rota,
+# usando redirect_to do plugin jekyll-redirect-from (suportado pelo
+# GitHub Pages sem configuração extra).
