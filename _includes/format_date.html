@@ -1,0 +1,18 @@
+{% assign d = include.date | date: "%-d" %}
+{% assign m = include.date | date: "%m" %}
+{% assign y = include.date | date: "%Y" %}
+{% if include.lang == 'en' %}
+  {% case m %}
+    {% when '01' %}January{% when '02' %}February{% when '03' %}March
+    {% when '04' %}April{% when '05' %}May{% when '06' %}June
+    {% when '07' %}July{% when '08' %}August{% when '09' %}September
+    {% when '10' %}October{% when '11' %}November{% when '12' %}December
+  {% endcase %} {{ d }}, {{ y }}
+{% else %}
+  {{ d }} de {% case m %}
+    {% when '01' %}janeiro{% when '02' %}fevereiro{% when '03' %}março
+    {% when '04' %}abril{% when '05' %}maio{% when '06' %}junho
+    {% when '07' %}julho{% when '08' %}agosto{% when '09' %}setembro
+    {% when '10' %}outubro{% when '11' %}novembro{% when '12' %}dezembro
+  {% endcase %} de {{ y }}
+{% endif %}

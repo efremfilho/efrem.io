@@ -1,0 +1,174 @@
+---
+layout: default
+title: "Blog & Reflexões"
+---
+
+<nav class="site-nav" aria-label="Navegação principal">
+	<a href="/" class="nav-back">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+		efrem.io
+	</a>
+	<div class="nav-right">
+		<a href="https://www.linkedin.com/in/efremfilho/" target="_blank" rel="noopener" class="chip">
+			<svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+			LinkedIn
+		</a>
+	</div>
+</nav>
+
+<header class="page-header">
+	<h1 class="page-title">Blog &amp; Reflexões</h1>
+	<p class="page-subtitle">
+		Textos e reflexões práticas sobre agentes de IA, produtos digitais, low-code e engenharia de contexto.
+		Publicados no LinkedIn e preservados aqui em português e em inglês.
+	</p>
+</header>
+
+<div class="blog-controls">
+	<div class="search-box">
+		<svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+		<input type="search" id="searchInput" class="search-input" placeholder="Buscar posts por palavra-chave..." autocomplete="off">
+	</div>
+
+	{% assign pt_posts = site.posts | where: "lang", "pt-BR" %}
+	{% assign en_posts = site.posts | where: "lang", "en" %}
+	<div class="filter-bar" role="tablist" aria-label="Filtrar por idioma">
+		<button type="button" class="filter-btn active" data-filter="all">Todos ({{ site.posts.size }})</button>
+		<button type="button" class="filter-btn" data-filter="pt-BR">🇧🇷 Português ({{ pt_posts.size }})</button>
+		<button type="button" class="filter-btn" data-filter="en">🇺🇸 English ({{ en_posts.size }})</button>
+	</div>
+</div>
+
+<div class="posts-list" id="postsList">
+	{% for post in site.posts %}
+		{% assign is_en = false %}
+		{% if post.lang == 'en' or post.categories contains 'en' %}
+			{% assign is_en = true %}
+		{% endif %}
+
+		{% assign sibling = nil %}
+		{% for p in site.posts %}
+			{% if p.slug == post.slug and p.url != post.url %}
+				{% assign sibling = p %}
+				{% break %}
+			{% endif %}
+		{% endfor %}
+
+		<article class="post-card" data-lang="{{ post.lang }}" data-search="{{ post.title | downcase }} {{ post.content | strip_html | truncatewords: 30 | downcase }}">
+			<a href="{{ post.url }}" style="text-decoration:none; color:inherit; display:block;">
+				<div class="post-card-top">
+					<h2 class="post-card-title">{{ post.title }}</h2>
+					<div class="post-card-meta">
+						<time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+							{% include format_date.html date=post.date lang=post.lang %}
+						</time>
+						{% if is_en %}
+							<span class="badge badge-en">EN</span>
+						{% else %}
+							<span class="badge badge-pt">PT-BR</span>
+						{% endif %}
+					</div>
+				</div>
+				<p class="post-card-excerpt">
+					{{ post.content | strip_html | truncatewords: 26 }}
+				</p>
+			</a>
+			{% if sibling %}
+			<div class="post-card-bottom">
+				<span class="post-card-sibling">
+					{% if is_en %}
+						Also in: <a href="{{ sibling.url }}">Português 🇧🇷</a>
+					{% else %}
+						Também em: <a href="{{ sibling.url }}">English 🇺🇸</a>
+					{% endif %}
+				</span>
+				{% if post.original_url %}
+				<a href="{{ post.original_url }}" target="_blank" rel="noopener" class="post-card-sibling" title="LinkedIn">
+					LinkedIn ↗
+				</a>
+				{% endif %}
+			</div>
+			{% endif %}
+		</article>
+	{% endfor %}
+</div>
+
+<div id="emptyState" class="empty-state" style="display:none;">
+	<p>Nenhum post encontrado para os filtros selecionados.</p>
+</div>
+
+<script>
+(function() {
+	const searchInput = document.getElementById('searchInput');
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const postCards = document.querySelectorAll('.post-card');
+	const emptyState = document.getElementById('emptyState');
+
+	let currentLang = 'all';
+	let currentQuery = '';
+
+	// Sync with initial URL hash (#pt or #en)
+	if (location.hash === '#pt' || location.hash === '#pt-br') {
+		currentLang = 'pt-BR';
+	} else if (location.hash === '#en') {
+		currentLang = 'en';
+	}
+
+	function updateButtons() {
+		filterBtns.forEach(btn => {
+			if (btn.getAttribute('data-filter') === currentLang) {
+				btn.classList.add('active');
+			} else {
+				btn.classList.remove('active');
+			}
+		});
+	}
+
+	function filterPosts() {
+		let visibleCount = 0;
+		const query = currentQuery.trim().toLowerCase();
+
+		postCards.forEach(card => {
+			const cardLang = card.getAttribute('data-lang');
+			const cardSearch = card.getAttribute('data-search') || '';
+
+			const matchesLang = (currentLang === 'all' || cardLang === currentLang);
+			const matchesQuery = (!query || cardSearch.includes(query));
+
+			if (matchesLang && matchesQuery) {
+				card.style.display = 'block';
+				visibleCount++;
+			} else {
+				card.style.display = 'none';
+			}
+		});
+
+		emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+	}
+
+	filterBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			currentLang = btn.getAttribute('data-filter');
+			if (currentLang === 'pt-BR') {
+				history.replaceState(null, '', '#pt');
+			} else if (currentLang === 'en') {
+				history.replaceState(null, '', '#en');
+			} else {
+				history.replaceState(null, '', location.pathname);
+			}
+			updateButtons();
+			filterPosts();
+		});
+	});
+
+	if (searchInput) {
+		searchInput.addEventListener('input', (e) => {
+			currentQuery = e.target.value;
+			filterPosts();
+		});
+	}
+
+	updateButtons();
+	filterPosts();
+})();
+</script>
