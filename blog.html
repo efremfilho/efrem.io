@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Blog & Reflexões"
+title: "Posts"
+lang: en
 permalink: /blog
 ---
 
-<nav class="site-nav" aria-label="Navegação principal">
+<nav class="site-nav" aria-label="Main navigation">
 	<a href="/" class="nav-back">
 		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
 		efrem.io
@@ -18,24 +19,24 @@ permalink: /blog
 </nav>
 
 <header class="page-header">
-	<h1 class="page-title">Blog &amp; Reflexões</h1>
+	<h1 class="page-title">Posts</h1>
 	<p class="page-subtitle">
-		Textos e reflexões práticas sobre agentes de IA, produtos digitais, low-code e engenharia de contexto.
-		Publicados no LinkedIn e preservados aqui em português e em inglês.
+		Articles and practical thoughts on AI agents, digital products, low-code, and context engineering.
+		Originally published on LinkedIn and preserved here in English and Portuguese.
 	</p>
 </header>
 
 <div class="blog-controls">
 	<div class="search-box">
 		<svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-		<input type="search" id="searchInput" class="search-input" placeholder="Buscar posts por palavra-chave..." autocomplete="off">
+		<input type="search" id="searchInput" class="search-input" placeholder="Search posts by keyword..." autocomplete="off">
 	</div>
 
 	{% assign pt_posts = site.posts | where: "lang", "pt-BR" %}
 	{% assign en_posts = site.posts | where: "lang", "en" %}
-	<div class="filter-bar" role="tablist" aria-label="Filtrar por idioma">
-		<button type="button" class="filter-btn active" data-filter="all">Todos ({{ site.posts.size }})</button>
-		<button type="button" class="filter-btn" data-filter="pt-BR">🇧🇷 Português ({{ pt_posts.size }})</button>
+	<div class="filter-bar" role="tablist" aria-label="Filter by language">
+		<button type="button" class="filter-btn active" data-filter="all">All ({{ site.posts.size }})</button>
+		<button type="button" class="filter-btn" data-filter="pt-BR">🇧🇷 Portuguese ({{ pt_posts.size }})</button>
 		<button type="button" class="filter-btn" data-filter="en">🇺🇸 English ({{ en_posts.size }})</button>
 	</div>
 </div>
@@ -80,7 +81,7 @@ permalink: /blog
 					{% if is_en %}
 						Also in: <a href="{{ sibling.url }}">Português 🇧🇷</a>
 					{% else %}
-						Também em: <a href="{{ sibling.url }}">English 🇺🇸</a>
+						Also in: <a href="{{ sibling.url }}">English 🇺🇸</a>
 					{% endif %}
 				</span>
 				{% if post.original_url %}
@@ -95,7 +96,7 @@ permalink: /blog
 </div>
 
 <div id="emptyState" class="empty-state" style="display:none;">
-	<p>Nenhum post encontrado para os filtros selecionados.</p>
+	<p>No posts found for the selected filter.</p>
 </div>
 
 <script>
