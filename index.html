@@ -260,15 +260,15 @@ layout: null
 		<section aria-labelledby="writing">
 			<div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 1.1rem;">
 				<h2 class="label" id="writing" style="margin-bottom:0; flex:1;">Writing &amp; Thoughts</h2>
-				<a href="/blog/" style="font-size:.9rem; font-weight:500; margin-left:1rem; white-space:nowrap;">View all 90 posts &rarr;</a>
+				<a href="/blog/" style="font-size:.9rem; font-weight:500; margin-left:1rem; white-space:nowrap;">View all posts &rarr;</a>
 			</div>
 			<div class="cards">
-				{% assign recent_posts = site.posts | where: "lang", "pt-BR" | slice: 0, 4 %}
+				{% assign recent_posts = site.posts | where: "lang", "en" | slice: 0, 4 %}
 				{% for post in recent_posts %}
 				<a class="card" href="{{ post.url }}">
 					<strong>
 						<span>{{ post.title }}</span>
-						<span class="when">{{ post.date | date: "%d/%m/%Y" }}</span>
+						<span class="when">{{ post.date | date: "%b %-d, %Y" }}</span>
 					</strong>
 					<p>{{ post.content | strip_html | truncatewords: 22 }}</p>
 				</a>
