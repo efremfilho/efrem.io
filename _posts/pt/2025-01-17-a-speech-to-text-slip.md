@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Um vacilo do speech-to-text que mostra de onde veio o treinamento"
 date: 2025-01-17
 lang: pt-BR

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "A speech-to-text slip that shows where the training came from"
 date: 2025-01-17
 lang: en

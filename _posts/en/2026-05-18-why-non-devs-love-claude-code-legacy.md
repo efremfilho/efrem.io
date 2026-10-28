@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Why non-devs love Claude Code and devs, 'pero no mucho': legacy"
 date: 2026-05-18
 lang: en

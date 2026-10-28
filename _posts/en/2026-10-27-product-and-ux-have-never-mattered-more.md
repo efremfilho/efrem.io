@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Product and UX have never mattered more"
 date: 2026-10-27
 lang: en

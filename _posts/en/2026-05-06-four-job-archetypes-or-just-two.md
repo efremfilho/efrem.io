@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Four job archetypes, or just two?"
 date: 2026-05-06
 lang: en

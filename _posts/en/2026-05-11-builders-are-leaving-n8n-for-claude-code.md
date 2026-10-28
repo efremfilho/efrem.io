@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Builders are leaving n8n for Claude Code"
 date: 2026-05-11
 lang: en

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Two ways out for AI products"
 date: 2026-01-06
 lang: en

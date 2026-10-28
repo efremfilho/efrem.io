@@ -48,7 +48,7 @@ title: "Blog & Reflexões"
 
 		{% assign sibling = nil %}
 		{% for p in site.posts %}
-			{% if p.slug == post.slug and p.url != post.url %}
+			{% if p.slug == post.slug and p.lang != post.lang %}
 				{% assign sibling = p %}
 				{% break %}
 			{% endif %}

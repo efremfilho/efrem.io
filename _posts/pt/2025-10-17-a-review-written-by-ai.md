@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Um review escrito por IA"
 date: 2025-10-17
 lang: pt-BR

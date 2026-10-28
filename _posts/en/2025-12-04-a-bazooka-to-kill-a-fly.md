@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "When I brought a bazooka to kill a fly"
 date: 2025-12-04
 lang: en

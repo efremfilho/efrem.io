@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Multi-agent systems and the math of compounding errors"
 date: 2025-01-02
 lang: en

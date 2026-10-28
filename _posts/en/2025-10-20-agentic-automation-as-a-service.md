@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Agentic automation as a service"
 date: 2025-10-20
 lang: en

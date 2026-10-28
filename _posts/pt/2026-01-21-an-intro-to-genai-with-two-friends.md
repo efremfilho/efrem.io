@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Uma introdução a GenAI, gravada com dois amigos"
 date: 2026-01-21
 lang: pt-BR

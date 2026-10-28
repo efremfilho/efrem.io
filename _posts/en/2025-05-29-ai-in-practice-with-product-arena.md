@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "AI in practice, with Product Arena"
 date: 2025-05-29
 lang: en

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Virando uma pessoa 'full-service' em tech"
 date: 2025-02-12
 lang: pt-BR

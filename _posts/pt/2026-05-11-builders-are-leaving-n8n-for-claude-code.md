@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Builders estão trocando o n8n pelo Claude Code"
 date: 2026-05-11
 lang: pt-BR

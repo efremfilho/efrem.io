@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Por que quem não é dev adora o Claude Code e dev, nem tanto: legado"
 date: 2026-05-18
 lang: pt-BR

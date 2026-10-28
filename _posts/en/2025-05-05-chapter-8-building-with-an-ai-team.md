@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Chapter 8: building with my AI team"
 date: 2025-05-05
 lang: en

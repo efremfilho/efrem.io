@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Agentes versus assistentes"
 date: 2025-10-21
 lang: pt-BR

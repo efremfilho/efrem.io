@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "GenAI and Google Colab are underrated"
 date: 2026-04-16
 lang: en

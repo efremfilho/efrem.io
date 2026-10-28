@@ -10,6 +10,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: "_posts/pt"
+      type: "posts"
+    values:
+      categories: "pt"
+  - scope:
+      path: "_posts/en"
+      type: "posts"
+    values:
+      categories: "en"
 
 plugins:
   - jekyll-redirect-from

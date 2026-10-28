@@ -47,7 +47,7 @@ layout: default
 
 	{% assign sibling = nil %}
 	{% for p in site.posts %}
-		{% if p.slug == page.slug and p.url != page.url %}
+		{% if p.slug == page.slug and p.lang != page.lang %}
 			{% assign sibling = p %}
 			{% break %}
 		{% endif %}

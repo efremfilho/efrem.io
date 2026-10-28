@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Transcrevendo uma música com um script de 15 minutos"
 date: 2025-02-19
 lang: pt-BR

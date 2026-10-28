@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Do que eu abro mão no low-code, e por que isso está mudando"
 date: 2026-05-13
 lang: pt-BR

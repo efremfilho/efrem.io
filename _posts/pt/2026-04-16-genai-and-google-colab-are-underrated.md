@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "GenAI com Google Colab é subestimado"
 date: 2026-04-16
 lang: pt-BR

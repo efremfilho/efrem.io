@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Automação agêntica como serviço"
 date: 2025-10-20
 lang: pt-BR

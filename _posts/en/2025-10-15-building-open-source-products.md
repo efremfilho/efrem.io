@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Building open-source products"
 date: 2025-10-15
 lang: en

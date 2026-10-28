@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Context engineering: do we need another concept?"
 date: 2025-07-03
 lang: en

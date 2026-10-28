@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Minha apresentação no Product Camp Brasil sobre besteiras de GenAI"
 date: 2025-12-12
 lang: pt-BR

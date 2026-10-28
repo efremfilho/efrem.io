@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "A review written by AI"
 date: 2025-10-17
 lang: en

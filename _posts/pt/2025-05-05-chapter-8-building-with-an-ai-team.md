@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Capítulo 8: construindo com meu time de IA"
 date: 2025-05-05
 lang: pt-BR

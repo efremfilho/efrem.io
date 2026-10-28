@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "AI is repeating no-code's history"
 date: 2025-01-08
 lang: en

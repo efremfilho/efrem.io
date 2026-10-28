@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Devs, watch Igor's keynote"
 date: 2025-06-30
 lang: en

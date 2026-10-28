@@ -63,6 +63,7 @@ Salve as duas versões com **exatamente o mesmo nome de arquivo** nas duas pasta
 ```yaml
 ---
 layout: post
+categories: pt
 title: "Seu título em português aqui"
 date: 2026-11-05
 lang: pt-BR
@@ -81,6 +82,7 @@ Texto do post em português...
 ```yaml
 ---
 layout: post
+categories: en
 title: "Your post title in English here"
 date: 2026-11-05
 lang: en
@@ -128,6 +130,7 @@ Siga rigorosamente as regras abaixo:
    - Frontmatter:
      ---
      layout: post
+     categories: pt
      title: "Título em português"
      date: YYYY-MM-DD
      lang: pt-BR
@@ -144,6 +147,7 @@ Siga rigorosamente as regras abaixo:
    - Frontmatter:
      ---
      layout: post
+     categories: en
      title: "Title in English"
      date: YYYY-MM-DD
      lang: en

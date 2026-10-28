@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Devs, assistam à keynote do Igor"
 date: 2025-06-30
 lang: pt-BR

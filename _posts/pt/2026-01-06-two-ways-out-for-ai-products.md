@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Duas saídas para produtos com IA"
 date: 2026-01-06
 lang: pt-BR

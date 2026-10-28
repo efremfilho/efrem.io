@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "PM, PD e DS precisam colocar código em produção"
 date: 2026-10-14
 lang: pt-BR

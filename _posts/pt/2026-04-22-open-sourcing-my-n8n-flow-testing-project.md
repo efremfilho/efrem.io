@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Abri o projeto que fiz para testar fluxos no n8n"
 date: 2026-04-22
 lang: pt-BR

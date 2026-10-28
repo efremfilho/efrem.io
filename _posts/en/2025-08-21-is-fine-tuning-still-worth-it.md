@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Is fine-tuning still worth it?"
 date: 2025-08-21
 lang: en

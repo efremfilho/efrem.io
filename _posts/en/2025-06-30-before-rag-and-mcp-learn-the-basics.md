@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Before RAG and MCP, learn the basics"
 date: 2025-06-30
 lang: en

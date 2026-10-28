@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "I use Lovable to be a better product person, not a bad dev"
 date: 2025-07-02
 lang: en

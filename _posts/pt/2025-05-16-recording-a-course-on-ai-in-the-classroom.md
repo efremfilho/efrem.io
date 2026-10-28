@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Gravando sobre IA na sala de aula"
 date: 2025-05-16
 lang: pt-BR

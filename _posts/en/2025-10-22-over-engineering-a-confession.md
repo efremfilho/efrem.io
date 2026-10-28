@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Over-engineering: a confession"
 date: 2025-10-22
 lang: en

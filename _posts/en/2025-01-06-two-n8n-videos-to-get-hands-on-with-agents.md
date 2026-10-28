@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Two n8n videos to get hands-on with agents"
 date: 2025-01-06
 lang: en

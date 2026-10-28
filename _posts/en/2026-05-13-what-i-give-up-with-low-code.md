@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "What I give up with low-code, and why that's changing"
 date: 2026-05-13
 lang: en

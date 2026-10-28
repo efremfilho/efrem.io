@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Fazendo produtos de código aberto"
 date: 2025-10-15
 lang: pt-BR

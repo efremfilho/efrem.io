@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "PMs, designers and data scientists should ship code to production"
 date: 2026-10-14
 lang: en

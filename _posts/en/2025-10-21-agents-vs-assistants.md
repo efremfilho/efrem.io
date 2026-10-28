@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Agents vs. assistants"
 date: 2025-10-21
 lang: en

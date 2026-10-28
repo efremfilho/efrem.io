@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Testing a new format: deterministic vs. probabilistic agentic processes"
 date: 2025-10-28
 lang: en

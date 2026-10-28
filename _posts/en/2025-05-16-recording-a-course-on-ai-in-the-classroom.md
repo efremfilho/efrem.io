@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Recording a course on AI in the classroom"
 date: 2025-05-16
 lang: en

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "n8n's licensing and the Activepieces approach"
 date: 2025-05-05
 lang: en

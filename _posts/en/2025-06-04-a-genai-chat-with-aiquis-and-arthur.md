@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "A GenAI chat with Aíquis and Arthur"
 date: 2025-06-04
 lang: en

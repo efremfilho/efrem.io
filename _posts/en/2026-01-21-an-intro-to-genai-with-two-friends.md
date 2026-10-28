@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "An intro to GenAI, recorded with two friends"
 date: 2026-01-21
 lang: en

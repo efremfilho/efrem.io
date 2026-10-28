@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "The gap between academia and the market in AI"
 date: 2026-01-26
 lang: en

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Produto e UX nunca foram tão importantes"
 date: 2026-10-27
 lang: pt-BR

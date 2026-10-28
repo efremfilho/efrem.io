@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "No lugar de procurar um SaaS, abro o ChatGPT, o Gemini ou o Colab"
 date: 2025-07-21
 lang: pt-BR

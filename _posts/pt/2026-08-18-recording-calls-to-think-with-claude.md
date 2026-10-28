@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Gravar a call para pensar junto com o Claude"
 date: 2026-08-18
 lang: pt-BR

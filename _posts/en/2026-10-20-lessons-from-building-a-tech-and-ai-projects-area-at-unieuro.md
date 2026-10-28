@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Lessons from building a tech and AI projects area at Unieuro"
 date: 2026-10-20
 lang: en

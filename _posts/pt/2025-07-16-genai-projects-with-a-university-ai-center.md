@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Projetos de GenAI com um centro de aplicação de IA da universidade"
 date: 2025-07-16
 lang: pt-BR

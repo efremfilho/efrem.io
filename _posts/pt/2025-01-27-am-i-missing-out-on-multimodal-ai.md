@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Estou perdendo algo com IA multimodal?"
 date: 2025-01-27
 lang: pt-BR

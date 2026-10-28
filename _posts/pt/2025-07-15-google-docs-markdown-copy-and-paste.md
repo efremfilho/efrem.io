@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Copiar e colar como markdown no Google Docs"
 date: 2025-07-15
 lang: pt-BR

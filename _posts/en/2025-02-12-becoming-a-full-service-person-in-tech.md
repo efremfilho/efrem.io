@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Becoming a 'full-service' person in tech"
 date: 2025-02-12
 lang: en

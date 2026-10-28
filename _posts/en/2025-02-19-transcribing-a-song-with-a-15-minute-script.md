@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Transcribing a song with a 15-minute script"
 date: 2025-02-19
 lang: en

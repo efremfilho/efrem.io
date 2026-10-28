@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Testando um formato novo: processos agênticos determinísticos e probabilísticos"
 date: 2025-10-28
 lang: pt-BR

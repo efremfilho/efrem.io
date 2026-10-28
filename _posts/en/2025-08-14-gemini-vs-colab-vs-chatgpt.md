@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Gemini vs. Google Colab vs. ChatGPT with GPT-5"
 date: 2025-08-14
 lang: en

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Multiagentes e a conta dos erros que se acumulam"
 date: 2025-01-02
 lang: pt-BR

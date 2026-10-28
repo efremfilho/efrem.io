@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Are we going back to the terminal?"
 date: 2025-07-17
 lang: en

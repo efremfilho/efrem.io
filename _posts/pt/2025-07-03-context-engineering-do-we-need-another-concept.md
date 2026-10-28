@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Engenharia de contexto: precisamos de mais um conceito?"
 date: 2025-07-03
 lang: pt-BR

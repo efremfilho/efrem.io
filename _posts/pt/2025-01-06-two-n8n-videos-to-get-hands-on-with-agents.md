@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Dois vídeos do n8n para pôr a mão na massa com agentes"
 date: 2025-01-06
 lang: pt-BR

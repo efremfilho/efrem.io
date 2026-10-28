@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Quatro arquétipos de emprego, ou só dois?"
 date: 2026-05-06
 lang: pt-BR

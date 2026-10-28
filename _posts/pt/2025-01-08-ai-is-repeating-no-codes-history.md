@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "A IA está repetindo a história do no-code"
 date: 2025-01-08
 lang: pt-BR

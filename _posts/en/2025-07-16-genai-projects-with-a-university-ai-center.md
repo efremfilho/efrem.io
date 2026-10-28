@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "GenAI projects run by a university applied-AI center"
 date: 2025-07-16
 lang: en

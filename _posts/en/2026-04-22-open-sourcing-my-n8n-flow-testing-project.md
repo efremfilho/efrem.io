@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "I open-sourced my n8n flow-testing project"
 date: 2026-04-22
 lang: en

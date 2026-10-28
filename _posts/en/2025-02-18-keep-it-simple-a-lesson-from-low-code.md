@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Keep it simple: a lesson from low-code"
 date: 2025-02-18
 lang: en

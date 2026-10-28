@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Recording calls to think things through with Claude"
 date: 2026-08-18
 lang: en

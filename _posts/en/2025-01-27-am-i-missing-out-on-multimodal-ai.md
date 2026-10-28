@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Am I missing out on multimodal AI?"
 date: 2025-01-27
 lang: en

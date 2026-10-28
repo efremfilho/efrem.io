@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Pessoas de produto: não tenham medo de um script"
 date: 2025-01-15
 lang: pt-BR

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "A licença do n8n e a abordagem do Activepieces"
 date: 2025-05-05
 lang: pt-BR

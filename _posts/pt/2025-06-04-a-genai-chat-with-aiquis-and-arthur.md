@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Um papo sobre GenAI com Aíquis e Arthur"
 date: 2025-06-04
 lang: pt-BR

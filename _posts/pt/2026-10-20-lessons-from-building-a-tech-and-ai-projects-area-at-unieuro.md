@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Aprendizados montando uma área de projetos de tech e IA na Unieuro"
 date: 2026-10-20
 lang: pt-BR

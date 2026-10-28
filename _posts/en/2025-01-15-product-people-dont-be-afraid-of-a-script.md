@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Product people: don't be afraid of a script"
 date: 2025-01-15
 lang: en

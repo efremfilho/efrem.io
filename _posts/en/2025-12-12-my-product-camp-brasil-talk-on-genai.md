@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "My Product Camp Brasil talk on the nonsense I hear about GenAI"
 date: 2025-12-12
 lang: en

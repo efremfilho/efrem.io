@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Gemini, Google Colab e ChatGPT com GPT-5"
 date: 2025-08-14
 lang: pt-BR

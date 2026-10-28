@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "IA na prática, com a Product Arena"
 date: 2025-05-29
 lang: pt-BR

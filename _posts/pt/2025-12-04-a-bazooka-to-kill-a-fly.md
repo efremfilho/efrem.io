@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Quando usei uma bazuca para matar uma mosca"
 date: 2025-12-04
 lang: pt-BR

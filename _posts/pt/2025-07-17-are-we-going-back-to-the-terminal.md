@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "Estamos voltando para o terminal?"
 date: 2025-07-17
 lang: pt-BR

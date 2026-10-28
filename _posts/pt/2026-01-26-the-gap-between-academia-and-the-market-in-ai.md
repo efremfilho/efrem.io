@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: pt
 title: "A distância entre a academia e o mercado em IA"
 date: 2026-01-26
 lang: pt-BR

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: en
 title: "Google Docs' markdown copy and paste"
 date: 2025-07-15
 lang: en
