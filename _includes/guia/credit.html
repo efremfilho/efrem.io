@@ -1,0 +1,17 @@
+{% comment %}
+  Crédito de autoria do guia: aparece no rodapé dos capítulos e do índice.
+  O mesmo texto vai para o JSON-LD (creditText) em _includes/seo.html — se mudar aqui, mude lá.
+{% endcomment %}
+<p class="g-credit">
+	{% if page.lang == 'en' %}
+	Content generated automatically and manually edited by
+	<a href="https://www.linkedin.com/in/efremfilho/" rel="author me noopener" target="_blank">@efremfilho</a>,
+	based on the training for students at
+	<a href="https://eppg.fgv.br/?ref=efremio" rel="noopener" target="_blank">FGV EPPG</a> &mdash; Bras&iacute;lia.
+	{% else %}
+	Conte&uacute;do gerado automaticamente e editado manualmente por
+	<a href="https://www.linkedin.com/in/efremfilho/" rel="author me noopener" target="_blank">@efremfilho</a>
+	e baseado no treinamento para estudantes da
+	<a href="https://eppg.fgv.br/?ref=efremio" rel="noopener" target="_blank">FGV EPPG</a> &mdash; Bras&iacute;lia.
+	{% endif %}
+</p>

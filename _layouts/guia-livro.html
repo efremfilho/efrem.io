@@ -1,0 +1,101 @@
+---
+layout: default
+---
+
+{% if page.lang == 'en' %}{% assign t = site.data.guia.en %}{% else %}{% assign t = site.data.guia.pt %}{% endif %}
+{% assign chapters = site.guia | where: "lang", page.lang | sort: "order" %}
+{% assign total_words = 0 %}
+{% for c in chapters %}{% assign w = c.content | number_of_words %}{% assign total_words = total_words | plus: w %}{% endfor %}
+
+<nav class="site-nav" aria-label="{{ t.name }}">
+	<a href="{{ t.home }}" class="nav-back">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+		{{ t.web_version }}
+	</a>
+	<div class="nav-right">
+		<a href="{{ t.other_book }}" class="chip">{{ t.other_flag }} {{ t.other_lang }}</a>
+	</div>
+</nav>
+
+<div class="b-book" data-guia-book>
+
+<header class="b-cover">
+	<p class="b-kicker">{{ t.book_name }}</p>
+	<h1 class="b-title">{{ t.name }}</h1>
+	<p class="b-tagline">{{ t.tagline }}</p>
+	<p class="b-author">{{ t.by }} &Eacute;frem Maranh&atilde;o Filho</p>
+	<p class="b-meta">{{ chapters.size }} {{ t.chapters_word }} &middot; {{ total_words | divided_by: 180 }} {{ t.reading }}<br>{{ t.edition }} {% include format_date.html date=site.time lang=page.lang %}</p>
+	<div class="b-actions">
+		<button type="button" class="gw-btn primary" data-print>🖨️ {{ t.print }}</button>
+		<p class="b-note">{{ t.book_note }}</p>
+	</div>
+	<div class="b-cover-credit">{% include guia/credit.html %}</div>
+</header>
+
+<nav class="b-toc" aria-label="{{ t.toc }}">
+	<h2 class="b-toc-title">{{ t.toc }}</h2>
+	<p class="b-toc-intro"><a href="#intro">{{ t.intro }}</a></p>
+	{% for part in t.parts %}
+	{% assign part_number = forloop.index %}
+	<p class="b-toc-part">{{ t.part }} {{ part_number }} &middot; {{ part.title }}</p>
+	<ol class="b-toc-list">
+		{% for c in chapters %}{% if c.part == part_number %}
+		<li value="{{ c.order }}"><a href="#{{ c.ref }}">{{ c.title }}</a></li>
+		{% endif %}{% endfor %}
+	</ol>
+	{% endfor %}
+</nav>
+
+{% comment %} Apresentação: o mesmo texto de abertura do índice (ia/index.md ou ai/index.md). {% endcomment %}
+{% assign intro_page = site.pages | where: "url", t.home | first %}
+{% if intro_page %}
+<section class="b-chapter b-intro" id="intro">
+	<header class="b-chapter-head">
+		<h2 class="b-chapter-title">{{ t.intro }}</h2>
+	</header>
+	<article class="post-content g-content">
+		{{ intro_page.content | markdownify | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: ' id="', ' data-id="' }}
+	</article>
+</section>
+{% endif %}
+
+{% assign current_part = 0 %}
+{% for c in chapters %}
+	{% if c.part != current_part %}
+		{% assign current_part = c.part %}
+		{% assign part_index = c.part | minus: 1 %}
+		<section class="b-part">
+			<p class="b-kicker">{{ t.part }} {{ c.part }}</p>
+			<h2 class="b-part-title">{{ t.parts[part_index].title }}</h2>
+			<p class="b-part-desc">{{ t.parts[part_index].description }}</p>
+		</section>
+	{% endif %}
+
+	{% comment %} No livro, os títulos internos descem um nível (h2→h3, h4→h5), os ids somem (evita duplicados) e os links entre capítulos viram âncoras. {% endcomment %}
+	{% assign body = c.content | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: '<h2', '<h3' | replace: '</h2>', '</h3>' | replace: ' id="', ' data-id="' %}
+	{% for cc in chapters %}
+		{% capture link_from %}href="{{ cc.url }}"{% endcapture %}
+		{% capture link_to %}href="#{{ cc.ref }}"{% endcapture %}
+		{% assign body = body | replace: link_from, link_to %}
+	{% endfor %}
+
+	<section class="b-chapter" id="{{ c.ref }}" data-chapter-url="{{ c.url }}">
+		<header class="b-chapter-head">
+			<p class="b-kicker">{{ t.chapter }} {{ c.order }}</p>
+			<h2 class="b-chapter-title">{{ c.title }}</h2>
+			{% if c.description %}<p class="b-chapter-desc">{{ c.description }}</p>{% endif %}
+		</header>
+		<article class="post-content g-content">
+			{{ body }}
+		</article>
+	</section>
+{% endfor %}
+
+<footer class="b-end">
+	{% include guia/credit.html %}
+	<p class="g-credit" style="border-top:0; margin-top:.4rem; padding-top:0">efrem.io{{ t.home }}</p>
+</footer>
+
+</div>
+
+<script src="/assets/js/guia.js" defer></script>

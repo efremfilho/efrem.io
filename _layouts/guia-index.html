@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% if page.lang == 'en' %}{% assign t = site.data.guia.en %}{% else %}{% assign t = site.data.guia.pt %}{% endif %}
+{% assign chapters = site.guia | where: "lang", page.lang | sort: "order" %}
+
+<nav class="site-nav" aria-label="{{ t.name }}">
+	<a href="/" class="nav-back">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+		efrem.io
+	</a>
+	<div class="nav-right">
+		<a href="{{ t.other_home }}" class="chip">{{ t.other_flag }} {{ t.other_lang }}</a>
+		<a href="/blog/" class="chip">Blog</a>
+	</div>
+</nav>
+
+<header class="page-header">
+	<h1 class="page-title">{{ t.name }}</h1>
+	<p class="page-subtitle">{{ t.tagline }}</p>
+</header>
+
+<div class="post-content g-intro">
+	{{ content }}
+</div>
+
+<div class="g-index-progress" id="gIndexProgress" hidden>
+	<div class="g-meter"><span></span></div>
+	<span class="muted small"><b id="gIndexCount">0</b> / {{ chapters.size }} {{ t.progress }}</span>
+</div>
+
+{% for part in t.parts %}
+	{% assign part_number = forloop.index %}
+	<section class="g-part">
+		<h2 class="g-part-label">{{ t.part }} {{ part_number }} &middot; {{ part.title }}</h2>
+		<p class="muted g-part-desc">{{ part.description }}</p>
+		<div class="g-chapters">
+			{% for c in chapters %}
+				{% if c.part == part_number %}
+				<a class="g-chapter" href="{{ c.url }}" data-guia-ref="{{ c.ref }}">
+					<span class="g-chapter-n">{{ c.order }}</span>
+					<span class="g-chapter-body">
+						<strong>{{ c.title }}</strong>
+						<span class="g-chapter-desc">{{ c.description }}</span>
+						<span class="g-chapter-meta">
+							{{ c.content | number_of_words | divided_by: 180 | at_least: 1 }} {{ t.min }}
+							{% if c.interactive %}&middot; 🧪 {{ c.interactive }}{% endif %}
+							<span class="g-read-flag" hidden>&middot; ✓ {{ t.read }}</span>
+						</span>
+						{% if c.piece %}<span class="g-chapter-piece">🧩 {{ t.piece }}: {{ c.piece }}</span>{% endif %}
+					</span>
+				</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+{% endfor %}
+
+<p class="g-book-link"><a class="chip" href="{{ t.book }}">📖 {{ t.book_cta }} &rarr;</a></p>
+
+<p class="muted small g-living">{{ t.living }}</p>
+{% include guia/credit.html %}
+
+<script src="/assets/js/guia.js" defer></script>
