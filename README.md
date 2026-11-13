@@ -5,7 +5,7 @@ Migrado do Carrd em junho/2026.
 
 ## Estrutura
 
-- `index.html` — página principal (perfil, links, seção "Now", cartão do guia e posts recentes do blog).
+- `index.html` — página principal (perfil, links, cartão do guia e posts recentes do blog).
 - `blog/index.html` — central do blog (`/blog/`) com busca instantânea e filtros por idioma.
 - `_guia/`, `ia/`, `ai/` — guia "IA sem mágica" (ver seção abaixo).
 - `_posts/pt/` — posts em português (`/blog/pt/<slug>/`).
