@@ -21,6 +21,18 @@ defaults:
     values:
       categories: "en"
 
+  - scope:
+      path: ""
+      type: "guia"
+    values:
+      layout: "guia"
+      guia: true
+
+# Guia "IA sem mágica" (/ia/ em PT, /ai/ em EN). Cada capítulo define o próprio permalink.
+collections:
+  guia:
+    output: true
+
 plugins:
   - jekyll-redirect-from
   - jekyll-feed

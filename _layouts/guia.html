@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+{% if page.lang == 'en' %}{% assign t = site.data.guia.en %}{% else %}{% assign t = site.data.guia.pt %}{% endif %}
+{% assign chapters = site.guia | where: "lang", page.lang | sort: "order" %}
+{% assign sibling = nil %}
+{% for c in site.guia %}
+	{% if c.ref == page.ref and c.lang != page.lang %}{% assign sibling = c %}{% break %}{% endif %}
+{% endfor %}
+{% assign prev_ch = nil %}
+{% assign next_ch = nil %}
+{% for c in chapters %}
+	{% if c.url == page.url %}
+		{% assign i_prev = forloop.index0 | minus: 1 %}
+		{% assign i_next = forloop.index0 | plus: 1 %}
+		{% if i_prev >= 0 %}{% assign prev_ch = chapters[i_prev] %}{% endif %}
+		{% if i_next < chapters.size %}{% assign next_ch = chapters[i_next] %}{% endif %}
+		{% break %}
+	{% endif %}
+{% endfor %}
+{% assign part_index = page.part | minus: 1 %}
+
+<nav class="site-nav" aria-label="{{ t.name }}">
+	<a href="{{ t.home }}" class="nav-back">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+		{{ t.name }}
+	</a>
+	<div class="nav-right">
+		{% if sibling %}<a href="{{ sibling.url }}" class="chip" hreflang="{{ sibling.lang }}">{{ t.other_flag }} {{ t.other_lang }}</a>{% endif %}
+		<a href="/" class="chip">efrem.io</a>
+	</div>
+</nav>
+
+<div class="g-progressbar" aria-hidden="true"><span id="gReadBar"></span></div>
+
+<header class="post-header">
+	<div class="post-meta-row">
+		<span class="post-meta-item g-kicker">{{ t.part }} {{ page.part }} &middot; {{ t.parts[part_index].title }}</span>
+		<span class="post-meta-item">&middot;</span>
+		<span class="post-meta-item">{{ t.chapter }} {{ page.order }} / {{ chapters.size }}</span>
+		<span class="post-meta-item">&middot;</span>
+		<span class="post-meta-item">{{ page.content | number_of_words | divided_by: 180 | at_least: 1 }} {{ t.min }}</span>
+	</div>
+	<h1 class="post-title">{{ page.title }}</h1>
+	{% if page.description %}<p class="page-subtitle">{{ page.description }}</p>{% endif %}
+
+	{% if page.video or page.audio or page.slides %}
+	<div class="g-media">
+		{% if page.video %}
+		<div class="g-video">
+			<iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="{{ t.video_title }}: {{ page.title }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		{% endif %}
+		{% if page.audio %}
+		<div class="g-audio">
+			<span>🎧 {{ t.listen }}</span>
+			<audio controls preload="none" src="{{ page.audio }}"></audio>
+		</div>
+		{% endif %}
+		{% if page.slides %}
+		<a class="chip" href="{{ page.slides }}" target="_blank" rel="noopener">📑 {{ t.slides }} &rarr;</a>
+		{% endif %}
+	</div>
+	{% endif %}
+</header>
+
+<article class="post-content g-content" data-guia-ref="{{ page.ref }}">
+	{{ content }}
+</article>
+
+<footer class="post-footer">
+	<div class="post-nav-links">
+		{% if prev_ch %}
+		<a href="{{ prev_ch.url }}" class="post-nav-card">
+			<div class="post-nav-label">&larr; {{ t.prev }}</div>
+			<div class="post-nav-title">{{ prev_ch.order }}. {{ prev_ch.title }}</div>
+		</a>
+		{% else %}
+		<a href="{{ t.home }}" class="post-nav-card">
+			<div class="post-nav-label">&larr; {{ t.back_to_index }}</div>
+			<div class="post-nav-title">{{ t.name }}</div>
+		</a>
+		{% endif %}
+		{% if next_ch %}
+		<a href="{{ next_ch.url }}" class="post-nav-card" style="text-align: right;">
+			<div class="post-nav-label">{{ t.next }} &rarr;</div>
+			<div class="post-nav-title">{{ next_ch.order }}. {{ next_ch.title }}</div>
+		</a>
+		{% else %}
+		<a href="{{ t.home }}" class="post-nav-card" style="text-align: right;">
+			<div class="post-nav-label">{{ t.back_to_index }} &rarr;</div>
+			<div class="post-nav-title">{{ t.name }}</div>
+		</a>
+		{% endif %}
+	</div>
+	{% if page.last_modified %}
+	<p class="muted small g-updated">{{ t.updated }} {% include format_date.html date=page.last_modified lang=page.lang %}</p>
+	{% endif %}
+	{% include guia/credit.html %}
+</footer>
+
+<script src="/assets/js/guia.js" defer></script>

@@ -23,18 +23,56 @@
   {% else %}
     {% assign og_locale = "pt_BR" %}
   {% endif %}
+{% elsif page.guia %}
+  {% if page.lang == 'en' %}{% assign g = site.data.guia.en %}{% else %}{% assign g = site.data.guia.pt %}{% endif %}
+  {% if page.collection == 'guia' %}
+    {% assign page_title = page.title | append: " — " | append: g.name %}
+    {% assign og_type = "article" %}
+  {% elsif page.book %}
+    {% assign page_title = page.title | append: " — Éfrem Maranhão Filho" %}
+    {% assign og_type = "website" %}
+  {% else %}
+    {% assign page_title = g.name | append: " — Éfrem Maranhão Filho" %}
+    {% assign og_type = "website" %}
+  {% endif %}
+  {% assign page_desc = page.description | default: g.tagline %}
+  {% if page.lang == 'en' %}
+    {% assign og_locale = "en_US" %}
+    {% assign g_credit = "Content generated automatically and manually edited by Éfrem Maranhão Filho (@efremfilho), based on the training for students at FGV EPPG — Brasília." %}
+  {% else %}
+    {% assign og_locale = "pt_BR" %}
+    {% assign g_credit = "Conteúdo gerado automaticamente e editado manualmente por Éfrem Maranhão Filho (@efremfilho) e baseado no treinamento para estudantes da FGV EPPG — Brasília." %}
+  {% endif %}
+  {% assign g_alt = nil %}
+  {% if page.collection == 'guia' %}
+    {% for c in site.guia %}
+      {% if c.ref == page.ref and c.lang != page.lang %}{% assign g_alt = c.url %}{% break %}{% endif %}
+    {% endfor %}
+  {% elsif page.book %}
+    {% assign g_alt = g.other_book %}
+  {% else %}
+    {% assign g_alt = g.other_home %}
+  {% endif %}
 {% else %}
   {% assign page_title = page.title | default: "Éfrem Maranhão Filho" | append: " — efrem.io" %}
   {% assign page_desc = page.description | default: "Éfrem Maranhão Filho — Product Builder & Professor. AI agents, GenAI and tech for non-technical people." %}
   {% assign og_type = "website" %}
-  {% assign og_locale = "pt_BR" %}
+  {% if page.lang == 'en' %}
+    {% assign og_locale = "en_US" %}
+  {% else %}
+    {% assign og_locale = "pt_BR" %}
+  {% endif %}
 {% endif %}
 
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_desc }}">
 <meta name="author" content="Éfrem Maranhão Filho">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="{% if page.noindex %}noindex, follow{% else %}index, follow{% endif %}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if page.guia and g_alt %}
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
+<link rel="alternate" hreflang="{% if page.lang == 'en' %}pt-BR{% else %}en{% endif %}" href="{{ g_alt | absolute_url }}">
+{% endif %}
 
 <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
 <meta property="og:site_name" content="efrem.io">
@@ -163,6 +201,72 @@
     "https://www.linkedin.com/in/efremfilho/",
     "https://github.com/efremfilho"
   ]
+}
+</script>
+{% elsif page.guia %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {% if page.collection == 'guia' %}["Article", "LearningResource"]{% else %}"LearningResource"{% endif %},
+  "name": {{ page.title | jsonify }},
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page_desc | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntityOfPage": "{{ page.url | absolute_url }}",
+  "image": "{{ '/assets/images/og-card.jpg?v=2' | absolute_url }}",
+  "inLanguage": "{% if page.lang == 'en' %}en{% else %}pt-BR{% endif %}",
+  "isAccessibleForFree": true,
+  "learningResourceType": {% if page.collection == 'guia' %}"chapter"{% else %}"guide"{% endif %},
+  {% if page.collection == 'guia' %}
+  "position": {{ page.order }},
+  {% if page.last_modified %}
+  "datePublished": "{{ page.last_modified | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified | date_to_xmlschema }}",
+  {% endif %}
+  "isPartOf": {
+    "@type": "LearningResource",
+    "name": {{ g.name | jsonify }},
+    "url": "{{ g.home | absolute_url }}"
+  },
+  {% else %}
+  "hasPart": [
+    {% assign g_chapters = site.guia | where: "lang", page.lang | sort: "order" %}
+    {% for c in g_chapters %}
+    { "@type": "Article", "position": {{ c.order }}, "name": {{ c.title | jsonify }}, "url": "{{ c.url | absolute_url }}" }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "creditText": {{ g_credit | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": "Éfrem Maranhão Filho",
+    "alternateName": "efremfilho",
+    "url": "https://efrem.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/efremfilho/",
+      "https://github.com/efremfilho"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Éfrem Maranhão Filho",
+    "url": "https://efrem.io"
+  },
+  "isBasedOn": {
+    "@type": "Course",
+    "name": "Treinamento para estudantes da FGV EPPG — Brasília",
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": "FGV EPPG — Escola de Políticas Públicas e Governo",
+      "url": "https://eppg.fgv.br",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brasília",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      }
+    }
+  }
 }
 </script>
 {% endif %}
