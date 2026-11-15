@@ -19,7 +19,7 @@ Lia, Bia e Caio trabalham numa organização que faz busca ativa: ir atrás de a
 
 Uma convenção antes de começar: neste guia, quando eu escrevo "IA" sem adjetivo, estou falando de IA generativa — os modelos que produzem texto, imagem, código. Quando for outra coisa, como o aprendizado de máquina do próximo capítulo, eu aviso.
 
-E um aviso sobre a palavra. Eu já vi, por dentro, uma automação que existia havia tempos virar "área de agentes" de um dia para o outro. Valor a mais entregue: zero. Efeito no mercado: enorme. Então, antes de falar de ferramenta, vale desconfiar do rótulo — e de frases como "a IA decidiu", "a IA quis", "a IA entendeu". Quem acha que a máquina *quis* alguma coisa para de procurar a pessoa que escolheu.
+E um aviso sobre a palavra. Eu já vi, por dentro, uma automação que existia havia tempos virar "área de agentes" de um dia para o outro. Valor a mais entregue: zero. Efeito no mercado: enorme. Então, antes de falar de ferramenta, vale desconfiar do rótulo — e de frases como "a IA decidiu", "a IA quis", "a IA entendeu". Quem acha que a máquina *quis* alguma coisa para de procurar a pessoa que escolheu. O erro contrário também me incomoda: ninguém sai de uma aula minha dizendo que a IA é burra. É uma ferramenta, e a gente tem que saber usar.
 
 ## Dá para definir IA em duas palavras?
 

@@ -64,6 +64,12 @@ O que não mudou: posso não ser quem escreve, mas continuo sendo quem revisa �
 
 Por isso a rédea que eu mantenho curta não é a do passo a passo. É a do acesso — o que o agente alcança — e a do que não tem volta.
 
+## O que o registro mostra que a conversa esconde?
+
+Numa demonstração, pedi a um agente com acesso à minha agenda e ao meu e-mail que marcasse um almoço com uma colega, na segunda-feira. Ele entendeu de qual segunda eu falava, achou um horário livre, criou o evento e mandou o convite. Mandou duas vezes. Escreveu um texto que eu não pedi, da cabeça dele. E a conversa terminou com uma mensagem de erro, enquanto o registro marcava tudo como concluído.
+
+Alguém perguntou: se eu não tivesse visto a caixa de entrada da colega, saberia que o e-mail foi? Saberia, pelo registro. Está tudo lá, passo a passo: procurou horário, criou o evento, enviou. É a única razão pela qual eu deixo um agente agir.
+
 ## Quem pode aprovar?
 
 Na empresa, temos um agente de suporte em um canal de mensagens. Funciona assim:

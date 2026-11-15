@@ -56,6 +56,7 @@ A busca do experimento é propositalmente simples: conta palavras em comum. Os s
 Em vez de uma lista de defeitos, perguntas para fazer a qualquer sistema desse tipo — inclusive ao que você vai montar:
 
 - **O corte passou no lugar errado?** Uma regra e a sua exceção, em trechos diferentes, viram duas "verdades".
+- **Tem tabela no meio?** A busca por trechos foi pensada para texto corrido. Tabela com dois cabeçalhos e célula mesclada chega ao modelo como uma sopa de números.
 - **A pergunta usa as palavras do documento?** Quem pergunta diz "sumiu da escola"; o protocolo diz "infrequência".
 - **Qual versão está na base?** Um documento revogado, se estiver lá, será citado com a mesma confiança.
 - **E quando não há resposta?** O sistema sabe dizer "não encontrei"?

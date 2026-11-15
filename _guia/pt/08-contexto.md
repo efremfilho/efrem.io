@@ -19,7 +19,7 @@ Três pessoas, três agentes, três comportamentos. O agente do Caio escrevia "a
 
 Se eu tivesse que escolher uma única ideia para alguém levar deste guia, seria esta: **o modelo não te conhece, não lembra de ontem e não sabe nada do seu projeto. Ele só sabe o que está escrito na janela, agora.**
 
-Tudo o que parece memória, personalidade ou "ele já me entende" é alguém — você ou o produto — colocando texto de volta nessa janela.
+Tudo o que parece memória, personalidade ou "ele já me entende" é alguém — você ou o produto — colocando texto de volta nessa janela. Quando dizem que o assistente "aprendeu" com os seus e-mails, o que aconteceu foi isto: os e-mails foram parar na janela. Aprender, de verdade, seria retreinar o modelo.
 
 ## O que o modelo enxerga quando você pergunta?
 
@@ -36,6 +36,8 @@ A intuição diz: "na dúvida, joga tudo lá dentro". É o erro mais comum que e
 Modelos de linguagem funcionam relacionando cada token com todos os outros. Quanto mais coisa na janela, mais essa atenção se espalha. Há quem chame isso de **orçamento de atenção**: é finito, e cada token novo gasta um pouco dele. Quando o orçamento estoura, aparece o que se convencionou chamar de ***context rot***, a queda de desempenho que [já foi medida](https://research.trychroma.com/context-rot) conforme a entrada cresce. O modelo esquece uma instrução do começo, confunde documentos, repete o que já fez. Não é que ele "trava" — ele vai ficando gradualmente pior.
 
 Daí sai o princípio prático: procurar **o menor conjunto de tokens de alto sinal** que resolve a tarefa.
+
+Um exemplo de casa. A memória do assistente ficou ligada numa conta que mais gente da família usa. Ele passou a achar que eu estudava uma área que não é a minha, guardou um planejamento que não era meu — e começou a me responder pior, por causa de um contexto que eu nunca pedi. Os agentes estão aprendendo a lidar com excesso. Mesmo assim, contexto demais custa mais do que precisa e ainda pode atrapalhar. Prefiro dar o contexto todo, toda vez, a deixar ele tentar adivinhar.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** monte uma janela de contexto para a pergunta da Lia. O que você tiraria primeiro — e como sabe que não vai fazer falta?

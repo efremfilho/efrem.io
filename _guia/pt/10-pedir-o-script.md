@@ -67,6 +67,12 @@ A diferença na prática:
 
 Isso é o oposto de precisar saber programar. Eu não escrevo esses scripts — eu descrevo o que preciso, leio o que foi feito e confiro o resultado. O que mudou é que a expertise agora chega em um formato que eu consigo ler: o agente explica, em português, o que o script faz e por quê. Saber que essa opção existe muda o que você pede. Falei sobre perder o medo disso em [Pessoas de produto, não tenham medo de um script](/blog/pt/product-people-dont-be-afraid-of-a-script/).
 
+Dois casos em que pedir o código mudou o que eu conseguia mostrar.
+
+Num projeto para uma área de conformidade, o modelo lia a norma inteira. Na hora de aplicar, eu não aceitava o raciocínio dele: mandava gerar a regra em código — se sai de tal estado para tal estado, o tributo é este — e executar. A resposta em texto podia ser maravilhosa. Eu precisava mostrar como se chegou a ela.
+
+O outro foi ao vivo, numa formação. Pedi uma análise de dados com a instrução de rodar código, copiei o código gerado para outro ambiente e ele refez a análise inteira, igual. Aí perguntei como os valores fora da curva tinham sido encontrados. A resposta estava no código: ele só tinha pegado os cinco maiores. Sem desvio padrão, sem critério nenhum. Preguiçoso igual a gente. Reclamei em voz alta — e alguém da sala lembrou que o meu pedido dizia exatamente "liste os cinco maiores". Estava tudo lá, para quem quisesse ler: o critério ruim, e de quem ele era.
+
 ## Como decidir?
 
 Três perguntas rápidas antes de pedir qualquer coisa:

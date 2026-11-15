@@ -55,6 +55,8 @@ A pesquisa de Lakhani com profissionais de consultoria dá nome aos jeitos de tr
 
 Ele é duro com quem cai nessa. Se tudo o que você faz é servir de interface de carne e osso para o silício, qual é o seu valor? Conta que já demitiu gente que justificou um trabalho ruim com "foi a IA que me deu isso". E tem uma regra pessoal que vale copiar: **nunca aceitar a primeira resposta.** Pedir alternativas, mandar o modelo argumentar contra a própria proposta, procurar os sinais de alerta. A primeira resposta é a resposta média; a boa aparece depois que alguém com critério insiste.
 
+Insistir vale para os dois lados. Levei a uma pesquisa aprofundada algumas apostas minhas, e uma delas ela negou. Como bom pesquisador, não gostei da resposta e mudei a pergunta, para ver se vinha a que eu queria. Não veio. Mudei de novo. Não veio. Aparentemente, ela estava certa.
+
 Meu pedido de sempre é o mesmo: [não seja um proxy de uma IA para outra IA](/blog/pt/generation-and-review-the-two-cycles-of-genai/). O trabalho com IA tem dois ciclos, gerar e revisar, e dá para aprender nos dois. Eu entendo muito mais de código hoje por causa de revisão, não de geração.
 
 Quem imagina que usar IA é apertar um botão e ir tomar café está descrevendo o jeito de usar que dá errado. E é essa pessoa, não quem é generalista e presta atenção, que fica fácil de substituir.
@@ -72,6 +74,18 @@ O que mudou, na prática:
 Ele resume a mudança pessoal com honestidade: por muitos anos, bastava colocar um caso na frente da turma; agora a sala de aula tem muito "fazer".
 
 É o convite deste guia, e é o que eu tento praticar: nas minhas turmas de Sistemas de Informação, estudantes entregam produtos de verdade para se formar. **Troque o relatório sobre o caso pela solução do caso.** Quem constrói descobre onde a ferramenta falha, o que precisa conferir e o que não sabia que não sabia — três coisas que relatório nenhum ensina.
+
+Não que eu tenha acertado a mão. Eu ainda falho em fazer cada estudante entender o que foi gerado: a maioria copia de um lado, cola do outro e fica feliz se funcionou. Quem acha que o problema é novo esqueceu dos cartazes de "faço a sua monografia" no mural da universidade. O problema nunca foi a ferramenta. É não pensar.
+
+Já quebrei a cara no sentido contrário. Uma estudante entregou um exercício usando um recurso que eu não tinha ensinado, e eu concluí que era cópia. Na aula seguinte pedi: me explica. Ela explicou.
+
+Quando alguém me pede para explicar um código, eu devolvo: joga na IA, pede a explicação e depois me conta se entendeu. Já ouvi que parece que eu não quero dar aula. Meu objetivo como professor é deixar a pessoa autônoma, não repetir o que ela encontra em qualquer lugar. Eu fico para corrigir a rota.
+
+Nada disso nasceu com a IA. Em 2014 eu já passava [um trabalho que tinha de ser feito com plágio](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspirado na escrita não criativa de Kenneth Goldsmith (2011): montar um texto inteligente e coerente só com trechos de outros textos. Pelo menos cinco fontes, sem blocos longos de uma só, cada fonte numa cor, o que era da pessoa em preto. Junto de cada referência, duas respostas: por que você usou essa fonte, e por que ela é confiável? Na aula seguinte, cada integrante do grupo respondia sozinho a perguntas sobre o trabalho. Hoje a pergunta é a mesma, com outro objeto: por que você usou IA aqui?
+
+Para sentir na pele, eu me obriguei a escrever um texto inteiro com IA. [Quinze minutos pedindo, cinco horas revisando](/blog/pt/15-minutes-of-prompting-5-hours-of-editing/). Várias fontes citadas não existiam; eu procurava, não achava e cortava o trecho. O trabalho não diminuiu. Destravou uma coisa em que eu sempre fui ruim, que é escrever. E, no fim, não foi a IA que gerou: fui eu que entreguei.
+
+E docente não está imune. Numa formação para colegas, pedi um exercício. A turma colou a instrução que a ferramenta gerou, sem ler, e se espantou com o formato da resposta. Alguém resumiu melhor do que eu: fizemos exatamente o que criticamos em estudantes.
 
 Só mantenho a ressalva sobre o nome. Lakhani chama isso de *vibe coding*. Eu chamaria de **construir lendo**.
 
@@ -169,6 +183,17 @@ E um pedido, de quem constrói para quem constrói: com tanta coisa ajudando a f
 
 Inspirado em escolas de negócios que trocaram a prova por construção: em vez de um trabalho escrito *sobre* um caso, cada grupo entrega uma **solução funcionando** para um problema real (da organização de alguém da turma, de preferência). A entrega tem três partes: (1) a solução rodando, demonstrada ao vivo; (2) o repositório com `README.md`, `AGENTS.md` e as decisões registradas; (3) uma página, escrita pelo grupo e não pela IA, respondendo: o que conferimos e como? Onde a ferramenta errou? O que não deveria ser automatizado aqui? Cada pessoa do grupo deve conseguir explicar, de viva voz, qualquer uma das três partes.
 
+#### Atividade (para casa, com volta em aula) — escrever com o texto dos outros
+
+É o trabalho que eu passava em 2014, antes de qualquer assistente; [a instrução original](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing) continua no ar. Cada grupo monta um texto inteligente e coerente usando trechos de outros textos. As regras:
+
+- pelo menos cinco fontes;
+- nada de blocos longos da mesma fonte: os textos têm de conversar, de preferência dentro do mesmo parágrafo;
+- cada fonte numa cor; o que for do grupo, em preto;
+- junto de cada referência, duas respostas: por que ela foi usada (o que tinha de interessante) e por que é confiável.
+
+Na aula seguinte, de dez a quinze minutos de perguntas sobre o trabalho, respondidas individualmente por cada integrante. Uma adaptação possível para hoje: o que veio de IA também é fonte, e também ganha a sua cor.
+
 #### Atividade de encerramento (30 min) — carta de compromisso
 
 Cada pessoa escreve três compromissos pessoais de uso de IA, em uma frase cada: um sobre **verificar**, um sobre **dados** e um sobre **responsabilidade**. Leiam em voz alta. O grupo escolhe os cinco mais fortes e monta a "política de uso de IA da turma" em uma página.
@@ -187,13 +212,16 @@ Cada pessoa escreve três compromissos pessoais de uso de IA, em uma frase cada:
 #### Referências
 
 - DELL'ACQUA, Fabrizio *et al.* **Navigating the jagged technological frontier**: field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality. Boston: Harvard Business School, 2023. (Working Paper, n. 24-013). Disponível em: <https://www.hbs.edu/faculty/Pages/item.aspx?num=64700>. Acesso em: 13 nov. 2026.
+- GOLDSMITH, Kenneth. **Uncreative writing**: managing language in the digital age. New York: Columbia University Press, 2011.
 - LAKHANI, Karim R. **Harvard AI professor**: the people most at risk from AI aren't who you think. Entrevista ao canal Silicon Valley Girl. [*S. l.*], 30 out. 2026. 1 vídeo (52 min). Disponível em: <https://www.youtube.com/watch?v=vFOnDsy58NU>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **15 minutos de prompt, 5 horas editando**. [*S. l.*]: efrem.io, 23 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/15-minutes-of-prompting-5-hours-of-editing/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **A responsabilidade ainda é sua**. [*S. l.*]: efrem.io, 8 set. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-responsibility-is-still-yours/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Com o custo da expertise caindo, o que conta é a vontade de fazer**. [*S. l.*]: efrem.io, 13 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-cost-of-expertise-and-the-will-to-build/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Como ensinar a usar IA criticamente? Um pedido de ajuda**. [*S. l.*]: efrem.io, 13 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/how-to-teach-critical-use-of-ai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Geração e revisão: os dois ciclos da GenAI**. [*S. l.*]: efrem.io, 20 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/generation-and-review-the-two-cycles-of-genai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Os melhores hacks para uma pessoa de produto usar um agente de código**. [*S. l.*]: efrem.io, 5 ago. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-best-hacks-for-a-product-person-using-a-coding-agent/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Quero estar no último 1% a ser substituído**. [*S. l.*]: efrem.io, 2 mar. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/i-want-to-be-in-the-last-1-percent-to-be-replaced/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Trabalhos com plágio**. [*S. l.*], 2014. Instrução de atividade para estudantes. Disponível em: <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>. Acesso em: 15 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Virando uma pessoa 'full-service' em tech**. [*S. l.*]: efrem.io, 12 fev. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/becoming-a-full-service-person-in-tech/>. Acesso em: 13 nov. 2026.
 
 *Notas:* A fonte é uma entrevista de Karim R. Lakhani, professor da Harvard Business School. Trechos usados: custo marginal da expertise (minutos 34 e 47), os três jeitos de trabalhar com IA (2 a 4; na entrevista, cerca de 60% de ciborgues, 14% de centauros e 27% de autoautomatizadores), "nunca aceito a primeira resposta" (9), responsabilidade e "interface de carne" (3 e 14), o curso obrigatório do MBA, com cerca de 900 estudantes (20 a 22), e quem corre mais risco (44 e 45). Traduções e paráfrases são minhas. O experimento com profissionais de consultoria é o de Dell'Acqua *et al.* (2023).

@@ -58,6 +58,8 @@ O que aprendi apanhando:
 
 Isso é treino, não tem outro jeito. Se o sistema do seu trabalho não pode falhar, treine em projeto paralelo: uma ferramenta interna, algo só seu.
 
+Um colega professor acompanhava quase oitenta estudantes, uma planilha por estudante. Mostrei um caminho, e ele construiu o sistema dele, sozinho. Gastou umas cinco vezes mais crédito do que eu tinha gastado — e isso é o preço de aprender, não um defeito. O mérito é todo dele. O que fez diferença ali não foi o pedido perfeito: foi insistir até funcionar. Vontade de fazer pesa mais do que acertar de primeira.
+
 Quem fundou uma dessas ferramentas [conta](https://www.youtube.com/watch?v=-QsTmu2CqhA) que uma pessoa usuária a descreveu como "um supergênio de cinco anos, com doutorado e TDAH". É a melhor definição que eu conheço, e vale mais ainda quando troco de agente: ora ele mergulha fundo demais numa coisa, ora empaca, ora só está distraído. Já pedi para mexer no menu, e a única coisa que ele fez foi não mexer no menu. A ressalva é que isso é cada vez menos verdade: os modelos inventam menos e estão mais especialistas. Mas ajuda a pedir com paciência.
 
 ## O que mudou, afinal: a velocidade?
@@ -106,6 +108,8 @@ Cada vez menos eu aprovo, passo a passo, o que o agente faz. Cada vez mais eu pl
 4. Mexe com dinheiro, ou decide algo sobre a vida de alguém?
 
 E chamo cedo. Numa empresa em que trabalhei, levamos anos para enxergar um padrão: quando a área de tecnologia da organização cliente participava da escolha, o produto durava. Quando ficava de fora, tratava aquilo como sistema clandestino — e a primeira providência era tirar do ar. Esconder da área de tecnologia o que você construiu é o caminho mais curto para perder o que você construiu.
+
+E eu já fui o trator dessa história. Num emprego anterior, o meu time de produto passou a fazer com IA o que outra área demorava a entregar: a gente combinava um prazo e, vencido o prazo, gerava o material e punha no ar. A intenção era mostrar, na prática, que se especializar tinha ficado mais fácil — e estava combinado com a liderança. Serviu para dar a partida. Não foi a melhor maneira. Faltou a empatia que quem lidera deveria ter com as outras áreas, e eu prejudiquei o relacionamento por um bom tempo. No fim, entregamos os processos prontos para a própria área usar e editar, e ficou ótimo. O caminho até lá foi turbulento.
 
 ## Um caminho
 
