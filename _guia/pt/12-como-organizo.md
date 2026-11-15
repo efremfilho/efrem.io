@@ -1,6 +1,6 @@
 ---
 title: "Como eu organizo meu trabalho com IA"
-description: "Pastas que espelham a vida, uma caixinha de texto no lugar de dez abas, ambientes com cerca e três fornecedores de propósito. As ferramentas mudam; os princípios, bem menos."
+description: "Pastas que espelham a vida, uma caixinha de texto no lugar de dez abas, ambientes com cerca e uma ferramenta em que eu sou bom de verdade. As ferramentas mudam; os princípios, bem menos."
 lang: pt-BR
 ref: workspace
 order: 12
@@ -8,18 +8,18 @@ part: 3
 permalink: /ia/como-organizo/
 interactive: "anatomia de um ambiente de trabalho"
 piece: "pastas por município e chaves em ordem"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 12
 
-O projeto cresceu: mais dois municípios pediram ajuda. Em uma semana, Lia tinha três planilhas parecidas na mesma pasta e uma chave de acesso colada no grupo de mensagens da equipe, "para facilitar". Facilitar para quem?
+Mais dois municípios pediram ajuda. Em uma semana havia três planilhas parecidas na mesma pasta, uma chave de acesso colada no grupo de mensagens, "para facilitar", e uma discussão nova: Caio queria trocar de ferramenta. Tinha testado outra no fim de semana, muito melhor. Era a terceira troca do semestre, e Bia mal tinha aprendido a anterior. Facilitar para quem? E o que o time perde cada vez que troca?
 </div>
 
 Este capítulo é o mais pessoal do guia. Não é uma receita: é como eu trabalho. As ferramentas vão mudar, e por isso não cito nenhuma pelo nome; o que eu espero que fique são os princípios por trás.
 
-Um aviso sobre o meu perfil: eu uso IA muito pouco como "assistente" de bate-papo e muito como **ferramenta de construção** — para escrever código, desenhar interfaces, analisar dados e produzir documentos. Uso ferramentas de todos os grandes fornecedores. E hoje seria impossível eu trabalhar do jeito que trabalho sem elas.
+Um aviso sobre o meu perfil: eu uso IA muito pouco como "assistente" de bate-papo e muito como **ferramenta de construção** — para escrever código, desenhar interfaces, analisar dados e produzir documentos. Testo ferramentas de vários fornecedores e passo a maior parte do dia dentro de uma. Hoje seria impossível eu trabalhar do jeito que trabalho sem elas.
 
 ## Onde mora o seu trabalho?
 
@@ -42,7 +42,9 @@ Também é por isso que eu evito o agente "faz-tudo" que guarda as coisas do jei
 
 ## Precisa de terminal?
 
-Eu trabalho a maior parte do tempo no **terminal**: aquela tela preta de texto que lembra o DOS. As ferramentas de IA para programação têm versões de linha de comando (CLI), e eu prefiro essas por três motivos:
+Tentei primeiro as ferramentas com cara de ambiente de programação. Na primeira tela, uma delas pediu para instalar um módulo. Fechei. Podia ter parado e aprendido? Podia. Foi pirraça.
+
+Fui para o **terminal**: aquela tela preta de texto que lembra o DOS. As ferramentas de IA para programação têm versões de linha de comando (CLI), e eu fiquei nelas por três motivos:
 
 1. **Sou muito desatento.** Uma tela com uma única caixinha para digitar, em tela cheia, é o melhor ambiente que eu conheço para não me perder.
 2. **Tudo já fala com o terminal.** Git, os serviços de nuvem, os bancos de dados — as ferramentas profissionais nasceram ali. O agente usa as mesmas que uma pessoa de engenharia usaria, sem precisar de integração especial.
@@ -50,7 +52,7 @@ Eu trabalho a maior parte do tempo no **terminal**: aquela tela preta de texto q
 
 Confesso a ironia: tempos atrás eu [reclamei que estávamos voltando para o terminal](/blog/pt/are-we-going-back-to-the-terminal/) e jogando fora décadas de trabalho em interface. Continuo achando que, para a maioria das pessoas, uma boa interface vence. Para mim, hoje, a caixinha venceu.
 
-Você **não precisa** do terminal para aplicar nada deste guia. Os mesmos produtos têm aplicativo e versão web, e a lógica é igual.
+Você **não precisa** do terminal para aplicar nada deste guia. Os mesmos produtos têm aplicativo e versão web, e a lógica é igual. Eu mesmo tenho migrado: uso cada vez mais a versão web e o celular, e estou a um passo de ditar em vez de digitar — coisa que jurei que não faria. Já estou me preparando para morder a língua.
 
 ## Na minha máquina ou na nuvem?
 
@@ -62,7 +64,7 @@ O agente pode trabalhar em dois lugares:
 Um ambiente desses é configurado uma vez e tem quatro partes:
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** abra a anatomia do ambiente, mais abaixo. No projeto da Lia, o que entraria em cada uma das quatro partes — e o que não deveria entrar em nenhuma?
+**Provocação:** abra a anatomia do ambiente, mais abaixo. No projeto do time, o que entraria em cada uma das quatro partes — e o que não deveria entrar em nenhuma?
 </div>
 
 <div data-widget="tabs" data-title="Anatomia de um ambiente na nuvem" data-sub="Exemplo ilustrativo. Os nomes mudam de produto para produto; as quatro partes existem em todos." markdown="1">
@@ -113,13 +115,13 @@ Para projeto pessoal e inofensivo eu libero tudo. Para projeto de empresa, lista
 
 </div>
 
-## Por que não escolher uma ferramenta só?
+## Uma ferramenta só, ou várias?
 
-Eu pago e uso as ferramentas de três empresas diferentes. Quando estouro o limite de uma, passo para a outra. Mas o motivo principal não é esse: **foi uma decisão deliberada para não depender de ninguém.**
+Eu pago mais de uma e testo várias. Quando estouro o limite de uma, passo para outra. Mas é numa só que eu passo o dia, porque prefiro ser muito bom em uma a ser mediano em todas. O pior cenário, para mim, é trocar tanto que não se sabe usar nenhuma direito.
 
-Deu trabalho. Cada ferramenta tem um jeito, um nome de arquivo de configuração, uma mania. O que tornou possível foi a regra do capítulo anterior — o conhecimento mora no repositório, em texto simples. Qualquer uma delas abre a pasta e continua de onde a outra parou.
+O que me deixa tranquilo com essa escolha é a regra do capítulo anterior: o conhecimento mora no repositório, em texto simples. Se eu precisar mudar, mudo. Estranho por algumas horas e sigo. Para mim, virou *commodity*.
 
-E a recomendação que eu dou para quem está começando é o contrário de "escolha a melhor": teste as três com a mesma tarefa real. A diferença entre os modelos de ponta hoje é mais de gosto do que de capacidade.
+Para quem está começando, a recomendação é o contrário de "escolha a melhor": teste mais de uma com a mesma tarefa real, fique com a que conversa melhor com o seu jeito, e fique boa nela. A diferença entre os modelos de ponta, hoje, é mais de gosto do que de capacidade.
 
 ## Quanto custa — e como se paga?
 
@@ -147,16 +149,19 @@ Sobre chaves de API, que você vai encontrar quando montar um agente próprio:
 
 - Organize por pasta e repositório: o lugar onde você abre a ferramenta define o contexto que ela recebe.
 - Ambiente bem configurado tem quatro partes: repositório, preparação, segredos e rede.
-- Não case com um fornecedor. Deixe o conhecimento em texto simples e teste vários.
+- Fique boa em uma ferramenta — e deixe o conhecimento em texto simples, para poder sair quando quiser.
 - Assinatura para pessoas, API para sistemas — e API sempre com limite.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** quem tem hoje uma chave que não deveria mais ter? Se uma ferramenta saísse do ar amanhã, o que a equipe perderia?
-- **Um caminho para responder:** listar onde estão os arquivos e as chaves; separar por projeto; dar a cada chave um limite e uma data para acabar.
-- **Peça nova no projeto:** a estrutura de pastas e as chaves em ordem.
+- **Em disputa:** quem tem hoje uma chave que não deveria mais ter? Se uma ferramenta saísse do ar amanhã, o que o time perderia? Vale mais ser muito boa em uma ou conhecer todas?
+- **Caminhos na mesa:**
+  - *Caio:* testar tudo o que sai. É assim que se descobre o que é melhor.
+  - *Bia:* escolher uma e parar de mexer.
+  - *Lia:* cada pessoa fica boa em uma; o que é do projeto mora no repositório, para que trocar custe uma tarde, e não um mês.
+- **O que o time fez, por enquanto:** pastas por município, uma chave por projeto com limite e data para acabar, e a chave do grupo revogada.
 </div>
 
 <details class="g-aula" markdown="1">

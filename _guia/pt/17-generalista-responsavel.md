@@ -7,14 +7,14 @@ order: 17
 part: 3
 permalink: /ia/generalista-responsavel/
 interactive: "autoavaliação"
-piece: "a entrega final"
-last_modified: 2026-11-13
+piece: "a entrega — e a próxima decisão"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 17
 
-Fim do semestre. Lia não virou programadora: continua sem saber o que é um *framework*, e sem a menor vontade de saber. O que mudou é que ela consegue explicar o problema, ler o que o agente propõe, apontar o que está errado e responder pelo que entrega. Na apresentação para a secretaria, a primeira pergunta foi sobre a tecnologia. Ela respondeu falando das decisões. Por quê?
+A secretaria decidiu: fica a solução do time, e a fornecedora fica para depois. Na apresentação, a primeira pergunta foi sobre a tecnologia. Lia respondeu falando das decisões: o que o sistema não rotula, o que não guarda, o que nenhum agente faz sozinho. Ninguém ali virou especialista em programação — Bia continua sem saber o que é um *framework*, e sem a menor vontade de saber. Aída, da tecnologia, agora revisa o que entra no ar. Iara quer levar para o estado inteiro. Bia acha cedo. Caio já abriu o repositório novo. Quem assina embaixo é Lia. O que, exatamente, ela está assinando?
 </div>
 
 Passei boa parte da carreira me sentindo um pato: nada, anda e voa, mas não faz nenhuma das três coisas muito bem. Um pouco de código, um pouco de dados, um pouco de design, bastante de produto. Em um mercado que premiava especialista, isso parecia um defeito.
@@ -39,7 +39,7 @@ Tem um detalhe nessa história que, para mim, é o centro de tudo. Não é só q
 
 Antes, o conhecimento de quem é especialista vinha embrulhado no ofício: o código, o modelo estatístico, o arquivo de design, a cláusula do contrato. Para avaliar, eu precisava dominar o ofício ou confiar de olhos fechados. Hoje, quando peço uma análise, recebo junto o plano, o raciocínio, as alternativas descartadas e a explicação de cada escolha — em português. Eu posso ler, perguntar "por quê?", pedir o contra-argumento e só então decidir.
 
-É por isso que eu não gosto do termo *vibe coding*. Ele sugere programar "na vibe", aceitando o que vier sem olhar. A minha experiência é o oposto.
+É por isso que eu não gosto do termo *vibe coding*. Ele sugere programar "na vibe", aceitando o que vier sem olhar — ficar só apertando uma tecla para dizer sim. A minha experiência é o oposto.
 
 Eu implico com o termo desde que ele apareceu. No começo o motivo era de identidade: eu [não queria ser dev medíocre, queria ser melhor em produto](/blog/pt/the-best-hacks-for-a-product-person-using-a-coding-agent/). Depois ficou mais claro que o problema é outro — [pensamento crítico](/blog/pt/how-to-teach-critical-use-of-ai/). E confesso: várias vezes me pego "vibing", sem pensar no que estou fazendo. Por isso mesmo eu me vigio.
 
@@ -47,7 +47,9 @@ Eu implico com o termo desde que ele apareceu. No começo o motivo era de identi
 
 A maior mudança no meu dia não foi parar de escrever código. Foi **começar a ler o dia inteiro.** Cheguei a escrever isso em caixa alta: [NUNCA li tanto na minha vida](/blog/pt/how-to-teach-critical-use-of-ai/).
 
-O agente mostra o plano: eu leio. Mostra o raciocínio: eu leio. Explica por que escolheu um caminho: eu leio, e às vezes discordo. Entrega o resultado: eu leio antes de aceitar. Meu trabalho virou revisar, decidir e redirecionar.
+O agente mostra o plano: eu leio. Mostra o raciocínio: eu leio. Explica por que escolheu um caminho: eu leio, e às vezes discordo. Entrega o resultado: eu leio antes de aceitar. Nem sempre leio tudo — quando deixo algo rodando de madrugada, de manhã leio o resumo. Mas alguma coisa eu leio, sempre. E cansa: mentalmente, é mais pesado do que escrever.
+
+Meu trabalho virou revisar, decidir e redirecionar. Brinco que não sou mais o autor da minha vida, mas continuo sendo o revisor.
 
 A pesquisa de Lakhani com profissionais de consultoria dá nome aos jeitos de trabalhar com IA. A maioria age como **ciborgue**, resolvendo o problema junto com a IA, em vaivém constante; uma parte menor, como **centauro**, que divide o trabalho ("isto eu faço, aquilo ela faz") e supervisiona o que volta; e cerca de um quarto, como **autoautomatizador**, que aperta o *play* e entrega o que sair. Quem aprende menos é o terceiro grupo — nas palavras dele, porque *parou de pensar*.
 
@@ -75,6 +77,7 @@ Só mantenho a ressalva sobre o nome. Lakhani chama isso de *vibe coding*. Eu ch
 
 ## O que continua sendo humano?
 
+- **Saber pedir e saber ler.** A IA executa muito bem o que você pedir. Até fatiar o problema ela faz. Sobra a arte de perguntar — e a leitura do que voltou, para guiar o próximo passo.
 - **Saber o que vale a pena fazer.** A IA constrói qualquer coisa que você pedir, inclusive a coisa errada.
 - **Conhecer o contexto.** O time que usa aquela tela, a cliente que odeia aquele termo, a regra que ninguém escreveu.
 - **Julgar o resultado.** "Está plausível" e "está certo" são coisas diferentes, e alguém precisa saber a diferença.
@@ -114,7 +117,7 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 - [ ] O que eu aprendo com a IA em um projeto fica escrito para a próxima sessão
 - [ ] Já testei mais de uma ferramenta com a mesma tarefa real
 - [ ] Sei exatamente a que cada ferramenta ou agente que eu uso tem acesso
-- [ ] Nada irreversível acontece em meu nome sem que eu aprove
+- [ ] Sei quem responde por cada coisa sem volta que acontece em meu nome
 - [ ] Leio o plano antes de mandar executar, e o resultado antes de aceitar
 - [ ] Quando erro usando IA, assumo o erro como meu
 
@@ -134,6 +137,8 @@ Um guia honesto precisa de uma seção assim.
 
 O que eu sei: não tem volta. Existem modelos abertos que qualquer um pode baixar e rodar. Se as empresas de hoje sumissem amanhã, a tecnologia continuaria aqui. A escolha que resta não é entre usar e não usar. É entre usar entendendo ou usar acreditando em mágica.
 
+E um pedido, de quem constrói para quem constrói: com tanta coisa ajudando a fazer, pare de fazer produto ruim.
+
 <div class="g-box g-key" markdown="1">
 **Para guardar, do guia inteiro**
 
@@ -142,16 +147,19 @@ O que eu sei: não tem volta. Existem modelos abertos que qualquer um pode baixa
 3. O que não está no contexto não existe para ele. O que está sobrando atrapalha.
 4. Para o que precisa ser exato, código. Para o que precisa de julgamento, você.
 5. Guarde o conhecimento em um lugar que é seu.
-6. Dê o menor acesso que resolve, e nunca abra mão de aprovar o que é irreversível.
+6. Dê o menor acesso que resolve, e saiba quem responde pelo que não tem volta.
 7. A responsabilidade é sua. Sempre foi.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** do que eu entreguei, o que eu sei explicar e o que eu só repassei? O que eu decidi não automatizar, e por quê?
-- **Um caminho para responder:** escrever uma página, sem ajuda de IA, sobre o que conferiu; mostrar a solução a quem vai usar e ouvir antes de defender.
-- **Peça nova no projeto:** a entrega final — e a próxima pergunta.
+- **Em disputa:** do que foi entregue, o que o time sabe explicar e o que só repassou? Crescer agora, ou provar por mais um semestre?
+- **Caminhos na mesa:**
+  - *Iara:* levar ao estado inteiro já. Há orçamento, e há pressa.
+  - *Bia:* mais um semestre nas doze escolas, medindo quem voltou.
+  - *Caio:* abrir o que foi feito, para outras organizações copiarem.
+- **O que o time fez, por enquanto:** escreveu, sem ajuda de IA, uma página sobre o que conferiu e o que ainda não sabe. A decisão de crescer ficou para depois dela.
 </div>
 
 <details class="g-aula" markdown="1">

@@ -8,16 +8,16 @@ part: 3
 permalink: /ia/alem-do-texto/
 interactive: "quatro conversões e o que perguntar a cada uma"
 piece: "a regra do que pode ser gravado e por quanto tempo fica guardado"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 14
 
-Depois de cada visita, a equipe grava um áudio contando como foi. São dezenas por semana, e ninguém ouve de novo. As listas de frequência de duas escolas ainda chegam em papel, fotografadas com o celular. Lia percebeu que metade do que a equipe sabe está em formatos que a planilha não lê. E se desse para ler?
+Bia grava um áudio depois de cada visita. São dezenas por semana, e ninguém ouve de novo. Caio pediu a um agente que transcrevesse tudo e resumisse por família. Ficou ótimo — até Bia ler o resumo de uma visita que ela mesma tinha feito. Havia ali uma frase da mãe que a mãe nunca disse. "Você conferiu?" "São quarenta áudios, Bia." Metade do que o time sabe está em voz e em foto de papel. Dá para ler tudo isso. E quem garante o que foi lido?
 </div>
 
-Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje falo mais do que digito: dito o que quero e [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). A máquina passou a aceitar o mundo no formato em que ele acontece.
+Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece.
 
 Isso tem nome — modelos **multimodais** — e levanta uma pergunta antes de qualquer outra.
 
@@ -67,6 +67,14 @@ Se a engrenagem é a mesma, o que você esperaria dos defeitos? Que fossem os me
 
 </div>
 
+## E quando o resumo é a única coisa que alguém lê?
+
+Num planejamento de que participei, a pesquisa de apoio tinha trinta páginas. Quem leu as trinta? Eu. A partir delas saíram uma página de resumo e um áudio de sete minutos — e foi interessante ver qual formato funcionou, e para quem: cada perfil de pessoa preferiu um.
+
+A lição não é sobre a ferramenta. É a que toda pessoa de produto aprende apanhando: meu trabalho não é fazer uma coisa sofisticada e mandar. É ter empatia com o jeito como a mensagem chega do outro lado — e fazer o outro lado querer consumir.
+
+Fica uma pergunta que eu não sei responder bem: quem conferiu os números da página que todo mundo leu?
+
 ## Então o que é diferente do texto?
 
 Três coisas, e as três pedem mais cuidado, não menos:
@@ -96,9 +104,12 @@ Uma pergunta que eu deixo sem resposta de propósito: transcrever tudo é regist
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** a família sabe que a conversa vira áudio, e o áudio vira texto? O que eu ganho ao transcrever tudo — e o que eu passo a guardar que antes não guardava?
-- **Um caminho para responder:** transcrever dez áudios e ouvir os dez, conferindo; anotar onde errou (nomes, números, silêncios); decidir com a equipe o que vira registro e o que é apagado; perguntar antes de gravar.
-- **Peça nova no projeto:** a regra do que pode ser gravado, quem confere e por quanto tempo fica guardado.
+- **Em disputa:** a família sabe que a conversa vira áudio, e o áudio vira texto? O que o time ganha ao transcrever tudo — e o que passa a guardar que antes não guardava?
+- **Caminhos na mesa:**
+  - *Caio:* transcrever tudo e conferir por amostra.
+  - *Bia:* transcrever só o que alguém vai ler de novo; o resto, apagar.
+  - *Lia:* mostrar lado a lado o que foi dito e o que foi resumido — e perguntar antes de gravar.
+- **O que o time fez, por enquanto:** dez áudios transcritos e conferidos um a um; e a regra do que pode ser gravado, quem confere e por quanto tempo fica guardado.
 </div>
 
 <details class="g-aula" markdown="1">

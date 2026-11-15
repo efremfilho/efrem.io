@@ -8,16 +8,16 @@ part: 1
 permalink: /ia/como-a-maquina-aprende/
 interactive: "desenhe pixels e treine um modelo"
 piece: "o que a planilha tem × o que a equipe sabe"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 2
 
-A empresa mandou a lista de "variáveis do modelo": faltas, notas, idade, distância até a escola. Lia leu duas vezes. Faltava o que ela escuta toda semana nas visitas: quem arrumou trabalho, quem ficou em casa cuidando dos irmãos, quem engravidou. Nada disso estava na planilha. Para o modelo, então, existia?
+Caio conseguiu com Iara a planilha dos últimos três anos e, no mesmo dia, pediu a um agente "um modelo que prevê quem vai sair". O agente entregou, com uma taxa de acerto bonita. Bia olhou as colunas: faltas, notas, idade, distância até a escola. "Cadê quem arrumou trabalho? Quem ficou em casa cuidando das crianças menores? A linha de ônibus que cortaram?" Caio deu de ombros: se não está na planilha, não tem como entrar. "Então o seu modelo aprendeu a escola, não a vida." Para o modelo, o que não está na planilha existe?
 </div>
 
-Eu dou aula para gente de administração, direito, políticas públicas, saúde. Ninguém ali precisa saber derivar uma função. Mas todo mundo precisa sair sabendo **o que acontece** quando alguém diz que "treinou um modelo", porque é aí que moram as decisões humanas.
+Quase ninguém que lê este guia vai treinar um modelo: o que a gente mexe, no dia a dia, é na entrada e nas configurações. Mas quem constrói com IA precisa saber **o que acontece** quando alguém diz que "treinou um modelo". É aí que moram as decisões humanas — e é o que explica metade das esquisitices dos próximos capítulos.
 
 ## Aprender, para uma máquina, é como estudar para uma prova?
 
@@ -50,6 +50,8 @@ Quem decide quais características entram? Pessoas — direta ou indiretamente. 
 
 ## O que acontece em cada volta do treino?
 
+Lembra da conta da escola? `3x + 2y = z`: davam o x e o y, você achava o z. Treinar um modelo é a mesma conta ao contrário. Eu mostro uma montanha de exemplos em que x, y e z são conhecidos e peço que a máquina ache o 3 e o 2. O que era conhecido virou desconhecido. Esses números que ela procura são os **pesos** — e um modelo, no fundo, é uma equação gigantesca cheia deles.
+
 Com os dados em números, o treino é um ciclo de quatro passos:
 
 1. **Calcular um palpite.** O modelo multiplica cada característica por um **peso** (o quanto ela importa) e soma um ajuste fixo, o **viés** matemático (*bias*): `palpite = pesos × características + ajuste`. No começo os pesos são chutes.
@@ -67,7 +69,7 @@ Não tem passo 5. Não tem "e então o modelo entende". No experimento abaixo o 
 
 ## E em um modelo de linguagem, o que muda?
 
-Quase nada na ideia, quase tudo na escala. Um modelo como os que estão por trás dos assistentes de conversa tem bilhões de pesos em vez de dois, e a "prova" dele é sempre a mesma: *dado este trecho de texto, qual é o próximo pedaço?* Ele chuta, mede o erro, ajusta, repete — com uma parte enorme do que a humanidade já escreveu.
+Quase nada na ideia, quase tudo na escala. Quando eu fazia iniciação científica, uma rede com quatro camadas e dezesseis neurônios parava o laboratório por um dia inteiro para rodar. Um modelo como os que estão por trás dos assistentes de conversa tem bilhões de pesos, e a "prova" dele é sempre a mesma: *dado este trecho de texto, qual é o próximo pedaço?* Ele chuta, mede o erro, ajusta, repete — com uma parte enorme do que a humanidade já escreveu.
 
 O resultado é um sistema extraordinariamente bom em continuar textos de forma plausível. "Plausível" e "verdadeiro" coincidem na maior parte das vezes. Quando não coincidem, chamamos de alucinação — que não é um defeito esquisito, é a mesma máquina fazendo a mesma coisa.
 
@@ -82,9 +84,12 @@ O resultado é um sistema extraordinariamente bom em continuar textos de forma p
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** quem escolheu essas colunas, e para que elas serviam quando foram criadas? Dá para registrar o motivo de uma ausência sem expor a família?
-- **Um caminho para responder:** pôr lado a lado o que a planilha tem e o que a equipe sabe; para cada item que falta, perguntar se deveria virar dado, quem o coletaria e com que cuidado.
-- **Peça nova no projeto:** duas listas lado a lado: o que a planilha tem e o que a equipe sabe.
+- **Em disputa:** quem escolheu essas colunas, e para que elas serviam quando foram criadas? Dá para registrar o motivo de uma ausência sem expor a família?
+- **Caminhos na mesa:**
+  - *Caio:* usar o que há. É o dado que existe, e dado imperfeito ainda é dado.
+  - *Bia:* anotar o motivo em cada visita. Mais verdadeiro, mais trabalho — e mais um dado sensível guardado.
+  - *Lia:* antes de treinar qualquer coisa, pôr lado a lado o que a planilha tem e o que o time sabe.
+- **O que o time fez, por enquanto:** as duas listas lado a lado. O modelo do Caio foi para a gaveta. Por ora.
 </div>
 
 <details class="g-aula" markdown="1">

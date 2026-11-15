@@ -600,3 +600,17 @@
 .gw-app-btn { padding: .45rem .6rem; border-radius: .6rem; text-align: center; font-weight: 650; border: 1px solid var(--accent-2); color: var(--accent-2); }
 .gw-app-btn.danger { border-color: var(--g-bad); background: var(--g-bad); color: #fff; }
 .gw-app-foot { color: var(--muted); font-size: .9em; text-align: center; }
+
+/* Pilha de camadas (cap. 7): <figure class="g-stack"> */
+.g-stack { margin: 1.6rem auto; max-width: 26rem; font-size: .92rem; }
+.g-stack-apps { display: flex; gap: .4rem; margin-bottom: .35rem; }
+.g-stack-apps span { flex: 1; padding: .3rem .4rem; text-align: center; border: 1px dashed var(--border); border-radius: .6rem; color: var(--muted); font-size: .85em; }
+.g-stack-group { padding: .45rem; border: 1px solid rgba(141, 162, 255, .45); border-radius: .9rem; background: var(--g-tint); }
+.g-stack-group::before { content: attr(data-label); display: block; margin: 0 0 .35rem .25rem; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.g-stack-layer { padding: .55rem .8rem; border: 1px solid var(--border); border-radius: .65rem; background: var(--surface); font-weight: 650; }
+.g-stack-layer small { display: block; font-weight: 400; color: var(--muted); }
+.g-stack-low { font-weight: 500; color: var(--muted); background: transparent; }
+.g-stack-api { width: max-content; margin: .15rem auto; padding: 0 .5rem; font: .7rem var(--g-mono); color: var(--accent-2); }
+.g-stack-api::before { content: "↕ "; }
+.g-stack figcaption { margin-top: .6rem; color: var(--muted); font-size: .88em; text-align: center; }
+@media print { .g-stack { break-inside: avoid; } .g-stack-group { background: #f3f4fb; } }

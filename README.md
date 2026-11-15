@@ -43,7 +43,7 @@ order: 13
 part: 2
 permalink: /ia/meu-capitulo/     # em inglês: /ai/my-chapter/
 interactive: "rótulo curto do experimento"   # opcional, aparece no índice
-piece: "peça que a Lia ganha neste capítulo" # opcional, aparece no índice
+piece: "peça que o time da Lia ganha neste capítulo" # opcional, aparece no índice
 last_modified: 2026-11-13
 # Mídia (tudo opcional — só aparece se preenchido):
 video: "ID_DO_YOUTUBE"           # só o ID, não a URL
@@ -57,7 +57,7 @@ slides: "https://..."
 | O que | Como escrever |
 |---|---|
 | Widget interativo | `<div data-widget="nome"></div>` — nomes: `quiz-ia`, `pixels`, `treino`, `tokens`, `proxima`, `vies`, `privacidade`, `energia`, `fluxo`, `camadas`, `loop`, `contexto`, `busca`, `dado`, `git`, `pedido`, `acesso` |
-| Jornada da Lia | `<div class="g-lia" markdown="1">` (cena, no topo, termina em pergunta), `<div class="g-lia g-lia-missao" markdown="1">` (provocação, antes do experimento) e `<div class="g-lia g-lia-diario" markdown="1">` (diário de bordo: perguntas que ela levou, um caminho para responder, peça nova no projeto) |
+| Jornada da Lia | `<div class="g-lia" markdown="1">` (cena, no topo, termina em pergunta), `<div class="g-lia g-lia-missao" markdown="1">` (provocação, antes do experimento) e `<div class="g-lia g-lia-diario" markdown="1">` (diário de bordo: o que ficou em disputa, os caminhos na mesa — um por personagem, com o custo de cada — e o que o time fez, por enquanto) |
 | Abas a partir do texto | `<div data-widget="tabs" data-title="..." markdown="1">` com um `#### Título` por aba (`data-layout="tree"` para o formato de árvore de arquivos) |
 | Checklist com memória | `<div data-widget="checklist" data-key="chave-unica" data-title="..." markdown="1">` com itens `- [ ] ...` |
 | Caixa de destaque | `<div class="g-box g-key" markdown="1">` (`g-key` = para guardar, `g-warn` = atenção, `g-mine` = como eu faço) |
@@ -70,7 +70,11 @@ slides: "https://..."
 
 **Tom:** socrático e atemporal. Títulos de seção em forma de pergunta, provocações no meio do texto e um caminho para responder no lugar de respostas prontas. No texto não entram nomes de produtos, datas nem números muito específicos: o corpo fala em ordens de grandeza e cita por autor e ano; o valor exato e o nome do caso ficam nas "Notas" do bloco de referências.
 
-**Linguagem:** o texto evita o masculino genérico. Prefira "estudante", "a pessoa", "a equipe", "quem usa". A personagem Lia é mulher e é narrada em terceira pessoa.
+**Voz:** primeira pessoa do autor, direta, meio irônica, com casos próprios no lugar de regra. O público é quem quer mudar alguma coisa construindo com tecnologia.
+
+**Jornada da Lia:** contada como um caso, no espírito de *The Phoenix Project* e dos antigos estudos de caso: prazo, conflito e mais de um caminho defensável, sem gabarito. Lia, Bia e Caio constroem (discutem a estratégia, dividem o trabalho, cada pessoa implementa com os seus agentes e uma revisa o que a outra fez); Iara coordena a parceria pela secretaria de educação e Aída é da área de tecnologia. As cenas mostram pedidos a agentes e a leitura do que voltou.
+
+**Linguagem:** o texto evita o masculino genérico. Prefira "estudante", "a pessoa", "o time", "quem usa". As personagens são narradas em terceira pessoa.
 
 Os textos dos widgets ficam em `assets/js/guia.js`, em PT e EN lado a lado; o idioma é escolhido pelo `lang` da página. Para criar um widget novo, adicione uma função em `W` nesse arquivo.
 

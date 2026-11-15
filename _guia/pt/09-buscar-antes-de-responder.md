@@ -8,13 +8,13 @@ part: 2
 permalink: /ia/buscar-antes-de-responder/
 interactive: "que trechos você levaria?"
 piece: "as dez perguntas mais repetidas, com a página que responde cada uma"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 9
 
-O protocolo da rede tem trezentas páginas, três versões e um anexo que só existe em papel. Lia já aprendeu que não adianta colar tudo na conversa. Mas a equipe pergunta as mesmas coisas toda semana — quantas faltas, quem liga, quem visita — e cada pessoa responde de um jeito. Se nem a equipe concorda sobre o que o protocolo diz, o que um assistente vai dizer?
+Iara ligou: uma família tinha sido visitada duas vezes na mesma semana, por duas pessoas, cada uma seguindo "o protocolo". O protocolo da rede tem trezentas páginas, três versões e um anexo que só existe em papel. Caio já tinha o plano: jogar tudo numa base e deixar um assistente responder às dúvidas de quem visita. Bia quis saber qual das três versões. Ninguém sabia. Se nem o time concorda sobre o que o protocolo diz, o que um assistente vai dizer?
 </div>
 
 Os dois capítulos anteriores deixaram um problema montado. O [capítulo 3](/ia/por-dentro-do-modelo/) mostrou que o modelo completa com o que é plausível quando não tem o fato. O [capítulo 8](/ia/contexto/) mostrou que despejar todos os documentos na janela piora a resposta. Sobra a pergunta: como entregar só o pedaço certo, na hora em que ele é necessário?
@@ -69,6 +69,12 @@ Repare que só a primeira pergunta é técnica. As outras são sobre a organiza�
 
 A lógica é a mesma da busca — trazer para o contexto o que o modelo não tem —, com uma diferença importante: uma ferramenta pode *fazer* coisas. As perguntas sobre isso ficam para o [capítulo 15](/ia/agentes-com-redea/).
 
+## Funciona com a minha própria estante?
+
+Quando preparei um curso para pessoas de produto, juntei os links de todas as minhas apresentações e das listas que mantenho — umas duzentas fontes — num caderno que só responde a partir delas e mostra de qual arquivo e de qual trecho tirou cada coisa. Funciona melhor do que eu esperava.
+
+E quebra exatamente onde este capítulo diz que quebra. Algumas fontes estavam vazias, porque a página tinha mudado. E, quando alguém da turma perguntou sobre um assunto que não estava na base, ele respondeu assim mesmo, citando um trecho que não tinha nada a ver.
+
 ## Preciso mesmo disso?
 
 Talvez não, e essa é uma pergunta honesta para fazer antes de montar qualquer coisa. Se o documento é curto e cabe folgado na janela, cole o documento. Se a dúvida é sempre a mesma, escreva a resposta uma vez. Eu costumo dizer que [antes dessas técnicas vem o básico](/blog/pt/before-rag-and-mcp-learn-the-basics/): escolher o modelo, pedir bem, dar contexto. Muita gente monta a estante antes de saber que pergunta quer responder.
@@ -94,9 +100,12 @@ Se você consegue responder às cinco, a parte técnica é a menor. Se não cons
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** qual versão do protocolo é a que vale, e quem decide isso? O que é pior — o sistema não achar, ou achar a página errada?
-- **Um caminho para responder:** começar pelas dez perguntas que a equipe mais repete; para cada uma, localizar à mão a página que responde; só então montar a base; testar com perguntas cuja resposta ela conhece, e com uma que não tem resposta.
-- **Peça nova no projeto:** as dez perguntas mais repetidas, cada uma com a página que a responde.
+- **Em disputa:** qual versão do protocolo vale, e quem decide isso? O que é pior: o sistema não achar, ou achar a página errada?
+- **Caminhos na mesa:**
+  - *Caio:* indexar tudo e corrigir conforme errar.
+  - *Bia:* antes de qualquer base, alguém da secretaria diz qual versão vale.
+  - *Lia:* começar pelas dez perguntas que o time mais repete e achar, à mão, a página que responde cada uma.
+- **O que o time fez, por enquanto:** as dez perguntas, cada uma com a sua página; e um pedido formal à Iara: qual versão vale?
 </div>
 
 <details class="g-aula" markdown="1">

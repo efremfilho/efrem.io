@@ -8,13 +8,13 @@ part: 3
 permalink: /ia/repositorio-e-memoria/
 interactive: "linha do tempo de branches + anatomia do repositório"
 piece: "o repositório com as decisões registradas"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 11
 
-A colega que montou a primeira planilha saiu da organização em março. Com ela foi embora a resposta para a pergunta que a secretaria fez em abril: por que cinco faltas? Lia procurou em e-mail, em grupo de mensagens, em ata. Não achou. A decisão existia; a memória, não. Onde uma organização guarda os seus porquês?
+Segunda-feira, a contagem voltou a errar. Caio tinha "melhorado" o script no fim de semana; Bia tinha mexido na mesma parte na sexta. Uma versão engoliu a outra, e ninguém sabia dizer qual estava no ar. No meio da discussão, Iara ligou para perguntar por que cinco faltas — e a resposta estava na cabeça de alguém que saiu da organização em março. O time tinha código em três computadores e os porquês em nenhum. Onde um time guarda o que decidiu? E quem mexeu em quê?
 </div>
 
 A primeira coisa que eu recomendo para quem começa a construir qualquer coisa com IA — produto, automação, até um agente pessoal — não é uma ferramenta de IA. É criar um repositório.
@@ -48,7 +48,9 @@ O vocabulário mínimo:
 
 **Porque o agente cuida da burocracia.** Eu não crio branches à mão. Em um dos projetos em que trabalho há mais de mil, todas criadas e gerenciadas por agentes. Meu papel é dizer o que eu quero e revisar o que chega no pull request.
 
-**Porque funciona em time.** Pessoas e agentes trabalhando no mesmo projeto precisam de um lugar em que ninguém pisa no trabalho de ninguém e toda mudança passa por alguém antes de valer.
+**Porque funciona em time.** Sozinho, quase tudo funciona. Os problemas de sempre do software aparecem quando entra a segunda pessoa: quem mudou o quê, qual versão vale, o que fazer quando duas mudanças brigam. Pessoas e agentes trabalhando no mesmo projeto precisam de um lugar em que ninguém pisa no trabalho de ninguém e toda mudança passa por alguém antes de valer.
+
+No meu trabalho, hoje, é assim: a gente discute a estratégia e divide. Uma funcionalidade fica comigo, outra com um colega. Cada um implementa com os seus agentes. Eu reviso a dele; ele revisa a minha.
 
 **Porque é a sua memória.** Este é o ponto menos óbvio e mais valioso.
 
@@ -100,7 +102,7 @@ Quem escreve esses documentos? Na maior parte das vezes, a própria IA, a meu pe
 
 ## E se a ferramenta da moda mudar amanhã?
 
-Como o conhecimento mora em arquivos de texto simples, em um repositório que é meu, **eu posso trocar de IA quando quiser**. Uso três fornecedores diferentes de propósito. Foi dolorido no começo, mas hoje qualquer um deles abre o projeto, lê os mesmos arquivos e continua o trabalho.
+Como o conhecimento mora em arquivos de texto simples, em um repositório que é meu, **eu posso trocar de IA quando quiser**. Eu testo várias, e mudar me custa algumas horas de estranhamento: qualquer uma abre o projeto, lê os mesmos arquivos e continua o trabalho. Isso não quer dizer viver trocando — prefiro ser muito bom em uma a ser mediano em todas. A liberdade está em poder sair, não em sair toda semana.
 
 Para mim, os modelos viraram *commodity* — [eu já dizia isso há um tempo](/blog/pt/agentkit-wont-kill-the-ipaas/), comparando com o que aconteceu com a nuvem: a diferença entre os melhores é mais de gosto do que de capacidade. O que não é commodity é o contexto do seu projeto — e esse não deveria morar dentro da conta de um fornecedor, nem dentro de um framework de agente específico. Se a ferramenta da moda mudar amanhã, você conecta a próxima no mesmo repositório.
 
@@ -121,9 +123,12 @@ Vale para gente também. Entrou uma pessoa nova no time? Libera o acesso ao repo
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** o que na organização só existe na cabeça de uma pessoa? Se eu sair amanhã, o que quem chegar precisa encontrar escrito?
-- **Um caminho para responder:** escolher uma decisão antiga e tentar reconstruir o porquê; registrar a próxima decisão na hora, com data e motivo; combinar com a equipe onde isso mora.
-- **Peça nova no projeto:** o repositório, com README, AGENTS.md e a pasta de decisões.
+- **Em disputa:** o que hoje só existe na cabeça de uma pessoa? Quem pode mudar o que está no ar, e quem olha antes?
+- **Caminhos na mesa:**
+  - *Caio:* cada pessoa na sua cópia, junta tudo no fim. Ninguém espera ninguém — e o fim é uma briga.
+  - *Bia:* uma pessoa só mexe no que está no ar.
+  - *Lia:* um repositório para tudo; cada pessoa pega um pedaço, e nada entra sem a revisão de outra.
+- **O que o time fez, por enquanto:** o repositório, com as instruções para os agentes e a pasta de decisões. A primeira decisão registrada foi "por que cinco faltas": com data, e com um honesto "não sabemos; herdamos".
 </div>
 
 <details class="g-aula" markdown="1">
