@@ -17,7 +17,7 @@ last_modified: 2026-11-15
 Bia grava um áudio depois de cada visita. São dezenas por semana, e ninguém ouve de novo. Caio pediu a um agente que transcrevesse tudo e resumisse por família. Ficou ótimo — até Bia ler o resumo de uma visita que ela mesma tinha feito. Havia ali uma frase da mãe que a mãe nunca disse. "Você conferiu?" "São quarenta áudios, Bia." Metade do que o time sabe está em voz e em foto de papel. Dá para ler tudo isso. E quem garante o que foi lido?
 </div>
 
-Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece.
+Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece. O uso que mais me serve é dos mais simples: compartilho a tela com um assistente de voz e peço que me guie numa configuração que eu não domino. "Clique no menu da esquerda. Está vendo o botão à direita?" É um suporte técnico que enxerga o que eu estou enxergando.
 
 Isso tem nome — modelos **multimodais** — e levanta uma pergunta antes de qualquer outra.
 
@@ -37,7 +37,7 @@ Se a engrenagem é a mesma, o que você esperaria dos defeitos? Que fossem os me
 
 **O que se ganha.** O relato de uma visita, a reunião, a aula: tudo vira texto pesquisável, que pode ser resumido e comparado.
 
-**Onde costuma errar.** Nomes próprios, números, sotaques, falas sobrepostas. E um erro mais estranho: trechos de silêncio ou ruído podem virar frases inteiras que ninguém disse. [Um estudo](https://arxiv.org/abs/2402.08021) com um sistema de transcrição muito usado encontrou frases inventadas em cerca de 1% das gravações, mais vezes em falas com pausas longas. Eu mesmo já recebi uma transcrição que terminava com um [crédito de legendagem que eu nunca ditei](/blog/pt/a-speech-to-text-slip/).
+**Onde costuma errar.** Nomes próprios, números, sotaques, falas sobrepostas. E um erro mais estranho: trechos de silêncio ou ruído podem virar frases inteiras que ninguém disse. [Um estudo](https://arxiv.org/abs/2402.08021) com um sistema de transcrição muito usado encontrou frases inventadas em cerca de 1% das gravações, mais vezes em falas com pausas longas. Eu mesmo já recebi uma transcrição que terminava com um [crédito de legendagem que eu nunca ditei](/blog/pt/a-speech-to-text-slip/). E, transcrevendo oito horas de aula com um modelo aberto, vi a transcrição empacar depois de umas duas horas e repetir a mesma frase sem parar. Perdi dois dias tentando consertar na unha. A saída levou um minuto: tirar o áudio do vídeo, baixar a qualidade e subir numa ferramenta pronta. Complicar demais também é um jeito de errar.
 
 **A pergunta.** Quem ouve o áudio original antes de a transcrição virar registro oficial?
 
@@ -66,6 +66,12 @@ Se a engrenagem é a mesma, o que você esperaria dos defeitos? Que fossem os me
 **A pergunta.** De quem é a voz e o rosto — e essa pessoa concordou?
 
 </div>
+
+## Letra de mão ainda é o ponto fraco?
+
+Menos do que eu escrevi ali em cima. Um amigo professor, que trabalha com registros de cartório de mais de um século, me disse que estava tranquilo: os arquivos que ele lê, nenhuma IA leria. Apostamos. O veredito dele, olhando o resultado: está lendo melhor do que estudantes de doutorado.
+
+O detalhe que me interessa é outro. Nas páginas queimadas ou rasgadas, a ferramenta *deduz* o que estaria escrito ali. Ela lê muito bem — e completa com o plausível, na mesma página. Como separar uma coisa da outra?
 
 ## E quando o resumo é a única coisa que alguém lê?
 

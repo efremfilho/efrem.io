@@ -56,13 +56,17 @@ Tem uma decisão técnica que muda muito essa conta, e ela aparece cedo em qualq
 
 **Engenharia de contexto** é orientar: você não toca nos pesos. Só organiza o que o modelo vai ler na hora — instruções, exemplos, documentos. Custa uma fração, é reversível e pode ser refeito em minutos.
 
-Eu já treinei modelo assim, anos atrás. Hoje, para a esmagadora maioria dos casos que vejo em empresa e em sala de aula, contexto bem feito resolve. Gosto da frase que citei em [Ainda vale fazer fine-tuning?](/blog/pt/is-fine-tuning-still-worth-it/): *fine-tuning não é injetar conhecimento, é sobrescrever*. O [capítulo 8](/ia/contexto/) inteiro é sobre a alternativa.
+Eu já fiz isso, anos atrás, quando os modelos eram bem mais fracos. Um time classificava à mão dezenas de milhares de respostas de pesquisa de satisfação por mês, em quarenta categorias. Peguei as vinte mil que eu tinha, retreinei um modelo — e ele ficou pior do que o original. Testei, testei, testei. Só então fui perguntar ao time: a classificação tinha mudado seis meses antes, e eu tinha despejado lá mais de dois anos de histórico. Tirei o dado velho e o acerto foi para a casa dos 80%, 90%. Entrou lixo, sai lixo.
+
+Hoje eu nem treinaria. Para a esmagadora maioria dos casos que vejo em empresa e em sala de aula, contexto bem feito resolve. Gosto da frase que citei em [Ainda vale fazer fine-tuning?](/blog/pt/is-fine-tuning-still-worth-it/): *fine-tuning não é injetar conhecimento, é sobrescrever*. O [capítulo 8](/ia/contexto/) inteiro é sobre a alternativa.
 
 ## Começo pelo menor modelo ou pelo maior?
 
 A regra que mais se ouve é "use o menor modelo que resolve". Eu faço o caminho inverso — e não foi fácil para a minha cabeça, ecologicamente falando. Começo pelo mais capaz. Entre a pessoa mais inteligente que eu conheço e alguém no primeiro dia de estágio, eu sei para quem mando o trabalho que importa. Quando a tarefa está provada, testo um modelo mais barato. Resolveu? Troco.
 
 Dois motivos. Menor não quer dizer mais barato: um modelo pequeno que erra, refaz e precisa de mais voltas pode gastar mais do que um grande que acerta de primeira. Essa conta tem que ser feita caso a caso. E há um botão que mexe muito no consumo e que pouca gente olha: quanto eu deixo o modelo raciocinar. Tenho baixado esse esforço, porque os modelos precisam pensar cada vez menos para chegar ao mesmo lugar.
+
+Já mostrei isso em aula, com a mesma pergunta feita três vezes. Do jeito mais simples, algumas centenas de tokens. Deixando buscar na web, alguns milhares. Com o raciocínio e o detalhe no máximo, mais de oitenta mil, e nove minutos de espera. Não mudei a pergunta: só mexi em botão. E a primeira resposta já me servia.
 
 Não é a única resposta defensável. Quem roda a mesma tarefa milhares de vezes por dia faz outra conta, e quem paga a água do data center, outra ainda.
 

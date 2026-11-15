@@ -57,7 +57,7 @@ Não exatamente. Depois de tudo isso, o que o modelo produz é uma lista: para c
 
 O controle que você mexeu chama-se **temperatura**. Baixa, o sorteio quase sempre cai na opção mais provável; alta, as improváveis ganham vez. Não existe um valor "certo": existe a pergunta *esta tarefa pede variedade ou repetição?*
 
-Agora volte à cena da Lia. O assistente não consultou nada sobre aquela estudante. Ele continuou o texto com o que costuma vir depois de perguntas parecidas. Na maior parte das vezes, o que costuma vir e o que é verdade coincidem. Quando não coincidem, o nome que se dá é alucinação — mas repare que a máquina fez exatamente a mesma coisa nos dois casos.
+Agora volte à cena da Lia. O assistente não consultou nada sobre aquela estudante. Ele continuou o texto com o que costuma vir depois de perguntas parecidas. Eu costumo dizer que ele não fala a verdade: fala a próxima palavra que você quer ouvir. Na maior parte das vezes, o que costuma vir e o que é verdade coincidem. Quando não coincidem, o nome que se dá é alucinação — mas repare que a máquina fez exatamente a mesma coisa nos dois casos.
 
 Os modelos erram cada vez menos desse jeito. Eu já não lembro a última vez que o que eu uso inventou alguma coisa comigo. O mecanismo, porém, é o mesmo de sempre — e a pergunta sobre a estudante continua sem ter de onde tirar resposta.
 
