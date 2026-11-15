@@ -1,0 +1,9 @@
+{
+  "name": "efrem-io-guia-ferramentas",
+  "private": true,
+  "description": "Testes dos experimentos interativos e geração do PDF do guia IA sem mágica",
+  "dependencies": {
+    "jsdom": "^31.0.1",
+    "playwright": "^1.65.0"
+  }
+}

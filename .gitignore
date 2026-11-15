@@ -7,3 +7,6 @@ vendor/
 
 # Material de trabalho local (transcrições de aula, rascunhos): nunca vai para o repositório
 temp/
+
+# Dependências das ferramentas do guia
+_tools/guia/node_modules/
