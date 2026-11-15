@@ -56,13 +56,17 @@ There's one technical decision that changes this math a lot, and it comes up ear
 
 **Context engineering** is guiding: you don't touch the weights. You just organize what the model will read in the moment: instructions, examples, documents. It costs a fraction, it's reversible, and it can be redone in minutes.
 
-I've trained models that way, years ago. Today, for the overwhelming majority of cases I see in companies and classrooms, well-built context does the job. I like the line I quoted in [Is fine-tuning still worth it?](/blog/en/is-fine-tuning-still-worth-it/): *fine-tuning isn't injecting knowledge, it's overwriting*. All of [chapter 8](/ai/context/) is about the alternative.
+I did this once, years ago, when models were much weaker. A team was hand-classifying tens of thousands of satisfaction-survey answers a month, into forty categories. I took the twenty thousand I had, retrained a model — and it came out worse than the original. I tested, tested, tested. Only then did I go ask the team: the classification had changed six months earlier, and I had dumped in more than two years of history. I took out the old data and accuracy went up to around 80%, 90%. Garbage in, garbage out.
+
+Today I wouldn't even train. For the overwhelming majority of cases I see in companies and classrooms, well-built context does the job. I like the line I quoted in [Is fine-tuning still worth it?](/blog/en/is-fine-tuning-still-worth-it/): *fine-tuning isn't injecting knowledge, it's overwriting*. All of [chapter 8](/ai/context/) is about the alternative.
 
 ## Do I start with the smallest model or the biggest?
 
 The rule you hear most is "use the smallest model that does the job." I go the other way — and, ecologically speaking, that wasn't easy for me to make peace with. I start with the most capable one. Between the smartest person I know and someone on the first day of an internship, I know who gets the work that matters. Once the task is proven, I test a cheaper model. Did it do the job? I switch.
 
 Two reasons. Smaller doesn't mean cheaper: a small model that gets it wrong, redoes it, and needs more rounds can use more than a big one that gets it right the first time. That math has to be done case by case. And there is a dial that moves consumption a lot and that few people look at: how much I let the model reason. I've been turning that effort down, because models need to think less and less to get to the same place.
+
+I've shown this in class, with the same question asked three times. The simplest way, a few hundred tokens. Letting it search the web, a few thousand. With reasoning and detail at the maximum, more than eighty thousand, and a nine-minute wait. I didn't change the question: I only turned dials. And the first answer was already good enough for me.
 
 It's not the only defensible answer. Someone who runs the same task thousands of times a day does different math, and whoever pays for the data center's water, different math again.
 

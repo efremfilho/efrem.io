@@ -19,7 +19,7 @@ Lia, Bia, and Caio work at an organization that does outreach: going after teena
 
 One convention before we start: in this guide, when I write "AI" with no adjective, I mean generative AI — the models that produce text, images, code. When it's something else, like the machine learning in the next chapter, I'll say so.
 
-And a warning about the word. I've watched, from the inside, an automation that had been around for ages turn into an "agents team" overnight. Extra value delivered: zero. Effect on the market: huge. So, before we talk about tools, it pays to distrust the label — and sentences like "the AI decided," "the AI wanted," "the AI understood." Anyone who thinks the machine *wanted* something stops looking for the person who made the choice.
+And a warning about the word. I've watched, from the inside, an automation that had been around for ages turn into an "agents team" overnight. Extra value delivered: zero. Effect on the market: huge. So, before we talk about tools, it pays to distrust the label — and sentences like "the AI decided," "the AI wanted," "the AI understood." Anyone who thinks the machine *wanted* something stops looking for the person who made the choice. The opposite mistake bothers me too: nobody leaves a class of mine saying AI is dumb. It's a tool, and we have to know how to use it.
 
 ## Can you define AI in two words?
 

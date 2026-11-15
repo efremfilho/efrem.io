@@ -56,6 +56,7 @@ The search in the experiment is simple on purpose: it counts words in common. Re
 Instead of a list of flaws, here are questions to ask any system of this kind — including the one you're going to build:
 
 - **Did the cut land in the wrong place?** A rule and its exception, in different excerpts, become two "truths."
+- **Is there a table in the middle?** Retrieval by excerpts was designed for running text. A table with two header rows and merged cells reaches the model as a soup of numbers.
 - **Does the question use the document's words?** The person asking says "disappeared from school"; the protocol says "irregular attendance."
 - **Which version is in the base?** A revoked document, if it's in there, will be cited with the same confidence.
 - **And when there is no answer?** Does the system know how to say "I couldn't find it"?

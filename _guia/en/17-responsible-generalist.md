@@ -55,6 +55,8 @@ Lakhani's research with consultants gives names to the ways people work with AI.
 
 He's tough on people who fall into that. If all you are is a meat interface to the silicon, what's your value? He says he has fired people who justified poor work with "the AI gave me that." And he has a personal rule worth copying: **never take the first answer.** Ask for alternatives, make the model argue against its own proposal, look for the red flags. The first answer is the average answer; the good one shows up after someone with judgment pushes.
 
+Pushing works both ways. I took a few bets of mine to a deep-research tool, and it rejected one of them. Like a good researcher, I didn't like the answer and changed the question, to see if I'd get the one I wanted. I didn't. I changed it again. I didn't. Apparently, it was right.
+
 My request is always the same: [don't be a proxy from one AI to another AI](/blog/en/generation-and-review-the-two-cycles-of-genai/). Working with AI has two cycles, generating and reviewing, and you can learn in both. I understand a lot more about code today because of reviewing, not generating.
 
 Anyone who pictures using AI as pressing a button and going for coffee is describing the way of using it that goes wrong. And it's that person, not the attentive generalist, who becomes easy to replace.
@@ -72,6 +74,18 @@ What changed, in practice:
 He sums up the personal change honestly: for many years, it was enough to put a case in front of the class; now the classroom has a lot of "doing."
 
 That's the invitation of this guide, and it's what I try to practice: in my Information Systems classes, students ship real products to graduate. **Swap the report about the case for the solution to the case.** Whoever builds finds out where the tool fails, what needs checking, and what they didn't know they didn't know — three things no report teaches.
+
+Not that I've got this right. I still fail to make every student understand what was generated: most copy from one side, paste on the other, and are happy if it worked. Anyone who thinks the problem is new has forgotten the "I'll write your thesis" flyers on the university notice board. The problem was never the tool. It's not thinking.
+
+I've also been wrong in the other direction. A student handed in an exercise using a feature I hadn't taught, and I concluded it was copied. In the next class I asked: explain it to me. She explained it.
+
+When someone asks me to explain a piece of code, I send it back: throw it at the AI, ask for the explanation, and then tell me whether you understood. I've been told it looks like I don't want to teach. My goal as a teacher is to leave the person autonomous, not to repeat what they can find anywhere. I stay to correct the course.
+
+None of this was born with AI. Back in 2014 I was already assigning [a piece of work that had to be done with plagiarism](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspired by Kenneth Goldsmith's uncreative writing (2011): assemble an intelligent, coherent text using only passages from other texts. At least five sources, no long blocks from a single one, each source in its own color, the student's own words in black. Next to each reference, two answers: why did you use this source, and why is it reliable? In the following class, each member of the group answered questions about the work on their own. Today the question is the same, with a different object: why did you use AI here?
+
+To feel it firsthand, I forced myself to write an entire text with AI. [Fifteen minutes of prompting, five hours of editing](/blog/en/15-minutes-of-prompting-5-hours-of-editing/). Several of the cited sources did not exist; I looked, couldn't find them, and cut the passage. The work didn't shrink. It unlocked something I've always been bad at, which is writing. And in the end, it wasn't the AI that generated it: I was the one who delivered it.
+
+And teachers aren't immune. In a training session for colleagues, I set an exercise. The group pasted the instruction the tool generated, without reading it, and was surprised by the format of the answer. Someone summed it up better than I could: we did exactly what we criticize students for.
 
 I only keep my reservation about the name. Lakhani calls it *vibe coding*. I'd call it **building by reading**.
 
@@ -169,6 +183,17 @@ And one request, from one builder to another: with so much helping you build, st
 
 Inspired by business schools that swapped the exam for building: instead of a written paper *about* a case, each group delivers a **working solution** to a real problem (ideally from the organization of someone in the class). The deliverable has three parts: (1) the solution running, demonstrated live; (2) the repository with `README.md`, `AGENTS.md` and the decisions on record; (3) one page, written by the group and not by the AI, answering: what did we check, and how? Where did the tool get it wrong? What should not be automated here? Each person in the group should be able to explain, out loud, any of the three parts.
 
+#### Activity (homework, with follow-up in class) — writing with other people's text
+
+This is the assignment I used to give in 2014, before any assistant existed; the [original instructions](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), in Portuguese, are still online. Each group assembles an intelligent, coherent text using passages from other texts. The rules:
+
+- at least five sources;
+- no long blocks from the same source: the texts have to talk to each other, preferably inside the same paragraph;
+- each source in its own color; whatever is the group's own, in black;
+- next to each reference, two answers: why it was used (what was interesting about it) and why it is reliable.
+
+In the following class, ten to fifteen minutes of questions about the work, answered individually by each member. One possible adaptation for today: whatever came from AI is also a source, and also gets its own color.
+
 #### Closing activity (30 min) — commitment letter
 
 Each person writes three personal commitments for using AI, one sentence each: one about **verifying**, one about **data**, and one about **responsibility**. Read them out loud. The group picks the five strongest and puts together the "class AI use policy" on one page.
@@ -187,10 +212,13 @@ Each person writes three personal commitments for using AI, one sentence each: o
 #### References
 
 - Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). *Navigating the jagged technological frontier: Field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality* (Working Paper No. 24-013). Harvard Business School. <https://www.hbs.edu/faculty/Pages/item.aspx?num=64700>
+- Goldsmith, K. (2011). *Uncreative writing: Managing language in the digital age*. Columbia University Press.
 - Lakhani, K. R. (2026, October 30). *Harvard AI professor: The people most at risk from AI aren't who you think* [Video interview]. Silicon Valley Girl. <https://www.youtube.com/watch?v=vFOnDsy58NU>
+- Maranhão Filho, É. (2014). *Trabalhos com plágio* [Assignment instructions, in Portuguese]. <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>
 - Maranhão Filho, É. (2025, August 5). *The best hacks for a product person using a coding agent*. efrem.io. <https://efrem.io/blog/en/the-best-hacks-for-a-product-person-using-a-coding-agent/>
 - Maranhão Filho, É. (2025, February 12). *Becoming a 'full-service' person in tech*. efrem.io. <https://efrem.io/blog/en/becoming-a-full-service-person-in-tech/>
 - Maranhão Filho, É. (2025, June 20). *Generation and review: the two cycles of GenAI*. efrem.io. <https://efrem.io/blog/en/generation-and-review-the-two-cycles-of-genai/>
+- Maranhão Filho, É. (2025, September 23). *15 minutes of prompting, 5 hours of editing*. efrem.io. <https://efrem.io/blog/en/15-minutes-of-prompting-5-hours-of-editing/>
 - Maranhão Filho, É. (2026, July 13). *How do you teach people to use AI critically? A call for help*. efrem.io. <https://efrem.io/blog/en/how-to-teach-critical-use-of-ai/>
 - Maranhão Filho, É. (2026, March 2). *I want to be in the last 1% to be replaced*. efrem.io. <https://efrem.io/blog/en/i-want-to-be-in-the-last-1-percent-to-be-replaced/>
 - Maranhão Filho, É. (2026, November 13). *As the cost of expertise drops, what counts is the will to build*. efrem.io. <https://efrem.io/blog/en/the-cost-of-expertise-and-the-will-to-build/>

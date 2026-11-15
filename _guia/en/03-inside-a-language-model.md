@@ -57,7 +57,7 @@ Not exactly. After all that, what the model produces is a list: for each possibl
 
 The control you just moved is called **temperature**. Low, the draw almost always lands on the most likely option; high, the unlikely ones get a turn. There is no "right" value: there is the question *does this task call for variety or repetition?*
 
-Now go back to Lia's scene. The assistant didn't look up anything about that student. It continued the text with what usually comes after similar questions. Most of the time, what usually comes next and what is true coincide. When they don't, the name people give it is hallucination — but notice that the machine did exactly the same thing in both cases.
+Now go back to Lia's scene. The assistant didn't look up anything about that student. It continued the text with what usually comes after similar questions. I like to say it doesn't tell the truth: it tells you the next word you want to hear. Most of the time, what usually comes next and what is true coincide. When they don't, the name people give it is hallucination — but notice that the machine did exactly the same thing in both cases.
 
 Models get it wrong this way less and less. I can't remember the last time the one I use made something up on me. The mechanism, though, is the same as ever — and the question about the student still has nowhere to pull an answer from.
 
