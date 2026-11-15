@@ -8,13 +8,13 @@ part: 1
 permalink: /ia/vies/
 interactive: "monte o treino e veja o viés aparecer"
 piece: "regra nº 1: nenhum rótulo de \"risco\" em estudante"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 4
 
-Pesquisando sistemas parecidos, Lia leu sobre um que classificava estudantes pelo "risco" de não se formar. Uma avaliação mostrou que ele errava muito mais com um grupo do que com outro, sempre para o mesmo lado. Ela pensou nas escolas da periferia da sua rede. Quem carregaria o rótulo de "alto risco" desde o primeiro dia de aula?
+Caio tirou o modelo da gaveta, "só para ver", e rodou na lista deste ano. Quase todo o turno da noite das escolas da periferia saiu marcado como "alto risco". Bia viu a tela por cima do ombro dele. "A minha turma do noturno, toda vermelha. Antes da primeira falta." Caio não se abalou: é o que os dados dizem. "É o que disseram das irmãs e dos irmãos mais velhos." Lia já tinha lido sobre um sistema assim, que errava muito mais com um grupo do que com outro, sempre para o mesmo lado. Quem carregaria o rótulo desde o primeiro dia de aula?
 </div>
 
 Todo mundo enxerga a realidade por uma fresta: a cultura em que cresceu, onde mora, o que viveu. Isso não é defeito de caráter, é condição humana — e tem nome: **viés humano**. O problema começa quando essa fresta vira dado de treino.
@@ -34,12 +34,18 @@ Ninguém programou esse erro. Ele saiu de uma sequência de escolhas inocentes:
 3. **Viés algorítmico** — o modelo associou cor à categoria e erra sistematicamente com quem ficou de fora.
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** monte o treino no experimento até acertar os quatro. Depois responda: no sistema que ofereceram à Lia, o que seria a "cor do pelo" — a característica fácil, que parece explicar tudo e não explica?
+**Provocação:** monte o treino no experimento até acertar os quatro. Depois responda: no modelo do Caio, o que seria a "cor do pelo" — a característica fácil, que parece explicar tudo e não explica?
 </div>
 
 <div data-widget="vies"></div>
 
 Vale brincar com o experimento até perceber três coisas: dado enviesado gera modelo enviesado; característica boa **não** conserta dado ruim; e dado diverso, sozinho, também não resolve se a característica escolhida não faz sentido.
+
+## Precisa de modelo para isso acontecer?
+
+Não. O samoieda aparece em qualquer coleta. Um grupo de estudantes de uma turma minha queria validar um aplicativo de nutrição. Gente disciplinada, de academia. Mandaram o formulário para as amizades — do mesmo perfil — e para a família. Umas cem pessoas disseram que tinham interesse. Usaram três ou quatro, e só quando alguém lembrava.
+
+Tem problema fazer pesquisa enviesada? Não, desde que você saiba que está enviesada. O problema é esquecer disso na hora de concluir — ou de treinar alguma coisa em cima.
 
 ## E quando o cachorro é uma pessoa?
 
@@ -69,9 +75,12 @@ Eliminar viés não existe — todo conjunto de dados é um recorte. O que exist
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** um alerta errado custa o quê, e para quem? E um alerta que não veio? Dá para ajudar sem rotular?
-- **Um caminho para responder:** listar quem aparece pouco nos dados da rede; comparar, escola por escola, quantos alertas viraram ajuda de verdade; decidir com a equipe se o sistema vai mostrar pessoas ou situações.
-- **Peça nova no projeto:** a regra nº 1 do projeto, escrita pela equipe: nenhum rótulo de "risco" em estudante.
+- **Em disputa:** um alerta errado custa o quê, e para quem? E um alerta que não veio? Dá para ajudar sem rotular?
+- **Caminhos na mesa:**
+  - *Caio:* manter a pontuação e esconder a palavra "risco". O número ajuda a decidir quem visitar primeiro.
+  - *Bia:* nenhuma pontuação por pessoa. Nunca.
+  - *Lia:* mostrar situações (cinco faltas seguidas), não pessoas.
+- **O que o time fez, por enquanto:** a regra nº 1, escrita a seis mãos e com o Caio ainda resmungando: nenhum rótulo de "risco" em estudante.
 </div>
 
 <details class="g-aula" markdown="1">

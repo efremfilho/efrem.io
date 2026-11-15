@@ -7,14 +7,14 @@ order: 6
 part: 1
 permalink: /ia/custo-fisico/
 interactive: "calculadora de energia"
-piece: "regra: o menor modelo que resolve"
-last_modified: 2026-11-13
+piece: "a conta do mês, com dono: sobe para descobrir, desce para rodar"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 6
 
-Alguém da equipe teve uma ideia animada: gerar com IA um vídeo personalizado para cada família, com o nome de cada estudante. Seiscentas famílias. Lia gostou da ideia e ficou com uma dúvida que não sabia nem formular direito: isso tem um custo que ninguém ali estava vendo?
+Os créditos do mês acabaram no dia nove. Caio tinha deixado os agentes dele no modelo mais caro, com o esforço no máximo, "para garantir". Na mesma semana, Bia apareceu com uma ideia animada: um vídeo personalizado para cada família, com o nome de cada estudante. Seiscentas famílias. Lia perguntou quanto custava. Ninguém sabia — nem em dinheiro, nem no resto. Caio achava que erro sai mais caro que crédito. Bia, que para contar falta qualquer modelo serve. Existe um custo aí que ninguém do time está vendo? E quem decide quando vale?
 </div>
 
 "Nuvem" é uma das melhores jogadas de marketing da história da tecnologia. Parece leve, limpa e sem endereço. Na prática, é um galpão do tamanho de vários campos de futebol, cheio de máquinas que esquentam, ligado na rede elétrica e, muitas vezes, em um rio.
@@ -58,23 +58,34 @@ Tem uma decisão técnica que muda muito essa conta, e ela aparece cedo em qualq
 
 Eu já treinei modelo assim, anos atrás. Hoje, para a esmagadora maioria dos casos que vejo em empresa e em sala de aula, contexto bem feito resolve. Gosto da frase que citei em [Ainda vale fazer fine-tuning?](/blog/pt/is-fine-tuning-still-worth-it/): *fine-tuning não é injetar conhecimento, é sobrescrever*. O [capítulo 8](/ia/contexto/) inteiro é sobre a alternativa.
 
+## Começo pelo menor modelo ou pelo maior?
+
+A regra que mais se ouve é "use o menor modelo que resolve". Eu faço o caminho inverso — e não foi fácil para a minha cabeça, ecologicamente falando. Começo pelo mais capaz. Entre a pessoa mais inteligente que eu conheço e alguém no primeiro dia de estágio, eu sei para quem mando o trabalho que importa. Quando a tarefa está provada, testo um modelo mais barato. Resolveu? Troco.
+
+Dois motivos. Menor não quer dizer mais barato: um modelo pequeno que erra, refaz e precisa de mais voltas pode gastar mais do que um grande que acerta de primeira. Essa conta tem que ser feita caso a caso. E há um botão que mexe muito no consumo e que pouca gente olha: quanto eu deixo o modelo raciocinar. Tenho baixado esse esforço, porque os modelos precisam pensar cada vez menos para chegar ao mesmo lugar.
+
+Não é a única resposta defensável. Quem roda a mesma tarefa milhares de vezes por dia faz outra conta, e quem paga a água do data center, outra ainda.
+
 ## O que eu me pergunto antes de usar?
 
-- **Qual é o menor modelo que resolve?** Resumir um e-mail não precisa do mais caro do catálogo.
+- **A tarefa já está provada?** Descobrir pede o modelo mais capaz. Repetir pede o mais barato que dá conta.
 - **Eu sei pedir de uma vez?** Dez tentativas vagas gastam mais que um pedido com contexto.
 - **Isso vai se repetir?** Se a mesma tarefa vai rodar mil vezes, vale pedir um script e rodar o script ([capítulo 10](/ia/pedir-o-script/)). O script consome quase nada.
 - **Precisa ser imagem ou vídeo?** É onde o consumo por pedido é mais alto.
 
 <div class="g-box g-key" markdown="1">
-**Para guardar:** não é sobre culpa por cada pergunta — é sobre proporção. A mesma lógica de não ir de carro até a padaria da esquina: a ferramenta certa, do tamanho certo, para o problema certo.
+**Para guardar:** não é sobre culpa por cada pergunta — é sobre proporção. E proporção se descobre testando: sobe para descobrir, desce para rodar. O que não dá é não fazer a conta.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** quanto consome o que a organização já usa todo dia, sem ninguém ter feito a conta? Quem paga — em dinheiro, em energia, em água?
-- **Um caminho para responder:** estimar a ordem de grandeza antes de decidir; começar pelo recurso mais simples e só subir de degrau se ele não resolver.
-- **Peça nova no projeto:** mais uma regra para o projeto: o menor modelo que resolve.
+- **Em disputa:** quanto consome o que a organização já usa todo dia, sem ninguém ter feito a conta? Quem paga — em dinheiro, em energia, em água?
+- **Caminhos na mesa:**
+  - *Caio:* sempre o modelo mais capaz, no máximo. Erro custa mais caro que crédito.
+  - *Bia:* o mais barato para tudo. "É para contar falta."
+  - *Lia:* o mais capaz enquanto se descobre o que funciona; um degrau abaixo assim que a tarefa estiver provada.
+- **O que o time fez, por enquanto:** a conta do mês passou a ter dono, com o combinado "sobe para descobrir, desce para rodar". Os seiscentos vídeos viraram seiscentas mensagens de texto — e a Bia ainda acha que o vídeo teria funcionado melhor.
 </div>
 
 <details class="g-aula" markdown="1">

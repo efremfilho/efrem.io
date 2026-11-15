@@ -7,17 +7,17 @@ order: 5
 part: 1
 permalink: /ia/dados-e-privacidade/
 interactive: "o que borrar na foto + checklist"
-piece: "planilha de teste com dados fictícios"
-last_modified: 2026-11-13
+piece: "planilha de trabalho com códigos, e uma cópia fictícia para testar"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 5
 
-Onze da noite, véspera de reunião. Lia tinha a planilha aberta: nome, data de nascimento, endereço, telefone da mãe, se a família recebe benefício. Faltava só "pedir para a IA resumir". O cursor já estava na caixa do chat quando ela parou. Aqueles dados não eram dela. Eram de adolescentes, e de famílias que nunca souberam que estavam em uma planilha. Quem tinha autorizado aquilo?
+Onze da noite, véspera de reunião com a Iara. Caio mandou no grupo: "resumo pronto, joguei a planilha num assistente gratuito e ele limpou tudo". A planilha: nome, data de nascimento, endereço, telefone da mãe, se a família recebe benefício. Lia leu três vezes. Aqueles dados não eram do Caio, nem dela. Eram de adolescentes, e de famílias que nunca souberam que estavam em uma planilha. De manhã, quem ligou não foi a Iara. Foi Aída, da área de tecnologia da secretaria, querendo saber quem tinha autorizado aquilo. Quem tinha?
 </div>
 
-Se o modelo aprende com dados, a pergunta seguinte é óbvia e quase nunca é feita: **dados de quem?** Este capítulo é sobre a fronteira que eu peço para cada estudante desenhar antes de subir qualquer coisa em qualquer ferramenta.
+Se o modelo aprende com dados, a pergunta seguinte é óbvia e quase nunca é feita: **dados de quem?** Este capítulo é sobre a fronteira que vale desenhar antes de subir qualquer coisa em qualquer ferramenta.
 
 ## Todo dado merece o mesmo cuidado?
 
@@ -59,6 +59,8 @@ Três gestos resolvem a maior parte dos problemas do dia a dia:
 - **Borrar**: rostos, placas, números de casa, documentos. De forma irreversível — tarja semitransparente não conta.
 - **Minimizar**: se a tarefa não precisa do campo, o campo não vai. Para pedir ajuda com uma planilha de clientes, troque nomes por "Cliente 1, Cliente 2" e mande cinco linhas, não cinco mil.
 
+Quem constrói tem um quarto gesto: **barrar**. Instrução pedindo cuidado ajuda, mas dá para pôr uma barreira antes do modelo — um filtro que não deixa passar nada com cara de CPF, de chave de acesso, de endereço. É código, não é pedido: funciona igual toda vez.
+
 <div data-widget="checklist" data-key="privacidade" data-title="Checklist de privacidade" markdown="1">
 
 #### Quando eu crio (coleto dados, treino, monto um agente)
@@ -80,7 +82,7 @@ Três gestos resolvem a maior parte dos problemas do dia a dia:
 </div>
 
 <div class="g-box g-mine" markdown="1">
-**Como eu faço:** quando mostro um projeto em aula, uso o repositório de demonstração, não o de produção. E para testar uma ideia, dado fictício com o mesmo formato do real resolve quase sempre: custa trinta segundos pedir para a IA gerar.
+**Como eu faço:** a memória do assistente que eu uso fica desligada. Um dia fiz o teste de perguntar "o que você sabe sobre mim?". É meio assustador. Desliguei. E, para testar uma ideia, dado fictício com o mesmo formato do real resolve quase sempre: custa trinta segundos pedir para a IA gerar.
 </div>
 
 <div class="g-box g-key" markdown="1">
@@ -94,9 +96,12 @@ Três gestos resolvem a maior parte dos problemas do dia a dia:
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** quem autorizou cada coluna dessa planilha? Se uma mãe pedisse para ver o que há sobre o filho, eu conseguiria mostrar — e explicar?
-- **Um caminho para responder:** passar o checklist do capítulo coluna por coluna; trocar nomes por códigos; testar ideias só com dados inventados; procurar, na rede, quem responde pela proteção de dados.
-- **Peça nova no projeto:** uma planilha de teste com o mesmo formato da real e nenhum dado verdadeiro.
+- **Em disputa:** quem autorizou cada coluna dessa planilha? Se uma mãe pedisse para ver o que há sobre o filho, alguém conseguiria mostrar — e explicar? O que já saiu tem volta?
+- **Caminhos na mesa:**
+  - *Aída:* parar tudo até haver um parecer. Seguro — e a volta às aulas não espera.
+  - *Caio:* seguir só com dado inventado até resolverem. Não trava, mas também não testa o que importa.
+  - *Lia:* códigos no lugar dos nomes, só as colunas que a tarefa pede, e nada disso em ferramenta que ninguém contratou.
+- **O que o time fez, por enquanto:** a planilha de trabalho com códigos e três colunas; uma cópia fictícia para os testes; e uma conversa marcada com a Aída, que ninguém queria ter.
 </div>
 
 <details class="g-aula" markdown="1">

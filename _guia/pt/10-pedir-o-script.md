@@ -8,16 +8,16 @@ part: 2
 permalink: /ia/pedir-o-script/
 interactive: "mesma pergunta, dez vezes"
 piece: "o script de contagem, com dez casos de teste"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 10
 
-Lia colou a lista da semana, já com códigos no lugar dos nomes, e perguntou quantos estudantes tinham cinco faltas seguidas. Trinta e sete. Perguntou de novo, só para conferir. Quarenta e um. As duas respostas vieram com a mesma segurança. Qual das duas ela levaria para a reunião?
+Iara levou ao secretário o número que o time mandou: trinta e sete estudantes com cinco faltas seguidas. À tarde, Caio fez a mesma pergunta ao assistente, só para conferir. Quarenta e um. Mesma lista, mesma pergunta, a mesma segurança na resposta. Bia quis saber qual dos dois números o secretário estava repetindo àquela hora. Caio jurou que o problema era o modelo, e que um mais capaz resolveria. Resolveria?
 </div>
 
-Pergunte duas vezes a mesma coisa para um assistente de IA e você recebe duas respostas diferentes. Às vezes só muda a redação. Às vezes muda o número. Isso não é defeito: é o funcionamento normal de um sistema que, como vimos no [capítulo 2](/ia/como-a-maquina-aprende/), sorteia a continuação mais plausível.
+Pergunte duas vezes a mesma coisa para um assistente de IA e você recebe duas respostas diferentes. Às vezes só muda a redação. Às vezes muda o número. Isso não é defeito: é o funcionamento normal de um sistema que, como vimos no [capítulo 3](/ia/por-dentro-do-modelo/), sorteia a continuação mais plausível.
 
 Para escrever um e-mail, ótimo — variedade é bem-vinda. Para somar a planilha de reembolsos do mês, é um problema.
 
@@ -44,7 +44,7 @@ eu peço:
 No primeiro caso, o modelo *estima* um total. No segundo, ele usa a parte em que é realmente bom — escrever um programa curto — e quem faz a conta é o computador, que não erra soma.
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** rode o experimento dez vezes. Qual parte do trabalho da Lia pode variar de um dia para o outro sem problema — e qual nunca pode?
+**Provocação:** rode o experimento dez vezes. Qual parte do trabalho do time pode variar de um dia para o outro sem problema — e qual nunca pode?
 </div>
 
 <div data-widget="dado"></div>
@@ -77,6 +77,14 @@ Três perguntas rápidas antes de pedir qualquer coisa:
 
 Se as três respostas forem "não", vá de conversa mesmo. E muitas tarefas boas misturam os dois: a IA *interpreta* o pedido bagunçado (probabilístico) e chama um script para *executar* (determinístico). Um bom agente é, no fundo, essa combinação.
 
+## E num produto de verdade, quanto é IA?
+
+Menos do que parece. Num produto de seguros que ajudei a construir, a análise de crédito era um planilhão que passava de mão em mão por e-mail. Hoje a pessoa manda os documentos, o processo busca o que falta, faz as contas e devolve a planilha preenchida. Quem analisava do zero agora revisa.
+
+Ali só tem uma pecinha que é IA: ler o balanço e o demonstrativo de resultados, dizendo que conta é ativo e que conta é passivo — trabalho de formiga, que chega cada vez num formato. O resto é código, código, código. É exatidão; eu não quero ninguém sendo criativo ali.
+
+A maioria tenta o contrário: criar um robô que conversa e resolve tudo. É encantador. No volume, é muito ruim. Eu prefiro pôr a IA dentro do processo, só no ponto em que ela é boa.
+
 <div class="g-box g-key" markdown="1">
 **Para guardar:** use a IA para decidir e escrever; use código para calcular e repetir. Se o resultado precisa ser exatamente igual toda vez, a resposta não é um prompt melhor — é um script.
 </div>
@@ -84,9 +92,12 @@ Se as três respostas forem "não", vá de conversa mesmo. E muitas tarefas boas
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** se o número mudar amanhã, eu consigo explicar por quê? Quem confere o script quando a regra das faltas mudar?
-- **Um caminho para responder:** separar o que é contar do que é redigir; pedir código para contar; conferir com dez casos contados à mão; guardar os dez casos para conferir de novo.
-- **Peça nova no projeto:** o script de contagem, guardado junto com os dez casos de teste.
+- **Em disputa:** se o número mudar amanhã, alguém consegue explicar por quê? Quem confere o script quando a regra das faltas mudar?
+- **Caminhos na mesa:**
+  - *Caio:* trocar por um modelo mais capaz e perguntar duas vezes.
+  - *Bia:* contar à mão, como sempre foi.
+  - *Lia:* separar o que é contar do que é redigir: pedir ao agente o código que conta, e conferir com dez casos contados à mão.
+- **O que o time fez, por enquanto:** o script de contagem, guardado junto com os dez casos de teste. E um telefonema difícil para a Iara.
 </div>
 
 <details class="g-aula" markdown="1">

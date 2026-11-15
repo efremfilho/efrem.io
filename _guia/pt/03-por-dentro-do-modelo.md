@@ -8,13 +8,13 @@ part: 1
 permalink: /ia/por-dentro-do-modelo/
 interactive: "tokens + a próxima palavra"
 piece: "as perguntas que nunca vão sem a fonte junto"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 3
 
-Lia perguntou a um assistente por que uma estudante da lista tinha parado de ir à escola. Recebeu três parágrafos fluentes e seguros, com causas prováveis e até uma recomendação. Nenhuma linha dizia "não sei". A estudante não estava em nenhum documento que o assistente pudesse ter lido. De onde veio aquela resposta?
+Lia perguntou a um assistente por que uma estudante da lista tinha parado de ir à escola. Recebeu três parágrafos fluentes e seguros, com causas prováveis e até uma recomendação. Nenhuma linha dizia "não sei". Caio achou ótimo: "põe no relatório da Iara". Bia leu e riu sem achar graça — conhecia a menina, e nada daquilo era dela. A estudante não estava em nenhum documento que o assistente pudesse ter lido. De onde veio aquela resposta? E por que convenceu duas pessoas de três?
 </div>
 
 O [capítulo anterior](/ia/como-a-maquina-aprende/) mostrou o treino com dois pesos e uma reta. Um modelo de linguagem tem bilhões de pesos, mas a pergunta que vale fazer a ele é a mesma que valeria para a reta: *o que entra, o que sai e o que ele ajustou para chegar lá?*
@@ -47,7 +47,7 @@ Duas consequências práticas saem daí. A primeira: tudo o que está na convers
 
 ## Então ele responde?
 
-Não exatamente. Depois de tudo isso, o que o modelo produz é uma lista: para cada token possível, a chance de ele ser o próximo. Um deles é sorteado, entra na frase, e o processo recomeça — um token por vez, até o fim.
+Não exatamente. Depois de tudo isso, o que o modelo produz é uma lista: para cada token possível, a chance de ele ser o próximo. Um deles é sorteado, entra na frase, e o processo recomeça — um token por vez, até o fim. Não existe uma tabela de respostas guardada em algum lugar. Existe a fórmula, e ela roda de novo a cada token. É por isso que resposta longa demora. E custa.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** escolha a frase sobre a estudante. Antes de sortear, tente você: que palavra viria depois? O que você precisaria saber para acertar — e o modelo sabe?
@@ -58,6 +58,8 @@ Não exatamente. Depois de tudo isso, o que o modelo produz é uma lista: para c
 O controle que você mexeu chama-se **temperatura**. Baixa, o sorteio quase sempre cai na opção mais provável; alta, as improváveis ganham vez. Não existe um valor "certo": existe a pergunta *esta tarefa pede variedade ou repetição?*
 
 Agora volte à cena da Lia. O assistente não consultou nada sobre aquela estudante. Ele continuou o texto com o que costuma vir depois de perguntas parecidas. Na maior parte das vezes, o que costuma vir e o que é verdade coincidem. Quando não coincidem, o nome que se dá é alucinação — mas repare que a máquina fez exatamente a mesma coisa nos dois casos.
+
+Os modelos erram cada vez menos desse jeito. Eu já não lembro a última vez que o que eu uso inventou alguma coisa comigo. O mecanismo, porém, é o mesmo de sempre — e a pergunta sobre a estudante continua sem ter de onde tirar resposta.
 
 ## Se é só a próxima palavra, por que parece que entende?
 
@@ -89,9 +91,12 @@ Não com respostas, mas com quatro perguntas que passam a acompanhar qualquer us
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** quando o assistente fala da minha rede, ele está lendo ou completando? Dá para perceber a diferença só olhando o texto?
-- **Um caminho para responder:** fazer a mesma pergunta duas vezes e comparar; perguntar "de onde você tirou isso?" e ir conferir; separar as perguntas que dependem de fatos da rede das que não dependem.
-- **Peça nova no projeto:** a lista das perguntas que ela nunca mais faz sem entregar a fonte junto.
+- **Em disputa:** quando o assistente fala da nossa rede, está lendo ou completando? Dá para perceber a diferença só olhando o texto?
+- **Caminhos na mesa:**
+  - *Caio:* usar como rascunho e alguém confere depois. Quem? Quando?
+  - *Bia:* proibir pergunta sobre gente de verdade. Simples — e joga fora o que funcionaria.
+  - *Lia:* separar: pergunta que depende de fato da rede só vai com a fonte junto.
+- **O que o time fez, por enquanto:** a lista das perguntas que nunca mais vão sem a fonte junto. O parágrafo não entrou no relatório.
 </div>
 
 <details class="g-aula" markdown="1">

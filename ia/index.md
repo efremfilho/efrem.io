@@ -2,24 +2,26 @@
 layout: guia-index
 guia: true
 title: "IA sem mágica"
-description: "Um guia vivo e interativo para ter autonomia com IA: entender como a máquina aprende e onde erra, pensar computacionalmente e construir soluções de verdade, com responsabilidade."
+description: "Um guia vivo e interativo para quem quer construir com IA: entender como a máquina aprende e onde erra, pensar computacionalmente e chegar a soluções de verdade, respondendo por elas."
 lang: pt-BR
 permalink: /ia/
 ---
 
 IA não é mágica: é matemática aplicada, guiada por escolhas humanas. Quando a gente entende isso, duas coisas acontecem ao mesmo tempo — o medo diminui e a responsabilidade aumenta.
 
-**Para que serve este guia.** Para dar autonomia. Meu foco, na sala de aula e aqui, é que cada pessoa consiga resolver os próprios problemas com tecnologia sem depender de alguém que "entende de computador". Isso pede duas coisas: **letramento em IA generativa** — saber o que a máquina faz, onde ela erra e como pedir — e **pensamento computacional** — saber transformar um problema em fluxo, em passo a passo, em camadas. A IA generativa democratizou a construção de produtos, e saber usá-la [deixou de ser opcional](/blog/pt/being-ai-savvy-is-no-longer-optional/), como um dia aconteceu com Word, Excel e PowerPoint. Aproveitar isso de verdade continua exigindo saber pensar.
+**Para que serve este guia.** Para dar autonomia a quem quer mudar alguma coisa construindo com tecnologia. Você não precisa ser da área; precisa ter um problema que queira resolver. Isso pede duas coisas: **letramento em IA generativa** — saber o que a máquina faz, onde ela erra e como pedir — e **pensamento computacional** — saber transformar um problema em fluxo, em passo a passo, em camadas. A IA generativa democratizou a construção de produtos, e saber usá-la [deixou de ser opcional](/blog/pt/being-ai-savvy-is-no-longer-optional/), como um dia aconteceu com Word, Excel e PowerPoint. Ela executa muito bem o que você pedir. O que continua sendo seu é saber pedir, saber ler o que voltou e responder pelo resultado.
 
 **Como está organizado.** São três partes. Em **Entender**, o que a máquina faz por dentro, de onde vem o viés, o que é dado sensível e quanto tudo isso custa. Em **Pensar**, como quebrar um problema, dar contexto, buscar a informação certa e decidir entre pedir uma resposta e pedir um script. Em **Construir**, como sair do pedido e chegar a um produto: repositório como memória, geradores de aplicativos, voz e imagem, agentes com rédea curta, casos reais e a responsabilidade de quem entrega.
 
-**Quem é a Lia.** Uma personagem inventada com um problema real. Lia trabalha em uma organização da sociedade civil e coordena um projeto de busca ativa: ir atrás de adolescentes que pararam de ir à escola. No Brasil, milhões de jovens não concluíram o ensino médio, e o motivo mais citado por quem saiu é precisar trabalhar (IBGE, 2026). Do outro lado existe gente indo atrás, e funciona: a busca ativa já ajudou centenas de milhares de crianças e adolescentes a voltar para a sala de aula (UNICEF, 2025). Lia não é de tecnologia. Ela quer mudar essa realidade e ouviu que "a IA resolve".
+**Quem é a Lia.** Uma personagem inventada com um problema real. Lia, Bia e Caio trabalham em uma organização da sociedade civil que faz busca ativa: ir atrás de adolescentes que pararam de ir à escola. No Brasil, milhões de jovens não concluíram o ensino médio, e o motivo mais citado por quem saiu é precisar trabalhar (IBGE, 2026). Do outro lado existe gente indo atrás, e funciona: a busca ativa já ajudou centenas de milhares de crianças e adolescentes a voltar para a sala de aula (UNICEF, 2025). Ninguém ali é de tecnologia. Ouviram que "a IA resolve" e decidiram construir: discutem a estratégia, dividem o trabalho, cada pessoa implementa com os seus agentes, e uma revisa o que a outra fez. Em volta estão Iara, que coordena a parceria pela secretaria de educação, e Aída, da área de tecnologia.
 
-**O guia não responde por ela.** Em cada capítulo há uma **cena** da jornada da Lia, que termina em uma pergunta; uma **provocação**, ligada ao experimento do capítulo; e um **diário de bordo**, com as perguntas que ela levou, um caminho para responder e a peça que entrou no projeto. Não há gabarito. As respostas da Lia dependem da rede em que ela trabalha — e as suas, da sua realidade. O que o guia oferece é o jeito de perguntar e o caminho para conferir.
+**O guia não responde por ela.** A jornada é contada como um caso, daqueles em que as coisas dão errado: há prazo, há briga e há mais de um caminho defensável. Em cada capítulo há uma **cena**, que termina em uma pergunta; uma **provocação**, ligada ao experimento do capítulo; e um **diário de bordo**, com o que ficou em disputa, os caminhos que estavam na mesa — cada um defendido por alguém — e o que o time fez, por enquanto. Não há gabarito. Às vezes o time escolhe mal, e paga por isso alguns capítulos depois. As respostas dependem da rede em que essas pessoas trabalham — e as suas, da sua realidade. O que o guia oferece é o jeito de perguntar e o caminho para conferir.
 
 **Como usar.** Quase todo capítulo tem um experimento para mexer (procure o 🧪), termina com uma caixa **Para levar para a aula** — atividade e perguntas de discussão, para usar à vontade — e fecha com as referências. Quem prefere papel tem a [versão livro](/ia/livro/), pronta para imprimir.
 
-Este material nasceu das gravações das minhas aulas na FGV EPPG, em Brasília, de conversas em que explico meu processo e do que venho escrevendo desde 2025. O texto foi gerado com IA a partir desse material e editado por mim. É um guia vivo: eu volto, corrijo e aumento.
+Este material nasceu das gravações das minhas aulas na FGV EPPG, em Brasília, de workshops para pessoas de produto, de conversas em que explico meu processo e do que venho escrevendo desde 2025. O texto foi gerado com IA a partir desse material e editado por mim. É um guia vivo: eu volto, corrijo e aumento.
+
+**Um alerta.** Em vários pontos eu saio da minha área: direito, estatística, design, educação. Onde isso acontece, eu aviso e cito quem estuda o assunto. Achou um erro? Me avise, que eu corrijo.
 
 <div class="g-fontes" markdown="1">
 

@@ -8,13 +8,13 @@ part: 2
 permalink: /ia/contexto/
 interactive: "monte uma janela de contexto + três prompts"
 piece: "o arquivo de instruções do projeto"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 8
 
-Primeira tentativa de Lia com um assistente: "me ajude a reduzir a evasão escolar". Voltaram dez tópicos corretos e inúteis, os mesmos de qualquer cartilha. Na segunda, ela exagerou para o outro lado: anexou o manual de 300 páginas da rede, três atas de reunião e a planilha inteira. A resposta citou, com toda a segurança, um procedimento que a rede tinha abandonado anos antes. Pouco demais não serve; demais também não. Como se acha o meio?
+Três pessoas, três agentes, três comportamentos. O agente do Caio escrevia "aluno de risco" em toda tela que gerava: ninguém tinha contado a ele a regra nº 1. O primeiro pedido da Bia foi "me ajude a reduzir a evasão escolar", e voltaram dez tópicos corretos e inúteis, os mesmos de qualquer cartilha. Lia exagerou para o outro lado: anexou o manual de trezentas páginas da rede, três atas e a planilha inteira, e recebeu, com toda a segurança, um procedimento que a rede tinha abandonado anos antes. Pouco demais não serve; demais também não. E o que o time decidiu na semana passada, nenhum dos três agentes sabia. Onde isso deveria estar escrito?
 </div>
 
 Se eu tivesse que escolher uma única ideia para alguém levar deste guia, seria esta: **o modelo não te conhece, não lembra de ontem e não sabe nada do seu projeto. Ele só sabe o que está escrito na janela, agora.**
@@ -95,6 +95,28 @@ Explica o cenário e o objetivo, dá critérios em vez de casos, diz o que fazer
 
 </div>
 
+## Pedir é engenharia ou é arte?
+
+Chamam de engenharia de prompt, engenharia de contexto. Eu implico com o nome — e dizer o contrário, que "é arte", também não resolve. Essa divisão foi um jeito que a gente inventou de interpretar o mundo; criatividade existe dos dois lados. Prefiro um recorte que aprendi com gente de design: há coisas que existem para ser bonitas, ou simplesmente para existir, e coisas que existem para ser úteis. É parecido com a diferença entre invenção e inovação: uma coisa é passar a existir, outra é alguém usar. Quando forma e função se encontram, melhor ainda.
+
+(Um alerta: arte e design não são a minha área, e eu não sei definir bem nem uma coisa nem outra. Falo só do jeito como eu construo. Nem tudo o que eu faço precisa ter função. Precisa existir no mundo.)
+
+Pedir a uma IA mora nesse encontro. Tem função — eu quero um resultado — e tem forma: o jeito de explicar muda o que volta. Por isso ajuda mais saber de psicologia, de filosofia e de pedagogia do que de computação. No fim, é explicar bem uma coisa para alguém que acabou de chegar.
+
+Se eu tivesse de pôr em ordem o que entra num pedido:
+
+1. **O que eu quero.** O objetivo, com todas as letras. É o que mais pesa, disparado.
+2. **Contexto.** A história por trás, os documentos, o que a pessoa do outro lado já saberia.
+3. **Exemplos.** Poucos e bons, do tipo de resposta que eu espero.
+4. **Como pensar no problema.** Os passos, quando a ordem importa.
+5. **Formato de saída.** Quando o que volta vai para outro programa, e não para os meus olhos.
+
+Essa ordem muda conforme os modelos mudam. Dar um papel ao modelo ("você é especialista em...") já pesou muito e hoje pesa pouco. E instrução escrita para modelo antigo, cheia de cuidado e passo a passo, passou a atrapalhar: é amarrar um modelo melhor ao que o anterior precisava. Tenho usado cada vez menos instrução pronta.
+
+Um caso de contexto faltando. Num semestre avisei à turma que as atividades seriam corrigidas com IA. A turma descobriu rápido que dava para entregar a atividade da semana anterior e tirar dez: a IA só conferia se estava certa. Ninguém tinha contado a ela em que semana estávamos.
+
+E pedir é metade. A outra metade é ler o que voltou para decidir o próximo pedido.
+
 ## E no dia a dia?
 
 - **Explico o porquê, não só o quê.** "Responda curto porque a pessoa lê no celular entre duas reuniões" funciona melhor que "responda curto".
@@ -115,9 +137,12 @@ Explica o cenário e o objetivo, dá critérios em vez de casos, diz o que fazer
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** o que é óbvio para a equipe e não está escrito em lugar nenhum? Como eu percebo que coloquei contexto demais?
-- **Um caminho para responder:** escrever como se fosse para alguém inteligente que chegou hoje; fazer a mesma pergunta com e sem cada pedaço; cortar o que não muda a resposta.
-- **Peça nova no projeto:** o arquivo de instruções do projeto, escrito uma vez e reaproveitado em toda conversa.
+- **Em disputa:** o que é óbvio para o time e não está escrito em lugar nenhum? Como perceber que há contexto demais? Instrução longa protege ou atrapalha?
+- **Caminhos na mesa:**
+  - *Caio:* instrução mínima: diz o objetivo e deixa o agente trabalhar.
+  - *Bia:* escrever todas as regras, com um exemplo de cada.
+  - *Lia:* escrever como para alguém inteligente que chegou hoje, e cortar o que não muda a resposta.
+- **O que o time fez, por enquanto:** um arquivo de instruções do projeto, um só, que os três agentes leem. Curto. Por enquanto.
 </div>
 
 <details class="g-aula" markdown="1">

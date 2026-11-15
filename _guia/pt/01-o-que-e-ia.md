@@ -8,16 +8,18 @@ part: 1
 permalink: /ia/o-que-e-ia/
 interactive: "quiz: é IA ou não é?"
 piece: "lista de ferramentas da equipe: regra ou aprende?"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 1
 
-Lia coordena, em uma organização da sociedade civil, um projeto de busca ativa: ir atrás de adolescentes que pararam de aparecer na escola, antes que o abandono vire definitivo. São quatro pessoas para doze escolas. Na reunião com a secretaria de educação, uma empresa fornecedora apresentou "uma IA que prevê quem vai evadir". A sala inteira balançou a cabeça. Lia anotou uma pergunta no canto do caderno e não teve coragem de fazer: *isso aprende alguma coisa, ou é a planilha de faltas com outro nome?*
+Lia, Bia e Caio trabalham numa organização que faz busca ativa: ir atrás de adolescentes que pararam de aparecer na escola, antes que o abandono vire definitivo. São doze escolas e pouca gente. Na reunião com a secretaria de educação, uma fornecedora apresentou "uma IA que prevê quem vai evadir". Iara, que coordena a parceria pela secretaria, queria assinar antes da volta às aulas. Caio cochichou que montava aquilo em uma semana. Bia perguntou, em voz alta, o que exatamente a IA aprendia ali, e recebeu um slide como resposta. Lia pediu prazo: até a volta às aulas, o time constrói a sua versão e mostra. Na saída, a pergunta da Bia continuava sem dono: *aquilo aprende alguma coisa, ou é a planilha de faltas com outro nome?*
 </div>
 
-Toda aula minha de introdução começa do mesmo jeito: alguém diz que "a IA decidiu", "a IA quis" ou "a IA entendeu". Antes de falar de ferramenta, eu preciso desmontar essa frase. Não por preciosismo — é que quem acha que a máquina *quis* alguma coisa para de procurar o humano que escolheu.
+Uma convenção antes de começar: neste guia, quando eu escrevo "IA" sem adjetivo, estou falando de IA generativa — os modelos que produzem texto, imagem, código. Quando for outra coisa, como o aprendizado de máquina do próximo capítulo, eu aviso.
+
+E um aviso sobre a palavra. Eu já vi, por dentro, uma automação que existia havia tempos virar "área de agentes" de um dia para o outro. Valor a mais entregue: zero. Efeito no mercado: enorme. Então, antes de falar de ferramenta, vale desconfiar do rótulo — e de frases como "a IA decidiu", "a IA quis", "a IA entendeu". Quem acha que a máquina *quis* alguma coisa para de procurar a pessoa que escolheu.
 
 ## Dá para definir IA em duas palavras?
 
@@ -45,7 +47,7 @@ Uma planilha cheia de fórmulas é a mesma coisa em escala maior: regras fixas, 
 | **Como nasce o comportamento** | É *aprendido* a partir de exemplos | É *escrito* regra por regra |
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** no quiz, faça a cada item a pergunta que Lia não fez: isso segue uma regra que alguém escreveu, ou aprendeu com dados? Como você descobriria, se ninguém contasse?
+**Provocação:** no quiz, faça a cada item a pergunta que a Bia fez em voz alta: isso segue uma regra que alguém escreveu, ou aprendeu com dados? Como você descobriria, se ninguém contasse?
 </div>
 
 <div data-widget="quiz-ia"></div>
@@ -69,9 +71,12 @@ Eles passam nos dois critérios, com um detalhe que confunde muita gente. A adap
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** se aprendeu com dados, dados de quem? Se é uma regra, quem escreveu — e eu posso ler?
-- **Um caminho para responder:** pedir uma demonstração com um caso que ela conhece bem; perguntar o que acontece quando o sistema erra e quem corrige; olhar para as ferramentas que a equipe já usa e separar as que seguem regra das que aprendem.
-- **Peça nova no projeto:** a lista das ferramentas que a equipe já usa, separadas em "segue regra" e "aprende".
+- **Em disputa:** se aprendeu com dados, dados de quem? Se é uma regra, quem escreveu — e dá para ler? Comprar pronto ou construir?
+- **Caminhos na mesa:**
+  - *Iara:* assinar com a fornecedora. Fica pronto antes, e alguém de fora responde se der errado.
+  - *Caio:* construir em uma semana. Sai barato — e ninguém sabe ainda o que "aquilo" precisa fazer.
+  - *Bia:* antes de qualquer coisa, pedir uma demonstração com um caso que o time conhece de cor.
+- **O que o time fez, por enquanto:** ganhou prazo até a volta às aulas e listou as ferramentas que já usa, separadas em "segue regra" e "aprende".
 </div>
 
 <details class="g-aula" markdown="1">

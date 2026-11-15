@@ -1,19 +1,19 @@
 ---
 title: "Casos reais: o que mudou na minha rotina"
-description: "Nota fiscal, redesenho de tela, validação de documentos, um curso montado durante a noite, análise de dados e o mínimo de programação que vale aprender."
+description: "Nota fiscal, redesenho de tela, validação de documentos, um curso montado durante a noite, análise de dados, uma conversa ensaiada e o mínimo de programação que vale aprender."
 lang: pt-BR
 ref: cases
 order: 16
 part: 3
 permalink: /ia/casos-reais/
-piece: "o painel no ar e a primeira análise"
-last_modified: 2026-11-13
+piece: "o sistema no ar e a primeira análise"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 16
 
-Com o painel funcionando, Lia fez a pergunta que vinha adiando havia um ano: *em que dia e em que turno as faltas se concentram?* O mapa de calor ficou pronto em uma conversa. A mancha mais escura estava na sexta-feira à noite. O mapa dizia onde. Dizia por quê?
+Volta às aulas. A versão do time está no ar: quem visita recebe, de manhã, a lista do dia. O painel existe — Iara mostra na secretaria, e quase ninguém mais abre. Com os dados no lugar, Lia fez a pergunta que vinha adiando havia um ano: *em que dia e em que turno as faltas se concentram?* O mapa de calor ficou pronto em uma conversa. A mancha mais escura estava na sexta-feira à noite. Caio já tinha a explicação. Bia tinha outra. O mapa dizia onde. Dizia por quê?
 </div>
 
 Princípio sem exemplo não convence ninguém. Estes são casos da minha rotina recente, escolhidos porque cada um ilustra um capítulo anterior — e porque em cada um eu aprendi alguma coisa que não esperava.
@@ -46,15 +46,15 @@ Código ficou barato. Saber o que construir, não. Escrevi mais sobre isso em [P
 
 - **IA generativa** para ler e interpretar: o documento está inteiro no enquadramento? Tem reflexo cobrindo algum campo? Está legível?
 - **Algoritmos clássicos de visão**, que não são generativos, para procurar adulteração: bordas estranhas, uma foto colada por cima, sinais de edição.
-- **Consulta determinística** a uma base oficial para ver se o número do documento confere com o nome.
+- **Consulta determinística** a um serviço de cadastro, para ver se o número do documento confere com o nome.
 
-**O que aprendi:** "usar IA" quase nunca significa usar *um* modelo. Significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte oficial, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). E como aqui são dados pessoais sensíveis, vale tudo o que está no [capítulo 5](/ia/dados-e-privacidade/): consentimento, acesso mínimo, nada disso entra em ambiente de teste.
+**O que aprendi:** "usar IA" quase nunca significa usar *um* modelo. Significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte confiável, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). E como aqui são dados pessoais sensíveis, vale tudo o que está no [capítulo 5](/ia/dados-e-privacidade/): consentimento, acesso mínimo, nada disso entra em ambiente de teste.
 
 ## 4. O que precisa acontecer antes de deixar um agente trabalhando a noite toda?
 
 **O que era:** me pediram uma trilha gamificada para um curso, dentro da plataforma de ensino da instituição. Eu sabia o que queria e não sabia como a plataforma fazia aquilo.
 
-**Como ficou:** expliquei por voz o que eu queria. A IA devolveu um plano: o que haveria na lição 1, na 2, na 3, como seria a pontuação. Eu li, ajustei e aprovei. Deixei trabalhando durante a noite. De manhã estavam lá as lições, os slides e até os vídeos.
+**Como ficou:** expliquei o que eu queria. A IA devolveu um plano: o que haveria na lição 1, na 2, na 3, como seria a pontuação. Eu li, ajustei e aprovei. Deixei trabalhando durante a noite. De manhã estavam lá as lições, os slides e até os vídeos.
 
 **O que aprendi:** duas coisas. A ordem importa — **planejar, aprovar, só então executar**. Eu não deixaria nada rodar a noite toda sem ter lido o plano antes. E restrição precisa ser dita: no meio do caminho o agente avisou que a versão da plataforma não suportava um recurso e propôs uma adaptação. Agente bom não esconde a limitação; ele avisa e oferece alternativa.
 
@@ -78,16 +78,24 @@ O caso mais simples e talvez o mais útil: eu gravo reuniões (com o conheciment
 
 Este guia, aliás, nasceu assim: da gravação das minhas aulas e de uma conversa de uma hora e meia em que eu mostrava meu jeito de trabalhar a um amigo.
 
+## 8. Dá para ensaiar uma conversa com quem não está na sala?
+
+**O que era:** ouvir quem usa é a parte mais importante de construir qualquer coisa, e a mais difícil de conseguir. As pessoas não têm agenda e, quando têm, respondem o que acham que você quer ouvir.
+
+**Como ficou:** uma designer com quem trabalhei teve a ideia antes de mim. Pegou as transcrições de entrevistas de verdade e pediu a um assistente que continuasse a conversa no papel daquela pessoa. Hoje eu uso o mesmo recurso para ensaiar: antes de uma conversa difícil, converso com a persona.
+
+**O que aprendi:** funciona melhor do que eu esperava. Às vezes rende mais do que a entrevista, porque a persona não tem vergonha de responder. E tem limites que eu não esqueço: ela é muito mais simpática do que qualquer cliente; é uma continuação plausível, não uma pessoa ([capítulo 3](/ia/por-dentro-do-modelo/)); e não substitui conversar com gente de verdade — complementa. Não sou só eu que desconfio: quem pesquisa experiência de uso refez estudos reais com participantes sintéticos e achou as respostas rasas e favoráveis demais ([Rosala; Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)). Serve para levantar hipóteses e ensaiar, não para decidir. Uma pergunta que eu me faço cada vez mais: quem deu a entrevista sabe que a fala dela continua sendo usada?
+
 ## E a programação?
 
-A pergunta que sempre vem depois desses casos: *"então eu preciso aprender a programar?"*. Escrever código, não. Entender cinco conceitos e as três camadas de qualquer software, sim — é o assunto do [capítulo 7](/ia/pensamento-computacional/).
+A pergunta que sempre vem depois desses casos: *"então eu preciso aprender a programar?"*. Escrever código, não. Entender cinco ideias e as três camadas de qualquer software, sim — é o assunto do [capítulo 7](/ia/pensamento-computacional/).
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** preencha as quatro linhas do "caso 8", na atividade do fim do capítulo, com uma tarefa da sua rotina. Qual das quatro é a mais difícil de escrever?
+**Provocação:** preencha as quatro linhas do "caso 9", na atividade do fim do capítulo, com uma tarefa da sua rotina. Qual das quatro é a mais difícil de escrever?
 </div>
 
 <div class="g-box g-key" markdown="1">
-**O padrão que se repete nos sete casos**
+**O padrão que se repete nos oito casos**
 
 - Eu sabia **o que** queria e **por quê**. O "como" foi delegado.
 - Sempre houve um ponto de conferência humana antes de valer: o contador, o time, o plano aprovado.
@@ -98,15 +106,18 @@ A pergunta que sempre vem depois desses casos: *"então eu preciso aprender a pr
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Perguntas que ela levou:** a mancha de sexta à noite é trabalho, transporte ou outra coisa? O que o dado mostra, e o que ele só sugere?
-- **Um caminho para responder:** levar o mapa a quem vive aquela rotina antes de concluir; perguntar o que mais explicaria o mesmo desenho; combinar o que observar nas próximas semanas.
-- **Peça nova no projeto:** o painel no ar e a primeira análise.
+- **Em disputa:** a mancha de sexta à noite é trabalho, transporte ou outra coisa? O que o dado mostra, e o que ele só sugere?
+- **Caminhos na mesa:**
+  - *Caio:* é trabalho. Quer mandar o mapa à secretaria hoje.
+  - *Bia:* é o ônibus. Quer uma semana de visitas antes de alguém concluir qualquer coisa.
+  - *Lia:* levar o mapa a quem vive aquela rotina e perguntar o que mais explicaria o mesmo desenho.
+- **O que o time fez, por enquanto:** o sistema no ar e a primeira análise — ainda sem conclusão, com três hipóteses e o combinado do que observar nas próximas semanas.
 </div>
 
 <details class="g-aula" markdown="1">
 <summary>Para levar para a aula</summary>
 
-#### Atividade (30 min) — o seu caso 8
+#### Atividade (30 min) — o seu caso 9
 
 Cada pessoa escolhe uma tarefa chata e repetitiva da própria rotina e preenche quatro linhas: (1) o que é hoje; (2) como poderia ficar; (3) quem ou o que confere antes de valer; (4) qual parte deve ser determinística. Em trios, uma pessoa apresenta e as outras duas procuram o furo.
 
@@ -126,7 +137,8 @@ Cada pessoa escolhe uma tarefa chata e repetitiva da própria rotina e preenche 
 - MARANHÃO FILHO, Éfrem. **No lugar de procurar um SaaS, abro o ChatGPT, o Gemini ou o Colab**. [*S. l.*]: efrem.io, 21 jul. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/instead-of-a-saas-i-open-chatgpt-gemini-or-colab/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Produto e UX nunca foram tão importantes**. [*S. l.*]: efrem.io, 27 out. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/product-and-ux-have-never-mattered-more/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Só pago os SaaS em que vejo valor, o resto eu construo**. [*S. l.*]: efrem.io, 11 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/i-only-pay-for-saas-i-see-value-in/>. Acesso em: 13 nov. 2026.
+- ROSALA, Maria; MORAN, Kate. **Synthetic users**: if, when, and how to use AI-generated "research". [*S. l.*]: Nielsen Norman Group, 21 jun. 2024. Disponível em: <https://www.nngroup.com/articles/synthetic-users/>. Acesso em: 15 nov. 2026.
 
-*Notas:* Os sete casos são da minha rotina de trabalho e de aula; nomes de pessoas, clientes e empresas foram omitidos. A mudança de legislação do caso 1 é a reforma tributária brasileira.
+*Notas:* Os oito casos são da minha rotina de trabalho e de aula; nomes de pessoas, clientes e empresas foram omitidos. A mudança de legislação do caso 1 é a reforma tributária brasileira. Sobre participantes sintéticos, as autoras escrevem: "Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people" e "They often provide shallow or overly favorable feedback" (Rosala; Moran, 2024).
 
 </div>
