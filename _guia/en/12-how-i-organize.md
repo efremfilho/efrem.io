@@ -1,6 +1,6 @@
 ---
 title: "How I organize my work with AI"
-description: "Folders that mirror my life, one little text box instead of ten tabs, fenced environments, and three vendors on purpose. The tools change; the principles, far less."
+description: "Folders that mirror my life, one little text box instead of ten tabs, fenced environments, and one tool I'm actually good at. The tools change; the principles, far less."
 lang: en
 ref: workspace
 order: 12
@@ -8,18 +8,18 @@ part: 3
 permalink: /ai/how-i-organize/
 interactive: "anatomy of a work environment"
 piece: "folders by city and keys in order"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 12
 
-The project grew: two more cities asked for help. Within a week, Lia had three look-alike spreadsheets in the same folder and an access key pasted into the team's group chat, "to make things easier." Easier for whom?
+Two more cities asked for help. Within a week there were three look-alike spreadsheets in the same folder, an access key pasted into the group chat, "to make things easier," and a new argument: Caio wanted to switch tools. He had tried another one over the weekend, much better. It was the third switch of the semester, and Bia had barely learned the previous one. Easier for whom? And what does the team lose every time it switches?
 </div>
 
 This chapter is the most personal one in the guide. It isn't a recipe: it's how I work. The tools will change, which is why I don't mention any of them by name; what I hope stays are the principles behind it.
 
-A caveat about the kind of user I am: I use AI very little as a chat "assistant" and a lot as a **building tool** — to write code, design interfaces, analyze data, and produce documents. I use tools from all the major vendors. And today it would be impossible for me to work the way I do without them.
+A caveat about the kind of user I am: I use AI very little as a chat "assistant" and a lot as a **building tool** — to write code, design interfaces, analyze data, and produce documents. I test tools from several vendors and spend most of my day inside one. Today it would be impossible for me to work the way I do without them.
 
 ## Where does your work live?
 
@@ -42,7 +42,9 @@ It's also why I avoid the "do-it-all" agent that stores things its own way. They
 
 ## Do you need a terminal?
 
-I work most of the time in the **terminal**: that black text screen that looks like DOS. AI coding tools have command-line (CLI) versions, and I prefer those for three reasons:
+I first tried the tools that look like a programming environment. On the first screen, one of them asked me to install a module. I closed it. Could I have stopped and learned? I could have. It was spite.
+
+I went to the **terminal**: that black text screen that looks like DOS. AI coding tools have command-line (CLI) versions, and I stayed with those for three reasons:
 
 1. **I get distracted very easily.** A screen with a single little box to type in, full screen, is the best environment I know for not getting lost.
 2. **Everything already talks to the terminal.** Git, the cloud services, the databases — professional tools were born there. The agent uses the same ones an engineer would, with no special integration needed.
@@ -50,7 +52,7 @@ I work most of the time in the **terminal**: that black text screen that looks l
 
 I'll admit the irony: a while back I [complained that we were going back to the terminal](/blog/en/are-we-going-back-to-the-terminal/) and throwing away decades of interface work. I still think that, for most people, a good interface wins. For me, today, the little box won.
 
-You **don't need** the terminal to apply anything in this guide. The same products have an app and a web version, and the logic is the same.
+You **don't need** the terminal to apply anything in this guide. The same products have an app and a web version, and the logic is the same. I've been migrating myself: I use the web version and my phone more and more, and I'm one step away from dictating instead of typing — something I swore I'd never do. I'm already getting ready to eat my words.
 
 ## On my machine or in the cloud?
 
@@ -62,7 +64,7 @@ The agent can work in two places:
 An environment like that is set up once and has four parts:
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** open the environment anatomy, just below. In Lia's project, what would go into each of the four parts — and what shouldn't go into any of them?
+**Provocation:** open the environment anatomy, just below. In the team's project, what would go into each of the four parts — and what shouldn't go into any of them?
 </div>
 
 <div data-widget="tabs" data-title="Anatomy of a cloud environment" data-sub="Illustrative example. The names change from product to product; the four parts exist in all of them." markdown="1">
@@ -113,13 +115,13 @@ For a harmless personal project I allow everything. For a company project, a clo
 
 </div>
 
-## Why not pick just one tool?
+## One tool, or several?
 
-I pay for and use tools from three different companies. When I blow through the limit on one, I switch to another. But that's not the main reason: **it was a deliberate decision so I wouldn't depend on anyone.**
+I pay for more than one and test several. When I blow through the limit on one, I switch to another. But I spend my day in just one, because I'd rather be very good at one than mediocre at all of them. The worst scenario, for me, is switching so often that you never learn to use any of them properly.
 
-It took work. Each tool has its own way of doing things, its own config file name, its own quirks. What made it possible was the rule from the previous chapter — the knowledge lives in the repository, in plain text. Any of them opens the folder and picks up where the other left off.
+What lets me relax about that choice is the rule from the previous chapter: the knowledge lives in the repository, in plain text. If I need to switch, I switch. It feels strange for a few hours and I move on. For me, it has become a *commodity*.
 
-And the recommendation I give to people who are starting out is the opposite of "pick the best one": test all three with the same real task. The difference between top models today is more a matter of taste than of capability.
+For people who are starting out, the recommendation is the opposite of "pick the best one": test more than one with the same real task, stay with the one that best fits the way you work, and get good at it. The difference between top models, today, is more a matter of taste than of capability.
 
 ## What does it cost — and how do you pay?
 
@@ -147,16 +149,19 @@ About API keys, which you'll run into when you build your own agent:
 
 - Organize by folder and repository: where you open the tool defines the context it gets.
 - A well-configured environment has four parts: repository, setup, secrets, and network.
-- Don't marry a vendor. Keep the knowledge in plain text and test several.
+- Get good at one tool — and keep the knowledge in plain text, so you can leave whenever you want.
 - Subscription for people, API for systems — and API always with a limit.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** who has a key today that they shouldn't have anymore? If a tool went offline tomorrow, what would the team lose?
-- **A way to find the answer:** list where the files and the keys are; separate them by project; give each key a limit and an end date.
-- **New project piece:** the folder structure and the keys in order.
+- **In dispute:** who has a key today that they shouldn't have anymore? If a tool went offline tomorrow, what would the team lose? Is it better to be very good at one or to know them all?
+- **Paths on the table:**
+  - *Caio:* test everything that comes out. That's how you find out what's best.
+  - *Bia:* pick one and stop fiddling.
+  - *Lia:* each person gets good at one; what belongs to the project lives in the repository, so that switching costs an afternoon, not a month.
+- **What the team did, for now:** folders by city, one key per project with a limit and an end date, and the group-chat key revoked.
 </div>
 
 <details class="g-aula" markdown="1">

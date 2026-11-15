@@ -8,16 +8,18 @@ part: 1
 permalink: /ai/what-is-ai/
 interactive: "quiz: is it AI or not?"
 piece: "the team's tool list: follows a rule or learns?"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 1
 
-Lia coordinates an outreach project at a civil society organization: going after teenagers who have stopped showing up at school, before dropping out becomes permanent. Four people for twelve schools. At a meeting with the city's education department, a vendor presented "an AI that predicts who will drop out." The whole room nodded. Lia wrote a question in the corner of her notebook and didn't have the courage to ask it: *does this learn anything, or is it the absence spreadsheet under another name?*
+Lia, Bia, and Caio work at an organization that does outreach: going after teenagers who have stopped showing up at school, before dropping out becomes permanent. Twelve schools and not many people. At a meeting with the city's education department, a vendor presented "an AI that predicts who will drop out." Iara, who coordinates the partnership on the department's side, wanted to sign before classes started again. Caio whispered that he could put that thing together in a week. Bia asked, out loud, what exactly the AI was learning there, and got a slide for an answer. Lia asked for time: by the time classes start again, the team builds its own version and shows it. On the way out, Bia's question still had no takers: *does that thing learn anything, or is it the absence spreadsheet under another name?*
 </div>
 
-Every intro class I teach starts the same way: someone says "the AI decided," "the AI wanted," or "the AI understood." Before we talk about tools, I have to take that sentence apart. I'm not being picky. Anyone who thinks the machine *wanted* something stops looking for the human who made the choice.
+One convention before we start: in this guide, when I write "AI" with no adjective, I mean generative AI — the models that produce text, images, code. When it's something else, like the machine learning in the next chapter, I'll say so.
+
+And a warning about the word. I've watched, from the inside, an automation that had been around for ages turn into an "agents team" overnight. Extra value delivered: zero. Effect on the market: huge. So, before we talk about tools, it pays to distrust the label — and sentences like "the AI decided," "the AI wanted," "the AI understood." Anyone who thinks the machine *wanted* something stops looking for the person who made the choice.
 
 ## Can you define AI in two words?
 
@@ -45,7 +47,7 @@ A spreadsheet full of formulas is the same thing at a larger scale: fixed rules,
 | **Where the behavior comes from** | It is *learned* from examples | It is *written* rule by rule |
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** in the quiz, ask of each item the question Lia didn't ask: does this follow a rule someone wrote, or did it learn from data? How would you find out, if nobody told you?
+**Provocation:** in the quiz, ask of each item the question Bia asked out loud: does this follow a rule someone wrote, or did it learn from data? How would you find out, if nobody told you?
 </div>
 
 <div data-widget="quiz-ia"></div>
@@ -69,9 +71,12 @@ They pass both tests, with one detail that confuses a lot of people. Their adapt
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** if it learned from data, whose data? If it's a rule, who wrote it — and can I read it?
-- **A way to find the answer:** ask for a demo with a case she knows well; ask what happens when the system gets it wrong and who fixes it; look at the tools the team already uses and separate the ones that follow a rule from the ones that learn.
-- **New project piece:** the list of tools the team already uses, sorted into "follows a rule" and "learns."
+- **In dispute:** if it learned from data, whose data? If it's a rule, who wrote it — and can we read it? Buy it ready-made or build it?
+- **Paths on the table:**
+  - *Iara:* sign with the vendor. It's ready sooner, and someone outside answers for it if it goes wrong.
+  - *Caio:* build it in a week. It's cheap — and nobody knows yet what "that thing" needs to do.
+  - *Bia:* before anything else, ask for a demo with a case the team knows by heart.
+- **What the team did, for now:** bought time until classes start again and listed the tools it already uses, sorted into "follows a rule" and "learns."
 </div>
 
 <details class="g-aula" markdown="1">

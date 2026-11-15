@@ -8,13 +8,13 @@ part: 1
 permalink: /ai/inside-a-language-model/
 interactive: "tokens + the next word"
 piece: "the questions that never go out without the source attached"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 3
 
-Lia asked an assistant why a student on the list had stopped going to school. She got three fluent, confident paragraphs, with likely causes and even a recommendation. Not one line said "I don't know." The student wasn't in any document the assistant could have read. Where did that answer come from?
+Lia asked an assistant why a student on the list had stopped going to school. She got three fluent, confident paragraphs, with likely causes and even a recommendation. Not one line said "I don't know." Caio loved it: "put it in Iara's report." Bia read it and laughed without a trace of humor — she knew the girl, and none of it was her. The student wasn't in any document the assistant could have read. Where did that answer come from? And why did it convince two people out of three?
 </div>
 
 The [previous chapter](/ai/how-machines-learn/) showed training with two weights and a straight line. A language model has billions of weights, but the question worth asking it is the same one you'd ask the line: *what goes in, what comes out, and what did it adjust to get there?*
@@ -47,7 +47,7 @@ Two practical consequences follow. The first: everything in the conversation can
 
 ## So then it answers?
 
-Not exactly. After all that, what the model produces is a list: for each possible token, the chance that it's the next one. One of them is drawn at random, goes into the sentence, and the process starts over — one token at a time, until the end.
+Not exactly. After all that, what the model produces is a list: for each possible token, the chance that it's the next one. One of them is drawn at random, goes into the sentence, and the process starts over — one token at a time, until the end. There is no table of answers stored somewhere. There is the formula, and it runs again for every token. That's why a long answer takes time. And it costs.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** pick the sentence about the student. Before you draw, try it yourself: what word would come next? What would you need to know to get it right — and does the model know it?
@@ -58,6 +58,8 @@ Not exactly. After all that, what the model produces is a list: for each possibl
 The control you just moved is called **temperature**. Low, the draw almost always lands on the most likely option; high, the unlikely ones get a turn. There is no "right" value: there is the question *does this task call for variety or repetition?*
 
 Now go back to Lia's scene. The assistant didn't look up anything about that student. It continued the text with what usually comes after similar questions. Most of the time, what usually comes next and what is true coincide. When they don't, the name people give it is hallucination — but notice that the machine did exactly the same thing in both cases.
+
+Models get it wrong this way less and less. I can't remember the last time the one I use made something up on me. The mechanism, though, is the same as ever — and the question about the student still has nowhere to pull an answer from.
 
 ## If it's just the next word, why does it seem to understand?
 
@@ -89,9 +91,12 @@ It's what I repeat in every training session: [before any sophisticated techniqu
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** when the assistant talks about my school system, is it reading or filling in? Can you tell the difference just by looking at the text?
-- **A way to find the answer:** ask the same question twice and compare; ask "where did you get that?" and go check; separate the questions that depend on facts about the school system from the ones that don't.
-- **New project piece:** the list of questions she never asks again without handing over the source along with them.
+- **In dispute:** when the assistant talks about our school system, is it reading or filling in? Can you tell the difference just by looking at the text?
+- **Paths on the table:**
+  - *Caio:* use it as a draft and someone checks later. Who? When?
+  - *Bia:* ban questions about real people. Simple — and it throws out what would work.
+  - *Lia:* separate them: a question that depends on a fact about the school system only goes out with the source attached.
+- **What the team did, for now:** the list of questions that never again go out without the source attached. The paragraph didn't make it into the report.
 </div>
 
 <details class="g-aula" markdown="1">

@@ -8,13 +8,13 @@ part: 3
 permalink: /ai/repository-as-memory/
 interactive: "branch timeline + repository anatomy"
 piece: "the repository with the decisions on record"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 11
 
-The colleague who built the first spreadsheet left the organization in March. With her went the answer to the question the city's education department asked in April: why five absences? Lia searched email, group chats, meeting minutes. Nothing. The decision existed; the memory didn't. Where does an organization keep its whys?
+Monday, and the count was wrong again. Caio had "improved" the script over the weekend; Bia had touched the same part on Friday. One version swallowed the other, and nobody could say which one was live. In the middle of the argument, Iara called to ask why five absences — and the answer was in the head of someone who left the organization in March. The team had code on three computers and the whys on none. Where does a team keep what it decided? And who changed what?
 </div>
 
 The first thing I recommend to anyone starting to build anything with AI — a product, an automation, even a personal agent — isn't an AI tool. It's creating a repository.
@@ -48,7 +48,9 @@ The minimum vocabulary:
 
 **Because the agent handles the paperwork.** I don't create branches by hand. One of the projects I work on has more than a thousand, all created and managed by agents. My role is to say what I want and review what shows up in the pull request.
 
-**Because it works for teams.** Humans and agents working on the same project need a place where nobody steps on anybody else's work and every change goes through someone before it takes effect.
+**Because it works for teams.** Working alone, almost everything works. Software's usual problems show up when the second person joins: who changed what, which version counts, what to do when two changes clash. Humans and agents working on the same project need a place where nobody steps on anybody else's work and every change goes through someone before it takes effect.
+
+At my job, today, it goes like this: we discuss the strategy and split it up. One feature stays with me, another with a colleague. Each of us implements with our own agents. I review theirs; they review mine.
 
 **Because it's your memory.** This is the least obvious point and the most valuable.
 
@@ -100,7 +102,7 @@ Who writes these documents? Most of the time, the AI itself, at my request: *"ge
 
 ## What if the trendy tool changes tomorrow?
 
-Because the knowledge lives in plain text files, in a repository that's mine, **I can switch AIs whenever I want**. I use three different vendors on purpose. It was painful at first, but today any of them opens the project, reads the same files, and carries on with the work.
+Because the knowledge lives in plain text files, in a repository that's mine, **I can switch AIs whenever I want**. I test several, and switching costs me a few hours of awkwardness: any of them opens the project, reads the same files, and carries on with the work. That doesn't mean switching all the time — I'd rather be very good at one than mediocre at all of them. The freedom is in being able to leave, not in leaving every week.
 
 For me, models have become a *commodity* — [I was already saying so a while back](/blog/en/agentkit-wont-kill-the-ipaas/), comparing it with what happened to the cloud: the difference between the best ones is more a matter of taste than of capability. What isn't a commodity is your project's context — and that shouldn't live inside a vendor's account, or inside a specific agent framework. If the trendy tool changes tomorrow, you plug the next one into the same repository.
 
@@ -121,9 +123,12 @@ The same goes for people. Someone new joined the team? Give them access to the r
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** what in the organization exists only in one person's head? If I leave tomorrow, what does whoever comes next need to find written down?
-- **A way to find the answer:** pick an old decision and try to reconstruct the why; record the next decision on the spot, with a date and a reason; agree with the team on where this lives.
-- **New project piece:** the repository, with a README, an AGENTS.md, and the decisions folder.
+- **In dispute:** what exists today only in one person's head? Who can change what is live, and who looks at it first?
+- **Paths on the table:**
+  - *Caio:* each person on their own copy, merge everything at the end. Nobody waits for anybody — and the end is a fight.
+  - *Bia:* only one person touches what is live.
+  - *Lia:* one repository for everything; each person takes a piece, and nothing goes in without someone else's review.
+- **What the team did, for now:** the repository, with the instructions for the agents and the decisions folder. The first decision on record was "why five absences": with a date, and with an honest "we don't know; we inherited it."
 </div>
 
 <details class="g-aula" markdown="1">

@@ -8,16 +8,16 @@ part: 2
 permalink: /ai/ask-for-the-script/
 interactive: "same question, ten times"
 piece: "the counting script, with ten test cases"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 10
 
-Lia pasted in the week's list, with codes already in place of names, and asked how many students had five absences in a row. Thirty-seven. She asked again, just to check. Forty-one. Both answers came with the same confidence. Which of the two would she take to the meeting?
+Iara took the team's number to the education secretary: thirty-seven students with five absences in a row. In the afternoon, Caio asked the assistant the same question, just to check. Forty-one. Same list, same question, the same confidence in the answer. Bia wanted to know which of the two numbers the secretary was repeating at that very hour. Caio swore the problem was the model, and that a more capable one would fix it. Would it?
 </div>
 
-Ask an AI assistant the same thing twice and you get two different answers. Sometimes only the wording changes. Sometimes the number changes. That's not a defect: it's the normal behavior of a system that, as we saw in [chapter 2](/ai/how-machines-learn/), rolls the dice on the most plausible continuation.
+Ask an AI assistant the same thing twice and you get two different answers. Sometimes only the wording changes. Sometimes the number changes. That's not a defect: it's the normal behavior of a system that, as we saw in [chapter 3](/ai/inside-a-language-model/), rolls the dice on the most plausible continuation.
 
 For writing an email, great — variety is welcome. For adding up this month's reimbursement spreadsheet, it's a problem.
 
@@ -44,7 +44,7 @@ I ask:
 In the first case, the model *estimates* a total. In the second, it uses the part it's really good at — writing a short program — and the one doing the math is the computer, which doesn't get sums wrong.
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** run the experiment ten times. Which part of Lia's work can vary from one day to the next with no problem — and which part never can?
+**Provocation:** run the experiment ten times. Which part of the team's work can vary from one day to the next with no problem — and which part never can?
 </div>
 
 <div data-widget="dado"></div>
@@ -77,6 +77,14 @@ Three quick questions before asking for anything:
 
 If all three answers are "no," go ahead and just chat. And many good tasks mix the two: the AI *interprets* the messy request (probabilistic) and calls a script to *execute* it (deterministic). A good agent is, at heart, that combination.
 
+## And in a real product, how much of it is AI?
+
+Less than it looks. In an insurance product I helped build, credit analysis was one giant spreadsheet passed from hand to hand by email. Today the person sends the documents, the process fetches what's missing, does the math, and returns the spreadsheet filled in. The people who used to analyze from scratch now review.
+
+Only one little piece in there is AI: reading the balance sheet and the income statement, saying which account is an asset and which is a liability — painstaking work that arrives in a different format every time. The rest is code, code, code. It's exactness; I don't want anyone being creative there.
+
+Most people try the opposite: build a bot that chats and solves everything. It's charming. At volume, it's very bad. I'd rather put the AI inside the process, only at the point where it's good.
+
 <div class="g-box g-key" markdown="1">
 **Keep this:** use AI to decide and to write; use code to calculate and to repeat. If the result has to be exactly the same every time, the answer isn't a better prompt — it's a script.
 </div>
@@ -84,9 +92,12 @@ If all three answers are "no," go ahead and just chat. And many good tasks mix t
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** if the number changes tomorrow, can I explain why? Who checks the script when the absence rule changes?
-- **A way to find the answer:** separate what is counting from what is drafting; ask for code to do the counting; check it against ten cases counted by hand; keep the ten cases to check again.
-- **New project piece:** the counting script, kept together with the ten test cases.
+- **In dispute:** if the number changes tomorrow, can anyone explain why? Who checks the script when the absence rule changes?
+- **Paths on the table:**
+  - *Caio:* switch to a more capable model and ask twice.
+  - *Bia:* count by hand, the way it has always been done.
+  - *Lia:* separate what is counting from what is drafting: ask the agent for the code that counts, and check it against ten cases counted by hand.
+- **What the team did, for now:** the counting script, kept together with the ten test cases. And a difficult phone call to Iara.
 </div>
 
 <details class="g-aula" markdown="1">

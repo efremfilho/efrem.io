@@ -8,16 +8,16 @@ part: 3
 permalink: /ai/beyond-text/
 interactive: "four conversions and what to ask each one"
 piece: "the rule for what can be recorded and how long it's kept"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 14
 
-After each visit, the team records an audio message telling how it went. There are dozens a week, and nobody listens to them again. The attendance lists from two schools still arrive on paper, photographed with a phone. Lia realized that half of what the team knows is in formats the spreadsheet can't read. What if it could be read?
+Bia records an audio message after each visit. There are dozens a week, and nobody listens to them again. Caio asked an agent to transcribe everything and summarize it by family. It looked great — until Bia read the summary of a visit she had made herself. In it was a sentence from the mother that the mother never said. "Did you check?" "That's forty recordings, Bia." Half of what the team knows is in voice and in photos of paper. All of that can be read. And who vouches for what was read?
 </div>
 
-For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I talk more than I type: I dictate what I want and [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). The machine now accepts the world in the format it happens in.
+For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the context: sometimes I talk, almost always to think out loud. But I still prefer to write. When I write, I think before I send. The machine now accepts the world in the format it happens in.
 
 This has a name — **multimodal** models — and it raises one question before any other.
 
@@ -67,6 +67,14 @@ If the machinery is the same, what would you expect of the flaws? That they'd be
 
 </div>
 
+## What about when the summary is the only thing anyone reads?
+
+In a planning process I took part in, the supporting research ran to thirty pages. Who read all thirty? I did. Out of them came a one-page summary and a seven-minute audio — and it was interesting to see which format worked, and for whom: each kind of person preferred one.
+
+The lesson isn't about the tool. It's the one every product person learns the hard way: my job is not to make something sophisticated and send it. It's to have empathy for how the message lands on the other side — and to make the other side want to consume it.
+
+That leaves a question I can't answer well: who checked the numbers on the page everyone read?
+
 ## So what's different from text?
 
 Three things, and all three call for more care, not less:
@@ -96,9 +104,12 @@ A question I'm leaving unanswered on purpose: is transcribing everything a bette
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** does the family know the conversation becomes audio, and the audio becomes text? What do I gain by transcribing everything — and what do I start keeping that I didn't keep before?
-- **A way to find the answer:** transcribe ten recordings and listen to all ten, checking; note where it got things wrong (names, numbers, silences); decide with the team what becomes a record and what gets deleted; ask before recording.
-- **New project piece:** the rule for what can be recorded, who checks it, and how long it's kept.
+- **In dispute:** does the family know the conversation becomes audio, and the audio becomes text? What does the team gain by transcribing everything — and what does it start keeping that it didn't keep before?
+- **Paths on the table:**
+  - *Caio:* transcribe everything and check a sample.
+  - *Bia:* transcribe only what someone is going to read again; delete the rest.
+  - *Lia:* show side by side what was said and what was summarized — and ask before recording.
+- **What the team did, for now:** ten recordings transcribed and checked one by one; and the rule for what can be recorded, who checks it, and how long it's kept.
 </div>
 
 <details class="g-aula" markdown="1">

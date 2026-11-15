@@ -8,13 +8,13 @@ part: 1
 permalink: /ai/bias/
 interactive: "build the training set and watch bias appear"
 piece: "rule no. 1: no \"risk\" label on any student"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 4
 
-While researching similar systems, Lia read about one that classified students by their "risk" of not graduating. An evaluation showed it was wrong far more often with one group than with another, always in the same direction. She thought about the schools on the poor outskirts of her own school system. Who would carry the "high risk" label from the first day of class?
+Caio took the model out of the drawer, "just to see," and ran it on this year's list. Almost the entire night shift at the schools on the poor outskirts came out flagged as "high risk." Bia saw the screen over his shoulder. "My night class, all red. Before the first absence." Caio didn't flinch: it's what the data says. "It's what the data said about their older sisters and brothers." Lia had already read about a system like that, one that was wrong far more often with one group than with another, always in the same direction. Who would carry the label from the first day of class?
 </div>
 
 Everyone sees reality through a keyhole: the culture they grew up in, where they live, what they've lived through. That isn't a character flaw, it's the human condition, and it has a name: **human bias**. The trouble starts when that keyhole view becomes training data.
@@ -34,12 +34,18 @@ Nobody programmed that mistake. It came out of a chain of innocent choices:
 3. **Algorithmic bias** — the model tied color to category and is systematically wrong about whoever got left out.
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** build the training set in the experiment until it gets all four right. Then answer: in the system Lia was offered, what would the "fur color" be — the easy feature that seems to explain everything and doesn't?
+**Provocation:** build the training set in the experiment until it gets all four right. Then answer: in Caio's model, what would the "fur color" be — the easy feature that seems to explain everything and doesn't?
 </div>
 
 <div data-widget="vies"></div>
 
 It's worth playing with the experiment until you notice three things: biased data produces a biased model; a good feature does **not** fix bad data; and diverse data alone doesn't solve it either if the chosen feature makes no sense.
+
+## Does it take a model for this to happen?
+
+No. The Samoyed shows up in any data collection. A group of students in one of my classes wanted to validate a nutrition app. Disciplined people, gym people. They sent the survey to their friends — same profile — and to family. About a hundred people said they were interested. Three or four used it, and only when someone reminded them.
+
+Is there anything wrong with running a biased survey? No, as long as you know it's biased. The problem is forgetting that when it's time to draw conclusions — or to train something on top of it.
 
 ## And when the dog is a person?
 
@@ -69,9 +75,12 @@ There's no such thing as eliminating bias. Every dataset is a slice of the world
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** what does a wrong alert cost, and to whom? And an alert that never came? Is there a way to help without labeling?
-- **A way to find the answer:** list who barely shows up in the school system's data; compare, school by school, how many alerts turned into real help; decide with the team whether the system will show people or situations.
-- **New project piece:** the project's rule no. 1, written by the team: no "risk" label on any student.
+- **In dispute:** what does a wrong alert cost, and to whom? And an alert that never came? Is there a way to help without labeling?
+- **Paths on the table:**
+  - *Caio:* keep the score and hide the word "risk." The number helps decide who to visit first.
+  - *Bia:* no score per person. Ever.
+  - *Lia:* show situations (five absences in a row), not people.
+- **What the team did, for now:** rule no. 1, written by all three together and with Caio still grumbling: no "risk" label on any student.
 </div>
 
 <details class="g-aula" markdown="1">
