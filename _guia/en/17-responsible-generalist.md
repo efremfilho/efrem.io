@@ -7,14 +7,14 @@ order: 17
 part: 3
 permalink: /ai/responsible-generalist/
 interactive: "self-assessment"
-piece: "the final deliverable"
-last_modified: 2026-11-13
+piece: "the deliverable — and the next decision"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 17
 
-End of the semester. Lia didn't become a programmer: she still doesn't know what a *framework* is, and has no desire at all to find out. What changed is that she can explain the problem, read what the agent proposes, point out what's wrong, and answer for what she delivers. At the presentation to the city's education department, the first question was about the technology. She answered by talking about the decisions. Why?
+The education department decided: the team's solution stays, and the vendor can wait. At the presentation, the first question was about the technology. Lia answered by talking about the decisions: what the system doesn't label, what it doesn't keep, what no agent does on its own. Nobody there became a programming expert — Bia still doesn't know what a *framework* is, and has no desire at all to find out. Aída, from the technology team, now reviews what goes live. Iara wants to take it to the whole state. Bia thinks it's too soon. Caio has already opened the new repository. The one who signs at the bottom is Lia. What, exactly, is she signing?
 </div>
 
 I spent a good part of my career feeling like a duck: it swims, walks, and flies, but doesn't do any of the three very well. A bit of code, a bit of data, a bit of design, a lot of product. In a market that rewarded specialists, that looked like a flaw.
@@ -39,7 +39,7 @@ There's a detail in this story that, for me, is the center of everything. It's n
 
 Before, a specialist's knowledge came wrapped in the craft: the code, the statistical model, the design file, the contract clause. To evaluate it, I had to master the craft or trust blindly. Today, when I ask for an analysis, I get the plan, the reasoning, the alternatives that were discarded and the explanation for each choice along with it — in plain language. I can read it, ask "why?", ask for the counterargument, and only then decide.
 
-That's why I don't like the term *vibe coding*. It suggests programming on vibes, accepting whatever comes without looking. My experience is the opposite.
+That's why I don't like the term *vibe coding*. It suggests programming on vibes, accepting whatever comes without looking — just pressing a key over and over to say yes. My experience is the opposite.
 
 I've had a problem with the term since it first appeared. At first the reason was about identity: I [didn't want to be a mediocre dev, I wanted to be better at product](/blog/en/the-best-hacks-for-a-product-person-using-a-coding-agent/). Later it became clearer that the problem is something else — [critical thinking](/blog/en/how-to-teach-critical-use-of-ai/). And I confess: I often catch myself "vibing," not thinking about what I'm doing. That's exactly why I keep an eye on myself.
 
@@ -47,7 +47,9 @@ I've had a problem with the term since it first appeared. At first the reason wa
 
 The biggest change in my day wasn't that I stopped writing code. It was that **I started reading all day long.** I even wrote it in all caps: [I have NEVER read so much in my life](/blog/en/how-to-teach-critical-use-of-ai/).
 
-The agent shows the plan: I read it. It shows its reasoning: I read it. It explains why it chose a path: I read it, and sometimes I disagree. It delivers the result: I read it before accepting. My job became reviewing, deciding, and redirecting.
+The agent shows the plan: I read it. It shows its reasoning: I read it. It explains why it chose a path: I read it, and sometimes I disagree. It delivers the result: I read it before accepting. I don't always read everything — when I leave something running overnight, in the morning I read the summary. But I always read something. And it's tiring: mentally, it's heavier than writing.
+
+My job became reviewing, deciding, and redirecting. I joke that I'm no longer the author of my life, but I'm still the reviewer.
 
 Lakhani's research with consultants gives names to the ways people work with AI. Most act as **cyborgs**, solving the problem together with the AI in constant back-and-forth; a smaller share as **centaurs**, who split the work ("I do this, it does that") and supervise what comes back; and about a quarter as **self-automators**, who press play and hand in whatever comes out. The third group learns the least — in his words, because they *stopped thinking*.
 
@@ -75,6 +77,7 @@ I only keep my reservation about the name. Lakhani calls it *vibe coding*. I'd c
 
 ## What remains human?
 
+- **Knowing how to ask and how to read.** AI executes whatever you ask for very well. It even slices up the problem. What's left is the art of asking — and reading what came back, to guide the next step.
 - **Knowing what's worth doing.** AI builds anything you ask for, including the wrong thing.
 - **Knowing the context.** The team that uses that screen, the client who hates that term, the rule nobody wrote down.
 - **Judging the result.** "It's plausible" and "it's right" are different things, and someone needs to know the difference.
@@ -114,7 +117,7 @@ Every AI system was designed, trained, configured, and put online by people's de
 - [ ] What I learn with AI on a project gets written down for the next session
 - [ ] I've tested more than one tool with the same real task
 - [ ] I know exactly what each tool or agent I use has access to
-- [ ] Nothing irreversible happens in my name without my approval
+- [ ] I know who answers for each thing done in my name that can't be undone
 - [ ] I read the plan before telling it to run, and the result before accepting it
 - [ ] When I get something wrong using AI, I own the mistake as mine
 
@@ -134,6 +137,8 @@ An honest guide needs a section like this.
 
 What I do know: there's no going back. There are open models anyone can download and run. If today's companies disappeared tomorrow, the technology would still be here. The choice that remains isn't between using and not using. It's between using it with understanding and using it believing in magic.
 
+And one request, from one builder to another: with so much helping you build, stop making bad products.
+
 <div class="g-box g-key" markdown="1">
 **Key takeaways, from the whole guide**
 
@@ -142,16 +147,19 @@ What I do know: there's no going back. There are open models anyone can download
 3. What isn't in the context doesn't exist for it. Anything extra gets in the way.
 4. For what needs to be exact, code. For what needs judgment, you.
 5. Keep your knowledge in a place that's yours.
-6. Give the least access that gets the job done, and never give up approving what's irreversible.
+6. Give the least access that gets the job done, and know who answers for what can't be undone.
 7. The responsibility is yours. It always was.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** of what I delivered, what can I explain and what did I just pass along? What did I decide not to automate, and why?
-- **A way to find the answer:** write one page, with no help from AI, about what she checked; show the solution to the people who will use it and listen before defending it.
-- **New project piece:** the final deliverable — and the next question.
+- **In dispute:** of what was delivered, what can the team explain and what did it just pass along? Grow now, or prove it for one more semester?
+- **Paths on the table:**
+  - *Iara:* take it to the whole state right away. There's budget, and there's a rush.
+  - *Bia:* one more semester in the twelve schools, measuring who came back.
+  - *Caio:* open up what was built, so other organizations can copy it.
+- **What the team did, for now:** wrote, with no help from AI, one page about what it checked and what it still doesn't know. The decision to grow was left for after that page.
 </div>
 
 <details class="g-aula" markdown="1">

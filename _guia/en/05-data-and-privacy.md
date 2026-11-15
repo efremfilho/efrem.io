@@ -7,17 +7,17 @@ order: 5
 part: 1
 permalink: /ai/data-and-privacy/
 interactive: "what to blur in the photo + checklist"
-piece: "test spreadsheet with fictional data"
-last_modified: 2026-11-13
+piece: "working spreadsheet with codes, and a fictional copy for testing"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 5
 
-Eleven at night, the day before a meeting. Lia had the spreadsheet open: name, date of birth, address, the mother's phone number, whether the family receives social benefits. All that was left was to "ask the AI to summarize it." The cursor was already in the chat box when she stopped. That data wasn't hers. It belonged to teenagers, and to families who never knew they were in a spreadsheet. Who had authorized that?
+Eleven at night, the day before a meeting with Iara. Caio posted in the group chat: "summary's done, I dropped the spreadsheet into a free assistant and it cleaned everything up." The spreadsheet: name, date of birth, address, the mother's phone number, whether the family receives social benefits. Lia read it three times. That data wasn't Caio's, and it wasn't hers. It belonged to teenagers, and to families who never knew they were in a spreadsheet. In the morning, the call didn't come from Iara. It came from Aída, from the education department's technology team, wanting to know who had authorized that. Who had?
 </div>
 
-If the model learns from data, the next question is obvious and almost never asked: **whose data?** This chapter is about the line I ask every student to draw before uploading anything to any tool.
+If the model learns from data, the next question is obvious and almost never asked: **whose data?** This chapter is about the line worth drawing before uploading anything to any tool.
 
 ## Does all data deserve the same care?
 
@@ -59,6 +59,8 @@ Three moves solve most everyday problems:
 - **Blur**: faces, license plates, house numbers, documents. Irreversibly — a semi-transparent bar doesn't count.
 - **Minimize**: if the task doesn't need the field, the field doesn't go. To ask for help with a customer spreadsheet, replace names with "Customer 1, Customer 2" and send five rows, not five thousand.
 
+Anyone who builds has a fourth move: **block**. An instruction asking for care helps, but you can put a barrier in front of the model — a filter that lets nothing through that looks like a CPF number, an access key, an address. It's code, not a request: it works the same way every time.
+
 <div data-widget="checklist" data-key="privacidade" data-title="Privacy checklist" markdown="1">
 
 #### When I build (collect data, train, set up an agent)
@@ -80,7 +82,7 @@ Three moves solve most everyday problems:
 </div>
 
 <div class="g-box g-mine" markdown="1">
-**How I do it:** when I show a project in class, I use the demo repository, not the production one. And to test an idea, fictional data in the same format as the real thing works almost every time: it takes thirty seconds to ask the AI to generate it.
+**How I do it:** the memory of the assistant I use stays off. One day I ran the test of asking "what do you know about me?" It's a little scary. I turned it off. And to test an idea, fictional data in the same format as the real thing works almost every time: it takes thirty seconds to ask the AI to generate it.
 </div>
 
 <div class="g-box g-key" markdown="1">
@@ -94,9 +96,12 @@ Three moves solve most everyday problems:
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** who authorized each column in this spreadsheet? If a mother asked to see what's in there about her child, would I be able to show it — and explain it?
-- **A way to find the answer:** run this chapter's checklist column by column; replace names with codes; test ideas only with made-up data; find out who in the school system is responsible for data protection.
-- **New project piece:** a test spreadsheet in the same format as the real one, with no real data.
+- **In dispute:** who authorized each column in this spreadsheet? If a mother asked to see what's in there about her child, would anyone be able to show it — and explain it? Can what already went out be taken back?
+- **Paths on the table:**
+  - *Aída:* stop everything until there's a formal opinion. Safe — and the start of classes won't wait.
+  - *Caio:* carry on with made-up data only, until it's settled. It doesn't stall, but it doesn't test what matters either.
+  - *Lia:* codes in place of names, only the columns the task needs, and none of it in a tool nobody signed a contract for.
+- **What the team did, for now:** the working spreadsheet with codes and three columns; a fictional copy for testing; and a conversation scheduled with Aída, one nobody wanted to have.
 </div>
 
 <details class="g-aula" markdown="1">

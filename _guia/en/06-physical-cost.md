@@ -7,14 +7,14 @@ order: 6
 part: 1
 permalink: /ai/physical-cost/
 interactive: "energy calculator"
-piece: "rule: the smallest model that does the job"
-last_modified: 2026-11-13
+piece: "the monthly bill, with an owner: step up to discover, step down to run"
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 6
 
-Someone on the team had an exciting idea: use AI to generate a personalized video for each family, with each student's name. Six hundred families. Lia liked the idea and was left with a doubt she couldn't even put into words properly: does this have a cost that nobody there was seeing?
+The month's credits ran out on the ninth. Caio had left his agents on the most expensive model, with the effort at maximum, "to be safe." That same week, Bia showed up with an exciting idea: a personalized video for each family, with each student's name. Six hundred families. Lia asked how much it cost. Nobody knew — not in money, not in anything else. Caio figured a mistake costs more than credits. Bia, that any model will do for counting absences. Is there a cost here that nobody on the team is seeing? And who decides when it's worth it?
 </div>
 
 "Cloud" is one of the best marketing moves in the history of technology. It sounds light, clean, and free of any address. In practice, it's a warehouse the size of several soccer fields, full of machines that run hot, plugged into the power grid and, often, into a river.
@@ -58,23 +58,34 @@ There's one technical decision that changes this math a lot, and it comes up ear
 
 I've trained models that way, years ago. Today, for the overwhelming majority of cases I see in companies and classrooms, well-built context does the job. I like the line I quoted in [Is fine-tuning still worth it?](/blog/en/is-fine-tuning-still-worth-it/): *fine-tuning isn't injecting knowledge, it's overwriting*. All of [chapter 8](/ai/context/) is about the alternative.
 
+## Do I start with the smallest model or the biggest?
+
+The rule you hear most is "use the smallest model that does the job." I go the other way — and, ecologically speaking, that wasn't easy for me to make peace with. I start with the most capable one. Between the smartest person I know and someone on the first day of an internship, I know who gets the work that matters. Once the task is proven, I test a cheaper model. Did it do the job? I switch.
+
+Two reasons. Smaller doesn't mean cheaper: a small model that gets it wrong, redoes it, and needs more rounds can use more than a big one that gets it right the first time. That math has to be done case by case. And there is a dial that moves consumption a lot and that few people look at: how much I let the model reason. I've been turning that effort down, because models need to think less and less to get to the same place.
+
+It's not the only defensible answer. Someone who runs the same task thousands of times a day does different math, and whoever pays for the data center's water, different math again.
+
 ## What do I ask myself before using it?
 
-- **What is the smallest model that does the job?** Summarizing an email doesn't need the most expensive one in the catalog.
+- **Is the task already proven?** Discovering calls for the most capable model. Repeating calls for the cheapest one that can handle it.
 - **Do I know how to ask in one go?** Ten vague attempts cost more than one request with context.
 - **Is this going to repeat?** If the same task is going to run a thousand times, it's worth asking for a script and running the script ([chapter 10](/ai/ask-for-the-script/)). The script uses almost nothing.
 - **Does it need to be an image or a video?** That's where consumption per request is highest.
 
 <div class="g-box g-key" markdown="1">
-**Keep this:** it's not about guilt over every question — it's about proportion. Same logic as not driving to the bakery on the corner: the right tool, at the right size, for the right problem.
+**Keep this:** it's not about guilt over every question — it's about proportion. And you find the proportion by testing: step up to discover, step down to run. What you can't do is skip the math.
 </div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** how much is consumed by what the organization already uses every day, without anyone ever having done the math? Who pays — in money, in energy, in water?
-- **A way to find the answer:** estimate the order of magnitude before deciding; start with the simplest resource and only move up a step if it doesn't do the job.
-- **New project piece:** one more rule for the project: the smallest model that does the job.
+- **In dispute:** how much is consumed by what the organization already uses every day, without anyone ever having done the math? Who pays — in money, in energy, in water?
+- **Paths on the table:**
+  - *Caio:* always the most capable model, at maximum. A mistake costs more than credits.
+  - *Bia:* the cheapest one for everything. "It's for counting absences."
+  - *Lia:* the most capable one while figuring out what works; one step down as soon as the task is proven.
+- **What the team did, for now:** the monthly bill now has an owner, with the agreement "step up to discover, step down to run." The six hundred videos became six hundred text messages — and Bia still thinks the video would have worked better.
 </div>
 
 <details class="g-aula" markdown="1">

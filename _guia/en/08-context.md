@@ -8,13 +8,13 @@ part: 2
 permalink: /ai/context/
 interactive: "build a context window + three prompts"
 piece: "the project's instructions file"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 8
 
-Lia's first try with an assistant: "help me reduce school dropout." Back came ten bullet points, correct and useless, the same ones you'd find in any pamphlet. On the second try she overdid it the other way: she attached the school system's 300-page manual, three sets of meeting minutes, and the whole spreadsheet. The answer cited, with total confidence, a procedure the school system had abandoned years earlier. Too little doesn't work; too much doesn't either. How do you find the middle?
+Three people, three agents, three behaviors. Caio's agent wrote "at-risk student" on every screen it generated: nobody had told it about rule no. 1. Bia's first request was "help me reduce school dropout," and back came ten bullet points, correct and useless, the same ones you'd find in any pamphlet. Lia overdid it the other way: she attached the school system's three-hundred-page manual, three sets of meeting minutes, and the whole spreadsheet, and got back, with total confidence, a procedure the school system had abandoned years earlier. Too little doesn't work; too much doesn't either. And what the team decided last week, none of the three agents knew. Where should that be written down?
 </div>
 
 If I had to pick a single idea for someone to take from this guide, it would be this: **the model doesn't know you, doesn't remember yesterday, and knows nothing about your project. It only knows what is written in the window, right now.**
@@ -95,6 +95,28 @@ It explains the situation and the goal, gives criteria instead of cases, says wh
 
 </div>
 
+## Is asking engineering or art?
+
+They call it prompt engineering, context engineering. I have a bone to pick with the name — and saying the opposite, that "it's art," doesn't settle it either. That split was a way we invented to interpret the world; creativity exists on both sides. I prefer a cut I learned from design people: there are things that exist to be beautiful, or simply to exist, and things that exist to be useful. It's close to the difference between invention and innovation: one thing is coming into existence, another is someone using it. When form and function meet, even better.
+
+(A warning: art and design are not my field, and I can't define either one very well. I'm only talking about the way I build. Not everything I make needs to have a function. It needs to exist in the world.)
+
+Asking an AI lives where those two meet. It has function — I want a result — and it has form: the way you explain changes what comes back. That's why knowing psychology, philosophy, and pedagogy helps more than knowing computing. In the end, it's explaining something well to someone who just arrived.
+
+If I had to rank what goes into a request:
+
+1. **What I want.** The goal, spelled out. It's what weighs the most, by far.
+2. **Context.** The story behind it, the documents, what a person on the other side would already know.
+3. **Examples.** A few good ones, of the kind of answer I expect.
+4. **How to think about the problem.** The steps, when the order matters.
+5. **Output format.** When what comes back goes to another program, and not to my eyes.
+
+That order changes as the models change. Giving the model a role ("you are an expert in...") used to weigh a lot and today weighs little. And instructions written for an older model, full of caution and step-by-step, now get in the way: it's tying a better model to what the previous one needed. I've been using fewer and fewer ready-made instructions.
+
+A case of missing context. One semester I told the class that the assignments would be graded with AI. The class quickly figured out you could hand in the previous week's assignment and get full marks: the AI only checked whether it was correct. Nobody had told it what week we were in.
+
+And asking is half of it. The other half is reading what came back to decide the next request.
+
 ## What about day to day?
 
 - **I explain the why, not just the what.** "Keep it short because the person is reading on their phone between two meetings" works better than "keep it short."
@@ -115,9 +137,12 @@ It explains the situation and the goal, gives criteria instead of cases, says wh
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** what is obvious to the team and isn't written down anywhere? How do I notice that I've put in too much context?
-- **A way to find the answer:** write as if for someone smart who started today; ask the same question with and without each piece; cut whatever doesn't change the answer.
-- **New project piece:** the project's instructions file, written once and reused in every conversation.
+- **In dispute:** what is obvious to the team and isn't written down anywhere? How do you notice there's too much context? Do long instructions protect or get in the way?
+- **Paths on the table:**
+  - *Caio:* minimal instructions: state the goal and let the agent work.
+  - *Bia:* write down every rule, with an example of each.
+  - *Lia:* write as if for someone smart who started today, and cut whatever doesn't change the answer.
+- **What the team did, for now:** a project instructions file, just one, that all three agents read. Short. For now.
 </div>
 
 <details class="g-aula" markdown="1">

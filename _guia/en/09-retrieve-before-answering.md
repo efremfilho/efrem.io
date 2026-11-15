@@ -8,13 +8,13 @@ part: 2
 permalink: /ai/retrieve-before-answering/
 interactive: "which excerpts would you bring?"
 piece: "the ten most repeated questions, with the page that answers each one"
-last_modified: 2026-11-13
+last_modified: 2026-11-15
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 9
 
-The school system's protocol has three hundred pages, three versions, and an appendix that exists only on paper. Lia has already learned that pasting everything into the conversation doesn't work. But the team asks the same things every week — how many absences, who calls, who visits — and each person answers a different way. If not even the team agrees on what the protocol says, what is an assistant going to say?
+Iara called: a family had been visited twice in the same week, by two people, each one following "the protocol." The school system's protocol has three hundred pages, three versions, and an appendix that exists only on paper. Caio already had the plan: throw everything into a base and let an assistant answer the questions of the people who do the visits. Bia wanted to know which of the three versions. Nobody knew. If not even the team agrees on what the protocol says, what is an assistant going to say?
 </div>
 
 Two earlier chapters left a problem set up. [Chapter 3](/ai/inside-a-language-model/) showed that the model fills in with what is plausible when it doesn't have the fact. [Chapter 8](/ai/context/) showed that dumping every document into the context window makes the answer worse. That leaves the question: how do you hand over only the right piece, at the moment it's needed?
@@ -69,6 +69,12 @@ Sometimes what's missing isn't a text, it's a piece of data or an action: how ma
 
 The logic is the same as with search — bringing into the context what the model doesn't have — with one important difference: a tool can *do* things. The questions about that are left for [chapter 15](/ai/agents-on-a-leash/).
 
+## Does it work with my own bookshelf?
+
+When I prepared a course for product people, I gathered the links to all my presentations and to the lists I maintain — some two hundred sources — into a notebook that answers only from them and shows which file and which excerpt each thing came from. It works better than I expected.
+
+And it breaks exactly where this chapter says it breaks. Some sources were empty, because the page had changed. And when someone in the class asked about a subject that wasn't in the base, it answered anyway, citing an excerpt that had nothing to do with it.
+
 ## Do I really need this?
 
 Maybe not, and that's an honest question to ask before building anything. If the document is short and fits comfortably in the context window, paste the document. If the question is always the same, write the answer once. I like to say that [the basics come before these techniques](/blog/en/before-rag-and-mcp-learn-the-basics/): choosing the model, asking well, giving context. A lot of people build the bookshelf before knowing what question they want to answer.
@@ -94,9 +100,12 @@ If you can answer all five, the technical part is the smallest part. If you can'
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **Questions she took with her:** which version of the protocol is the one that counts, and who decides that? Which is worse — the system not finding anything, or finding the wrong page?
-- **A way to find the answer:** start with the ten questions the team repeats most; for each one, locate by hand the page that answers it; only then build the base; test with questions whose answers she knows, and with one that has no answer.
-- **New project piece:** the ten most repeated questions, each with the page that answers it.
+- **In dispute:** which version of the protocol counts, and who decides that? Which is worse: the system not finding anything, or finding the wrong page?
+- **Paths on the table:**
+  - *Caio:* index everything and fix it as it gets things wrong.
+  - *Bia:* before any base, someone at the education department says which version counts.
+  - *Lia:* start with the ten questions the team repeats most and find, by hand, the page that answers each one.
+- **What the team did, for now:** the ten questions, each with its page; and a formal request to Iara: which version counts?
 </div>
 
 <details class="g-aula" markdown="1">
