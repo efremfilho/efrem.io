@@ -23,7 +23,7 @@ Migrado do Carrd em junho/2026.
 Guia em capítulos, bilíngue e interativo, separado do blog. Cada capítulo é um arquivo Markdown — o que facilita revisar, ampliar e, no futuro, exportar como livro.
 
 - `_guia/pt/NN-slug.md` e `_guia/en/NN-slug.md` — os capítulos. O par PT/EN é ligado pelo campo `ref` (igual nos dois arquivos); a ordem vem de `order` e a parte de `part` (1 = Entender, 2 = Pensar, 3 = Construir).
-- `_docs/` — rascunhos que não vão para o site (o Jekyll ignora pastas com sublinhado), como a proposta de revisão da ementa.
+- `temp/` — material de trabalho local (transcrições de aula, rascunhos como a proposta de revisão da ementa). Está no `.gitignore`: não vai para o repositório nem para o site, e pode ser apagada quando não servir mais.
 - `ia/index.md` e `ai/index.md` — texto de abertura do índice em cada idioma.
 - `ia/livro.md` e `ai/book.md` — **versão livro** (`/ia/livro/` e `/ai/book/`): uma página só com capa, sumário e todos os capítulos, pronta para imprimir ou salvar em PDF. É montada automaticamente por `_layouts/guia-livro.html` a partir dos capítulos — capítulo novo entra sozinho. Fica fora do sitemap e com `noindex`, para não competir com os capítulos nos buscadores.
 - `_layouts/guia.html` e `_layouts/guia-index.html` — layout de capítulo e de índice.
