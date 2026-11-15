@@ -17,7 +17,7 @@ last_modified: 2026-11-15
 Bia records an audio message after each visit. There are dozens a week, and nobody listens to them again. Caio asked an agent to transcribe everything and summarize it by family. It looked great — until Bia read the summary of a visit she had made herself. In it was a sentence from the mother that the mother never said. "Did you check?" "That's forty recordings, Bia." Half of what the team knows is in voice and in photos of paper. All of that can be read. And who vouches for what was read?
 </div>
 
-For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the context: sometimes I talk, almost always to think out loud. But I still prefer to write. When I write, I think before I send. The machine now accepts the world in the format it happens in.
+For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the context: sometimes I talk, almost always to think out loud. But I still prefer to write. When I write, I think before I send. The machine now accepts the world in the format it happens in. The use that serves me best is one of the simplest: I share my screen with a voice assistant and ask it to guide me through a setup I haven't mastered. "Click the menu on the left. See the button on the right?" It's tech support that sees what I'm seeing.
 
 This has a name — **multimodal** models — and it raises one question before any other.
 
@@ -37,7 +37,7 @@ If the machinery is the same, what would you expect of the flaws? That they'd be
 
 **What you gain.** The account of a visit, the meeting, the class: it all becomes searchable text that can be summarized and compared.
 
-**Where it tends to go wrong.** Proper names, numbers, accents, people talking over each other. And a stranger kind of error: stretches of silence or noise can turn into whole sentences nobody said. [A study](https://arxiv.org/abs/2402.08021) of a widely used transcription system found made-up sentences in about 1% of the recordings, more often in speech with long pauses. I myself once got a transcript that ended with a [subtitling credit I never dictated](/blog/en/a-speech-to-text-slip/).
+**Where it tends to go wrong.** Proper names, numbers, accents, people talking over each other. And a stranger kind of error: stretches of silence or noise can turn into whole sentences nobody said. [A study](https://arxiv.org/abs/2402.08021) of a widely used transcription system found made-up sentences in about 1% of the recordings, more often in speech with long pauses. I myself once got a transcript that ended with a [subtitling credit I never dictated](/blog/en/a-speech-to-text-slip/). And, transcribing eight hours of classes with an open model, I watched the transcript get stuck after about two hours and repeat the same sentence over and over. I lost two days trying to fix it by hand. The way out took a minute: pull the audio out of the video, lower the quality, and upload it to a ready-made tool. Overcomplicating is also a way of getting it wrong.
 
 **The question.** Who listens to the original audio before the transcript becomes the official record?
 
@@ -66,6 +66,12 @@ If the machinery is the same, what would you expect of the flaws? That they'd be
 **The question.** Whose voice and face are these — and did that person agree?
 
 </div>
+
+## Is handwriting still the weak spot?
+
+Less than I wrote up there. A friend who is a professor and works with notary records more than a century old told me he wasn't worried: the files he reads, no AI would read. We made a bet. His verdict, looking at the result: it reads better than doctoral students.
+
+What interests me is something else. On the burned or torn pages, the tool *deduces* what would have been written there. It reads very well — and fills in with the plausible, on the same page. How do you tell one from the other?
 
 ## What about when the summary is the only thing anyone reads?
 

@@ -58,6 +58,8 @@ What I learned the hard way:
 
 This takes practice; there's no other way. If the system at your job can't fail, practice on a side project: an internal tool, something that's only yours.
 
+A fellow teacher was tracking almost eighty students, one spreadsheet per student. I showed him one way, and he built his own system, on his own. He spent about five times more credits than I had — and that is the price of learning, not a flaw. The credit is all his. What made the difference there wasn't the perfect request: it was persisting until it worked. The will to build weighs more than getting it right the first time.
+
 The founder of one of these tools [recounts](https://www.youtube.com/watch?v=-QsTmu2CqhA) that a user described it as "a super genius five-year-old PhD with ADHD." It's the best definition I know, and it holds even more when I switch agents: sometimes it dives too deep into one thing, sometimes it gets stuck, sometimes it's just distracted. I once asked it to change the menu, and the only thing it did was not change the menu. The caveat is that this is less and less true: the models make things up less and are more like specialists. But it helps you ask with patience.
 
 ## What changed, in the end: speed?
@@ -106,6 +108,8 @@ That's why I call people in. The questions that make me call:
 4. Does it deal with money, or decide something about someone's life?
 
 And I call early. At a company where I worked, it took us years to see a pattern: when the client organization's technology team took part in the choice, the product lasted. When it was left out, it treated the thing as a rogue system — and its first move was to take it down. Hiding what you built from the technology team is the shortest path to losing what you built.
+
+And I've been the bulldozer in this story. At a previous job, my product team started doing with AI what another area was slow to deliver: we agreed on a deadline and, once it passed, we generated the material and put it live. The intention was to show, in practice, that specializing had become easier — and it had been agreed with leadership. It got things started. It wasn't the best way. I lacked the empathy a leader should have with other areas, and I damaged the relationship for a good while. In the end, we handed the finished processes over for that area to use and edit, and it turned out great. The road there was turbulent.
 
 ## A path
 

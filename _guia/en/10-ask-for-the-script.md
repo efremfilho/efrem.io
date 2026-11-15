@@ -67,6 +67,12 @@ The difference in practice:
 
 This is the opposite of needing to know how to program. I don't write these scripts — I describe what I need, read what was done, and check the result. What changed is that expertise now arrives in a format I can read: the agent explains, in plain language, what the script does and why. Knowing this option exists changes what you ask for. I talked about getting over the fear of it in [Product people: don't be afraid of a script](/blog/en/product-people-dont-be-afraid-of-a-script/).
 
+Two cases where asking for the code changed what I was able to show.
+
+In a project for a compliance team, the model read the whole regulation. When it was time to apply it, I didn't accept its reasoning: I had it generate the rule as code — if it goes from this state to that state, the tax is this one — and run it. The answer in text could be wonderful. I needed to show how it was reached.
+
+The other one was live, in a training session. I asked for a data analysis with the instruction to run code, copied the generated code into another environment, and it redid the whole analysis, identically. Then I asked how the outliers had been found. The answer was in the code: it had just taken the five largest. No standard deviation, no criterion at all. Lazy, just like us. I complained out loud — and someone in the room reminded me that my own request said exactly "list the five largest." It was all there, for anyone who wanted to read it: the bad criterion, and whose it was.
+
 ## How do you decide?
 
 Three quick questions before asking for anything:

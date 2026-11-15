@@ -19,7 +19,7 @@ Three people, three agents, three behaviors. Caio's agent wrote "at-risk student
 
 If I had to pick a single idea for someone to take from this guide, it would be this: **the model doesn't know you, doesn't remember yesterday, and knows nothing about your project. It only knows what is written in the window, right now.**
 
-Everything that looks like memory, personality, or "it already gets me" is someone — you or the product — putting text back into that window.
+Everything that looks like memory, personality, or "it already gets me" is someone — you or the product — putting text back into that window. When people say the assistant "learned" from your emails, what happened is this: the emails ended up in the window. Learning, for real, would mean retraining the model.
 
 ## What does the model see when you ask?
 
@@ -36,6 +36,8 @@ Intuition says: "when in doubt, throw everything in." It's the most common mista
 Language models work by relating each token to all the others. The more stuff in the window, the thinner that attention gets spread. Some people call this the **attention budget**: it's finite, and every new token spends a little of it. When the budget runs out, you get what has come to be called ***context rot***, the drop in performance that [has already been measured](https://research.trychroma.com/context-rot) as the input grows. The model forgets an instruction from the beginning, mixes up documents, repeats what it already did. It doesn't "freeze" — it just gets gradually worse.
 
 That's where the practical principle comes from: look for **the smallest set of high-signal tokens** that gets the task done.
+
+An example from home. The assistant's memory was left on in an account that more people in my family use. It started thinking I was studying a field that isn't mine, stored planning that wasn't mine — and began answering me worse, because of context I never asked for. Agents are learning to cope with excess. Even so, too much context costs more than it needs to and can still get in the way. I'd rather give the whole context, every time, than let it try to guess.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** build a context window for Lia's question. What would you take out first — and how do you know it won't be missed?

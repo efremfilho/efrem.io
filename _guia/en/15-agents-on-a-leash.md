@@ -64,6 +64,12 @@ What hasn't changed: I may no longer be the one who writes, but I'm still the on
 
 That's why the leash I keep short isn't the step-by-step one. It's the one on access — what the agent can reach — and the one on what can't be undone.
 
+## What does the log show that the conversation hides?
+
+In a demonstration, I asked an agent with access to my calendar and my email to schedule a lunch with a colleague, on Monday. It understood which Monday I meant, found a free slot, created the event, and sent the invitation. It sent it twice. It wrote a text I never asked for, out of its own head. And the conversation ended with an error message, while the log marked everything as completed.
+
+Someone asked: if I hadn't seen my colleague's inbox, would I know the email went out? I would, from the log. It's all there, step by step: looked for a slot, created the event, sent. It's the only reason I let an agent act.
+
 ## Who can approve?
 
 At the company, we have a support agent in a messaging channel. It works like this:

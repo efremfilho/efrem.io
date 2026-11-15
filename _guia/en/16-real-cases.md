@@ -84,7 +84,9 @@ This guide, by the way, was born that way: from recordings of my classes and fro
 
 **After:** a designer I worked with had the idea before I did. She took the transcripts of real interviews and asked an assistant to continue the conversation in the role of that person. Today I use the same technique to rehearse: before a difficult conversation, I talk to the persona.
 
-**What I learned:** it works better than I expected. Sometimes it yields more than the interview, because the persona isn't embarrassed to answer. And it has limits I don't forget: it is far nicer than any client; it's a plausible continuation, not a person ([chapter 3](/ai/inside-a-language-model/)); and it doesn't replace talking to real people — it complements it. I'm not the only one who is wary: user-experience researchers reran real studies with synthetic participants and found the answers shallow and overly favorable ([Rosala & Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)). It's good for raising hypotheses and rehearsing, not for deciding. A question I ask myself more and more: does the person who gave the interview know that what they said is still being used?
+**What I learned:** it works better than I expected. Sometimes it yields more than the interview, because the persona isn't embarrassed to answer. And it has limits I don't forget: it is far nicer than any client; it's a plausible continuation, not a person ([chapter 3](/ai/inside-a-language-model/)); and it doesn't replace talking to real people — it complements it. A question I ask myself more and more: does the person who gave the interview know that what they said is still being used?
+
+**What both sides say:** user-experience researchers reran real studies with synthetic participants and found the answers shallow and overly favorable ([Rosala & Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): good for raising hypotheses, not for deciding. The co-founder of a company that sells exactly this kind of research — an interested party, of course — replies that research exists to reduce risk and decide better, not to follow a method, and that many people criticize it without having tried it. Even he doesn't recommend betting the company on a synthetic answer: he talks about finding the point where it speeds things up, and what should stay with people only ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Both land close to what I lived: it complements, it doesn't replace.
 
 ## What about programming?
 
@@ -133,12 +135,13 @@ Each person picks a tedious, repetitive task from their own routine and fills in
 
 #### References
 
+- Alves, H. (2026, February 21). *Let's get real about synthetic users* [Video]. Interview by J. Knight. One Knight in Product. <https://www.youtube.com/watch?v=W87q8M9Gl-0>
 - Maranhão Filho, É. (2025, July 21). *Instead of looking for a SaaS, I open ChatGPT, Gemini or Colab*. efrem.io. <https://efrem.io/blog/en/instead-of-a-saas-i-open-chatgpt-gemini-or-colab/>
 - Maranhão Filho, É. (2026, August 18). *Recording calls to think things through with Claude*. efrem.io. <https://efrem.io/blog/en/recording-calls-to-think-with-claude/>
 - Maranhão Filho, É. (2026, November 11). *I only pay for the SaaS I see value in, the rest I build*. efrem.io. <https://efrem.io/blog/en/i-only-pay-for-saas-i-see-value-in/>
 - Maranhão Filho, É. (2026, October 27). *Product and UX have never mattered more*. efrem.io. <https://efrem.io/blog/en/product-and-ux-have-never-mattered-more/>
 - Rosala, M., & Moran, K. (2024, June 21). *Synthetic users: If, when, and how to use AI-generated "research"*. Nielsen Norman Group. <https://www.nngroup.com/articles/synthetic-users/>
 
-*Notes:* The eight cases come from my work and teaching routine; names of people, clients and companies were left out. The change in legislation in case 1 is Brazil's tax reform. On synthetic participants, the authors write: "Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people" and "They often provide shallow or overly favorable feedback" (Rosala & Moran, 2024).
+*Notes:* The eight cases come from my work and teaching routine; names of people, clients and companies were left out. The change in legislation in case 1 is Brazil's tax reform. On synthetic participants, the authors write: "Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people" and "They often provide shallow or overly favorable feedback" (Rosala & Moran, 2024). Hugo Alves is the co-founder of a company that sells research with synthetic participants; in the interview he says: "research is always about making better decisions [...] It's about reducing risk" (minute 4); that he does not expect anyone to make, on this alone, "a decision that can make a company break", and that one has to find "what should be left exclusively for humans" (minute 17); and that people who change their mind usually say "I wouldn't replace humans with this but now I really see where this could help me" (minute 52).
 
 </div>
