@@ -46,3 +46,16 @@ kramdown:
 # A página principal e os assets são servidos como arquivos estáticos ou layouts Jekyll.
 # Os atalhos /algo ficam em redirects/, um arquivo por rota, usando redirect_to
 # do plugin jekyll-redirect-from (suportado nativamente pelo GitHub Pages).
+
+# Arquivos da raiz que não são páginas do site. Esta lista substitui a padrão do Jekyll 3
+# e a do GitHub Pages, por isso CNAME, Gemfile, node_modules e vendor aparecem aqui também.
+# temp/ é material de trabalho local.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - temp
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

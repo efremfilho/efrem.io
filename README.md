@@ -17,6 +17,8 @@ Migrado do Carrd em junho/2026.
 - `404.html` — página para atalhos inexistentes.
 - `CNAME` — domínio customizado (`efrem.io`).
 - `COMO-PUBLICAR.md` — guia passo a passo para criar e publicar novos posts com prompt pronto para o Claude.
+- `AGENTS.md` — instruções para agentes de IA que trabalham no repositório: regras de trabalho, linha editorial do guia e comandos. O `CLAUDE.md` só aponta para ele.
+- `_tools/guia/` — ferramentas do guia (ver "Ferramentas do guia", abaixo).
 
 ## Guia "IA sem mágica" (`/ia/` e `/ai/`)
 
@@ -68,6 +70,8 @@ slides: "https://..."
 
 **Citações:** todo número ou fato externo tem link no texto e entrada formal em "Referências" (ABNT em português, APA em inglês), incluindo os posts do próprio blog citados no capítulo. Antes de publicar um dado novo, abra a fonte e confira o valor.
 
+**O alerta:** onde o autor opina fora da área dele (arte, design, direito, estatística, educação), o texto diz isso com todas as letras, na voz dele, e o conceito é conferido em fonte antes de publicar. Tom humano, sim; erro de fato, dado ou conceito, não.
+
 **Tom:** socrático e atemporal. Títulos de seção em forma de pergunta, provocações no meio do texto e um caminho para responder no lugar de respostas prontas. No texto não entram nomes de produtos, datas nem números muito específicos: o corpo fala em ordens de grandeza e cita por autor e ano; o valor exato e o nome do caso ficam nas "Notas" do bloco de referências.
 
 **Voz:** primeira pessoa do autor, direta, meio irônica, com casos próprios no lugar de regra. O público é quem quer mudar alguma coisa construindo com tecnologia.
@@ -77,6 +81,21 @@ slides: "https://..."
 **Linguagem:** o texto evita o masculino genérico. Prefira "estudante", "a pessoa", "o time", "quem usa". As personagens são narradas em terceira pessoa.
 
 Os textos dos widgets ficam em `assets/js/guia.js`, em PT e EN lado a lado; o idioma é escolhido pelo `lang` da página. Para criar um widget novo, adicione uma função em `W` nesse arquivo.
+
+### Ferramentas do guia
+
+Ficam em `_tools/guia/`. O Jekyll ignora pastas que começam com sublinhado, então nada disso vai para o site.
+
+| Arquivo | Para quê | Como usar |
+|---|---|---|
+| `referencias.json` | Base de referências: cada fonte em ABNT e em APA, as fontes de cada capítulo e as notas | Edite à mão; a chave `_leia` explica o formato |
+| `refs.py` | Escreve o bloco de referências no fim de cada capítulo, nos dois idiomas. Posts do blog citados no texto entram sozinhos | `python3 _tools/guia/refs.py` (ou `--check` para só conferir) |
+| `build.sh` | Gera o site com a mesma imagem que o GitHub Pages usa. Precisa de Docker | `_tools/guia/build.sh` — ao terminar, informa a pasta do site |
+| `conferir.py` | Paridade PT/EN, formato do diário de bordo, sobras e links internos | `python3 _tools/guia/conferir.py <pasta do site>` |
+| `testar-widgets.js` | Abre cada página gerada e exercita os experimentos | `npm install` em `_tools/guia`, depois `node _tools/guia/testar-widgets.js <pasta do site> ia ai` |
+| `pdf.js` | Gera o PDF da versão livro pelo CSS de impressão | Sirva o site (`python3 -m http.server 4173 -d <pasta do site>`), rode `npx playwright install chromium` uma vez e depois `node _tools/guia/pdf.js http://localhost:4173/ia/livro/ ia-sem-magica.pdf` |
+
+Roteiro antes de publicar uma mudança no guia: `refs.py`, `build.sh`, `conferir.py` e `testar-widgets.js`. Os quatro precisam passar.
 
 ## Como publicar novos posts no Blog
 
