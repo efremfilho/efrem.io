@@ -1,6 +1,7 @@
 ---
-title: "Como a máquina aprende"
-description: "Estudar para a prova, transformar o mundo em números e errar um pouco menos a cada volta. É só isso — repetido bilhões de vezes."
+title: "Como aprendeu isso — e o que ficou de fora?"
+subtitle: "Dados, redes neurais, treino e generalização."
+description: "Como exemplos viram ajustes, ajustes se combinam em redes e uma máquina aprende padrões. Sem precisar resolver a equação."
 lang: pt-BR
 ref: how-machines-learn
 order: 2
@@ -8,13 +9,13 @@ part: 1
 permalink: /ia/como-a-maquina-aprende/
 interactive: "desenhe pixels e treine um modelo"
 piece: "o que a planilha tem × o que a equipe sabe"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 2
 
-Caio conseguiu com Iara a planilha dos últimos três anos e, no mesmo dia, pediu a um agente "um modelo que prevê quem vai sair". O agente entregou, com uma taxa de acerto bonita. Bia olhou as colunas: faltas, notas, idade, distância até a escola. "Cadê quem arrumou trabalho? Quem ficou em casa cuidando das crianças menores? A linha de ônibus que cortaram?" Caio deu de ombros: se não está na planilha, não tem como entrar. "Então o seu modelo aprendeu a escola, não a vida." Para o modelo, o que não está na planilha existe?
+Caio pediu a um agente um modelo com os dados históricos que Iara disponibilizou no ambiente da secretaria. Voltou uma taxa de acerto bonita. Bia perguntou pela linha de ônibus que cortaram, pelo trabalho, por quem cuidava das crianças menores. Nada disso era coluna. "Então vamos registrar nas visitas", propôs. Caio pediu ao agente outra coisa: "mostre onde faltam dados e compare os turnos, sem prever pessoas". A concentração no noturno merecia uma olhada, mesmo sem explicar o motivo. Bia insistiu em ouvir as famílias; Lia reservou parte das visitas para isso. Na primeira rodada, preencher o novo registro tomou o tempo de um contato que já estava marcado. Que informação vale esse tempo — e o que dá para aprender com o dado incompleto que já existe?
 </div>
 
 Quase ninguém que lê este guia vai treinar um modelo: o que a gente mexe, no dia a dia, é na entrada e nas configurações. Mas quem constrói com IA precisa saber **o que acontece** quando alguém diz que "treinou um modelo". É aí que moram as decisões humanas — e é o que explica metade das esquisitices dos próximos capítulos.
@@ -25,18 +26,18 @@ Pense em como você se prepara para uma prova:
 
 | Você estudando | Aprendizado de máquina |
 |---|---|
-| Seu cérebro, antes de estudar | O **modelo**, ainda sem treino |
+| Você, antes de estudar | O **modelo**, ainda sem treino |
 | Anotações, livros, exercícios resolvidos | Os **dados** de treino |
 | Estudar: revisar, testar, corrigir | O **treinamento** |
-| Você, depois de estudar, diante de questões inéditas | O **modelo treinado** |
+| Você diante de questões inéditas | O **modelo treinado**, sendo testado |
 
-A analogia funciona para a estrutura e quebra em um ponto essencial. Você aprende conectando o conteúdo com a sua vida: experiências, emoções, causa e efeito. A máquina não tem vida para conectar. Ela encontra **correlações estatísticas** entre números e devolve probabilidades. Não há compreensão ali — há uma conta muito bem ajustada.
+A analogia separa estudar de usar o que foi estudado. Não explica como uma mente funciona. Aqui, dizer que a máquina aprendeu significa que o treino mudou seu comportamento diante dos exemplos. A pergunta seguinte é a boa: funciona também quando muda a letra, a pessoa, a escola? Decorar o exercício não basta.
 
 ## Como o mundo vira número?
 
-Para um modelo, não existe "foto de cachorro". Existe uma lista de números. As propriedades mensuráveis que usamos para descrever algo — cor, tamanho, textura, formato — chamam-se **características** (*features*, em inglês).
+Pense na planilha do Caio. Uma linha tenta representar uma vida usando faltas, notas e distância. Ela permite fazer contas; também deixa muita coisa de fora. Essas propriedades usadas para descrever algo são as **características** (*features*, em inglês).
 
-Em uma imagem preto e branco, a tradução é direta: pixel branco vira `0`, pixel preto vira `1`. Uma imagem de 8×8 vira uma lista de 64 números. Essa lista é o **vetor de características**.
+Uma imagem também pode virar uma lista. No experimento abaixo, pixel branco vira `0`, pixel preto vira `1`. Uma grade de 8×8 dá 64 números. Essa lista é um **vetor**. Nome sofisticado, ideia que cabe numa linha de planilha.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** desenhe na grade e veja o desenho virar número. Depois responda: o que da vida de uma pessoa não cabe em uma coluna? E o que acontece com o que não cabe?
@@ -44,52 +45,79 @@ Em uma imagem preto e branco, a tradução é direta: pixel branco vira `0`, pix
 
 <div data-widget="pixels"></div>
 
-Com um vetor, cada coisa vira um **ponto** em um espaço matemático. E aí aparece a ideia mais bonita desse assunto: nesse espaço, **proximidade significa semelhança**. Duas imagens parecidas viram pontos vizinhos. É por isso que um sistema consegue dizer que "gato" está perto de "felino" e longe de "geladeira" sem saber o que é nenhum dos três.
+Agora desloque mentalmente o desenho uma casa para o lado. Você continua vendo o mesmo desenho, mas vários números mudaram. **Virar número não basta para reconhecer semelhança.** Importa como a informação foi representada e o que o modelo aprendeu a comparar. Esse será o elo com os mapas de significado do [próximo capítulo](/ia/por-dentro-do-modelo/).
 
-Quem decide quais características entram? Pessoas — direta ou indiretamente. Guarde isso para o [capítulo 4](/ia/vies/).
+## Onde entram as redes neurais?
+
+A [explicação visual de redes neurais](https://www.youtube.com/watch?v=aircAruvnKk), de Grant Sanderson, começa por um desafio ótimo: reconhecer um algarismo escrito à mão. Você reconhece de cara. Agora tente escrever uma regra que sirva para todas as letras tortas de todas as pessoas.
+
+Numa rede neural, várias operações pequenas se encadeiam em **camadas**. Cada uma recebe sinais, combina e transforma esses sinais, e passa o resultado adiante. O nome "neurônio" não exige imaginar uma pessoa minúscula pensando lá dentro.
+
+Uma maneira de visualizar a ideia é juntar pistas: trechos de imagem, curvas, combinações que ajudam a distinguir um algarismo de outro. Isso explica por que combinar etapas pode ajudar. Não é um mapa literal em que cada neurônio recebeu uma etiqueta "detector de curva". A rede aprende representações que nem sempre conseguimos traduzir assim.
+
+Pense num painel de ajustes: cada botão muda quanto um sinal influencia o próximo. Muitos desses ajustes são os **pesos**. Girar um botão pode mudar o resultado; o treino procura combinações que funcionem melhor. O painel é uma imagem para os números, não uma peça que alguém gira à mão.
 
 ## O que acontece em cada volta do treino?
 
-Lembra da conta da escola? `3x + 2y = z`: davam o x e o y, você achava o z. Treinar um modelo é a mesma conta ao contrário. Eu mostro uma montanha de exemplos em que x, y e z são conhecidos e peço que a máquina ache o 3 e o 2. O que era conhecido virou desconhecido. Esses números que ela procura são os **pesos** — e um modelo, no fundo, é uma equação gigantesca cheia deles.
+A [explicação do aprendizado](https://www.3blue1brown.com/lessons/gradient-descent/) ajuda a enxergar o ciclo sem fazer a conta:
 
-Com os dados em números, o treino é um ciclo de quatro passos:
+1. **Calcular um palpite.** Os ajustes atuais produzem uma saída.
+2. **Medir o erro.** Compara-se a saída com o que se queria obter, segundo um critério escolhido. Essa medida é a *loss*.
+3. **Ajustar.** O algoritmo calcula mudanças que tendem a reduzir esse erro.
+4. **Repetir.** Outros exemplos entram, os ajustes mudam, e o ciclo continua.
 
-1. **Calcular um palpite.** O modelo multiplica cada característica por um **peso** (o quanto ela importa) e soma um ajuste fixo, o **viés** matemático (*bias*): `palpite = pesos × características + ajuste`. No começo os pesos são chutes.
-2. **Medir o erro.** Compara o palpite com a resposta certa. A distância entre os dois é o **erro** (ou *loss*).
-3. **Ajustar a equação.** Mexe um pouquinho em cada peso, na direção que diminui o erro.
-4. **Repetir.** Milhões, bilhões de vezes, com exemplos diferentes.
+Como descobrir que botões mexer numa rede inteira? A [retropropagação](https://www.3blue1brown.com/lessons/backpropagation/) faz o caminho das contas de trás para a frente para calcular como cada ajuste influencia o erro. Não é sair tentando um botão por vez. A correção considera como eles participam juntos do resultado.
 
-Não tem passo 5. Não tem "e então o modelo entende". No experimento abaixo o modelo tem só dois números para ajustar, e dá para ver o aprendizado acontecendo.
+Não aparece um passo secreto chamado "agora entenda o mundo". Mas isso também não torna o que foi aprendido trivial. O resultado depende dos dados, das operações que conseguimos combinar e do que escolhemos chamar de erro.
+
+No experimento, o painel tem só dois ajustes: um inclina a reta; o outro a sobe ou desce. A fórmula na tela registra esses movimentos. Dá para acompanhar a ideia sem resolver a equação.
 
 <div data-widget="treino"></div>
 
 <div class="g-box g-warn" markdown="1">
-**Duas palavras, dois sentidos.** O "viés" da equação acima é só um número de ajuste, sem nada de moral. O **viés algorítmico** do capítulo 4 é outra coisa: é quando o modelo erra sistematicamente contra alguém. Mesma palavra, assuntos diferentes — isso confunde até quem é da área.
+**Duas palavras, dois sentidos.** O ajuste que sobe ou desce a reta é chamado de **viés** matemático (*bias*). O **viés algorítmico** do capítulo 4 é outra conversa: padrões de resultado que podem prejudicar grupos de forma desigual. Um nome parecido não transforma os dois no mesmo problema.
 </div>
+
+Diminuir o erro nesse conjunto é uma parte do trabalho. A outra é [conferir com exemplos que ficaram fora do treino](https://www.3blue1brown.com/lessons/gradient-descent/). No caso do Caio: acertar o passado da planilha não prova que o modelo vai ajudar uma família amanhã. E quem escolheu medir acerto, em vez de medir quantas famílias receberam ajuda? Essa escolha não saiu da equação.
 
 ## E em um modelo de linguagem, o que muda?
 
-Quase nada na ideia, quase tudo na escala. Quando eu fazia iniciação científica, uma rede com quatro camadas e dezesseis neurônios parava o laboratório por um dia inteiro para rodar. Um modelo como os que estão por trás dos assistentes de conversa tem bilhões de pesos, e a "prova" dele é sempre a mesma: *dado este trecho de texto, qual é o próximo pedaço?* Ele chuta, mede o erro, ajusta, repete — com uma parte enorme do que a humanidade já escreveu.
+Quando eu fazia iniciação científica, uma rede com quatro camadas e dezesseis neurônios parava o laboratório por um dia inteiro para rodar. A ideia de ajustar números continua. O tamanho e a organização das redes mudaram muito — não basta esticar aquela reta.
 
-O resultado é um sistema extraordinariamente bom em continuar textos de forma plausível. "Plausível" e "verdadeiro" coincidem na maior parte das vezes. Quando não coincidem, chamamos de alucinação — que não é um defeito esquisito, é a mesma máquina fazendo a mesma coisa.
+No [treino de linguagem que nos interessa aqui](https://www.3blue1brown.com/lessons/mini-llm/), os exemplos são trechos de texto, e uma tarefa central é prever o próximo pedaço. O próprio texto fornece a continuação com que comparar o palpite. É uma maneira de aprender padrões sem alguém precisar escrever uma regra para cada frase.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
+Daí vem a ponte: **a rede que recebe pixels pode aprender padrões de imagem; a que recebe texto pode aprender padrões de linguagem.** No próximo capítulo, vamos acompanhar como o contexto altera o que cada pedaço representa. Depois, como isso vira resposta. Conseguir continuar uma frase e ter evidência sobre a vida da estudante são trabalhos diferentes.
 
-- Máquinas não processam conceitos; processam vetores de números.
-- Treinar é ajustar pesos para diminuir um erro medido. Só isso.
-- O modelo minimiza distância até as respostas dos dados de treino. Se os dados forem tortos, ele aprende o torto com muita competência.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** quem escolheu essas colunas, e para que elas serviam quando foram criadas? Dá para registrar o motivo de uma ausência sem expor a família?
+- **Em disputa:** Registrar mais aproxima o time da vida das famílias, mas também ocupa tempo e guarda mais informação sobre elas. Qual ausência de dado muda uma decisão?
 - **Caminhos na mesa:**
-  - *Caio:* usar o que há. É o dado que existe, e dado imperfeito ainda é dado.
-  - *Bia:* anotar o motivo em cada visita. Mais verdadeiro, mais trabalho — e mais um dado sensível guardado.
-  - *Lia:* antes de treinar qualquer coisa, pôr lado a lado o que a planilha tem e o que o time sabe.
-- **O que o time fez, por enquanto:** as duas listas lado a lado. O modelo do Caio foi para a gaveta. Por ora.
+  - *Caio:* comparar primeiro os registros que já existem. Pode encontrar algo útil hoje, mas carrega os pontos cegos da planilha.
+  - *Bia:* ouvir e registrar motivos nas visitas. Ganha contexto, mas reduz a quantidade de contatos e aumenta o cuidado necessário com os registros.
+  - *Lia:* suspender o modelo e mapear as lacunas com o time. Evita uma previsão prematura, mas pode adiar um sinal que já ajudaria.
+- **O que o time fez, por enquanto:** deixou o modelo de previsão na gaveta e experimentou o registro proposto por Bia em algumas visitas. Caio guardou a comparação dos turnos para revisão. O contato que não coube precisou ser remarcado; ouvir melhor não tinha saído de graça.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Representação:** transformar uma situação em dados exige escolher o que entra e o que fica de fora.
+- **Treino:** ajustar parâmetros com exemplos e um critério de erro. Uma rede combina muitas operações simples.
+- **Generalização:** acertar exemplos conhecidos não basta; importa o comportamento em situações que não estavam no treino.
+
+Se o treino vai bem e o uso vai mal, que parte você investigaria primeiro — e por quê?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Retome uma saída que pareceu boa e experimente uma entrada diferente: um caso incompleto, uma exceção, uma situação que você conhece melhor que a ferramenta. O que mudou? Que informação importante só existia na sua cabeça? Guarde o exemplo para comparar quando mudar o pedido ou o procedimento.
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -106,3 +134,19 @@ Distribua 10 cartões com frutas desenhadas (ou projete fotos). Peça que a turm
 - Se o modelo só reduz erro em relação aos exemplos, o que acontece quando os exemplos estão errados?
 
 </details>
+
+<div class="g-fontes" markdown="1">
+
+#### Referências
+
+- 3BLUE1BROWN. **Neural networks**. [*S. l.*], [2017-]. Série de vídeos. Disponível em: <https://www.3blue1brown.com/topics/neural-networks>. Acesso em: 13 nov. 2026.
+- SANDERSON, Grant. **But what is a neural network?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 5 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/neural-networks/>. Vídeo correspondente: <https://www.youtube.com/watch?v=aircAruvnKk>. Acesso em: 15 nov. 2026.
+- SANDERSON, Grant. **Gradient descent, how neural networks learn**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 16 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/gradient-descent/>. Acesso em: 15 nov. 2026.
+- SANDERSON, Grant. **Large language models explained briefly**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 20 nov. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/mini-llm/>. Vídeo correspondente: <https://www.youtube.com/watch?v=LPZh9BOjkQs>. Acesso em: 15 nov. 2026.
+- SANDERSON, Grant. **What is backpropagation really doing?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 3 nov. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/backpropagation/>. Acesso em: 15 nov. 2026.
+
+*Notas:* As lições de Grant Sanderson, do 3Blue1Brown, dão a base visual: algarismos manuscritos e redes em camadas (*But what is a neural network?*); ajuste pelo erro e teste com exemplos separados (*Gradient descent*); contribuição de cada parâmetro para o erro (*Backpropagation*). A combinação de traços e curvas é uma motivação para a arquitetura, não uma descrição garantida do que cada neurônio aprendeu. O painel de ajustes é uma analogia didática para parâmetros. O experimento da reta ilustra uma regressão simples, não uma rede neural completa. O relato da iniciação científica é do autor.
+
+Para continuar pela [série completa](https://www.3blue1brown.com/topics/neural-networks), vale acompanhar primeiro as imagens e as perguntas; as contas podem ficar para outra leitura. Aqui o percurso vai da representação ao treino e, no capítulo seguinte, ao contexto e à geração de linguagem. As datas das referências são as das lições escritas, que também apontam para os vídeos correspondentes.
+
+</div>

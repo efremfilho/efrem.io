@@ -1,5 +1,6 @@
 ---
-title: "Retrieve before answering"
+title: "Which of these rules applies now?"
+subtitle: "Source lookup, retrieval, and authority."
 description: "The model hasn't read your organization's documents. How do you get it to look at the right page at the right time — and say so when it didn't find it?"
 lang: en
 ref: retrieval
@@ -8,16 +9,16 @@ part: 2
 permalink: /ai/retrieve-before-answering/
 interactive: "which excerpts would you bring?"
 piece: "the ten most repeated questions, with the page that answers each one"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 9
 
-Iara called: a family had been visited twice in the same week, by two people, each one following "the protocol." The school system's protocol has three hundred pages, three versions, and an appendix that exists only on paper. Caio already had the plan: throw everything into a base and let an assistant answer the questions of the people who do the visits. Bia wanted to know which of the three versions. Nobody knew. If not even the team agrees on what the protocol says, what is an assistant going to say?
+Iara called: a family had received two visits in the same week, each visitor following "the protocol." Lia had shortened the project instructions and cut the indication of which document applied in each situation. Bia used the form she knew from fieldwork; Caio found a newer version that did not mention the paper appendix. He asked the agent: "compare the instructions and show where they differ, with page numbers." Bia reviewed it and found an exception the comparison had missed. Retrieval helped expose the dispute. It did not decide who could settle it. While Iara checked with the department, who would answer the next school?
 </div>
 
-Two earlier chapters left a problem set up. [Chapter 3](/ai/inside-a-language-model/) showed that the model fills in with what is plausible when it doesn't have the fact. [Chapter 8](/ai/context/) showed that dumping every document into the context window makes the answer worse. That leaves the question: how do you hand over only the right piece, at the moment it's needed?
+Two earlier chapters left a problem set up. [Chapter 3](/ai/inside-a-language-model/) showed that the model fills in with what is plausible when it doesn't have the fact. [Chapter 8](/ai/context/) showed why organizing documents matters even when they all fit in the window. That leaves the question: how do you hand over only the right piece, at the moment it's needed?
 
 ## Where does the model get what it knows?
 
@@ -27,8 +28,8 @@ From two places, and it's worth never confusing one with the other.
 |---|---|---|
 | **What it is** | Patterns from billions of texts | What you wrote, what you attached, or what the system found in a search |
 | **How current it is** | Stopped on some date | As current as what you provide |
-| **Your organization** | Almost certainly not in there | Only if someone puts it there |
-| **Can you check where it came from?** | No | Yes — it's right in front of you |
+| **Your organization** | May include outdated public information; that does not mean it knows the current project | Can receive records selected for this task |
+| **Can you check the source?** | The answer alone does not show which training material it came from | You can open the document and check whether it supports the claim |
 
 Which of the two columns would you want answering a question about your school system's protocol?
 
@@ -49,7 +50,7 @@ The model is still the same. What changes is that, before it completes the text,
 
 <div data-widget="busca"></div>
 
-The search in the experiment is simple on purpose: it counts words in common. Real systems compare meaning, not words. But what you decided there — how many excerpts go in, what to do when none of them fits — are human decisions in any version.
+The experiment retrieves by counting shared words. Retrieval can use words, learned relationships, or combinations; the [reference paper also compares retrieval methods](https://arxiv.org/html/2005.11401v4). The exercise exposes a decision: if a retrieved passage concerns the same subject but doesn't answer the question, should it count as evidence?
 
 ## Where does this break?
 
@@ -62,7 +63,7 @@ Instead of a list of flaws, here are questions to ask any system of this kind �
 - **And when there is no answer?** Does the system know how to say "I couldn't find it"?
 - **Who can see what?** If the base has restricted documents, the search has to respect the permissions of the person asking.
 
-Notice that only the first question is technical. The others are about the organization: who looks after the documents, who decides which one counts, who can read them.
+These questions mix technology and organization. Well-implemented retrieval can return a revoked rule; an updated collection can be searched poorly. Whoever maintains the documents and whoever builds retrieval need to work together.
 
 ## And when the answer isn't in any document?
 
@@ -72,15 +73,23 @@ The logic is the same as with search — bringing into the context what the mode
 
 ## Does it work with my own bookshelf?
 
-When I prepared a course for product people, I gathered the links to all my presentations and to the lists I maintain — some two hundred sources — into a notebook that answers only from them and shows which file and which excerpt each thing came from. It works better than I expected.
+My first attempt to create a tutor for studying AI [didn't go so well](/blog/en/my-public-commitment-to-study-ai/). After experimenting, I went looking for open courses and materials organized by topic. The episode leaves a question: which sources would support what the tutor taught? Does assigning that role also settle the choice of material?
+
+When I prepared a course for product people, I gathered the links to all my presentations and to the lists I maintain — some two hundred sources — into a notebook configured to answer from them and identify the file and passage used. It works better than I expected.
 
 And it breaks exactly where this chapter says it breaks. Some sources were empty, because the page had changed. And when someone in the class asked about a subject that wasn't in the base, it answered anyway, citing an excerpt that had nothing to do with it.
+
+## Did questions about sources begin with AI?
+
+Before these assistants, I already assigned [work that had to be done with plagiarism](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspired by uncreative writing. Students assembled a text from different sources, identified by colors. Next to each reference, they had to explain why they used it and why it was reliable. The exercise did not authorize hiding authorship: it made origins visible.
+
+The question returns with the model's answer: what came from a source you can check? What was inferred? What remains unsupported? An explanation that hides those differences can sound much better than the work supporting it.
 
 ## Do I really need this?
 
 Maybe not, and that's an honest question to ask before building anything. If the document is short and fits comfortably in the context window, paste the document. If the question is always the same, write the answer once. I like to say that [the basics come before these techniques](/blog/en/before-rag-and-mcp-learn-the-basics/): choosing the model, asking well, giving context. A lot of people build the bookshelf before knowing what question they want to answer.
 
-## A path, in five questions
+## What questions help you choose a path?
 
 1. **What is the source of truth?** A document, a spreadsheet, a person?
 2. **Who keeps it up to date** — and how does the base find out when it changes?
@@ -90,23 +99,36 @@ Maybe not, and that's an honest question to ask before building anything. If the
 
 If you can answer all five, the technical part is the smallest part. If you can't, no technique will fix it.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- The model has two memories: what was left from training and what's in the context window. Only the second one can be checked.
-- Retrieving before answering means handing over the right excerpt at the right time, and demanding the citation.
-- The quality of the answer depends more on who looks after the documents than on the model.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** which version of the protocol counts, and who decides that? Which is worse: the system not finding anything, or finding the wrong page?
+- **In dispute:** Does finding a document settle the question or reveal conflicting versions? Who has the authority to say which one applies?
 - **Paths on the table:**
-  - *Caio:* index everything and fix it as it gets things wrong.
-  - *Bia:* before any base, someone at the education department says which version counts.
-  - *Lia:* start with the ten questions the team repeats most and find, by hand, the page that answers each one.
-- **What the team did, for now:** the ten questions, each with its page; and a formal request to Iara: which version counts?
+  - *Caio:* index all versions, clearly identified, to locate disagreements. That helps investigation, but an answer may still mix incompatible rules.
+  - *Bia:* provisionally retain the form field teams use. That preserves continuity, but may prolong an outdated instruction.
+  - *Lia:* pause disputed instructions until the department decides. That avoids choosing without authority, but leaves questions without an immediate answer.
+- **What the team did, for now:** built a reference for frequent questions, with page and version. For conflicts, it adopted Lia's proposed pause and requested a decision from Iara. One school had to wait for a reply; the cost of caution appeared in the schedule, not in retrieval quality.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Retrieval:** finding relevant material before generating an answer; the model need not have learned that document during training.
+- **Distinct stages:** the source can be wrong, retrieval can miss the passage, and generation can distort it.
+- **Citation:** offers a route to checking. The conclusion still needs support from the passage.
+
+If an answer cites a real document and is still wrong, where would you look for the problem?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Choose a recurring question in your project and identify the material that should help answer it. Request the answer with the passages used, and open those passages. Do they support the conclusion? If two sources disagree, who can resolve the difference — and what can you deliver in the meantime?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -129,7 +151,12 @@ Hand out a four- or five-page set of regulations (your own institution's will do
 
 #### References
 
+- Goldsmith, K. (2011). *Uncreative writing: Managing language in the digital age*. Columbia University Press.
 - Lewis, P., Perez, E., Piktus, A., Petroni, F., et al. (2020). *Retrieval-augmented generation for knowledge-intensive NLP tasks*. arXiv. <https://doi.org/10.48550/arXiv.2005.11401>
+- Maranhão Filho, É. (2014). *Trabalhos com plágio* [Assignment instructions, in Portuguese]. <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>
 - Maranhão Filho, É. (2025, June 30). *Before RAG and MCP, learn the basics*. efrem.io. <https://efrem.io/blog/en/before-rag-and-mcp-learn-the-basics/>
+- Maranhão Filho, É. (2025, September 24). *My public commitment to study AI by the end of the year*. efrem.io. <https://efrem.io/blog/en/my-public-commitment-to-study-ai/>
+
+*Notes:* The source-based writing exercise was assigned by the author in 2014, inspired by Goldsmith (2011). The original document describes color identification, multiple sources, and discussion of reliability.
 
 </div>

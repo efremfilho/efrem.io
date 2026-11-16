@@ -1,5 +1,6 @@
 ---
-title: "Além do texto: voz, imagem e vídeo"
+title: "Foi isso mesmo que a pessoa disse?"
+subtitle: "Voz, imagem, vídeo e fidelidade ao registro."
 description: "Áudio vira texto, foto vira tabela, texto vira imagem. O que se ganha, o que pode sair errado sem ninguém perceber — e de quem é a voz?"
 lang: pt-BR
 ref: multimodal
@@ -8,13 +9,13 @@ part: 3
 permalink: /ia/alem-do-texto/
 interactive: "quatro conversões e o que perguntar a cada uma"
 piece: "a regra do que pode ser gravado e por quanto tempo fica guardado"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 14
 
-Bia grava um áudio depois de cada visita. São dezenas por semana, e ninguém ouve de novo. Caio pediu a um agente que transcrevesse tudo e resumisse por família. Ficou ótimo — até Bia ler o resumo de uma visita que ela mesma tinha feito. Havia ali uma frase da mãe que a mãe nunca disse. "Você conferiu?" "São quarenta áudios, Bia." Metade do que o time sabe está em voz e em foto de papel. Dá para ler tudo isso. E quem garante o que foi lido?
+O teste de comunicação reservado lá atrás não escolheu um formato vencedor: uma família pediu áudio para ouvir depois; outra preferiu uma mensagem curta que pudesse encaminhar. Bia queria manter as duas saídas; Caio lembrou que cada versão precisava acompanhar as mudanças de orientação. Bia passou a gravar também as próprias notas depois das visitas: preencher o novo formulário já tinha custado um contato, e falar parecia mais rápido. Lia pediu a um agente transcrições e resumos por família. Caio revisou um deles com Bia. Onde ela dizia "talvez tenha mudado de turno", o resumo afirmava que a estudante tinha mudado. Outra frase aparecia como fala da mãe, mas era uma interpretação de Bia. Voltar ao áudio resolveu aquelas dúvidas. Resolveria as dos registros que ninguém conseguisse revisar naquele dia? Bia queria manter a voz para não perder contexto; Caio queria um registro curto para o atendimento seguir. O que precisava chegar à próxima pessoa: o que foi dito, o que foi entendido ou o que ficou por conferir?
 </div>
 
 Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece. O uso que mais me serve é dos mais simples: compartilho a tela com um assistente de voz e peço que me guie numa configuração que eu não domino. "Clique no menu da esquerda. Está vendo o botão à direita?" É um suporte técnico que enxerga o que eu estou enxergando.
@@ -23,9 +24,11 @@ Isso tem nome — modelos **multimodais** — e levanta uma pergunta antes de qu
 
 ## O que muda quando a entrada não é texto?
 
-Por dentro, menos do que parece. Uma imagem é uma grade de números ([capítulo 2](/ia/como-a-maquina-aprende/)). Um áudio é uma sequência de medidas da onda sonora. Tudo vira pedaços, os pedaços viram vetores, e a mesma engrenagem do [capítulo 3](/ia/por-dentro-do-modelo/) calcula o que vem depois.
+Uma imagem pode ser representada como uma grade de números ([capítulo 2](/ia/como-a-maquina-aprende/)); um áudio, como medidas da onda sonora. Isso permite levar os materiais à computação. Não quer dizer que toda ferramenta use a mesma engrenagem para tudo.
 
-Se a engrenagem é a mesma, o que você esperaria dos defeitos? Que fossem os mesmos também: quando falta informação, ela completa com o que é plausível.
+Há sistemas de transcrição treinados para [prever texto a partir de áudio](https://arxiv.org/abs/2212.04356). Há geradores de imagem que [aprendem a remover ruído em etapas](https://arxiv.org/abs/2006.11239): pense numa imagem surgindo de um chuvisco, uma analogia para o processo, não uma fotografia escondida lá dentro. Não precisa dominar essas contas para usar; precisa perceber que pedir uma transcrição, ler uma imagem e gerar outra imagem são tarefas diferentes.
+
+A pergunta prática continua: o que foi capturado do original e o que foi acrescentado ou interpretado? O [capítulo 3](/ia/por-dentro-do-modelo/) ajuda a desconfiar da fluência; ela também não prova fidelidade quando a entrada é voz ou imagem.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** antes de abrir cada aba, responda: se a transcrição de uma visita trouxer uma frase que ninguém disse, quem vai perceber — e quando?
@@ -37,7 +40,7 @@ Se a engrenagem é a mesma, o que você esperaria dos defeitos? Que fossem os me
 
 **O que se ganha.** O relato de uma visita, a reunião, a aula: tudo vira texto pesquisável, que pode ser resumido e comparado.
 
-**Onde costuma errar.** Nomes próprios, números, sotaques, falas sobrepostas. E um erro mais estranho: trechos de silêncio ou ruído podem virar frases inteiras que ninguém disse. [Um estudo](https://arxiv.org/abs/2402.08021) com um sistema de transcrição muito usado encontrou frases inventadas em cerca de 1% das gravações, mais vezes em falas com pausas longas. Eu mesmo já recebi uma transcrição que terminava com um [crédito de legendagem que eu nunca ditei](/blog/pt/a-speech-to-text-slip/). E, transcrevendo oito horas de aula com um modelo aberto, vi a transcrição empacar depois de umas duas horas e repetir a mesma frase sem parar. Perdi dois dias tentando consertar na unha. A saída levou um minuto: tirar o áudio do vídeo, baixar a qualidade e subir numa ferramenta pronta. Complicar demais também é um jeito de errar.
+**Onde costuma errar.** Nomes próprios, números, sotaques, falas sobrepostas. E um erro mais estranho: trechos de silêncio ou ruído podem virar frases inteiras que ninguém disse. [Um estudo](https://arxiv.org/abs/2402.08021) com um sistema de transcrição muito usado encontrou frases inventadas em cerca de 1% das gravações, mais vezes em falas com pausas longas. Eu mesmo já recebi uma transcrição que terminava com um [crédito de legendagem que eu nunca ditei](/blog/pt/a-speech-to-text-slip/). E, [numa tentativa de transcrever uma aula longa com um modelo aberto](/blog/pt/over-engineering-a-confession/), vi a transcrição empacar depois de umas duas horas e repetir a mesma frase sem parar. Perdi dois dias tentando consertar na unha. A saída levou um minuto: tirar o áudio do vídeo, baixar a qualidade e subir numa ferramenta pronta. Complicar demais também é um jeito de errar.
 
 **A pergunta.** Quem ouve o áudio original antes de a transcrição virar registro oficial?
 
@@ -81,6 +84,20 @@ A lição não é sobre a ferramenta. É a que toda pessoa de produto aprende ap
 
 Fica uma pergunta que eu não sei responder bem: quem conferiu os números da página que todo mundo leu?
 
+## "Usar IA" é usar um modelo só?
+
+**O que era:** um processo que recebe fotos de documentos de identidade. Ler o texto da imagem (o velho OCR) é a parte fácil.
+
+**Como ficou:** o sistema hoje combina três coisas diferentes:
+
+- **IA generativa** para ler e interpretar: o documento está inteiro no enquadramento? Tem reflexo cobrindo algum campo? Está legível?
+- **Algoritmos clássicos de visão**, que não são generativos, para procurar adulteração: bordas estranhas, uma foto colada por cima, sinais de edição.
+- **Consulta determinística** a um serviço de cadastro, para ver se o número do documento confere com o nome.
+
+Nenhuma dessas etapas, sozinha, prova que um documento é autêntico.
+
+**O que aprendi:** neste caso, "usar IA" não significa usar *um* modelo. Significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte confiável, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). O fluxo envolve dados pessoais e pode envolver dados sensíveis; vale o cuidado discutido no [capítulo 5](/ia/dados-e-privacidade/): finalidade e base legal aplicável, acesso mínimo e testes com dados fictícios quando não há necessidade de usar os reais.
+
 ## Então o que é diferente do texto?
 
 Três coisas, e as três pedem mais cuidado, não menos:
@@ -91,7 +108,7 @@ Três coisas, e as três pedem mais cuidado, não menos:
 
 Uma pergunta que eu deixo sem resposta de propósito: transcrever tudo é registrar melhor o trabalho, ou é passar a guardar o que antes, por bons motivos, se perdia?
 
-## Um caminho, antes de gravar ou fotografar
+## O que decidir antes de gravar ou fotografar?
 
 1. **De quem é** a voz, o rosto, a letra? Essa pessoa sabe?
 2. **Onde o arquivo original fica**, e por quanto tempo?
@@ -99,23 +116,36 @@ Uma pergunta que eu deixo sem resposta de propósito: transcrever tudo é regist
 4. **O que acontece se estiver errado?** Um resumo de reunião com um erro é diferente de um registro de visita com um erro.
 5. **Precisa mesmo?** Às vezes três linhas escritas por quem esteve lá valem mais que quarenta minutos transcritos.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- Voz, imagem e vídeo passam pela mesma engrenagem do texto e herdam o mesmo defeito: completar com o plausível.
-- A saída vem sempre bem formatada. Boa aparência não é sinal de acerto.
-- Quanto mais difícil de conferir e mais sensível o dado, mais a decisão de usar precisa ser tomada antes, não depois.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** a família sabe que a conversa vira áudio, e o áudio vira texto? O que o time ganha ao transcrever tudo — e o que passa a guardar que antes não guardava?
+- **Em disputa:** Falar poupa tempo de registro, mas ouvir de novo e conferir também ocupa alguém. Quando uma interpretação passa a parecer uma declaração da família?
 - **Caminhos na mesa:**
-  - *Caio:* transcrever tudo e conferir por amostra.
-  - *Bia:* transcrever só o que alguém vai ler de novo; o resto, apagar.
-  - *Lia:* mostrar lado a lado o que foi dito e o que foi resumido — e perguntar antes de gravar.
-- **O que o time fez, por enquanto:** dez áudios transcritos e conferidos um a um; e a regra do que pode ser gravado, quem confere e por quanto tempo fica guardado.
+  - *Bia:* guardar as notas de voz e consultar quando houver dúvida. Preserva detalhes, mas acumula informações sobre famílias e exige escuta posterior.
+  - *Caio:* registrar só situação, próximo passo e dúvida pendente. Facilita o uso, mas pode apagar contexto necessário para interpretar o caso.
+  - *Lia:* transcrever e manter cada resumo ligado ao trecho de origem. Ajuda a conferir, mas multiplica os registros e não corrige por si só uma interpretação equivocada.
+- **O que o time fez, por enquanto:** testou a proposta de Lia em dez notas, com revisão de quem fez a visita. Bia corrigiu a atribuição da fala; Caio marcou a mudança de turno como hipótese. O time definiu acesso e prazo de guarda. A transcrição andou rápido; a conferência consumiu parte da tarde, e o restante não entrou como fato confirmado.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Representação e transformação:** áudio, imagem e texto podem passar por modelos e processos diferentes.
+- **Fidelidade:** transcrever, resumir e gerar conteúdo são tarefas distintas. Uma saída bem apresentada pode omitir, acrescentar ou mudar informação.
+- **Conferência:** a escolha da mídia também depende de conseguir comparar com o original e de quem sofrerá com um erro.
+
+O que muda entre conferir uma transcrição e conferir o resumo feito a partir dela?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Escolha um material seu que possa usar no experimento: uma nota falada, um desenho ou uma imagem. Transforme-o em outra mídia e compare com o original. O que ficou mais fácil de entender? Que dúvida virou certeza, que detalhe sumiu ou foi acrescentado? Como a próxima pessoa saberia o que ainda precisa conferir?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -138,9 +168,14 @@ Em grupos: (1) gravem um minuto de conversa com pelo menos três nomes próprios
 
 #### Referências
 
+- HO, Jonathan; JAIN, Ajay; ABBEEL, Pieter. **Denoising diffusion probabilistic models**. arXiv, 2020. Disponível em: <https://arxiv.org/abs/2006.11239>. Acesso em: 15 nov. 2026.
 - KOENECKE, Allison *et al.* **Careless Whisper**: speech-to-text hallucination harms. [*S. l.*]: arXiv, 2024. DOI: <https://doi.org/10.48550/arXiv.2402.08021>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Estou perdendo algo com IA multimodal?**. [*S. l.*]: efrem.io, 27 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/am-i-missing-out-on-multimodal-ai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Over-engineering: uma confissão**. [*S. l.*]: efrem.io, 22 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/over-engineering-a-confession/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Um vacilo do speech-to-text que mostra de onde veio o treinamento**. [*S. l.*]: efrem.io, 17 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/a-speech-to-text-slip/>. Acesso em: 13 nov. 2026.
+- RADFORD, Alec et al. **Robust speech recognition via large-scale weak supervision**. arXiv, 2022. Disponível em: <https://arxiv.org/abs/2212.04356>. Acesso em: 15 nov. 2026.
+
+*Notas:* Radford et al. (2022) e Ho, Jain e Abbeel (2020) exemplificam mecanismos diferentes para transcrição e geração de imagens. O chuvisco é uma analogia didática para a remoção de ruído. O relato de excesso de complexidade está documentado no post do autor, citado nas referências.
 
 </div>

@@ -1,5 +1,6 @@
 ---
-title: "The cloud sits on the ground: the physical cost of AI"
+title: "What does making this work cost?"
+subtitle: "Physical resources, models, and cost per task."
 description: "The energy, water, and chips behind every answer, and why picking the right-sized tool is also an ethical decision."
 lang: en
 ref: footprint
@@ -8,13 +9,13 @@ part: 1
 permalink: /ai/physical-cost/
 interactive: "energy calculator"
 piece: "the monthly bill, with an owner: step up to discover, step down to run"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 6
 
-The month's credits ran out on the ninth. Caio had left his agents on the most expensive model, with the effort at maximum, "to be safe." That same week, Bia showed up with an exciting idea: a personalized video for each family, with each student's name. Six hundred families. Lia asked how much it cost. Nobody knew — not in money, not in anything else. Caio figured a mistake costs more than credits. Bia, that any model will do for counting absences. Is there a cost here that nobody on the team is seeing? And who decides when it's worth it?
+The credits ran out before the demonstration. Caio had been using the most capable model to discover what worked, but also kept it redoing tasks that were already solved. Bia wanted videos to explain the outreach service to families: she said the texts were hard to understand. Lia asked for an estimate covering all the families. The budget would not stretch that far. "So text again?" Bia asked. Caio suggested testing smaller models on repeated tasks, without assuming they would be cheaper after retries. Lia added reviewers' hours and the contact rescheduled to fill in the new record to the calculation. Which saving was worthwhile if the cost merely moved somewhere else?
 </div>
 
 "Cloud" is one of the best marketing moves in the history of technology. It sounds light, clean, and free of any address. In practice, it's a warehouse the size of several soccer fields, full of machines that run hot, plugged into the power grid and, often, into a river.
@@ -77,19 +78,36 @@ It's not the only defensible answer. Someone who runs the same task thousands of
 - **Is this going to repeat?** If the same task is going to run a thousand times, it's worth asking for a script and running the script ([chapter 10](/ai/ask-for-the-script/)). The script uses almost nothing.
 - **Does it need to be an image or a video?** That's where consumption per request is highest.
 
-<div class="g-box g-key" markdown="1">
-**Keep this:** it's not about guilt over every question — it's about proportion. And you find the proportion by testing: step up to discover, step down to run. What you can't do is skip the math.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** how much is consumed by what the organization already uses every day, without anyone ever having done the math? Who pays — in money, in energy, in water?
+- **In dispute:** Cost appears in credits, checking work, time in the field, and physical resources. Which of those bills does the budget leave invisible?
 - **Paths on the table:**
-  - *Caio:* always the most capable model, at maximum. A mistake costs more than credits.
-  - *Bia:* the cheapest one for everything. "It's for counting absences."
-  - *Lia:* the most capable one while figuring out what works; one step down as soon as the task is proven.
-- **What the team did, for now:** the monthly bill now has an owner, with the agreement "step up to discover, step down to run." The six hundred videos became six hundred text messages — and Bia still thinks the video would have worked better.
+  - *Caio:* keep the capable model for uncertain work and compare alternatives on proven tasks. That preserves capability, but requires spending to measure before saving.
+  - *Bia:* test a video explanation with some families before abandoning the format. That may improve understanding, but uses part of the remaining budget without guaranteeing results.
+  - *Lia:* deliver only text this round and reconsider later. That fits today's budget, but may preserve a barrier for people who need to understand the message.
+- **What the team did, for now:** reserved a small part of the budget for Bia's trial and cut mass generation. At the demonstration, Lia showed a next-contact list using fictional data; Bia walked through the routine, and Iara asked how she would receive updates. That list became the first useful delivery, used by Bia in the authorized environment for the existing routine, with manual updates. Counting still depended on requests to the assistant; nobody had resolved how work passed between people. Caio began comparing cost per completed task, including review. Iara agreed to follow the trial; she kept the vendor's offer on the table.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Training and execution:** preparing a model and using it have different costs; calls continue consuming resources.
+- **Task cost:** the total includes attempts, review, infrastructure, and work shifted to other people.
+- **Model choice:** I start with enough capability to discover what works, and compare alternatives once the task is proven. Smaller alone does not mean cheaper.
+
+What needs to remain good for a cost reduction to be worthwhile?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Take a task that already worked and compare another way to do it: another model, an existing routine, or a manual step. Include attempts and review time. Does what looks cheap in one run remain so when you actually use it? What deserves another attempt, and what can remain stable for now?
+
 </div>
 
 <details class="g-aula" markdown="1">

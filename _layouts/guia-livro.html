@@ -40,7 +40,7 @@ layout: default
 	<p class="b-toc-part">{{ t.part }} {{ part_number }} &middot; {{ part.title }}</p>
 	<ol class="b-toc-list">
 		{% for c in chapters %}{% if c.part == part_number %}
-		<li value="{{ c.order }}"><a href="#{{ c.ref }}">{{ c.title }}</a></li>
+		<li value="{{ c.order }}"><a href="#{{ c.ref }}">{{ c.title }}{% if c.subtitle %}<span class="b-toc-concepts">{{ c.subtitle }}</span>{% endif %}</a></li>
 		{% endif %}{% endfor %}
 	</ol>
 	{% endfor %}
@@ -54,7 +54,8 @@ layout: default
 		<h2 class="b-chapter-title">{{ t.intro }}</h2>
 	</header>
 	<article class="post-content g-content">
-		{{ intro_page.content | markdownify | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: ' id="', ' data-id="' }}
+		{% capture opening_html %}{% include guia/abertura.html body=intro_page.content lang=page.lang %}{% endcapture %}
+		{{ opening_html | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: '<h2', '<h3' | replace: '</h2>', '</h3>' | replace: ' id="', ' data-id="' }}
 	</article>
 </section>
 {% endif %}
@@ -68,6 +69,8 @@ layout: default
 			<p class="b-kicker">{{ t.part }} {{ c.part }}</p>
 			<h2 class="b-part-title">{{ t.parts[part_index].title }}</h2>
 			<p class="b-part-desc">{{ t.parts[part_index].description }}</p>
+			{% assign act = t.parts[part_index] %}
+			{% include guia/ato.html act=act texts=t %}
 		</section>
 	{% endif %}
 
@@ -83,6 +86,7 @@ layout: default
 		<header class="b-chapter-head">
 			<p class="b-kicker">{{ t.chapter }} {{ c.order }}</p>
 			<h2 class="b-chapter-title">{{ c.title }}</h2>
+			{% if c.subtitle %}<p class="g-concept-subtitle">{{ c.subtitle }}</p>{% endif %}
 			{% if c.description %}<p class="b-chapter-desc">{{ c.description }}</p>{% endif %}
 		</header>
 		<article class="post-content g-content">

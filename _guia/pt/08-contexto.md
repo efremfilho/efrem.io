@@ -1,6 +1,7 @@
 ---
-title: "Contexto é tudo"
-description: "O modelo só sabe o que está na janela. Cuidar do que entra ali — e do que fica de fora — é a habilidade mais importante de quem usa IA hoje."
+title: "Por que cada agente entendeu uma coisa?"
+subtitle: "Contexto e instruções compartilhadas."
+description: "O que veio do treino encontra o que você põe na janela. Cuidar desse contexto é parte central de saber pedir — e de entender o que voltou."
 lang: pt-BR
 ref: context
 order: 8
@@ -8,24 +9,24 @@ part: 2
 permalink: /ia/contexto/
 interactive: "monte uma janela de contexto + três prompts"
 piece: "o arquivo de instruções do projeto"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 8
 
-Três pessoas, três agentes, três comportamentos. O agente do Caio escrevia "aluno de risco" em toda tela que gerava: ninguém tinha contado a ele a regra nº 1. O primeiro pedido da Bia foi "me ajude a reduzir a evasão escolar", e voltaram dez tópicos corretos e inúteis, os mesmos de qualquer cartilha. Lia exagerou para o outro lado: anexou o manual de trezentas páginas da rede, três atas e a planilha inteira, e recebeu, com toda a segurança, um procedimento que a rede tinha abandonado anos antes. Pouco demais não serve; demais também não. E o que o time decidiu na semana passada, nenhum dos três agentes sabia. Onde isso deveria estar escrito?
+Três pessoas, três agentes, três comportamentos. O agente do Caio escrevia "aluno de risco" em toda tela que gerava: ninguém tinha contado a ele a regra nº 1. O primeiro pedido da Bia foi "me ajude a reduzir a evasão escolar", e voltaram dez tópicos corretos e inúteis, os mesmos de qualquer cartilha. Lia exagerou para o outro lado: anexou o manual de trezentas páginas da rede, três atas e a planilha inteira, e recebeu, com toda a segurança, um procedimento que a rede tinha abandonado anos antes. Caio defendeu a própria saída: "mas o meu agente disse que é melhor assim". Bia abriu a tela e mostrou o rótulo que tinham combinado retirar. O problema não se resolvia contando páginas: faltavam objetivo, vigência e decisões compartilhadas. Onde isso deveria estar escrito — e quem conferiria que cada agente estava trabalhando com o mesmo acordo?
 </div>
 
-Se eu tivesse que escolher uma única ideia para alguém levar deste guia, seria esta: **o modelo não te conhece, não lembra de ontem e não sabe nada do seu projeto. Ele só sabe o que está escrito na janela, agora.**
+Se eu tivesse que escolher uma única ideia para alguém levar deste guia, seria esta: **não conte com o modelo adivinhando as decisões do seu projeto. Dê a ele o contexto de que precisa, agora.**
 
-Tudo o que parece memória, personalidade ou "ele já me entende" é alguém — você ou o produto — colocando texto de volta nessa janela. Quando dizem que o assistente "aprendeu" com os seus e-mails, o que aconteceu foi isto: os e-mails foram parar na janela. Aprender, de verdade, seria retreinar o modelo.
+Ele traz padrões e conhecimentos do treino, como vimos no [capítulo 3](/ia/por-dentro-do-modelo/). Outra coisa é saber o que o time decidiu ontem. A memória do produto, os arquivos e as buscas podem trazer isso para a conversa. Usar essa informação não exige mudar os pesos do modelo. Quando digo "ele só sabe o que está na janela", é desse contexto específico que estou falando — não de apagar o que veio do treino.
 
 ## O que o modelo enxerga quando você pergunta?
 
 A melhor imagem que conheço para isso é do Andrej Karpathy, que descreve os modelos de linguagem como um novo tipo de computador: **o modelo faz o papel da CPU, e a janela de contexto é a memória** — a RAM. ([Vale ver a palestra inteira](https://www.youtube.com/watch?v=LCEmiRjPEtQ).)
 
-A CPU de um computador só processa o que foi carregado na RAM. O modelo só raciocina sobre o que foi carregado no contexto: suas instruções, os documentos anexados, o histórico da conversa, a descrição das ferramentas que ele pode usar, os resultados dessas ferramentas. Tudo isso é medido em *tokens* (pedaços de palavra) e compete pelo mesmo espaço.
+Pense na janela como o espaço de trabalho da tarefa: instruções, documentos, histórico, ferramentas disponíveis e o que elas devolveram. A analogia da RAM ajuda a lembrar que o material precisa estar acessível. Tem um limite: o modelo também traz o que aprendeu no treino. O contexto orienta como essa capacidade será usada aqui.
 
 **Engenharia de contexto** é o nome que pegou para o trabalho de decidir o que entra nessa RAM. É a evolução natural da engenharia de prompt: antes a gente caprichava em uma instrução; agora a gente administra tudo o que o modelo vê ao longo de uma tarefa longa. Quando o termo apareceu eu [fiquei em dúvida se precisávamos de mais um conceito](/blog/pt/context-engineering-do-we-need-another-concept/) — mas a ideia por trás eu defendo desde sempre: a habilidade humana mais importante agora é saber comunicar e entregar a informação e as ferramentas certas.
 
@@ -33,9 +34,13 @@ A CPU de um computador só processa o que foi carregado na RAM. O modelo só rac
 
 A intuição diz: "na dúvida, joga tudo lá dentro". É o erro mais comum que eu vejo.
 
-Modelos de linguagem funcionam relacionando cada token com todos os outros. Quanto mais coisa na janela, mais essa atenção se espalha. Há quem chame isso de **orçamento de atenção**: é finito, e cada token novo gasta um pouco dele. Quando o orçamento estoura, aparece o que se convencionou chamar de ***context rot***, a queda de desempenho que [já foi medida](https://research.trychroma.com/context-rot) conforme a entrada cresce. O modelo esquece uma instrução do começo, confunde documentos, repete o que já fez. Não é que ele "trava" — ele vai ficando gradualmente pior.
+Um dossiê pode conter o contrato certo e três versões antigas. Caber tudo na mesa não resolve qual vale. Nos modelos, **caber na janela também não garante usar bem cada informação**. "Orçamento de atenção" é uma [imagem útil para esse cuidado](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), não um tanque que perde uma quantidade fixa por palavra.
 
-Daí sai o princípio prático: procurar **o menor conjunto de tokens de alto sinal** que resolve a tarefa.
+A queda de desempenho com contextos maiores foi [medida em tarefas e modelos específicos](https://research.trychroma.com/context-rot), com variações entre eles. As duas fontes são de empresas que atuam nesse mercado, partes interessadas. Isso não vira uma lei de que todo pedido grande funciona pior. O trabalho é organizar a informação: o que vale, o que ficou velho, o que é instrução e o que é apenas documento.
+
+Eu já fiz o contrário: [levei um documento longo de projeto e tive mais resultado quando organizei o pedido em uma lista de ações](/blog/pt/chapter-8-building-with-an-ai-team/). Conectar, buscar uma informação, usar aquela variável, entregar a saída. O problema não era o número de páginas por si só. A lista deixou mais claro o que precisava acontecer e como uma parte dependia da outra.
+
+É o que eu quero dizer quando [defendo saber escrever](/blog/pt/knowing-how-to-write-is-an-underrated-skill/): conseguir expressar o pedido e organizar as ideias. Não é escrever bonito. Pode ser um pedido grande; precisa ter uma organização que ajude a trabalhar.
 
 Um exemplo de casa. A memória do assistente ficou ligada numa conta que mais gente da família usa. Ele passou a achar que eu estudava uma área que não é a minha, guardou um planejamento que não era meu — e começou a me responder pior, por causa de um contexto que eu nunca pedi. Os agentes estão aprendendo a lidar com excesso. Mesmo assim, contexto demais custa mais do que precisa e ainda pode atrapalhar. Prefiro dar o contexto todo, toda vez, a deixar ele tentar adivinhar.
 
@@ -99,11 +104,13 @@ Explica o cenário e o objetivo, dá critérios em vez de casos, diz o que fazer
 
 ## Pedir é engenharia ou é arte?
 
-Chamam de engenharia de prompt, engenharia de contexto. Eu implico com o nome — e dizer o contrário, que "é arte", também não resolve. Essa divisão foi um jeito que a gente inventou de interpretar o mundo; criatividade existe dos dois lados. Prefiro um recorte que aprendi com gente de design: há coisas que existem para ser bonitas, ou simplesmente para existir, e coisas que existem para ser úteis. É parecido com a diferença entre invenção e inovação: uma coisa é passar a existir, outra é alguém usar. Quando forma e função se encontram, melhor ainda.
+Chamam de engenharia de prompt, engenharia de contexto. Eu implico com o nome. **Para mim, pedir está mais perto de arte:** escolher o jeito de explicar, experimentar, ler o que voltou e mudar o pedido. Não tenho uma fórmula que dispense esse julgamento.
 
 (Um alerta: arte e design não são a minha área, e eu não sei definir bem nem uma coisa nem outra. Falo só do jeito como eu construo. Nem tudo o que eu faço precisa ter função. Precisa existir no mundo.)
 
-Pedir a uma IA mora nesse encontro. Tem função — eu quero um resultado — e tem forma: o jeito de explicar muda o que volta. Por isso ajuda mais saber de psicologia, de filosofia e de pedagogia do que de computação. No fim, é explicar bem uma coisa para alguém que acabou de chegar.
+Isso não torna engenharia menos criativa. Nem põe arte do lado do bonito e engenharia do lado do útil. Na construção, essas coisas se misturam: imaginar uma solução, organizar como ela funciona e descobrir o que precisa mudar pedem criação e critério.
+
+E quando falo de inovação aqui, incluo levar ao mercado, fazer chegar a quem vai usar. Inventar é parte da conversa; fazer aquilo existir na vida de alguém também. O pedido tem forma e tem intenção. É por isso que o jeito de explicar importa tanto — e por que eu insisto em ler o que voltou.
 
 Se eu tivesse de pôr em ordem o que entra num pedido:
 
@@ -119,6 +126,20 @@ Um caso de contexto faltando. Num semestre avisei à turma que as atividades ser
 
 E pedir é metade. A outra metade é ler o que voltou para decidir o próximo pedido.
 
+## Dá para ensaiar uma conversa com quem não está na sala?
+
+**O que era:** ouvir quem usa é a parte mais importante de construir qualquer coisa, e a mais difícil de conseguir. As pessoas não têm agenda e, quando têm, respondem o que acham que você quer ouvir.
+
+**Como ficou:** uma designer com quem trabalhei teve a ideia antes de mim. Pegou as transcrições de entrevistas de verdade e pediu a um assistente que continuasse a conversa no papel daquela pessoa. Hoje eu uso o mesmo recurso para ensaiar: antes de uma conversa difícil, converso com a persona.
+
+**O que aprendi:** funciona melhor do que eu esperava. Às vezes rende mais do que a entrevista, porque a persona não tem vergonha de responder. E tem limites que eu não esqueço: ela é muito mais simpática do que qualquer cliente; é uma continuação plausível, não uma pessoa ([capítulo 3](/ia/por-dentro-do-modelo/)); e não substitui conversar com gente de verdade — complementa. Uma pergunta que eu me faço cada vez mais: quem deu a entrevista sabe que a fala dela continua sendo usada?
+
+**O que dizem os dois lados:** quem pesquisa experiência de uso refez estudos reais com participantes sintéticos e achou as respostas rasas e favoráveis demais ([Rosala; Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): serve para levantar hipóteses, não para decidir. Quem fundou uma empresa que vende justamente esse tipo de pesquisa — parte interessada, claro — responde que pesquisa existe para reduzir risco e decidir melhor, não para cumprir um método, e que muita gente critica sem ter testado. Mesmo ele não recomenda apostar a empresa numa resposta sintética: fala em achar o ponto em que isso acelera e o que continua sendo só de gente ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Os dois chegam perto do que eu vivi: complementa, não substitui.
+
+## Quem está lendo o pedido?
+
+E docente não está imune. Numa formação para colegas, pedi um exercício. A turma colou a instrução que a ferramenta gerou, sem ler, e se espantou com o formato da resposta. Alguém resumiu melhor do que eu: fizemos exatamente o que criticamos em estudantes.
+
 ## E no dia a dia?
 
 - **Explico o porquê, não só o quê.** "Responda curto porque a pessoa lê no celular entre duas reuniões" funciona melhor que "responda curto".
@@ -128,23 +149,36 @@ E pedir é metade. A outra metade é ler o que voltou para decidir o próximo pe
 - **Ligo poucas ferramentas.** Cada conector ocupa espaço na janela só por existir. E eu fico de olho no medidor que a ferramenta mostra: quando uma sessão passa de dois terços da janela ocupada, já estou pensando em fechar e começar outra.
 - **Guardo o contexto fora da conversa.** Tudo o que eu não quero explicar de novo vira arquivo no repositório do projeto — assunto do [capítulo 11](/ia/repositorio-e-memoria/).
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- A janela de contexto é a RAM do modelo: finita e disputada.
-- Excesso de contexto degrada a resposta (*context rot*). Sinal alto, pouco ruído.
-- Instrução boa fica na altitude certa: nem lista de `se-então`, nem "seja útil".
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
 - **Em disputa:** o que é óbvio para o time e não está escrito em lugar nenhum? Como perceber que há contexto demais? Instrução longa protege ou atrapalha?
 - **Caminhos na mesa:**
-  - *Caio:* instrução mínima: diz o objetivo e deixa o agente trabalhar.
-  - *Bia:* escrever todas as regras, com um exemplo de cada.
-  - *Lia:* escrever como para alguém inteligente que chegou hoje, e cortar o que não muda a resposta.
-- **O que o time fez, por enquanto:** um arquivo de instruções do projeto, um só, que os três agentes leem. Curto. Por enquanto.
+  - *Caio:* instrução mínima, com objetivo e limites. Dá espaço para resolver, mas deixa mais escolhas para o agente inferir.
+  - *Bia:* manter regras e exemplos no pedido. Expõe as exceções, mas aumenta o trabalho de atualizar e localizar o que importa.
+  - *Lia:* resumir o que alguém precisa saber ao chegar. Facilita a leitura, mas coloca nas mãos de quem resume a decisão sobre o que pode sumir.
+- **O que o time fez, por enquanto:** um arquivo de instruções compartilhado. Lia preparou a versão curta e Caio testou no agente; Bia pediu que preservassem a origem das regras. A versão curta seguiu para o uso antes de essa revisão terminar.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Contexto:** o material disponível para aquela resposta; é diferente do que o modelo aprendeu no treino.
+- **Memória do projeto:** decisões guardadas só ajudam se forem encontradas e trazidas para o trabalho atual.
+- **Instrução:** objetivo, exemplos e limites orientam a tarefa. Caber na janela não garante que tudo será bem usado.
+
+Como dois agentes com o mesmo modelo podem produzir respostas diferentes para o mesmo projeto?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Que decisão você já precisou explicar duas vezes ao agente? Escreva-a nas instruções do projeto, com o motivo e um exemplo. Abra uma conversa nova e peça uma mudança que dependa dela. O que voltou respeitou a decisão? Se não, faltou encontrar a instrução, entender a regra ou resolver uma contradição?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -166,11 +200,18 @@ Cada dupla escolhe uma tarefa real do seu trabalho. Primeiro escrevem o pedido c
 
 #### Referências
 
+- ALVES, Hugo. **Let's get real about synthetic users**. Entrevista a Jason Knight. [*S. l.*]: One Knight in Product, 21 fev. 2026. 1 vídeo (64 min). Disponível em: <https://www.youtube.com/watch?v=W87q8M9Gl-0>. Acesso em: 15 nov. 2026.
 - ANTHROPIC. **Effective context engineering for AI agents**. [*S. l.*], 29 set. 2025. Disponível em: <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>. Acesso em: 13 nov. 2026.
 - CHROMA. **Context rot**: how increasing input tokens impacts LLM performance. [*S. l.*], 14 jul. 2025. Relatório técnico. Disponível em: <https://research.trychroma.com/context-rot>. Acesso em: 13 nov. 2026.
 - KARPATHY, Andrej. **Software is changing (again)**. [*S. l.*]: Y Combinator, 18 jun. 2025. 1 vídeo. Disponível em: <https://www.youtube.com/watch?v=LCEmiRjPEtQ>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Capítulo 8: construindo com meu time de IA**. [*S. l.*]: efrem.io, 5 maio 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/chapter-8-building-with-an-ai-team/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Engenharia de contexto: precisamos de mais um conceito?**. [*S. l.*]: efrem.io, 3 jul. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/context-engineering-do-we-need-another-concept/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Saber escrever é uma habilidade subestimada**. [*S. l.*]: efrem.io, 12 fev. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/knowing-how-to-write-is-an-underrated-skill/>. Acesso em: 13 nov. 2026.
+- ROSALA, Maria; MORAN, Kate. **Synthetic users**: if, when, and how to use AI-generated "research". [*S. l.*]: Nielsen Norman Group, 21 jun. 2024. Disponível em: <https://www.nngroup.com/articles/synthetic-users/>. Acesso em: 15 nov. 2026.
+- SANDERSON, Grant. **How might LLMs store facts**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 31 ago. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/mlp/>. Acesso em: 15 nov. 2026.
 
-*Notas:* A frase sobre CPU e memória é uma paráfrase do trecho em que Karpathy compara LLMs a um sistema operacional. De Anthropic (2025) vêm "orçamento de atenção", a "altitude certa" e o princípio do menor conjunto de tokens de alto sinal. A medição do *context rot* é de Chroma (2025).
+*Notas:* A frase sobre CPU e memória é uma paráfrase do trecho em que Karpathy compara LLMs a um sistema operacional. De Anthropic (2025) vêm "orçamento de atenção", a "altitude certa" e o princípio do menor conjunto de tokens de alto sinal. A medição do *context rot* é de Chroma (2025). A distinção entre representações contextualizadas e padrões aprendidos nos parâmetros também se apoia em Sanderson (2024), na lição sobre MLPs. "Orçamento de atenção" é tratado aqui como orientação prática; o estudo de Chroma não estabelece uma perda fixa por token para qualquer modelo ou tarefa.
+
+O caso de ensaio com personas é um relato do autor; a ideia inicial foi de uma designer com quem trabalhou. Rosala e Moran (2024) discutem limites da pesquisa sintética. Na entrevista, Alves (2026) discute redução de risco (minuto 4), limites para decisões críticas (17) e complementaridade com pessoas reais (52). Ele é cofundador de uma empresa que vende essa pesquisa.
 
 </div>

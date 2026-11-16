@@ -1,5 +1,6 @@
 ---
-title: "Computational thinking: from the problem to the step-by-step"
+title: "Are we building the same thing?"
+subtitle: "Computational thinking, workflows, and layers."
 description: "You don't need to write code. You need to break a problem down, draw the flow, and recognize the pieces all software is made of. That's what gives autonomy to anyone who wants to build."
 lang: en
 ref: computational-thinking
@@ -8,13 +9,13 @@ part: 2
 permalink: /ai/computational-thinking/
 interactive: "assemble the algorithm + layers + loop"
 piece: "the outreach flow and a mini-PRD"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 7
 
-Before splitting up the work, Lia proposed a test: each person asks their agent to draw the outreach flow, the way they themselves would explain it. Three flows came back. In Bia's, everything starts when the school calls. In Caio's, when the spreadsheet arrives. In Lia's, when someone notices. And how many absences trigger the first contact? Each agent had a number — the one its person gave it. Caio wanted to merge the three "and done." Bia wanted hers to be the one that counts, since it's what happens out on the street. If the team itself doesn't describe the work the same way, what are three agents going to build?
+The list helped Bia organize contacts. When she left for a visit, Caio could not tell whether a marked row meant "contact attempted" or "family reached." Iara needed an update; the team had to reread part of the work. There was already a delivery in use and a bill to pay. Making the list depend less on Bia seemed an obvious improvement. Until they started drawing. Each person asked their agent to draw the outreach workflow. Bia's began when a school called. Caio's, when the spreadsheet arrived. Lia's, when someone noticed. These were more than different drawings: they were ways to enter the queue. Maia, the communications coordinator at a partner organization, joined that meeting. She asked for a "more strategic" flow for the presentation. When Bia asked what would change, Maia said she would send an example and left before the work was assigned. Caio proposed comparing how many visits they could handle at three or five absences. Bia wanted room for urgent requests from schools. Lia needed to settle the scope to meet the deadline she had promised. "Five it is; exceptions go through me." Bia asked what happened when Lia was in a meeting. In the drawing, the "review" box had no duration. Did it have one in real life?
 </div>
 
 I've always been a builder. Even with a degree in Computer Science, I spent a good part of my career building with low-code and no-code tools and writing, at most, a little bit of script. The old repositories on my GitHub say so in their descriptions, in all honesty: "my lazy scripts." The reason is simple: I hated programming. Not the logic: the precision. I'd forget one parenthesis and that one damn parenthesis would wreck my day.
@@ -36,6 +37,18 @@ In Brazil, the idea made it all the way into the guidelines of a program that ha
 "An information-processing agent." When it was written, that was an abstract expression. Today it's literal: it's the AI agent open on your screen, waiting for you to formulate the problem.
 
 That's the focus of the course I teach at FGV EPPG, a school of public policy in Brasília: understanding that you can automate with code, deterministically, and that AI has to be used in a way that [builds our critical thinking](/blog/en/how-to-teach-critical-use-of-ai/) instead of replacing it.
+
+## What becomes clearer after a first attempt?
+
+In [the outline of one of my workshops](https://efrem.io/jazida/), I propose starting with a spreadsheet: ask for code to analyze the data, build a flow that goes through the records, and turn the result into a screen. Only then come modularization, comments, tests, and execution logs. In the final exercise, each person can choose a problem of their own or adapt the agent that was presented.
+
+Notice what this sequence puts on the table. The chart, the rule that handles each record, and the screen are different parts. If the count is wrong, repainting the dashboard won't fix it. If the rule classifies something as risky, who defined the criterion? The first version gives those questions something to point to. The next round can change one part without asking the agent to invent everything again.
+
+## Where does AI enter this workflow?
+
+Lia's list has two overlapping diagrams. One shows **how the team builds and improves the service**: talking to agents, requesting code, comparing outputs, reviewing. The other shows **how the service helps someone**: receiving absence records, applying a rule, preparing contact, recording a response. AI can help with the first without appearing at every step of the second.
+
+If a model summarizes each new visit note, it participates in operations. If it wrote the code that filters the list once, it helped build a routine that can run without it. In both cases, someone needs to understand what enters, what changes, and what the next person receives. Draw both paths: which one contains the difficulty you want to address now?
 
 ## How do you think through a problem for a machine?
 
@@ -64,7 +77,9 @@ Drawing a flow doesn't depend on a drag-and-drop tool. It's thinking algorithmic
 
 It's the question that always comes up. Writing code, probably not. Reading it, yes — and reading code, today, is in large part reading English with patience. The process I ask of any class is this: **ask in natural language, let the agent generate, and then understand what the code is doing.** Didn't understand a passage? There are plenty I don't understand either. I copy it, paste it into an assistant, and ask.
 
-To read, five ideas are enough. Anyone who uses a spreadsheet already knows all of them:
+I [wrote that I was learning code as a side effect](/blog/en/chapter-7-learning-code-as-a-side-effect/). My goal was still to get better at product and be able to ask for implementation. But reading the answer made me want to understand what was happening. I didn't have to decide "I'm becoming a technical person" before I started learning.
+
+Five ideas help you start reading. If you use spreadsheets, you've already encountered several of them:
 
 1. **Function**: a name, parentheses and, inside them, whatever it needs to do its work. `=SUM(2,3)` is a function someone wrote and you use. In code it's the same — and you can create your own.
 2. **Variable**: a name for a value that can change. In a spreadsheet, it's the cell: `A1` is still `A1` when the number inside it changes. In a contract, it's "the seller": defined once at the top, it holds for the rest of the text — and, if the person changes, the whole contract still stands.
@@ -151,25 +166,37 @@ And there's a condition. The tools democratized the *doing*; the *thinking* stil
 
 Anyone who wants to change something by building with technology needs two legs: generative AI literacy and computational thinking. One without the other limps.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- The one who has to be precise now is the agent. Formulating the problem is still yours.
-- Decompose, recognize patterns, abstract, and write the step-by-step: four moves that work with or without a computer.
-- Function, variable, conditional, loop, and API: five ideas are enough to read what the agent wrote. Reading doesn't excuse you from testing.
-- Every piece of software has a front, rules, and data, with APIs in between. Pointing to the right layer is half the request.
-- A good request says what the system doesn't do and how you're going to check.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** why five absences, and not three? Does it work the same for students in day classes and students in night classes? Which step in this flow does nobody want a machine to take?
+- **In dispute:** The workflow must fit both the deadline and the working day. What decision does a diagram hide when it simply says "review"?
 - **Paths on the table:**
-  - *Caio:* ask an agent to merge the three flows. Fast — and the hidden decisions stay hidden.
-  - *Bia:* a week in the field, writing down what actually happens.
-  - *Lia:* discuss only the decisions (the number, the trigger, the step that belongs to a person) and leave the drawing to the agent.
-- **What the team did, for now:** a single flow, with every decision marked and signed; the mini-PRD; and the split: Caio takes the counting, Bia takes what shows up on the phone of whoever does the visits, Lia takes the rules. Each person reviews someone else's work.
+  - *Caio:* simulate queues with different thresholds before choosing. That makes workload visible, but takes time and does not measure the urgency of each life.
+  - *Bia:* reserve part of the schedule for urgent cases brought by schools. That opens a route for exceptions, but reduces predictability and depends on who can ask.
+  - *Lia:* keep five absences and make herself responsible for exceptions. That settles an implementable scope, but creates a queue waiting for one person.
+- **What the team did, for now:** recorded the workflow and mini-PRD with Lia's proposal, still contested by Bia. Caio implements counting with his agent; Bia, mobile use; Lia, the rules. Each reviews another's delivery. Operational exceptions, however, stayed with Lia — including when she was unavailable.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Decompose and abstract:** separate the problem into parts and choose what matters for the task.
+- **Variable and function:** name a value and a piece of work that can be called again.
+- **Conditional and loop:** decide according to a rule and repeat an action. The flow helps reveal both.
+- **Layers and API:** separate screen, rules, and data; define how the parts exchange requests and responses.
+
+If the screen shows a wrong total, how do these distinctions help formulate a better request than "fix everything"?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Draw the path from one input to a delivery in your project. Where is there a condition, a repetition, or an exchange with another service? Ask the agent to explain how that appears in the version you already built. Choose one part to change and check the effect: did the drawing help you predict what would happen?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -204,15 +231,19 @@ Show a short script, generated by an assistant. Before running it, each person w
 - Denny, P., Prather, J., Becker, B. A., et al. (2023). *Computing education in the era of generative AI*. arXiv. <https://doi.org/10.48550/arXiv.2306.02608>
 - Maranhão Filho, É. (2020). *mvp.without.dev: How-to for MVPs without a need of developers* [GitHub repository]. <https://github.com/efremfilho/mvp.without.dev>
 - Maranhão Filho, É. (2025, April 1). *Chapter 3: autonomy is the differentiator, not speed*. efrem.io. <https://efrem.io/blog/en/chapter-3-autonomy-not-speed/>
+- Maranhão Filho, É. (2025, May 2). *Chapter 7: learning code as a side effect*. efrem.io. <https://efrem.io/blog/en/chapter-7-learning-code-as-a-side-effect/>
 - Maranhão Filho, É. (2026, July 13). *How do you teach people to use AI critically? A call for help*. efrem.io. <https://efrem.io/blog/en/how-to-teach-critical-use-of-ai/>
 - Maranhão Filho, É. (2026, July 15). *The problem is being a mere proxy for AI*. efrem.io. <https://efrem.io/blog/en/the-problem-is-being-a-mere-proxy-for-ai/>
 - Maranhão Filho, É. (2026, March 13). *Product-Led Ops: the ops crowd that is flying with GenAI*. efrem.io. <https://efrem.io/blog/en/product-led-ops-the-ops-crowd-flying-with-genai/>
 - Maranhão Filho, É. (2026, May 13). *What I give up with low-code, and why that's changing*. efrem.io. <https://efrem.io/blog/en/what-i-give-up-with-low-code/>
 - Maranhão Filho, É. (2026, October 28). *My BB Digital Week talk on experimentation with GenAI*. efrem.io. <https://efrem.io/blog/en/my-bb-digital-week-talk-on-experimentation-with-genai/>
+- Maranhão Filho, É. (n.d.). *Mão na massa com IA: Criando apps e automações* [Presentation slides]. <https://efrem.io/jazida/>
 - Prather, J., Reeves, B., Leinonen, J., MacNeil, S., et al. (2024). *The widening gap: The benefits and harms of generative AI for novice programmers*. arXiv. <https://doi.org/10.48550/arXiv.2405.17739>
 - Sarkar, A., Gordon, A. D., Negreanu, C., Poelitz, C., et al. (2022). *What is it like to program with artificial intelligence?* arXiv. <https://doi.org/10.48550/arXiv.2208.06213>
 - Wing, J. M. (2006). Computational thinking. *Communications of the ACM, 49*(3), 33–35. <https://doi.org/10.1145/1118178.1118215>
 
 *Notes:* The passages used in the research section. Brennan and Resnick (2012): concepts "sequences, loops, parallelism, events, conditionals, operators, and data"; practices "being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing". Denny et al. (2023, section 4; final version published in *Communications of the ACM*, 2024): "Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content". Prather et al. (2024, abstract): a study with 21 students; those who struggled "thought they performed better than they did, and finished with an illusion of competence". Sarkar et al. (2022): "End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills."
+
+The workshop example was checked against pages 27–31 and 38 of *Mão na massa com IA: criando apps e automações*. The text describes the proposed exercises without claiming participant outcomes. Tool names from the slides were omitted from the body: the example emphasizes analysis, flow, screen, and review of the parts.
 
 </div>

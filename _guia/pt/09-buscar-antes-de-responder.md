@@ -1,5 +1,6 @@
 ---
-title: "Buscar antes de responder"
+title: "Qual dessas regras vale agora?"
+subtitle: "Busca em fontes, recuperação e autoridade."
 description: "O modelo não leu os documentos da sua organização. Como fazer com que ele consulte a página certa na hora certa — e diga quando não achou?"
 lang: pt-BR
 ref: retrieval
@@ -8,16 +9,16 @@ part: 2
 permalink: /ia/buscar-antes-de-responder/
 interactive: "que trechos você levaria?"
 piece: "as dez perguntas mais repetidas, com a página que responde cada uma"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 9
 
-Iara ligou: uma família tinha sido visitada duas vezes na mesma semana, por duas pessoas, cada uma seguindo "o protocolo". O protocolo da rede tem trezentas páginas, três versões e um anexo que só existe em papel. Caio já tinha o plano: jogar tudo numa base e deixar um assistente responder às dúvidas de quem visita. Bia quis saber qual das três versões. Ninguém sabia. Se nem o time concorda sobre o que o protocolo diz, o que um assistente vai dizer?
+Iara ligou: uma família tinha recebido duas visitas na mesma semana, cada pessoa seguindo "o protocolo". Lia tinha encurtado as instruções do projeto e cortado a indicação de qual documento valia em cada situação. Bia usava o formulário que conhecia de campo; Caio achou uma versão mais recente, que não mencionava o anexo em papel. Pediu ao agente: "compare as orientações e mostre onde divergem, com a página". Bia revisou e encontrou uma exceção que a comparação tinha perdido. A busca ajudou a enxergar a briga. Não decidiu quem podia encerrá-la. Enquanto Iara consultava a secretaria, quem responderia à próxima escola?
 </div>
 
-Os dois capítulos anteriores deixaram um problema montado. O [capítulo 3](/ia/por-dentro-do-modelo/) mostrou que o modelo completa com o que é plausível quando não tem o fato. O [capítulo 8](/ia/contexto/) mostrou que despejar todos os documentos na janela piora a resposta. Sobra a pergunta: como entregar só o pedaço certo, na hora em que ele é necessário?
+Os dois capítulos anteriores deixaram um problema montado. O [capítulo 3](/ia/por-dentro-do-modelo/) mostrou que o modelo completa com o que é plausível quando não tem o fato. O [capítulo 8](/ia/contexto/) mostrou por que organizar os documentos importa mesmo quando todos cabem na janela. Sobra a pergunta: como entregar só o pedaço certo, na hora em que ele é necessário?
 
 ## De onde o modelo tira o que sabe?
 
@@ -27,8 +28,8 @@ De dois lugares, e vale nunca confundir um com o outro.
 |---|---|---|
 | **O que é** | Padrões de bilhões de textos | O que você escreveu, anexou ou o sistema buscou |
 | **Atualização** | Parou em alguma data | Tão atual quanto o que você fornecer |
-| **Sua organização** | Quase certamente não está lá | Só se alguém colocar |
-| **Dá para conferir a origem?** | Não | Sim — está na sua frente |
+| **Sua organização** | Pode conter informação pública e desatualizada; não conhece por isso o projeto atual | Pode receber os registros escolhidos para esta tarefa |
+| **Dá para conferir a origem?** | A resposta, sozinha, não mostra de qual material do treino veio | Dá para abrir o documento e conferir se sustenta a afirmação |
 
 Qual das duas colunas você gostaria que respondesse a uma pergunta sobre o protocolo da sua rede?
 
@@ -49,7 +50,7 @@ O modelo continua sendo o mesmo. O que muda é que, antes de ele completar o tex
 
 <div data-widget="busca"></div>
 
-A busca do experimento é propositalmente simples: conta palavras em comum. Os sistemas de verdade comparam significado, não palavras. Mas o que você decidiu ali — quantos trechos entram, o que fazer quando nenhum serve — são decisões humanas em qualquer versão.
+A busca do experimento conta palavras em comum. A recuperação pode usar palavras, relações aprendidas ou combinações; o [artigo de referência também compara formas de busca](https://arxiv.org/html/2005.11401v4). O exercício deixa visível uma decisão: se o trecho encontrado fala do mesmo assunto, mas não responde à pergunta, ele deveria entrar como evidência?
 
 ## Onde isso quebra?
 
@@ -62,7 +63,7 @@ Em vez de uma lista de defeitos, perguntas para fazer a qualquer sistema desse t
 - **E quando não há resposta?** O sistema sabe dizer "não encontrei"?
 - **Quem pode ver o quê?** Se a base tem documentos restritos, a busca precisa respeitar a permissão de quem pergunta.
 
-Repare que só a primeira pergunta é técnica. As outras são sobre a organização: quem cuida dos documentos, quem decide qual vale, quem pode ler.
+As perguntas misturam tecnologia e organização. Uma busca bem implementada pode trazer uma regra revogada; uma base atualizada pode ser mal consultada. Quem cuida dos documentos e quem constrói a consulta precisam se encontrar.
 
 ## E quando a resposta não está em documento nenhum?
 
@@ -72,15 +73,23 @@ A lógica é a mesma da busca — trazer para o contexto o que o modelo não tem
 
 ## Funciona com a minha própria estante?
 
-Quando preparei um curso para pessoas de produto, juntei os links de todas as minhas apresentações e das listas que mantenho — umas duzentas fontes — num caderno que só responde a partir delas e mostra de qual arquivo e de qual trecho tirou cada coisa. Funciona melhor do que eu esperava.
+Minha primeira tentativa de criar uma tutora para estudar IA [não deu tão certo](/blog/pt/my-public-commitment-to-study-ai/). Depois de futucar, fui atrás de aulas abertas e de materiais organizados por assunto. O episódio deixa uma pergunta: de que fontes viria o que essa tutora ensinasse? Dar à ferramenta esse papel também responde à escolha do material?
+
+Quando preparei um curso para pessoas de produto, juntei os links de todas as minhas apresentações e das listas que mantenho — umas duzentas fontes — num caderno configurado para responder a partir delas e indicar o arquivo e o trecho usado. Funciona melhor do que eu esperava.
 
 E quebra exatamente onde este capítulo diz que quebra. Algumas fontes estavam vazias, porque a página tinha mudado. E, quando alguém da turma perguntou sobre um assunto que não estava na base, ele respondeu assim mesmo, citando um trecho que não tinha nada a ver.
+
+## A pergunta sobre a fonte nasceu com a IA?
+
+Antes desses assistentes, eu já propunha [um trabalho que tinha de ser feito com plágio](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspirado na escrita não criativa. A turma montava um texto com trechos de fontes diferentes, identificados por cores. Junto de cada referência, precisava explicar por que a tinha usado e por que era confiável. O exercício não autorizava esconder autoria: fazia a origem aparecer.
+
+A pergunta reaparece com a resposta do modelo: que parte veio de uma fonte que você consegue conferir? O que foi inferido? O que continua sem apoio? Uma explicação que não mostra essa diferença pode soar muito melhor do que o trabalho que a sustenta.
 
 ## Preciso mesmo disso?
 
 Talvez não, e essa é uma pergunta honesta para fazer antes de montar qualquer coisa. Se o documento é curto e cabe folgado na janela, cole o documento. Se a dúvida é sempre a mesma, escreva a resposta uma vez. Eu costumo dizer que [antes dessas técnicas vem o básico](/blog/pt/before-rag-and-mcp-learn-the-basics/): escolher o modelo, pedir bem, dar contexto. Muita gente monta a estante antes de saber que pergunta quer responder.
 
-## Um caminho, em cinco perguntas
+## Que perguntas ajudam a escolher o caminho?
 
 1. **Qual é a fonte da verdade?** Um documento, uma planilha, uma pessoa?
 2. **Quem a mantém em dia** — e como a base fica sabendo quando ela muda?
@@ -90,23 +99,36 @@ Talvez não, e essa é uma pergunta honesta para fazer antes de montar qualquer 
 
 Se você consegue responder às cinco, a parte técnica é a menor. Se não consegue, nenhuma técnica resolve.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- O modelo tem duas memórias: o que ficou do treino e o que está na janela. Só a segunda dá para conferir.
-- Buscar antes de responder é entregar o trecho certo na hora certa, e exigir a citação.
-- A qualidade da resposta depende mais de quem cuida dos documentos do que do modelo.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** qual versão do protocolo vale, e quem decide isso? O que é pior: o sistema não achar, ou achar a página errada?
+- **Em disputa:** Encontrar um documento resolve a dúvida ou só revela versões em conflito? Quem tem autoridade para dizer qual vale?
 - **Caminhos na mesa:**
-  - *Caio:* indexar tudo e corrigir conforme errar.
-  - *Bia:* antes de qualquer base, alguém da secretaria diz qual versão vale.
-  - *Lia:* começar pelas dez perguntas que o time mais repete e achar, à mão, a página que responde cada uma.
-- **O que o time fez, por enquanto:** as dez perguntas, cada uma com a sua página; e um pedido formal à Iara: qual versão vale?
+  - *Caio:* indexar todas as versões, identificadas, para localizar divergências. Ajuda a investigar, mas uma resposta ainda pode misturar regras incompatíveis.
+  - *Bia:* manter provisoriamente o formulário que as equipes usam. Preserva a continuidade, mas pode prolongar uma orientação superada.
+  - *Lia:* suspender as orientações em conflito até a secretaria decidir. Evita escolher sem autoridade, mas deixa perguntas sem resposta imediata.
+- **O que o time fez, por enquanto:** montou uma consulta às perguntas frequentes com página e versão. Nos conflitos, adotou a suspensão proposta por Lia e pediu decisão a Iara. Uma escola ficou esperando retorno; o custo da cautela apareceu na agenda, não na qualidade da busca.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Recuperação:** procurar material relevante antes de gerar uma resposta; o modelo não precisa ter aprendido aquele documento no treino.
+- **Etapas distintas:** a fonte pode estar errada, a busca pode perder o trecho e a geração pode distorcê-lo.
+- **Citação:** oferece um caminho para conferir. A conclusão ainda precisa ser sustentada pelo trecho.
+
+Se a resposta cita um documento verdadeiro e mesmo assim erra, onde você procuraria o problema?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Escolha uma pergunta recorrente do seu projeto e indique o material que deveria ajudar a respondê-la. Peça a resposta com os trechos usados e abra esses trechos. Eles sustentam a conclusão? Se duas fontes discordarem, quem pode resolver a diferença — e o que você consegue entregar enquanto isso?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -129,7 +151,12 @@ Distribua um regulamento de quatro ou cinco páginas (o da própria instituiçã
 
 #### Referências
 
+- GOLDSMITH, Kenneth. **Uncreative writing**: managing language in the digital age. New York: Columbia University Press, 2011.
 - LEWIS, Patrick *et al.* **Retrieval-augmented generation for knowledge-intensive NLP tasks**. [*S. l.*]: arXiv, 2020. Aceito na NeurIPS 2020. DOI: <https://doi.org/10.48550/arXiv.2005.11401>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Antes de RAG e MCP, aprenda o básico**. [*S. l.*]: efrem.io, 30 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/before-rag-and-mcp-learn-the-basics/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Meu compromisso público de estudar IA até o fim do ano**. [*S. l.*]: efrem.io, 24 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/my-public-commitment-to-study-ai/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Trabalhos com plágio**. [*S. l.*], 2014. Instrução de atividade para estudantes. Disponível em: <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>. Acesso em: 15 nov. 2026.
+
+*Notas:* O exercício de escrita com fontes foi proposto pelo autor em 2014, inspirado em Goldsmith (2011). O documento original descreve identificação por cores, fontes múltiplas e discussão da confiabilidade.
 
 </div>

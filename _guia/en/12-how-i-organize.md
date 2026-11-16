@@ -1,20 +1,21 @@
 ---
-title: "How I organize my work with AI"
+title: "Who pays for switching tools?"
+subtitle: "Environments, access, and team autonomy."
 description: "Folders that mirror my life, one little text box instead of ten tabs, fenced environments, and one tool I'm actually good at. The tools change; the principles, far less."
 lang: en
 ref: workspace
 order: 12
-part: 3
+part: 2
 permalink: /ai/how-i-organize/
 interactive: "anatomy of a work environment"
 piece: "folders by city and keys in order"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 12
 
-Two more cities asked for help. Within a week there were three look-alike spreadsheets in the same folder, an access key pasted into the group chat, "to make things easier," and a new argument: Caio wanted to switch tools. He had tried another one over the weekend, much better. It was the third switch of the semester, and Bia had barely learned the previous one. Easier for whom? And what does the team lose every time it switches?
+Two more municipalities asked for help. Lia put the materials in the same folder: "we'll separate them later." Soon there were similar spreadsheets and an access key in the group chat for everyone to use. Caio proposed another tool: during a visit, he had managed to work without a connection, something the current tool still could not do. Bia wanted to stop switching; she had barely learned the previous one and was the person helping field teams by phone. Caio asked the agent for a migration plan. Bia reviewed it: the demonstration was simple, but the plan did not account for training or support. Lia saw that organizing by project also meant separating access. How much of the switch was an improvement, and how much work did it push onto whoever would keep answering calls?
 </div>
 
 This chapter is the most personal one in the guide. It isn't a recipe: it's how I work. The tools will change, which is why I don't mention any of them by name; what I hope stays are the principles behind it.
@@ -34,9 +35,9 @@ Principle number one has nothing to do with technology: **each area of work is a
 └── personal/       this site, studies, experiments
 ```
 
-The practical consequence is huge. When I open an agent inside a project, it only sees that project. When I open it one folder up, it sees every project in that area — and I can ask "how are my students' projects doing?" and get an overview of who did what, across all the repositories, without opening any of them.
+The practical effect is organizing what I ask the agent to consult. I can work on one project or request an overview of projects in an area. But opening a folder **does not by itself create an access boundary**: what the tool can read or change depends on permissions and the environment it runs in.
 
-**The folder level where I open the tool is the size of the context I'm giving it.** It's the context engineering from [chapter 8](/ai/context/), done with the file manager.
+**The folder organizes the work; permissions delimit access.** And being accessible does not mean every file has already been read into the conversation. That connects context in [chapter 8](/ai/context/) with access in [15](/ai/agents-on-a-leash/).
 
 It's also why I avoid the "do-it-all" agent that stores things its own way. They find their way around their own mess; later, a human trying to read it suffers.
 
@@ -96,7 +97,7 @@ TEST_DB_KEY=••••••••
 TASK_BOARD_KEY=••••••••
 ```
 
-The rule is to give it only that project's keys, with the lowest permission that works. The most damage an agent can do is whatever its keys allow.
+The rule is to give it only that project's keys, with the lowest permission that works. Keys are part of the boundary; files, open sessions, and other available access also matter.
 
 #### Network
 
@@ -111,7 +112,7 @@ allowed:
 blocked: everything else
 ```
 
-For a harmless personal project I allow everything. For a company project, a closed list. If a malicious instruction shows up in the middle of a document, the agent simply has nowhere to send the data.
+For a harmless personal project I allow everything. For a company project, a closed list. That list reduces possible destinations; I still need to look at what the permitted services allow. Access to a service may include publishing, sharing, or deleting within it.
 
 </div>
 
@@ -144,24 +145,36 @@ About API keys, which you'll run into when you build your own agent:
 - **Set a spending limit.** Always. Before you use it.
 - **Revoke it when you're done.** I create keys for students during a course and deactivate all of them at the end. A forgotten key is a bill left open.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- Organize by folder and repository: where you open the tool defines the context it gets.
-- A well-configured environment has four parts: repository, setup, secrets, and network.
-- Get good at one tool — and keep the knowledge in plain text, so you can leave whenever you want.
-- Subscription for people, API for systems — and API always with a limit.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** who has a key today that they shouldn't have anymore? If a tool went offline tomorrow, what would the team lose? Is it better to be very good at one or to know them all?
+- **In dispute:** The current tool gets in the way in the field; the new one may get in the way of people who must learn and support it. Who has the time to pay for that transition?
 - **Paths on the table:**
-  - *Caio:* test everything that comes out. That's how you find out what's best.
-  - *Bia:* pick one and stop fiddling.
-  - *Lia:* each person gets good at one; what belongs to the project lives in the repository, so that switching costs an afternoon, not a month.
-- **What the team did, for now:** folders by city, one key per project with a limit and an end date, and the group-chat key revoked.
+  - *Caio:* test the offline alternative in an isolated project. That tackles a real difficulty, but splits attention between two tools.
+  - *Bia:* stay with the current tool and adapt field routines. That preserves the team's learning, but keeps a limitation she faces herself.
+  - *Lia:* postpone any testing until projects and access are separated. That reduces confusion, but delays an answer for people working without a signal.
+- **What the team did, for now:** separated the folders and revoked the shared key, creating access per project. It then authorized Caio's limited trial with fictional data. Bia kept supporting the current tool; an improvement she had requested was deferred. The new cities received a demonstration, not a promise of immediate service.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Organization:** folders and repositories help locate context; permissions define access.
+- **Environment:** files, setup, secrets, and network access influence what an agent can execute.
+- **Portability:** knowledge kept in files helps with changing tools; the move may still require adaptation and support.
+
+What would need to accompany the project for someone else to continue without guessing your decisions?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Imagine resuming your project in another tool or with another person. What would need to come along: files, decisions, examples, access, knowledge nobody wrote down? Try one small task through that handover. What worked in the demonstration, and what would still depend on you to keep working?
+
 </div>
 
 <details class="g-aula" markdown="1">

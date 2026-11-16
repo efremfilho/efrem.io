@@ -1,5 +1,6 @@
 ---
-title: "From request to app"
+title: "Who is this screen working for?"
+subtitle: "Product, interface, and operations."
 description: "A description becomes working software in minutes. If building is no longer the hard part, how do I know I'm building the right thing?"
 lang: en
 ref: app-builders
@@ -7,25 +8,31 @@ order: 13
 part: 3
 permalink: /ai/from-request-to-app/
 interactive: "what happens when you don't say it?"
-piece: "the first version in the team's hands, without anyone's name"
-last_modified: 2026-11-15
+piece: "daily list and aggregate dashboard, reviewed by the people using them"
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 13
 
-The script counted the absences. But the list stayed on one computer, and the people who do the visits spend the day out in the field, phone in hand. That part was Bia's. She described what she wanted in one line and, two minutes later, there was a good-looking app on the screen — with full name, address, and a red badge next to each student. Bia, of all people. Rule no. 1 was written in the repository; the app builder had never been there. Where did the badge come from?
+The script counted absences. But the list lived on a computer, while visitors spent the day out in the field. Bia asked an app builder for a mobile app and got an attractive screen, with full names, addresses, and a red badge on every student. Of all people. Rule #1 was in the repository; the builder had not read it. Caio reviewed the screen with Bia and asked about the badge. They removed it. In the next conversation, Iara requested an aggregate dashboard to argue for continuing the partnership. Bia preferred the daily list, without another screen to fill in. Both had people to serve. Maia reappeared asking for "more visual impact": she needed slides to show the partner organization's leadership. She had not sent the promised example and had not opened the version Bia had shared. Caio set aside an afternoon to try to understand the request. Did the app need to solve the work of those making visits, those keeping the partnership going, or both?
 </div>
 
 There's a family of tools that takes a description in natural language and hands back a working app: screen, rules, database, and an address to open on your phone. I call them app builders; the commercial names change every semester and don't matter here.
 
 I held a grudge against them. Years ago I used a generation of tools that promised to write the code for me and handed back a tangled mess nobody could reuse. When the new ones showed up, I looked down on the people who used them. I ate my words.
 
+## What if I can build it, but steamroll someone?
+
+I've been the bulldozer. At a previous job, my product team started doing with AI what another area was slow to deliver: we agreed on a deadline and, once it passed, we generated the material and put it live. The intention was to show, in practice, that specializing had become easier — and it had been agreed with leadership. It got things started. It wasn't the best way. I lacked the empathy a leader should have with other areas, and I damaged the relationship for a good while. In the end, we handed the finished processes over for that area to use and edit, and it turned out great. The road there was turbulent.
+
+Being able to deliver didn't fix the relationship. The app can work while the way you bring it into the world still causes trouble. Keep that in mind while we talk about generating screens: the work doesn't end when they appear.
+
 ## What does an app builder do for me?
 
-It makes, in my place, hundreds of engineering decisions: which language to use, how to organize the files, where to store the data, how to publish. And it makes them better than I would. I can write a script; I was never good at frameworks, infrastructure, security configuration. So I let it decide. When it proposes reorganizing the code it has just written, I let it do that too: it's a sign that it cares about quality. It doesn't always work out. It almost always does. It's the cheap expertise that [chapter 17](/ai/responsible-generalist/) talks about, working in my favor.
+It makes, in my place, hundreds of engineering decisions: which language to use, how to organize the files, where to store the data, how to publish. And it makes them better than I would. I can say what I need to solve; I don't want to choose frameworks, infrastructure, or security settings without understanding the consequences. So I let it decide. When it proposes reorganizing the code it has just written, I let it do that too. The proposal alone doesn't prove quality: what improved, and what still worked after the change? I've [fixed one thing and broken another](/blog/en/chapter-2-the-frustration-phase/). It's the cheap expertise that [chapter 17](/ai/responsible-generalist/) talks about, with work on my side to check what came back.
 
-That didn't turn me into a developer. I spent months [taking my lumps and learning](/blog/en/chapter-5-a-product-person-can-build-with-lovable/) with one of these tools, and the conclusion was a different one: **I became a product person who knows how to ask an engineering team really well. The team, in this case, is an agent.**
+That let me do development without being the person writing the code. I spent months [taking my lumps and learning](/blog/en/chapter-5-a-product-person-can-build-with-lovable/) with one of these tools, and the conclusion was a different one: **I became a product person who knows how to ask an engineering team really well. The team, in this case, is an agent.**
 
 Can anyone do it? Building got more democratic. It didn't get simple. [The limitation of these tools is an advantage](/blog/en/non-technical-people-are-better-off-in-lovable/) for anyone who isn't in tech: I don't want to decide architecture, I want that to be decided, and decided well. But someone who understands the bare minimum of [chapter 7](/ai/computational-thinking/) — what a function is, where the data lives, what one layer asks of another — asks better and notices sooner when something has come out crooked.
 
@@ -54,17 +61,29 @@ What I learned the hard way:
 - **After that, short requests with an address.** "It looks ugly," "it's counting wrong," and "what I entered disappeared" go to different layers.
 - **Show.** A drawing of the screen, even done by hand, is worth more than three paragraphs.
 - **Read what it says it did.** When something breaks, the explanation is usually there.
-- **Not there after a few rounds? Start over.** Take what you learned into a new request. It's still cheaper than fixing.
+- **Not there after a few rounds? Is it worth starting over?** Use what you learned to compare the options: fix the current version, return to one that worked, or make a new request. What do you lose with each?
 
 This takes practice; there's no other way. If the system at your job can't fail, practice on a side project: an internal tool, something that's only yours.
 
 A fellow teacher was tracking almost eighty students, one spreadsheet per student. I showed him one way, and he built his own system, on his own. He spent about five times more credits than I had — and that is the price of learning, not a flaw. The credit is all his. What made the difference there wasn't the perfect request: it was persisting until it worked. The will to build weighs more than getting it right the first time.
 
-The founder of one of these tools [recounts](https://www.youtube.com/watch?v=-QsTmu2CqhA) that a user described it as "a super genius five-year-old PhD with ADHD." It's the best definition I know, and it holds even more when I switch agents: sometimes it dives too deep into one thing, sometimes it gets stuck, sometimes it's just distracted. I once asked it to change the menu, and the only thing it did was not change the menu. The caveat is that this is less and less true: the models make things up less and are more like specialists. But it helps you ask with patience.
+I've [nearly given up after fixing one thing and breaking another](/blog/en/chapter-2-the-frustration-phase/). One way out was asking for more detailed records of what happened: *logs*. In [another difficult round](/blog/en/chapter-4-getting-beaten-up-by-lovable-and-edge-functions/), neither a long document nor a flow diagram got things unstuck. I took the code and errors to another model. I made progress. It wasn't all finished: at least the errors were new.
+
+That's a step missing from simply saying "keep building." When you get stuck, one possible request is: "I did this, expected that, and got this message. Find the stage where it happened; explain before changing anything. Then check this case and one that already worked." The agent's explanation must also match what you observe. Giving the problem another description isn't the same as solving it.
 
 ## What changed, in the end: speed?
 
-No. You could always have speed — in a weekend hackathon, in a no-code tool — and the price was quality. The speed I care about is a different kind: building without getting stuck. That's why I still stand by what I wrote back when I was still taking my lumps: [speed isn't the differentiator, autonomy is](/blog/en/chapter-3-autonomy-not-speed/).
+What changed most for me was being able to build without getting stuck. A quick first version can help uncover the problem; it can also be work to maintain. That's why I still stand by what I wrote back when I was still taking my lumps: [speed isn't the differentiator, autonomy is](/blog/en/chapter-3-autonomy-not-speed/).
+
+## If building got easy, what got hard?
+
+**Before:** in a product I work on, the tracking board took up a little more than half the screen; the rest was menu and frame. To open a detail, the person switched screens and lost the thread.
+
+**After:** I described what bothered me and asked for alternatives. I tried out three ideas, actually working, in the development environment: drag and drop between columns, a side drawer with the item's summary, and a breadcrumb trail at the top for going back without getting lost. I sent the link to the team to try.
+
+**What I learned:** the hard part wasn't building. It was realizing that each column of that board is used by a different team, so what shows up when you hover the mouse has to change from column to column. That's product knowledge, and no model guesses it. One of the three experiments I didn't like — and I rolled it back with one command, because everything was layered and versioned ([chapter 11](/ai/repository-as-memory/)).
+
+Code got cheap. Knowing what to build didn't. I wrote more about this in [Product and UX have never mattered more](/blog/en/product-and-ux-have-never-mattered-more/).
 
 ## Am I building the right thing?
 
@@ -86,7 +105,7 @@ It depends, and the answer starts with the context. I like testing in production
 
 So, instead of a rule, questions. If it goes wrong, who feels it? Can it be undone? Whose data is it? How many people depend on this today?
 
-For Lia's team, the answers change the plan. The data belongs to teenagers, and an address that has leaked doesn't come back. The first version can go into the hands of the people who do the visits in the very first week — that's how you learn — but with codes in place of names and no address on the screen. It doesn't have to be a textbook process. It has to fit the context.
+For Lia's team, the answers change the plan. The data belongs to teenagers, and an address that has leaked doesn't come back. The first version can go into the hands of the people who do the visits in the very first week — that's how you learn — using fictional examples for that first investigation. Removing names from real records does not by itself make them anonymous. It doesn't have to be a textbook process. It has to fit the context.
 
 ## If code isn't the hard part, what is?
 
@@ -109,9 +128,7 @@ That's why I call people in. The questions that make me call:
 
 And I call early. At a company where I worked, it took us years to see a pattern: when the client organization's technology team took part in the choice, the product lasted. When it was left out, it treated the thing as a rogue system — and its first move was to take it down. Hiding what you built from the technology team is the shortest path to losing what you built.
 
-And I've been the bulldozer in this story. At a previous job, my product team started doing with AI what another area was slow to deliver: we agreed on a deadline and, once it passed, we generated the material and put it live. The intention was to show, in practice, that specializing had become easier — and it had been agreed with leadership. It got things started. It wasn't the best way. I lacked the empathy a leader should have with other areas, and I damaged the relationship for a good while. In the end, we handed the finished processes over for that area to use and edit, and it turned out great. The road there was turbulent.
-
-## A path
+## Where would I start?
 
 1. Debate the problem with an assistant until a document a few pages long comes out of it. The seven lines of the mini-PRD ([chapter 7](/ai/computational-thinking/)) are the skeleton.
 2. Generate, look, and ask the app builder what it assumed.
@@ -120,24 +137,36 @@ And I've been the bulldozer in this story. At a previous job, my product team st
 5. Keep the project in a repository ([chapter 11](/ai/repository-as-memory/)).
 6. It worked and it's ugly? Now redo it properly — and call in someone who knows what they're doing.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- The app builder decides the engineering, and decides it well. The product decisions are still mine — and if I don't make them, it will.
-- What I don't say gets filled in with what's most common.
-- First the right thing; then, the right way. And only by operating it do I find out what the right thing is.
-- I may not be the one who writes. I'm still the one who answers for the result.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** what in the request seemed obvious and nobody wrote down? Do the people who do the visits really want a dashboard, or do they just want to know, in the morning, who to look for today?
+- **In dispute:** A screen can serve a legitimate decision and still not help people in the field. Who uses it, who supplies the data, and who goes without help if the scope grows?
 - **Paths on the table:**
-  - *Iara:* the dashboard, with a chart, to show at the education department.
-  - *Bia:* no dashboard: a message in the morning, with the day's list.
-  - *Caio:* both. "It's quick."
-- **What the team did, for now:** generated it again, this time with the rules in the request; put the first version in the hands of two people who do the visits, with codes in place of names; and sat beside them to watch, without explaining.
+  - *Iara:* an aggregate dashboard to monitor the partnership and justify resources. That supports the operation, but does not by itself help visitors through their day.
+  - *Bia:* the morning list and a simple way to update status. That helps in the field, but leaves reporting dependent on manual work.
+  - *Caio:* both outputs from the same data. That avoids entering information twice, but adds things the team must check and maintain.
+- **What the team did, for now:** regenerated with explicit rules and adopted Caio's proposal: the daily list and a minimal aggregate dashboard. Bia tested the list with two people, using fictional data; Iara reviewed the dashboard. The afternoon spent on presentation changes came out of the same time budget. Offline work stayed out of this first release. That fieldwork difficulty remained unresolved.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Request:** the problem, context, and limits guide decisions the builder would otherwise fill in on its own.
+- **Building and use:** a working screen lets you test a hypothesis; observing its use can change the hypothesis itself.
+- **Operation:** maintaining data, access, availability, and support is part of the delivery. Delegating implementation does not finish that work.
+
+How would you distinguish an implementation problem from an app that correctly does the wrong thing?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Put a delivery in the hands of someone who would do that task, under the test conditions the context allows. It can be a screen, a file, or a service with a manual component. Where did the person stop, improvise, or ignore what you thought was essential? Is your next request to the agent still the one you would have made before observing?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -166,12 +195,14 @@ A person from another pair gets the app and a task ("log a visit"). The people w
 #### References
 
 - Maranhão Filho, É. (2025, April 1). *Chapter 3: autonomy is the differentiator, not speed*. efrem.io. <https://efrem.io/blog/en/chapter-3-autonomy-not-speed/>
+- Maranhão Filho, É. (2025, April 14). *Chapter 4: getting beaten up by Lovable and Edge Functions*. efrem.io. <https://efrem.io/blog/en/chapter-4-getting-beaten-up-by-lovable-and-edge-functions/>
 - Maranhão Filho, É. (2025, April 22). *Chapter 5: a product person can build with Lovable*. efrem.io. <https://efrem.io/blog/en/chapter-5-a-product-person-can-build-with-lovable/>
 - Maranhão Filho, É. (2025, April 25). *Non-technical people are better off in Lovable than in dev tools*. efrem.io. <https://efrem.io/blog/en/non-technical-people-are-better-off-in-lovable/>
+- Maranhão Filho, É. (2025, March 26). *Chapter 2: the frustration phase*. efrem.io. <https://efrem.io/blog/en/chapter-2-the-frustration-phase/>
 - Maranhão Filho, É. (2025, November 27). *The webmaster era of vibe coding*. efrem.io. <https://efrem.io/blog/en/the-webmaster-era-of-vibe-coding/>
 - Maranhão Filho, É. (2026, March 26). *Code is not the hard part*. efrem.io. <https://efrem.io/blog/en/code-is-not-the-hard-part/>
-- Rauch, G. (2025). *Everyone's an engineer now: Inside v0's mission to create 100 million builders* [Video]. Interview by L. Rachitsky. Lenny's Podcast. <https://www.youtube.com/watch?v=-QsTmu2CqhA>
+- Maranhão Filho, É. (2026, October 27). *Product and UX have never mattered more*. efrem.io. <https://efrem.io/blog/en/product-and-ux-have-never-mattered-more/>
 
-*Notes:* The quoted line is told by Guillermo Rauch, who attributes it to a user of his tool (minutes 0 and 43 of the interview): "v0 is a super genius five-year-old PhD with ADHD". It describes that tool, not AI in general; the generalization is mine. The cases in the chapter come from my own work; names of people, clients and companies were left out.
+*Notes:* The cases are the author's accounts; names of people, clients, and companies were omitted. The building-series posts document learning phases, dated in the references. The diagnostic request suggested in the chapter is a teaching example, not a literal transcript of those episodes.
 
 </div>

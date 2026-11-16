@@ -110,6 +110,9 @@ def conferir_base():
 def conferir_site(site):
     paginas = glob.glob(os.path.join(site, 'ia', '**', 'index.html'), recursive=True)
     paginas += glob.glob(os.path.join(site, 'ai', '**', 'index.html'), recursive=True)
+    if not paginas:
+        problema('nenhuma página do guia encontrada; confira se o build terminou sem erro')
+        return
     quebrados = set()
     for pagina in paginas:
         for destino in re.findall(r'href="(/[^"#?]*)', ler(pagina)):

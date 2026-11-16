@@ -1,0 +1,9 @@
+{% if include.lang == 'en' %}{% assign cycle_texts = site.data.guia.en %}{% else %}{% assign cycle_texts = site.data.guia.pt %}{% endif %}
+<figure class="g-cycle">
+  <ol>
+    {% for step in cycle_texts.cycle %}
+    <li><strong>{{ step.title }}</strong><span>{{ step.question }}</span></li>
+    {% endfor %}
+  </ol>
+  <figcaption>{{ cycle_texts.cycle_return }}</figcaption>
+</figure>
