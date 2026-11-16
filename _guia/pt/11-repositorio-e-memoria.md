@@ -65,7 +65,7 @@ O vocabulário mínimo:
 
 **Porque funciona em time.** Sozinho, quase tudo funciona. Os problemas de sempre do software aparecem quando entra a segunda pessoa: quem mudou o quê, qual versão vale, o que fazer quando duas mudanças brigam. Pessoas e agentes trabalhando no mesmo projeto precisam de um lugar em que ninguém pisa no trabalho de ninguém e toda mudança passa por alguém antes de valer.
 
-No meu trabalho, hoje, é assim: a gente discute a estratégia e divide. Uma funcionalidade fica comigo, outra com um colega. Cada um implementa com os seus agentes. Eu reviso a dele; ele revisa a minha.
+No meu trabalho, hoje, é assim: a gente discute a estratégia e divide usando os cortes do [capítulo 7](/ia/pensamento-computacional/). Uma pessoa fica com um domínio ou uma camada (por exemplo, a regra de sincronização no banco), outra fica com outro (a tela de revisão). Cada pessoa trabalha na sua branch com os seus agentes, em arquivos separados, para ninguém atropelar o código de ninguém. Eu reviso o pull request do meu colega; ele revisa o meu.
 
 **Porque é a sua memória.** Este é o ponto menos óbvio e mais valioso.
 
@@ -118,6 +118,11 @@ O que já deu errado e não deve se repetir. "Tentamos fazer assim, quebrou por 
 </div>
 
 Quem escreve esses documentos? Na maior parte das vezes, a própria IA, a meu pedido: *"gere a documentação do que aprendemos nesta sessão"*. Eu leio, corrijo e faço o commit.
+
+Nos meus projetos mais longos, duas coisas dentro dessa estrutura valem ouro:
+
+- **Invariantes que não se desfazem (as cicatrizes do projeto):** no topo do `AGENTS.md`, eu listo as regras que nasceram de incidentes reais — aqueles bugs silenciosos em que o sistema continuava respondendo, só que com o número errado. Um agente novo olha uma trava dessas, acha que é código redundante e tenta "limpar", trazendo o bug de volta. Por isso o aviso lá no alto é explícito: *se uma regra desta seção parecer redundante ou exagerada, pare e pergunte antes de mexer*.
+- **O script de auditoria que só cresce:** toda vez que a gente descobre um erro conferindo à mão, aquela checagem vira uma regra nova num script de auditoria do projeto. Nenhuma seção antiga sai; cada incidente acrescenta uma verificação nova. Este próprio guia tem o seu (`conferir.py`, na pasta `_tools/guia/`), que confere paridade entre português e inglês, formato dos diários da Lia e links quebrados antes de qualquer publicação.
 
 ## E se a reunião virasse matéria-prima?
 

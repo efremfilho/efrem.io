@@ -88,11 +88,21 @@ layout: default
 			<h2 class="b-chapter-title">{{ c.title }}</h2>
 			{% if c.subtitle %}<p class="g-concept-subtitle">{{ c.subtitle }}</p>{% endif %}
 			{% if c.description %}<p class="b-chapter-desc">{{ c.description }}</p>{% endif %}
+			{% if c.piece %}<p class="g-chapter-piece"><span class="g-piece-icon" aria-hidden="true">🧩 </span>{{ t.piece }}: {{ c.piece }}</p>{% endif %}
 		</header>
 		<article class="post-content g-content">
 			{{ body }}
 		</article>
 	</section>
+	{% assign next_index = forloop.index0 | plus: 1 %}
+	{% assign next_c = chapters[next_index] %}
+	{% if next_c == nil or next_c.part != c.part %}
+		{% assign close_part_index = c.part | minus: 1 %}
+		{% assign close_act = t.parts[close_part_index] %}
+		<section class="b-chapter b-act-close post-content g-content">
+			{% include guia/fechamento-ato.html act=close_act part_number=c.part chapters=chapters texts=t is_book=true %}
+		</section>
+	{% endif %}
 {% endfor %}
 
 <footer class="b-end">

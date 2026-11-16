@@ -65,7 +65,7 @@ The minimum vocabulary:
 
 **Because it works for teams.** Working alone, almost everything works. Software's usual problems show up when the second person joins: who changed what, which version counts, what to do when two changes clash. Humans and agents working on the same project need a place where nobody steps on anybody else's work and every change goes through someone before it takes effect.
 
-At my job, today, it goes like this: we discuss the strategy and split it up. One feature stays with me, another with a colleague. Each of us implements with our own agents. I review theirs; they review mine.
+At my job, today, it goes like this: we discuss the strategy and split it up using the cuts from [chapter 7](/ai/computational-thinking/). One person takes one domain or layer (for example, the sync rule in the database), another takes a different one (the review screen). Each person works on their own branch with their own agents, in separate files, so nobody steps on anyone else's code. I review my teammate's pull request; they review mine.
 
 **Because it's your memory.** This is the least obvious point and the most valuable.
 
@@ -118,6 +118,11 @@ What has already gone wrong and shouldn't happen again. "We tried it this way, i
 </div>
 
 Who writes these documents? Most of the time, the AI itself, at my request: *"generate the documentation for what we learned in this session."* I read it, fix it, and commit.
+
+In my longer-running projects, two things inside that structure are worth their weight in gold:
+
+- **Invariants that must not be undone (the project's scars):** at the top of `AGENTS.md`, I list the rules born from real incidents — those silent bugs where the system kept answering, only with the wrong number. A fresh agent looks at a safeguard like that, thinks it's redundant code, and tries to "clean it up," bringing the bug right back. That's why the warning at the top is explicit: *if a rule in this section looks redundant or overengineered, stop and ask before touching it*.
+- **The audit script that only grows:** every time we catch an error by checking by hand, that check becomes a new rule in the project's audit script. No old check is removed; each incident adds a new verification. This very guide has its own (`conferir.py`, in the `_tools/guia/` folder), which checks parity between Portuguese and English, the format of Lia's logbooks, and broken links before anything goes live.
 
 ## What if the meeting became raw material?
 

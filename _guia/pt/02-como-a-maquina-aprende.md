@@ -51,11 +51,9 @@ Agora desloque mentalmente o desenho uma casa para o lado. Você continua vendo 
 
 A [explicação visual de redes neurais](https://www.youtube.com/watch?v=aircAruvnKk), de Grant Sanderson, começa por um desafio ótimo: reconhecer um algarismo escrito à mão. Você reconhece de cara. Agora tente escrever uma regra que sirva para todas as letras tortas de todas as pessoas.
 
-Numa rede neural, várias operações pequenas se encadeiam em **camadas**. Cada uma recebe sinais, combina e transforma esses sinais, e passa o resultado adiante. O nome "neurônio" não exige imaginar uma pessoa minúscula pensando lá dentro.
+Numa rede neural, várias operações pequenas se encadeiam em **camadas**. Cada uma recebe sinais, combina e transforma esses sinais, e passa o resultado adiante. Uma maneira de visualizar a ideia é juntar pistas: trechos de imagem, curvas e combinações que ajudam a distinguir um algarismo de outro — mesmo que a rede aprenda representações internas que nem sempre têm uma etiqueta óbvia para nós.
 
-Uma maneira de visualizar a ideia é juntar pistas: trechos de imagem, curvas, combinações que ajudam a distinguir um algarismo de outro. Isso explica por que combinar etapas pode ajudar. Não é um mapa literal em que cada neurônio recebeu uma etiqueta "detector de curva". A rede aprende representações que nem sempre conseguimos traduzir assim.
-
-Pense num painel de ajustes: cada botão muda quanto um sinal influencia o próximo. Muitos desses ajustes são os **pesos**. Girar um botão pode mudar o resultado; o treino procura combinações que funcionem melhor. O painel é uma imagem para os números, não uma peça que alguém gira à mão.
+No quadro da sala eu explico isso como uma equação invertida. Na escola, alguém te dava os números fixos na função `f(x, y) = 3x + 2y`, você colocava o `x` e o `y` e calculava o resultado. No treino de máquina a gente inverte quem era o desconhecido: você já tem vários exemplos do `x`, do `y` e do resultado que aconteceu, e quer descobrir quais eram os números fixos — o `3` e o `2`. Esses números que multiplicam cada sinal são os **pesos** (ou parâmetros de treino). Na essência, o modelo é uma equação gigantônica ajustada para que a conta feche melhor nos exemplos. Essa mesma função `f(x, y) = 3x + 2y` vai voltar no [capítulo 7](/ia/pensamento-computacional/) para ligar planilha e código.
 
 ## O que acontece em cada volta do treino?
 
@@ -65,6 +63,35 @@ A [explicação do aprendizado](https://www.3blue1brown.com/lessons/gradient-des
 2. **Medir o erro.** Compara-se a saída com o que se queria obter, segundo um critério escolhido. Essa medida é a *loss*.
 3. **Ajustar.** O algoritmo calcula mudanças que tendem a reduzir esse erro.
 4. **Repetir.** Outros exemplos entram, os ajustes mudam, e o ciclo continua.
+
+<figure class="g-board">
+	<div class="g-board-title">Quadro de sala · A equação invertida do treino <span>De calcular a saída a descobrir os pesos</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box">
+			<span class="g-board-kicker">Na escola / na regra pronta</span>
+			<code class="g-board-math">f(x, y) = 3x + 2y   ──►   f(4, 1) = ?</code>
+			<ul class="g-board-list">
+				<li><strong>Conhecido:</strong> os pesos fixos (<code>3</code> e <code>2</code>) e as entradas (<code>x = 4</code>, <code>y = 1</code>).</li>
+				<li><strong>Desconhecido:</strong> o resultado da conta (<code>14</code>).</li>
+			</ul>
+		</div>
+		<div class="g-board-box teal">
+			<span class="g-board-kicker">No treino de máquina (equação invertida)</span>
+			<code class="g-board-math">f(x, y) = w₁·x + w₂·y + b   ──►   achar w₁, w₂, b</code>
+			<ul class="g-board-list">
+				<li><strong>Conhecido:</strong> milhares de exemplos históricos de <code>x</code>, <code>y</code> e do resultado observado.</li>
+				<li><strong>Desconhecido:</strong> os pesos (<code>w₁</code>, <code>w₂</code>) e o viés matemático (<code>b</code>) que fazem a conta fechar.</li>
+			</ul>
+		</div>
+	</div>
+	<div class="g-board-flow">
+		<div class="g-board-step"><strong>1. Palpite</strong>Roda a equação com os pesos atuais</div>
+		<div class="g-board-step"><strong>2. Erro (loss)</strong>Mede a distância até o resultado esperado</div>
+		<div class="g-board-step"><strong>3. Ajuste</strong>Retropropagação calcula quanto mexer em cada peso</div>
+		<div class="g-board-step"><strong>4. Prova real</strong>Testa em casos que ficaram fora do treino</div>
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> reprodução da lousa de aula do autor na FGV EPPG (Maranhão Filho, 2026) combinada com a formulação visual de descida do gradiente e retropropagação de Grant Sanderson (3Blue1Brown, <em>Neural Networks</em>, 2017).</figcaption>
+</figure>
 
 Como descobrir que botões mexer numa rede inteira? A [retropropagação](https://www.3blue1brown.com/lessons/backpropagation/) faz o caminho das contas de trás para a frente para calcular como cada ajuste influencia o erro. Não é sair tentando um botão por vez. A correção considera como eles participam juntos do resultado.
 

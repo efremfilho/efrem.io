@@ -88,11 +88,9 @@ Num projeto para uma área de conformidade, o modelo lia a norma inteira. Na hor
 
 ## Que perguntas eu deixava de fazer porque dava trabalho?
 
-**O que era:** uma pergunta de negócio simples de fazer e trabalhosa de responder — *em que etapa do processo as propostas ficam mais tempo paradas?*
+Havia uma pergunta de negócio simples de fazer e trabalhosa de responder: *em que etapa do processo as propostas ficam mais tempo paradas?* Fiz a pergunta em português e pedi que o agente escrevesse e rodasse o código. Recebi a média e a mediana por etapa nos últimos três meses, os problemas encontrados nos dados, mapas de calor mostrando em que dias da semana faltava e sobrava gente para atender, a taxa de faltas — e o script em Python que gerou tudo, salvo no projeto.
 
-**Como ficou:** fiz a pergunta em português. Recebi a média e a mediana por etapa nos últimos três meses, os problemas encontrados nos dados, mapas de calor mostrando em que dias da semana faltava e sobrava gente para atender, a taxa de faltas — e o código em Python que gerou tudo, salvo no projeto.
-
-**O que aprendi:** eu não escrevi uma linha daquele código, e essa é o tipo de análise que antes ficaria para "quando sobrar tempo". Custou uma conversa. O efeito mais forte não é a economia: é que **eu parei de adiar perguntas**. Quando perguntar custa pouco, a gente pergunta mais — e ganha mais oportunidades de conferir as próprias interpretações.
+Eu não escrevi uma linha daquele código, e esse era o tipo de análise que antes ficava para "quando sobrar tempo". Custou uma conversa. O efeito mais forte não é a economia: é que **eu parei de adiar perguntas**. Quando perguntar custa pouco, a gente pergunta mais — e ganha mais oportunidades de conferir as próprias interpretações.
 
 ## Como decidir?
 
@@ -111,6 +109,27 @@ Menos do que parece. Num produto de seguros que ajudei a construir, a análise d
 Ali só tem uma pecinha que é IA: ler o balanço e o demonstrativo de resultados, dizendo que conta é ativo e que conta é passivo — trabalho de formiga, que chega cada vez num formato. O resto é código, código, código. É exatidão; eu não quero ninguém sendo criativo ali.
 
 A maioria tenta o contrário: criar um robô que conversa e resolve tudo. É encantador. No volume, é muito ruim. Eu prefiro pôr a IA dentro do processo, só no ponto em que ela é boa.
+
+Nos projetos que construo, esse desenho costuma seguir quatro etapas:
+
+1. **Buscar e preparar os dados em código:** consultar as fontes, juntar as tabelas e limpar o que chegou, de forma determinística.
+2. **Passar a régua determinística antes:** tudo o que já tem regra exata (datas, limites, campos obrigatórios) é filtrado por script, sem gastar token.
+3. **Chamar a IA só onde há ambiguidade:** ler um documento que chega cada vez num formato, classificar um texto aberto ou desambiguar dois registros parecidos.
+4. **Conferir o resultado com código e entregar para decisão humana:** o sistema valida se a saída da IA respeita o formato e os limites do negócio antes de mostrar na tela para quem aprova.
+
+<figure class="g-board">
+	<div class="g-board-title">Quadro de arquitetura · O sanduíche híbrido <span>Código cercando a IA onde a conta não pode variar</span></div>
+	<div class="g-board-flow">
+		<div class="g-board-step"><strong>1. [Código] Coleta</strong>Busca nas APIs, junta tabelas e limpa formatos</div>
+		<div class="g-board-step"><strong>2. [Código] Régua fixa</strong>Filtra e soma o que tem critério exato (zero token)</div>
+		<div class="g-board-step"><strong>3. [IA] Ambiguidade</strong>Lê texto aberto, balanço fora de padrão ou caso cinzento</div>
+		<div class="g-board-step"><strong>4. [Código + Gente] Trava</strong>Script audita o retorno da IA e entrega para revisão humana</div>
+	</div>
+	<div class="g-board-note">
+		<strong>Por que funciona no volume:</strong> se 80% dos casos forem resolvidos na etapa 2 por regra determinística, você só paga token, latência e revisão de ambiguidade nos 20% que realmente precisam de interpretação.
+	</div>
+	<figcaption><strong>Fonte do quadro:</strong> arquitetura de processos híbridos em produção do autor (Maranhão Filho, <em>Pessoas de produto, não tenham medo de um script</em>, 2025).</figcaption>
+</figure>
 
 
 <div class="g-lia g-lia-diario" markdown="1">

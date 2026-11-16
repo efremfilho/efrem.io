@@ -405,7 +405,7 @@
 	W.contexto = function (el) {
 		const t = L({
 			pt: {
-				title: 'Monte uma janela de contexto', sub: 'A tarefa é sempre a mesma: responder uma dúvida sobre a política de reembolso. Escolha o que entra na "memória RAM" do modelo.',
+				title: 'Monte uma janela de contexto', sub: 'A tarefa é sempre a mesma: responder uma dúvida da equipe sobre como priorizar uma visita da busca ativa. Escolha o que entra na "memória RAM" do modelo.',
 				used: 'tokens usados', win: 'da janela de 200 mil', dens: 'densidade de sinal', sig: 'sinal (o que a tarefa usa)', noise: 'ruído',
 				v_over: 'Nem cabe. O sistema vai cortar alguma coisa — e você não escolhe o quê.', v_low: 'Cabe, mas a informação útil virou agulha no palheiro. É aqui que aparece o context rot: o modelo se perde, esquece instrução e mistura assunto.', v_mid: 'Funciona, mas a atenção está diluída. Dá para tirar coisa.', v_high: 'Contexto enxuto: quase tudo o que está na janela serve para a tarefa.',
 				groups: [
@@ -416,7 +416,7 @@
 				]
 			},
 			en: {
-				title: 'Build a context window', sub: 'The task never changes: answer a question about the refund policy. Choose what goes into the model\'s "RAM".',
+				title: 'Build a context window', sub: 'The task never changes: answer a team question about how to prioritize an outreach visit. Choose what goes into the model\'s "RAM".',
 				used: 'tokens used', win: 'of the 200k window', dens: 'signal density', sig: 'signal (what the task uses)', noise: 'noise',
 				v_over: 'It does not even fit. The system will cut something — and you do not choose what.', v_low: 'It fits, but the useful information became a needle in a haystack. This is where context rot shows up: the model gets lost, forgets instructions and mixes subjects.', v_mid: 'It works, but attention is diluted. There is room to remove things.', v_high: 'Lean context: nearly everything in the window serves the task.',
 				groups: [

@@ -14,10 +14,14 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 16
 
-Volta às aulas. Depois do teste com a rotina existente, a versão com acesso pelas escolas está no ar: lista do dia para quem visita, painel agregado para Iara. Bia quase não abre o painel; Iara o usa para defender a continuidade da parceria. Não usar a mesma tela era sinal de fracasso? Com os dados históricos reunidos, Lia pediu ao agente um mapa das faltas por dia e turno. Caio revisou a contagem. A mancha mais escura era sexta-feira à noite, parte do padrão que ele tinha visto lá atrás. Achava que era trabalho. Bia lembrou o ônibus e queria investigar primeiro numa escola. Lia queria ouvir todas antes de escolher uma. Numa conversa com a escola, Ian, estudante do noturno, trouxe outra pergunta: "se eu já voltei e continuo na lista, com quem falo?". A contagem conferida por Caio não resolvia isso sozinha. Enquanto discutiam a causa, a escola precisava organizar a próxima semana. O que dava para fazer sem transformar a primeira hipótese em explicação oficial?
+Volta às aulas. Depois do teste com a rotina existente, a versão com acesso pelas escolas está no ar: lista do dia para quem visita, painel agregado para Iara. Bia quase não abre o painel; Iara o usa para defender a continuidade da parceria. Não usar a mesma tela era sinal de fracasso?
+
+Com os dados históricos reunidos, Lia pediu ao agente um mapa das faltas por dia e turno. Caio revisou a contagem. A mancha mais escura era sexta-feira à noite, parte do padrão que ele tinha visto lá atrás. Achava que era trabalho. Bia lembrou o ônibus e queria investigar primeiro numa escola; Lia queria ouvir todas antes de escolher uma. Numa conversa na escola, Ian, estudante do noturno, trouxe outra pergunta: "se eu já voltei e continuo na lista, com quem falo?". A contagem conferida por Caio não resolvia isso sozinha. Enquanto discutiam a causa, a escola precisava organizar a próxima semana. O que dava para fazer sem transformar a primeira hipótese em explicação oficial?
 </div>
 
 Uma lista emitida, uma visita feita e uma estudante de volta à escola são acontecimentos diferentes. O sistema pode registrar perfeitamente o primeiro sem produzir os outros. E pode ajudar no segundo sem conseguir resolver o motivo da ausência. O pedido de Ian mostra outro limite: atualizar a conta não garante que alguém consiga corrigir a própria situação.
+
+Eu aprendi essa diferença apanhando, muito antes da IA generativa. Mais de dez anos atrás, ajudei a construir um aplicativo de segurança pública que tinha um botão de emergência para quando a pessoa estivesse sendo assaltada. Na apresentação, parecia ótimo. Na rua, quase ninguém usou — porque ninguém tira o celular do bolso durante um assalto, a não ser para entregar o celular. Até hoje eu caio às vezes na ilusão de achar que sei o que a outra pessoa vai fazer no mundo real só porque o botão funciona na minha tela.
 
 ## Que trabalho prometemos entregar?
 
@@ -45,7 +49,9 @@ No fluxo atual, a contagem é código; a leitura de relatos pode usar IA; a conv
 
 ## O que esse número prova?
 
-Caio consegue reproduzir o mapa de faltas. Isso responde como a conta foi feita. Não decide se a mancha de sexta-feira é trabalho, transporte, registro atrasado ou uma combinação. Bia conhece o ônibus; esse conhecimento é uma pista, não uma amostra de toda a rede. Lia quer ouvir todas as escolas; a abrangência custa tempo de quem espera.
+Eu tenho pavor de número que sobe no painel enquanto a vida continua igual. Numa empresa em que trabalhei, nossa meta era crescer o número de contas cadastradas. Ligamos uma automação que convidava todo o diretório de cada empresa cliente: entravam dez mil pessoas novas por mês. A gente bateu todas as metas — e o uso real continuou exatamente o mesmo. Não ajudou em nada a empresa. Era métrica de vaidade pura.
+
+No caso da Lia, Caio consegue reproduzir o mapa de faltas. Isso responde como a conta foi feita. Não decide se a mancha de sexta-feira é trabalho, transporte, registro atrasado ou uma combinação. Bia conhece o ônibus; esse conhecimento é uma pista, não uma amostra de toda a rede. Lia quer ouvir todas as escolas; a abrangência custa tempo de quem espera.
 
 O time pode comparar o que esperava com o que aconteceu: quem recebeu contato, quem ficou esperando, quais registros precisaram de correção. Pode observar se o caminho para contestar a lista funciona. Esses sinais ajudam a rever a entrega. Não bastam, sozinhos, para atribuir ao software uma mudança na permanência escolar.
 
@@ -126,6 +132,6 @@ Escolha um problema do seu projeto. Descreva uma entrega que ajude alguém a exe
 - MARANHÃO FILHO, Éfrem. **O código não é a parte difícil**. [*S. l.*]: efrem.io, 26 mar. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/code-is-not-the-hard-part/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Só pago os SaaS em que vejo valor, o resto eu construo**. [*S. l.*]: efrem.io, 11 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/i-only-pay-for-saas-i-see-value-in/>. Acesso em: 13 nov. 2026.
 
-*Notas:* As duas referências apresentam teses comerciais; a aplicação à busca ativa é uma elaboração didática deste guia. Thoughtworks é uma consultoria de tecnologia e Sequoia é uma investidora. O texto não adota como fatos as previsões de mercado, as divisões rígidas entre inteligência e julgamento nem a ideia de que todo agente aprende ou é treinado continuamente em operação. O caso pessoal sobre assinar ou construir é documentado nos posts do autor.
+*Notas:* As duas referências apresentam teses comerciais; a aplicação à busca ativa é uma elaboração didática deste guia. Thoughtworks é uma consultoria de tecnologia e Sequoia é uma investidora. O texto não adota como fatos as previsões de mercado, as divisões rígidas entre inteligência e julgamento nem a ideia de que todo agente aprende ou é treinado continuamente em operação. Os relatos sobre o aplicativo de segurança pública, o convite em massa no diretório e a decisão entre assinar ou construir são do autor.
 
 </div>

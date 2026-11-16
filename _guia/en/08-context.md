@@ -30,6 +30,31 @@ Think of the window as the task's workspace: instructions, documents, history, a
 
 **Context engineering** is the name that stuck for the work of deciding what goes into that RAM. It's the natural evolution of prompt engineering: we used to polish a single instruction; now we manage everything the model sees over the course of a long task. When the term showed up, I [wasn't sure we needed yet another concept](/blog/en/context-engineering-do-we-need-another-concept/), but I've always argued for the idea behind it: the most important human skill right now is knowing how to communicate and hand over the right information and the right tools.
 
+<figure class="g-board">
+	<div class="g-board-title">Concept board · The window as RAM <span>What goes on the workbench and why chats get heavy</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">1. The language computer (CPU × RAM)</span>
+			<code class="g-board-math">CPU = Model (training weights, fixed during chat)
+RAM = Context window (working desk)</code>
+			<ul class="g-board-list">
+				<li><strong>Instructions:</strong> goal, rules, and expected format.</li>
+				<li><strong>Documents:</strong> current excerpts brought in for the task.</li>
+				<li><strong>Tools:</strong> each connector's schema + what it returned.</li>
+				<li><strong>History:</strong> everything said so far in that session.</li>
+			</ul>
+		</div>
+		<div class="g-board-box warn">
+			<span class="g-board-kicker">2. The turn snowball (full resend every time)</span>
+			<code class="g-board-math">Turn 1: [Instruction + Msg 1] ──► Reply 1
+Turn 2: [Instruction + Msg 1 + Reply 1 + Msg 2] ──► Reply 2
+Turn N: [Everything since line 1 + old errors + Msg N]</code>
+			<p>The model doesn't "remember" an open chat: on every send, the entire stack travels again. When you switch topics, old drafts and mistakes keep competing for attention and raising the cost of every reply.</p>
+		</div>
+	</div>
+	<figcaption><strong>Board sources:</strong> LLM-as-OS (CPU vs. RAM) analogy by Andrej Karpathy (<em>Software Is Changing (Again)</em>, 2025), attention budget and instruction altitude by Anthropic (<em>Effective Context Engineering for AI Agents</em>, 2025), and long-window degradation measurements by Chroma (<em>Context Rot</em>, 2025).</figcaption>
+</figure>
+
 ## Is more context better context?
 
 Intuition says: "when in doubt, throw everything in." It's the most common mistake I see.
@@ -128,13 +153,11 @@ And asking is half of it. The other half is reading what came back to decide the
 
 ## Can you rehearse a conversation with someone who isn't in the room?
 
-**Before:** listening to the people who use what you build is the most important part of building anything, and the hardest to get. People have no room in their schedule and, when they do, they answer what they think you want to hear.
+Listening to the people who use what you build is the most important part of building anything, and the hardest to get: people have no room in their schedule and, when they do, they often answer what they think you want to hear. A designer I worked with had the idea before I did: she took the transcripts of real interviews and asked an assistant to continue the conversation in the role of that person. Today I use the same technique to rehearse before a difficult conversation.
 
-**After:** a designer I worked with had the idea before I did. She took the transcripts of real interviews and asked an assistant to continue the conversation in the role of that person. Today I use the same technique to rehearse: before a difficult conversation, I talk to the persona.
+It works better than I expected. Sometimes it yields more than the interview, because the persona isn't embarrassed to answer. But it has limits I don't forget: it is far nicer than any client; it's a plausible continuation, not a person ([chapter 3](/ai/inside-a-language-model/)); and it doesn't replace talking to real people — it complements it. A question I ask myself more and more: does the person who gave the interview know that what they said is still being used?
 
-**What I learned:** it works better than I expected. Sometimes it yields more than the interview, because the persona isn't embarrassed to answer. And it has limits I don't forget: it is far nicer than any client; it's a plausible continuation, not a person ([chapter 3](/ai/inside-a-language-model/)); and it doesn't replace talking to real people — it complements it. A question I ask myself more and more: does the person who gave the interview know that what they said is still being used?
-
-**What both sides say:** user-experience researchers reran real studies with synthetic participants and found the answers shallow and overly favorable ([Rosala & Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): good for raising hypotheses, not for deciding. The co-founder of a company that sells exactly this kind of research — an interested party, of course — replies that research exists to reduce risk and decide better, not to follow a method, and that many people criticize it without having tried it. Even he doesn't recommend betting the company on a synthetic answer: he talks about finding the point where it speeds things up, and what should stay with people only ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Both land close to what I lived: it complements, it doesn't replace.
+User-experience researchers reran real studies with synthetic participants and found the answers shallow and overly favorable ([Rosala & Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): good for raising hypotheses, not for deciding. Meanwhile, the co-founder of a company that sells exactly this kind of research — an interested party, of course — replies that research exists to reduce risk and decide better, not to follow a method, and that many people criticize it without having tried it. Even he doesn't recommend betting the company on a synthetic answer: he talks about finding the point where it speeds things up, and what should stay with people only ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Both land close to what I lived: it complements, it doesn't replace.
 
 ## Who is reading the request?
 
@@ -145,7 +168,7 @@ And teachers aren't immune. In a training session for colleagues, I set an exerc
 - **I explain the why, not just the what.** "Keep it short because the person is reading on their phone between two meetings" works better than "keep it short."
 - **I separate the parts.** Markdown headings or tags like `<context>` help the model not mix up instructions and documents.
 - **I bring only the excerpt.** Instead of the 300-page manual, the three pages that matter. If I don't know which ones those are, that's my first request: "find the passages about X."
-- **I start a new conversation when the subject changes.** Old history is noise. If I need to carry something forward, I ask for a summary and paste it at the start of the new one.
+- **I start a new conversation when the subject changes.** The model doesn't hold an open conversation in its head: every time you send a new message, the entire history of that session is resent from the very first line. By the 99th message, the conversation has become expensive, slow, and stuck on its own earlier mistakes. If I need to carry something forward, I ask for a summary and paste it at the start of a clean conversation.
 - **I turn on few tools.** Every connector takes up space in the window just by existing. And I keep an eye on the meter the tool shows: when a session goes past two-thirds of the window, I'm already thinking about closing it and starting another.
 - **I keep the context outside the conversation.** Everything I don't want to explain again becomes a file in the project's repository, which is the subject of [chapter 11](/ai/repository-as-memory/).
 

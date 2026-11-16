@@ -1,0 +1,60 @@
+{% assign part_chapters = include.chapters | where: "part", include.part_number %}
+<div class="{% unless include.in_details %}g-box g-key {% endunless %}g-act-close">
+	{% unless include.in_details %}
+	<p class="g-kicker">{{ include.texts.closing_kicker }} {{ include.part_number }} &middot; {{ include.act.title }}</p>
+	<h3 class="g-act-close-title">{{ include.act.closing_title }}</h3>
+	{% endunless %}
+	<p>{{ include.act.closing_summary }}</p>
+	{% if include.act.cheatsheet_flow %}
+	<div class="g-cs-flow" role="list" aria-label="{{ include.texts.flow_label }}">
+		{% for step in include.act.cheatsheet_flow %}
+		{% assign parts = step | split: " → " %}
+		<div class="g-cs-step" role="listitem">
+			<strong>{{ parts[0] }}</strong>
+			<span>{{ parts[1] }}</span>
+		</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+	{% if include.act.cheatsheet_do and include.act.cheatsheet_avoid %}
+	<div class="g-cs-rules">
+		<div class="g-cs-col ok">
+			<strong>{{ include.texts.do_label }}</strong>
+			<ul>
+				{% for item in include.act.cheatsheet_do %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="g-cs-col bad">
+			<strong>{{ include.texts.avoid_label }}</strong>
+			<ul>
+				{% for item in include.act.cheatsheet_avoid %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	{% endif %}
+	<table class="g-act-recap">
+		<thead>
+			<tr>
+				<th>{{ include.texts.recap_chapter }}</th>
+				<th>{{ include.texts.recap_concepts }}</th>
+				<th>{{ include.texts.recap_piece }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for c in part_chapters %}
+			<tr>
+				<td><a href="{% if include.is_book %}#{{ c.ref }}{% else %}{{ c.url }}{% endif %}"><strong>{{ c.order }}. {{ c.title }}</strong></a></td>
+				<td>{% if c.subtitle %}<strong>{{ c.subtitle }}</strong><br>{% endif %}{{ include.act.recap[forloop.index0] }}</td>
+				<td>{% if c.piece %}<span class="g-piece-icon" aria-hidden="true">🧩 </span>{{ c.piece }}{% endif %}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="g-project g-act-checkpoint">
+		<p><strong>{{ include.texts.checkpoint_label }}:</strong> {{ include.act.closing_checkpoint }}</p>
+	</div>
+</div>

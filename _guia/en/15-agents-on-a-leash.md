@@ -66,11 +66,9 @@ That's why the leash I keep short isn't the step-by-step one. It's the one on ac
 
 ## What needs to happen before you leave an agent working all night?
 
-**Before:** I was asked for a gamified learning track for a course, inside the institution's learning platform. I knew what I wanted and didn't know how the platform did it.
+I was asked for a gamified learning track for a course, inside the institution's learning platform. I knew what I wanted and didn't know how the platform did it. I explained the request to the AI and it came back with a plan: what would be in lesson 1, in 2, in 3, and how the scoring would work. I read it, adjusted it, and approved it. I left it working overnight; in the morning the lessons, the slides, and even the videos were there.
 
-**After:** I explained what I wanted. The AI came back with a plan: what would be in lesson 1, in 2, in 3, how the scoring would work. I read it, adjusted it, and approved it. I left it working overnight. In the morning the lessons, the slides, and even the videos were there.
-
-**What I learned:** two things. For that job, I read the plan before authorizing execution. That differs from approving each click: I needed to understand the delivery and its constraints. And constraints need to be said out loud: partway through, the agent warned me that the platform's version didn't support a feature and proposed an adaptation. A good agent doesn't hide a limitation; it tells you and offers an alternative.
+I took two lessons from that job. First, reading the plan before authorizing execution is very different from approving every click: I needed to understand the delivery and its constraints before loosening the leash. Second, constraints need to be said out loud: partway through, the agent warned me that the platform's version didn't support a feature and proposed an adaptation. A good agent doesn't hide a limitation; it tells you and offers an alternative.
 
 ## What does the log show that the conversation hides?
 
@@ -87,6 +85,27 @@ At the company, we have a support agent in a messaging channel. It works like th
 The agent writes "I found three duplicate tickets; may I close the second and the third?" and only acts after an "ok" from someone with the authority. Everyone gets faster at understanding; nobody gets a shortcut to changing production.
 
 This design — **many can ask, few can approve, the agent never approves itself** — works for almost any process. It's the pull request from chapter 11 applied to operations.
+
+<figure class="g-board">
+	<div class="g-board-title">Architecture board · Leashes for agents <span>The lethal trifecta and the operations approval funnel</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box bad">
+			<span class="g-board-kicker">1. The lethal trifecta (cut at least one link)</span>
+			<code class="g-board-math">[A] Private data
+ + [B] Untrusted external text
+ + [C] External action / send   ──►  Critical risk</code>
+			<p>Because a model cannot separate with 100% certainty <em>data to read</em> from a <em>hidden order</em> (<em>prompt injection</em>), the defense isn't asking it to be careful in the prompt: it's preventing <code>[A]</code>, <code>[B]</code>, and <code>[C]</code> from running together on autopilot by architecture.</p>
+		</div>
+		<div class="g-board-box ok">
+			<span class="g-board-kicker">2. The authority funnel (operations pull request)</span>
+			<code class="g-board-math">Many people (8)     ──►  Request diagnosis and read-only lookups
+Agent (1 account)   ──►  Investigates, logs, and PROPOSES
+Few people (2)      ──►  Approve irreversible action</code>
+			<p>Everyone gets faster at investigating; nobody gets a shortcut to changing production. The agent has its own account and spending cap and <strong>never approves itself</strong>.</p>
+		</div>
+	</div>
+	<figcaption><strong>Board sources:</strong> the <em>lethal trifecta</em> framed by Simon Willison (<em>The Lethal Trifecta for AI Agents</em>, 2025), <em>prompt injection</em> taxonomy by OWASP (<em>LLM01:2025</em>), and the author's production support-agent architecture (Maranhão Filho, 2026).</figcaption>
+</figure>
 
 None of this came ready-made. Putting product people who build and engineering people on the same team [was painful](/blog/en/processes-and-guardrails-for-product-builders-and-devs/): what worked was a separate test environment, small pull requests, and mandatory review by someone from the tech side.
 

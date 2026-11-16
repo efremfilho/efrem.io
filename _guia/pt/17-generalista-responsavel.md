@@ -15,7 +15,11 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 17
 
-A secretaria manteve o teste com o time; a proposta da fornecedora continuava disponível. Antes da apresentação, Maia mandou slides chamando o projeto de "solução validada para toda a rede". Bia pediu para retirar a frase. Maia respondeu que o time podia ajustar; mais uma tarefa na fila de Lia. Iara queria levar a proposta de expansão ao estado enquanto havia orçamento. Bia abriu outra lista: retorno para Ian, atualização das mensagens em dois formatos, atendimento às escolas sem conexão. "O teste offline funcionou", disse Caio. "Com dado inventado, e fui eu que expliquei pelo telefone quando travou", respondeu Bia. Ela pediu ao agente uma comparação entre ampliar e estabilizar o atendimento; leu as hipóteses e marcou o que precisava conferir. Caio pediu um plano de troca do serviço de IA. Aída, que agora revisava o que entrava no ar, encontrou uma dependência ignorada. Iara apontou as cidades esperando: suporte contratado também era uma escolha possível. Bia não queria perder o que tinham aprendido; Caio já não queria manter tudo sozinho. Lia tinha de levar uma proposta. Qual parte do serviço o time conseguia assumir na próxima volta — e quem ficaria com o resto?
+A secretaria manteve o teste com o time; a proposta da fornecedora continuava disponível. Antes da apresentação, Maia mandou slides chamando o projeto de "solução validada para toda a rede": precisava defender a renovação da verba no conselho da organização parceira. Bia pediu para retirar a frase, porque prometer atendimento sem equipe queimaria a confiança das escolas. Maia respondeu que o time ajustasse o texto como achasse melhor — mais uma tarefa na fila de Lia.
+
+Iara queria levar a proposta de expansão ao estado enquanto havia orçamento. Bia abriu outra lista: retorno para Ian, atualização das mensagens em dois formatos, atendimento às escolas sem conexão. "O teste offline funcionou", disse Caio. "Com dado inventado, e fui eu que expliquei pelo telefone quando travou", respondeu Bia.
+
+Ela pediu ao agente uma comparação entre ampliar e estabilizar o atendimento; leu as hipóteses e marcou o que precisava conferir. Caio pediu um plano de troca do serviço de IA. Aída, que agora revisava o que entrava no ar, encontrou uma dependência ignorada. Iara apontou as cidades esperando: suporte contratado também era uma escolha possível. Bia não queria perder o que tinham aprendido; Caio já não queria manter tudo sozinho. Lia tinha de levar uma proposta. Qual parte do serviço o time conseguia assumir na próxima volta — e quem ficaria com o resto?
 </div>
 
 Passei boa parte da carreira me sentindo um pato: nada, anda e voa, mas não faz nenhuma das três coisas muito bem. Um pouco de código, um pouco de dados, um pouco de design, bastante de produto. Em um mercado que premiava especialista, isso parecia um defeito.
@@ -101,11 +105,9 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 
 Na [conversa de Harari que alimentou estas perguntas](https://www.youtube.com/watch?v=kziBrxxE0U0&t=1680s), aparece uma provocação: você embarcaria num avião com uma chance assustadora de cair? E se a resposta fosse que já estamos a bordo?
 
-Os "20%" dessa conversa não são uma probabilidade demonstrada de a IA acabar com a humanidade. Harari está repercutindo uma estimativa atribuída a alguém do setor. Não há ali uma medição que autorize usar o número como previsão. Estatística não é minha área, e não vou transformar uma imagem forte em cálculo de risco.
+Os "20%" citados ali são uma estimativa atribuída a alguém do setor, não uma probabilidade medida. Estatística não é minha área, e não vou transformar uma metáfora forte em cálculo de risco. Mas a imagem serve: para mim, já estamos no avião, e o trabalho agora é fazer essa coisa não cair. Isso pede mais do que escolher entre entusiasmo e pânico — pede discutir quem conduz, quem fiscaliza, quem pode interromper uma operação e quem responde se der errado.
 
-Mas a imagem serve. Para mim, estamos no avião. Agora o trabalho é fazer essa coisa não cair. Isso pede mais do que escolher entre entusiasmo e pânico: pede discutir quem conduz, quem fiscaliza, quem pode interromper uma operação e quem responde se der errado.
-
-Harari usa a conversa para criticar a ideia de que seria tarde demais para a política agir. Concordar que a tecnologia existe não obriga a aceitar qualquer uso, qualquer regra ou qualquer concentração de poder. Dá para construir e recusar uma aplicação. Dá para exigir teste, limite, revisão e alguém a quem recorrer.
+Harari usa a conversa para criticar a ideia de que seria tarde demais para a política agir. Concordar que a tecnologia existe não obriga a aceitar qualquer uso ou concentração de poder: dá para construir e recusar uma aplicação, exigir teste, limite, revisão e alguém a quem recorrer.
 
 No caso da Lia, o risco não precisa ser o fim da humanidade para importar. Basta uma família ficar fora da lista, sem saber por quê e sem conseguir contestar. Antes de crescer para o estado inteiro: quem percebe isso? Quem pode suspender a ordenação? Quem atende a família enquanto o time corrige? É aí que a ética chega à tela que alguém vai usar.
 
@@ -113,21 +115,15 @@ No caso da Lia, o risco não precisa ser o fim da humanidade para importar. Bast
 
 Outra [analogia de Harari](https://www.youtube.com/watch?v=kziBrxxE0U0&t=840s): imagine uma pessoa da Idade da Pedra diante de uma geladeira cheia e de comida que chega à porta. Talvez concluísse que já resolvemos a sobrevivência e podemos passar o dia descansando. A agenda de quem lê este guia provavelmente tem uma opinião diferente.
 
-É uma visita imaginária, não uma conclusão sobre como viviam nossos ancestrais. Eu uso a provocação para separar duas perguntas: **quanto conseguimos produzir e como decidimos viver com isso?** Uma ferramenta que permite fazer mais não decide, por conta própria, quem fica com o tempo, com a renda ou com o trabalho que sobra.
+Uso esse experimento de imaginação para separar duas perguntas: **quanto conseguimos produzir e como decidimos viver com isso?** Uma ferramenta que permite fazer mais não decide, por conta própria, quem fica com o tempo, com a renda ou com o trabalho que sobra.
 
-Pense num time que passa a resolver uma tarefa em menos tempo. A escolha pode ser atender melhor, reduzir a jornada, aumentar a meta, dispensar gente ou abrir um serviço que antes não cabia no orçamento. A capacidade técnica é parecida. As decisões e as consequências não são.
-
-Para quem empreende ou cuida de produto, a pergunta não termina em "quanto economizei?". Quem ganhou autonomia? Quem recebeu mais cobrança? Quem nem participou da decisão? Não tenho uma fórmula para distribuir esses ganhos. Tenho pouca paciência para fingir que a ferramenta já decidiu isso por nós.
+Pense num time que passa a resolver uma tarefa em menos tempo. A escolha pode ser atender melhor, reduzir a jornada, aumentar a meta, dispensar gente ou abrir um serviço que antes não cabia no orçamento. A capacidade técnica é parecida; as decisões e as consequências não são. Para quem empreende ou cuida de produto, a pergunta não termina em "quanto economizei?": quem ganhou autonomia, quem recebeu mais cobrança e quem nem participou da decisão? Tenho pouca paciência para fingir que a ferramenta já decidiu isso por nós.
 
 ## E quando a dependência é de um país inteiro?
 
-Guardar o conhecimento no repositório ajuda o time a trocar de ferramenta. Não resolve sozinho a dependência de um país. Na [parte final da conversa](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari propõe o cenário de estados vassalos digitais: serviços essenciais funcionando sobre infraestrutura e sistemas controlados de fora. É uma hipótese política para discutir, não um destino anunciado.
+Guardar o conhecimento no repositório ajuda o time a trocar de ferramenta, mas não resolve sozinho a dependência de um país. Na [parte final da conversa](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari levanta a hipótese política de estados vassalos digitais: serviços essenciais funcionando sobre infraestrutura e sistemas controlados de fora.
 
-Aqui saio da construção de produto e entro em direito e relações internacionais, que não são minha especialidade. A pergunta que a analogia ajuda a enxergar é concreta: quem pode retirar o acesso, mudar as condições ou impedir que uma decisão seja examinada? E o que acontece com quem depende daquele serviço?
-
-Para o time da Lia, isso vira escolha de fornecedor, possibilidade de exportar os dados, registro das decisões e teste de continuidade se um serviço parar. Para um país, envolve também infraestrutura, capacidade de pesquisa, instituições e cooperação. Trocar um modelo por outro não encerra essa conversa.
-
-Gosto das analogias de Harari porque abrem perguntas. Não o tomo como garantia de que suas previsões estão certas. A discussão que interessa aqui é o que podemos fazer: construir capacidade própria, negociar dependências e dar voz a quem vai viver com a decisão. Autonomia também tem essa escala.
+Aqui saio da construção de produto e entro em direito e relações internacionais, que não são minha especialidade. Ainda assim, a pergunta prática que a analogia abre vale em qualquer escala: quem pode retirar o acesso, mudar as condições ou impedir que uma decisão seja examinada? Para o time da Lia, isso vira escolha de fornecedor, exportação de dados, registro das decisões e teste de continuidade se um serviço parar. Para um país, envolve infraestrutura, pesquisa, instituições e cooperação. Autonomia também tem essa escala.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** passe pela autoavaliação. Depois escolha um item que você não marcou: o que te impede? Antes de ampliar um projeto seu, quem pode sofrer uma consequência e ainda não foi ouvido?
@@ -165,6 +161,17 @@ Um guia honesto precisa de uma seção assim.
 A tecnologia já faz parte do cenário em que construímos. Isso não transforma cada uso numa obrigação. Entender também serve para escolher o que automatizar, o que manter com uma pessoa e o que não construir. Diante de um projeto seu, qual dessas decisões você conseguiria explicar a quem vai viver com ela?
 
 E um pedido, de quem constrói para quem constrói: com tanta coisa ajudando a fazer, pare de fazer produto ruim.
+
+## Como juntar tudo isso no próximo projeto?
+
+Se você chegou até aqui — seguindo em ordem ou pulando pelo problema que apareceu na sua frente —, vale guardar o mapa inteiro em uma tabela só. Toda vez que começo um projeto novo, os dois letramentos deste guia (**IA generativa** e **pensamento computacional**) e o trabalho de **produto** se encontram nestas quatro voltas:
+
+| Etapa do ciclo | O que fazer em Pensamento Computacional | O que fazer em IA Generativa | O que decidir em Produto e Operação |
+|---|---|---|---|
+| **1. Perguntar e descobrir** *(Ato 1)* | Separar entrada, regra escrita e saída; ver o que cabe em coluna e o que ficou de fora | Testar com o modelo mais capaz; desconfiar do plausível sem fonte; usar dados fictícios | Definir que trabalho queremos entregar, quem fica esperando na fila e o que o sistema **não** faz |
+| **2. Fatiar e construir** *(Ato 2)* | Desenhar o fluxo; fatiar por **domínios** e por **camadas** (*frente, regras, dados* e *APIs*); quebrar funções grandes | Dar contexto na altitude certa; buscar nas fontes vigentes; chamar IA só onde há ambiguidade e usar script determinístico nas contas | Escrever o mini-PRD; guardar código, decisões, invariantes e script de auditoria no repositório; isolar chaves e ambientes |
+| **3. Operar com rédea** *(Ato 3)* | Garantir que o fluxo essencial não pare se a IA falhar; registrar logs passo a passo | Em voz, imagem e vídeo, separar o que foi capturado do que o modelo deduziu; cercar o acesso dos agentes | Pôr na mão de quem usa e observar sem explicar; muitos pedem, poucos aprovam ações sem volta; criar caminho para contestar erros |
+| **4. Revisar e decidir a próxima volta** | Revalidar scripts e testes quando os dados mudarem; pagar a dívida técnica do que se provou útil | Comparar modelos mais baratos para o que já está provado; revisar planos e saídas ("construir lendo") | Medir se resolveu o problema real (não métrica de vaidade) e escolher entre melhorar, mudar a aposta, contratar suporte ou parar |
 
 
 <div class="g-lia g-lia-diario" markdown="1">

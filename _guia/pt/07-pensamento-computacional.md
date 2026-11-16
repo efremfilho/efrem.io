@@ -15,7 +15,11 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 7
 
-A lista ajudava Bia a organizar contatos. Quando ela saiu para uma visita, Caio não soube se uma linha marcada significava "contato tentado" ou "família atendida". Iara precisava de um retorno; o time tinha de refazer parte da leitura. Já havia uma entrega em uso e uma conta para pagar. Fazer a lista depender menos de Bia parecia uma melhoria óbvia. Até começarem a desenhar. Cada pessoa pediu ao seu agente que desenhasse o fluxo da busca ativa. No da Bia, tudo começava quando a escola ligava. No do Caio, quando a planilha chegava. No da Lia, quando alguém percebia. Não eram só desenhos diferentes: eram jeitos de entrar na fila. Maia, coordenadora de comunicação de uma organização parceira, participou dessa reunião. Pediu um fluxo "mais estratégico" para a apresentação. Quando Bia perguntou o que mudaria, ficou de mandar um exemplo e saiu antes da divisão do trabalho. Caio propôs comparar quantas visitas caberiam com três ou cinco faltas. Bia queria reservar espaço para os pedidos urgentes das escolas. Lia precisava fechar o escopo para cumprir o prazo que tinha prometido. "Fica cinco; as exceções passam por mim." Bia perguntou o que aconteceria quando Lia estivesse em reunião. No desenho, a caixa "revisar" não tinha duração. Na vida, tinha?
+A lista ajudava Bia a organizar contatos. Quando ela saiu para uma visita, porém, Caio não soube se uma linha marcada significava "contato tentado" ou "família atendida". Iara precisava de um retorno; o time teve de refazer parte da leitura. Fazer a lista depender menos de Bia parecia uma melhoria óbvia — até começarem a desenhar. Cada pessoa pediu ao seu agente o fluxo da busca ativa: no da Bia, tudo começava quando a escola ligava; no do Caio, quando a planilha chegava; no da Lia, quando alguém percebia. Não eram só desenhos diferentes: eram jeitos diferentes de entrar na fila.
+
+Maia, coordenadora de comunicação da organização parceira, entrou na reunião preocupada com a renovação do financiamento do projeto no fim do mês. Pediu um fluxo "mais estratégico", que mostrasse o alcance na rede inteira para o conselho financiador. Quando Bia perguntou o que mudaria na rotina das escolas, Maia ficou de mandar um exemplo de relatório e precisou sair para outra agenda antes da divisão do trabalho.
+
+Caio propôs simular quantas visitas caberiam na semana com três ou cinco faltas. Bia queria reservar espaço para os pedidos urgentes das escolas. Lia precisava fechar o escopo para cumprir o prazo prometido: "Fica cinco; as exceções passam por mim." Bia olhou para o quadro: "E quando você estiver em reunião?" No desenho, a caixa "revisar" não tinha duração. Na vida, tinha?
 </div>
 
 Eu sempre fui *builder*. Mesmo formado em Ciência da Computação, passei boa parte da carreira construindo com ferramentas de pouco ou nenhum código e escrevendo, no máximo, um bocadinho de script — os repositórios antigos do meu GitHub trazem na descrição, com toda a honestidade, "meus scripts preguiçosos". O motivo é simples: eu odiava programar. Não a lógica: a precisão. Eu esquecia um parêntese e me lascava por causa da porcaria de um parêntese.
@@ -46,7 +50,12 @@ Repare no que essa sequência põe na mesa. O gráfico, a regra que trata cada r
 
 ## Onde a IA entra nesse fluxo?
 
-Na lista da Lia, há dois desenhos sobrepostos. Um mostra **como o time constrói e melhora o serviço**: conversa com agentes, pede código, compara saídas, revisa. O outro mostra **como o serviço atende alguém**: recebe faltas, aplica uma regra, prepara contato, registra retorno. A IA pode ajudar no primeiro sem estar em todas as etapas do segundo.
+Na lista da Lia, há dois desenhos sobrepostos, e misturar os dois dá nó na cabeça de quem começa:
+
+| Fluxo | O que acontece nele | Onde a IA entra |
+|---|---|---|
+| **1. Construir e melhorar o serviço** | O time debate o problema, pede código, compara saídas, testa e revisa | A IA trabalha como parceira de construção (escreve o script, sugere a tela, explica um erro) |
+| **2. O serviço atendendo alguém** | Recebe faltas, aplica a regra de contagem, prepara o contato e registra o retorno | Pode nem ter IA rodando (se for só o script de contagem) ou ter IA em um passo específico (como resumir uma nota de visita) |
 
 Se um modelo resume a nota de visita toda vez que chega uma nova, ele participa da operação. Se escreveu uma vez o código que filtra a lista, ajudou a construir uma rotina que pode dispensá-lo ao executar. Nos dois casos, alguém precisa compreender o que entra, o que muda e o que a próxima pessoa recebe. Desenhe os dois caminhos: em qual deles está a dificuldade que você quer resolver agora?
 
@@ -79,13 +88,61 @@ Desenhar fluxo não depende de ferramenta de arrastar caixinha. É pensar algori
 
 Eu [escrevi que estava aprendendo código como efeito colateral](/blog/pt/chapter-7-learning-code-as-a-side-effect/). Meu objetivo continuava sendo melhorar em produto e conseguir pedir a implementação. Mas ler a resposta me fazia querer entender o que estava acontecendo. Não precisei decidir "vou virar da área técnica" antes de começar a aprender.
 
-Para começar a ler, cinco ideias ajudam. Quem usa planilha já esbarrou em várias delas:
+Para começar a ler, cinco ideias ajudam. No quadro da sala eu desenho todas na parte de baixo, voltando àquela mesma equação `f(x, y) = 3x + 2y` do [capítulo 2](/ia/como-a-maquina-aprende/) — e quem usa planilha já esbarrou em várias delas:
 
-1. **Função**: um nome, parênteses e, dentro deles, aquilo de que ela precisa para trabalhar. `=SOMA(2;3)` é uma função que alguém escreveu e você usa. Em código é igual — e dá para criar as suas.
-2. **Variável**: um nome para um valor que pode mudar. Na planilha, é a célula: `A1` continua sendo `A1` quando o número lá dentro muda. Num contrato, é "o vendedor": definido uma vez no alto, vale para o resto do texto — e, se a pessoa mudar, o contrato inteiro continua de pé.
-3. **Condicional**: o `SE` das planilhas. Se você sabe usar `=SE(A1>=5;"contatar";"ok")`, já sabe o que é.
-4. **Loop**: "faça isto para cada linha". Faça de 1 a 10. Faça para toda a lista de estudantes. Faça só para quem estuda à noite — e o loop acaba de ganhar uma condicional dentro, que é como quase todo filtro funciona. Seis linhas ou seis milhões, o código é o mesmo.
-5. **API**: uma função que mora em outro computador. Pense num restaurante: o salão não entra na cozinha. Faz o pedido a quem serve, que leva, espera e traz de volta — e existe um protocolo para isso, até a porta certa para entrar. Quando o agente "consulta o mapa" ou "cria um cartão no quadro", foi por uma API.
+1. **Função**: um nome, parênteses e, dentro deles, aquilo de que ela precisa para trabalhar. Na matemática é `f(x, y) = 3x + 2y`. Na planilha, `=SOMA(2;3)` é uma função pronta que alguém escreveu; você também pode criar a sua (`=CRIADA_POR_MIM(2;3)`) ou usar uma função que consulta um serviço externo direto da célula — como `=GOOGLEFINANCE("CURRENCY:USDBRL")` para buscar a cotação do dólar na internet.
+2. **Variável**: um nome para um valor que pode mudar. Na função `f(x, y) = 3x + 2y`, uma seta no meu quadro aponta para o `x` e o `y`. Na planilha, são todas as células: `A1` continua sendo `A1` quando o número lá dentro muda. Num contrato, é "o vendedor": definido uma vez no alto, vale para o resto do texto — e, se a pessoa mudar, o contrato inteiro continua de pé. Em código, uma pista visual simples: quase sempre é o nome que vem antes do sinal de `=` (`num_1 = 2`).
+3. **Condicional**: o `SE (comparação) FAÇA`. Se você sabe usar `=SE(A1>=5;"contatar";"ok")` na planilha, já sabe o que é um `if` em código.
+4. **Loop**: repetir uma ação para uma sequência. No quadro eu escrevo três exemplos em escadinha: *faça de 1 até 10*; *faça para todas as pessoas estudantes*; *faça para todas as pessoas estudantes de Administração* — e puxo uma seta saindo de **condicional** para esse último. É assim que quase todo filtro funciona: um loop com uma condicional dentro. Seis linhas ou seis milhões, o código é o mesmo.
+5. **API**: uma função que mora em outro computador. Pense num restaurante: o salão não entra na cozinha. Faz o pedido a quem serve, que leva, espera e traz de volta — e existe um protocolo para isso, até a porta certa para entrar sem trombar com quem sai. Quando a planilha buscou a cotação lá fora, ou quando o agente "consulta o mapa" e "cria um cartão no quadro", foi por uma API.
+
+<figure class="g-board">
+	<div class="g-board-title">Quadro de sala · Resumo de pensamento computacional <span>Da equação da escola à leitura de scripts</span></div>
+	<div class="g-board-cols-4">
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">1. Funções</span>
+			<code class="g-board-math">f(x, y) = 3x + 2y</code>
+			<ul class="g-board-list">
+				<li><strong>Pronta:</strong> <code>=SOMA(2;3)</code></li>
+				<li><strong>Própria:</strong> <code>=CRIADA_POR_MIM(2;3)</code></li>
+				<li><strong>Externa:</strong> <code>=GOOGLEFINANCE(...)</code></li>
+			</ul>
+		</div>
+		<div class="g-board-box">
+			<span class="g-board-kicker">2. Variáveis (← x, y)</span>
+			<code class="g-board-math">num_1 = 2
+num_2 = 3</code>
+			<ul class="g-board-list">
+				<li><strong>Na função:</strong> o <code>x</code> e o <code>y</code>.</li>
+				<li><strong>Na planilha:</strong> cada célula (<code>A1</code>, <code>B2</code>).</li>
+				<li><strong>No código:</strong> o nome antes do <code>=</code>.</li>
+			</ul>
+		</div>
+		<div class="g-board-box teal">
+			<span class="g-board-kicker">3. Condicionais</span>
+			<code class="g-board-math">SE (comparação)
+  FAÇA</code>
+			<ul class="g-board-list">
+				<li><strong>Planilha:</strong> <code>=SE(A1>=5;"contatar";"ok")</code></li>
+				<li><strong>Código:</strong> <code>if faltas >= 5:</code></li>
+			</ul>
+		</div>
+		<div class="g-board-box ok">
+			<span class="g-board-kicker">4. Loop (repetir)</span>
+			<code class="g-board-math">PARA CADA item:
+  ↳ SE (condição)</code>
+			<ul class="g-board-list">
+				<li>Faça de <code>1 até 10</code>.</li>
+				<li>Faça p/ <em>todas as pessoas estudantes</em>.</li>
+				<li><strong>← Condicional:</strong> p/ <em>estudantes de Adm.</em></li>
+			</ul>
+		</div>
+	</div>
+	<div class="g-board-note">
+		<strong>5. API + Modularização:</strong> quando a função mora em outro sistema (como o pedido que vai do salão à cozinha do restaurante) ou quando quebramos uma ação grande (<code>Cadastrar</code> → <code>1. Consultar se existe</code> + <code>2. Criar</code>), usamos a mesma lógica de caixas independentes conversando por entradas e saídas.
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> reprodução da lousa da disciplina do autor na FGV EPPG (Maranhão Filho, 2026), articulada com a definição de pensamento computacional de Jeannette Wing (2006) e os conceitos computacionais de Brennan e Resnick (MIT Media Lab, 2012).</figcaption>
+</figure>
 
 <div data-widget="loop"></div>
 
@@ -123,7 +180,24 @@ Entre as camadas, e entre o seu sistema e o resto do mundo, ficam as **APIs**. N
 
 Saber disso muda a conversa com um agente ou com uma ferramenta que gera aplicativos. "Ficou feio" é pedido de frente. "Está contando errado" é pedido de regra. "Sumiu o que eu cadastrei ontem" é problema de dados. Quem aponta a camada certa resolve em uma mensagem o que levaria dez.
 
-A outra ideia que vem junto é **modularizar**: cada pedaço faz uma coisa só. A contagem de faltas não deveria saber nada sobre a cor do botão. Por trás de um "registrar contato" há pedaços menores: conferir se a estudante existe, gravar o contato. Pedaços pequenos e independentes são mais fáceis de testar, de trocar — e de entregar a um agente sem medo de ele quebrar o resto. É o básico técnico que eu vejo gente de operações [pegar rápido](/blog/pt/product-led-ops-the-ops-crowd-flying-with-genai/): modularizar, cada passo fazendo uma coisa só, chave que não fica exposta e versionamento.
+A outra ideia que desenho no alto do quadro — duas vezes, porque ela funciona em duas escalas — é **modularizar**: fazer cada pedaço cuidar de uma coisa só.
+
+<div class="g-board-grid">
+<div class="g-board-card">
+<strong>1. Modularizar por domínios</strong>
+<p>Quebrar o produto em grandes áreas independentes do negócio. Em um sistema acadêmico meu, são três caixas: <em>Descoberta</em>, <em>Sincronização</em> e <em>Convidar</em>. Na Lia: <em>Frequência</em>, <em>Fila de visitas</em> e <em>Registro de campo</em>.</p>
+</div>
+<div class="g-board-card">
+<strong>2. Modularizar por dentro da ação</strong>
+<p>Quando várias telas chamam a API <em>Cadastrar cliente</em>, por trás ela não é um blocão único: chama <code>1. Consultar se existe</code> e <code>2. Criar cadastro</code>. Na Lia, <em>Registrar contato</em> confere o código antes de gravar a visita.</p>
+</div>
+<div class="g-board-card">
+<strong>3. Fatiar por domínio e camada</strong>
+<p>Para construir com agentes sem que um atropele o outro, você combina os cortes: escolhe um <em>domínio</em> (ex.: fila de visitas) e sabe o que vai mudar na <em>frente</em>, nas <em>regras</em>, nos <em>dados</em> e nas <em>APIs externas</em>.</p>
+</div>
+</div>
+
+Uma regra de bolso que uso com o meu time: **se você precisou desenhar uma caixinha ou escrever um comentário dizendo "este pedaço faz tal coisa", aquilo deveria ser uma função ou módulo separado** — senão o código vira uma tripona impossível de manter. A contagem de faltas não deveria saber nada sobre a cor do botão. Pedaços pequenos e independentes são mais fáceis de testar, de trocar e de entregar a um agente sem medo de ele quebrar o resto. É o básico técnico que eu vejo gente de operações [pegar rápido](/blog/pt/product-led-ops-the-ops-crowd-flying-with-genai/): modularizar, cada passo fazendo uma coisa só, chave que não fica exposta e versionamento.
 
 ## Como pedir?
 
@@ -185,7 +259,7 @@ Quem quer mudar alguma coisa construindo com tecnologia precisa de duas pernas: 
 - **Decompor e abstrair:** separar o problema em partes e escolher o que importa para aquela tarefa.
 - **Variável e função:** dar nome a um valor e a um trabalho que pode ser chamado de novo.
 - **Condicional e loop:** decidir conforme uma regra e repetir uma ação. O fluxo ajuda a enxergar os dois.
-- **Camadas e API:** separar tela, regras e dados; definir como as partes trocam pedidos e respostas.
+- **Camadas, API e modularização:** separar tela (frente), regras (back) e dados, definir como as partes conversam por APIs e fatiar o projeto por domínios e funções pequenas.
 
 Se a tela mostra um total errado, como essas distinções ajudam a formular um pedido melhor que "conserte tudo"?
 

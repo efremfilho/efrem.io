@@ -45,6 +45,7 @@ layout: default
 	<h1 class="post-title">{{ page.title }}</h1>
 	{% if page.subtitle %}<p class="g-concept-subtitle">{{ page.subtitle }}</p>{% endif %}
 	{% if page.description %}<p class="page-subtitle">{{ page.description }}</p>{% endif %}
+	{% if page.piece %}<p class="g-chapter-piece"><span class="g-piece-icon" aria-hidden="true">🧩 </span>{{ t.piece }}: {{ page.piece }}</p>{% endif %}
 
 	{% if page.video or page.audio or page.slides %}
 	<div class="g-media">
@@ -68,6 +69,10 @@ layout: default
 
 <article class="post-content g-content" data-guia-ref="{{ page.ref }}">
 	{{ content }}
+	{% if next_ch == nil or next_ch.part != page.part %}
+		{% assign act_close = t.parts[part_index] %}
+		{% include guia/fechamento-ato.html act=act_close part_number=page.part chapters=chapters texts=t is_book=false %}
+	{% endif %}
 </article>
 
 <footer class="post-footer">

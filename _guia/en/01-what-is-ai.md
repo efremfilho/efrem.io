@@ -45,6 +45,39 @@ To begin investigating, compare two ways of building a solution:
 
 Both ways can appear in the same product. This table compares ways of building; it doesn't divide the whole history of computing into "with AI" and "without AI."
 
+<figure class="g-board">
+	<div class="g-board-title">Concept board · Where each piece lives <span>From the AI umbrella to the engineering choice</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box">
+			<span class="g-board-kicker">1. The nested rings of the field</span>
+			<div class="g-board-ring">
+				<strong>Artificial Intelligence (AI)</strong> — systems with degrees of autonomy or adaptivity (includes written rules and search)
+				<div class="g-board-ring r2">
+					<strong>Machine Learning (ML)</strong> — systems that tune parameters from examples
+					<div class="g-board-ring r3">
+						<strong>Deep Learning</strong> — multi-layer neural networks
+						<div class="g-board-ring r4">
+							<strong>Generative AI</strong> — models (such as Transformer-based ones) that generate text, code, audio, or images
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">2. What goes in and what comes out on the workbench</span>
+			<code class="g-board-math">Written rule:
+Data + Explicit rule     ──►  Output</code>
+			<p>Someone chose the criterion (e.g., <code>absences >= 5</code>). When it fails, inspect the written rule.</p>
+			<code class="g-board-math">Learning (training):
+Data + Expected output   ──►  Weights (model)
+In use (inference):
+New data + Weights       ──►  Estimate / Generation</code>
+			<p>When it fails, investigate the training examples, what was left out of the columns, and the prompt context.</p>
+		</div>
+	</div>
+	<figcaption><strong>Board sources:</strong> adapted from the author's <em>Intro IA</em> lecture board (Maranhão Filho, 2025), the autonomy/adaptivity distinction in <em>Elements of AI</em> (University of Helsinki; MinnaLearn, 2018), and the OECD AI system framework (OECD, 2024).</figcaption>
+</figure>
+
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** in the quiz, ask of each item the question Bia asked out loud: does this follow a rule someone wrote, or did it learn from data? How would you find out, if nobody told you?
 </div>
@@ -68,11 +101,11 @@ Their behavior depends on learning from data, but that does not mean learning ag
 
 In my [introductions to AI](https://efrem.io/intro-ia/), I go through its evolution before opening the tool. Let's do the same here. The [video that prompted this return to the story](https://www.youtube.com/watch?v=YovHdlRN7VM) tells it through people, bets, and disappointments. It's a useful narrative thread; the milestones below also draw on the original work. You don't need to memorize the cast. You need to notice that an impressive demo, a discovery, and a product are different things.
 
-Alan Turing began with an uncomfortable question: [can a machine think?](https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html) Instead of waiting for agreement on what "thinking" meant, he proposed an imitation game involving written questions and answers. Notice the shift: move away from the word and look at behavior. That doesn't turn convincing conversation into a certificate of consciousness.
+Alan Turing began with an uncomfortable question: [can a machine think?](https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html) Instead of waiting for agreement on what "thinking" meant, he proposed an imitation game involving written questions and answers. The shift was smart: move away from the word and look at behavior — even if holding a convincing conversation is still far from proving consciousness.
 
-Later, John McCarthy organized [a research meeting at Dartmouth](https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth), whose proposal treated intelligence as something a machine could simulate. The ambition was huge. Along the way came unfulfilled promises and periods of retrenchment, the *AI winters* revisited in the video. That doesn't mean research died and came back to life. It means expectations and the ability to deliver didn't move together.
+Later, John McCarthy organized [a research meeting at Dartmouth](https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth), whose proposal treated intelligence as something a machine could simulate. The ambition was huge. Along the way came unfulfilled promises and periods of retrenchment, the *AI winters* revisited in the video: research kept moving, but expectations had run far ahead of delivery.
 
-One approach was to write knowledge as rules: if this happens, do that. Expert systems belong to that history. Another was to have machines learn from examples. These aren't steps where the new erases the old. A solution can combine rules, learning, and search — and you'll make choices like that in this guide.
+One approach was to write knowledge as rules: if this happens, do that. Expert systems belong to that history. Another was to have machines learn from examples. In practice, a solution today combines rules, learning, and search — and you'll make choices like that in this guide.
 
 ## What changed between winning a game and learning from examples?
 

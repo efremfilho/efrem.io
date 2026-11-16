@@ -15,7 +15,9 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 14
 
-O teste de comunicação reservado lá atrás não escolheu um formato vencedor: uma família pediu áudio para ouvir depois; outra preferiu uma mensagem curta que pudesse encaminhar. Bia queria manter as duas saídas; Caio lembrou que cada versão precisava acompanhar as mudanças de orientação. Bia passou a gravar também as próprias notas depois das visitas: preencher o novo formulário já tinha custado um contato, e falar parecia mais rápido. Lia pediu a um agente transcrições e resumos por família. Caio revisou um deles com Bia. Onde ela dizia "talvez tenha mudado de turno", o resumo afirmava que a estudante tinha mudado. Outra frase aparecia como fala da mãe, mas era uma interpretação de Bia. Voltar ao áudio resolveu aquelas dúvidas. Resolveria as dos registros que ninguém conseguisse revisar naquele dia? Bia queria manter a voz para não perder contexto; Caio queria um registro curto para o atendimento seguir. O que precisava chegar à próxima pessoa: o que foi dito, o que foi entendido ou o que ficou por conferir?
+O teste de comunicação reservado lá atrás não escolheu um formato vencedor: uma família pediu áudio para ouvir depois; outra preferiu uma mensagem curta que pudesse encaminhar. Bia queria manter as duas saídas; Caio lembrou que cada versão precisava acompanhar as mudanças de orientação. Para ganhar tempo depois das visitas — já que preencher o novo formulário tinha custado um contato —, Bia passou a gravar também as próprias notas de voz.
+
+Lia pediu a um agente transcrições e resumos por família. Caio revisou um deles com Bia: onde ela dizia "talvez tenha mudado de turno", o resumo afirmava que a estudante tinha mudado; outra frase aparecia como fala da mãe, mas era uma interpretação de Bia. Voltar ao áudio resolveu aquelas dúvidas. Resolveria as dos registros que ninguém conseguisse revisar naquele dia? Bia queria manter a voz para não perder contexto; Caio queria um registro curto para o atendimento seguir. O que precisava chegar à próxima pessoa: o que foi dito, o que foi entendido ou o que ficou por conferir?
 </div>
 
 Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece. O uso que mais me serve é dos mais simples: compartilho a tela com um assistente de voz e peço que me guie numa configuração que eu não domino. "Clique no menu da esquerda. Está vendo o botão à direita?" É um suporte técnico que enxerga o que eu estou enxergando.
@@ -86,17 +88,13 @@ Fica uma pergunta que eu não sei responder bem: quem conferiu os números da p�
 
 ## "Usar IA" é usar um modelo só?
 
-**O que era:** um processo que recebe fotos de documentos de identidade. Ler o texto da imagem (o velho OCR) é a parte fácil.
-
-**Como ficou:** o sistema hoje combina três coisas diferentes:
+Em um processo em que trabalhei que recebe fotos de documentos de identidade, ler o texto da imagem (o velho OCR) era a parte fácil. Para funcionar de verdade, o sistema hoje combina três coisas diferentes:
 
 - **IA generativa** para ler e interpretar: o documento está inteiro no enquadramento? Tem reflexo cobrindo algum campo? Está legível?
 - **Algoritmos clássicos de visão**, que não são generativos, para procurar adulteração: bordas estranhas, uma foto colada por cima, sinais de edição.
 - **Consulta determinística** a um serviço de cadastro, para ver se o número do documento confere com o nome.
 
-Nenhuma dessas etapas, sozinha, prova que um documento é autêntico.
-
-**O que aprendi:** neste caso, "usar IA" não significa usar *um* modelo. Significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte confiável, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). O fluxo envolve dados pessoais e pode envolver dados sensíveis; vale o cuidado discutido no [capítulo 5](/ia/dados-e-privacidade/): finalidade e base legal aplicável, acesso mínimo e testes com dados fictícios quando não há necessidade de usar os reais.
+Nenhuma dessas etapas, sozinha, prova que um documento é autêntico. Ali ficou claro para mim que "usar IA" não significa usar *um* modelo: significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte confiável, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). Como o fluxo envolve dados pessoais e pode envolver dados sensíveis, vale o cuidado discutido no [capítulo 5](/ia/dados-e-privacidade/): finalidade e base legal aplicável, acesso mínimo e testes com dados fictícios quando não há necessidade de usar os reais.
 
 ## Então o que é diferente do texto?
 

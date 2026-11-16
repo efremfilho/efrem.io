@@ -15,7 +15,9 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 14
 
-The communication trial reserved earlier did not produce one winning format: one family asked for audio to listen to later; another preferred a short message they could forward. Bia wanted to keep both; Caio pointed out that each version would need to follow changes in guidance. Bia also began recording her own notes after visits: filling in the new form had already cost a contact, and talking seemed faster. Lia asked an agent for transcripts and summaries by family. Caio reviewed one with Bia. Where she said "perhaps she changed shifts," the summary stated that the student had changed. Another sentence appeared as the mother's words, but was Bia's interpretation. Going back to the audio settled those questions. Would it settle the ones in records nobody could review that day? Bia wanted to keep the voice notes to preserve context; Caio wanted a short record so service could continue. What needed to reach the next person: what was said, what was understood, or what remained to be checked?
+The communication trial reserved earlier did not produce one winning format: one family asked for audio to listen to later; another preferred a short message they could forward. Bia wanted to keep both; Caio pointed out that each version would need to follow changes in guidance. To save time after visits — since filling in the new form had already cost a contact — Bia also began recording her own voice notes.
+
+Lia asked an agent for transcripts and summaries by family. Caio reviewed one with Bia: where she said "perhaps she changed shifts," the summary stated that the student had changed; another sentence appeared as the mother's words, but was Bia's interpretation. Going back to the audio settled those questions. Would it settle the ones in records nobody could review that day? Bia wanted to keep the voice notes to preserve context; Caio wanted a short record so service could continue. What needed to reach the next person: what was said, what was understood, or what remained to be checked?
 </div>
 
 For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the context: sometimes I talk, almost always to think out loud. But I still prefer to write. When I write, I think before I send. The machine now accepts the world in the format it happens in. The use that serves me best is one of the simplest: I share my screen with a voice assistant and ask it to guide me through a setup I haven't mastered. "Click the menu on the left. See the button on the right?" It's tech support that sees what I'm seeing.
@@ -86,17 +88,13 @@ That leaves a question I can't answer well: who checked the numbers on the page 
 
 ## Does "using AI" mean using just one model?
 
-**Before:** a process that receives photos of ID documents. Reading the text from the image (good old OCR) is the easy part.
-
-**After:** the system today combines three different things:
+In a process I worked on that receives photos of ID documents, reading the text from the image (good old OCR) was the easy part. To actually work, the system today combines three different things:
 
 - **Generative AI** to read and interpret: is the whole document in the frame? Is there glare covering any field? Is it legible?
 - **Classic vision algorithms**, which aren't generative, to look for tampering: odd edges, a photo pasted on top, signs of editing.
 - **A deterministic lookup** in a registry service, to see whether the document number matches the name.
 
-None of these steps, by itself, proves a document is authentic.
-
-**What I learned:** in this case, "using AI" does not mean using *one* model. It means choosing the right technique for each piece — and, where a reliable source exists, checking the source instead of asking for an opinion ([chapter 10](/ai/ask-for-the-script/)). The workflow involves personal data and may involve sensitive data; the care discussed in [chapter 5](/ai/data-and-privacy/) applies: purpose and an applicable legal basis, minimum access, and tests with fictional data when real data is unnecessary.
+None of these steps, by itself, proves a document is authentic. That made it clear to me that "using AI" does not mean using *one* model: it means choosing the right technique for each piece — and, where a reliable source exists, checking the source instead of asking for an opinion ([chapter 10](/ai/ask-for-the-script/)). Because the workflow involves personal data and may involve sensitive data, the care discussed in [chapter 5](/ai/data-and-privacy/) applies: purpose and an applicable legal basis, minimum access, and tests with fictional data when real data is unnecessary.
 
 ## So what's different from text?
 

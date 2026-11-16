@@ -15,7 +15,11 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 7
 
-The list helped Bia organize contacts. When she left for a visit, Caio could not tell whether a marked row meant "contact attempted" or "family reached." Iara needed an update; the team had to reread part of the work. There was already a delivery in use and a bill to pay. Making the list depend less on Bia seemed an obvious improvement. Until they started drawing. Each person asked their agent to draw the outreach workflow. Bia's began when a school called. Caio's, when the spreadsheet arrived. Lia's, when someone noticed. These were more than different drawings: they were ways to enter the queue. Maia, the communications coordinator at a partner organization, joined that meeting. She asked for a "more strategic" flow for the presentation. When Bia asked what would change, Maia said she would send an example and left before the work was assigned. Caio proposed comparing how many visits they could handle at three or five absences. Bia wanted room for urgent requests from schools. Lia needed to settle the scope to meet the deadline she had promised. "Five it is; exceptions go through me." Bia asked what happened when Lia was in a meeting. In the drawing, the "review" box had no duration. Did it have one in real life?
+The list helped Bia organize contacts. When she left for a visit, however, Caio could not tell whether a marked row meant "contact attempted" or "family reached." Iara needed an update; the team had to reread part of the work. Making the list depend less on Bia seemed an obvious improvement — until they started drawing. Each person asked their agent for the outreach workflow: Bia's began when a school called; Caio's, when the spreadsheet arrived; Lia's, when someone noticed. These were more than different drawings: they were different ways to enter the queue.
+
+Maia, the communications coordinator at the partner organization, joined the meeting worried about renewing the project's grant at the end of the month. She asked for a "more strategic" flow that showed network-wide reach for the funding board. When Bia asked what would change in the schools' routine, Maia said she would send a sample report and had to leave for another commitment before the work was divided.
+
+Caio proposed simulating how many weekly visits they could handle at three or five absences. Bia wanted room for urgent requests from schools. Lia needed to settle the scope to meet the promised deadline: "Five it is; exceptions go through me." Bia looked at the board: "And when you're in a meeting?" In the drawing, the "review" box had no duration. Did it have one in real life?
 </div>
 
 I've always been a builder. Even with a degree in Computer Science, I spent a good part of my career building with low-code and no-code tools and writing, at most, a little bit of script. The old repositories on my GitHub say so in their descriptions, in all honesty: "my lazy scripts." The reason is simple: I hated programming. Not the logic: the precision. I'd forget one parenthesis and that one damn parenthesis would wreck my day.
@@ -46,7 +50,12 @@ Notice what this sequence puts on the table. The chart, the rule that handles ea
 
 ## Where does AI enter this workflow?
 
-Lia's list has two overlapping diagrams. One shows **how the team builds and improves the service**: talking to agents, requesting code, comparing outputs, reviewing. The other shows **how the service helps someone**: receiving absence records, applying a rule, preparing contact, recording a response. AI can help with the first without appearing at every step of the second.
+Lia's list has two overlapping diagrams, and mixing the two ties beginners in knots:
+
+| Workflow | What happens in it | Where AI enters |
+|---|---|---|
+| **1. Building and improving the service** | The team debates the problem, asks for code, compares outputs, tests, and reviews | AI works as a building partner (writes the script, suggests the screen, explains an error) |
+| **2. The service helping someone** | Receives absences, applies the counting rule, prepares contact, and records the response | May have no AI running at all (if it is just the counting script) or use AI in one specific step (such as summarizing a visit note) |
 
 If a model summarizes each new visit note, it participates in operations. If it wrote the code that filters the list once, it helped build a routine that can run without it. In both cases, someone needs to understand what enters, what changes, and what the next person receives. Draw both paths: which one contains the difficulty you want to address now?
 
@@ -79,13 +88,61 @@ It's the question that always comes up. Writing code, probably not. Reading it, 
 
 I [wrote that I was learning code as a side effect](/blog/en/chapter-7-learning-code-as-a-side-effect/). My goal was still to get better at product and be able to ask for implementation. But reading the answer made me want to understand what was happening. I didn't have to decide "I'm becoming a technical person" before I started learning.
 
-Five ideas help you start reading. If you use spreadsheets, you've already encountered several of them:
+Five ideas help you start reading. On the classroom board I draw all of them along the bottom, returning to that same equation `f(x, y) = 3x + 2y` from [chapter 2](/ai/how-machines-learn/) — and if you use spreadsheets, you've already encountered several of them:
 
-1. **Function**: a name, parentheses and, inside them, whatever it needs to do its work. `=SUM(2,3)` is a function someone wrote and you use. In code it's the same — and you can create your own.
-2. **Variable**: a name for a value that can change. In a spreadsheet, it's the cell: `A1` is still `A1` when the number inside it changes. In a contract, it's "the seller": defined once at the top, it holds for the rest of the text — and, if the person changes, the whole contract still stands.
-3. **Conditional**: the spreadsheet's `IF`. If you know how to use `=IF(A1>=5,"contact","ok")`, you already know what it is.
-4. **Loop**: "do this for each row." Do it from 1 to 10. Do it for the whole list of students. Do it only for those in night classes — and the loop just got a conditional inside it, which is how almost every filter works. Six rows or six million, the code is the same.
-5. **API**: a function that lives on another computer. Think of a restaurant: the dining room doesn't walk into the kitchen. It places the order with whoever is serving, who takes it in, waits, and brings it back — and there's a protocol for that, down to the right door to go through. When the agent "checks the map" or "creates a card on the board," it went through an API.
+1. **Function**: a name, parentheses and, inside them, whatever it needs to do its work. In math it's `f(x, y) = 3x + 2y`. In a spreadsheet, `=SUM(2,3)` is a ready-made function someone wrote; you can also create your own (`=MADE_BY_ME(2,3)`) or use a function that queries an external service right from the cell — like `=GOOGLEFINANCE("CURRENCY:USDBRL")` to fetch an exchange rate from the internet.
+2. **Variable**: a name for a value that can change. In the function `f(x, y) = 3x + 2y`, an arrow on my board points to `x` and `y`. In a spreadsheet, it's every cell: `A1` is still `A1` when the number inside it changes. In a contract, it's "the seller": defined once at the top, it holds for the rest of the text — and, if the person changes, the whole contract still stands. In code, a simple visual clue: it's almost always the name that comes before the `=` sign (`num_1 = 2`).
+3. **Conditional**: the `IF (comparison) DO`. If you know how to use `=IF(A1>=5,"contact","ok")` in a spreadsheet, you already know what an `if` is in code.
+4. **Loop**: repeating an action across a sequence. On the board I write three examples in steps: *do from 1 to 10*; *do for all students*; *do for all Business Administration students* — and I draw an arrow from **conditional** into that last one. That's how almost every filter works: a loop with a conditional inside it. Six rows or six million, the code is the same.
+5. **API**: a function that lives on another computer. Think of a restaurant: the dining room doesn't walk into the kitchen. It places the order with whoever is serving, who takes it in, waits, and brings it back — and there's a protocol for that, down to the right door to go through without bumping into someone coming out. When the spreadsheet fetched the exchange rate outside, or when the agent "checks the map" and "creates a card on the board," it went through an API.
+
+<figure class="g-board">
+	<div class="g-board-title">Classroom board · Computational thinking summary <span>From school equations to reading scripts</span></div>
+	<div class="g-board-cols-4">
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">1. Functions</span>
+			<code class="g-board-math">f(x, y) = 3x + 2y</code>
+			<ul class="g-board-list">
+				<li><strong>Built-in:</strong> <code>=SUM(2,3)</code></li>
+				<li><strong>Custom:</strong> <code>=MADE_BY_ME(2,3)</code></li>
+				<li><strong>External:</strong> <code>=GOOGLEFINANCE(...)</code></li>
+			</ul>
+		</div>
+		<div class="g-board-box">
+			<span class="g-board-kicker">2. Variables (← x, y)</span>
+			<code class="g-board-math">num_1 = 2
+num_2 = 3</code>
+			<ul class="g-board-list">
+				<li><strong>In math:</strong> the <code>x</code> and <code>y</code>.</li>
+				<li><strong>In sheets:</strong> every cell (<code>A1</code>, <code>B2</code>).</li>
+				<li><strong>In code:</strong> the name before <code>=</code>.</li>
+			</ul>
+		</div>
+		<div class="g-board-box teal">
+			<span class="g-board-kicker">3. Conditionals</span>
+			<code class="g-board-math">IF (comparison)
+  DO</code>
+			<ul class="g-board-list">
+				<li><strong>Sheet:</strong> <code>=IF(A1>=5,"contact","ok")</code></li>
+				<li><strong>Code:</strong> <code>if absences >= 5:</code></li>
+			</ul>
+		</div>
+		<div class="g-board-box ok">
+			<span class="g-board-kicker">4. Loop (repeat)</span>
+			<code class="g-board-math">FOR EACH item:
+  ↳ IF (condition)</code>
+			<ul class="g-board-list">
+				<li>Do from <code>1 to 10</code>.</li>
+				<li>Do for <em>all students</em>.</li>
+				<li><strong>← Conditional:</strong> for <em>Business Admin. students</em>.</li>
+			</ul>
+		</div>
+	</div>
+	<div class="g-board-note">
+		<strong>5. API + Modularization:</strong> when a function lives in another system (like an order going from the dining room to the restaurant kitchen) or when we split a big action (<code>Register</code> → <code>1. Check if exists</code> + <code>2. Create</code>), we use the same logic of independent boxes talking through inputs and outputs.
+	</div>
+	<figcaption><strong>Board sources:</strong> adapted from the author's FGV EPPG classroom whiteboard (Maranhão Filho, 2026), combined with Jeannette Wing's framing of computational thinking (2006) and Brennan &amp; Resnick's computational concepts (MIT Media Lab, 2012).</figcaption>
+</figure>
 
 <div data-widget="loop"></div>
 
@@ -123,7 +180,24 @@ Between the layers, and between your system and the rest of the world, sit the *
 
 Knowing this changes the conversation with an agent or with a tool that generates apps. "It looks ugly" is a front request. "It's counting wrong" is a rules request. "What I entered yesterday disappeared" is a data problem. Whoever points to the right layer solves in one message what would have taken ten.
 
-The other idea that comes along with it is **modularizing**: each piece does one thing only. The absence count shouldn't know anything about the color of the button. Behind a "record contact" there are smaller pieces: check that the student exists, save the contact. Small, independent pieces are easier to test, easier to swap out, and easier to hand to an agent without worrying that it will break the rest. It's the tech basics I see operations people [pick up quickly](/blog/en/product-led-ops-the-ops-crowd-flying-with-genai/): modularizing, each step doing one thing only, keys that don't stay exposed, and versioning.
+The other idea I draw at the top of the board — twice, because it operates at two scales — is **modularizing**: making each piece take care of one thing only.
+
+<div class="g-board-grid">
+<div class="g-board-card">
+<strong>1. Modularize by domain</strong>
+<p>Break the product into major, independent business areas. In an academic system of mine, those are three boxes: <em>Discovery</em>, <em>Sync</em>, and <em>Invite</em>. For Lia: <em>Attendance</em>, <em>Visit queue</em>, and <em>Field log</em>.</p>
+</div>
+<div class="g-board-card">
+<strong>2. Modularize inside the action</strong>
+<p>When several screens call the <em>Register client</em> API, behind the scenes it isn't one giant block: it calls <code>1. Check if exists</code> and <code>2. Create record</code>. For Lia, <em>Record contact</em> checks the student code before saving the visit.</p>
+</div>
+<div class="g-board-card">
+<strong>3. Slice by domain and layer</strong>
+<p>To build with agents without one stepping on another, combine both cuts: pick a <em>domain</em> (e.g., visit queue) and know what will change in the <em>front</em>, <em>rules</em>, <em>data</em>, and <em>external APIs</em>.</p>
+</div>
+</div>
+
+One rule of thumb I use with my team: **if you had to draw a box or write a comment saying "this part does X," that part should be a separate function or module** — otherwise the code turns into one long sausage that's impossible to maintain. The absence count shouldn't know anything about the color of the button. Small, independent pieces are easier to test, easier to swap out, and easier to hand to an agent without worrying that it will break the rest. It's the tech basics I see operations people [pick up quickly](/blog/en/product-led-ops-the-ops-crowd-flying-with-genai/): modularizing, each step doing one thing only, keys that don't stay exposed, and versioning.
 
 ## How do you ask?
 
@@ -185,7 +259,7 @@ Anyone who wants to change something by building with technology needs two legs:
 - **Decompose and abstract:** separate the problem into parts and choose what matters for the task.
 - **Variable and function:** name a value and a piece of work that can be called again.
 - **Conditional and loop:** decide according to a rule and repeat an action. The flow helps reveal both.
-- **Layers and API:** separate screen, rules, and data; define how the parts exchange requests and responses.
+- **Layers, API, and modularization:** separate screen (front), rules (back), and data, define how the parts talk through APIs, and slice the project into domains and small functions.
 
 If the screen shows a wrong total, how do these distinctions help formulate a better request than "fix everything"?
 

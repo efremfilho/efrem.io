@@ -45,6 +45,39 @@ Para começar a investigar, compare duas maneiras de construir uma solução:
 
 As duas maneiras podem aparecer no mesmo produto. Este quadro compara maneiras de construir, não separa toda a história da computação em "com IA" e "sem IA".
 
+<figure class="g-board">
+	<div class="g-board-title">Quadro de conceito · Onde mora cada peça <span>Do guarda-chuva da IA à escolha de engenharia</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box">
+			<span class="g-board-kicker">1. As bonecas russas da área</span>
+			<div class="g-board-ring">
+				<strong>Inteligência Artificial (IA)</strong> — sistemas com graus de autonomia ou adaptação (inclui regras escritas e busca)
+				<div class="g-board-ring r2">
+					<strong>Aprendizado de Máquina (ML)</strong> — sistemas que ajustam parâmetros a partir de exemplos
+					<div class="g-board-ring r3">
+						<strong>Aprendizado Profundo (Deep Learning)</strong> — redes neurais em várias camadas
+						<div class="g-board-ring r4">
+							<strong>IA Generativa</strong> — modelos (como os baseados em Transformer) que geram texto, código, áudio ou imagem
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">2. O que entra e o que sai na bancada</span>
+			<code class="g-board-math">Regra escrita:
+Dados + Regra explícita  ──►  Saída</code>
+			<p>Alguém escolheu o critério (ex.: <code>faltas >= 5</code>). Se errar, inspecione a regra escrita.</p>
+			<code class="g-board-math">Aprendizado (treino):
+Dados + Saída esperada   ──►  Pesos (modelo)
+Uso (inferência):
+Dados novos + Pesos      ──►  Estimativa / Geração</code>
+			<p>Se errar, investigue os exemplos do treino, o que ficou de fora das colunas e o contexto da pergunta.</p>
+		</div>
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> adaptado do diagrama de camadas das aulas de <em>Intro IA</em> do autor (Maranhão Filho, 2025), da distinção entre autonomia e adaptatividade do curso <em>Elements of AI</em> (University of Helsinki; MinnaLearn, 2018) e do marco conceitual de sistemas de IA da OCDE (OECD, 2024).</figcaption>
+</figure>
+
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** no quiz, faça a cada item a pergunta que a Bia fez em voz alta: isso segue uma regra que alguém escreveu, ou aprendeu com dados? Como você descobriria, se ninguém contasse?
 </div>
@@ -68,11 +101,11 @@ O comportamento deles depende de aprendizado com dados, mas isso não significa 
 
 Nas minhas [introduções de IA](https://efrem.io/intro-ia/), passo pela evolução antes de abrir a ferramenta. Vale fazer o mesmo aqui. O [vídeo que motivou esta retomada](https://www.youtube.com/watch?v=YovHdlRN7VM) conta a história com gente, apostas e frustrações. É um bom fio narrativo; os marcos abaixo vêm também dos trabalhos originais. Não precisa decorar o elenco. Precisa perceber que uma demonstração impressionante, uma descoberta e um produto são coisas diferentes.
 
-Alan Turing começou com uma pergunta incômoda: [uma máquina pode pensar?](https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html) Em vez de esperar um acordo sobre o significado de "pensar", propôs um jogo de imitação envolvendo perguntas e respostas por escrito. Repare no deslocamento: sair da palavra e olhar para o comportamento. Isso não transforma conversa convincente em certificado de consciência.
+Alan Turing começou com uma pergunta incômoda: [uma máquina pode pensar?](https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html) Em vez de esperar um acordo sobre o significado de "pensar", propôs um jogo de imitação envolvendo perguntas e respostas por escrito. O deslocamento foi ótimo: sair da palavra e olhar para o comportamento — mesmo que conversar bem continue longe de provar consciência.
 
-Depois, John McCarthy organizou [um encontro de pesquisa em Dartmouth](https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth), cuja proposta tratava a inteligência como algo que uma máquina poderia simular. A ambição era enorme. O caminho teve promessas que não se cumpriram e períodos de retração, os chamados *invernos da IA*, retomados no vídeo. Isso não significa que a pesquisa morreu e ressuscitou. Significa que a expectativa e a capacidade de entregar não andaram juntas.
+Depois, John McCarthy organizou [um encontro de pesquisa em Dartmouth](https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth), cuja proposta tratava a inteligência como algo que uma máquina poderia simular. A ambição era enorme. Pelo caminho vieram promessas que não se cumpriram e períodos de retração, os chamados *invernos da IA*, retomados no vídeo: a pesquisa continuou avançando, mas a expectativa tinha corrido muito na frente da entrega.
 
-Uma das apostas era escrever o conhecimento como regras: se acontecer isto, faça aquilo. Os sistemas especialistas pertencem a essa história. Outra era fazer a máquina aprender com exemplos. Não são degraus em que o novo apaga o anterior. Uma solução pode combinar regras, aprendizado e busca — e você vai fazer escolhas assim neste guia.
+Uma das apostas era escrever o conhecimento como regras: se acontecer isto, faça aquilo. Os sistemas especialistas pertencem a essa história. Outra era fazer a máquina aprender com exemplos. Na prática, uma solução hoje combina regras, aprendizado e busca — e você vai fazer escolhas assim neste guia.
 
 ## O que mudou entre ganhar um jogo e aprender com exemplos?
 

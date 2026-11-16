@@ -76,6 +76,21 @@ Pense em ler uma mensagem trazendo tanto as pistas daquela mensagem quanto o que
 
 Ao fim dessas etapas, sai uma distribuição: chances atribuídas às possíveis continuações. Um token é escolhido, entra no texto, e a conta recomeça com ele incluído. A escolha pode usar sorteio ou favorecer sempre a opção mais provável, conforme a configuração. O modelo não sorteia palavras soltas de um saco: as chances dependem do que veio antes.
 
+<figure class="g-board">
+	<div class="g-board-title">Quadro de conceito · Do pedido ao próximo token <span>A linha de montagem dentro de um Transformer</span></div>
+	<div class="g-board-flow cols-5">
+		<div class="g-board-step"><strong>1. Tokens</strong>Quebra o texto em pedaços catalogados (números)</div>
+		<div class="g-board-step"><strong>2. Embeddings</strong>Posiciona cada pedaço num mapa de relações aprendido</div>
+		<div class="g-board-step"><strong>3. Atenção + Camadas</strong>Cruza pistas da frase inteira e transforma o sentido</div>
+		<div class="g-board-step"><strong>4. Distribuição</strong>Calcula a chance de cada próximo token (temperatura)</div>
+		<div class="g-board-step"><strong>5. Sorteio ↺</strong>Anexa o token escolhido e repete a conta</div>
+	</div>
+	<div class="g-board-note">
+		<strong>Onde mora o perigo:</strong> o mecanismo combina o <em>contexto disponível na janela</em> com os <em>padrões deixados nos pesos pelo treino</em>. Ele calcula a continuação plausível — não consulta se o fato aconteceu, a menos que você dê a fonte ou uma ferramenta de busca.
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> arquitetura Transformer de Vaswani et al. (<em>Attention Is All You Need</em>, 2017) e síntese visual de embeddings, atenção e camadas de Grant Sanderson (3Blue1Brown, 2024).</figcaption>
+</figure>
+
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** escolha a frase sobre a estudante. Antes de sortear, tente você: que palavra viria depois? O que você precisaria saber para acertar — e essa informação está disponível?
 </div>

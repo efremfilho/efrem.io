@@ -15,7 +15,11 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 13
 
-The script counted absences. But the list lived on a computer, while visitors spent the day out in the field. Bia asked an app builder for a mobile app and got an attractive screen, with full names, addresses, and a red badge on every student. Of all people. Rule #1 was in the repository; the builder had not read it. Caio reviewed the screen with Bia and asked about the badge. They removed it. In the next conversation, Iara requested an aggregate dashboard to argue for continuing the partnership. Bia preferred the daily list, without another screen to fill in. Both had people to serve. Maia reappeared asking for "more visual impact": she needed slides to show the partner organization's leadership. She had not sent the promised example and had not opened the version Bia had shared. Caio set aside an afternoon to try to understand the request. Did the app need to solve the work of those making visits, those keeping the partnership going, or both?
+The script counted absences. But the list lived on a computer, while visitors spent the day out in the field. Bia asked an app builder for a mobile app and got an attractive screen, with full names, addresses, and a red badge on every student. Of all people. Rule #1 was in the repository; the builder had not read it. Caio reviewed the screen with Bia, asked about the badge, and they removed it on the spot.
+
+In the next conversation, Iara requested an aggregate dashboard to argue for continuing the partnership at the department. Bia preferred just the daily list, without another screen to fill in after returning from the field. Both had people to serve.
+
+Maia reappeared asking for "more visual impact": the report to renew the partner organization's grant was due that week, and leadership wanted screens that showed scale. She still had not sent the promised example or opened the version Bia had shared. Caio set aside an afternoon to try to translate the request. Did the app need to solve the work of those making visits, those sustaining the partnership and its funding, or both?
 </div>
 
 There's a family of tools that takes a description in natural language and hands back a working app: screen, rules, database, and an address to open on your phone. I call them app builders; the commercial names change every semester and don't matter here.
@@ -57,7 +61,10 @@ The way I'd ask an engineering team. "Change the button" is one request. "Change
 What I learned the hard way:
 
 - **The first request is the one that weighs the most.** I don't start in the app builder. I start by debating it with an assistant: the problem, who uses it, what goes in, what comes out. I walk away with a document a few pages long, revise it, and only then hand it over. It has even come out right on the first try.
-- **A big request is no longer a problem.** The models can take it. What's still my job is organizing the solution: how do I slice this into parts that the agents and I can work on?
+- **A big request is no longer a problem.** Models can handle multi-page documents. What's still my job is organizing the solution and **slicing the project** using the cuts from [chapter 7](/ai/computational-thinking/):
+  1. *Slice by domain:* instead of asking for ten half-built screens, I ask for one complete domain at a time — first just the morning visit list; then the visit follow-up log; finally the aggregate dashboard.
+  2. *Slice by layer (data → rules → front):* I start by making sure where the data is stored and that the counting rule adds up; only then do I polish the screen.
+  3. *Separate code, external services, and AI:* repeated math becomes a deterministic function, outside lookups go through an API, and AI enters only where there is open-ended text or ambiguity.
 - **After that, short requests with an address.** "It looks ugly," "it's counting wrong," and "what I entered disappeared" go to different layers.
 - **Show.** A drawing of the screen, even done by hand, is worth more than three paragraphs.
 - **Read what it says it did.** When something breaks, the explanation is usually there.
@@ -77,11 +84,9 @@ What changed most for me was being able to build without getting stuck. A quick 
 
 ## If building got easy, what got hard?
 
-**Before:** in a product I work on, the tracking board took up a little more than half the screen; the rest was menu and frame. To open a detail, the person switched screens and lost the thread.
+In a product I work on, the tracking board took up a little more than half the screen; the rest was menu and frame. To open a detail, the person switched screens and lost the thread. I described what bothered me to the agent and asked for alternatives. I tried out three ideas, actually working, in the development environment: drag and drop between columns, a side drawer with the item's summary, and a breadcrumb trail at the top for going back without getting lost. I sent the link to the team to try.
 
-**After:** I described what bothered me and asked for alternatives. I tried out three ideas, actually working, in the development environment: drag and drop between columns, a side drawer with the item's summary, and a breadcrumb trail at the top for going back without getting lost. I sent the link to the team to try.
-
-**What I learned:** the hard part wasn't building. It was realizing that each column of that board is used by a different team, so what shows up when you hover the mouse has to change from column to column. That's product knowledge, and no model guesses it. One of the three experiments I didn't like — and I rolled it back with one command, because everything was layered and versioned ([chapter 11](/ai/repository-as-memory/)).
+The hard part there wasn't building. It was realizing that each column of that board is used by a different team, so what shows up when you hover the mouse has to change from column to column. That's product knowledge, and no model guesses it. One of the three experiments I didn't like — and I rolled it back with one command, because everything was layered and versioned ([chapter 11](/ai/repository-as-memory/)).
 
 Code got cheap. Knowing what to build didn't. I wrote more about this in [Product and UX have never mattered more](/blog/en/product-and-ux-have-never-mattered-more/).
 
