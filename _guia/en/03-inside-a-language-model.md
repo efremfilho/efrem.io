@@ -76,6 +76,21 @@ Think of reading a message using both the clues in that message and what you've 
 
 At the end of those steps comes a distribution: probabilities assigned to possible continuations. A token is selected, added to the text, and the calculation starts again with it included. Selection can use sampling or always favor the most likely option, depending on the configuration. The model doesn't draw disconnected words from a bag: the probabilities depend on what came before.
 
+<figure class="g-board">
+	<div class="g-board-title">Concept board · From prompt to next token <span>The assembly line inside a Transformer</span></div>
+	<div class="g-board-flow cols-5">
+		<div class="g-board-step"><strong>1. Tokens</strong>Splits text into cataloged pieces (IDs)</div>
+		<div class="g-board-step"><strong>2. Embeddings</strong>Places each piece on a learned relationship map</div>
+		<div class="g-board-step"><strong>3. Attention + Layers</strong>Cross-references clues across the sentence and transforms meaning</div>
+		<div class="g-board-step"><strong>4. Distribution</strong>Computes probabilities for the next token (temperature)</div>
+		<div class="g-board-step"><strong>5. Sample ↺</strong>Appends the chosen token and repeats the pass</div>
+	</div>
+	<div class="g-board-note">
+		<strong>Where the danger lives:</strong> the mechanism combines the <em>context available in the window</em> with the <em>patterns left in the weights by training</em>. It computes a plausible continuation — it does not check whether a fact happened unless you provide the source or a search tool.
+	</div>
+	<figcaption><strong>Board sources:</strong> Transformer architecture by Vaswani et al. (<em>Attention Is All You Need</em>, 2017) and visual synthesis of embeddings, attention, and layers by Grant Sanderson (3Blue1Brown, 2024).</figcaption>
+</figure>
+
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** pick the sentence about the student. Before drawing, try it yourself: what word would come next? What would you need to know to get it right — and is that information available?
 </div>

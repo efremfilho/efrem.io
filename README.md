@@ -35,7 +35,7 @@ Guia em capítulos, bilíngue e interativo, separado do blog. Cada capítulo é 
 
 A abertura oferece uma primeira volta curta: vontade ou hipótese, pedido, uso e análise. Os atos são momentos da história, não etapas obrigatórias de um método. IA generativa e pensamento computacional atravessam os três, com profundidade crescente. Cada capítulo consolida os conceitos em **O que vale guardar desta volta?**, com síntese e uma pergunta para relacioná-los. Em seguida vem **E no seu projeto?**, com uma tentativa ou investigação ligada ao projeto de quem lê. As duas seções entram depois do diário da Lia e antes das atividades de aula, e fazem parte da versão livro.
 
-`_includes/guia/abertura.html` monta a mesma abertura no índice e no livro, substituindo `<!-- guia-ciclo -->` pelo diagrama e o destino `/cv/` pelo convite configurado. `_includes/guia/ciclo.html` apresenta o ciclo de investigação; `_includes/guia/ato.html` mostra os dois letramentos e a pergunta de cada ato no índice e no livro. Os textos vêm de `_data/guia.yml`.
+`_includes/guia/abertura.html` monta a mesma abertura no índice e no livro, substituindo `<!-- guia-ciclo -->` pelo diagrama e o destino `/cv/` pelo convite configurado. `_includes/guia/ciclo.html` apresenta o ciclo de investigação; `_includes/guia/ato.html` mostra os dois letramentos e a pergunta de cada ato no índice e no livro; `_includes/guia/fechamento-ato.html` consolida o final de cada ato com resumo, recapitulação capítulo a capítulo (incluindo a peça do projeto) e checkpoint para o projeto de quem lê. Os textos vêm de `_data/guia.yml`.
 
 ### Como o guia conecta história e conceitos
 

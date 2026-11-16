@@ -88,11 +88,9 @@ In a project for a compliance team, the model read the whole regulation. When it
 
 ## What questions was I not asking because they took too much work?
 
-**Before:** a business question that's easy to ask and a lot of work to answer — *at which stage of the process do proposals sit idle the longest?*
+There was a business question that was easy to ask and a lot of work to answer: *at which stage of the process do proposals sit idle the longest?* I asked the question in plain Portuguese and told the agent to write and run the code. I got the mean and the median per stage over the last three months, the problems found in the data, heat maps showing which days of the week were short-staffed or overstaffed, the absence rate — and the Python script that generated it all, saved in the project.
 
-**After:** I asked the question in plain Portuguese. I got the mean and the median per stage over the last three months, the problems found in the data, heat maps showing which days of the week were short-staffed or overstaffed, the absence rate — and the Python code that generated it all, saved in the project.
-
-**What I learned:** I didn't write a line of that code, and this is the kind of analysis that used to wait for "when there's time." It cost one conversation. The strongest effect isn't the savings: it's that **I stopped putting off questions**. When asking costs little, we ask more — and have more opportunities to check our interpretations.
+I didn't write a line of that code, and that was the kind of analysis that used to wait for "when there's time." It cost one conversation. The strongest effect isn't the savings: it's that **I stopped putting off questions**. When asking costs little, we ask more — and have more opportunities to check our interpretations.
 
 ## How do you decide?
 
@@ -111,6 +109,27 @@ Less than it looks. In an insurance product I helped build, credit analysis was 
 Only one little piece in there is AI: reading the balance sheet and the income statement, saying which account is an asset and which is a liability — painstaking work that arrives in a different format every time. The rest is code, code, code. It's exactness; I don't want anyone being creative there.
 
 Most people try the opposite: build a bot that chats and solves everything. It's charming. At volume, it's very bad. I'd rather put the AI inside the process, only at the point where it's good.
+
+In the projects I build, that design usually follows four stages:
+
+1. **Fetch and prepare data in code:** query the sources, join the tables, and clean what arrived, deterministically.
+2. **Apply the deterministic ruler first:** everything that already has an exact rule (dates, thresholds, required fields) is filtered by a script, without spending tokens.
+3. **Call AI only where there is ambiguity:** read a document that arrives in a different format every time, classify open-ended text, or disambiguate two similar records.
+4. **Check the output with code and hand it over for a human decision:** the system validates that the AI output respects the format and business limits before showing it on screen to whoever approves.
+
+<figure class="g-board">
+	<div class="g-board-title">Architecture board · The hybrid sandwich <span>Code fencing AI where the math must not vary</span></div>
+	<div class="g-board-flow">
+		<div class="g-board-step"><strong>1. [Code] Ingest</strong>Fetches from APIs, joins tables, and cleans formats</div>
+		<div class="g-board-step"><strong>2. [Code] Fixed ruler</strong>Filters and sums everything with an exact rule (zero tokens)</div>
+		<div class="g-board-step"><strong>3. [AI] Ambiguity</strong>Reads open text, non-standard statements, or gray-zone cases</div>
+		<div class="g-board-step"><strong>4. [Code + Human] Gate</strong>Script audits the AI output and hands it over for human review</div>
+	</div>
+	<div class="g-board-note">
+		<strong>Why it works at scale:</strong> if 80% of cases are settled in stage 2 by a deterministic rule, you only pay tokens, latency, and ambiguity review on the 20% that genuinely require interpretation.
+	</div>
+	<figcaption><strong>Board source:</strong> the author's production hybrid-process architecture (Maranhão Filho, <em>Product people: don't be afraid of a script</em>, 2025).</figcaption>
+</figure>
 
 
 <div class="g-lia g-lia-diario" markdown="1">

@@ -68,11 +68,9 @@ Por isso a rédea que eu mantenho curta não é a do passo a passo. É a do aces
 
 ## O que precisa acontecer antes de deixar um agente trabalhando a noite toda?
 
-**O que era:** me pediram uma trilha gamificada para um curso, dentro da plataforma de ensino da instituição. Eu sabia o que queria e não sabia como a plataforma fazia aquilo.
+Me pediram uma trilha gamificada para um curso, dentro da plataforma de ensino da instituição. Eu sabia o que queria e não sabia como a plataforma fazia aquilo. Expliquei o pedido à IA e ela devolveu um plano: o que haveria na lição 1, na 2, na 3 e como seria a pontuação. Eu li, ajustei e aprovei. Deixei trabalhando durante a noite; de manhã estavam lá as lições, os slides e até os vídeos.
 
-**Como ficou:** expliquei o que eu queria. A IA devolveu um plano: o que haveria na lição 1, na 2, na 3, como seria a pontuação. Eu li, ajustei e aprovei. Deixei trabalhando durante a noite. De manhã estavam lá as lições, os slides e até os vídeos.
-
-**O que aprendi:** duas coisas. Naquele trabalho, li o plano antes de liberar a execução. Isso é diferente de aprovar cada clique: eu precisava entender a entrega e as restrições. E restrição precisa ser dita: no meio do caminho o agente avisou que a versão da plataforma não suportava um recurso e propôs uma adaptação. Agente bom não esconde a limitação; ele avisa e oferece alternativa.
+Tirei duas lições dali. A primeira é que ler o plano antes de liberar a execução é muito diferente de aprovar cada clique: eu precisava entender a entrega e as restrições antes de soltar a rédea. A segunda é que restrição precisa ser dita: no meio do caminho o agente avisou que a versão da plataforma não suportava um recurso e propôs uma adaptação. Agente bom não esconde a limitação; ele avisa e oferece alternativa.
 
 ## O que o registro mostra que a conversa esconde?
 
@@ -89,6 +87,27 @@ Na empresa, temos um agente de suporte em um canal de mensagens. Funciona assim:
 O agente escreve "encontrei três chamados duplicados; posso encerrar o segundo e o terceiro?", e só age depois de um "ok" de quem tem autoridade. Todo mundo ganha velocidade para entender; ninguém ganha um atalho para mudar produção.
 
 Esse desenho — **muitos podem pedir, poucos podem aprovar, o agente nunca aprova a si mesmo** — vale para quase qualquer processo. É o pull request do capítulo 11 aplicado a operações.
+
+<figure class="g-board">
+	<div class="g-board-title">Quadro de arquitetura · Rédeas para agentes <span>Trifeta letal e funil de aprovação em operações</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box bad">
+			<span class="g-board-kicker">1. A trifeta letal (corte pelo menos um elo)</span>
+			<code class="g-board-math">[A] Dados privados
+ + [B] Texto externo não confiável
+ + [C] Ação / envio para fora  ──►  Risco crítico</code>
+			<p>Como o modelo não separa com 100% de certeza o que é <em>dado para ler</em> do que é <em>ordem escondida</em> (<em>prompt injection</em>), a defesa não é pedir cuidado no prompt: é impedir por arquitetura que <code>[A]</code>, <code>[B]</code> e <code>[C]</code> rodem juntos no automático.</p>
+		</div>
+		<div class="g-board-box ok">
+			<span class="g-board-kicker">2. O funil de alçada (pull request de operações)</span>
+			<code class="g-board-math">Muitas pessoas (8)  ──►  Pedem diagnóstico e leitura
+Agente (1 conta)    ──►  Investiga, loga e PROPÕE
+Poucas pessoas (2)  ──►  Aprovam ação sem volta</code>
+			<p>Todo mundo ganha velocidade para investigar; ninguém ganha atalho para alterar produção. O agente tem conta e limite próprios e <strong>nunca aprova a si mesmo</strong>.</p>
+		</div>
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> conceito de <em>trifeta letal</em> de Simon Willison (<em>The Lethal Trifecta for AI Agents</em>, 2025), classificação de <em>prompt injection</em> da OWASP (<em>LLM01:2025</em>) e arquitetura do agente de suporte em produção do autor (Maranhão Filho, 2026).</figcaption>
+</figure>
 
 Nada disso nasceu pronto. Misturar no mesmo time gente de produto que constrói e gente de engenharia [foi doloroso](/blog/pt/processes-and-guardrails-for-product-builders-and-devs/): o que funcionou foi ambiente de teste separado, pull requests pequenos e revisão obrigatória de alguém de tecnologia.
 

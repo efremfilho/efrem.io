@@ -30,6 +30,31 @@ Pense na janela como o espaço de trabalho da tarefa: instruções, documentos, 
 
 **Engenharia de contexto** é o nome que pegou para o trabalho de decidir o que entra nessa RAM. É a evolução natural da engenharia de prompt: antes a gente caprichava em uma instrução; agora a gente administra tudo o que o modelo vê ao longo de uma tarefa longa. Quando o termo apareceu eu [fiquei em dúvida se precisávamos de mais um conceito](/blog/pt/context-engineering-do-we-need-another-concept/) — mas a ideia por trás eu defendo desde sempre: a habilidade humana mais importante agora é saber comunicar e entregar a informação e as ferramentas certas.
 
+<figure class="g-board">
+	<div class="g-board-title">Quadro de conceito · A janela como memória RAM <span>O que entra na bancada e por que a conversa pesa</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box accent">
+			<span class="g-board-kicker">1. O computador de linguagem (CPU × RAM)</span>
+			<code class="g-board-math">CPU = Modelo (pesos do treino, fixos na conversa)
+RAM = Janela de contexto (mesa de trabalho)</code>
+			<ul class="g-board-list">
+				<li><strong>Instruções:</strong> objetivo, regras e formato esperado.</li>
+				<li><strong>Documentos:</strong> trechos vigentes trazidos para a tarefa.</li>
+				<li><strong>Ferramentas:</strong> descrição de cada conector + o que devolveu.</li>
+				<li><strong>Histórico:</strong> tudo o que já foi dito naquela sessão.</li>
+			</ul>
+		</div>
+		<div class="g-board-box warn">
+			<span class="g-board-kicker">2. A bola de neve dos turnos (reenvio inteiro)</span>
+			<code class="g-board-math">Turno 1: [Instrução + Msg 1] ──► Resp 1
+Turno 2: [Instrução + Msg 1 + Resp 1 + Msg 2] ──► Resp 2
+Turno N: [Tudo desde a linha 1 + erros + Msg N]</code>
+			<p>O modelo não "lembra" da conversa aberta: a cada envio, a pilha inteira viaja de novo. Quando muda o assunto, os erros e rascunhos antigos continuam disputando atenção e encarecendo cada resposta.</p>
+		</div>
+	</div>
+	<figcaption><strong>Fontes do quadro:</strong> analogia entre LLM, CPU e RAM de Andrej Karpathy (<em>Software Is Changing (Again)</em>, 2025), orçamento de atenção e altitude de instruções da Anthropic (<em>Effective Context Engineering for AI Agents</em>, 2025) e experimentos de degradação em janelas longas da Chroma (<em>Context Rot</em>, 2025).</figcaption>
+</figure>
+
 ## Mais contexto é melhor contexto?
 
 A intuição diz: "na dúvida, joga tudo lá dentro". É o erro mais comum que eu vejo.
@@ -128,13 +153,11 @@ E pedir é metade. A outra metade é ler o que voltou para decidir o próximo pe
 
 ## Dá para ensaiar uma conversa com quem não está na sala?
 
-**O que era:** ouvir quem usa é a parte mais importante de construir qualquer coisa, e a mais difícil de conseguir. As pessoas não têm agenda e, quando têm, respondem o que acham que você quer ouvir.
+Ouvir quem usa é a parte mais importante de construir qualquer coisa, e a mais difícil de conseguir: as pessoas não têm agenda e, quando têm, muitas vezes respondem o que acham que você quer ouvir. Uma designer com quem trabalhei teve a ideia antes de mim: pegou as transcrições de entrevistas de verdade e pediu a um assistente que continuasse a conversa no papel daquela pessoa. Hoje eu uso o mesmo recurso para ensaiar antes de uma conversa difícil.
 
-**Como ficou:** uma designer com quem trabalhei teve a ideia antes de mim. Pegou as transcrições de entrevistas de verdade e pediu a um assistente que continuasse a conversa no papel daquela pessoa. Hoje eu uso o mesmo recurso para ensaiar: antes de uma conversa difícil, converso com a persona.
+Funciona melhor do que eu esperava. Às vezes rende mais do que a entrevista, porque a persona não tem vergonha de responder. Mas tem limites que eu não esqueço: ela é muito mais simpática do que qualquer cliente; é uma continuação plausível, não uma pessoa ([capítulo 3](/ia/por-dentro-do-modelo/)); e não substitui conversar com gente de verdade — complementa. Uma pergunta que eu me faço cada vez mais: quem deu a entrevista sabe que a fala dela continua sendo usada?
 
-**O que aprendi:** funciona melhor do que eu esperava. Às vezes rende mais do que a entrevista, porque a persona não tem vergonha de responder. E tem limites que eu não esqueço: ela é muito mais simpática do que qualquer cliente; é uma continuação plausível, não uma pessoa ([capítulo 3](/ia/por-dentro-do-modelo/)); e não substitui conversar com gente de verdade — complementa. Uma pergunta que eu me faço cada vez mais: quem deu a entrevista sabe que a fala dela continua sendo usada?
-
-**O que dizem os dois lados:** quem pesquisa experiência de uso refez estudos reais com participantes sintéticos e achou as respostas rasas e favoráveis demais ([Rosala; Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): serve para levantar hipóteses, não para decidir. Quem fundou uma empresa que vende justamente esse tipo de pesquisa — parte interessada, claro — responde que pesquisa existe para reduzir risco e decidir melhor, não para cumprir um método, e que muita gente critica sem ter testado. Mesmo ele não recomenda apostar a empresa numa resposta sintética: fala em achar o ponto em que isso acelera e o que continua sendo só de gente ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Os dois chegam perto do que eu vivi: complementa, não substitui.
+Quem pesquisa experiência de uso refez estudos reais com participantes sintéticos e achou as respostas rasas e favoráveis demais ([Rosala; Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): serve para levantar hipóteses, não para decidir. Já quem fundou uma empresa que vende justamente esse tipo de pesquisa — parte interessada, claro — responde que pesquisa existe para reduzir risco e decidir melhor, não para cumprir um método, e que muita gente critica sem ter testado. Mesmo ele não recomenda apostar a empresa numa resposta sintética: fala em achar o ponto em que isso acelera e o que continua sendo só de gente ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Os dois chegam perto do que eu vivi: complementa, não substitui.
 
 ## Quem está lendo o pedido?
 
@@ -145,7 +168,7 @@ E docente não está imune. Numa formação para colegas, pedi um exercício. A 
 - **Explico o porquê, não só o quê.** "Responda curto porque a pessoa lê no celular entre duas reuniões" funciona melhor que "responda curto".
 - **Separo as partes.** Títulos em Markdown ou marcações como `<contexto>` ajudam o modelo a não misturar instrução com documento.
 - **Trago só o trecho.** Em vez do manual de 300 páginas, as três páginas que importam. Se eu não sei quais são, esse é o primeiro pedido: "ache os trechos sobre X".
-- **Começo conversa nova quando muda o assunto.** Histórico velho é ruído. Se preciso levar algo adiante, peço um resumo e colo no começo da nova.
+- **Começo conversa nova quando muda o assunto.** O modelo não guarda uma conversa aberta na cabeça: a cada nova mensagem que você envia, o histórico inteiro daquela sessão é reenviado desde a primeira linha. Na 99ª mensagem, a conversa ficou cara, lenta e viciada nos próprios erros anteriores. Se preciso levar algo adiante, peço um resumo e colo no começo de uma conversa limpa.
 - **Ligo poucas ferramentas.** Cada conector ocupa espaço na janela só por existir. E eu fico de olho no medidor que a ferramenta mostra: quando uma sessão passa de dois terços da janela ocupada, já estou pensando em fechar e começar outra.
 - **Guardo o contexto fora da conversa.** Tudo o que eu não quero explicar de novo vira arquivo no repositório do projeto — assunto do [capítulo 11](/ia/repositorio-e-memoria/).
 

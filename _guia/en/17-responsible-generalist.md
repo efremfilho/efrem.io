@@ -8,14 +8,18 @@ order: 17
 part: 3
 permalink: /ai/responsible-generalist/
 interactive: "self-assessment"
-piece: "the deliverable — and the next decision"
+piece: "the service continues; the next bet is in dispute"
 last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 17
 
-The department kept the trial with the team; the vendor's offer remained available. Before the presentation, Maia sent slides calling the project "a validated solution for the entire school system." Bia asked her to remove that claim. Maia replied that the team could adjust it; one more task in Lia's queue. Iara wanted to take an expansion proposal to the state while funding was available. Bia opened another list: following up with Ian, updating messages in two formats, supporting schools without connectivity. "The offline trial worked," said Caio. "With fictional data, and I was the one explaining it on the phone when it got stuck," replied Bia. She asked her agent to compare expansion with stabilizing support; she read its hypotheses and marked what needed checking. Caio requested a plan to switch AI services. Aída, now reviewing changes before release, found an overlooked dependency. Iara pointed to the waiting towns: buying support was also an option. Bia did not want to lose what they had learned; Caio no longer wanted to maintain everything himself. Lia needed to bring a proposal. Which part of the service could the team take on in the next round — and who would handle the rest?
+The department kept the trial with the team; the vendor's offer remained available. Before the presentation, Maia sent slides calling the project "a validated solution for the entire school system": she needed to defend the grant renewal before the partner organization's board. Bia asked her to remove the phrase, because promising coverage without a team would burn the schools' trust. Maia replied that the team could adjust the wording as it saw fit — one more task in Lia's queue.
+
+Iara wanted to take an expansion proposal to the state while funding was available. Bia opened another list: following up with Ian, updating messages in two formats, supporting schools without connectivity. "The offline trial worked," said Caio. "With fictional data, and I was the one explaining it on the phone when it got stuck," replied Bia.
+
+She asked her agent to compare expansion with stabilizing support; she read its hypotheses and marked what needed checking. Caio requested a plan to switch AI services. Aída, now reviewing changes before release, found an overlooked dependency. Iara pointed to the waiting towns: buying support was also an option. Bia did not want to lose what they had learned; Caio no longer wanted to maintain everything himself. Lia needed to bring a proposal. Which part of the service could the team take on in the next round — and who would handle the rest?
 </div>
 
 I spent a good part of my career feeling like a duck: it swims, walks, and flies, but doesn't do any of the three very well. A bit of code, a bit of data, a bit of design, a lot of product. In a market that rewarded specialists, that looked like a flaw.
@@ -101,11 +105,9 @@ Every AI system was designed, trained, configured, and put online by people's de
 
 In the [conversation with Harari behind these questions](https://www.youtube.com/watch?v=kziBrxxE0U0&t=1680s), a provocation comes up: would you board a plane with a frightening chance of crashing? And what if the answer were that we're already aboard?
 
-The "20%" in that conversation is not a demonstrated probability of AI ending humanity. Harari is repeating an estimate attributed to someone in the industry. No measurement is presented that would justify treating the number as a forecast. Statistics isn't my field, and I won't turn a powerful image into a risk calculation.
+The "20%" cited there is an estimate attributed to someone in the industry, not a measured probability. Statistics isn't my field, and I won't turn a striking metaphor into a risk calculation. But the image is useful: as I see it, we're already on the plane, and the job now is to keep the thing from crashing. That calls for more than choosing between enthusiasm and panic — it means discussing who steers, who oversees, who can stop an operation, and who answers if it goes wrong.
 
-But the image is useful. As I see it, we're on the plane. Now the job is to keep the thing from crashing. That calls for more than choosing between enthusiasm and panic: it means discussing who steers, who oversees, who can stop an operation, and who answers if it goes wrong.
-
-Harari uses the conversation to challenge the idea that it is too late for politics to act. Agreeing that the technology exists doesn't mean accepting every use, every rule, or every concentration of power. You can build and reject an application. You can demand testing, limits, review, and someone to turn to.
+Harari uses the conversation to challenge the idea that it is too late for politics to act. Agreeing that the technology exists doesn't mean accepting every use or concentration of power: you can build and reject an application, demand testing, limits, review, and someone to turn to.
 
 In Lia's case, the risk doesn't have to be the end of humanity to matter. A family left off the list, without knowing why or being able to challenge it, is enough. Before expanding across the state: who notices? Who can suspend the ranking? Who helps the family while the team fixes it? That's where ethics reaches the screen someone will use.
 
@@ -113,21 +115,15 @@ In Lia's case, the risk doesn't have to be the end of humanity to matter. A fami
 
 Another [analogy from Harari](https://www.youtube.com/watch?v=kziBrxxE0U0&t=840s): imagine someone from the Stone Age facing a full fridge and food delivered to the door. They might conclude that we've solved survival and can spend the day resting. The calendar of whoever is reading this guide probably has a different opinion.
 
-It's an imaginary visit, not a conclusion about how our ancestors lived. I use the provocation to separate two questions: **how much can we produce, and how do we choose to live with it?** A tool that lets us do more doesn't decide, on its own, who gets the time, the income, or the work that remains.
+I use that thought experiment to separate two questions: **how much can we produce, and how do we choose to live with it?** A tool that lets us do more doesn't decide, on its own, who gets the time, the income, or the work that remains.
 
-Think of a team that starts completing a task in less time. The choice might be better service, shorter hours, higher targets, layoffs, or a new service that previously didn't fit the budget. The technical capability is similar. The decisions and consequences aren't.
-
-For anyone building a business or working in product, the question doesn't end at "how much did I save?" Who gained autonomy? Who faced more pressure? Who wasn't even part of the decision? I don't have a formula for distributing those gains. I have little patience for pretending the tool already decided that for us.
+Think of a team that starts completing a task in less time. The choice might be better service, shorter hours, higher targets, layoffs, or a new service that previously didn't fit the budget. The technical capability is similar; the decisions and consequences aren't. For anyone building a business or working in product, the question doesn't end at "how much did I save?": who gained autonomy, who faced more pressure, and who wasn't even part of the decision? I have little patience for pretending the tool already decided that for us.
 
 ## What if an entire country is dependent?
 
-Keeping knowledge in a repository helps a team change tools. On its own, it doesn't solve a country's dependence. In the [last part of the conversation](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari proposes the scenario of digital vassal states: essential services running on infrastructure and systems controlled from abroad. It's a political hypothesis to discuss, not a destiny foretold.
+Keeping knowledge in a repository helps a team change tools, but on its own it doesn't solve a country's dependence. In the [last part of the conversation](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari raises the political hypothesis of digital vassal states: essential services running on infrastructure and systems controlled from abroad.
 
-Here I'm stepping out of building products and into law and international relations, which aren't my specialties. The question the analogy makes visible is concrete: who can withdraw access, change the terms, or prevent a decision from being examined? And what happens to the people who depend on that service?
-
-For Lia's team, that becomes vendor selection, the ability to export data, decision records, and testing continuity if a service stops. For a country, it also involves infrastructure, research capacity, institutions, and cooperation. Swapping one model for another doesn't settle that discussion.
-
-I like Harari's analogies because they open up questions. I don't take him as a guarantee that his predictions are right. The discussion that matters here is what we can do: build our own capacity, negotiate dependencies, and give a voice to those who will live with the decision. Autonomy exists at that scale too.
+Here I'm stepping out of building products and into law and international relations, which aren't my specialties. Even so, the practical question the analogy opens up holds at any scale: who can withdraw access, change the terms, or prevent a decision from being examined? For Lia's team, that becomes vendor selection, data export, decision records, and testing continuity if a service stops. For a country, it involves infrastructure, research, institutions, and cooperation. Autonomy exists at that scale too.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** go through the self-assessment. Then pick one item you didn't check: what's stopping you? Before expanding a project of your own, who might face a consequence and hasn't been heard yet?
@@ -165,6 +161,17 @@ An honest guide needs a section like this.
 The technology is already part of the setting in which we build. That doesn't make every use obligatory. Understanding also helps us choose what to automate, what to keep with a person, and what not to build. For a project of your own, which of those decisions could you explain to someone who will live with it?
 
 And one request, from one builder to another: with so much helping you build, stop making bad products.
+
+## How does all of this come together in the next project?
+
+If you've made it this far — reading in order or jumping straight to whatever problem landed in front of you — it's worth keeping the whole map in a single table. Every time I start a new project, this guide's two literacies (**generative AI** and **computational thinking**) and **product** work meet across these four rounds:
+
+| Stage of the cycle | What to do in Computational Thinking | What to do in Generative AI | What to decide in Product & Operations |
+|---|---|---|---|
+| **1. Ask and discover** *(Act 1)* | Separate input, written rule, and output; see what fits in a column and what was left out | Test with the most capable model; distrust plausibility without a source; use fictional data | Define what work we are promising to deliver, who waits in the queue, and what the system does **not** do |
+| **2. Slice and build** *(Act 2)* | Draw the flow; slice by **domains** and **layers** (*front, rules, data*, and *APIs*); break up large functions | Supply context at the right altitude; retrieve from current sources; call AI only where there is ambiguity and use deterministic scripts for math | Write the mini-PRD; keep code, decisions, invariants, and the audit script in the repository; isolate keys and environments |
+| **3. Operate on a leash** *(Act 3)* | Ensure the core flow doesn't halt if AI fails; log every step | In voice, image, and video, separate what was captured from what the model deduced; fence agent access | Put it in users' hands and watch without explaining; many ask, few approve irreversible actions; create a path to challenge errors |
+| **4. Review and decide the next round** | Revalidate scripts and tests when data changes; pay down technical debt on what proved useful | Compare cheaper models once a task is proven; review plans and outputs ("building by reading") | Measure whether it solved the real problem (not vanity metrics) and choose whether to improve, change the bet, buy support, or stop |
 
 
 <div class="g-lia g-lia-diario" markdown="1">

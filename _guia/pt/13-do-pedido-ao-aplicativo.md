@@ -15,7 +15,11 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 13
 
-O script contava as faltas. Mas a lista ficava num computador, e quem visita passa o dia na rua. Bia pediu a um gerador um aplicativo para o celular e recebeu uma tela bonita, com nome completo, endereço e selo vermelho em cada estudante. Logo ela. A regra nº 1 estava no repositório; o gerador não a tinha lido. Caio revisou a tela com Bia e perguntou pelo selo. Tiraram. Na conversa seguinte, Iara pediu um painel agregado para defender a continuidade da parceria. Bia preferia a lista do dia, sem mais uma tela para alimentar. As duas tinham quem atender. Maia reapareceu pedindo "mais impacto visual": precisava levar os slides à chefia da organização parceira. Não tinha mandado o exemplo combinado e não chegou a abrir a versão que Bia enviara. Caio separou uma tarde para tentar entender o pedido. O aplicativo precisava resolver o trabalho de quem visita, o de quem mantém a parceria, ou os dois?
+O script contava as faltas. Mas a lista ficava num computador, e quem visita passa o dia na rua. Bia pediu a um gerador um aplicativo para o celular e recebeu uma tela bonita, com nome completo, endereço e selo vermelho em cada estudante. Logo ela. A regra nº 1 estava no repositório; o gerador não a tinha lido. Caio revisou a tela com Bia, perguntou pelo selo e tiraram na hora.
+
+Na conversa seguinte, Iara pediu um painel agregado para defender a continuidade da parceria na secretaria. Bia preferia apenas a lista do dia, sem mais uma tela para alimentar na volta do campo. As duas tinham quem atender.
+
+Maia reapareceu pedindo "mais impacto visual": o relatório para renovar o financiamento da organização parceira vencia naquela semana, e a diretoria queria telas que mostrassem escala. Ela ainda não tinha mandado o exemplo combinado nem aberto a versão que Bia enviara. Caio separou uma tarde para tentar traduzir o pedido. O aplicativo precisava resolver o trabalho de quem visita, o de quem sustenta a parceria e o financiamento, ou os dois?
 </div>
 
 Existe uma família de ferramentas que recebe uma descrição em linguagem natural e devolve um aplicativo funcionando: tela, regras, banco de dados e um endereço para abrir no celular. Eu chamo de geradores de aplicativos; os nomes comerciais mudam todo semestre e não importam aqui.
@@ -57,7 +61,10 @@ Do jeito que eu pediria a um time de engenharia. "Muda o botão" é um pedido. "
 O que aprendi apanhando:
 
 - **O primeiro pedido é o que mais pesa.** Eu não começo no gerador. Começo debatendo com um assistente: o problema, quem usa, o que entra, o que sai. Saio de lá com um documento de algumas páginas, reviso e só então entrego. Já aconteceu de acertar de primeira.
-- **Pedido grande deixou de ser problema.** Os modelos aguentam. O que continua sendo trabalho meu é organizar a solução: como eu fatio isso em partes em que eu e os agentes consigamos trabalhar?
+- **Pedido grande deixou de ser problema.** Os modelos aguentam documentos de várias páginas. O que continua sendo trabalho meu é organizar a solução e **fatiar o projeto** usando os cortes do [capítulo 7](/ia/pensamento-computacional/):
+  1. *Fatiar por domínio:* em vez de pedir dez telas pela metade, peço um domínio completo por vez — primeiro só a lista de visitas da manhã; depois o registro do retorno; por último o painel agregado.
+  2. *Fatiar por camada (dados → regras → frente):* começo garantindo onde o dado fica guardado e a regra que faz a conta bater; só depois capricho na tela.
+  3. *Separar o que é código, serviço externo e IA:* conta repetida vira função determinística, consulta de fora vai por API e a IA entra só onde há texto aberto ou ambiguidade.
 - **Depois, pedidos curtos e com endereço.** "Ficou feio", "está contando errado" e "sumiu o que cadastrei" vão para camadas diferentes.
 - **Mostre.** Um desenho da tela, mesmo feito à mão, vale mais que três parágrafos.
 - **Leia o que ele diz que fez.** Quando algo quebra, a explicação costuma estar ali.
@@ -77,11 +84,9 @@ O que mais mudou para mim foi poder fazer e não travar. Uma primeira versão r�
 
 ## Se construir ficou fácil, o que ficou difícil?
 
-**O que era:** em um produto em que trabalho, o quadro de acompanhamento ocupava pouco mais da metade da tela; o resto era menu e moldura. Para abrir um detalhe, a pessoa trocava de tela e perdia o fio.
+Em um produto em que trabalho, o quadro de acompanhamento ocupava pouco mais da metade da tela; o resto era menu e moldura. Para abrir um detalhe, a pessoa trocava de tela e perdia o fio. Descrevi o incômodo ao agente e pedi alternativas. Testei três ideias funcionando de verdade, no ambiente de desenvolvimento: arrastar e soltar entre colunas, uma gaveta lateral com o resumo do item e um caminho de navegação no topo para voltar sem se perder. Mandei o link para o time experimentar.
 
-**Como ficou:** descrevi o incômodo e pedi alternativas. Testei três ideias funcionando de verdade, no ambiente de desenvolvimento: arrastar e soltar entre colunas, uma gaveta lateral com o resumo do item e um caminho de navegação no topo para voltar sem se perder. Mandei o link para o time experimentar.
-
-**O que aprendi:** a parte difícil não foi construir. Foi perceber que cada coluna daquele quadro é usada por um time diferente, e que portanto o que aparece ao passar o mouse precisa mudar de coluna para coluna. Isso é conhecimento de produto, e nenhum modelo adivinha. Um dos três experimentos eu não gostei — e voltei atrás com um comando, porque estava tudo em camadas e versionado ([capítulo 11](/ia/repositorio-e-memoria/)).
+A parte difícil ali não foi construir. Foi perceber que cada coluna daquele quadro é usada por um time diferente, e que portanto o que aparece ao passar o mouse precisa mudar de coluna para coluna. Isso é conhecimento de produto, e nenhum modelo adivinha. Um dos três experimentos eu não gostei — e voltei atrás com um comando, porque estava tudo em camadas e versionado ([capítulo 11](/ia/repositorio-e-memoria/)).
 
 Código ficou barato. Saber o que construir, não. Escrevi mais sobre isso em [Produto e UX nunca foram tão importantes](/blog/pt/product-and-ux-have-never-mattered-more/).
 

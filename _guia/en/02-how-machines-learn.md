@@ -51,11 +51,9 @@ Now mentally shift the drawing one square to the side. You still see the same dr
 
 Grant Sanderson's [visual explanation of neural networks](https://www.youtube.com/watch?v=aircAruvnKk) starts with a great challenge: recognizing a handwritten digit. You recognize it instantly. Now try writing a rule that works for everyone's crooked handwriting.
 
-In a neural network, many small operations connect in **layers**. Each receives signals, combines and transforms them, and passes the result along. The name "neuron" doesn't require imagining a tiny person thinking inside it.
+In a neural network, many small operations connect in **layers**. Each receives signals, combines and transforms them, and passes the result along. One way to picture the idea is to combine clues: bits of an image, curves, and combinations that help distinguish one digit from another — even though the network learns internal representations that don't always come with a neat human label.
 
-One way to picture the idea is to combine clues: bits of an image, curves, combinations that help distinguish one digit from another. This explains why combining stages can help. It isn't a literal map where each neuron was labeled "curve detector." The network learns representations we can't always translate that way.
-
-Think of a panel of adjustments: each dial changes how much one signal influences the next. Many of these adjustments are the **weights**. Turning a dial can change the result; training looks for combinations that work better. The panel is an image for the numbers, not a device someone turns by hand.
+On the classroom whiteboard, I explain this as an inverted equation. In school, someone gave you the fixed numbers in the function `f(x, y) = 3x + 2y`, you plugged in `x` and `y`, and you calculated the result. In machine training we flip what the unknown is: you already have many examples of `x`, `y`, and the result that happened, and you want to discover what those fixed numbers — the `3` and the `2` — were. Those numbers multiplying each signal are the **weights** (or training parameters). At bottom, a model is a gigantic equation tuned so the math fits the examples better. That same function `f(x, y) = 3x + 2y` will return in [chapter 7](/ai/computational-thinking/) to connect spreadsheets and code.
 
 ## What happens on each pass of training?
 
@@ -65,6 +63,35 @@ The [explanation of learning](https://www.3blue1brown.com/lessons/gradient-desce
 2. **Measure the error.** Compare the output with what was wanted, using a chosen criterion. This measure is the *loss*.
 3. **Adjust.** The algorithm calculates changes that tend to reduce this error.
 4. **Repeat.** More examples come in, the settings change, and the cycle continues.
+
+<figure class="g-board">
+	<div class="g-board-title">Classroom board · The inverted equation of training <span>From computing the output to discovering the weights</span></div>
+	<div class="g-board-cols">
+		<div class="g-board-box">
+			<span class="g-board-kicker">In school / with a ready-made rule</span>
+			<code class="g-board-math">f(x, y) = 3x + 2y   ──►   f(4, 1) = ?</code>
+			<ul class="g-board-list">
+				<li><strong>Known:</strong> the fixed weights (<code>3</code> and <code>2</code>) and the inputs (<code>x = 4</code>, <code>y = 1</code>).</li>
+				<li><strong>Unknown:</strong> the output of the calculation (<code>14</code>).</li>
+			</ul>
+		</div>
+		<div class="g-board-box teal">
+			<span class="g-board-kicker">In machine training (inverted equation)</span>
+			<code class="g-board-math">f(x, y) = w₁·x + w₂·y + b   ──►   find w₁, w₂, b</code>
+			<ul class="g-board-list">
+				<li><strong>Known:</strong> thousands of historical examples of <code>x</code>, <code>y</code>, and the observed outcome.</li>
+				<li><strong>Unknown:</strong> the weights (<code>w₁</code>, <code>w₂</code>) and mathematical bias (<code>b</code>) that make the math fit.</li>
+			</ul>
+		</div>
+	</div>
+	<div class="g-board-flow">
+		<div class="g-board-step"><strong>1. Prediction</strong>Run the equation with current weights</div>
+		<div class="g-board-step"><strong>2. Error (loss)</strong>Measure distance from expected output</div>
+		<div class="g-board-step"><strong>3. Adjustment</strong>Backpropagation computes how to nudge each weight</div>
+		<div class="g-board-step"><strong>4. Real test</strong>Check on examples held out of training</div>
+	</div>
+	<figcaption><strong>Board sources:</strong> adapted from the author's FGV EPPG classroom whiteboard (Maranhão Filho, 2026) and Grant Sanderson's visual exposition of gradient descent and backpropagation (3Blue1Brown, <em>Neural Networks</em>, 2017).</figcaption>
+</figure>
 
 How do you work out which dials to turn across an entire network? [Backpropagation](https://www.3blue1brown.com/lessons/backpropagation/) follows the calculations backward to work out how each adjustment influences the error. It isn't trying one dial at a time. The correction considers how they contribute to the result together.
 

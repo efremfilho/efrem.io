@@ -14,10 +14,14 @@ last_modified: 2026-11-16
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 16
 
-Classes resumed. After the trial with the existing routine, the version with access for schools was live: a daily list for visitors, an aggregate dashboard for Iara. Bia barely opened the dashboard; Iara used it to argue for continuing the partnership. Was not using the same screen a sign of failure? With the historical data assembled, Lia asked the agent for a map of absences by day and shift. Caio reviewed the count. The darkest patch was Friday evening, part of the pattern he had spotted earlier. He thought it was work. Bia remembered the bus and wanted to investigate one school first. Lia wanted to hear from all of them before choosing one. In a conversation at the school, Ian, an evening student, raised another question: "if I'm back and still on the list, who do I talk to?" The count Caio had checked did not resolve that by itself. While they debated the cause, the school needed to organize the next week. What could they do without turning the first hypothesis into the official explanation?
+Classes resumed. After the trial with the existing routine, the version with access for schools was live: a daily list for visitors, an aggregate dashboard for Iara. Bia barely opened the dashboard; Iara used it to argue for continuing the partnership. Was not using the same screen a sign of failure?
+
+With the historical data assembled, Lia asked the agent for a map of absences by day and shift. Caio reviewed the count. The darkest patch was Friday evening, part of the pattern he had spotted earlier. He thought it was work. Bia remembered the bus and wanted to investigate one school first; Lia wanted to hear from all of them before choosing one. In a conversation at the school, Ian, an evening student, raised another question: "if I'm back and still on the list, who do I talk to?" The count Caio had checked did not resolve that by itself. While they debated the cause, the school needed to organize the next week. What could they do without turning the first hypothesis into the official explanation?
 </div>
 
 An issued list, a completed visit, and a student returning to school are different events. The system can record the first perfectly without producing the others. It can help with the second without resolving the reason for the absence. Ian's request reveals another limit: updating a count does not ensure someone can correct their own situation.
+
+I learned that difference the hard way, long before generative AI. More than ten years ago, I helped build a public-safety app with an emergency button for when someone was being mugged. In the presentation, it looked great. On the street, almost nobody used it — because nobody pulls a phone out of their pocket during a mugging, except to hand over the phone. To this day I still catch myself falling into the illusion that I know what someone will do in the real world just because the button works on my screen.
 
 ## What work did we promise to deliver?
 
@@ -45,7 +49,9 @@ In the current workflow, counting is code; reading reports can use AI; talking w
 
 ## What does that number prove?
 
-Caio can reproduce the absence map. That answers how the calculation was performed. It does not determine whether the Friday patch reflects work, transport, delayed records, or a combination. Bia knows about the bus; that knowledge is a lead, not a sample of the whole school system. Lia wants to hear from every school; that breadth costs time for those waiting.
+I dread numbers that climb on a dashboard while real life stays the same. At a company where I worked, our target was growing the number of registered accounts. We turned on an automation that invited the entire directory of every client company: ten thousand new people joined a month. We hit every target — and actual usage stayed exactly the same. It didn't help the company at all. Pure vanity metric.
+
+In Lia's case, Caio can reproduce the absence map. That answers how the calculation was performed. It does not determine whether the Friday patch reflects work, transport, delayed records, or a combination. Bia knows about the bus; that knowledge is a lead, not a sample of the whole school system. Lia wants to hear from every school; that breadth costs time for those waiting.
 
 The team can compare expectations with what happened: who was contacted, who kept waiting, which records needed correcting. It can observe whether the route for challenging the list works. These signals help revise the delivery. On their own, they do not establish that the software caused a change in school retention.
 
@@ -126,6 +132,6 @@ Choose a problem from your project. Describe one delivery that helps someone do 
 - Maranhão Filho, É. (2026, March 26). *Code is not the hard part*. efrem.io. <https://efrem.io/blog/en/code-is-not-the-hard-part/>
 - Maranhão Filho, É. (2026, November 11). *I only pay for the SaaS I see value in, the rest I build*. efrem.io. <https://efrem.io/blog/en/i-only-pay-for-saas-i-see-value-in/>
 
-*Notes:* Both references present commercial theses; their application to school outreach is a teaching scenario developed for this guide. Thoughtworks is a technology consultancy and Sequoia is an investor. The text does not adopt market forecasts, rigid divisions between intelligence and judgment, or the idea that every agent learns or is continuously trained in operation as facts. The personal build-or-buy account is documented in the author’s posts.
+*Notes:* Both references present commercial theses; their application to school outreach is a teaching scenario developed for this guide. Thoughtworks is a technology consultancy and Sequoia is an investor. The text does not adopt market forecasts, rigid divisions between intelligence and judgment, or the idea that every agent learns or is continuously trained in operation as facts. The accounts of the public-safety app, the bulk directory invite, and the build-or-buy decision are the author's.
 
 </div>

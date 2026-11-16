@@ -50,12 +50,16 @@ layout: default
 							{% if c.interactive %}&middot; 🧪 {{ c.interactive }}{% endif %}
 							<span class="g-read-flag" hidden>&middot; ✓ {{ t.read }}</span>
 						</span>
-						{% if c.piece %}<span class="g-chapter-piece">🧩 {{ t.piece }}: {{ c.piece }}</span>{% endif %}
+						{% if c.piece %}<span class="g-chapter-piece"><span class="g-piece-icon" aria-hidden="true">🧩 </span>{{ t.piece }}: {{ c.piece }}</span>{% endif %}
 					</span>
 				</a>
 				{% endif %}
 			{% endfor %}
 		</div>
+		<details class="g-aula g-act-close-details">
+			<summary>{{ t.closing_kicker }} {{ part_number }} &middot; {{ part.closing_title }}</summary>
+			{% include guia/fechamento-ato.html act=part part_number=part_number chapters=chapters texts=t is_book=false in_details=true %}
+		</details>
 	</section>
 {% endfor %}
 
