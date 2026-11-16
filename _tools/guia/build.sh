@@ -2,7 +2,7 @@
 # Gera o site com a mesma imagem que o GitHub Pages usa (precisa de Docker).
 # Uso: _tools/guia/build.sh [pasta-de-trabalho]   (padrão: $TMPDIR/efrem-io-build)
 # O site fica em <pasta-de-trabalho>/src/_site. A pasta temp/ nunca é copiada.
-set -e
+set -euo pipefail
 RAIZ="$(cd "$(dirname "$0")/../.." && pwd)"
 OUT="${1:-${TMPDIR:-/tmp}/efrem-io-build}"
 IMG=ghcr.io/actions/jekyll-build-pages:v1.0.13

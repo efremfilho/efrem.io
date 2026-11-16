@@ -1,5 +1,6 @@
 ---
-title: "Pensamento computacional: do problema ao passo a passo"
+title: "Estamos construindo a mesma coisa?"
+subtitle: "Pensamento computacional, fluxos e camadas."
 description: "Você não precisa escrever código. Precisa quebrar um problema, desenhar o fluxo e reconhecer as peças de que todo software é feito. É isso que dá autonomia a quem quer construir."
 lang: pt-BR
 ref: computational-thinking
@@ -8,13 +9,13 @@ part: 2
 permalink: /ia/pensamento-computacional/
 interactive: "monte o algoritmo + camadas + loop"
 piece: "o fluxo da busca ativa e um mini-PRD"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 7
 
-Antes de dividir o trabalho, Lia propôs um teste: cada pessoa pede ao seu agente que desenhe o fluxo da busca ativa, do jeito que ela mesma explicaria. Voltaram três fluxos. No da Bia, tudo começa quando a escola liga. No do Caio, quando a planilha chega. No da Lia, quando alguém percebe. E quantas faltas disparam o primeiro contato? Cada agente tinha um número — o que a sua pessoa deu. Caio queria juntar os três "e pronto". Bia queria que valesse o dela, que é o que acontece na rua. Se o próprio time não descreve o trabalho do mesmo jeito, o que três agentes vão construir?
+A lista ajudava Bia a organizar contatos. Quando ela saiu para uma visita, Caio não soube se uma linha marcada significava "contato tentado" ou "família atendida". Iara precisava de um retorno; o time tinha de refazer parte da leitura. Já havia uma entrega em uso e uma conta para pagar. Fazer a lista depender menos de Bia parecia uma melhoria óbvia. Até começarem a desenhar. Cada pessoa pediu ao seu agente que desenhasse o fluxo da busca ativa. No da Bia, tudo começava quando a escola ligava. No do Caio, quando a planilha chegava. No da Lia, quando alguém percebia. Não eram só desenhos diferentes: eram jeitos de entrar na fila. Maia, coordenadora de comunicação de uma organização parceira, participou dessa reunião. Pediu um fluxo "mais estratégico" para a apresentação. Quando Bia perguntou o que mudaria, ficou de mandar um exemplo e saiu antes da divisão do trabalho. Caio propôs comparar quantas visitas caberiam com três ou cinco faltas. Bia queria reservar espaço para os pedidos urgentes das escolas. Lia precisava fechar o escopo para cumprir o prazo que tinha prometido. "Fica cinco; as exceções passam por mim." Bia perguntou o que aconteceria quando Lia estivesse em reunião. No desenho, a caixa "revisar" não tinha duração. Na vida, tinha?
 </div>
 
 Eu sempre fui *builder*. Mesmo formado em Ciência da Computação, passei boa parte da carreira construindo com ferramentas de pouco ou nenhum código e escrevendo, no máximo, um bocadinho de script — os repositórios antigos do meu GitHub trazem na descrição, com toda a honestidade, "meus scripts preguiçosos". O motivo é simples: eu odiava programar. Não a lógica: a precisão. Eu esquecia um parêntese e me lascava por causa da porcaria de um parêntese.
@@ -36,6 +37,18 @@ No Brasil, a ideia chegou até às diretrizes de um curso que não é de computa
 "Um agente de processamento de informações." Quando foi escrita, era uma expressão abstrata. Hoje é literal: é o agente de IA aberto na sua tela, esperando você formular o problema.
 
 É o foco da disciplina que eu dou na FGV EPPG: entender que dá para automatizar com código, de forma determinística, e que a IA precisa ser usada de um jeito que [forme o nosso pensamento crítico](/blog/pt/how-to-teach-critical-use-of-ai/), não que o substitua.
+
+## O que fica mais claro depois de uma primeira tentativa?
+
+No [roteiro de um dos meus workshops](https://efrem.io/jazida/), proponho começar por uma planilha: pedir código para analisar os dados, construir um fluxo que percorre os registros e transformar o resultado numa tela. Só depois entram modularização, comentários, testes e registros de execução. No exercício final, cada pessoa pode escolher um problema próprio ou adaptar o agente que foi apresentado.
+
+Repare no que essa sequência põe na mesa. O gráfico, a regra que trata cada registro e a tela são partes diferentes. Se a contagem está errada, pintar o painel de outra cor não resolve. Se a regra classifica algo como arriscado, quem definiu o critério? A primeira versão dá onde apontar essas perguntas. A próxima volta pode mudar uma parte, sem pedir que o agente invente tudo de novo.
+
+## Onde a IA entra nesse fluxo?
+
+Na lista da Lia, há dois desenhos sobrepostos. Um mostra **como o time constrói e melhora o serviço**: conversa com agentes, pede código, compara saídas, revisa. O outro mostra **como o serviço atende alguém**: recebe faltas, aplica uma regra, prepara contato, registra retorno. A IA pode ajudar no primeiro sem estar em todas as etapas do segundo.
+
+Se um modelo resume a nota de visita toda vez que chega uma nova, ele participa da operação. Se escreveu uma vez o código que filtra a lista, ajudou a construir uma rotina que pode dispensá-lo ao executar. Nos dois casos, alguém precisa compreender o que entra, o que muda e o que a próxima pessoa recebe. Desenhe os dois caminhos: em qual deles está a dificuldade que você quer resolver agora?
 
 ## Como se pensa um problema para uma máquina?
 
@@ -64,7 +77,9 @@ Desenhar fluxo não depende de ferramenta de arrastar caixinha. É pensar algori
 
 É a pergunta que sempre aparece. Escrever código, provavelmente não. Ler, sim — e ler código, hoje, é em boa parte ler inglês com paciência. O processo que eu peço a qualquer turma é este: **peça em linguagem natural, deixe o agente gerar e depois entenda o que o código está fazendo.** Não entendeu um trecho? Eu também não entendo vários. Copio, colo num assistente e pergunto.
 
-Para ler, cinco ideias bastam. Quem usa planilha já conhece todas:
+Eu [escrevi que estava aprendendo código como efeito colateral](/blog/pt/chapter-7-learning-code-as-a-side-effect/). Meu objetivo continuava sendo melhorar em produto e conseguir pedir a implementação. Mas ler a resposta me fazia querer entender o que estava acontecendo. Não precisei decidir "vou virar da área técnica" antes de começar a aprender.
+
+Para começar a ler, cinco ideias ajudam. Quem usa planilha já esbarrou em várias delas:
 
 1. **Função**: um nome, parênteses e, dentro deles, aquilo de que ela precisa para trabalhar. `=SOMA(2;3)` é uma função que alguém escreveu e você usa. Em código é igual — e dá para criar as suas.
 2. **Variável**: um nome para um valor que pode mudar. Na planilha, é a célula: `A1` continua sendo `A1` quando o número lá dentro muda. Num contrato, é "o vendedor": definido uma vez no alto, vale para o resto do texto — e, se a pessoa mudar, o contrato inteiro continua de pé.
@@ -151,25 +166,37 @@ E tem uma condição. As ferramentas democratizaram o *fazer*; o *pensar* contin
 
 Quem quer mudar alguma coisa construindo com tecnologia precisa de duas pernas: letramento em IA generativa e pensamento computacional. Uma sem a outra manca.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- Quem precisa ser preciso agora é o agente. Formular o problema continua com você.
-- Decompor, reconhecer padrões, abstrair e escrever o passo a passo: quatro movimentos que servem com ou sem computador.
-- Função, variável, condicional, loop e API: cinco ideias bastam para ler o que o agente escreveu. Ler não dispensa testar.
-- Todo software tem frente, regras e dados, com APIs no meio. Apontar a camada certa é metade do pedido.
-- Um bom pedido diz o que o sistema não faz e como você vai conferir.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** por que cinco faltas, e não três? Serve igual para quem estuda de dia e para quem estuda à noite? Qual passo desse fluxo ninguém quer que uma máquina dê?
+- **Em disputa:** O fluxo precisa caber no prazo e no dia de quem atende. Que decisão o desenho está escondendo quando diz apenas "revisar"?
 - **Caminhos na mesa:**
-  - *Caio:* pedir a um agente que funda os três fluxos. Rápido — e as decisões escondidas continuam escondidas.
-  - *Bia:* uma semana em campo, anotando o que acontece de fato.
-  - *Lia:* discutir só as decisões (o número, o gatilho, o passo que é de gente) e deixar o desenho para o agente.
-- **O que o time fez, por enquanto:** um fluxo só, com cada decisão marcada e assinada; o mini-PRD; e a divisão: Caio fica com a contagem, Bia com o que aparece no celular de quem visita, Lia com as regras. Cada pessoa revisa o trabalho de outra.
+  - *Caio:* simular filas com limites diferentes antes de escolher. Torna a carga visível, mas consome tempo e não mede a urgência de cada vida.
+  - *Bia:* reservar parte da agenda para urgências trazidas pelas escolas. Abre uma entrada para exceções, mas reduz a previsibilidade e depende de quem consegue pedir.
+  - *Lia:* manter cinco faltas e concentrar nela a decisão sobre exceções. Fecha um escopo implementável, mas cria uma fila esperando por uma pessoa.
+- **O que o time fez, por enquanto:** registrou o fluxo e o mini-PRD com a proposta de Lia, ainda contestada por Bia. Caio implementa a contagem com seu agente; Bia, o uso no celular; Lia, as regras. Uma pessoa revisa a entrega da outra. As exceções operacionais, porém, ficaram com Lia — inclusive quando ela não estivesse disponível.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Decompor e abstrair:** separar o problema em partes e escolher o que importa para aquela tarefa.
+- **Variável e função:** dar nome a um valor e a um trabalho que pode ser chamado de novo.
+- **Condicional e loop:** decidir conforme uma regra e repetir uma ação. O fluxo ajuda a enxergar os dois.
+- **Camadas e API:** separar tela, regras e dados; definir como as partes trocam pedidos e respostas.
+
+Se a tela mostra um total errado, como essas distinções ajudam a formular um pedido melhor que "conserte tudo"?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Desenhe o caminho de uma entrada até uma entrega do seu projeto. Onde existe uma condição, uma repetição ou uma troca com outro serviço? Peça ao agente que explique como isso aparece na versão que você já fez. Escolha uma parte para mudar e confira o efeito: o desenho ajudou a prever o que aconteceria?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -203,8 +230,10 @@ Mostre um script curto, gerado por um assistente. Antes de executar, cada pessoa
 - BRENNAN, Karen; RESNICK, Mitchel. **New frameworks for studying and assessing the development of computational thinking**. Trabalho apresentado na reunião anual da American Educational Research Association, Vancouver, 2012. Disponível em: <http://scratched.gse.harvard.edu/ct/files/AERA2012.pdf>. Acesso em: 15 nov. 2026.
 - DENNY, Paul *et al.* **Computing education in the era of generative AI**. [*S. l.*]: arXiv, 2023. DOI: <https://doi.org/10.48550/arXiv.2306.02608>. Acesso em: 15 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Capítulo 3: a autonomia é o diferencial, não a velocidade**. [*S. l.*]: efrem.io, 1 abr. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/chapter-3-autonomy-not-speed/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Capítulo 7: aprendendo código como efeito secundário**. [*S. l.*]: efrem.io, 2 maio 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/chapter-7-learning-code-as-a-side-effect/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Como ensinar a usar IA criticamente? Um pedido de ajuda**. [*S. l.*]: efrem.io, 13 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/how-to-teach-critical-use-of-ai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Do que eu abro mão no low-code, e por que isso está mudando**. [*S. l.*]: efrem.io, 13 maio 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/what-i-give-up-with-low-code/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Mão na massa com IA**: criando apps e automações. [*S. l.*], [s. d.]. Apresentação de slides. Disponível em: <https://efrem.io/jazida/>. Acesso em: 15 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Minha apresentação na BB Digital Week sobre experimentação com GenAI**. [*S. l.*]: efrem.io, 28 out. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/my-bb-digital-week-talk-on-experimentation-with-genai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **mvp.without.dev**: how-to for MVPs without a need of developers. [*S. l.*], 2020. Repositório no GitHub. Disponível em: <https://github.com/efremfilho/mvp.without.dev>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **O problema é ser uma mera proxy para a IA**. [*S. l.*]: efrem.io, 15 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-problem-is-being-a-mere-proxy-for-ai/>. Acesso em: 13 nov. 2026.
@@ -214,5 +243,7 @@ Mostre um script curto, gerado por um assistente. Antes de executar, cada pessoa
 - WING, Jeannette M. Computational thinking. **Communications of the ACM**, New York, v. 49, n. 3, p. 33-35, mar. 2006. DOI: <https://doi.org/10.1145/1118178.1118215>. Acesso em: 13 nov. 2026.
 
 *Notas:* Os trechos usados na seção de pesquisa, no original. Brennan e Resnick (2012): conceitos "sequences, loops, parallelism, events, conditionals, operators, and data"; práticas "being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing". Denny *et al.* (2023, seção 4; versão final publicada em *Communications of the ACM*, 2024): "Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content". Prather *et al.* (2024, resumo): estudo com 21 estudantes; quem teve dificuldade "thought they performed better than they did, and finished with an illusion of competence". Sarkar *et al.* (2022): "End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills."
+
+O exemplo do workshop foi conferido nas páginas 27–31 e 38 de *Mão na massa com IA: criando apps e automações*. O texto descreve a proposta dos exercícios, sem afirmar resultados da turma. As ferramentas citadas nos slides foram omitidas do corpo: o exemplo enfatiza análise, fluxo, tela e revisão das partes.
 
 </div>

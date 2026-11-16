@@ -6,6 +6,7 @@ const { chromium } = require('playwright');
 	await p.goto(url, { waitUntil: 'networkidle' });
 	await p.emulateMedia({ media: 'print' });
 	await p.evaluate(() => window.dispatchEvent(new Event('beforeprint')));
+	await p.evaluate(() => document.fonts.ready);
 	await p.pdf({ path: out, preferCSSPageSize: true, printBackground: true });
 	await b.close();
 	console.log('pdf ok', out);

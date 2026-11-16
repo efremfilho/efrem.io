@@ -1,29 +1,44 @@
 ---
-title: "Seu repositório é a sua memória"
+title: "Como uma correção desapareceu?"
+subtitle: "Repositório, versões e integração."
 description: "Git e GitHub para quem não é dev: a máquina do tempo que deixa você errar sem medo e o lugar onde o contexto do projeto mora — independente de qual IA você usa."
 lang: pt-BR
 ref: repo-memory
 order: 11
-part: 3
+part: 2
 permalink: /ia/repositorio-e-memoria/
 interactive: "linha do tempo de branches + anatomia do repositório"
 piece: "o repositório com as decisões registradas"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 11
 
-Segunda-feira, a contagem voltou a errar. Caio tinha "melhorado" o script no fim de semana; Bia tinha mexido na mesma parte na sexta. Uma versão engoliu a outra, e ninguém sabia dizer qual estava no ar. No meio da discussão, Iara ligou para perguntar por que cinco faltas — e a resposta estava na cabeça de alguém que saiu da organização em março. O time tinha código em três computadores e os porquês em nenhum. Onde um time guarda o que decidiu? E quem mexeu em quê?
+Na segunda-feira, as transferências voltaram a ser contadas em dobro. Lia tinha enviado à secretaria uma cópia do script anterior à revisão de Bia. Caio corrigira outra parte no fim de semana; as duas mudanças estavam certas separadamente, mas não estavam juntas. "Então só uma pessoa mexe", sugeriu Lia. Bia discordou: se tudo esperasse uma pessoa, continuariam perdendo visitas. Pediu ao agente que comparasse as cópias; Caio revisou as diferenças e encontrou a correção perdida. No meio disso, Iara perguntou de onde vinha o limite de cinco faltas. Lia tinha documentado como contar, não por que aquele limite existia. Como guardar tanto o que mudou quanto o que ninguém ainda sabe explicar?
 </div>
 
-A primeira coisa que eu recomendo para quem começa a construir qualquer coisa com IA — produto, automação, até um agente pessoal — não é uma ferramenta de IA. É criar um repositório.
+A primeira coisa que eu recomendo para quem começa a construir qualquer coisa com IA — produto, automação, um livro, até um agente pessoal — não é uma ferramenta de IA. É criar um repositório.
 
-Parece conselho de programador para programador. Não é. Se o [capítulo 8](/ia/contexto/) disse que o modelo só sabe o que está na janela, este responde à pergunta seguinte: **onde fica guardado tudo o que precisa voltar para a janela amanhã?**
+Parece conselho de programador para programador. Não é. Se o [capítulo 8](/ia/contexto/) disse que as decisões do projeto precisam chegar à janela, este responde à pergunta seguinte: **onde fica guardado tudo o que precisa voltar para a janela amanhã?**
+
+## Precisa ter código para ser um projeto?
+
+Eu prefiro transformar o trabalho num projeto no GitHub, mesmo quando a entrega não é software. Este livro é um exemplo. Acaba que quase sempre aparecem scripts que agentes codadores executam, mas não é a presença de código que faz o projeto valer a pena.
+
+O que eu quero guardar é o caminho: decisões, alternativas que já tentamos, atas, o que ficou pendente. Crio pastas `docs/` para isso e uso o `AGENTS.md` para orientar quem vai trabalhar ali. Se amanhã eu trocar de agente, não quero começar contando a história inteira de novo.
+
+Pense num livro que mudou de estrutura. A versão atual mostra onde cada capítulo ficou. O registro da decisão explica por que ele mudou, o que foi descartado e o que ainda está em discussão. São memórias diferentes, e preciso das duas. Guardar só a última versão é como guardar a resposta e perder a pergunta.
+
+## E quando o time constrói separado e tenta juntar depois?
+
+Eu [já fiz essa gambiarra](/blog/pt/processes-and-guardrails-for-product-builders-and-devs/): um ambiente de testes para quem construía produto, separado do trabalho de desenvolvimento. Depois veio a dor de modularizar e integrar o que tinha sido feito. Minha conclusão naquele relato: deveríamos ter levado mudanças menores para revisão no ambiente de desenvolvimento desde o começo.
+
+Também estava experimentando revisão automática de código. Teve vez em que ajudou muito e vez em que nem respondeu. Eu ainda não tinha uma conclusão. Ter uma ferramenta de revisão não tinha resolvido o processo de revisão. É por isso que o repositório entra aqui: para combinar como o trabalho se encontra, e não só onde o arquivo fica.
 
 ## O que é um repositório, afinal?
 
-**Git** é um sistema que guarda todas as versões de uma pasta de arquivos. Nasceu na comunidade do Linux, puxada por Linus Torvalds — [a história é curta e boa (em inglês)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Sabe o histórico de versões de um documento on-line? É isso, para um projeto inteiro e com muito mais controle.
+**Git** é um sistema que [registra versões dos arquivos que você escolhe acompanhar e salvar no histórico](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository). Nasceu na comunidade do Linux, puxada por Linus Torvalds — [a história é curta e boa (em inglês)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Sabe o histórico de versões de um documento on-line? É isso, para um projeto inteiro e com muito mais controle.
 
 **GitHub** é um site que hospeda essas pastas versionadas — os **repositórios** — e acrescenta o que falta para trabalhar em grupo: permissões, revisão, discussão.
 
@@ -34,7 +49,7 @@ O vocabulário mínimo:
 - **Pull request (PR)**: o pedido para juntar o seu galho de volta na linha principal. "Olha o que eu fiz. Pode entrar?"
 - **Review**: alguém olha o PR antes de aprovar. No meu time, eu reviso o que outra pessoa do time faz e ela revisa o que eu faço — e uma IA revisa os dois.
 - **Merge**: o galho aprovado se junta à linha principal.
-- **Rollback**: deu errado, volta para a versão anterior. Nada se perde.
+- **Rollback**: deu errado, recupera uma versão anterior dos arquivos que foram salvos. Não desfaz automaticamente o que aconteceu fora deles.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocação:** brinque com a linha do tempo. Depois, na anatomia do repositório, procure: em qual arquivo estaria a resposta para "por que cinco faltas"?
@@ -44,7 +59,7 @@ O vocabulário mínimo:
 
 ## Por que isso importa tanto com IA?
 
-**Porque dá para errar sem medo.** Um agente vai mexer nos seus arquivos. Às vezes vai mexer mal. Com Git, a pior consequência é "volta uma versão". Sem Git, é "espero que eu tenha uma cópia".
+**Porque dá para errar sem medo.** Um agente vai mexer nos seus arquivos. Às vezes vai mexer mal. Com o trabalho salvo no histórico, posso comparar e recuperar versões. Isso ajuda a consertar arquivos; não é um botão para desfazer qualquer consequência no mundo. Sem histórico, muitas vezes sobra "espero que eu tenha uma cópia".
 
 **Porque o agente cuida da burocracia.** Eu não crio branches à mão. Em um dos projetos em que trabalho há mais de mil, todas criadas e gerenciadas por agentes. Meu papel é dizer o que eu quero e revisar o que chega no pull request.
 
@@ -56,9 +71,9 @@ No meu trabalho, hoje, é assim: a gente discute a estratégia e divide. Uma fun
 
 ## Onde mora a memória de um projeto?
 
-Código é só uma parte do que eu guardo. A outra é tudo aquilo que eu não quero explicar duas vezes — para uma IA ou para uma pessoa.
+Nas minhas pastas `docs/`, documento decisões, caminhos já tomados e atas. É o que eu não quero explicar duas vezes — para uma IA ou para uma pessoa. A estrutura abaixo mostra jeitos de separar esse material; pode começar com poucos arquivos e crescer conforme fizer falta.
 
-<div data-widget="tabs" data-layout="tree" data-title="Anatomia de um repositório que lembra das coisas" data-sub="Clique em cada arquivo ou pasta. Nenhum deles é código." markdown="1">
+<div data-widget="tabs" data-layout="tree" data-title="Anatomia de um repositório que lembra das coisas" data-sub="Explore as instruções, as decisões e os registros que ajudam a retomar o trabalho." markdown="1">
 
 #### README.md
 
@@ -66,7 +81,7 @@ A porta de entrada. O que é o projeto, para quem serve, como rodar. Escrito par
 
 #### AGENTS.md
 
-As instruções permanentes para agentes: como o projeto está organizado, que comandos usar, o que **nunca** fazer, como testar antes de dizer que terminou. [AGENTS.md](https://agents.md/) é um formato aberto — um "README para agentes" — que a maioria das ferramentas lê sozinha ao abrir o projeto. Algumas usam um nome próprio para esse arquivo; eu mantenho os dois, para não ficar preso a uma ferramenta.
+As instruções permanentes para agentes: como o projeto está organizado, que comandos usar, o que **nunca** fazer, como testar antes de dizer que terminou. [AGENTS.md](https://agents.md/) é um formato aberto — um "README para agentes" — que ferramentas compatíveis podem ler ao abrir o projeto. Algumas usam um nome próprio para esse arquivo; eu mantenho os dois, para não ficar preso a uma ferramenta.
 
 ```
 # Regras deste projeto
@@ -79,6 +94,10 @@ As instruções permanentes para agentes: como o projeto está organizado, que c
 #### docs/decisoes/
 
 Uma decisão por arquivo: o que foi proposto, o que foi escolhido e **por quê**. Serve para o agente não reabrir, toda semana, uma discussão que o time já encerrou — e para a pessoa nova entender o caminho até aqui.
+
+#### docs/atas/
+
+O que foi discutido, o que ficou decidido e o que continua aberto. Uma conversa pode ter dez sugestões e uma decisão; a ata precisa deixar a diferença visível.
 
 #### docs/regras/
 
@@ -94,11 +113,34 @@ Os roteiros e scripts de tarefas que se repetem: publicar uma versão, gerar o r
 
 #### docs/erros/
 
-O que já deu errado e não deve se repetir. "Tentamos fazer assim, quebrou por causa disso, o caminho certo é aquele." É o mais próximo que um agente chega de aprender com a experiência.
+O que já deu errado e não deve se repetir. "Tentamos fazer assim, quebrou por causa disso, o caminho certo é aquele." É experiência registrada para orientar a próxima sessão, sem precisar retreinar o modelo.
 
 </div>
 
 Quem escreve esses documentos? Na maior parte das vezes, a própria IA, a meu pedido: *"gere a documentação do que aprendemos nesta sessão"*. Eu leio, corrijo e faço o commit.
+
+## E se a reunião virasse matéria-prima?
+
+O caso mais simples e talvez o mais útil: eu gravo reuniões (com o conhecimento de quem participa), pego a transcrição e uso como matéria-prima. "Crie um documento com as regras que definimos." "Liste as decisões e quem ficou com o quê." "O que ficou em aberto?" Contei o método [neste texto](/blog/pt/recording-calls-to-think-with-claude/).
+
+Este guia, aliás, nasceu assim: da gravação das minhas aulas e de uma conversa de uma hora e meia em que eu mostrava meu jeito de trabalhar a um amigo.
+
+## Este livro também trabalha assim?
+
+Sim. O [projeto deste site e deste guia](https://github.com/efremfilho/efrem.io) tem texto, regras de trabalho, fontes e ferramentas no mesmo lugar. Não é preciso estar construindo um aplicativo para isso fazer sentido.
+
+| Onde | O que resolve neste projeto |
+|---|---|
+| `AGENTS.md` | Registra o público, o tom, as regras editoriais e o que conferir antes de considerar uma mudança pronta. |
+| `_guia/` | Guarda os capítulos em português e inglês; deles saem as páginas e a versão livro. |
+| `_tools/guia/` | Guarda scripts que montam referências, conferem o guia, testam experimentos e ajudam a gerar o site e o PDF. |
+| `temp/` | Reúne material de preparação local e privado, como transcrições e rascunhos; fica fora do repositório publicado e do site. |
+
+A estrutura de `docs/` acima é um exemplo de organização, não uma receita de pastas obrigatórias. Aqui, parte do material de trabalho está em `temp/`. **Estar na pasta do projeto não significa estar publicado.** As regras deste projeto deixam essa diferença explícita; o nome da pasta sozinho não faz isso.
+
+Uma decisão editorial concreta: português primeiro, inglês como espelho. Isso está nas instruções, em vez de depender de eu lembrar de repetir a cada pedido. Outra: referências são geradas a partir de uma base comum. O agente pode trabalhar no texto e executar os scripts de conferência no mesmo projeto. É desenvolvimento a serviço de um livro.
+
+E tem um limite importante: documento guardado não é documento lido. O agente precisa localizar o registro pertinente e trazê-lo para a tarefa. O repositório conserva o caminho; o contexto põe a parte necessária desse caminho na mesa.
 
 ## E se a ferramenta da moda mudar amanhã?
 
@@ -112,23 +154,36 @@ Vale para gente também. Entrou uma pessoa nova no time? Libera o acesso ao repo
 **Por onde começar:** crie uma conta no GitHub, depois uma **organização** para a sua empresa ou projeto (separada do seu perfil pessoal), e dentro dela um repositório **privado**. Peça ao seu assistente de IA para criar a estrutura acima. Comece hoje — é muito mais fácil documentar desde o início do que reconstruir depois.
 </div>
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- Git é a rede de proteção: tudo tem histórico, nada é definitivo.
-- Branch + pull request + revisão é o que deixa um agente trabalhar sem colocar produção em risco.
-- O que está no repositório é seu e funciona com qualquer IA. O que está só na conversa se perde.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** o que hoje só existe na cabeça de uma pessoa? Quem pode mudar o que está no ar, e quem olha antes?
+- **Em disputa:** Centralizar evita algumas colisões e cria espera. Dividir permite avançar, mas exige combinar como as partes se encontram. Onde ficam os porquês?
 - **Caminhos na mesa:**
-  - *Caio:* cada pessoa na sua cópia, junta tudo no fim. Ninguém espera ninguém — e o fim é uma briga.
-  - *Bia:* uma pessoa só mexe no que está no ar.
-  - *Lia:* um repositório para tudo; cada pessoa pega um pedaço, e nada entra sem a revisão de outra.
-- **O que o time fez, por enquanto:** o repositório, com as instruções para os agentes e a pasta de decisões. A primeira decisão registrada foi "por que cinco faltas": com data, e com um honesto "não sabemos; herdamos".
+  - *Lia:* uma pessoa mantém a versão que vai ao ar. Simplifica a coordenação, mas concentra trabalho e dependência nela.
+  - *Caio:* separar as partes e combinar horários de integração. Preserva autonomia, mas as regras compartilhadas ainda podem entrar em conflito.
+  - *Bia:* usar um repositório com propostas de mudança e revisão de outra pessoa. Permite comparar e recuperar versões salvas, mas exige aprender uma rotina e reservar tempo para revisar.
+- **O que o time fez, por enquanto:** adotou a proposta de Bia. Guardou o script, os testes, as instruções dos agentes e as decisões no repositório. Caio reuniu as correções; Bia revisou; Lia substituiu a cópia enviada. Sobre as cinco faltas, registraram "não sabemos; herdamos". O histórico começava ali, com essa lacuna.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Repositório:** reúne os arquivos de um projeto, mesmo que a entrega não seja código.
+- **Versão e revisão:** registram mudanças e ajudam a comparar e combinar trabalhos. Recuperar um arquivo não desfaz uma ação externa.
+- **Memória:** decisões, motivos e dúvidas precisam ficar registradas e ser lidas; o histórico não explica sozinho todos os porquês.
+
+Qual é a diferença entre conseguir recuperar uma versão e conseguir explicar por que ela foi escolhida?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Guarde no repositório uma decisão, uma versão da entrega e a pergunta que ainda ficou aberta. Pode ser um projeto sem código. Peça ao agente que retome o trabalho a partir desses arquivos e explique por que a decisão foi tomada. O que ele precisou adivinhar? Acrescente o que faltou, sem apagar a dúvida.
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -152,6 +207,12 @@ Cada pessoa cria uma conta no GitHub e um repositório privado para um projeto p
 
 - AGENTS.MD. [*S. l.*], [2025?]. Disponível em: <https://agents.md/>. Acesso em: 13 nov. 2026.
 - CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 1.2: A short history of Git. Disponível em: <https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git>. Acesso em: 13 nov. 2026.
+- CHACON, Scott; STRAUB, Ben. Recording changes to the repository. In: CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 2.2. Disponível em: <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>. Acesso em: 15 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **efrem.io**. [*S. l.*]: GitHub, [s. d.]. Repositório do site e do guia IA sem mágica. Disponível em: <https://github.com/efremfilho/efrem.io>. Acesso em: 15 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **O AgentKit não vai acabar com os iPaaS**. [*S. l.*]: efrem.io, 7 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/agentkit-wont-kill-the-ipaas/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Processos e guardrails para product builders e devs trabalharem juntos**. [*S. l.*]: efrem.io, 28 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/processes-and-guardrails-for-product-builders-and-devs/>. Acesso em: 13 nov. 2026.
+
+*Notas:* A preferência por criar projetos no GitHub mesmo quando a entrega não é código, usando AGENTS.md e pastas docs/ para decisões, caminhos percorridos e atas, é um relato do autor. O caso do próprio site e livro descreve a estrutura do repositório: README.md, AGENTS.md, capítulos, ferramentas e regras de exclusão em .gitignore e _config.yml. A pasta temp/ é material local e privado; seus conteúdos não são reproduzidos neste exemplo. Git mantém o histórico registrado dos arquivos acompanhados, não uma cópia automática de tudo que existe na pasta de trabalho (Chacon; Straub, 2014, seção 2.2).
 
 </div>

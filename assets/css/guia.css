@@ -179,6 +179,27 @@
 }
 .g-part-label::after { content: ""; height: 1px; flex: 1; background: var(--border); }
 .g-part-desc { margin: 0 0 1rem; font-size: .95rem; }
+.g-act-lenses { margin: 1rem 0 1.4rem; font-size: .92rem; }
+.g-act-lenses dt { margin-top: .65rem; font-weight: 700; color: var(--accent-2); }
+.g-act-lenses dd { margin: .15rem 0 0; }
+.g-cycle { margin: 1.5rem 0; }
+.g-cycle ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; list-style: none; padding: 0; margin: 0; }
+.g-cycle li { position: relative; margin: 0; padding: .8rem; border: 1px solid var(--border); border-radius: .7rem; background: var(--g-tint); }
+.g-cycle li + li::before { content: "→"; position: absolute; left: -1.05rem; top: .8rem; color: var(--accent); }
+.g-cycle strong, .g-cycle span { display: block; }
+.g-cycle span { margin-top: .4rem; font-size: .88rem; }
+.g-cycle figcaption { margin-top: .8rem; font-size: .9rem; color: var(--muted); }
+.g-project { border-left: 3px solid var(--accent-2); padding-left: 1rem; margin: 2rem 0; }
+@media (max-width: 700px) {
+	.g-cycle ol { grid-template-columns: 1fr; }
+	.g-cycle li + li::before { content: "↓"; left: .8rem; top: -1.4rem; }
+}
+@media print {
+	.g-cycle { break-inside: avoid; }
+	.g-cycle ol { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.g-cycle li + li::before { content: "→"; left: -1.05rem; top: .8rem; }
+	.g-project { break-inside: avoid; }
+}
 .g-chapters { display: grid; gap: .7rem; }
 .g-chapter {
 	display: flex;
@@ -494,14 +515,20 @@
 	html { font-size: 11pt; }
 	body { background: #fff; color: #111; }
 	body::before { display: none; }
-	main { max-width: none; padding: 0; animation: none; }
+	*, *::before, *::after { animation: none !important; transition: none !important; }
+	main { max-width: none; padding: 0; animation: none; opacity: 1; transform: none; }
 	.site-nav, .g-progressbar, .post-nav-links, .g-media, .b-actions, .g-book-link, .g-index-progress, main > footer:not(.post-footer) { display: none !important; }
 	a { color: inherit; text-decoration: none; }
 	h1, h2, h3, h4, h5 { break-after: avoid; }
 	p, li { orphans: 3; widows: 3; }
-	pre, table, .g-box, .gw-checklist, .g-chapter, tr { break-inside: avoid; }
+	pre, blockquote, table, .g-box, .g-lia, .g-project, .gw-checklist, .g-chapter, .g-aula, .g-stack, tr {
+		page-break-inside: avoid;
+		break-inside: avoid-page;
+	}
 	.g-content pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-	.g-content table { display: table; }
+	.g-content table, .g-intro table { display: table; width: 100%; overflow: visible; }
+	thead { display: table-header-group; }
+	tfoot { display: table-footer-group; }
 
 	/* widgets feitos em JS viram uma nota com o endereço */
 	.gw.gw-js { display: none !important; }
@@ -516,15 +543,20 @@
 	}
 	/* abas: todos os painéis, cada um com seu título */
 	.gw { border-color: var(--border); padding: .8rem .9rem; }
+	/* Cada aba é um quadro completo. O conjunto pode ocupar várias páginas. */
+	.gw[data-widget="tabs"] { border: 0; padding: 0; background: transparent; }
 	.gw-head, .gw-tabs, .gw-checklist-foot, .gw-checklist > .gw-note { display: none !important; }
 	.gw-tabs-wrap.tree { display: block; }
 	.gw .gw-panel[hidden] { display: block !important; }
-	.gw-panel { margin-top: .9rem; }
-	.gw-panel-title { display: block; margin-bottom: .3rem; font-weight: 700; }
+	.gw-panel { margin-top: .9rem; padding: .8rem .9rem; border: 1px solid var(--border); border-radius: .5rem; page-break-inside: avoid; break-inside: avoid-page; }
+	.gw-title, .gw-sub { break-after: avoid; }
+	.gw-panel-title { display: block; margin-bottom: .3rem; font-weight: 700; break-after: avoid; }
 	.gw-tabs-wrap.tree .gw-panel-title { font-family: var(--g-mono); font-size: .9em; }
 
 	/* notas de aula abertas (o JS abre antes de imprimir) */
-	.g-aula { border-style: solid; break-inside: auto; }
+	.g-aula { border-style: solid; break-inside: avoid-page; line-height: 1.45; }
+	.g-aula p, .g-aula ul, .g-aula ol { margin-top: .5rem; margin-bottom: .5rem; }
+	.g-aula li { margin-top: .15rem; margin-bottom: .15rem; }
 	.g-aula summary::after, .g-aula[open] summary::after { content: ""; }
 
 	/* referências: o endereço já está escrito por extenso em cada entrada */
@@ -534,7 +566,7 @@
 	.b-cover { min-height: 235mm; display: flex; flex-direction: column; justify-content: center; border: 0; break-after: page; }
 	.b-cover-credit { margin-top: auto; }
 	.b-toc { border: 0; break-after: page; }
-	.b-part { min-height: 200mm; display: flex; flex-direction: column; justify-content: center; margin: 0; border: 0; break-before: page; break-after: page; }
+	.b-part { min-height: 200mm; display: flex; flex-direction: column; justify-content: center; margin: 0; border: 0; break-before: page; break-after: page; break-inside: avoid-page; }
 	.b-chapter { margin: 0; padding: 0; border: 0; break-before: page; }
 	.b-part + .b-chapter { break-before: auto; }
 	.b-end { display: none; } /* o crédito já está na capa */
@@ -614,3 +646,15 @@
 .g-stack-api::before { content: "↕ "; }
 .g-stack figcaption { margin-top: .6rem; color: var(--muted); font-size: .88em; text-align: center; }
 @media print { .g-stack { break-inside: avoid; } .g-stack-group { background: #f3f4fb; } }
+
+/* A pergunta acompanha o caso; o subtítulo mantém os conceitos à vista. */
+.g-concept-subtitle { display: block; margin: .35rem 0 .6rem; font-size: .95rem; font-weight: 600; line-height: 1.45; color: var(--muted); }
+.b-toc-concepts { display: block; font-size: .82em; font-weight: 400; line-height: 1.4; }
+.b-toc-list li { break-inside: avoid; }
+@media print {
+  .g-concept-subtitle { color: #444; break-after: avoid-page; }
+  .b-chapter-head { break-inside: avoid-page; break-after: avoid-page; }
+  .b-toc { padding: 0; }
+  .b-toc-list { line-height: 1.35; gap: .35rem; }
+  .b-toc-part { margin-top: .9rem; }
+}

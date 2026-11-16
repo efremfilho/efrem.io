@@ -1,0 +1,3 @@
+{% capture opening_cycle %}{% include guia/ciclo.html lang=include.lang %}{% endcapture %}
+{% capture opening_contact %}href="{{ site.data.guia.conversation_url }}"{% endcapture %}
+{{ include.body | markdownify | replace: '<!-- guia-ciclo -->', opening_cycle | replace: 'href="/cv/"', opening_contact }}

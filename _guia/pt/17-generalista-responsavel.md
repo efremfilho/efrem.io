@@ -1,5 +1,6 @@
 ---
-title: "O generalista e a responsabilidade"
+title: "O que muda na próxima volta?"
+subtitle: "Autonomia, responsabilidade e escolhas coletivas."
 description: "Quando saber fazer fica barato, sobra o que sempre foi difícil: saber o que fazer, conferir se ficou certo e responder pelo resultado."
 lang: pt-BR
 ref: generalist
@@ -7,14 +8,14 @@ order: 17
 part: 3
 permalink: /ia/generalista-responsavel/
 interactive: "autoavaliação"
-piece: "a entrega — e a próxima decisão"
-last_modified: 2026-11-15
+piece: "o serviço continua; a próxima aposta está em disputa"
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 17
 
-A secretaria decidiu: fica a solução do time, e a fornecedora fica para depois. Na apresentação, a primeira pergunta foi sobre a tecnologia. Lia respondeu falando das decisões: o que o sistema não rotula, o que não guarda, o que nenhum agente faz sozinho. Ninguém ali virou especialista em programação — Bia continua sem saber o que é um *framework*, e sem a menor vontade de saber. Aída, da tecnologia, agora revisa o que entra no ar. Iara quer levar para o estado inteiro. Bia acha cedo. Caio já abriu o repositório novo. Quem assina embaixo é Lia. O que, exatamente, ela está assinando?
+A secretaria manteve o teste com o time; a proposta da fornecedora continuava disponível. Antes da apresentação, Maia mandou slides chamando o projeto de "solução validada para toda a rede". Bia pediu para retirar a frase. Maia respondeu que o time podia ajustar; mais uma tarefa na fila de Lia. Iara queria levar a proposta de expansão ao estado enquanto havia orçamento. Bia abriu outra lista: retorno para Ian, atualização das mensagens em dois formatos, atendimento às escolas sem conexão. "O teste offline funcionou", disse Caio. "Com dado inventado, e fui eu que expliquei pelo telefone quando travou", respondeu Bia. Ela pediu ao agente uma comparação entre ampliar e estabilizar o atendimento; leu as hipóteses e marcou o que precisava conferir. Caio pediu um plano de troca do serviço de IA. Aída, que agora revisava o que entrava no ar, encontrou uma dependência ignorada. Iara apontou as cidades esperando: suporte contratado também era uma escolha possível. Bia não queria perder o que tinham aprendido; Caio já não queria manter tudo sozinho. Lia tinha de levar uma proposta. Qual parte do serviço o time conseguia assumir na próxima volta — e quem ficaria com o resto?
 </div>
 
 Passei boa parte da carreira me sentindo um pato: nada, anda e voa, mas não faz nenhuma das três coisas muito bem. Um pouco de código, um pouco de dados, um pouco de design, bastante de produto. Em um mercado que premiava especialista, isso parecia um defeito.
@@ -25,9 +26,9 @@ Deixou de parecer.
 
 Quem deu nome ao que eu vinha sentindo foi Karim Lakhani, que pesquisa como a IA muda o trabalho. A tese que ele [repete há anos](https://www.youtube.com/watch?v=vFOnDsy58NU): **o custo marginal da expertise está indo a zero.** E emenda uma provocação para as empresas: se uma empresa é, no fundo, um pacote de expertises, o que ela faz quando esse custo despenca?
 
-Eu [concordo muito](/blog/pt/the-cost-of-expertise-and-the-will-to-build/), com um adendo: quando a expertise fica barata, o que passa a pesar é a vontade de fazer. E tem a piada que venho repetindo: antes eu culpava o time por atraso, coisa mal implementada, experiência ruim. Agora descobri que eu é que sou ruim de definir o produto. Dói, mas é verdade.
+Eu [concordo muito](/blog/pt/the-cost-of-expertise-and-the-will-to-build/), com um adendo: quando a expertise fica barata, o que passa a pesar é a vontade de fazer. A piada com que abri este guia volta aqui: com agentes executando, fica mais difícil esconder de mim a dificuldade de definir o produto. A vontade de fazer não me livra de ler o que fiz.
 
-Não quer dizer que especialistas ficaram inúteis — o [capítulo anterior](/ia/casos-reais/) tem um contador salvando a minha pele. Quer dizer que o *acesso* à execução especializada ficou barato. Eu não tenho mais medo de análise de dados, de código, de design. Não porque virei bom nas três coisas: porque consigo chegar a um resultado decente nas três, rápido, e sei onde chamar alguém.
+Não quer dizer que especialistas ficaram inúteis — o [capítulo sobre delegação](/ia/agentes-com-redea/) tem um contador conferindo o que eu não dominava. Quer dizer que o *acesso* à execução especializada ficou barato. Eu não tenho mais medo de análise de dados, de código, de design. Não porque virei bom nas três coisas: porque consigo chegar a um resultado decente nas três, rápido, e sei onde chamar alguém.
 
 O que isso valoriza é a pessoa que enxerga o processo inteiro. Quem entende o problema de quem vai usar, sabe o que pedir, percebe quando o resultado não faz sentido e junta as partes. Eu chamei isso de virar [uma pessoa "full-service"](/blog/pt/becoming-a-full-service-person-in-tech/) quando isso ainda era aposta.
 
@@ -37,7 +38,7 @@ Hoje eu tenho uma autonomia que nunca tive. Sempre fui meio lobo solitário; ago
 
 Tem um detalhe nessa história que, para mim, é o centro de tudo. Não é só que a execução especializada ficou barata. É que **a expertise passou a chegar em linguagem natural** — em um formato que eu consigo ler.
 
-Antes, o conhecimento de quem é especialista vinha embrulhado no ofício: o código, o modelo estatístico, o arquivo de design, a cláusula do contrato. Para avaliar, eu precisava dominar o ofício ou confiar de olhos fechados. Hoje, quando peço uma análise, recebo junto o plano, o raciocínio, as alternativas descartadas e a explicação de cada escolha — em português. Eu posso ler, perguntar "por quê?", pedir o contra-argumento e só então decidir.
+Antes, o conhecimento de quem é especialista vinha embrulhado no ofício: o código, o modelo estatístico, o arquivo de design, a cláusula do contrato. Para avaliar, eu precisava dominar o ofício ou confiar de olhos fechados. Hoje, quando peço uma análise, recebo junto o plano, o raciocínio, as alternativas descartadas e a explicação de cada escolha — em português. Eu posso ler, perguntar "por quê?", pedir o contra-argumento e só então decidir. A explicação também precisa de conferência: pode justificar com segurança uma escolha ruim. Ler o relato do agente não substitui observar a entrega.
 
 É por isso que eu não gosto do termo *vibe coding*. Ele sugere programar "na vibe", aceitando o que vier sem olhar — ficar só apertando uma tecla para dizer sim. A minha experiência é o oposto.
 
@@ -47,47 +48,27 @@ Eu implico com o termo desde que ele apareceu. No começo o motivo era de identi
 
 A maior mudança no meu dia não foi parar de escrever código. Foi **começar a ler o dia inteiro.** Cheguei a escrever isso em caixa alta: [NUNCA li tanto na minha vida](/blog/pt/how-to-teach-critical-use-of-ai/).
 
-O agente mostra o plano: eu leio. Mostra o raciocínio: eu leio. Explica por que escolheu um caminho: eu leio, e às vezes discordo. Entrega o resultado: eu leio antes de aceitar. Nem sempre leio tudo — quando deixo algo rodando de madrugada, de manhã leio o resumo. Mas alguma coisa eu leio, sempre. E cansa: mentalmente, é mais pesado do que escrever.
+O agente mostra o plano: eu leio. Explica os passos que diz ter seguido: eu leio. Explica por que escolheu um caminho: eu leio, e às vezes discordo. Entrega o resultado: eu leio antes de aceitar. Nem sempre leio tudo — quando deixo algo rodando de madrugada, de manhã leio o resumo. Mas alguma coisa eu leio, sempre. E cansa: mentalmente, é mais pesado do que escrever.
 
 Meu trabalho virou revisar, decidir e redirecionar. Brinco que não sou mais o autor da minha vida, mas continuo sendo o revisor.
 
-A pesquisa de Lakhani com profissionais de consultoria dá nome aos jeitos de trabalhar com IA. A maioria age como **ciborgue**, resolvendo o problema junto com a IA, em vaivém constante; uma parte menor, como **centauro**, que divide o trabalho ("isto eu faço, aquilo ela faz") e supervisiona o que volta; e cerca de um quarto, como **autoautomatizador**, que aperta o *play* e entrega o que sair. Quem aprende menos é o terceiro grupo — nas palavras dele, porque *parou de pensar*.
+Na entrevista, Lakhani descreve três jeitos de trabalhar com IA: **ciborgue**, resolvendo junto, em vaivém; **centauro**, dividindo tarefas e supervisionando o que volta; e **autoautomatizador**, entregando a resposta sem se envolver. Uso essas imagens para perguntar em que papel estou numa tarefa. Elas não medem o valor de uma pessoa nem determinam que toda automação diminua o aprendizado.
 
-Ele é duro com quem cai nessa. Se tudo o que você faz é servir de interface de carne e osso para o silício, qual é o seu valor? Conta que já demitiu gente que justificou um trabalho ruim com "foi a IA que me deu isso". E tem uma regra pessoal que vale copiar: **nunca aceitar a primeira resposta.** Pedir alternativas, mandar o modelo argumentar contra a própria proposta, procurar os sinais de alerta. A primeira resposta é a resposta média; a boa aparece depois que alguém com critério insiste.
+Ele recomenda desconfiar da primeira resposta, pedir alternativas e procurar os sinais de alerta. Isso não faz da segunda uma resposta melhor por definição. O critério é conseguir conferir o que importa naquela tarefa. Senão, dá para trocar uma resposta boa por uma que apenas combinou mais com a minha vontade.
 
-Insistir vale para os dois lados. Levei a uma pesquisa aprofundada algumas apostas minhas, e uma delas ela negou. Como bom pesquisador, não gostei da resposta e mudei a pergunta, para ver se vinha a que eu queria. Não veio. Mudei de novo. Não veio. Aparentemente, ela estava certa.
+Eu também preciso tomar cuidado com o que chamo de revisar. [Duas pesquisas contrariaram minhas hipóteses](/blog/pt/deep-research-with-a-researchers-mindset/). Eu tinha definido o objetivo, dado contexto e revisto o plano. Gostei do resultado? Gostei de ter uma análise melhor. Ter as apostas contrariadas é outra conversa. Se insistir significar reformular a pergunta até ouvir o que eu queria, a revisão virou procura por confirmação.
 
 Meu pedido de sempre é o mesmo: [não seja um proxy de uma IA para outra IA](/blog/pt/generation-and-review-the-two-cycles-of-genai/). O trabalho com IA tem dois ciclos, gerar e revisar, e dá para aprender nos dois. Eu entendo muito mais de código hoje por causa de revisão, não de geração.
 
-Quem imagina que usar IA é apertar um botão e ir tomar café está descrevendo o jeito de usar que dá errado. E é essa pessoa, não quem é generalista e presta atenção, que fica fácil de substituir.
+E eu não estou assistindo a esse problema de fora. [Já escrevi que me pego aceitando o fluxo sem pensar no que estou fazendo](/blog/pt/the-problem-is-being-a-mere-proxy-for-ai/). Em código, delego bastante e muitas vezes nem abro o arquivo: questiono, documento decisões e peço explicações. É o uso que estou construindo para mim. Deixar uma rotina testada trabalhar sozinha pode fazer sentido. O problema é eu não saber mais o que estou aceitando.
 
 ## Como se ensina isso?
 
-A conversa em que ele defende isso tem a parte que mais me interessa como professor. Em uma das escolas de negócios mais tradicionais do mundo, a disciplina obrigatória de IA mudou de natureza quando o corpo docente percebeu que não dá para só *falar* de IA — é preciso *fazer* IA.
+Na entrevista, Lakhani conta uma mudança que me interessa: construir passou a ocupar parte central da disciplina de IA, e a discussão dos casos ganhou a experiência da tentativa. É o convite deste guia e o que defendo nas minhas disciplinas: aprender fazendo, voltar com perguntas e entender o que foi gerado. Não é esperar dominar tudo para começar.
 
-O que mudou, na prática:
+Eu ainda falho nisso. Vejo estudantes copiar de um lado, colar do outro e ficar felizes se funcionou. Já quebrei a cara no sentido contrário: uma estudante usou um recurso que eu não tinha ensinado, e concluí que era cópia. Na aula seguinte pedi que explicasse. Ela explicou.
 
-- **Metade do curso virou construção.** A turma resolve problemas de negócio construindo ferramentas com IA.
-- **A prova final acabou.** O argumento é simples: como ter um curso de IA em que não se pode usar IA na avaliação? No lugar entraram projetos — a turma inteira teve de entregar soluções funcionando.
-- **Os casos continuam, com outro papel.** A discussão de economia, estratégia e gestão de mudança agora vem *depois* de a turma ter posto a mão na massa: "consigo fazer tudo isso; e o que isso significa para a minha empresa e para o meu trabalho?".
-
-Ele resume a mudança pessoal com honestidade: por muitos anos, bastava colocar um caso na frente da turma; agora a sala de aula tem muito "fazer".
-
-É o convite deste guia, e é o que eu tento praticar: nas minhas turmas de Sistemas de Informação, estudantes entregam produtos de verdade para se formar. **Troque o relatório sobre o caso pela solução do caso.** Quem constrói descobre onde a ferramenta falha, o que precisa conferir e o que não sabia que não sabia — três coisas que relatório nenhum ensina.
-
-Não que eu tenha acertado a mão. Eu ainda falho em fazer cada estudante entender o que foi gerado: a maioria copia de um lado, cola do outro e fica feliz se funcionou. Quem acha que o problema é novo esqueceu dos cartazes de "faço a sua monografia" no mural da universidade. O problema nunca foi a ferramenta. É não pensar.
-
-Já quebrei a cara no sentido contrário. Uma estudante entregou um exercício usando um recurso que eu não tinha ensinado, e eu concluí que era cópia. Na aula seguinte pedi: me explica. Ela explicou.
-
-Quando alguém me pede para explicar um código, eu devolvo: joga na IA, pede a explicação e depois me conta se entendeu. Já ouvi que parece que eu não quero dar aula. Meu objetivo como professor é deixar a pessoa autônoma, não repetir o que ela encontra em qualquer lugar. Eu fico para corrigir a rota.
-
-Nada disso nasceu com a IA. Em 2014 eu já passava [um trabalho que tinha de ser feito com plágio](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspirado na escrita não criativa de Kenneth Goldsmith (2011): montar um texto inteligente e coerente só com trechos de outros textos. Pelo menos cinco fontes, sem blocos longos de uma só, cada fonte numa cor, o que era da pessoa em preto. Junto de cada referência, duas respostas: por que você usou essa fonte, e por que ela é confiável? Na aula seguinte, cada integrante do grupo respondia sozinho a perguntas sobre o trabalho. Hoje a pergunta é a mesma, com outro objeto: por que você usou IA aqui?
-
-Para sentir na pele, eu me obriguei a escrever um texto inteiro com IA. [Quinze minutos pedindo, cinco horas revisando](/blog/pt/15-minutes-of-prompting-5-hours-of-editing/). Várias fontes citadas não existiam; eu procurava, não achava e cortava o trecho. O trabalho não diminuiu. Destravou uma coisa em que eu sempre fui ruim, que é escrever. E, no fim, não foi a IA que gerou: fui eu que entreguei.
-
-E docente não está imune. Numa formação para colegas, pedi um exercício. A turma colou a instrução que a ferramenta gerou, sem ler, e se espantou com o formato da resposta. Alguém resumiu melhor do que eu: fizemos exatamente o que criticamos em estudantes.
-
-Só mantenho a ressalva sobre o nome. Lakhani chama isso de *vibe coding*. Eu chamaria de **construir lendo**.
+Quando alguém me pede para explicar código, devolvo: peça uma explicação à IA e depois me conte se entendeu. Já ouvi que parece que eu não quero dar aula. Meu objetivo é deixar a pessoa autônoma; eu fico para discutir e corrigir a rota. Lakhani chama parte dessa construção de *vibe coding*. Eu prefiro **construir lendo**. Uma pergunta que interessa aqui: o que você agora consegue fazer e questionar sem depender de mim?
 
 ## O que continua sendo humano?
 
@@ -107,7 +88,7 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 - Cuide de quem está nos dados e de quem ficou de fora ([capítulo 4](/ia/vies/)).
 - Chame gente diferente de você para tentar quebrar o sistema antes de lançar.
 - Escreva onde ele falha. Limite conhecido e documentado é ferramenta; limite escondido é armadilha.
-- Proteja os dados: consentimento, mínimo necessário, nada sensível onde não precisa ([capítulo 5](/ia/dados-e-privacidade/)).
+- Proteja os dados: finalidade clara, base legal adequada, mínimo necessário e acesso limitado ([capítulo 5](/ia/dados-e-privacidade/)).
 
 **Se você usa** — e todo mundo usa:
 
@@ -116,8 +97,40 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 - Avise quando encontrar erro ou viés. É assim que melhora.
 - Cuide dos seus dados e, principalmente, dos dados dos outros.
 
+## Se já estamos no avião, quem cuida do voo?
+
+Na [conversa de Harari que alimentou estas perguntas](https://www.youtube.com/watch?v=kziBrxxE0U0&t=1680s), aparece uma provocação: você embarcaria num avião com uma chance assustadora de cair? E se a resposta fosse que já estamos a bordo?
+
+Os "20%" dessa conversa não são uma probabilidade demonstrada de a IA acabar com a humanidade. Harari está repercutindo uma estimativa atribuída a alguém do setor. Não há ali uma medição que autorize usar o número como previsão. Estatística não é minha área, e não vou transformar uma imagem forte em cálculo de risco.
+
+Mas a imagem serve. Para mim, estamos no avião. Agora o trabalho é fazer essa coisa não cair. Isso pede mais do que escolher entre entusiasmo e pânico: pede discutir quem conduz, quem fiscaliza, quem pode interromper uma operação e quem responde se der errado.
+
+Harari usa a conversa para criticar a ideia de que seria tarde demais para a política agir. Concordar que a tecnologia existe não obriga a aceitar qualquer uso, qualquer regra ou qualquer concentração de poder. Dá para construir e recusar uma aplicação. Dá para exigir teste, limite, revisão e alguém a quem recorrer.
+
+No caso da Lia, o risco não precisa ser o fim da humanidade para importar. Basta uma família ficar fora da lista, sem saber por quê e sem conseguir contestar. Antes de crescer para o estado inteiro: quem percebe isso? Quem pode suspender a ordenação? Quem atende a família enquanto o time corrige? É aí que a ética chega à tela que alguém vai usar.
+
+## Ter mais significa trabalhar menos?
+
+Outra [analogia de Harari](https://www.youtube.com/watch?v=kziBrxxE0U0&t=840s): imagine uma pessoa da Idade da Pedra diante de uma geladeira cheia e de comida que chega à porta. Talvez concluísse que já resolvemos a sobrevivência e podemos passar o dia descansando. A agenda de quem lê este guia provavelmente tem uma opinião diferente.
+
+É uma visita imaginária, não uma conclusão sobre como viviam nossos ancestrais. Eu uso a provocação para separar duas perguntas: **quanto conseguimos produzir e como decidimos viver com isso?** Uma ferramenta que permite fazer mais não decide, por conta própria, quem fica com o tempo, com a renda ou com o trabalho que sobra.
+
+Pense num time que passa a resolver uma tarefa em menos tempo. A escolha pode ser atender melhor, reduzir a jornada, aumentar a meta, dispensar gente ou abrir um serviço que antes não cabia no orçamento. A capacidade técnica é parecida. As decisões e as consequências não são.
+
+Para quem empreende ou cuida de produto, a pergunta não termina em "quanto economizei?". Quem ganhou autonomia? Quem recebeu mais cobrança? Quem nem participou da decisão? Não tenho uma fórmula para distribuir esses ganhos. Tenho pouca paciência para fingir que a ferramenta já decidiu isso por nós.
+
+## E quando a dependência é de um país inteiro?
+
+Guardar o conhecimento no repositório ajuda o time a trocar de ferramenta. Não resolve sozinho a dependência de um país. Na [parte final da conversa](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari propõe o cenário de estados vassalos digitais: serviços essenciais funcionando sobre infraestrutura e sistemas controlados de fora. É uma hipótese política para discutir, não um destino anunciado.
+
+Aqui saio da construção de produto e entro em direito e relações internacionais, que não são minha especialidade. A pergunta que a analogia ajuda a enxergar é concreta: quem pode retirar o acesso, mudar as condições ou impedir que uma decisão seja examinada? E o que acontece com quem depende daquele serviço?
+
+Para o time da Lia, isso vira escolha de fornecedor, possibilidade de exportar os dados, registro das decisões e teste de continuidade se um serviço parar. Para um país, envolve também infraestrutura, capacidade de pesquisa, instituições e cooperação. Trocar um modelo por outro não encerra essa conversa.
+
+Gosto das analogias de Harari porque abrem perguntas. Não o tomo como garantia de que suas previsões estão certas. A discussão que interessa aqui é o que podemos fazer: construir capacidade própria, negociar dependências e dar voz a quem vai viver com a decisão. Autonomia também tem essa escala.
+
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** passe pela autoavaliação. Depois escolha um item que você não marcou: o que te impede?
+**Provocação:** passe pela autoavaliação. Depois escolha um item que você não marcou: o que te impede? Antes de ampliar um projeto seu, quem pode sofrer uma consequência e ainda não foi ouvido?
 </div>
 
 <div data-widget="checklist" data-key="pratica" data-title="Autoavaliação: onde eu estou?" markdown="1">
@@ -126,7 +139,7 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 - [ ] Antes de confiar em uma resposta importante, eu confiro em outra fonte
 - [ ] Sei dizer quais dados eu **não** colo em uma ferramenta de IA
 - [ ] Dou contexto: quem é o público, qual é o objetivo e o que é um bom resultado
-- [ ] Quando a resposta precisa ser exata e repetível, eu peço código, não opinião
+- [ ] Sei quando pedir um procedimento reproduzível e como conferir a regra, as entradas e o resultado
 - [ ] Meus projetos têm um lugar com histórico de versões (não só o histórico do chat)
 - [ ] O que eu aprendo com a IA em um projeto fica escrito para a próxima sessão
 - [ ] Já testei mais de uma ferramenta com a mesma tarefa real
@@ -139,7 +152,7 @@ Todo sistema de IA foi desenhado, treinado, configurado e colocado no ar por dec
 
 Não tem nota de corte. Os itens estão mais ou menos na ordem dos capítulos; o primeiro que você não marcou é um bom lugar para voltar.
 
-## O que eu não sei
+## O que eu ainda não sei?
 
 Um guia honesto precisa de uma seção assim.
 
@@ -149,39 +162,47 @@ Um guia honesto precisa de uma seção assim.
 
 **Não sei quando o agente "faz-tudo" vai ser seguro o bastante.** Talvez já seja, e a resistência seja minha. Prefiro errar para esse lado.
 
-O que eu sei: não tem volta. Existem modelos abertos que qualquer um pode baixar e rodar. Se as empresas de hoje sumissem amanhã, a tecnologia continuaria aqui. A escolha que resta não é entre usar e não usar. É entre usar entendendo ou usar acreditando em mágica.
+A tecnologia já faz parte do cenário em que construímos. Isso não transforma cada uso numa obrigação. Entender também serve para escolher o que automatizar, o que manter com uma pessoa e o que não construir. Diante de um projeto seu, qual dessas decisões você conseguiria explicar a quem vai viver com ela?
 
 E um pedido, de quem constrói para quem constrói: com tanta coisa ajudando a fazer, pare de fazer produto ruim.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar, do guia inteiro**
-
-1. IA é matemática aplicada guiada por escolhas humanas. Procure as escolhas.
-2. O modelo aprendeu com dados; se os dados são um recorte, o resultado também é.
-3. O que não está no contexto não existe para ele. O que está sobrando atrapalha.
-4. Para o que precisa ser exato, código. Para o que precisa de julgamento, você.
-5. Guarde o conhecimento em um lugar que é seu.
-6. Dê o menor acesso que resolve, e saiba quem responde pelo que não tem volta.
-7. A responsabilidade é sua. Sempre foi.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** do que foi entregue, o que o time sabe explicar e o que só repassou? Crescer agora, ou provar por mais um semestre?
+- **Em disputa:** o time sabe explicar os resultados, ouvir quem ficou de fora e manter o serviço se perder um fornecedor? Crescer agora, ou conferir isso por mais um semestre?
 - **Caminhos na mesa:**
-  - *Iara:* levar ao estado inteiro já. Há orçamento, e há pressa.
-  - *Bia:* mais um semestre nas doze escolas, medindo quem voltou.
-  - *Caio:* abrir o que foi feito, para outras organizações copiarem.
-- **O que o time fez, por enquanto:** escreveu, sem ajuda de IA, uma página sobre o que conferiu e o que ainda não sabe. A decisão de crescer ficou para depois dela.
+  - *Iara:* levar ao estado inteiro já, aproveitando orçamento e urgência; os erros também ganhariam escala.
+  - *Bia:* mais um semestre nas doze escolas, ouvindo as famílias e medindo quem voltou; outras escolas teriam de esperar.
+  - *Caio:* abrir o que foi feito e testar a troca do fornecedor de IA; isso consumiria tempo que poderia melhorar o atendimento agora.
+- **O que o time fez, por enquanto:** adiou a recomendação de expansão e manteve o atendimento atual. Bia ficou com a escuta das escolas e os limites de suporte; Caio, com os testes de troca e de uso sem conexão; Lia e Iara, com o caminho para corrigir e contestar registros, começando por Ian. Iara aceitou levar o adiamento, sem concordar que esperar fosse melhor, e pediu uma proposta de suporte à fornecedora. Antes de encerrar, uma escola avisou que seu arquivo vinha em outro formato. Caio abriu uma tarefa; Bia perguntou qual sairia da semana para aquela entrar. A reunião acabou com isso por decidir.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Autonomia:** ganhar condições de construir e mudar sem travar; não exige dominar todos os ofícios antes de começar.
+- **Leitura crítica:** pedir explicações, conferir evidências e aceitar rever a própria hipótese também fazem parte da construção.
+- **Pensamento computacional:** organizar regras, partes e procedimentos que possam ser executados, reproduzidos e revisados.
+- **Responsabilidade:** a próxima tentativa continua tendo consequências para pessoas. Operar inclui decidir o que manter, mudar e interromper.
+
+O que você consegue delegar agora — e o que ainda precisa entender para responder pela entrega?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Olhe para a primeira tentativa e para a entrega de agora. O que você consegue explicar, reproduzir e mudar que antes não conseguia? Escolha a próxima pergunta e o que precisa continuar funcionando enquanto a investiga. Melhorar, mudar de direção, manter e parar têm custos diferentes. Qual você aceita por enquanto?
+
+Se quiser discutir essa volta, [me conte o que tentou e o que aprendeu]({{ site.data.guia.conversation_url }}).
+
 </div>
 
 <details class="g-aula" markdown="1">
 <summary>Para levar para a aula</summary>
-
-#### Projeto final — solução no lugar de relatório
-
-Inspirado em escolas de negócios que trocaram a prova por construção: em vez de um trabalho escrito *sobre* um caso, cada grupo entrega uma **solução funcionando** para um problema real (da organização de alguém da turma, de preferência). A entrega tem três partes: (1) a solução rodando, demonstrada ao vivo; (2) o repositório com `README.md`, `AGENTS.md` e as decisões registradas; (3) uma página, escrita pelo grupo e não pela IA, respondendo: o que conferimos e como? Onde a ferramenta errou? O que não deveria ser automatizado aqui? Cada pessoa do grupo deve conseguir explicar, de viva voz, qualquer uma das três partes.
 
 #### Atividade (para casa, com volta em aula) — escrever com o texto dos outros
 
@@ -204,6 +225,9 @@ Cada pessoa escreve três compromissos pessoais de uso de IA, em uma frase cada:
 - O que diferencia quem usa IA de quem só repassa o que a IA disse?
 - Se uma decisão tomada com apoio de IA prejudicar alguém, quem deve responder: quem usou, quem configurou, quem treinou ou quem vendeu?
 - O que a sua organização deveria parar de fazer com IA amanhã? E o que deveria começar?
+- Na analogia do avião, quem está na cabine, quem comprou a passagem e quem embarcou sem escolher?
+- Qual analogia convenceu você? Que evidência ainda faltaria para aceitar a conclusão?
+- Se o serviço das escolas dependesse de uma única empresa, o que precisaria existir para o time poder sair dela?
 
 </details>
 
@@ -212,18 +236,20 @@ Cada pessoa escreve três compromissos pessoais de uso de IA, em uma frase cada:
 #### Referências
 
 - DELL'ACQUA, Fabrizio *et al.* **Navigating the jagged technological frontier**: field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality. Boston: Harvard Business School, 2023. (Working Paper, n. 24-013). Disponível em: <https://www.hbs.edu/faculty/Pages/item.aspx?num=64700>. Acesso em: 13 nov. 2026.
-- GOLDSMITH, Kenneth. **Uncreative writing**: managing language in the digital age. New York: Columbia University Press, 2011.
+- HARARI, Yuval Noah. **AI will create digital vassal states**. [*S. l.*]: YouTube, 8 nov. 2026. Conversa com Robert Guest no Forum 2000, em outubro de 2026. 1 vídeo (62 min). Disponível em: <https://www.youtube.com/watch?v=kziBrxxE0U0>. Acesso em: 15 nov. 2026.
 - LAKHANI, Karim R. **Harvard AI professor**: the people most at risk from AI aren't who you think. Entrevista ao canal Silicon Valley Girl. [*S. l.*], 30 out. 2026. 1 vídeo (52 min). Disponível em: <https://www.youtube.com/watch?v=vFOnDsy58NU>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **15 minutos de prompt, 5 horas editando**. [*S. l.*]: efrem.io, 23 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/15-minutes-of-prompting-5-hours-of-editing/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **A responsabilidade ainda é sua**. [*S. l.*]: efrem.io, 8 set. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-responsibility-is-still-yours/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Com o custo da expertise caindo, o que conta é a vontade de fazer**. [*S. l.*]: efrem.io, 13 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-cost-of-expertise-and-the-will-to-build/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Como ensinar a usar IA criticamente? Um pedido de ajuda**. [*S. l.*]: efrem.io, 13 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/how-to-teach-critical-use-of-ai/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Deep research com cabeça de pesquisador**. [*S. l.*]: efrem.io, 10 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/deep-research-with-a-researchers-mindset/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Geração e revisão: os dois ciclos da GenAI**. [*S. l.*]: efrem.io, 20 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/generation-and-review-the-two-cycles-of-genai/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **O problema é ser uma mera proxy para a IA**. [*S. l.*]: efrem.io, 15 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-problem-is-being-a-mere-proxy-for-ai/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Os melhores hacks para uma pessoa de produto usar um agente de código**. [*S. l.*]: efrem.io, 5 ago. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/the-best-hacks-for-a-product-person-using-a-coding-agent/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Quero estar no último 1% a ser substituído**. [*S. l.*]: efrem.io, 2 mar. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/i-want-to-be-in-the-last-1-percent-to-be-replaced/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Trabalhos com plágio**. [*S. l.*], 2014. Instrução de atividade para estudantes. Disponível em: <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>. Acesso em: 15 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Virando uma pessoa 'full-service' em tech**. [*S. l.*]: efrem.io, 12 fev. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/becoming-a-full-service-person-in-tech/>. Acesso em: 13 nov. 2026.
 
-*Notas:* A fonte é uma entrevista de Karim R. Lakhani, professor da Harvard Business School. Trechos usados: custo marginal da expertise (minutos 34 e 47), os três jeitos de trabalhar com IA (2 a 4; na entrevista, cerca de 60% de ciborgues, 14% de centauros e 27% de autoautomatizadores), "nunca aceito a primeira resposta" (9), responsabilidade e "interface de carne" (3 e 14), o curso obrigatório do MBA, com cerca de 900 estudantes (20 a 22), e quem corre mais risco (44 e 45). Traduções e paráfrases são minhas. O experimento com profissionais de consultoria é o de Dell'Acqua *et al.* (2023).
+*Notas:* A fonte é uma entrevista de Karim R. Lakhani, professor da Harvard Business School. Trechos usados: custo marginal da expertise (minutos 34 e 47), os três jeitos de trabalhar com IA (2 a 4; na entrevista, cerca de 60% de ciborgues, 14% de centauros e 27% de autoautomatizadores), "nunca aceito a primeira resposta" (9), responsabilidade e "interface de carne" (3 e 14), o curso obrigatório do MBA, com cerca de 900 estudantes (20 a 22), e quem corre mais risco (44 e 45). Traduções e paráfrases são minhas. O trabalho de Dell'Acqua et al. (2023) é a referência de pesquisa mencionada nessa discussão. As categorias e proporções relatadas na entrevista são atribuídas a Lakhani; o corpo do guia as utiliza como imagens para reflexão, sem extrapolar percentuais para quem usa IA em geral.
+
+Da conversa de Harari com Robert Guest (2026), foram usados o visitante da Idade da Pedra e a abundância (minutos 14–15), a discussão do avião e do risco (28–31) e os estados vassalos digitais (59–61). O visitante é um experimento de imaginação, não uma afirmação sobre neandertais. Harari atribui a Elon Musk uma estimativa de 10% a 20% de risco catastrófico; esta é uma atribuição feita na entrevista, não uma citação direta conferida de Musk nem uma probabilidade medida. A resposta de que já estamos a bordo é parte da provocação que Harari contesta. O guia a retoma para discutir responsabilidade e capacidade de agir, sem concluir que decisões políticas ficaram impossíveis. As aplicações ao caso da Lia são construções didáticas deste guia.
 
 </div>

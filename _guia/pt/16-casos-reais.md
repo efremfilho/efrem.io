@@ -1,133 +1,118 @@
 ---
-title: "Casos reais: o que mudou na minha rotina"
-description: "Nota fiscal, redesenho de tela, validação de documentos, um curso montado durante a noite, análise de dados, uma conversa ensaiada e o mínimo de programação que vale aprender."
+title: "O serviço funcionou — para quem?"
+subtitle: "Resultados, hipóteses e serviço como software."
+description: "A lista funciona, mas o uso muda a pergunta. Que trabalho o serviço entrega, quem fica com as exceções e o que vale construir ou contratar?"
 lang: pt-BR
 ref: cases
 order: 16
 part: 3
 permalink: /ia/casos-reais/
-piece: "o sistema no ar e a primeira análise"
-last_modified: 2026-11-15
+piece: "a promessa do serviço revista à luz do uso"
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 16
 
-Volta às aulas. A versão do time está no ar: quem visita recebe, de manhã, a lista do dia. O painel existe — Iara mostra na secretaria, e quase ninguém mais abre. Com os dados no lugar, Lia fez a pergunta que vinha adiando havia um ano: *em que dia e em que turno as faltas se concentram?* O mapa de calor ficou pronto em uma conversa. A mancha mais escura estava na sexta-feira à noite. Caio já tinha a explicação. Bia tinha outra. O mapa dizia onde. Dizia por quê?
+Volta às aulas. Depois do teste com a rotina existente, a versão com acesso pelas escolas está no ar: lista do dia para quem visita, painel agregado para Iara. Bia quase não abre o painel; Iara o usa para defender a continuidade da parceria. Não usar a mesma tela era sinal de fracasso? Com os dados históricos reunidos, Lia pediu ao agente um mapa das faltas por dia e turno. Caio revisou a contagem. A mancha mais escura era sexta-feira à noite, parte do padrão que ele tinha visto lá atrás. Achava que era trabalho. Bia lembrou o ônibus e queria investigar primeiro numa escola. Lia queria ouvir todas antes de escolher uma. Numa conversa com a escola, Ian, estudante do noturno, trouxe outra pergunta: "se eu já voltei e continuo na lista, com quem falo?". A contagem conferida por Caio não resolvia isso sozinha. Enquanto discutiam a causa, a escola precisava organizar a próxima semana. O que dava para fazer sem transformar a primeira hipótese em explicação oficial?
 </div>
 
-Princípio sem exemplo não convence ninguém. Estes são casos da minha rotina recente, escolhidos porque cada um ilustra um capítulo anterior — e porque em cada um eu aprendi alguma coisa que não esperava.
+Uma lista emitida, uma visita feita e uma estudante de volta à escola são acontecimentos diferentes. O sistema pode registrar perfeitamente o primeiro sem produzir os outros. E pode ajudar no segundo sem conseguir resolver o motivo da ausência. O pedido de Ian mostra outro limite: atualizar a conta não garante que alguém consiga corrigir a própria situação.
 
-## 1. Dá para confiar no que a IA aprendeu sobre um assunto que eu não domino?
+## Que trabalho prometemos entregar?
 
-**O que era:** todo mês eu emito notas fiscais no sistema da prefeitura. Chato, repetitivo e cheio de campos.
+Para mim, produto existe para resolver um problema e permitir que humanos resolvam outros. A lista libera Bia de remontar contatos; o tempo que aparece pode ir para conversar com uma família. Mas, se Bia passa a tarde corrigindo a lista, o trabalho só mudou de lugar. O que ela deixou de precisar fazer? O que apareceu no lugar?
 
-**Como ficou:** abro o site, libero aquela aba para o assistente do navegador e peço as notas do mês. Ele preenche, eu confiro e confirmo.
+Essa é a cabeça de **serviço como software**: pensar no trabalho entregue, em quem depende dele e em como manter a entrega. Uma interface pode ser parte disso. Não é a promessa inteira. "Organizar os próximos contatos e registrar o retorno" é uma promessa diferente de "prever abandono". A primeira também pode falhar, mas dá ao time algo concreto para observar e discutir.
 
-**O que aprendi:** quando uma mudança na legislação trouxe campos novos para o sistema, eu não sabia preencher. Pedi para a IA estudar as regras novas e aplicar. Antes de emitir qualquer coisa, **mandei o resultado para o meu contador**. Estava certo — e só então virou rotina.
+[Um artigo da consultoria Thoughtworks](https://www.thoughtworks.com/en-br/insights/blog/generative-ai/service-as-software-a-new-economic-model-for-age-of-ai-agents) apresenta *service-as-software* como uma mudança de vender ferramentas para entregar resultados. [Uma tese de investimento da Sequoia](https://sequoiacap.com/article/services-the-new-software/) distingue vender a ferramenta de vender o trabalho. Ambas são partes interessadas nesse mercado. São propostas para pensar negócios, não demonstrações de que toda atividade deva ser automatizada ou de que um modelo de cobrança vá substituir todos os outros.
 
-A IA me deixou adiantado em um assunto que não é o meu. Quem me deu segurança para usar foi uma pessoa especialista. As duas coisas são verdade ao mesmo tempo. ([Capítulo 15](/ia/agentes-com-redea/): acesso a uma aba só.)
+Aplicando essa lente ao caso: Iara pode querer contratar suporte, mesmo usando o que o time construiu. Bia pode querer assistência para preparar uma conversa e autonomia para conduzi-la. Caio pode querer automatizar a atualização de uma lista, sem entregar ao modelo a decisão sobre quem merece atendimento. São escolhas de serviço, de tecnologia e de responsabilidade ao mesmo tempo.
 
-## 2. Se construir ficou fácil, o que ficou difícil?
+## Quem faz o quê quando chega um caso novo?
 
-**O que era:** em um produto em que trabalho, o quadro de acompanhamento ocupava pouco mais da metade da tela; o resto era menu e moldura. Para abrir um detalhe, a pessoa trocava de tela e perdia o fio.
+Imagine três propostas para a mesma escola:
 
-**Como ficou:** descrevi o incômodo e pedi alternativas. Testei três ideias funcionando de verdade, no ambiente de desenvolvimento: arrastar e soltar entre colunas, uma gaveta lateral com o resumo do item e um caminho de navegação no topo para voltar sem se perder. Mandei o link para o time experimentar.
+| Proposta | O que a escola recebe? | Que trabalho continua existindo? |
+|---|---|---|
+| Assistir quem atende | Uma análise e um rascunho para a pessoa decidir | Conferir o caso, escolher e realizar o contato |
+| Automatizar uma parte definida | Uma lista atualizada e avisos sob condições combinadas | Manter dados e regras; perceber e tratar exceções |
+| Assumir um serviço acompanhado | Contatos organizados, retorno registrado e alguém a quem recorrer | Coordenar software, pessoas, suporte e correções |
 
-**O que aprendi:** a parte difícil não foi construir. Foi perceber que cada coluna daquele quadro é usada por um time diferente, e que portanto o que aparece ao passar o mouse precisa mudar de coluna para coluna. Isso é conhecimento de produto, e nenhum modelo adivinha. Um dos três experimentos eu não gostei — e voltei atrás com um comando, porque estava tudo em camadas e versionado ([capítulo 11](/ia/repositorio-e-memoria/)).
+A terceira proposta pode usar as outras duas. Não é uma escada em que a última é sempre melhor. Para uma escola, receber a lista basta; para outra, falta alguém que consiga usá-la. Para o time, assumir mais trabalho pode valer a pena — ou exceder a capacidade que tem.
 
-Código ficou barato. Saber o que construir, não. Escrevi mais sobre isso em [Produto e UX nunca foram tão importantes](/blog/pt/product-and-ux-have-never-mattered-more/).
+No fluxo atual, a contagem é código; a leitura de relatos pode usar IA; a conversa com a família continua com gente. A IA também ajuda o time a investigar e melhorar essas partes. **Pensamento computacional permite separar e conectar; letramento em IA ajuda a escolher o que delegar e a ler o que voltou.** Se trocar o modelo, o que precisaria continuar funcionando?
 
-## 3. "Usar IA" é usar um modelo só?
+## O que esse número prova?
 
-**O que era:** um processo que recebe fotos de documentos de identidade. Ler o texto da imagem (o velho OCR) é a parte fácil.
+Caio consegue reproduzir o mapa de faltas. Isso responde como a conta foi feita. Não decide se a mancha de sexta-feira é trabalho, transporte, registro atrasado ou uma combinação. Bia conhece o ônibus; esse conhecimento é uma pista, não uma amostra de toda a rede. Lia quer ouvir todas as escolas; a abrangência custa tempo de quem espera.
 
-**Como ficou:** o sistema hoje combina três coisas diferentes:
+O time pode comparar o que esperava com o que aconteceu: quem recebeu contato, quem ficou esperando, quais registros precisaram de correção. Pode observar se o caminho para contestar a lista funciona. Esses sinais ajudam a rever a entrega. Não bastam, sozinhos, para atribuir ao software uma mudança na permanência escolar.
 
-- **IA generativa** para ler e interpretar: o documento está inteiro no enquadramento? Tem reflexo cobrindo algum campo? Está legível?
-- **Algoritmos clássicos de visão**, que não são generativos, para procurar adulteração: bordas estranhas, uma foto colada por cima, sinais de edição.
-- **Consulta determinística** a um serviço de cadastro, para ver se o número do documento confere com o nome.
+Uma pergunta para o agente poderia ser: "proponha explicações alternativas para esse padrão e diga o que observaríamos em cada uma". Outra pessoa do time revisaria as sugestões e escolheria o que conferir com as escolas. A resposta abre investigação; não vira diagnóstico porque veio acompanhada de um gráfico bonito.
 
-**O que aprendi:** "usar IA" quase nunca significa usar *um* modelo. Significa escolher a técnica certa para cada pedaço — e, onde existe uma fonte confiável, consultar a fonte em vez de pedir opinião ([capítulo 10](/ia/pedir-o-script/)). E como aqui são dados pessoais sensíveis, vale tudo o que está no [capítulo 5](/ia/dados-e-privacidade/): consentimento, acesso mínimo, nada disso entra em ambiente de teste.
+## Assinar ou construir?
 
-## 4. O que precisa acontecer antes de deixar um agente trabalhando a noite toda?
+Eu disse numa conversa que não assinava mais software como serviço. Um amigo [me mostrou que era mentira](/blog/pt/i-only-pay-for-saas-i-see-value-in/). Eu continuava pagando por vários serviços. A frase que resistiu à conversa foi menos espetacular: pago pelo que vejo valor; o que não entrega esse valor e consigo substituir, construo com agentes.
 
-**O que era:** me pediram uma trilha gamificada para um curso, dentro da plataforma de ensino da instituição. Eu sabia o que queria e não sabia como a plataforma fazia aquilo.
+Antes disso, eu já [vinha trocando a procura por um aplicativo por um pedido de construção](/blog/pt/instead-of-a-saas-i-open-chatgpt-gemini-or-colab/): um conversor, uma planilha, um formulário. A autonomia continua. A correção é que gostar de construir não torna construir a melhor decisão em toda situação.
 
-**Como ficou:** expliquei o que eu queria. A IA devolveu um plano: o que haveria na lição 1, na 2, na 3, como seria a pontuação. Eu li, ajustei e aprovei. Deixei trabalhando durante a noite. De manhã estavam lá as lições, os slides e até os vídeos.
+Também [escrevi que código não é a parte difícil](/blog/pt/code-is-not-the-hard-part/). Fazer algo para mim é diferente de manter algo de que outras pessoas dependem. Na comparação, vale colocar quem cuida quando quebra, o que a ferramenta já entrega pronto e o tempo que eu quero dedicar a isso. O aplicativo funcionar hoje não responde sozinho se eu quero mantê-lo amanhã.
 
-**O que aprendi:** duas coisas. A ordem importa — **planejar, aprovar, só então executar**. Eu não deixaria nada rodar a noite toda sem ter lido o plano antes. E restrição precisa ser dita: no meio do caminho o agente avisou que a versão da plataforma não suportava um recurso e propôs uma adaptação. Agente bom não esconde a limitação; ele avisa e oferece alternativa.
+## O que continua enquanto experimentamos?
 
-## 5. Que perguntas eu deixava de fazer porque dava trabalho?
+A lista de amanhã precisa sair enquanto o time investiga a de ontem. Na escola sem conexão, pode haver um procedimento temporário; ele também precisa de acesso adequado, atualização e alguém responsável. Suporte não é uma tarefa que fica para quando o produto estiver pronto. Faz parte do que foi prometido.
 
-**O que era:** uma pergunta de negócio simples de fazer e trabalhosa de responder — *em que etapa do processo as propostas ficam mais tempo paradas?*
-
-**Como ficou:** fiz a pergunta em português. Recebi a média e a mediana por etapa nos últimos três meses, os problemas encontrados nos dados, mapas de calor mostrando em que dias da semana faltava e sobrava gente para atender, a taxa de faltas — e o código em Python que gerou tudo, salvo no projeto.
-
-**O que aprendi:** eu não escrevi uma linha daquele código, e essa é o tipo de análise que antes ficaria para "quando sobrar tempo". Custou uma conversa. O efeito mais forte não é a economia: é que **eu parei de adiar perguntas**. Quando perguntar custa pouco, a gente pergunta mais — e decide melhor.
-
-## 6. Assinar ou construir?
-
-Um hábito que mudei de vez: antes de procurar um aplicativo para resolver alguma coisa, eu peço para a IA construir. Uma planilha de prestação de contas que tomava três horas de alguém vira um pedido de alguns minutos. Um conversor de arquivo, um formulário, um painel simples — tudo isso deixou de ser "qual ferramenta eu assino?" e virou "descreve o que você precisa".
-
-Comecei a falar disso em [No lugar de procurar um SaaS…](/blog/pt/instead-of-a-saas-i-open-chatgpt-gemini-or-colab/). Hoje a regra é mais honesta: [só pago os SaaS em que vejo valor, o resto eu construo](/blog/pt/i-only-pay-for-saas-i-see-value-in/). É um serviço de que preciso e que acelera minha vida? Eu pago, feliz. Não vale e dá para substituir rápido com um programinha? Faço com agentes que programam.
-
-## 7. E se a reunião virasse matéria-prima?
-
-O caso mais simples e talvez o mais útil: eu gravo reuniões (com o conhecimento de quem participa), pego a transcrição e uso como matéria-prima. "Crie um documento com as regras que definimos." "Liste as decisões e quem ficou com o quê." "O que ficou em aberto?" Contei o método [neste texto](/blog/pt/recording-calls-to-think-with-claude/).
-
-Este guia, aliás, nasceu assim: da gravação das minhas aulas e de uma conversa de uma hora e meia em que eu mostrava meu jeito de trabalhar a um amigo.
-
-## 8. Dá para ensaiar uma conversa com quem não está na sala?
-
-**O que era:** ouvir quem usa é a parte mais importante de construir qualquer coisa, e a mais difícil de conseguir. As pessoas não têm agenda e, quando têm, respondem o que acham que você quer ouvir.
-
-**Como ficou:** uma designer com quem trabalhei teve a ideia antes de mim. Pegou as transcrições de entrevistas de verdade e pediu a um assistente que continuasse a conversa no papel daquela pessoa. Hoje eu uso o mesmo recurso para ensaiar: antes de uma conversa difícil, converso com a persona.
-
-**O que aprendi:** funciona melhor do que eu esperava. Às vezes rende mais do que a entrevista, porque a persona não tem vergonha de responder. E tem limites que eu não esqueço: ela é muito mais simpática do que qualquer cliente; é uma continuação plausível, não uma pessoa ([capítulo 3](/ia/por-dentro-do-modelo/)); e não substitui conversar com gente de verdade — complementa. Uma pergunta que eu me faço cada vez mais: quem deu a entrevista sabe que a fala dela continua sendo usada?
-
-**O que dizem os dois lados:** quem pesquisa experiência de uso refez estudos reais com participantes sintéticos e achou as respostas rasas e favoráveis demais ([Rosala; Moran, 2024](https://www.nngroup.com/articles/synthetic-users/)): serve para levantar hipóteses, não para decidir. Quem fundou uma empresa que vende justamente esse tipo de pesquisa — parte interessada, claro — responde que pesquisa existe para reduzir risco e decidir melhor, não para cumprir um método, e que muita gente critica sem ter testado. Mesmo ele não recomenda apostar a empresa numa resposta sintética: fala em achar o ponto em que isso acelera e o que continua sendo só de gente ([Alves, 2026](https://www.youtube.com/watch?v=W87q8M9Gl-0)). Os dois chegam perto do que eu vivi: complementa, não substitui.
-
-## E a programação?
-
-A pergunta que sempre vem depois desses casos: *"então eu preciso aprender a programar?"*. Escrever código, não. Entender cinco ideias e as três camadas de qualquer software, sim — é o assunto do [capítulo 7](/ia/pensamento-computacional/).
+A próxima volta pode mudar a hipótese, a interface, a divisão do trabalho ou o que vale contratar. Pode preservar uma rotina que está funcionando. Aprender fazendo também é descobrir qual mudança pode esperar. Que problema as pessoas agora conseguem enfrentar — e qual trabalho o nosso produto acabou de criar?
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocação:** preencha as quatro linhas do "caso 9", na atividade do fim do capítulo, com uma tarefa da sua rotina. Qual das quatro é a mais difícil de escrever?
+**Provocação:** uma escola pede uma lista; outra pede que alguém resolva os contatos. O que muda no trabalho, no custo e na responsabilidade de cada proposta?
 </div>
 
-<div class="g-box g-key" markdown="1">
-**O padrão que se repete nos oito casos**
-
-- Eu sabia **o que** queria e **por quê**. O "como" foi delegado.
-- Sempre houve um ponto de conferência humana antes de valer: o contador, o time, o plano aprovado.
-- Onde dava para ser determinístico, foi.
-- O conhecimento que fez diferença não era técnico: era entender o problema.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** a mancha de sexta à noite é trabalho, transporte ou outra coisa? O que o dado mostra, e o que ele só sugere?
+- **Em disputa:** Investigar em uma escola pode ajudar logo e deixar outras esperando. Ouvir toda a rede amplia a visão, mas também adia uma ação local. Qual custo o time aceita?
 - **Caminhos na mesa:**
-  - *Caio:* é trabalho. Quer mandar o mapa à secretaria hoje.
-  - *Bia:* é o ônibus. Quer uma semana de visitas antes de alguém concluir qualquer coisa.
-  - *Lia:* levar o mapa a quem vive aquela rotina e perguntar o que mais explicaria o mesmo desenho.
-- **O que o time fez, por enquanto:** o sistema no ar e a primeira análise — ainda sem conclusão, com três hipóteses e o combinado do que observar nas próximas semanas.
+  - *Caio:* levar o mapa, identificado como hipótese, à secretaria e perguntar sobre os horários de trabalho. Abre uma conversa maior, mas o gráfico pode circular sem a ressalva.
+  - *Bia:* começar pela escola que relatou o corte do ônibus e conferir os horários com as famílias. Tem uma pista concreta, mas pode dar peso demais ao caso que ela conhece.
+  - *Lia:* ouvir as escolas antes de escolher onde agir. Reduz a dependência de uma primeira interpretação, mas consome tempo e prolonga a espera.
+- **O que o time fez, por enquanto:** começou pela investigação proposta por Bia, sem declarar uma causa. Caio guardou a hipótese do trabalho e preparou a comparação; Lia marcou a devolutiva com a escola. As demais ainda esperavam. O painel ajudava Iara a manter a parceria, mas não respondia por essa escolha de prioridade.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Entrega e resultado:** emitir uma lista, realizar contato e resolver uma dificuldade são acontecimentos diferentes; um não comprova o outro.
+- **Serviço como software:** pensar no trabalho entregue exige combinar software, pessoas e tratamento de exceções. Assistência e automação podem coexistir.
+- **Construir ou contratar:** autonomia entra na conta junto com manutenção, suporte e capacidade de conferir o que você não domina.
+
+Se a contagem está certa e Ian continua sem conseguir corrigir seu registro, que parte da promessa o serviço ainda não cumpriu?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Volte à hipótese ou vontade que anotou no começo. Que uso observado a reforçou ou contrariou? Escolha uma pergunta que só apareceu depois de operar e compare caminhos: ajustar a entrega, mudar a aposta ou investigar mais antes de mexer. Quem ganha e quem espera em cada caminho?
+
 </div>
 
 <details class="g-aula" markdown="1">
 <summary>Para levar para a aula</summary>
 
-#### Atividade (30 min) — o seu caso 9
+#### Atividade (30 min) — qual é a promessa?
 
-Cada pessoa escolhe uma tarefa chata e repetitiva da própria rotina e preenche quatro linhas: (1) o que é hoje; (2) como poderia ficar; (3) quem ou o que confere antes de valer; (4) qual parte deve ser determinística. Em trios, uma pessoa apresenta e as outras duas procuram o furo.
+Escolha um problema do seu projeto. Descreva uma entrega que ajude alguém a executar o trabalho e outra que assuma parte desse trabalho. Para cada proposta, indique o que a pessoa recebe, o que ainda faz, como percebe que deu errado e a quem recorre. Em trios, defendam propostas diferentes, incluindo o custo de cada escolha. Depois troquem de posição.
 
 #### Perguntas de discussão
 
-- No caso da nota fiscal, o que teria acontecido sem o contador? Como você saberia que deu errado?
-- "Parei de adiar perguntas." Que pergunta sobre o seu trabalho você nunca fez porque dava trabalho demais responder?
-- Dos cinco conceitos de programação, qual você já usa sem saber o nome?
+- Que melhora justificaria manter a lista, mesmo sem um aplicativo novo?
+- Se a meta fosse quantidade de contatos, o que o time poderia deixar de enxergar?
+- Que mudança na sua realidade faria contratar ser mais interessante do que construir — ou o contrário?
 
 </details>
 
@@ -135,14 +120,12 @@ Cada pessoa escolhe uma tarefa chata e repetitiva da própria rotina e preenche 
 
 #### Referências
 
-- ALVES, Hugo. **Let's get real about synthetic users**. Entrevista a Jason Knight. [*S. l.*]: One Knight in Product, 21 fev. 2026. 1 vídeo (64 min). Disponível em: <https://www.youtube.com/watch?v=W87q8M9Gl-0>. Acesso em: 15 nov. 2026.
-- BRASIL. **Lei Complementar nº 214, de 16 de janeiro de 2025**. Institui o Imposto sobre Bens e Serviços (IBS), a Contribuição Social sobre Bens e Serviços (CBS) e o Imposto Seletivo (IS). Brasília, DF: Presidência da República, 2025. Disponível em: <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm>. Acesso em: 15 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 13 nov. 2026.
+- BEK, Julien. **Services**: the new software. [*S. l.*]: Sequoia Capital, 5 mar. 2026. Disponível em: <https://sequoiacap.com/article/services-the-new-software/>. Acesso em: 16 nov. 2026.
+- KAMELMAN, Matt. **Service-as-software**: a new economic model for the age of AI agents. [*S. l.*]: Thoughtworks, 3 dez. 2025. Disponível em: <https://www.thoughtworks.com/en-br/insights/blog/generative-ai/service-as-software-a-new-economic-model-for-age-of-ai-agents>. Acesso em: 16 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **No lugar de procurar um SaaS, abro o ChatGPT, o Gemini ou o Colab**. [*S. l.*]: efrem.io, 21 jul. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/instead-of-a-saas-i-open-chatgpt-gemini-or-colab/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Produto e UX nunca foram tão importantes**. [*S. l.*]: efrem.io, 27 out. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/product-and-ux-have-never-mattered-more/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **O código não é a parte difícil**. [*S. l.*]: efrem.io, 26 mar. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/code-is-not-the-hard-part/>. Acesso em: 13 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Só pago os SaaS em que vejo valor, o resto eu construo**. [*S. l.*]: efrem.io, 11 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/i-only-pay-for-saas-i-see-value-in/>. Acesso em: 13 nov. 2026.
-- ROSALA, Maria; MORAN, Kate. **Synthetic users**: if, when, and how to use AI-generated "research". [*S. l.*]: Nielsen Norman Group, 21 jun. 2024. Disponível em: <https://www.nngroup.com/articles/synthetic-users/>. Acesso em: 15 nov. 2026.
 
-*Notas:* Os oito casos são da minha rotina de trabalho e de aula; nomes de pessoas, clientes e empresas foram omitidos. A mudança de legislação do caso 1 é a reforma tributária brasileira (Brasil, 2025). Sobre participantes sintéticos, as autoras escrevem: "Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people" e "They often provide shallow or overly favorable feedback" (Rosala; Moran, 2024). Hugo Alves é cofundador de uma empresa que vende pesquisa com participantes sintéticos; na entrevista ele diz: "research is always about making better decisions [...] It's about reducing risk" (minuto 4); que não espera que alguém tome, só com isso, "a decision that can make a company break", e que é preciso achar "what should be left exclusively for humans" (minuto 17); e que quem muda de ideia costuma dizer "I wouldn't replace humans with this but now I really see where this could help me" (minuto 52).
+*Notas:* As duas referências apresentam teses comerciais; a aplicação à busca ativa é uma elaboração didática deste guia. Thoughtworks é uma consultoria de tecnologia e Sequoia é uma investidora. O texto não adota como fatos as previsões de mercado, as divisões rígidas entre inteligência e julgamento nem a ideia de que todo agente aprende ou é treinado continuamente em operação. O caso pessoal sobre assinar ou construir é documentado nos posts do autor.
 
 </div>

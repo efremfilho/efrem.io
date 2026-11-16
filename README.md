@@ -24,21 +24,32 @@ Migrado do Carrd em junho/2026.
 
 Guia em capítulos, bilíngue e interativo, separado do blog. Cada capítulo é um arquivo Markdown — o que facilita revisar, ampliar e, no futuro, exportar como livro.
 
-- `_guia/pt/NN-slug.md` e `_guia/en/NN-slug.md` — os capítulos. O par PT/EN é ligado pelo campo `ref` (igual nos dois arquivos); a ordem vem de `order` e a parte de `part` (1 = Entender, 2 = Pensar, 3 = Construir).
+- `_guia/pt/NN-slug.md` e `_guia/en/NN-slug.md` — os capítulos. O par PT/EN é ligado pelo campo `ref` (igual nos dois arquivos); a ordem vem de `order` e o ato de `part` (1 = Será que isso ajuda?, 2 = Como construir junto sem perder o que aprendemos?, 3 = O que muda quando outras pessoas dependem disso?).
 - `temp/` — material de trabalho local (transcrições de aula, rascunhos como a proposta de revisão da ementa). Está no `.gitignore`: não vai para o repositório nem para o site, e pode ser apagada quando não servir mais.
 - `ia/index.md` e `ai/index.md` — texto de abertura do índice em cada idioma.
 - `ia/livro.md` e `ai/book.md` — **versão livro** (`/ia/livro/` e `/ai/book/`): uma página só com capa, sumário e todos os capítulos, pronta para imprimir ou salvar em PDF. É montada automaticamente por `_layouts/guia-livro.html` a partir dos capítulos — capítulo novo entra sozinho. Fica fora do sitemap e com `noindex`, para não competir com os capítulos nos buscadores.
 - `_layouts/guia.html` e `_layouts/guia-index.html` — layout de capítulo e de índice.
-- `_data/guia.yml` — textos de interface e nomes das partes (PT e EN).
+- `_data/guia.yml` — textos de interface, atos e progressão dos dois letramentos (PT e EN). `conversation_url` centraliza o link do convite ao autor; por enquanto, `/cv/`.
 - `_includes/guia/credit.html` — crédito de autoria do rodapé (o mesmo texto vai para o JSON-LD em `_includes/seo.html`).
 - `assets/js/guia.js` e `assets/css/guia.css` — widgets interativos e estilos. Sem dependências externas.
+
+A abertura oferece uma primeira volta curta: vontade ou hipótese, pedido, uso e análise. Os atos são momentos da história, não etapas obrigatórias de um método. IA generativa e pensamento computacional atravessam os três, com profundidade crescente. Cada capítulo consolida os conceitos em **O que vale guardar desta volta?**, com síntese e uma pergunta para relacioná-los. Em seguida vem **E no seu projeto?**, com uma tentativa ou investigação ligada ao projeto de quem lê. As duas seções entram depois do diário da Lia e antes das atividades de aula, e fazem parte da versão livro.
+
+`_includes/guia/abertura.html` monta a mesma abertura no índice e no livro, substituindo `<!-- guia-ciclo -->` pelo diagrama e o destino `/cv/` pelo convite configurado. `_includes/guia/ciclo.html` apresenta o ciclo de investigação; `_includes/guia/ato.html` mostra os dois letramentos e a pergunta de cada ato no índice e no livro. Os textos vêm de `_data/guia.yml`.
+
+### Como o guia conecta história e conceitos
+
+A abertura traz um TL;DR dos dois letramentos e dos usos de IA como assistência e como parte da operação. Os títulos dos capítulos são perguntas da jornada; o campo `subtitle` explicita os conceitos no índice, no capítulo e no sumário do livro. Os atos agrupam os capítulos 1–6, 7–12 e 13–17. O primeiro já entrega uma lista utilizável; o segundo acompanha a construção coletiva; o terceiro retoma o serviço em uso e a próxima decisão, sem encerrar o projeto da Lia.
+
+Os casos pessoais aparecem junto dos conceitos que ajudam a discutir. O capítulo 16 trata da promessa do serviço, do uso observado e de serviço como software; suas referências de mercado são apresentadas como teses de partes interessadas. Assistência, automação e presença de IA durante a execução são escolhas relacionadas, mas diferentes.
 
 ### Front matter de um capítulo
 
 ```yaml
 ---
-title: "Título do capítulo"
-description: "Uma ou duas frases: vira subtítulo, card do índice e meta description."
+title: "Que pergunta move este capítulo?"
+subtitle: "Conceitos que a pergunta ajuda a entender."
+description: "Uma ou duas frases: apresentação, card do índice e meta description."
 lang: pt-BR            # ou en
 ref: meu-capitulo      # igual nas duas línguas
 order: 13
@@ -66,7 +77,7 @@ slides: "https://..."
 | Notas para aula | `<details class="g-aula" markdown="1"><summary>Para levar para a aula</summary> ... </details>` |
 | Referências do capítulo | `<div class="g-fontes" markdown="1">` com `#### Referências` e uma lista em ABNT (em inglês, `#### References` em APA); fica no fim do arquivo |
 
-**Impressão:** qualquer capítulo (e a versão livro) pode ser impresso direto do navegador. Os widgets feitos em JavaScript viram uma nota com o endereço do capítulo; abas e checklists imprimem o conteúdo inteiro; as notas de aula abrem sozinhas.
+**Impressão:** qualquer capítulo (e a versão livro) pode ser impresso direto do navegador. Os widgets feitos em JavaScript viram uma nota com o endereço do capítulo; abas e checklists imprimem o conteúdo inteiro; as notas de aula abrem sozinhas. Quadros, tabelas, consolidações e atividades ficam inteiros na página; nas abas, cada painel imprime como um quadro separado.
 
 **Citações:** todo número ou fato externo tem link no texto e entrada formal em "Referências" (ABNT em português, APA em inglês), incluindo os posts do próprio blog citados no capítulo. Antes de publicar um dado novo, abra a fonte e confira o valor.
 

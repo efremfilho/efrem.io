@@ -1,102 +1,160 @@
 ---
-title: "Inside a language model"
+title: "Why can such a good explanation be wrong?"
+subtitle: "Language models, attention, and generation."
 description: "From text to number, from number to the next word. What happens between your question and the answer — and why is plausible not the same as true?"
 lang: en
 ref: inside-llm
 order: 3
 part: 1
 permalink: /ai/inside-a-language-model/
-interactive: "tokens + the next word"
+interactive: "tokens + meaning in context + the next word"
 piece: "the questions that never go out without the source attached"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 3
 
-Lia asked an assistant why a student on the list had stopped going to school. She got three fluent, confident paragraphs, with likely causes and even a recommendation. Not one line said "I don't know." Caio loved it: "put it in Iara's report." Bia read it and laughed without a trace of humor — she knew the girl, and none of it was her. The student wasn't in any document the assistant could have read. Where did that answer come from? And why did it convince two people out of three?
+Lia described a student who had stopped attending school to an assistant, without giving a name. Three confident paragraphs came back, with likely causes and a recommendation. Bia recognized situations she encountered on visits: "that's exactly it." Caio asked to see where each claim came from. There was no document about this student. The text had moved from "this can happen" to "this happened to her" without warning. Lia had already copied a passage into the draft report. Bia didn't want to throw away the questions it suggested. If an explanation fits what the team believes, does that make it easier or harder to notice that nobody has checked it?
 </div>
 
-The [previous chapter](/ai/how-machines-learn/) showed training with two weights and a straight line. A language model has billions of weights, but the question worth asking it is the same one you'd ask the line: *what goes in, what comes out, and what did it adjust to get there?*
+The [previous chapter](/ai/how-machines-learn/) showed a network as a combination of operations adjusted through training. A *Transformer* is one way to organize such a network to relate parts of a sequence. The name sounds like something out of a movie. The question stays simple: *what goes in, what changes along the way, and what comes out?*
 
-This chapter doesn't ask for math. It asks you to follow a sentence from the moment it's typed until the answer shows up — and to stop at each step and ask what can go wrong there.
+The [brief visual introduction to language models](https://www.youtube.com/watch?v=LPZh9BOjkQs) offers a useful image: a conversation script whose answer still needs completing. The model produces the continuation. Let's open up this machine without doing the calculations. **This is the text generation mechanism; the whole assistant may also search documents, execute code, and use other tools.**
 
 ## What does the model receive when I write?
 
-Not your sentence. The text is cut into pieces called **tokens** — sometimes a whole word, sometimes a piece of one — and each piece is swapped for a number.
+Text is cut into pieces called **tokens** — a word, part of one, punctuation — and each piece gets a numeric identifier. Think of an item's number in a catalog: it identifies the item but doesn't explain what it means.
 
 <div data-widget="tokens"></div>
 
-It's worth pausing here. If the model counts tokens and not words, what does that say about the limits on how long a conversation can be? And about the bill at the end of the month, when you're charged by usage?
+If the model counts pieces, counting words isn't enough to know how much fits in a conversation. The experiment illustrates the splitting; the exact cuts depend on the model.
 
 ## How does a number carry meaning?
 
-On its own, it doesn't. Each token's number is just an address. What carries something is the next step: each token is swapped for a long list of numbers — a vector, like the ones in chapter 2. These vectors have a name: ***embeddings***.
+The identifier gives access to a list of numbers adjusted during training: the ***embedding***. The [visual explanation of the Transformer](https://www.youtube.com/watch?v=wjZofJX0v4M) helps us imagine these lists as positions on a map of relationships. On that map, "school" and "college" might have close relationships. Distance represents learned similarities, not miles or a dictionary definition.
 
-Nobody wrote those numbers. They were adjusted during training, until tokens used in similar contexts ended up close to each other. "School" ends up near "college" and far from "screw" without anyone having taught it what a school is.
+You don't need to visualize thousands of directions. Keep the idea: **representing a word means placing it in relation to other things**. But "bank" could still mean the side of a river or a financial institution. The initial representation is only the beginning. The sentence is missing.
 
-A question to take with you: if closeness comes from the training texts, what happens to the unfair associations that are in those texts? ([Chapter 4](/ai/bias/) is about that.)
+## How does the sentence change the meaning of "bank"?
 
-## How does it know who "she" refers to?
+Switch between the passages in the tabs and notice the clues that come before the word:
 
-Read: *"The student told the principal that she needed to work."* Who needed to work?
+<div data-widget="tabs" data-title="Which bank?" data-sub="An illustration of context, not a view inside an actual model." markdown="1">
 
-You worked it out by weighing the other words in the sentence and what you know about the world. The model does something similar, but only the first part: for each token, it calculates how much each of the others matters at that point. This mechanism is called **attention**, and the architecture built around it, [introduced in a paper that became a landmark](https://arxiv.org/abs/1706.03762), is the *Transformer*. To watch the machinery turn, at your own pace, I recommend two visits: the [3Blue1Brown video series](https://www.3blue1brown.com/topics/neural-networks) and the [Transformer Explainer](https://poloclub.github.io/transformer-explainer/), which shows each step on a real sentence.
+#### Resting by a river?
 
-Two practical consequences follow. The first: everything in the conversation can influence everything — including what you pasted in by accident. The second: the more text there is, the more that attention gets divided. That's the origin of the problem [chapter 8](/ai/context/) will deal with.
+*Lia rested on the river bank.*
 
-## So then it answers?
+"River" favors the sense of land beside the water. The word "bank" stays the same, but its relationship with another word helps select the interpretation.
 
-Not exactly. After all that, what the model produces is a list: for each possible token, the chance that it's the next one. One of them is drawn at random, goes into the sentence, and the process starts over — one token at a time, until the end. There is no table of answers stored somewhere. There is the formula, and it runs again for every token. That's why a long answer takes time. And it costs.
+#### Asking for a loan?
+
+*Lia asked for a loan at the bank.*
+
+"Loan" favors the financial institution. There was no need to change the word "bank"; the context it relates to changed.
+
+#### Just waiting?
+
+*Lia waited by the bank.*
+
+It could be a riverside or a financial institution. More calculation doesn't create the information the sentence left out. Asking may be better than confidently completing it.
+
+</div>
+
+In [attention](https://www.3blue1brown.com/lessons/attention/), token representations receive information from other available tokens, with different levels of influence. It's like adding notes to the initial meaning: *in this passage, this clue carries more weight*. Several relationships can be calculated in parallel. Word order matters too: "the student called the principal" isn't "the principal called the student."
+
+Here's the effect that matters: the piece gradually stops representing just an isolated word and starts carrying information from that context. "Attention" is the mechanism's name, not a person consciously choosing what to read.
+
+## Does attention do the whole job?
+
+No. Between attention steps, [other layers transform each representation using patterns adjusted during training](https://www.3blue1brown.com/lessons/mlp/). The cycle repeats: relate the parts of the text, transform the result, relate them again. The next piece emerges from this combination of **the available context and what training left in the parameters**.
+
+Think of reading a message using both the clues in that message and what you've already learned about language. The analogy helps distinguish the two contributions. It doesn't mean the machine has your life experience, or that each fact sits in its own labeled drawer.
+
+## So does it answer?
+
+At the end of those steps comes a distribution: probabilities assigned to possible continuations. A token is selected, added to the text, and the calculation starts again with it included. Selection can use sampling or always favor the most likely option, depending on the configuration. The model doesn't draw disconnected words from a bag: the probabilities depend on what came before.
 
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** pick the sentence about the student. Before you draw, try it yourself: what word would come next? What would you need to know to get it right — and does the model know it?
+**Provocation:** pick the sentence about the student. Before drawing, try it yourself: what word would come next? What would you need to know to get it right — and is that information available?
 </div>
 
 <div data-widget="proxima"></div>
 
-The control you just moved is called **temperature**. Low, the draw almost always lands on the most likely option; high, the unlikely ones get a turn. There is no "right" value: there is the question *does this task call for variety or repetition?*
+The control you adjusted is called **temperature**. In the experiment, lowering it concentrates the probabilities; raising it gives alternatives more room. It's a variety control. It isn't a truth button. Repeating the same wrong answer more consistently is still getting it wrong.
 
-Now go back to Lia's scene. The assistant didn't look up anything about that student. It continued the text with what usually comes after similar questions. I like to say it doesn't tell the truth: it tells you the next word you want to hear. Most of the time, what usually comes next and what is true coincide. When they don't, the name people give it is hallucination — but notice that the machine did exactly the same thing in both cases.
+Go back to Lia's scene. The assistant received a short description; it neither received nor searched for records supporting the causes it added. It could produce an explanation that fit the subject; it had no evidence for attributing it to that person. I often say it doesn't speak the truth: it speaks the next word you want to hear. That's a provocation. The mechanism isn't reading your wishes, and an answer can be correct. The problem is that fluency alone doesn't show where the claim came from.
 
-Models get it wrong this way less and less. I can't remember the last time the one I use made something up on me. The mechanism, though, is the same as ever — and the question about the student still has nowhere to pull an answer from.
+One mistake that cost me work was less spectacular than inventing a biography. [While migrating an application](/blog/en/migrating-to-gpt-5-has-been-painful/), the agents did not recognize the new service I wanted to use. They treated the change as an error, undid the implementation, and reverted to the familiar default. They broke the application while trying to "fix" what they did not know. I had to bring current documentation into the project. The problem could return in later changes. An answer familiar to the model may be outdated for my work.
 
-## If it's just the next word, why does it seem to understand?
+## If it's the next word, why does it seem to understand?
 
-That's the question that divides people far more qualified than I am, and I'm not going to settle it here. I can offer three angles for you to think about:
+Because the task's name doesn't tell you how much work it requires. Complete *"Lia put the form in the blue folder. Bia took the folder to the education department. The form is now…"*. To continue coherently, it helps to track objects, places, and actions. A task described in a few words can require complicated relationships.
 
-- To predict the next word well in a text about physics, it helps a lot to have captured something of physics. How much, nobody really knows how to measure.
-- Fluency isn't evidence. We humans have always confused speaking well with knowing.
-- The question "does it understand?" may be less useful, for the person using it, than "how do I check?"
+[Training to complete text isn't an assistant's whole education either](https://openai.com/index/chatgpt/). Later stages aim to improve instruction following and responses. The system can learn to say "I don't know," ask for clarification, or use tools. None of that guarantees it will choose well in every case.
+
+Whether this deserves the name "understanding" is a discussion I won't settle here. For builders, other questions already give us enough work: *what can it do, under what conditions, and how do I check?* Neither treat it as a person nor dismiss a capability because it's made of calculations.
+
+## Why did that paper change so much?
+
+Imagine a message passing from person to person in a line. For one end to receive something from the other, the information travels the whole distance. Now imagine each person can directly consult the relevant parts of the message. It's an analogy for the difference between passing information sequentially and calculating relationships through attention; it doesn't mean the model reads or thinks like a classroom.
+
+The [original paper](https://arxiv.org/abs/1706.03762) presented the Transformer on translation tasks. Its contribution wasn't inventing attention from scratch: it was making attention central to an architecture that did not have to pass information through the whole sequence, step by step, as the recurrent networks it compared against did. That allowed **more parallel work during training**, with good results and less processing time. An [explanation by one of the authors](https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/) shows how. He was writing on the blog of the company behind the research, an interested party.
+
+Don't confuse that parallelism with the whole answer coming out at once. In the model we're following here, generation still adds one token at a time. Training and using what was trained are different operations.
+
+## And what did the people who wrote it go on to do?
+
+The paper has eight names on it. The paths documented in the notes include new labs, enterprise model companies, agents that operate software, molecular research, and distributed infrastructure. There was also a return to the original company and another departure. I've kept names, destinations, and sources together in the notes, because this part changes.
+
+What matters for builders is seeing the range of possible directions. A discovery about relationships between parts of a sequence doesn't have to end in the same product for everyone. The question it leaves is very much a product question: *with this capability in your hands, what problem would you choose to solve?*
+
+## What if I was the one who accepted the answer?
+
+To feel it firsthand, I forced myself to write an entire text with AI. [Fifteen minutes of prompting, five hours of editing](/blog/en/15-minutes-of-prompting-5-hours-of-editing/). Several of the cited sources did not exist; I looked, couldn't find them, and cut the passage. The work didn't shrink. It unlocked something I've always been bad at, which is writing. And in the end, it wasn't the AI that generated it: I was the one who delivered it.
 
 ## What do I do with this?
 
-Not answers, but four questions that from now on go with you into every use:
+Four questions start following every use:
 
-1. **Was this in what I provided, or is it filling in?** If the answer depends on a fact about your organization and you didn't give it that fact, the answer was made up, and nicely written.
-2. **How old is what it knows?** Training ended on some date. What came after, and what was never in public text, isn't in there.
-3. **Do I need the same result every time?** If so, the draw is a problem — and the way out is in [chapter 10](/ai/ask-for-the-script/).
+1. **Where did this claim come from?** If it depends on a fact about your organization, was it supplied, found in a source, or merely inferred? A hypothesis doesn't become a fact because it is well written.
+2. **Is the information up to date?** Training doesn't update itself with every event. The assistant may search for recent data, but I need to check whether it did, and which source it used.
+3. **Do I need to apply an exact rule?** Then it is worth separating text generation from verifiable calculation, as in [chapter 10](/ai/ask-for-the-script/).
 4. **Does it fit?** Everything is counted in tokens: what you write, what you attach, what it answers.
 
 It's what I repeat in every training session: [before any sophisticated technique, the basics](/blog/en/before-rag-and-mcp-learn-the-basics/). Understanding how the model works, knowing how to choose one, and knowing what to put in the input solves most of the problems.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- Text becomes tokens, tokens become vectors, attention weighs them against each other, and out comes a list of chances for the next token.
-- The model always continues the text. It has no separate mode for "I don't know."
-- Plausible and true usually coincide. Checking is what covers the difference.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** when the assistant talks about our school system, is it reading or filling in? Can you tell the difference just by looking at the text?
+- **In dispute:** A useful hypothesis can become an invented fact the next time it is copied. How can they keep the question without turning a person into a character in the answer?
 - **Paths on the table:**
-  - *Caio:* use it as a draft and someone checks later. Who? When?
-  - *Bia:* ban questions about real people. Simple — and it throws out what would work.
-  - *Lia:* separate them: a question that depends on a fact about the school system only goes out with the source attached.
-- **What the team did, for now:** the list of questions that never again go out without the source attached. The paragraph didn't make it into the report.
+  - *Lia:* stop using AI to draft the report for now. That reduces this route to error, but returns all the writing to the team.
+  - *Bia:* use the hypotheses as questions for visits. That may help them listen, but can also lead them to seek only what confirms the answer.
+  - *Caio:* require an origin for every claim about a case. That preserves some writing help, but adds checking work and does not guarantee the source is right.
+- **What the team did, for now:** removed the paragraph from the report. Bia kept the questions in a hypotheses section, including "what else could explain this?"; Caio reviewed the separation between accounts and assumptions. Lia would have to rewrite the passage before the meeting.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Tokens and representations:** text becomes units and numbers that the model transforms according to context.
+- **Attention:** helps relate parts of the input; other network operations also transform those representations.
+- **Generation:** continuation probabilities are not a measure of truth. The assistant can use tools and sources, but what it did needs checking.
+
+Why can a coherent explanation still be unfounded?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Choose a claim that entered your project because it sounded convincing. How would you check it outside the conversation with the model? If you cannot, what can remain a hypothesis and what needs to leave the delivery? Make that change and observe what it forces you to reconsider.
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -120,8 +178,49 @@ Write the beginning of a sentence on the board ("The biggest problem in our city
 #### References
 
 - 3Blue1Brown. (n.d.). *Neural networks* [Video series]. <https://www.3blue1brown.com/topics/neural-networks>
+- Alnylam Pharmaceuticals & Inceptive. (2026, June 3). *Alnylam and Inceptive form strategic AI collaboration to accelerate the discovery of RNAi therapeutics* [Press release]. Inceptive. <https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership>
+- Anthropic. (2025, September 29). *Effective context engineering for AI agents*. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
+- Cai, K.. (2024, August 2). *Google hires top talent from startup Character.AI, signs licensing deal*. Reuters. <https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866>
+- Cohere. (n.d.). *About Cohere*. <https://cohere.com/about>
+- Essential AI. (2023). *We are excited to announce Essential AI* [Post]. LinkedIn. <https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc>
+- Goldman, S.. (2026, June 20). *Nvidia quietly acquihires Essential AI team, including Transformer coauthor Ashish Vaswani*. Ground Level AI. <https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential>
+- Luan, D.. (2022, April 26). *Introducing Adept*. Adept. <https://www.adept.ai/blog/introducing-adept/>
+- Maranhão Filho, É. (2025, August 8). *Migrating to GPT-5 has been painful*. efrem.io. <https://efrem.io/blog/en/migrating-to-gpt-5-has-been-painful/>
 - Maranhão Filho, É. (2025, June 30). *Before RAG and MCP, learn the basics*. efrem.io. <https://efrem.io/blog/en/before-rag-and-mcp-learn-the-basics/>
+- Maranhão Filho, É. (2025, September 23). *15 minutes of prompting, 5 hours of editing*. efrem.io. <https://efrem.io/blog/en/15-minutes-of-prompting-5-hours-of-editing/>
+- NEAR AI. (n.d.). *Company*. <https://near.ai/company>
+- OpenAI Forum. (2025, October 8). *Learning powerful models: from Transformers to reasoners and beyond* [Event page and speaker biography]. <https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au>
+- OpenAI. (2022, November 30). *Introducing ChatGPT*. <https://openai.com/index/chatgpt/>
+- Parmar, N.. (n.d.). *Niki Parmar* [Professional profile]. LinkedIn. <https://www.linkedin.com/in/nikiparmar>
 - Polo Club of Data Science. (n.d.). *Transformer Explainer: LLM transformer model visually explained*. Georgia Institute of Technology. <https://poloclub.github.io/transformer-explainer/>
+- Primack, D.. (2026, June 18). *Top AI researcher leaves Google for OpenAI*. Axios. <https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai>
+- Sakana AI. (n.d.). *Company information*. <https://sakana.ai/company-info/>
+- Sanderson, G. (2024, April 1). *Transformers, the tech behind LLMs* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/gpt/> Companion video: <https://www.youtube.com/watch?v=wjZofJX0v4M>
+- Sanderson, G. (2024, April 7). *Attention in transformers, step-by-step* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/attention/>
+- Sanderson, G. (2024, August 31). *How might LLMs store facts* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/mlp/>
+- Sanderson, G. (2024, November 20). *Large language models explained briefly* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/mini-llm/> Companion video: <https://www.youtube.com/watch?v=LPZh9BOjkQs>
+- Uszkoreit, J.. (2017, August 31). *Transformer: a novel neural network architecture for language understanding*. Google Research. <https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/>
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). *Attention is all you need*. arXiv. <https://doi.org/10.48550/arXiv.1706.03762>
+
+*Notes:* Sanderson's lessons on LLMs, Transformers, attention, and MLPs support the intuition for the mechanism. The script awaiting completion comes from the brief video; the relationship map adapts the embedding explanation; the bank examples and Lia's folder are teaching adaptations created for this guide. The tabs do not run a model or display measured weights. In English, a riverbank replaces the Portuguese bench meaning, preserving the ambiguity of the word. Attention exchanges information between permitted positions; in a causal generation model, each position cannot consult future tokens. This limit does not prevent parallel calculation during training. Intermediate layers also transform representations; attention is not the whole network. The original ChatGPT announcement documents stages after pre-training; Anthropic (2025), an interested party, describes tools and retrieved information in agent contexts.
+
+To see the mechanism, the suggested order is: [brief overview](https://www.youtube.com/watch?v=LPZh9BOjkQs), [Transformers and embeddings](https://www.youtube.com/watch?v=wjZofJX0v4M), [attention](https://www.3blue1brown.com/lessons/attention/), and [intermediate layers](https://www.3blue1brown.com/lessons/mlp/). The [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) lets you explore a small model from inside. These are optional deeper readings: no formula is a prerequisite for continuing the guide.
+
+The paper by Vaswani et al. was submitted to arXiv on June 12, 2017. Uszkoreit's explanation (2017) complements the paper; the line-of-people analogy is a teaching simplification.
+
+#### Where did the eight people behind the paper go?
+
+A selection of career paths documented in sources consulted on November 15, 2026. The dates of announcements and reports matter: an old biography does not guarantee a current affiliation. Company pages and personal profiles come from interested parties; here they support affiliations and stated aims, not endorsements of company quality.
+
+| Person | Path after their work at Google |
+|---|---|
+| Ashish Vaswani | Co-founded [Adept](https://www.adept.ai/blog/introducing-adept/) and [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Sharon Goldman [reported his hiring by Nvidia in June 2026](https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential). |
+| Noam Shazeer | Co-founded Character.AI and [returned to Google DeepMind in 2024](https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866). Then: [OpenAI, June 2026](https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai). |
+| Niki Parmar | Co-founded [Adept](https://www.adept.ai/blog/introducing-adept/) and [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Her [public professional profile](https://www.linkedin.com/in/nikiparmar) lists Anthropic. |
+| Jakob Uszkoreit | Co-founded [Inceptive](https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership), which applies models to molecular and drug research; the 2026 announcement identifies him as CEO. |
+| Llion Jones | Co-founded [Sakana AI](https://sakana.ai/company-info/), an AI research lab based in Tokyo. |
+| Aidan N. Gomez | Co-founded [Cohere](https://cohere.com/about), focused on AI for organizations; its company page identifies him as CEO. |
+| Łukasz Kaiser | Moved to [OpenAI](https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au), where the 2025 event biography identifies him as a deep learning researcher. |
+| Illia Polosukhin | Co-founded the NEAR blockchain project and [NEAR AI](https://near.ai/company), whose stated aim is user-owned AI. |
 
 </div>

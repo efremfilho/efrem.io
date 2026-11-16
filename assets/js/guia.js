@@ -43,39 +43,39 @@
 
 	const W = {};
 
-	/* ---------- Cap. 1: é IA ou não é? ---------- */
+	/* ---------- Cap. 1: regra escrita ou aprendida? ---------- */
 	W['quiz-ia'] = function (el) {
 		const t = L({
 			pt: {
-				title: 'É IA ou não é?', sub: 'Use os dois critérios do capítulo: autonomia e adaptatividade.',
-				yes: 'É IA', no: 'Não é IA', next: 'Próximo →', again: 'Jogar de novo', right: 'Isso!', wrong: 'Quase.',
-				aut: 'autonomia', ada: 'adaptatividade', score: (a, b) => `Você acertou ${a} de ${b}.`,
-				end: 'Repare que a dúvida quase sempre está na adaptatividade: muita coisa age sozinha, pouca coisa melhora com dados.',
+				title: 'Regra escrita ou aprendida?', sub: 'Nestes exemplos, de onde vem o comportamento? Em um produto, as duas coisas podem coexistir.',
+				yes: 'Aprendeu com dados', no: 'Regra escrita', next: 'Próximo →', again: 'Jogar de novo', right: 'Isso!', wrong: 'Quase.',
+				aut: 'executa etapas sozinho', ada: 'aprendeu com dados', score: (a, b) => `Você acertou ${a} de ${b}.`,
+				end: 'Agir automaticamente não significa aprender. Numa ferramenta real, que evidência você pediria para descobrir de onde vem a regra?',
 				items: [
 					['🧮', 'Calculadora de bolso', 0, 0, 0, 'Só faz o que cada tecla manda e faz igual para sempre. Dez contas ou dez milhões: não aprende nada.'],
-					['📧', 'Filtro de spam do e-mail', 1, 1, 1, 'Decide sozinho o que vai para o lixo e melhora conforme vê mais mensagens (e conforme você marca "não é spam").'],
+					['📧', 'Filtro de spam treinado com mensagens classificadas', 1, 1, 1, 'Neste exemplo, usa padrões aprendidos de mensagens classificadas. Receber uma mensagem nova não implica treinar de novo.'],
 					['📊', 'Planilha com fórmulas', 0, 0, 0, 'Recalcula tudo na hora, mas são regras fixas que alguém escreveu. Não descobre padrão nenhum sozinha.'],
-					['🎬', 'Recomendação do streaming', 1, 1, 1, 'Ninguém programou "se viu X, mostre Y". O sistema ajusta as sugestões conforme os dados de quem assiste.'],
-					['🌡️', 'Termostato simples (liga aos 24 °C)', 0, 1, 0, 'Pegadinha: ele age sozinho, mas por uma regra fixa. Tem autonomia aparente, zero adaptatividade.'],
-					['🗺️', 'App de trânsito que prevê o melhor caminho', 1, 1, 1, 'Estima o tempo de viagem a partir de dados de milhões de trajetos e se ajusta ao que está acontecendo agora.'],
+					['🎬', 'Sugestões de filmes a partir de padrões aprendidos', 1, 1, 1, 'Neste exemplo, as sugestões usam padrões aprendidos do histórico. Regras escritas também podem participar do produto.'],
+					['🌡️', 'Termostato simples (liga aos 24 °C)', 0, 1, 0, 'Ele age sozinho seguindo um limite escrito. Mudar a temperatura medida não é aprender um novo limite.'],
+					['🗺️', 'Modelo treinado para estimar o tempo de uma viagem', 1, 1, 1, 'Neste exemplo, um modelo treinado estima o tempo; a escolha da rota também usa regras e busca. São peças diferentes.'],
 					['☎️', 'Chatbot de menu ("digite 1 para…")', 0, 0, 0, 'Uma árvore de decisão escrita à mão. Parece conversa, mas é um formulário com outra roupa.'],
-					['💬', 'Assistente de conversa com IA generativa', 1, 1, 1, 'Executa tarefas de vários passos e o comportamento veio do treino com dados. Detalhe: ele não aprende sozinho com a sua conversa — a adaptação acontece no treino.']
+					['💬', 'Assistente de conversa com IA generativa', 1, 1, 1, 'O comportamento depende do treino com dados. Na conversa, usa também o contexto: responder de outro jeito não significa alterar os pesos do modelo.']
 				]
 			},
 			en: {
-				title: 'AI or not AI?', sub: 'Use the two criteria from this chapter: autonomy and adaptivity.',
-				yes: 'It is AI', no: 'Not AI', next: 'Next →', again: 'Play again', right: 'Exactly!', wrong: 'Not quite.',
-				aut: 'autonomy', ada: 'adaptivity', score: (a, b) => `You got ${a} out of ${b}.`,
-				end: 'Notice the doubt is almost always about adaptivity: plenty of things act on their own, few get better with data.',
+				title: 'Written or learned rule?', sub: 'In these examples, where does behavior come from? Both approaches can coexist in a product.',
+				yes: 'Learned from data', no: 'Written rule', next: 'Next →', again: 'Play again', right: 'Exactly!', wrong: 'Not quite.',
+				aut: 'runs steps on its own', ada: 'learned from data', score: (a, b) => `You got ${a} out of ${b}.`,
+				end: 'Acting automatically does not mean learning. In a real tool, what evidence would you request to discover where the rule comes from?',
 				items: [
 					['🧮', 'Pocket calculator', 0, 0, 0, 'It only does what each key tells it to, the same way forever. Ten sums or ten million: it learns nothing.'],
-					['📧', 'Email spam filter', 1, 1, 1, 'It decides on its own what goes to junk and improves as it sees more messages (and as you click "not spam").'],
+					['📧', 'Spam filter trained on classified messages', 1, 1, 1, 'In this example, it uses patterns learned from classified messages. Receiving a new message does not imply retraining.'],
 					['📊', 'Spreadsheet with formulas', 0, 0, 0, 'It recalculates instantly, but those are fixed rules someone wrote. It discovers no pattern by itself.'],
-					['🎬', 'Streaming recommendations', 1, 1, 1, 'Nobody coded "if they watched X, show Y". The system adjusts suggestions from viewing data.'],
-					['🌡️', 'Simple thermostat (turns on at 24 °C)', 0, 1, 0, 'Trick question: it acts alone, but on a fixed rule. Apparent autonomy, zero adaptivity.'],
-					['🗺️', 'Traffic app predicting the best route', 1, 1, 1, 'It estimates travel time from millions of trips and adjusts to what is happening right now.'],
+					['🎬', 'Movie suggestions based on learned patterns', 1, 1, 1, 'In this example, suggestions use patterns learned from viewing history. Written rules can also participate in the product.'],
+					['🌡️', 'Simple thermostat (turns on at 24 °C)', 0, 1, 0, 'It acts on its own using a written threshold. A change in measured temperature is not learning a new threshold.'],
+					['🗺️', 'Model trained to estimate travel time', 1, 1, 1, 'In this example, a trained model estimates travel time; route selection also uses rules and search. They are different components.'],
 					['☎️', 'Menu chatbot ("press 1 for…")', 0, 0, 0, 'A hand-written decision tree. It looks like a conversation but it is a form in disguise.'],
-					['💬', 'Generative AI chat assistant', 1, 1, 1, 'It carries out multi-step tasks and its behavior came from training on data. Detail: it does not learn from your chat by itself — adaptation happens in training.']
+					['💬', 'Generative AI chat assistant', 1, 1, 1, 'Its behavior depends on training with data. In conversation, it also uses context: responding differently does not mean changing the model weights.']
 				]
 			}
 		});
@@ -159,8 +159,8 @@
 	/* ---------- Cap. 2: loop de treino ---------- */
 	W.treino = function (el) {
 		const t = L({
-			pt: { title: 'Treine um modelo de uma linha só', sub: 'Cada ponto é uma pessoa da turma: horas de estudo × nota. O modelo é a reta nota = w · horas + b. Ele começa chutando e ajusta w e b para diminuir o erro.', step: '1 passo', run: 'Treinar 50 passos', reset: 'Recomeçar', steps: 'passos', err: 'erro médio (quanto menor, melhor)', eq: 'equação atual', x: 'horas de estudo', y: 'nota', note: 'As linhas tracejadas são os erros: a distância entre o que o modelo previu e o que aconteceu. Treinar é só encolher essas linhas. Um modelo grande faz exatamente isso, com bilhões de pesos em vez de dois.', loss: 'erro ao longo do treino' },
-			en: { title: 'Train a one-line model', sub: 'Each dot is a student: study hours × grade. The model is the line grade = w · hours + b. It starts by guessing and adjusts w and b to shrink the error.', step: '1 step', run: 'Train 50 steps', reset: 'Start over', steps: 'steps', err: 'mean error (lower is better)', eq: 'current equation', x: 'study hours', y: 'grade', note: 'The dashed lines are the errors: the distance between what the model predicted and what happened. Training is just shrinking those lines. A large model does exactly this, with billions of weights instead of two.', loss: 'error during training' }
+			pt: { title: 'Treine um modelo de uma linha só', sub: 'Cada ponto é uma pessoa da turma: horas de estudo × nota. O modelo é a reta nota = w · horas + b. Ele começa chutando e ajusta w e b para diminuir o erro.', step: '1 passo', run: 'Treinar 50 passos', reset: 'Recomeçar', steps: 'passos', err: 'erro médio (quanto menor, melhor)', eq: 'equação atual', x: 'horas de estudo', y: 'nota', note: 'As linhas tracejadas são os erros: a distância entre o que o modelo previu e o que aconteceu. Aqui, treinar procura encolher essas linhas. Redes maiores também ajustam parâmetros para reduzir um erro, mas combinam outras operações e critérios. Ir bem nestes pontos não garante acertar dados novos.', loss: 'erro ao longo do treino' },
+			en: { title: 'Train a one-line model', sub: 'Each dot is a student: study hours × grade. The model is the line grade = w · hours + b. It starts by guessing and adjusts w and b to shrink the error.', step: '1 step', run: 'Train 50 steps', reset: 'Start over', steps: 'steps', err: 'mean error (lower is better)', eq: 'current equation', x: 'study hours', y: 'grade', note: 'The dashed lines are the errors: the distance between what the model predicted and what happened. Here, training tries to shrink those lines. Larger networks also adjust parameters to reduce an error, but combine other operations and criteria. Doing well on these points does not guarantee success on new data.', loss: 'error during training' }
 		});
 		frame(el, t.title, t.sub);
 		const DATA = [[1, 2.4], [2, 2.9], [2.5, 4.1], [3.5, 4.0], [4, 5.2], [5, 5.4], [6, 6.9], [7, 6.6], [8, 8.3], [9, 8.6]];
@@ -607,8 +607,8 @@
 				levels: [
 					['Chat', 'Só conversa', 'Apenas o que você digita ou cola na conversa.', 'Você colar dado sensível (de cliente, de saúde, financeiro) sem pensar.', 'Tirar dúvida, estudar, rascunhar, discutir uma transcrição de reunião.'],
 					['Aba', 'Uma aba do navegador', 'Lê e clica somente nas abas que você liberou, com o seu login naquele site.', 'Ele age em seu nome dentro daquele site. Se o site é o banco, o risco é o banco.', 'Emitir nota fiscal todo mês, montar um curso no Moodle. O contexto é uma página, e eu vejo tudo acontecendo.'],
-					['Repo', 'Uma pasta ou repositório', 'Lê e altera os arquivos daquele projeto e roda comandos ali dentro.', 'Mudança ruim ou apagada sem querer — mas com Git tudo tem histórico, branch, revisão e rollback.', 'É o meu padrão: código, documentação, análise de dados. O repositório é a cerca e a memória.'],
-					['Nuvem', 'Ambiente na nuvem com cerca', 'Uma máquina descartável com script de preparação, só os segredos daquele projeto e uma lista de sites permitidos.', 'O estrago máximo é o que aquelas chaves permitem. Por isso chave restrita, por projeto, fácil de revogar.', 'Projetos de empresa e quando quero tocar o trabalho pelo celular. Um projeto meu só fala com pouco mais de uma dúzia de endereços.'],
+					['Repo', 'Uma pasta ou repositório', 'Lê e altera os arquivos daquele projeto e roda comandos ali dentro.', 'Mudanças e exclusões. Git ajuda a recuperar versões salvas; não desfaz ações fora dos arquivos.', 'É o meu padrão: código, documentação, análise de dados. O histórico dá memória; as permissões delimitam o acesso.'],
+					['Nuvem', 'Ambiente na nuvem com cerca', 'Uma máquina descartável com script de preparação, só os segredos daquele projeto e uma lista de sites permitidos.', 'Chaves, arquivos e serviços permitidos limitam o alcance. É preciso conferir o que cada acesso deixa fazer.', 'Projetos de empresa e quando quero tocar o trabalho pelo celular. Um projeto meu só fala com pouco mais de uma dúzia de endereços.'],
 					['Tudo', 'Máquina inteira + e-mail + mensagens', 'Tudo o que você enxerga: arquivos, e-mail, mensageiros, contas logadas. E age 24 horas por dia.', 'Qualquer e-mail ou mensagem recebida pode conter instrução maliciosa (prompt injection). Ação irreversível em seu nome. Vazamento.', 'Ainda não uso assim. Se for usar: máquina isolada, contas separadas, nada de banco — e a consciência de que "controle" aqui é mais sensação do que fato.']
 				]
 			},
@@ -617,8 +617,8 @@
 				levels: [
 					['Chat', 'Conversation only', 'Only what you type or paste into the conversation.', 'You pasting sensitive data (a client\'s, health, financial) without thinking.', 'Asking questions, studying, drafting, discussing a meeting transcript.'],
 					['Tab', 'One browser tab', 'Reads and clicks only on the tabs you allowed, with your login on that site.', 'It acts on your behalf inside that site. If the site is your bank, the risk is your bank.', 'Issuing invoices every month, building a course in Moodle. The context is one page, and I watch it all happen.'],
-					['Repo', 'One folder or repository', 'Reads and changes the files of that project and runs commands inside it.', 'A bad change or accidental deletion — but with Git everything has history, branches, review and rollback.', 'My default: code, documentation, data analysis. The repository is both the fence and the memory.'],
-					['Cloud', 'Fenced cloud environment', 'A disposable machine with a setup script, only that project\'s secrets, and an allowlist of sites.', 'The maximum damage is whatever those keys allow. Hence restricted, per-project keys that are easy to revoke.', 'Company projects and when I want to keep working from my phone. One project of mine can only talk to about a dozen addresses.'],
+					['Repo', 'One folder or repository', 'Reads and changes the files of that project and runs commands inside it.', 'Changes and deletions. Git helps recover saved versions; it does not undo actions outside the files.', 'My default: code, documentation, data analysis. History provides memory; permissions delimit access.'],
+					['Cloud', 'Fenced cloud environment', 'A disposable machine with a setup script, only that project\'s secrets, and an allowlist of sites.', 'Keys, files, and permitted services limit reach. Check what each form of access allows.', 'Company projects and when I want to keep working from my phone. One project of mine can only talk to about a dozen addresses.'],
 					['All', 'Whole machine + email + messaging', 'Everything you can see: files, email, messengers, logged-in accounts. And it acts 24 hours a day.', 'Any incoming email or message may carry malicious instructions (prompt injection). Irreversible actions in your name. Leaks.', 'I do not use it this way yet. If you do: isolated machine, separate accounts, no banking — and the awareness that "control" here is more a feeling than a fact.']
 				]
 			}

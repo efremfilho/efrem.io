@@ -43,6 +43,7 @@ layout: default
 		<span class="post-meta-item">{{ page.content | number_of_words | divided_by: 180 | at_least: 1 }} {{ t.min }}</span>
 	</div>
 	<h1 class="post-title">{{ page.title }}</h1>
+	{% if page.subtitle %}<p class="g-concept-subtitle">{{ page.subtitle }}</p>{% endif %}
 	{% if page.description %}<p class="page-subtitle">{{ page.description }}</p>{% endif %}
 
 	{% if page.video or page.audio or page.slides %}

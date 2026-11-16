@@ -6,9 +6,21 @@
       "pt": "AMERICAN CIVIL LIBERTIES UNION. **Williams v. City of Detroit**. [*S. l.*], atualizado em 28 jun. 2024. Disponível em: <https://www.aclu.org/cases/williams-v-city-of-detroit-face-recognition-false-arrest>. Acesso em: 13 nov. 2026.",
       "en": "American Civil Liberties Union. (2024, June 28). *Williams v. City of Detroit*. <https://www.aclu.org/cases/williams-v-city-of-detroit-face-recognition-false-arrest>"
     },
+    "adept-fundacao": {
+      "pt": "LUAN, David. **Introducing Adept**. [*S. l.*]: Adept, 26 abr. 2022. Disponível em: <https://www.adept.ai/blog/introducing-adept/>. Acesso em: 15 nov. 2026.",
+      "en": "Luan, D.. (2022, April 26). *Introducing Adept*. Adept. <https://www.adept.ai/blog/introducing-adept/>"
+    },
     "agentsmd": {
       "pt": "AGENTS.MD. [*S. l.*], [2025?]. Disponível em: <https://agents.md/>. Acesso em: 13 nov. 2026.",
       "en": "*AGENTS.md*. (n.d.). <https://agents.md/>"
+    },
+    "alexnet": {
+      "pt": "KRIZHEVSKY, Alex; SUTSKEVER, Ilya; HINTON, Geoffrey E. ImageNet classification with deep convolutional neural networks. **Advances in Neural Information Processing Systems**, [*s. l.*], v. 25, 2012. Disponível em: <https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html>. Acesso em: 15 nov. 2026.",
+      "en": "Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. *Advances in Neural Information Processing Systems, 25*. <https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html>"
+    },
+    "alphago": {
+      "pt": "GOOGLE DEEPMIND. **AlphaGo**. [*S. l.*], [s. d.]. Disponível em: <https://deepmind.google/research/alphago/>. Acesso em: 15 nov. 2026.",
+      "en": "Google DeepMind. (n.d.). *AlphaGo*. <https://deepmind.google/research/alphago/>"
     },
     "altman": {
       "pt": "ALTMAN, Sam. **The gentle singularity**. [*S. l.*], 2025. Disponível em: <https://blog.samaltman.com/the-gentle-singularity>. Acesso em: 13 nov. 2026.",
@@ -26,6 +38,38 @@
       "pt": "3BLUE1BROWN. **Neural networks**. [*S. l.*], [2017-]. Série de vídeos. Disponível em: <https://www.3blue1brown.com/topics/neural-networks>. Acesso em: 13 nov. 2026.",
       "en": "3Blue1Brown. (n.d.). *Neural networks* [Video series]. <https://www.3blue1brown.com/topics/neural-networks>"
     },
+    "b3b1-attention": {
+      "pt": "SANDERSON, Grant. **Attention in transformers, step-by-step**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 7 abr. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/attention/>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2024, April 7). *Attention in transformers, step-by-step* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/attention/>"
+    },
+    "b3b1-backprop": {
+      "pt": "SANDERSON, Grant. **What is backpropagation really doing?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 3 nov. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/backpropagation/>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2017, November 3). *What is backpropagation really doing?* [Illustrated lesson; text adaptation by Josh Pullen]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/backpropagation/>"
+    },
+    "b3b1-gradient": {
+      "pt": "SANDERSON, Grant. **Gradient descent, how neural networks learn**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 16 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/gradient-descent/>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2017, October 16). *Gradient descent, how neural networks learn* [Illustrated lesson; text adaptation by Josh Pullen]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/gradient-descent/>"
+    },
+    "b3b1-mini": {
+      "pt": "SANDERSON, Grant. **Large language models explained briefly**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 20 nov. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/mini-llm/>. Vídeo correspondente: <https://www.youtube.com/watch?v=LPZh9BOjkQs>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2024, November 20). *Large language models explained briefly* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/mini-llm/> Companion video: <https://www.youtube.com/watch?v=LPZh9BOjkQs>"
+    },
+    "b3b1-mlp": {
+      "pt": "SANDERSON, Grant. **How might LLMs store facts**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 31 ago. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/mlp/>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2024, August 31). *How might LLMs store facts* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/mlp/>"
+    },
+    "b3b1-neural": {
+      "pt": "SANDERSON, Grant. **But what is a neural network?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 5 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/neural-networks/>. Vídeo correspondente: <https://www.youtube.com/watch?v=aircAruvnKk>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2017, October 5). *But what is a neural network?* [Illustrated lesson; text adaptation by Josh Pullen]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/neural-networks/> Companion video: <https://www.youtube.com/watch?v=aircAruvnKk>"
+    },
+    "b3b1-transformer": {
+      "pt": "SANDERSON, Grant. **Transformers, the tech behind LLMs**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 1 abr. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/gpt/>. Vídeo correspondente: <https://www.youtube.com/watch?v=wjZofJX0v4M>. Acesso em: 15 nov. 2026.",
+      "en": "Sanderson, G. (2024, April 1). *Transformers, the tech behind LLMs* [Illustrated lesson; text adaptation by Justin Sun]. 3Blue1Brown. <https://www.3blue1brown.com/lessons/gpt/> Companion video: <https://www.youtube.com/watch?v=wjZofJX0v4M>"
+    },
+    "bert-busca": {
+      "pt": "NAYAK, Pandu. **Understanding searches better than ever before**. [*S. l.*]: Google, 25 out. 2019. Disponível em: <https://blog.google/products-and-platforms/products/search/search-language-understanding-bert/>. Acesso em: 15 nov. 2026.",
+      "en": "Nayak, P.. (2019, October 25). *Understanding searches better than ever before*. Google. <https://blog.google/products-and-platforms/products/search/search-language-understanding-bert/>"
+    },
     "brennan": {
       "pt": "BRENNAN, Karen; RESNICK, Mitchel. **New frameworks for studying and assessing the development of computational thinking**. Trabalho apresentado na reunião anual da American Educational Research Association, Vancouver, 2012. Disponível em: <http://scratched.gse.harvard.edu/ct/files/AERA2012.pdf>. Acesso em: 15 nov. 2026.",
       "en": "Brennan, K., & Resnick, M. (2012). *New frameworks for studying and assessing the development of computational thinking* [Paper presentation]. Annual Meeting of the American Educational Research Association, Vancouver, Canada. <http://scratched.gse.harvard.edu/ct/files/AERA2012.pdf>"
@@ -34,17 +78,37 @@
       "pt": "BUOLAMWINI, Joy; GEBRU, Timnit. Gender shades: intersectional accuracy disparities in commercial gender classification. **Proceedings of Machine Learning Research**, [*s. l.*], v. 81, p. 77-91, 2018. Disponível em: <https://proceedings.mlr.press/v81/buolamwini18a.html>. Acesso em: 13 nov. 2026.",
       "en": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. *Proceedings of Machine Learning Research, 81*, 77–91. <https://proceedings.mlr.press/v81/buolamwini18a.html>"
     },
+    "chatgpt-lancamento": {
+      "pt": "OPENAI. **Introducing ChatGPT**. [*S. l.*], 30 nov. 2022. Disponível em: <https://openai.com/index/chatgpt/>. Acesso em: 15 nov. 2026.",
+      "en": "OpenAI. (2022, November 30). *Introducing ChatGPT*. <https://openai.com/index/chatgpt/>"
+    },
     "chroma": {
       "pt": "CHROMA. **Context rot**: how increasing input tokens impacts LLM performance. [*S. l.*], 14 jul. 2025. Relatório técnico. Disponível em: <https://research.trychroma.com/context-rot>. Acesso em: 13 nov. 2026.",
       "en": "Chroma. (2025, July 14). *Context rot: How increasing input tokens impacts LLM performance* [Technical report]. <https://research.trychroma.com/context-rot>"
+    },
+    "cohere": {
+      "pt": "COHERE. **About Cohere**. [*S. l.*], [s. d.]. Disponível em: <https://cohere.com/about>. Acesso em: 15 nov. 2026.",
+      "en": "Cohere. (n.d.). *About Cohere*. <https://cohere.com/about>"
     },
     "daneshjou": {
       "pt": "DANESHJOU, Roxana *et al.* Disparities in dermatology AI performance on a diverse, curated clinical image set. **Science Advances**, Washington, DC, v. 8, n. 32, eabq6147, 12 ago. 2022. DOI: <https://doi.org/10.1126/sciadv.abq6147>. Acesso em: 13 nov. 2026.",
       "en": "Daneshjou, R., Vodrahalli, K., Novoa, R. A., Jenkins, M., et al. (2022). Disparities in dermatology AI performance on a diverse, curated clinical image set. *Science Advances, 8*(32), Article eabq6147. <https://doi.org/10.1126/sciadv.abq6147>"
     },
+    "dartmouth": {
+      "pt": "DARTMOUTH. **Artificial intelligence (AI) coined at Dartmouth**. [*S. l.*], [s. d.]. Disponível em: <https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth>. Acesso em: 15 nov. 2026.",
+      "en": "Dartmouth. (n.d.). *Artificial intelligence (AI) coined at Dartmouth*. <https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth>"
+    },
     "dcn": {
       "pt": "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. **Resolução nº 5, de 14 de outubro de 2021**. Institui as Diretrizes Curriculares Nacionais do Curso de Graduação em Administração. Brasília, DF: MEC, 2021. Disponível em: <https://portal.ufrrj.br/wp-content/uploads/2016/10/rces005_21.pdf>. Acesso em: 13 nov. 2026.",
       "en": "Brazil, Ministry of Education, National Council of Education. (2021). *Resolução CNE/CES nº 5, de 14 de outubro de 2021* [National Curriculum Guidelines for undergraduate programs in Administration]. <https://portal.ufrrj.br/wp-content/uploads/2016/10/rces005_21.pdf>"
+    },
+    "dean-shazeer": {
+      "pt": "DEAN, Jeff; SHAZEER, Noam. **Jeff Dean & Noam Shazeer — 25 years at Google: from PageRank to AGI**. [*S. l.*]: Dwarkesh Podcast, 12 fev. 2025. Entrevista a Dwarkesh Patel. Transcrição. Disponível em: <https://www.dwarkesh.com/p/jeff-dean-and-noam-shazeer>. Acesso em: 15 nov. 2026.",
+      "en": "Dean, J., & Shazeer, N.. (2025, February 12). *Jeff Dean & Noam Shazeer — 25 years at Google: from PageRank to AGI* [Interview transcript, interview by D. Patel]. Dwarkesh Podcast. <https://www.dwarkesh.com/p/jeff-dean-and-noam-shazeer>"
+    },
+    "deepblue": {
+      "pt": "IBM. **Deep Blue**. [*S. l.*], [s. d.]. Disponível em: <https://www.ibm.com/history/deep-blue>. Acesso em: 15 nov. 2026.",
+      "en": "IBM. (n.d.). *Deep Blue*. <https://www.ibm.com/history/deep-blue>"
     },
     "dellacqua": {
       "pt": "DELL'ACQUA, Fabrizio *et al.* **Navigating the jagged technological frontier**: field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality. Boston: Harvard Business School, 2023. (Working Paper, n. 24-013). Disponível em: <https://www.hbs.edu/faculty/Pages/item.aspx?num=64700>. Acesso em: 13 nov. 2026.",
@@ -57,6 +121,10 @@
     "elements": {
       "pt": "UNIVERSITY OF HELSINKI; MINNALEARN. **Elements of AI**: how should we define AI? [*S. l.*], [2018?]. Curso on-line. Disponível em: <https://course.elementsofai.com/1/1>. Acesso em: 13 nov. 2026.",
       "en": "University of Helsinki & MinnaLearn. (n.d.). *How should we define AI?* Elements of AI. <https://course.elementsofai.com/1/1>"
+    },
+    "essential-fundacao": {
+      "pt": "ESSENTIAL AI. **We are excited to announce Essential AI**. [*S. l.*]: LinkedIn, [2023]. Disponível em: <https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc>. Acesso em: 15 nov. 2026.",
+      "en": "Essential AI. (2023). *We are excited to announce Essential AI* [Post]. LinkedIn. <https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc>"
     },
     "ftc1": {
       "pt": "FEDERAL TRADE COMMISSION. **California company settles FTC allegations it deceived consumers about use of facial recognition in photo storage app**. Washington, DC, jan. 2021. Disponível em: <https://www.ftc.gov/news-events/news/press-releases/2021/01/california-company-settles-ftc-allegations-it-deceived-consumers-about-use-facial-recognition-photo>. Acesso em: 13 nov. 2026.",
@@ -78,6 +146,14 @@
       "pt": "HERN, Alex. Facebook translates 'good morning' into 'attack them', leading to arrest. **The Guardian**, Londres, 24 out. 2017. Disponível em: <https://www.theguardian.com/technology/2017/oct/24/facebook-palestine-israel-translates-good-morning-attack-them-arrest>. Acesso em: 13 nov. 2026.",
       "en": "Hern, A. (2017, October 24). Facebook translates 'good morning' into 'attack them', leading to arrest. *The Guardian*. <https://www.theguardian.com/technology/2017/oct/24/facebook-palestine-israel-translates-good-morning-attack-them-arrest>"
     },
+    "harari2026": {
+      "pt": "HARARI, Yuval Noah. **AI will create digital vassal states**. [*S. l.*]: YouTube, 8 nov. 2026. Conversa com Robert Guest no Forum 2000, em outubro de 2026. 1 vídeo (62 min). Disponível em: <https://www.youtube.com/watch?v=kziBrxxE0U0>. Acesso em: 15 nov. 2026.",
+      "en": "Harari, Y. N.. (2026, November 8). *AI will create digital vassal states* [Video; conversation with R. Guest at Forum 2000, October 2026]. YouTube. <https://www.youtube.com/watch?v=kziBrxxE0U0>"
+    },
+    "historia-video": {
+      "pt": "BUILT FROM NOTHING. **The ENTIRE history of AI: the 8 researchers who built modern AI (and why they left)**. [*S. l.*]: YouTube, 9 nov. 2026. 1 vídeo (16 min). Disponível em: <https://www.youtube.com/watch?v=YovHdlRN7VM>. Acesso em: 15 nov. 2026.",
+      "en": "Built From Nothing. (2026, November 9). *The ENTIRE history of AI: the 8 researchers who built modern AI (and why they left)* [Video]. YouTube. <https://www.youtube.com/watch?v=YovHdlRN7VM>"
+    },
     "ibge2026": {
       "pt": "IBGE. **Pesquisa Nacional por Amostra de Domicílios Contínua**: educação 2025. Rio de Janeiro: IBGE, 2026. ISBN 978-85-240-4713-8. Disponível em: <https://biblioteca.ibge.gov.br/visualizacao/livros/liv102286_informativo.pdf>. Acesso em: 13 nov. 2026.",
       "en": "Instituto Brasileiro de Geografia e Estatística. (2026). *Pesquisa Nacional por Amostra de Domicílios Contínua: Educação 2025* [Continuous National Household Sample Survey: Education 2025]. IBGE. <https://biblioteca.ibge.gov.br/visualizacao/livros/liv102286_informativo.pdf>"
@@ -85,6 +161,18 @@
     "iea": {
       "pt": "INTERNATIONAL ENERGY AGENCY. **Energy and AI**. Paris: IEA, 2025. Disponível em: <https://www.iea.org/reports/energy-and-ai>. Acesso em: 13 nov. 2026.",
       "en": "International Energy Agency. (2025). *Energy and AI*. <https://www.iea.org/reports/energy-and-ai>"
+    },
+    "inceptive": {
+      "pt": "ALNYLAM PHARMACEUTICALS; INCEPTIVE. **Alnylam and Inceptive form strategic AI collaboration to accelerate the discovery of RNAi therapeutics**. [*S. l.*]: Inceptive, 3 jun. 2026. Comunicado conjunto. Disponível em: <https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership>. Acesso em: 15 nov. 2026.",
+      "en": "Alnylam Pharmaceuticals & Inceptive. (2026, June 3). *Alnylam and Inceptive form strategic AI collaboration to accelerate the discovery of RNAi therapeutics* [Press release]. Inceptive. <https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership>"
+    },
+    "introia": {
+      "pt": "MARANHÃO FILHO, Éfrem. **Intro IA**. [*S. l.*], [s. d.]. Apresentação de slides. Disponível em: <https://efrem.io/intro-ia/>. Acesso em: 15 nov. 2026.",
+      "en": "Maranhão Filho, É.. (n.d.). *Intro IA* [Slides, in Portuguese]. <https://efrem.io/intro-ia/>"
+    },
+    "kaiser-openai": {
+      "pt": "OPENAI FORUM. **Learning powerful models: from Transformers to reasoners and beyond**. [*S. l.*], 8 out. 2025. Página de evento e biografia de Łukasz Kaiser. Disponível em: <https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au>. Acesso em: 15 nov. 2026.",
+      "en": "OpenAI Forum. (2025, October 8). *Learning powerful models: from Transformers to reasoners and beyond* [Event page and speaker biography]. <https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au>"
     },
     "karpathy": {
       "pt": "KARPATHY, Andrej. **Software is changing (again)**. [*S. l.*]: Y Combinator, 18 jun. 2025. 1 vídeo. Disponível em: <https://www.youtube.com/watch?v=LCEmiRjPEtQ>. Acesso em: 13 nov. 2026.",
@@ -122,6 +210,10 @@
       "pt": "MARANHÃO FILHO, Éfrem. **mvp.without.dev**: how-to for MVPs without a need of developers. [*S. l.*], 2020. Repositório no GitHub. Disponível em: <https://github.com/efremfilho/mvp.without.dev>. Acesso em: 13 nov. 2026.",
       "en": "Maranhão Filho, É. (2020). *mvp.without.dev: How-to for MVPs without a need of developers* [GitHub repository]. <https://github.com/efremfilho/mvp.without.dev>"
     },
+    "near": {
+      "pt": "NEAR AI. **Company**. [*S. l.*], [s. d.]. Disponível em: <https://near.ai/company>. Acesso em: 15 nov. 2026.",
+      "en": "NEAR AI. (n.d.). *Company*. <https://near.ai/company>"
+    },
     "nist": {
       "pt": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. **NIST study evaluates effects of race, age, sex on face recognition software**. Gaithersburg, 19 dez. 2019. Disponível em: <https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software>. Acesso em: 13 nov. 2026.",
       "en": "National Institute of Standards and Technology. (2019, December 19). *NIST study evaluates effects of race, age, sex on face recognition software*. <https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software>"
@@ -133,6 +225,10 @@
     "owasp": {
       "pt": "OWASP GEN AI SECURITY PROJECT. **LLM01:2025 prompt injection**. [*S. l.*]: OWASP Foundation, 2025. Disponível em: <https://genai.owasp.org/llmrisk/llm01-prompt-injection/>. Acesso em: 13 nov. 2026.",
       "en": "OWASP Gen AI Security Project. (2025). *LLM01:2025 prompt injection*. OWASP Foundation. <https://genai.owasp.org/llmrisk/llm01-prompt-injection/>"
+    },
+    "parmar-perfil": {
+      "pt": "PARMAR, Niki. **Niki Parmar**. [*S. l.*]: LinkedIn, [s. d.]. Perfil profissional público. Disponível em: <https://www.linkedin.com/in/nikiparmar>. Acesso em: 15 nov. 2026.",
+      "en": "Parmar, N.. (n.d.). *Niki Parmar* [Professional profile]. LinkedIn. <https://www.linkedin.com/in/nikiparmar>"
     },
     "plagio2014": {
       "pt": "MARANHÃO FILHO, Éfrem. **Trabalhos com plágio**. [*S. l.*], 2014. Instrução de atividade para estudantes. Disponível em: <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>. Acesso em: 15 nov. 2026.",
@@ -150,17 +246,41 @@
       "pt": "CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 1.2: A short history of Git. Disponível em: <https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git>. Acesso em: 13 nov. 2026.",
       "en": "Chacon, S., & Straub, B. (2014). A short history of Git. In *Pro Git* (2nd ed.). Apress. <https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git>"
     },
-    "rauch": {
-      "pt": "RAUCH, Guillermo. **Everyone's an engineer now**: inside v0's mission to create 100 million builders. Entrevista a Lenny Rachitsky. [*S. l.*]: Lenny's Podcast, 2025. 1 vídeo (88 min). Disponível em: <https://www.youtube.com/watch?v=-QsTmu2CqhA>. Acesso em: 15 nov. 2026.",
-      "en": "Rauch, G. (2025). *Everyone's an engineer now: Inside v0's mission to create 100 million builders* [Video]. Interview by L. Rachitsky. Lenny's Podcast. <https://www.youtube.com/watch?v=-QsTmu2CqhA>"
+    "progit-recording": {
+      "pt": "CHACON, Scott; STRAUB, Ben. Recording changes to the repository. In: CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 2.2. Disponível em: <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>. Acesso em: 15 nov. 2026.",
+      "en": "Chacon, S., & Straub, B. (2014). Recording changes to the repository. In *Pro Git* (2nd ed., Section 2.2). Apress. <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>"
+    },
+    "repo-site": {
+      "pt": "MARANHÃO FILHO, Éfrem. **efrem.io**. [*S. l.*]: GitHub, [s. d.]. Repositório do site e do guia IA sem mágica. Disponível em: <https://github.com/efremfilho/efrem.io>. Acesso em: 15 nov. 2026.",
+      "en": "Maranhão Filho, É. (n.d.). *efrem.io* [Repository for the website and AI Without the Magic guide]. GitHub. <https://github.com/efremfilho/efrem.io>"
+    },
+    "sakana": {
+      "pt": "SAKANA AI. **Company information**. [*S. l.*], [s. d.]. Disponível em: <https://sakana.ai/company-info/>. Acesso em: 15 nov. 2026.",
+      "en": "Sakana AI. (n.d.). *Company information*. <https://sakana.ai/company-info/>"
     },
     "sarkar22": {
       "pt": "SARKAR, Advait *et al.* **What is it like to program with artificial intelligence?** [*S. l.*]: arXiv, 2022. DOI: <https://doi.org/10.48550/arXiv.2208.06213>. Acesso em: 15 nov. 2026.",
       "en": "Sarkar, A., Gordon, A. D., Negreanu, C., Poelitz, C., et al. (2022). *What is it like to program with artificial intelligence?* arXiv. <https://doi.org/10.48550/arXiv.2208.06213>"
     },
+    "shazeer-openai": {
+      "pt": "PRIMACK, Dan. **Top AI researcher leaves Google for OpenAI**. [*S. l.*]: Axios, 18 jun. 2026. Disponível em: <https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai>. Acesso em: 15 nov. 2026.",
+      "en": "Primack, D.. (2026, June 18). *Top AI researcher leaves Google for OpenAI*. Axios. <https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai>"
+    },
+    "shazeer-retorno": {
+      "pt": "CAI, Kenrick. **Google hires top talent from startup Character.AI, signs licensing deal**. [*S. l.*]: Reuters, 2 ago. 2024. Republicado por Investing.com. Disponível em: <https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866>. Acesso em: 15 nov. 2026.",
+      "en": "Cai, K.. (2024, August 2). *Google hires top talent from startup Character.AI, signs licensing deal*. Reuters. <https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866>"
+    },
     "techcrunch": {
       "pt": "ZEFF, Maxwell. Anthropic unveils new rate limits to curb Claude Code power users. **TechCrunch**, [*s. l.*], 28 jul. 2025. Disponível em: <https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/>. Acesso em: 13 nov. 2026.",
       "en": "Zeff, M. (2025, July 28). Anthropic unveils new rate limits to curb Claude Code power users. *TechCrunch*. <https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/>"
+    },
+    "transformer-blog": {
+      "pt": "USZKOREIT, Jakob. **Transformer: a novel neural network architecture for language understanding**. [*S. l.*]: Google Research, 31 ago. 2017. Disponível em: <https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/>. Acesso em: 15 nov. 2026.",
+      "en": "Uszkoreit, J.. (2017, August 31). *Transformer: a novel neural network architecture for language understanding*. Google Research. <https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/>"
+    },
+    "turing": {
+      "pt": "TURING, A. M. Computing machinery and intelligence. **Mind**, [*s. l.*], v. 59, n. 236, p. 433–460, 1950. Disponível em: <https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html>. Acesso em: 15 nov. 2026.",
+      "en": "Turing, A. M. (1950). Computing machinery and intelligence. *Mind, 59*(236), 433–460. <https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html>"
     },
     "unicef": {
       "pt": "UNICEF. **Com ajuda da Busca Ativa Escolar, 300 mil crianças e adolescentes voltaram à escola no Brasil**. Brasília, DF, 28 jul. 2025. Disponível em: <https://www.unicef.org/brazil/comunicados-de-imprensa/com-ajuda-da-busca-ativa-escolar-300-mil-criancas-e-adolescentes-voltaram-a-escola-no-brasil>. Acesso em: 13 nov. 2026.",
@@ -170,6 +290,10 @@
       "pt": "VASWANI, Ashish *et al.* **Attention is all you need**. [*S. l.*]: arXiv, 2017. DOI: <https://doi.org/10.48550/arXiv.1706.03762>. Acesso em: 13 nov. 2026.",
       "en": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). *Attention is all you need*. arXiv. <https://doi.org/10.48550/arXiv.1706.03762>"
     },
+    "vaswani-nvidia": {
+      "pt": "GOLDMAN, Sharon. **Nvidia quietly acquihires Essential AI team, including Transformer coauthor Ashish Vaswani**. [*S. l.*]: Ground Level AI, 20 jun. 2026. Disponível em: <https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential>. Acesso em: 15 nov. 2026.",
+      "en": "Goldman, S.. (2026, June 20). *Nvidia quietly acquihires Essential AI team, including Transformer coauthor Ashish Vaswani*. Ground Level AI. <https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential>"
+    },
     "willison": {
       "pt": "WILLISON, Simon. **The lethal trifecta for AI agents**: private data, untrusted content, and external communication. [*S. l.*], 16 jun. 2025. Disponível em: <https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/>. Acesso em: 13 nov. 2026.",
       "en": "Willison, S. (2025, June 16). *The lethal trifecta for AI agents: Private data, untrusted content, and external communication*. Simon Willison's Weblog. <https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/>"
@@ -177,26 +301,104 @@
     "wing": {
       "pt": "WING, Jeannette M. Computational thinking. **Communications of the ACM**, New York, v. 49, n. 3, p. 33-35, mar. 2006. DOI: <https://doi.org/10.1145/1118178.1118215>. Acesso em: 13 nov. 2026.",
       "en": "Wing, J. M. (2006). Computational thinking. *Communications of the ACM, 49*(3), 33–35. <https://doi.org/10.1145/1118178.1118215>"
+    },
+    "oecd-definicao": {
+      "pt": "OECD. **Explanatory memorandum on the updated OECD definition of an AI system**. Paris: OECD Publishing, 2024. (OECD Artificial Intelligence Papers, n. 8). Disponível em: <https://doi.org/10.1787/623da898-en>. Acesso em: 15 nov. 2026.",
+      "en": "OECD. (2024). *Explanatory memorandum on the updated OECD definition of an AI system* (OECD Artificial Intelligence Papers No. 8). OECD Publishing. <https://doi.org/10.1787/623da898-en>"
+    },
+    "anpd-bases": {
+      "pt": "AGÊNCIA NACIONAL DE PROTEÇÃO DE DADOS. **Perguntas frequentes**. Brasília, DF: ANPD, 2026. Seções 2.5 e 2.6. Disponível em: <https://www.gov.br/anpd/pt-br/acesso-a-informacao/perguntas-frequentes>. Acesso em: 15 nov. 2026.",
+      "en": "Agência Nacional de Proteção de Dados. (2026). *Perguntas frequentes* [Frequently asked questions], sections 2.5–2.6. <https://www.gov.br/anpd/pt-br/acesso-a-informacao/perguntas-frequentes>"
+    },
+    "anpd-consentimento": {
+      "pt": "AGÊNCIA NACIONAL DE PROTEÇÃO DE DADOS. **Denúncia / Petição de Titular referente à LGPD**. Brasília, DF: ANPD, [s. d.]. Disponível em: <https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular-referente-lgpd>. Acesso em: 15 nov. 2026.",
+      "en": "Agência Nacional de Proteção de Dados. (n.d.). *Denúncia / Petição de Titular referente à LGPD* [Complaints and data subject petitions under the LGPD]. <https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular-referente-lgpd>"
+    },
+    "whisper-paper": {
+      "pt": "RADFORD, Alec et al. **Robust speech recognition via large-scale weak supervision**. arXiv, 2022. Disponível em: <https://arxiv.org/abs/2212.04356>. Acesso em: 15 nov. 2026.",
+      "en": "Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2022). *Robust speech recognition via large-scale weak supervision*. arXiv. <https://arxiv.org/abs/2212.04356>"
+    },
+    "diffusion-paper": {
+      "pt": "HO, Jonathan; JAIN, Ajay; ABBEEL, Pieter. **Denoising diffusion probabilistic models**. arXiv, 2020. Disponível em: <https://arxiv.org/abs/2006.11239>. Acesso em: 15 nov. 2026.",
+      "en": "Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising diffusion probabilistic models*. arXiv. <https://arxiv.org/abs/2006.11239>"
+    },
+    "workshop-planilha-app": {
+      "pt": "MARANHÃO FILHO, Éfrem. **Mão na massa com IA**: criando apps e automações. [*S. l.*], [s. d.]. Apresentação de slides. Disponível em: <https://efrem.io/jazida/>. Acesso em: 15 nov. 2026.",
+      "en": "Maranhão Filho, É. (n.d.). *Mão na massa com IA: Criando apps e automações* [Presentation slides]. <https://efrem.io/jazida/>"
+    },
+    "panorama-ia": {
+      "pt": "MARANHÃO FILHO, Éfrem. **Panorama da IA**. [*S. l.*], [s. d.]. Apresentação de slides. Disponível em: <https://efrem.io/panorama/>. Acesso em: 15 nov. 2026.",
+      "en": "Maranhão Filho, É. (n.d.). *Panorama da IA* [Presentation slides]. <https://efrem.io/panorama/>"
+    },
+    "thoughtworks-service": {
+      "pt": "KAMELMAN, Matt. **Service-as-software**: a new economic model for the age of AI agents. [*S. l.*]: Thoughtworks, 3 dez. 2025. Disponível em: <https://www.thoughtworks.com/en-br/insights/blog/generative-ai/service-as-software-a-new-economic-model-for-age-of-ai-agents>. Acesso em: 16 nov. 2026.",
+      "en": "Kamelman, M. (2025, December 3). *Service-as-software: A new economic model for the age of AI agents*. Thoughtworks. <https://www.thoughtworks.com/en-br/insights/blog/generative-ai/service-as-software-a-new-economic-model-for-age-of-ai-agents>"
+    },
+    "sequoia-services": {
+      "pt": "BEK, Julien. **Services**: the new software. [*S. l.*]: Sequoia Capital, 5 mar. 2026. Disponível em: <https://sequoiacap.com/article/services-the-new-software/>. Acesso em: 16 nov. 2026.",
+      "en": "Bek, J. (2026, March 5). *Services: The new software*. Sequoia Capital. <https://sequoiacap.com/article/services-the-new-software/>"
+    },
+    "phoenix-project": {
+      "pt": "KIM, Gene; BEHR, Kevin; SPAFFORD, George. **The Phoenix Project**: a novel about IT, DevOps, and helping your business win. 4. ed. Portland: IT Revolution, 2024. Disponível em: <https://reader.itrevolution.com/library/phoenix-project>. Acesso em: 16 nov. 2026.",
+      "en": "Kim, G., Behr, K., & Spafford, G. (2024). *The Phoenix Project: A novel about IT, DevOps, and helping your business win* (4th ed.). IT Revolution. <https://reader.itrevolution.com/library/phoenix-project>"
     }
   },
   "capitulos": {
     "what-is-ai": [
-      "elements"
+      "elements",
+      "introia",
+      "historia-video",
+      "turing",
+      "dartmouth",
+      "deepblue",
+      "alexnet",
+      "alphago",
+      "vaswani",
+      "bert-busca",
+      "dean-shazeer",
+      "chatgpt-lancamento",
+      "oecd-definicao"
     ],
-    "how-machines-learn": [],
+    "how-machines-learn": [
+      "b3b1",
+      "b3b1-neural",
+      "b3b1-gradient",
+      "b3b1-backprop",
+      "b3b1-mini"
+    ],
     "inside-llm": [
       "vaswani",
       "b3b1",
-      "poloclub"
+      "poloclub",
+      "transformer-blog",
+      "adept-fundacao",
+      "essential-fundacao",
+      "vaswani-nvidia",
+      "parmar-perfil",
+      "shazeer-retorno",
+      "shazeer-openai",
+      "inceptive",
+      "sakana",
+      "cohere",
+      "kaiser-openai",
+      "near",
+      "b3b1-mini",
+      "b3b1-transformer",
+      "b3b1-attention",
+      "b3b1-mlp",
+      "chatgpt-lancamento",
+      "anthropic"
     ],
     "retrieval": [
-      "lewis"
+      "lewis",
+      "goldsmith",
+      "plagio2014"
     ],
-    "app-builders": [
-      "rauch"
-    ],
+    "app-builders": [],
     "multimodal": [
-      "koenecke"
+      "koenecke",
+      "whisper-paper",
+      "diffusion-paper"
     ],
     "bias": [
       "daneshjou",
@@ -204,12 +406,15 @@
       "nist",
       "aclu",
       "guardian",
-      "markup"
+      "markup",
+      "harari2026"
     ],
     "data-privacy": [
       "lgpd",
       "ftc1",
-      "ftc2"
+      "ftc2",
+      "anpd-bases",
+      "anpd-consentimento"
     ],
     "footprint": [
       "google",
@@ -224,69 +429,89 @@
       "brennan",
       "denny",
       "prather24",
-      "sarkar22"
+      "sarkar22",
+      "workshop-planilha-app"
     ],
     "context": [
       "karpathy",
       "anthropic",
-      "chroma"
+      "chroma",
+      "b3b1-mlp",
+      "nng",
+      "alves"
     ],
-    "deterministic": [],
+    "deterministic": [
+      "panorama-ia"
+    ],
     "repo-memory": [
       "progit",
-      "agentsmd"
+      "agentsmd",
+      "progit-recording",
+      "repo-site"
     ],
     "workspace": [
       "techcrunch"
     ],
     "agents-leash": [
       "owasp",
-      "willison"
+      "willison",
+      "lc214"
     ],
     "cases": [
-      "nng",
-      "alves",
-      "lc214"
+      "thoughtworks-service",
+      "sequoia-services"
     ],
     "generalist": [
       "lakhani",
       "dellacqua",
-      "goldsmith",
-      "plagio2014"
+      "harari2026"
     ],
     "_index": [
       "ibge2026",
-      "unicef"
+      "unicef",
+      "phoenix-project"
     ]
   },
   "notas": {
     "pt": {
-      "what-is-ai": "As definições originais do curso: autonomia é \"a capacidade de executar tarefas em ambientes complexos sem orientação constante de quem usa\"; adaptatividade é \"a capacidade de melhorar o desempenho aprendendo com a experiência\" (tradução minha).",
-      "bias": "Os detalhes que o texto deixa de fora estão nas fontes. Dermatologia: queda de 27% a 36% no desempenho (Daneshjou *et al.*, 2022). Classificação de gênero: até 34,7% de erro para mulheres de pele escura e no máximo 0,8% para homens de pele clara, calculados a partir das acurácias publicadas (Buolamwini; Gebru, 2018). Reconhecimento facial: falsos positivos de 10 a 100 vezes maiores (NIST, 2019). A prisão é a de Robert Williams, em Detroit (ACLU, 2024). O sistema de alerta precoce é o do estado de Wisconsin, com 42 pontos percentuais de diferença no alarme falso (Feathers, 2023). O erro de tradução ocorreu no Facebook (Hern, 2017).",
-      "data-privacy": "O aplicativo citado é o Ever; a autoridade é a Federal Trade Commission, dos Estados Unidos.",
+      "what-is-ai": "As definições originais do curso: autonomia é \"a capacidade de executar tarefas em ambientes complexos sem orientação constante de quem usa\"; adaptatividade é \"a capacidade de melhorar o desempenho aprendendo com a experiência\" (tradução minha).\n\nA linha do tempo retoma a apresentação *Intro IA* do autor e usa o vídeo de Built From Nothing (2026) como fio narrativo, conferido com as fontes históricas: Turing (1950); encontro de Dartmouth (1956); Deep Blue contra Kasparov (1997); AlexNet (2012); AlphaGo contra Lee Sedol (2016); *Attention is all you need* (2017); ChatGPT, lançado em 30 de novembro de 2022. O recorte termina nesse lançamento, antes dos conflitos de direção posteriores. BERT entrou na busca do Google em 2019 (Nayak, 2019). Na entrevista de Dean e Shazeer (2025), o trecho sobre a demora para lançar um chatbot está em 2h06min–2h09min; é um relato de participantes, não prova de uma causa única. As fontes consultadas não sustentam que o Google tenha abandonado o investimento em IA por considerá-lo caro demais. Autonomia e adaptatividade são tratadas como dimensões, não como condições obrigatórias simultâneas. A OCDE (2024) distingue adaptação durante o desenvolvimento e após a entrada em uso. O quiz compara regras escritas e comportamentos aprendidos em exemplos simplificados.",
+      "bias": "Os detalhes que o texto deixa de fora estão nas fontes. Dermatologia: queda de 27% a 36% no desempenho (Daneshjou *et al.*, 2022). Classificação de gênero: até 34,7% de erro para mulheres de pele escura e no máximo 0,8% para homens de pele clara, calculados a partir das acurácias publicadas (Buolamwini; Gebru, 2018). Reconhecimento facial: falsos positivos de 10 a 100 vezes maiores (NIST, 2019). A prisão é a de Robert Williams, em Detroit (ACLU, 2024). O sistema de alerta precoce é o do estado de Wisconsin, com 42 pontos percentuais de diferença no alarme falso (Feathers, 2023). O erro de tradução ocorreu no Facebook (Hern, 2017).\n\nA analogia da primeira página aparece na conversa de Harari com Robert Guest (2026), aproximadamente nos minutos 32–33. O texto aproveita a comparação editorial para discutir responsabilidade ética. Não reproduz como conclusão jurídica a descrição que o entrevistado faz da legislação de plataformas.",
+      "data-privacy": "O aplicativo citado é o Ever; a autoridade é a Federal Trade Commission, dos Estados Unidos. A ANPD esclarece que consentimento não tem prioridade sobre outras hipóteses legais. A base aplicável depende da finalidade e das condições do tratamento; dados sensíveis têm hipóteses específicas.",
       "footprint": "Os valores por trás das ordens de grandeza do texto: 0,24 Wh e 0,26 ml por prompt de texto mediano (Vahdat; Dean, 2025); 0,34 Wh por consulta média (Altman, 2025); cerca de 3,4 milhões de joules para cinco segundos de vídeo, mais de 700 vezes uma imagem (O'Donnell; Crownhart, 2025); 415 TWh consumidos por data centers em 2024, perto de 1,5% da eletricidade mundial, com projeção de cerca de 945 TWh em 2030 (International Energy Agency, 2025).",
-      "context": "A frase sobre CPU e memória é uma paráfrase do trecho em que Karpathy compara LLMs a um sistema operacional. De Anthropic (2025) vêm \"orçamento de atenção\", a \"altitude certa\" e o princípio do menor conjunto de tokens de alto sinal. A medição do *context rot* é de Chroma (2025).",
+      "context": "A frase sobre CPU e memória é uma paráfrase do trecho em que Karpathy compara LLMs a um sistema operacional. De Anthropic (2025) vêm \"orçamento de atenção\", a \"altitude certa\" e o princípio do menor conjunto de tokens de alto sinal. A medição do *context rot* é de Chroma (2025). A distinção entre representações contextualizadas e padrões aprendidos nos parâmetros também se apoia em Sanderson (2024), na lição sobre MLPs. \"Orçamento de atenção\" é tratado aqui como orientação prática; o estudo de Chroma não estabelece uma perda fixa por token para qualquer modelo ou tarefa.\n\nO caso de ensaio com personas é um relato do autor; a ideia inicial foi de uma designer com quem trabalhou. Rosala e Moran (2024) discutem limites da pesquisa sintética. Na entrevista, Alves (2026) discute redução de risco (minuto 4), limites para decisões críticas (17) e complementaridade com pessoas reais (52). Ele é cofundador de uma empresa que vende essa pesquisa.",
       "workspace": "O fornecedor que criou limites semanais é a Anthropic (Zeff, 2025). Os números de uso deste capítulo são da minha própria rotina: em novembro de 2026, as três assinaturas somavam cerca de R$ 2.000 por mês, com o salário mínimo em R$ 1.621.",
-      "agents-leash": "A lista de riscos é a da OWASP; a \"trifeta letal\" é de Simon Willison (2025). O desenho do canal de suporte (quem pede, quem aprova) descreve um agente em produção na empresa em que trabalho.",
-      "cases": "Os oito casos são da minha rotina de trabalho e de aula; nomes de pessoas, clientes e empresas foram omitidos. A mudança de legislação do caso 1 é a reforma tributária brasileira (Brasil, 2025). Sobre participantes sintéticos, as autoras escrevem: \"Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people\" e \"They often provide shallow or overly favorable feedback\" (Rosala; Moran, 2024). Hugo Alves é cofundador de uma empresa que vende pesquisa com participantes sintéticos; na entrevista ele diz: \"research is always about making better decisions [...] It's about reducing risk\" (minuto 4); que não espera que alguém tome, só com isso, \"a decision that can make a company break\", e que é preciso achar \"what should be left exclusively for humans\" (minuto 17); e que quem muda de ideia costuma dizer \"I wouldn't replace humans with this but now I really see where this could help me\" (minuto 52).",
-      "generalist": "A fonte é uma entrevista de Karim R. Lakhani, professor da Harvard Business School. Trechos usados: custo marginal da expertise (minutos 34 e 47), os três jeitos de trabalhar com IA (2 a 4; na entrevista, cerca de 60% de ciborgues, 14% de centauros e 27% de autoautomatizadores), \"nunca aceito a primeira resposta\" (9), responsabilidade e \"interface de carne\" (3 e 14), o curso obrigatório do MBA, com cerca de 900 estudantes (20 a 22), e quem corre mais risco (44 e 45). Traduções e paráfrases são minhas. O experimento com profissionais de consultoria é o de Dell'Acqua *et al.* (2023).",
-      "_index": "Lia é uma personagem inventada. Os dados do problema que ela enfrenta são reais: em 2025, 7,7 milhões de jovens de 14 a 29 anos não tinham concluído o ensino médio, e 43% apontaram a necessidade de trabalhar (IBGE, 2026); a Busca Ativa Escolar ajudou mais de 300 mil crianças e adolescentes a voltar à escola entre 2017 e 2025 (UNICEF, 2025).",
-      "computational-thinking": "Os trechos usados na seção de pesquisa, no original. Brennan e Resnick (2012): conceitos \"sequences, loops, parallelism, events, conditionals, operators, and data\"; práticas \"being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing\". Denny *et al.* (2023, seção 4; versão final publicada em *Communications of the ACM*, 2024): \"Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content\". Prather *et al.* (2024, resumo): estudo com 21 estudantes; quem teve dificuldade \"thought they performed better than they did, and finished with an illusion of competence\". Sarkar *et al.* (2022): \"End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills.\"",
-      "app-builders": "A frase citada é contada por Guillermo Rauch, que a atribui a uma pessoa usuária da ferramenta dele (minutos 0 e 43 da entrevista): \"v0 is a super genius five-year-old PhD with ADHD\". Ela descreve aquela ferramenta, não a IA em geral; a generalização é minha. Os casos do capítulo são da minha rotina de trabalho; nomes de pessoas, clientes e empresas foram omitidos."
+      "agents-leash": "A lista de riscos é a da OWASP; a \"trifeta letal\" é de Simon Willison (2025). O desenho do canal de suporte (quem pede, quem aprova) descreve um agente em produção na empresa em que trabalho.\n\nOs casos de notas fiscais e da trilha de curso são relatos do autor. A mudança de legislação mencionada no primeiro é a reforma tributária brasileira (Brasil, 2025); a conferência pelo contador integra o relato, não é uma instrução de preenchimento tributário.",
+      "cases": "As duas referências apresentam teses comerciais; a aplicação à busca ativa é uma elaboração didática deste guia. Thoughtworks é uma consultoria de tecnologia e Sequoia é uma investidora. O texto não adota como fatos as previsões de mercado, as divisões rígidas entre inteligência e julgamento nem a ideia de que todo agente aprende ou é treinado continuamente em operação. O caso pessoal sobre assinar ou construir é documentado nos posts do autor.",
+      "generalist": "A fonte é uma entrevista de Karim R. Lakhani, professor da Harvard Business School. Trechos usados: custo marginal da expertise (minutos 34 e 47), os três jeitos de trabalhar com IA (2 a 4; na entrevista, cerca de 60% de ciborgues, 14% de centauros e 27% de autoautomatizadores), \"nunca aceito a primeira resposta\" (9), responsabilidade e \"interface de carne\" (3 e 14), o curso obrigatório do MBA, com cerca de 900 estudantes (20 a 22), e quem corre mais risco (44 e 45). Traduções e paráfrases são minhas. O trabalho de Dell'Acqua et al. (2023) é a referência de pesquisa mencionada nessa discussão. As categorias e proporções relatadas na entrevista são atribuídas a Lakhani; o corpo do guia as utiliza como imagens para reflexão, sem extrapolar percentuais para quem usa IA em geral.\n\nDa conversa de Harari com Robert Guest (2026), foram usados o visitante da Idade da Pedra e a abundância (minutos 14–15), a discussão do avião e do risco (28–31) e os estados vassalos digitais (59–61). O visitante é um experimento de imaginação, não uma afirmação sobre neandertais. Harari atribui a Elon Musk uma estimativa de 10% a 20% de risco catastrófico; esta é uma atribuição feita na entrevista, não uma citação direta conferida de Musk nem uma probabilidade medida. A resposta de que já estamos a bordo é parte da provocação que Harari contesta. O guia a retoma para discutir responsabilidade e capacidade de agir, sem concluir que decisões políticas ficaram impossíveis. As aplicações ao caso da Lia são construções didáticas deste guia.",
+      "_index": "Lia é uma personagem inventada. Os dados do problema que ela enfrenta são reais: em 2025, 7,7 milhões de jovens de 14 a 29 anos não tinham concluído o ensino médio, e 43% apontaram a necessidade de trabalhar (IBGE, 2026); a Busca Ativa Escolar ajudou mais de 300 mil crianças e adolescentes a voltar à escola entre 2017 e 2025 (UNICEF, 2025).\n\nA referência narrativa escolhida pelo autor é The Phoenix Project (Kim; Behr; Spafford, 2024): pressão de prazo, trabalho entre áreas e consequências de decisões. Lia e o time são personagens próprios deste guia; não representam um caso real nem reproduzem o enredo do romance. A jornada permanece aberta depois do último capítulo.",
+      "computational-thinking": "Os trechos usados na seção de pesquisa, no original. Brennan e Resnick (2012): conceitos \"sequences, loops, parallelism, events, conditionals, operators, and data\"; práticas \"being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing\". Denny *et al.* (2023, seção 4; versão final publicada em *Communications of the ACM*, 2024): \"Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content\". Prather *et al.* (2024, resumo): estudo com 21 estudantes; quem teve dificuldade \"thought they performed better than they did, and finished with an illusion of competence\". Sarkar *et al.* (2022): \"End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills.\"\n\nO exemplo do workshop foi conferido nas páginas 27–31 e 38 de *Mão na massa com IA: criando apps e automações*. O texto descreve a proposta dos exercícios, sem afirmar resultados da turma. As ferramentas citadas nos slides foram omitidas do corpo: o exemplo enfatiza análise, fluxo, tela e revisão das partes.",
+      "app-builders": "Os casos são relatos do autor; nomes de pessoas, clientes e empresas foram omitidos. Os posts da série de construção documentam fases de aprendizagem, identificadas pelas datas nas referências. O pedido de diagnóstico sugerido no capítulo é um exemplo didático, não uma transcrição literal daqueles episódios.",
+      "inside-llm": "As explicações de Sanderson sobre LLMs, Transformer, atenção e MLPs são referências para a intuição do mecanismo. O roteiro por completar vem do vídeo curto; o mapa de relações adapta a explicação de embeddings; os exemplos com \"banco\" e a pasta da Lia são adaptações didáticas do guia. As abas não executam um modelo nem exibem pesos medidos. Na versão em inglês, o sentido de assento dá lugar à margem de rio, preservando a ambiguidade de *bank*. Atenção troca informação entre posições permitidas; no modelo de geração causal, cada posição não pode consultar tokens futuros. Esse limite não impede cálculos em paralelo durante o treino. As camadas intermediárias também transformam as representações; atenção não é a rede inteira. O anúncio original do ChatGPT documenta etapas posteriores ao pré-treino; Anthropic (2025), parte interessada, descreve o uso de ferramentas e informações recuperadas no contexto de agentes.\n\nPara ver o mecanismo, a ordem sugerida é: [visão breve](https://www.youtube.com/watch?v=LPZh9BOjkQs), [Transformer e embeddings](https://www.youtube.com/watch?v=wjZofJX0v4M), [atenção](https://www.3blue1brown.com/lessons/attention/) e [camadas intermediárias](https://www.3blue1brown.com/lessons/mlp/). O [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) permite explorar um modelo pequeno por dentro. São aprofundamentos opcionais: nenhuma fórmula é pré-requisito para continuar o guia.\n\nO artigo de Vaswani *et al.* foi apresentado no arXiv em 12 de junho de 2017. A explicação de Uszkoreit (2017) complementa o artigo; a analogia da fila é uma simplificação didática.\n\n#### Para onde foram as oito pessoas do artigo?\n\nRecorte das trajetórias documentadas nas fontes consultadas em 15 de novembro de 2026. As datas dos comunicados e das notícias importam: uma biografia antiga não garante um vínculo atual. Páginas institucionais e perfis pessoais são fontes de partes interessadas; aqui sustentam vínculos e propostas declaradas, não atestados de qualidade das empresas.\n\n| Pessoa | Trajetória depois do trabalho no Google |\n|---|---|\n| Ashish Vaswani | Cofundou a [Adept](https://www.adept.ai/blog/introducing-adept/) e a [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Sua contratação pela [Nvidia foi noticiada em junho de 2026](https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential) por Sharon Goldman. |\n| Noam Shazeer | Cofundou a Character.AI e [voltou ao Google DeepMind em 2024](https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866). Depois: [OpenAI, em junho de 2026](https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai). |\n| Niki Parmar | Cofundou a [Adept](https://www.adept.ai/blog/introducing-adept/) e a [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Seu [perfil profissional público](https://www.linkedin.com/in/nikiparmar) registra a Anthropic. |\n| Jakob Uszkoreit | Cofundou a [Inceptive](https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership), que aplica modelos à pesquisa de moléculas e medicamentos; o comunicado de 2026 o apresenta como CEO. |\n| Llion Jones | Cofundou a [Sakana AI](https://sakana.ai/company-info/), laboratório de pesquisa em IA sediado em Tóquio. |\n| Aidan N. Gomez | Cofundou a [Cohere](https://cohere.com/about), voltada a IA para organizações; a página institucional o apresenta como CEO. |\n| Łukasz Kaiser | Foi para a [OpenAI](https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au), onde a biografia do evento de 2025 o apresenta como pesquisador de aprendizado profundo. |\n| Illia Polosukhin | Cofundou o projeto de blockchain NEAR e a [NEAR AI](https://near.ai/company), cuja proposta é uma IA controlada por quem usa. |",
+      "how-machines-learn": "As lições de Grant Sanderson, do 3Blue1Brown, dão a base visual: algarismos manuscritos e redes em camadas (*But what is a neural network?*); ajuste pelo erro e teste com exemplos separados (*Gradient descent*); contribuição de cada parâmetro para o erro (*Backpropagation*). A combinação de traços e curvas é uma motivação para a arquitetura, não uma descrição garantida do que cada neurônio aprendeu. O painel de ajustes é uma analogia didática para parâmetros. O experimento da reta ilustra uma regressão simples, não uma rede neural completa. O relato da iniciação científica é do autor.\n\nPara continuar pela [série completa](https://www.3blue1brown.com/topics/neural-networks), vale acompanhar primeiro as imagens e as perguntas; as contas podem ficar para outra leitura. Aqui o percurso vai da representação ao treino e, no capítulo seguinte, ao contexto e à geração de linguagem. As datas das referências são as das lições escritas, que também apontam para os vídeos correspondentes.",
+      "repo-memory": "A preferência por criar projetos no GitHub mesmo quando a entrega não é código, usando AGENTS.md e pastas docs/ para decisões, caminhos percorridos e atas, é um relato do autor. O caso do próprio site e livro descreve a estrutura do repositório: README.md, AGENTS.md, capítulos, ferramentas e regras de exclusão em .gitignore e _config.yml. A pasta temp/ é material local e privado; seus conteúdos não são reproduzidos neste exemplo. Git mantém o histórico registrado dos arquivos acompanhados, não uma cópia automática de tudo que existe na pasta de trabalho (Chacon; Straub, 2014, seção 2.2).",
+      "multimodal": "Radford et al. (2022) e Ho, Jain e Abbeel (2020) exemplificam mecanismos diferentes para transcrição e geração de imagens. O chuvisco é uma analogia didática para a remoção de ruído. O relato de excesso de complexidade está documentado no post do autor, citado nas referências.",
+      "deterministic": "O exercício da planilha de contratos está na página 21 de *Panorama da IA*. A apresentação propõe gerar código para analisar um arquivo e construir um painel a partir da base. As perguntas sobre repetição, critério e uso são o desdobramento didático neste guia, não um relato de resultados obtidos pela turma.",
+      "retrieval": "O exercício de escrita com fontes foi proposto pelo autor em 2014, inspirado em Goldsmith (2011). O documento original descreve identificação por cores, fontes múltiplas e discussão da confiabilidade."
     },
     "en": {
-      "what-is-ai": "The course's original definitions: autonomy is \"the ability to perform tasks in complex environments without constant guidance by a user\"; adaptivity is \"the ability to improve performance by learning from experience.\"",
-      "bias": "The details the text leaves out are in the sources. Dermatology: a 27% to 36% drop in performance (Daneshjou et al., 2022). Gender classification: up to 34.7% error for darker-skinned women and at most 0.8% for lighter-skinned men, computed from the accuracies published (Buolamwini & Gebru, 2018). Face recognition: false positives 10 to 100 times higher (NIST, 2019). The arrest is that of Robert Williams, in Detroit (ACLU, 2024). The early-warning system is the state of Wisconsin's, with a 42-percentage-point gap in false alarms (Feathers, 2023). The translation error happened on Facebook (Hern, 2017).",
-      "data-privacy": "The app mentioned is Ever; the authority is the U.S. Federal Trade Commission.",
+      "what-is-ai": "The course's original definitions: autonomy is \"the ability to perform tasks in complex environments without constant guidance by a user\"; adaptivity is \"the ability to improve performance by learning from experience.\"\n\nThe timeline revisits the author's *Intro IA* slides and uses the Built From Nothing video (2026) as a narrative thread, checked against historical sources: Turing (1950); the Dartmouth meeting (1956); Deep Blue against Kasparov (1997); AlexNet (2012); AlphaGo against Lee Sedol (2016); *Attention is all you need* (2017); ChatGPT, launched on November 30, 2022. The account stops at that launch, before the later leadership conflicts. BERT entered Google Search in 2019 (Nayak, 2019). In the Dean and Shazeer interview (2025), the discussion of the delay in launching a chatbot is at 2:06–2:09; it is a participant account, not proof of a single cause. The consulted sources do not support the claim that Google abandoned investment in AI because it considered it too expensive. Autonomy and adaptivity are treated as dimensions, not as two simultaneously mandatory conditions. OECD (2024) distinguishes adaptation during development and after deployment. The quiz compares written rules and learned behavior in simplified examples.",
+      "bias": "The details the text leaves out are in the sources. Dermatology: a 27% to 36% drop in performance (Daneshjou et al., 2022). Gender classification: up to 34.7% error for darker-skinned women and at most 0.8% for lighter-skinned men, computed from the accuracies published (Buolamwini & Gebru, 2018). Face recognition: false positives 10 to 100 times higher (NIST, 2019). The arrest is that of Robert Williams, in Detroit (ACLU, 2024). The early-warning system is the state of Wisconsin's, with a 42-percentage-point gap in false alarms (Feathers, 2023). The translation error happened on Facebook (Hern, 2017).\n\nThe front-page analogy appears in Harari's conversation with Robert Guest (2026), at approximately minutes 32–33. The text uses the editorial comparison to discuss ethical responsibility. It does not adopt the interviewee's description of platform legislation as a legal conclusion.",
+      "data-privacy": "The app mentioned is Ever; the authority is the U.S. Federal Trade Commission. ANPD clarifies that consent has no priority over other legal grounds. The applicable basis depends on the purpose and conditions of processing; sensitive data has specific grounds.",
       "footprint": "The values behind the orders of magnitude in the text: 0.24 Wh and 0.26 ml per median text prompt (Vahdat & Dean, 2025); 0.34 Wh per average query (Altman, 2025); about 3.4 million joules for five seconds of video, more than 700 times one image (O'Donnell & Crownhart, 2025); 415 TWh consumed by data centers in 2024, close to 1.5% of the world's electricity, with a projection of about 945 TWh in 2030 (International Energy Agency, 2025).",
-      "context": "The CPU-and-memory line paraphrases the passage where Karpathy compares LLMs to an operating system. Anthropic (2025) is the source for \"attention budget\", the \"right altitude\", and the principle of the smallest set of high-signal tokens. The context rot measurement is from Chroma (2025).",
+      "context": "The CPU-and-memory line paraphrases the passage where Karpathy compares LLMs to an operating system. Anthropic (2025) is the source for \"attention budget\", the \"right altitude\", and the principle of the smallest set of high-signal tokens. The context rot measurement is from Chroma (2025). The distinction between contextualized representations and patterns learned in parameters also draws on Sanderson (2024), in the MLP lesson. The \"attention budget\" is treated here as practical guidance; the Chroma study does not establish a fixed loss per token for every model or task.\n\nThe persona rehearsal case is the author’s account; the original idea came from a designer he worked with. Rosala and Moran (2024) discuss limits of synthetic research. In the interview, Alves (2026) discusses risk reduction (minute 4), limits for critical decisions (17), and complementing real people (52). He co-founded a company selling this research.",
       "workspace": "The vendor that introduced weekly limits is Anthropic (Zeff, 2025). The usage numbers in this chapter come from my own routine: in November 2026, the three subscriptions added up to about R$ 2,000 a month, with Brazil's monthly minimum wage at R$ 1,621.",
-      "agents-leash": "The risk list is OWASP's; the \"lethal trifecta\" is Simon Willison's (2025). The support-channel design (who asks, who approves) describes an agent in production at the company where I work.",
-      "cases": "The eight cases come from my work and teaching routine; names of people, clients and companies were left out. The change in legislation in case 1 is Brazil's tax reform (Brazil, 2025). On synthetic participants, the authors write: \"Synthetic users cannot replace the depth and empathy gained from studying and speaking with real people\" and \"They often provide shallow or overly favorable feedback\" (Rosala & Moran, 2024). Hugo Alves is the co-founder of a company that sells research with synthetic participants; in the interview he says: \"research is always about making better decisions [...] It's about reducing risk\" (minute 4); that he does not expect anyone to make, on this alone, \"a decision that can make a company break\", and that one has to find \"what should be left exclusively for humans\" (minute 17); and that people who change their mind usually say \"I wouldn't replace humans with this but now I really see where this could help me\" (minute 52).",
-      "generalist": "The source is an interview with Karim R. Lakhani, a professor at Harvard Business School. Passages used: marginal cost of expertise (minutes 34 and 47), the three ways of working with AI (2 to 4; in the interview, about 60% cyborgs, 14% centaurs and 27% self-automators), \"I never take the first answer\" (9), accountability and the \"meat interface\" (3 and 14), the required MBA course, with about 900 students (20 to 22), and who is most at risk (44 and 45). The experiment with consultants is Dell'Acqua et al. (2023).",
-      "_index": "Lia is an invented character. The data about the problem she faces are real: in 2025, 7.7 million people aged 14 to 29 in Brazil had not finished high school, and 43% pointed to the need to work (IBGE, 2026); Busca Ativa Escolar helped more than 300 thousand children and adolescents return to school between 2017 and 2025 (UNICEF, 2025).",
-      "computational-thinking": "The passages used in the research section. Brennan and Resnick (2012): concepts \"sequences, loops, parallelism, events, conditionals, operators, and data\"; practices \"being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing\". Denny et al. (2023, section 4; final version published in *Communications of the ACM*, 2024): \"Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content\". Prather et al. (2024, abstract): a study with 21 students; those who struggled \"thought they performed better than they did, and finished with an illusion of competence\". Sarkar et al. (2022): \"End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills.\"",
-      "app-builders": "The quoted line is told by Guillermo Rauch, who attributes it to a user of his tool (minutes 0 and 43 of the interview): \"v0 is a super genius five-year-old PhD with ADHD\". It describes that tool, not AI in general; the generalization is mine. The cases in the chapter come from my own work; names of people, clients and companies were left out."
+      "agents-leash": "The risk list is OWASP's; the \"lethal trifecta\" is Simon Willison's (2025). The support-channel design (who asks, who approves) describes an agent in production at the company where I work.\n\nThe invoice and course-track cases are the author’s accounts. The legislative change mentioned in the former is Brazil’s tax reform (Brazil, 2025); the accountant’s check is part of the account, not tax-filing guidance.",
+      "cases": "Both references present commercial theses; their application to school outreach is a teaching scenario developed for this guide. Thoughtworks is a technology consultancy and Sequoia is an investor. The text does not adopt market forecasts, rigid divisions between intelligence and judgment, or the idea that every agent learns or is continuously trained in operation as facts. The personal build-or-buy account is documented in the author’s posts.",
+      "generalist": "The source is an interview with Karim R. Lakhani, a professor at Harvard Business School. Passages used: marginal cost of expertise (minutes 34 and 47), the three ways of working with AI (2 to 4; in the interview, about 60% cyborgs, 14% centaurs and 27% self-automators), \"I never take the first answer\" (9), accountability and the \"meat interface\" (3 and 14), the required MBA course, with about 900 students (20 to 22), and who is most at risk (44 and 45). The experiment with consultants is Dell'Acqua et al. (2023).\n\nFrom Harari's conversation with Robert Guest (2026), the passages used are the Stone Age visitor and abundance (minutes 14–15), the plane and risk discussion (28–31), and digital vassal states (59–61). The visitor is a thought experiment, not a claim about Neanderthals. Harari attributes a 10% to 20% estimate of catastrophic risk to Elon Musk; this is an attribution made in the interview, not a directly verified Musk quotation or a measured probability. The reply that we are already aboard is part of the provocation Harari challenges. The guide revisits it to discuss responsibility and the capacity to act, without concluding that political choices have become impossible. The applications to Lia's case are teaching scenarios created for this guide. The categories and proportions reported in the interview are attributed to Lakhani; the chapter uses the images for reflection without extrapolating percentages to AI users in general.",
+      "_index": "Lia is an invented character. The data about the problem she faces are real: in 2025, 7.7 million people aged 14 to 29 in Brazil had not finished high school, and 43% pointed to the need to work (IBGE, 2026); Busca Ativa Escolar helped more than 300 thousand children and adolescents return to school between 2017 and 2025 (UNICEF, 2025).\n\nThe author’s chosen narrative reference is The Phoenix Project (Kim et al., 2024): deadline pressure, work across departments, and the consequences of decisions. Lia and the team are this guide’s own characters; they do not represent a real case or reproduce the novel’s plot. Their journey remains open after the last chapter.",
+      "computational-thinking": "The passages used in the research section. Brennan and Resnick (2012): concepts \"sequences, loops, parallelism, events, conditionals, operators, and data\"; practices \"being incremental and iterative, testing and debugging, reusing and remixing, and abstracting and modularizing\". Denny et al. (2023, section 4; final version published in *Communications of the ACM*, 2024): \"Without the skills to read, test and verify that code does what is intended, users risk becoming mere consumers of the generated content\". Prather et al. (2024, abstract): a study with 21 students; those who struggled \"thought they performed better than they did, and finished with an illusion of competence\". Sarkar et al. (2022): \"End-user programmers often lack computational thinking skills [...], such as the ability to decompose problems into subproblems [...]. However, effective use of LLMs such as Codex requires such skills.\"\n\nThe workshop example was checked against pages 27–31 and 38 of *Mão na massa com IA: criando apps e automações*. The text describes the proposed exercises without claiming participant outcomes. Tool names from the slides were omitted from the body: the example emphasizes analysis, flow, screen, and review of the parts.",
+      "app-builders": "The cases are the author's accounts; names of people, clients, and companies were omitted. The building-series posts document learning phases, dated in the references. The diagnostic request suggested in the chapter is a teaching example, not a literal transcript of those episodes.",
+      "inside-llm": "Sanderson's lessons on LLMs, Transformers, attention, and MLPs support the intuition for the mechanism. The script awaiting completion comes from the brief video; the relationship map adapts the embedding explanation; the bank examples and Lia's folder are teaching adaptations created for this guide. The tabs do not run a model or display measured weights. In English, a riverbank replaces the Portuguese bench meaning, preserving the ambiguity of the word. Attention exchanges information between permitted positions; in a causal generation model, each position cannot consult future tokens. This limit does not prevent parallel calculation during training. Intermediate layers also transform representations; attention is not the whole network. The original ChatGPT announcement documents stages after pre-training; Anthropic (2025), an interested party, describes tools and retrieved information in agent contexts.\n\nTo see the mechanism, the suggested order is: [brief overview](https://www.youtube.com/watch?v=LPZh9BOjkQs), [Transformers and embeddings](https://www.youtube.com/watch?v=wjZofJX0v4M), [attention](https://www.3blue1brown.com/lessons/attention/), and [intermediate layers](https://www.3blue1brown.com/lessons/mlp/). The [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) lets you explore a small model from inside. These are optional deeper readings: no formula is a prerequisite for continuing the guide.\n\nThe paper by Vaswani et al. was submitted to arXiv on June 12, 2017. Uszkoreit's explanation (2017) complements the paper; the line-of-people analogy is a teaching simplification.\n\n#### Where did the eight people behind the paper go?\n\nA selection of career paths documented in sources consulted on November 15, 2026. The dates of announcements and reports matter: an old biography does not guarantee a current affiliation. Company pages and personal profiles come from interested parties; here they support affiliations and stated aims, not endorsements of company quality.\n\n| Person | Path after their work at Google |\n|---|---|\n| Ashish Vaswani | Co-founded [Adept](https://www.adept.ai/blog/introducing-adept/) and [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Sharon Goldman [reported his hiring by Nvidia in June 2026](https://www.groundlevel-ai.com/p/nvidia-quietly-acquihires-essential). |\n| Noam Shazeer | Co-founded Character.AI and [returned to Google DeepMind in 2024](https://www.investing.com/news/economy-news/google-inks-licensing-deal-with-characterai-hires-its-cofounders-3552866). Then: [OpenAI, June 2026](https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai). |\n| Niki Parmar | Co-founded [Adept](https://www.adept.ai/blog/introducing-adept/) and [Essential AI](https://www.linkedin.com/posts/essentialai_essential-ai-linkedin-activity-7140477733100281856-m5Mc). Her [public professional profile](https://www.linkedin.com/in/nikiparmar) lists Anthropic. |\n| Jakob Uszkoreit | Co-founded [Inceptive](https://inceptive.com/blog/alnylam-ai-rnai-therapeutics-partnership), which applies models to molecular and drug research; the 2026 announcement identifies him as CEO. |\n| Llion Jones | Co-founded [Sakana AI](https://sakana.ai/company-info/), an AI research lab based in Tokyo. |\n| Aidan N. Gomez | Co-founded [Cohere](https://cohere.com/about), focused on AI for organizations; its company page identifies him as CEO. |\n| Łukasz Kaiser | Moved to [OpenAI](https://forum.openai.com/public/events/virtual-event-learning-powerful-models-from-transformers-to-reasoners-and-beyond-dxm2qrm1au), where the 2025 event biography identifies him as a deep learning researcher. |\n| Illia Polosukhin | Co-founded the NEAR blockchain project and [NEAR AI](https://near.ai/company), whose stated aim is user-owned AI. |",
+      "how-machines-learn": "Grant Sanderson's 3Blue1Brown lessons provide the visual foundation: handwritten digits and layered networks (*But what is a neural network?*); error-based adjustment and testing on held-out examples (*Gradient descent*); each parameter's contribution to error (*Backpropagation*). Combining strokes and curves motivates the architecture; it is not a guaranteed description of what each neuron learned. The adjustment panel is a teaching analogy for parameters. The line experiment illustrates simple regression, not a complete neural network. The undergraduate research account is the author's.\n\nTo continue through the [full series](https://www.3blue1brown.com/topics/neural-networks), follow the images and questions first; the calculations can wait for another reading. Here the path runs from representation to training and, in the next chapter, to context and language generation. Reference dates are those of the written lessons, which also link to their companion videos.",
+      "repo-memory": "The preference for creating GitHub projects even when the deliverable is not code, using AGENTS.md and docs/ folders for decisions, paths taken, and meeting notes, is the author's account. The website and book case describes the repository structure: README.md, AGENTS.md, chapters, tools, and exclusion rules in .gitignore and _config.yml. The temp/ folder is local and private; its contents are not reproduced in this example. Git preserves recorded history for tracked files, not an automatic copy of everything in the working folder (Chacon & Straub, 2014, Section 2.2).",
+      "multimodal": "Radford et al. (2022) and Ho, Jain, and Abbeel (2020) illustrate different mechanisms for transcription and image generation. Static is a teaching analogy for denoising. The overengineering account is documented in the author's post, cited in the references.",
+      "deterministic": "The contracts spreadsheet exercise appears on page 21 of *Panorama da IA*. The presentation proposes generating code to analyze a file and building a dashboard from the data. Questions about repetition, criteria, and use are the educational extension in this guide, not an account of participant outcomes.",
+      "retrieval": "The source-based writing exercise was assigned by the author in 2014, inspired by Goldsmith (2011). The original document describes color identification, multiple sources, and discussion of reliability."
     }
   }
 }

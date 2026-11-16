@@ -1,5 +1,6 @@
 ---
-title: "Data and privacy: public doesn't mean fair game"
+title: "Were we allowed to send that data?"
+subtitle: "Privacy, purpose, and access."
 description: "The difference between public data, personal data, and sensitive data, and the habit of cropping, blurring, and minimizing before you hit send."
 lang: en
 ref: data-privacy
@@ -8,7 +9,7 @@ part: 1
 permalink: /ai/data-and-privacy/
 interactive: "what to blur in the photo + checklist"
 piece: "working spreadsheet with codes, and a fictional copy for testing"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
@@ -18,6 +19,8 @@ Eleven at night, the day before a meeting with Iara. Caio posted in the group ch
 </div>
 
 If the model learns from data, the next question is obvious and almost never asked: **whose data?** This chapter is about the line worth drawing before uploading anything to any tool.
+
+I'm not a lawyer. Here I want to help identify the questions a project needs to take to the people responsible, without turning a rule of thumb into legal advice.
 
 ## Does all data deserve the same care?
 
@@ -37,7 +40,7 @@ If the model learns from data, the next question is obvious and almost never ask
 | Name, signature, documents | ID card, CPF, signature | Forgery, accounts opened in your name, identity theft |
 | Contact details | Phone, email, IP address | Spam, targeted *phishing*, harassment |
 
-The golden rule applies to every row: **collecting and using personal data requires a legal basis — in practice, almost always informed, specific, and revocable consent.**
+Collecting and using personal data requires an applicable legal basis. **Consent is one possibility, without automatic priority over the others**, as [ANPD explains](https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular-referente-lgpd). Other grounds include legal obligations, contract performance, and public policies, with their own requirements; sensitive data has specific rules. The [official list](https://www.gov.br/anpd/pt-br/acesso-a-informacao/perguntas-frequentes) helps start that conversation. "The person allowed it" doesn't end the need to consider purpose, necessity, and protection.
 
 <div class="g-lia g-lia-missao" markdown="1">
 **Provocation:** in the scene below, find everything that would identify someone. Then think about Lia's spreadsheet: what in it is necessary for the task, and what is only there because it always has been?
@@ -53,19 +56,21 @@ That second part is the one that matters. Badly collected data contaminates ever
 
 ## What should you do before you hit send?
 
-Three moves solve most everyday problems:
+Three actions reduce everyday exposure:
 
 - **Crop**: frame only what matters. The background of a photo usually holds more personal data than the main subject.
 - **Blur**: faces, license plates, house numbers, documents. Irreversibly — a semi-transparent bar doesn't count.
 - **Minimize**: if the task doesn't need the field, the field doesn't go. To ask for help with a customer spreadsheet, replace names with "Customer 1, Customer 2" and send five rows, not five thousand.
 
-Anyone who builds has a fourth move: **block**. An instruction asking for care helps, but you can put a barrier in front of the model — a filter that lets nothing through that looks like a CPF number, an access key, an address. It's code, not a request: it works the same way every time.
+Replacing a name with a code doesn't necessarily erase identity: the school, shift, and account may reveal who the person is. And data being "mine" doesn't authorize every use if it also concerns other people.
+
+Builders can add **filters** before the model, for example to block patterns resembling identity numbers or access keys. A rule in code lets you test and repeat that check. It may still miss a format nobody anticipated; it doesn't replace deciding which data should enter.
 
 <div data-widget="checklist" data-key="privacidade" data-title="Privacy checklist" markdown="1">
 
 #### When I build (collect data, train, set up an agent)
 
-- [ ] I have documented consent from everyone who appears in the data
+- [ ] The purpose and applicable legal basis were defined with whoever is responsible for the processing
 - [ ] I cropped the images to remove what doesn't matter from the background
 - [ ] I irreversibly blurred faces, license plates, addresses, and documents
 - [ ] I dropped every personal field that isn't essential to the goal
@@ -76,7 +81,7 @@ Anyone who builds has a fourth move: **block**. An instruction asking for care h
 - [ ] I read what the privacy policy says about how my conversations are used
 - [ ] I turned off the use of my data for training, when the tool allows it
 - [ ] I removed names, CPF numbers, addresses, and health data before pasting the text
-- [ ] The data I'm pasting is mine — or I have permission from whoever owns it
+- [ ] I checked whether this tool and this use are permitted for the data
 - [ ] When in doubt, I used a made-up example in place of the real data
 
 </div>
@@ -85,23 +90,36 @@ Anyone who builds has a fourth move: **block**. An instruction asking for care h
 **How I do it:** the memory of the assistant I use stays off. One day I ran the test of asking "what do you know about me?" It's a little scary. I turned it off. And to test an idea, fictional data in the same format as the real thing works almost every time: it takes thirty seconds to ask the AI to generate it.
 </div>
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways**
-
-- Publicly available is not the same as consented to.
-- Wrongly collected data can bring down the entire model — it has already happened.
-- Privacy is protected before the upload: crop, blur, minimize.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
 - **In dispute:** who authorized each column in this spreadsheet? If a mother asked to see what's in there about her child, would anyone be able to show it — and explain it? Can what already went out be taken back?
 - **Paths on the table:**
-  - *Aída:* stop everything until there's a formal opinion. Safe — and the start of classes won't wait.
-  - *Caio:* carry on with made-up data only, until it's settled. It doesn't stall, but it doesn't test what matters either.
-  - *Lia:* codes in place of names, only the columns the task needs, and none of it in a tool nobody signed a contract for.
-- **What the team did, for now:** the working spreadsheet with codes and three columns; a fictional copy for testing; and a conversation scheduled with Aída, one nobody wanted to have.
+  - *Aída:* suspend use of the data and investigate the upload. That limits new exposure, but interrupts testing with the real situation.
+  - *Caio:* continue with fictional data until the issue is settled. That allows building, but does not reveal every problem in the real records.
+  - *Lia:* reduce columns and replace names with codes inside the approved environment. That continues some work, but requires reviewing access and does not undo the earlier upload.
+- **What the team did, for now:** stopped using that assistant with real data and took the incident to Aída. To keep building, it adopted Caio's fictional copy. The reduced spreadsheet awaited review; Iara would see a demonstration using invented examples.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Purpose and legal basis:** being able to access data does not justify every use. Consent is one possible legal basis.
+- **Identification:** removing a name can leave other clues pointing to the person.
+- **Minimization and access:** asking what data is necessary and who needs to see it changes the solution's design.
+
+If you replace names with codes, what still needs investigating before treating that material as anonymous?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Follow one piece of data through your project: where does it come from, where does it pass, who can see it, and where is it stored? Try the same task with a fictional example or less information. What stopped working? What data were you requesting without needing it for this delivery?
+
 </div>
 
 <details class="g-aula" markdown="1">
@@ -123,10 +141,12 @@ Ask each person to open their phone's photo gallery, pick a photo taken on the s
 
 #### References
 
+- Agência Nacional de Proteção de Dados. (2026). *Perguntas frequentes* [Frequently asked questions], sections 2.5–2.6. <https://www.gov.br/anpd/pt-br/acesso-a-informacao/perguntas-frequentes>
+- Agência Nacional de Proteção de Dados. (n.d.). *Denúncia / Petição de Titular referente à LGPD* [Complaints and data subject petitions under the LGPD]. <https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/denuncia-peticao-de-titular-referente-lgpd>
 - Brazil. (2018). *Lei nº 13.709, de 14 de agosto de 2018: Lei Geral de Proteção de Dados Pessoais (LGPD)* [General Data Protection Law]. <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm>
 - Federal Trade Commission. (2021a, January). *California company settles FTC allegations it deceived consumers about use of facial recognition in photo storage app*. <https://www.ftc.gov/news-events/news/press-releases/2021/01/california-company-settles-ftc-allegations-it-deceived-consumers-about-use-facial-recognition-photo>
 - Federal Trade Commission. (2021b, May). *FTC finalizes settlement with photo app developer related to misuse of facial recognition technology*. <https://www.ftc.gov/news-events/news/press-releases/2021/05/ftc-finalizes-settlement-photo-app-developer-related-misuse-facial-recognition-technology>
 
-*Notes:* The app mentioned is Ever; the authority is the U.S. Federal Trade Commission.
+*Notes:* The app mentioned is Ever; the authority is the U.S. Federal Trade Commission. ANPD clarifies that consent has no priority over other legal grounds. The applicable basis depends on the purpose and conditions of processing; sensitive data has specific grounds.
 
 </div>

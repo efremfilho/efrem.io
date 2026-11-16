@@ -1,5 +1,6 @@
 ---
-title: "A nuvem tem chão: o custo físico da IA"
+title: "Quanto custa fazer isso funcionar?"
+subtitle: "Recursos físicos, modelos e custo por tarefa."
 description: "Energia, água e chips por trás de cada resposta — e por que escolher o tamanho certo de ferramenta também é uma decisão ética."
 lang: pt-BR
 ref: footprint
@@ -8,13 +9,13 @@ part: 1
 permalink: /ia/custo-fisico/
 interactive: "calculadora de energia"
 piece: "a conta do mês, com dono: sobe para descobrir, desce para rodar"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 6
 
-Os créditos do mês acabaram no dia nove. Caio tinha deixado os agentes dele no modelo mais caro, com o esforço no máximo, "para garantir". Na mesma semana, Bia apareceu com uma ideia animada: um vídeo personalizado para cada família, com o nome de cada estudante. Seiscentas famílias. Lia perguntou quanto custava. Ninguém sabia — nem em dinheiro, nem no resto. Caio achava que erro sai mais caro que crédito. Bia, que para contar falta qualquer modelo serve. Existe um custo aí que ninguém do time está vendo? E quem decide quando vale?
+Os créditos acabaram antes da demonstração. Caio vinha usando o modelo mais capaz para descobrir o que funcionava, mas também o deixou refazer tarefas que já estavam resolvidas. Bia queria vídeos para explicar a busca ativa às famílias: dizia que os textos estavam difíceis de entender. Lia pediu uma estimativa para todas as famílias. O orçamento não cabia. "Então texto de novo?", perguntou Bia. Caio sugeriu testar modelos menores nas tarefas repetidas, sem presumir que ficariam mais baratos depois das tentativas. Lia pôs na conta as horas de quem revisava e o contato remarcado para preencher o novo registro. Que economia valia a pena se o custo só mudasse de lugar?
 </div>
 
 "Nuvem" é uma das melhores jogadas de marketing da história da tecnologia. Parece leve, limpa e sem endereço. Na prática, é um galpão do tamanho de vários campos de futebol, cheio de máquinas que esquentam, ligado na rede elétrica e, muitas vezes, em um rio.
@@ -77,19 +78,36 @@ Não é a única resposta defensável. Quem roda a mesma tarefa milhares de veze
 - **Isso vai se repetir?** Se a mesma tarefa vai rodar mil vezes, vale pedir um script e rodar o script ([capítulo 10](/ia/pedir-o-script/)). O script consome quase nada.
 - **Precisa ser imagem ou vídeo?** É onde o consumo por pedido é mais alto.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar:** não é sobre culpa por cada pergunta — é sobre proporção. E proporção se descobre testando: sobe para descobrir, desce para rodar. O que não dá é não fazer a conta.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** quanto consome o que a organização já usa todo dia, sem ninguém ter feito a conta? Quem paga — em dinheiro, em energia, em água?
+- **Em disputa:** O custo aparece nos créditos, no trabalho de conferir, no tempo em campo e nos recursos físicos. Qual dessas contas o orçamento está deixando invisível?
 - **Caminhos na mesa:**
-  - *Caio:* sempre o modelo mais capaz, no máximo. Erro custa mais caro que crédito.
-  - *Bia:* o mais barato para tudo. "É para contar falta."
-  - *Lia:* o mais capaz enquanto se descobre o que funciona; um degrau abaixo assim que a tarefa estiver provada.
-- **O que o time fez, por enquanto:** a conta do mês passou a ter dono, com o combinado "sobe para descobrir, desce para rodar". Os seiscentos vídeos viraram seiscentas mensagens de texto — e a Bia ainda acha que o vídeo teria funcionado melhor.
+  - *Caio:* manter o modelo capaz na parte ainda incerta e comparar alternativas nas tarefas já provadas. Preserva capacidade, mas exige gastar para medir antes de economizar.
+  - *Bia:* testar uma explicação em vídeo com algumas famílias antes de abandonar o formato. Pode melhorar a compreensão, mas consome parte do orçamento restante sem garantir resultado.
+  - *Lia:* entregar só texto nesta rodada e rever depois. Cabe no orçamento agora, mas pode manter uma barreira para quem precisa entender a mensagem.
+- **O que o time fez, por enquanto:** reservou uma pequena parte do orçamento para o teste de Bia e cortou a geração em massa. Na demonstração, Lia mostrou uma lista de próximos contatos com dados fictícios; Bia percorreu a rotina, e Iara perguntou como receberia o retorno. A primeira entrega útil foi essa lista, aplicada por Bia no ambiente autorizado à rotina que já existia, com atualização manual. A contagem ainda dependia de pedidos ao assistente; ninguém tinha resolvido a passagem do trabalho entre pessoas. Caio passou a comparar custo por tarefa concluída, incluindo revisão. Iara aceitou acompanhar o teste; manteve a proposta da fornecedora na mesa.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Treino e execução:** preparar um modelo e usá-lo têm custos diferentes; as chamadas continuam consumindo recursos.
+- **Custo da tarefa:** a conta inclui tentativas, revisão, infraestrutura e trabalho transferido para outras pessoas.
+- **Escolha de modelo:** eu começo com capacidade para descobrir e comparo alternativas quando a tarefa está provada. Menor, sozinho, não significa mais barato.
+
+O que precisa permanecer bom para uma redução de custo valer a pena?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Pegue uma tarefa que já funcionou e compare outro jeito de fazê-la: outro modelo, uma rotina pronta ou um passo manual. Conte também tentativas e tempo de revisão. O que parece barato numa execução continua assim quando você usa de verdade? O que merece outra tentativa e o que já pode ficar estável por enquanto?
+
 </div>
 
 <details class="g-aula" markdown="1">

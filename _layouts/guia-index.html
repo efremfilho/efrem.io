@@ -22,7 +22,7 @@ layout: default
 </header>
 
 <div class="post-content g-intro">
-	{{ content }}
+	{% include guia/abertura.html body=content lang=page.lang %}
 </div>
 
 <div class="g-index-progress" id="gIndexProgress" hidden>
@@ -35,6 +35,7 @@ layout: default
 	<section class="g-part">
 		<h2 class="g-part-label">{{ t.part }} {{ part_number }} &middot; {{ part.title }}</h2>
 		<p class="muted g-part-desc">{{ part.description }}</p>
+		{% include guia/ato.html act=part texts=t %}
 		<div class="g-chapters">
 			{% for c in chapters %}
 				{% if c.part == part_number %}
@@ -42,6 +43,7 @@ layout: default
 					<span class="g-chapter-n">{{ c.order }}</span>
 					<span class="g-chapter-body">
 						<strong>{{ c.title }}</strong>
+						{% if c.subtitle %}<span class="g-concept-subtitle">{{ c.subtitle }}</span>{% endif %}
 						<span class="g-chapter-desc">{{ c.description }}</span>
 						<span class="g-chapter-meta">
 							{{ c.content | number_of_words | divided_by: 180 | at_least: 1 }} {{ t.min }}

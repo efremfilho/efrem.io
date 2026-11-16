@@ -1,5 +1,6 @@
 ---
-title: "The generalist and responsibility"
+title: "What changes in the next round?"
+subtitle: "Autonomy, responsibility, and collective choices."
 description: "When knowing how to do things gets cheap, what's left is what was always hard: knowing what to do, checking that it came out right, and answering for the result."
 lang: en
 ref: generalist
@@ -8,13 +9,13 @@ part: 3
 permalink: /ai/responsible-generalist/
 interactive: "self-assessment"
 piece: "the deliverable — and the next decision"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **Lia's journey** · scene 17
 
-The education department decided: the team's solution stays, and the vendor can wait. At the presentation, the first question was about the technology. Lia answered by talking about the decisions: what the system doesn't label, what it doesn't keep, what no agent does on its own. Nobody there became a programming expert — Bia still doesn't know what a *framework* is, and has no desire at all to find out. Aída, from the technology team, now reviews what goes live. Iara wants to take it to the whole state. Bia thinks it's too soon. Caio has already opened the new repository. The one who signs at the bottom is Lia. What, exactly, is she signing?
+The department kept the trial with the team; the vendor's offer remained available. Before the presentation, Maia sent slides calling the project "a validated solution for the entire school system." Bia asked her to remove that claim. Maia replied that the team could adjust it; one more task in Lia's queue. Iara wanted to take an expansion proposal to the state while funding was available. Bia opened another list: following up with Ian, updating messages in two formats, supporting schools without connectivity. "The offline trial worked," said Caio. "With fictional data, and I was the one explaining it on the phone when it got stuck," replied Bia. She asked her agent to compare expansion with stabilizing support; she read its hypotheses and marked what needed checking. Caio requested a plan to switch AI services. Aída, now reviewing changes before release, found an overlooked dependency. Iara pointed to the waiting towns: buying support was also an option. Bia did not want to lose what they had learned; Caio no longer wanted to maintain everything himself. Lia needed to bring a proposal. Which part of the service could the team take on in the next round — and who would handle the rest?
 </div>
 
 I spent a good part of my career feeling like a duck: it swims, walks, and flies, but doesn't do any of the three very well. A bit of code, a bit of data, a bit of design, a lot of product. In a market that rewarded specialists, that looked like a flaw.
@@ -25,9 +26,9 @@ It stopped looking like one.
 
 The person who put a name to what I'd been feeling was Karim Lakhani, who researches how AI changes work. The thesis he has been [repeating for years](https://www.youtube.com/watch?v=vFOnDsy58NU): **the marginal cost of expertise is going to zero.** And he follows it with a provocation for companies: if a company is, at bottom, a bundle of expertise, what does it do when that cost collapses?
 
-I [very much agree](/blog/en/the-cost-of-expertise-and-the-will-to-build/), with one addition: when expertise gets cheap, what starts to count is the will to build. And there's the joke I keep repeating: I used to blame the team for delays, poorly implemented stuff, a bad experience. Now I've found out that I'm the one who's bad at defining the product. It hurts, but it's true.
+I [very much agree](/blog/en/the-cost-of-expertise-and-the-will-to-build/), with one addition: when expertise gets cheap, what starts to count is the will to build. The joke I opened this guide with comes back here: with agents doing the work, it's harder to hide from my own difficulty defining the product. The will to build doesn't let me skip reading what I've built.
 
-It doesn't mean specialists became useless — the [previous chapter](/ai/real-cases/) has an accountant saving my skin. It means *access* to specialized execution got cheap. I'm no longer afraid of data analysis, of code, of design. Not because I got good at all three: because I can get to a decent result in all three, fast, and I know where to call someone.
+It doesn't mean specialists became useless — the [chapter on delegation](/ai/agents-on-a-leash/) has an accountant checking what I did not know. It means *access* to specialized execution got cheap. I'm no longer afraid of data analysis, of code, of design. Not because I got good at all three: because I can get to a decent result in all three, fast, and I know where to call someone.
 
 What this rewards is the person who sees the whole process. Someone who understands the client's problem, knows what to ask for, notices when the result doesn't make sense, and puts the pieces together. I called this becoming [a "full-service" person](/blog/en/becoming-a-full-service-person-in-tech/) back when it was still a bet.
 
@@ -37,7 +38,7 @@ Today I have an autonomy I never had before. I've always been a bit of a lone wo
 
 There's a detail in this story that, for me, is the center of everything. It's not just that specialized execution got cheap. It's that **expertise now arrives in natural language** — in a format I can read.
 
-Before, a specialist's knowledge came wrapped in the craft: the code, the statistical model, the design file, the contract clause. To evaluate it, I had to master the craft or trust blindly. Today, when I ask for an analysis, I get the plan, the reasoning, the alternatives that were discarded and the explanation for each choice along with it — in plain language. I can read it, ask "why?", ask for the counterargument, and only then decide.
+Before, a specialist's knowledge came wrapped in the craft: the code, the statistical model, the design file, the contract clause. To evaluate it, I had to master the craft or trust blindly. Today, when I ask for an analysis, I get the plan, the reasoning, the alternatives that were discarded and the explanation for each choice along with it — in plain language. I can read it, ask "why?", ask for the counterargument, and only then decide. The explanation also needs checking: it can confidently justify a poor choice. Reading the agent’s account does not replace observing the delivery.
 
 That's why I don't like the term *vibe coding*. It suggests programming on vibes, accepting whatever comes without looking — just pressing a key over and over to say yes. My experience is the opposite.
 
@@ -47,47 +48,27 @@ I've had a problem with the term since it first appeared. At first the reason wa
 
 The biggest change in my day wasn't that I stopped writing code. It was that **I started reading all day long.** I even wrote it in all caps: [I have NEVER read so much in my life](/blog/en/how-to-teach-critical-use-of-ai/).
 
-The agent shows the plan: I read it. It shows its reasoning: I read it. It explains why it chose a path: I read it, and sometimes I disagree. It delivers the result: I read it before accepting. I don't always read everything — when I leave something running overnight, in the morning I read the summary. But I always read something. And it's tiring: mentally, it's heavier than writing.
+The agent shows the plan: I read it. It explains the steps it says it followed: I read them. It explains why it chose a path: I read it, and sometimes I disagree. It delivers the result: I read it before accepting. I don't always read everything — when I leave something running overnight, in the morning I read the summary. But I always read something. And it's tiring: mentally, it's heavier than writing.
 
 My job became reviewing, deciding, and redirecting. I joke that I'm no longer the author of my life, but I'm still the reviewer.
 
-Lakhani's research with consultants gives names to the ways people work with AI. Most act as **cyborgs**, solving the problem together with the AI in constant back-and-forth; a smaller share as **centaurs**, who split the work ("I do this, it does that") and supervise what comes back; and about a quarter as **self-automators**, who press play and hand in whatever comes out. The third group learns the least — in his words, because they *stopped thinking*.
+In the interview, Lakhani describes three ways of working with AI: **cyborg**, solving together through back-and-forth; **centaur**, dividing tasks and supervising what returns; and **self-automator**, handing in the answer without engaging. I use these images to ask which role I'm taking in a task. They don't measure a person's worth or establish that all automation reduces learning.
 
-He's tough on people who fall into that. If all you are is a meat interface to the silicon, what's your value? He says he has fired people who justified poor work with "the AI gave me that." And he has a personal rule worth copying: **never take the first answer.** Ask for alternatives, make the model argue against its own proposal, look for the red flags. The first answer is the average answer; the good one shows up after someone with judgment pushes.
+He recommends questioning the first answer, requesting alternatives, and looking for warning signs. That doesn't make the second answer better by definition. The criterion is being able to check what matters for that task. Otherwise, I could replace a good answer with one that simply fits my wishes better.
 
-Pushing works both ways. I took a few bets of mine to a deep-research tool, and it rejected one of them. Like a good researcher, I didn't like the answer and changed the question, to see if I'd get the one I wanted. I didn't. I changed it again. I didn't. Apparently, it was right.
+I also need to watch what I call reviewing. [Two research runs contradicted my hypotheses](/blog/en/deep-research-with-a-researchers-mindset/). I had defined the objective, supplied context, and reviewed the plan. Did I like the result? I liked having a better analysis. Having my bets contradicted is another matter. If insisting means rephrasing until I hear what I wanted, review has become a search for confirmation.
 
 My request is always the same: [don't be a proxy from one AI to another AI](/blog/en/generation-and-review-the-two-cycles-of-genai/). Working with AI has two cycles, generating and reviewing, and you can learn in both. I understand a lot more about code today because of reviewing, not generating.
 
-Anyone who pictures using AI as pressing a button and going for coffee is describing the way of using it that goes wrong. And it's that person, not the attentive generalist, who becomes easy to replace.
+I'm not watching this problem from the sidelines. [I've written about catching myself going along without thinking about what I'm doing](/blog/en/the-problem-is-being-a-mere-proxy-for-ai/). With code, I delegate a lot and often don't even open the file: I ask questions, document decisions, and request explanations. That's the practice I'm building for myself. Letting a tested routine run on its own can make sense. The problem is no longer knowing what I'm accepting.
 
 ## How do you teach this?
 
-The conversation in which he makes this case has the part that interests me most as a teacher. At one of the world's most traditional business schools, the required course on AI changed in nature when the faculty realized you can't just *talk* about AI — you have to *do* AI.
+In the interview, Lakhani describes a change that interests me: building became central to the AI course, and case discussions gained the experience of trying. That is this guide's invitation and what I advocate in my classes: learning by doing, returning with questions, and understanding what was generated. Not waiting to master everything before starting.
 
-What changed, in practice:
+I still fail at this. I see students copy from one place, paste into another, and feel happy if it works. I have been wrong in the other direction too: a student used a feature I had not taught, and I concluded she had copied it. In the next class I asked her to explain. She did.
 
-- **Half the course became building.** Students solve business problems by building tools with AI.
-- **The final exam is gone.** The argument is simple: how can you have a course on AI where you can't use AI in the assessment? Projects took its place — the whole class had to deliver working solutions.
-- **The cases stay, in a different role.** The discussion of economics, strategy and change management now comes *after* the class has gotten its hands dirty: "I can do all of this; so what does it mean for my company and for my job?"
-
-He sums up the personal change honestly: for many years, it was enough to put a case in front of the class; now the classroom has a lot of "doing."
-
-That's the invitation of this guide, and it's what I try to practice: in my Information Systems classes, students ship real products to graduate. **Swap the report about the case for the solution to the case.** Whoever builds finds out where the tool fails, what needs checking, and what they didn't know they didn't know — three things no report teaches.
-
-Not that I've got this right. I still fail to make every student understand what was generated: most copy from one side, paste on the other, and are happy if it worked. Anyone who thinks the problem is new has forgotten the "I'll write your thesis" flyers on the university notice board. The problem was never the tool. It's not thinking.
-
-I've also been wrong in the other direction. A student handed in an exercise using a feature I hadn't taught, and I concluded it was copied. In the next class I asked: explain it to me. She explained it.
-
-When someone asks me to explain a piece of code, I send it back: throw it at the AI, ask for the explanation, and then tell me whether you understood. I've been told it looks like I don't want to teach. My goal as a teacher is to leave the person autonomous, not to repeat what they can find anywhere. I stay to correct the course.
-
-None of this was born with AI. Back in 2014 I was already assigning [a piece of work that had to be done with plagiarism](https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing), inspired by Kenneth Goldsmith's uncreative writing (2011): assemble an intelligent, coherent text using only passages from other texts. At least five sources, no long blocks from a single one, each source in its own color, the student's own words in black. Next to each reference, two answers: why did you use this source, and why is it reliable? In the following class, each member of the group answered questions about the work on their own. Today the question is the same, with a different object: why did you use AI here?
-
-To feel it firsthand, I forced myself to write an entire text with AI. [Fifteen minutes of prompting, five hours of editing](/blog/en/15-minutes-of-prompting-5-hours-of-editing/). Several of the cited sources did not exist; I looked, couldn't find them, and cut the passage. The work didn't shrink. It unlocked something I've always been bad at, which is writing. And in the end, it wasn't the AI that generated it: I was the one who delivered it.
-
-And teachers aren't immune. In a training session for colleagues, I set an exercise. The group pasted the instruction the tool generated, without reading it, and was surprised by the format of the answer. Someone summed it up better than I could: we did exactly what we criticize students for.
-
-I only keep my reservation about the name. Lakhani calls it *vibe coding*. I'd call it **building by reading**.
+When someone asks me to explain code, I send the question back: ask AI for an explanation, then tell me whether you understood. I have been told it sounds like I do not want to teach. My goal is autonomy; I stay to discuss and correct course. Lakhani calls part of this building *vibe coding*. I prefer **building by reading**. A question worth asking here: what can you now do and question without depending on me?
 
 ## What remains human?
 
@@ -107,7 +88,7 @@ Every AI system was designed, trained, configured, and put online by people's de
 - Look out for who is in the data and who was left out ([chapter 4](/ai/bias/)).
 - Bring in people different from you to try to break the system before launch.
 - Write down where it fails. A known, documented limit is a tool; a hidden limit is a trap.
-- Protect the data: consent, the minimum necessary, nothing sensitive where it isn't needed ([chapter 5](/ai/data-and-privacy/)).
+- Protect the data: a clear purpose, an appropriate legal basis, the minimum necessary, and limited access ([chapter 5](/ai/data-and-privacy/)).
 
 **If you use** — and everyone does:
 
@@ -116,8 +97,40 @@ Every AI system was designed, trained, configured, and put online by people's de
 - Speak up when you find an error or a bias. That's how it gets better.
 - Take care of your data and, above all, other people's data.
 
+## If we're already on the plane, who's looking after the flight?
+
+In the [conversation with Harari behind these questions](https://www.youtube.com/watch?v=kziBrxxE0U0&t=1680s), a provocation comes up: would you board a plane with a frightening chance of crashing? And what if the answer were that we're already aboard?
+
+The "20%" in that conversation is not a demonstrated probability of AI ending humanity. Harari is repeating an estimate attributed to someone in the industry. No measurement is presented that would justify treating the number as a forecast. Statistics isn't my field, and I won't turn a powerful image into a risk calculation.
+
+But the image is useful. As I see it, we're on the plane. Now the job is to keep the thing from crashing. That calls for more than choosing between enthusiasm and panic: it means discussing who steers, who oversees, who can stop an operation, and who answers if it goes wrong.
+
+Harari uses the conversation to challenge the idea that it is too late for politics to act. Agreeing that the technology exists doesn't mean accepting every use, every rule, or every concentration of power. You can build and reject an application. You can demand testing, limits, review, and someone to turn to.
+
+In Lia's case, the risk doesn't have to be the end of humanity to matter. A family left off the list, without knowing why or being able to challenge it, is enough. Before expanding across the state: who notices? Who can suspend the ranking? Who helps the family while the team fixes it? That's where ethics reaches the screen someone will use.
+
+## Does having more mean working less?
+
+Another [analogy from Harari](https://www.youtube.com/watch?v=kziBrxxE0U0&t=840s): imagine someone from the Stone Age facing a full fridge and food delivered to the door. They might conclude that we've solved survival and can spend the day resting. The calendar of whoever is reading this guide probably has a different opinion.
+
+It's an imaginary visit, not a conclusion about how our ancestors lived. I use the provocation to separate two questions: **how much can we produce, and how do we choose to live with it?** A tool that lets us do more doesn't decide, on its own, who gets the time, the income, or the work that remains.
+
+Think of a team that starts completing a task in less time. The choice might be better service, shorter hours, higher targets, layoffs, or a new service that previously didn't fit the budget. The technical capability is similar. The decisions and consequences aren't.
+
+For anyone building a business or working in product, the question doesn't end at "how much did I save?" Who gained autonomy? Who faced more pressure? Who wasn't even part of the decision? I don't have a formula for distributing those gains. I have little patience for pretending the tool already decided that for us.
+
+## What if an entire country is dependent?
+
+Keeping knowledge in a repository helps a team change tools. On its own, it doesn't solve a country's dependence. In the [last part of the conversation](https://www.youtube.com/watch?v=kziBrxxE0U0&t=3540s), Harari proposes the scenario of digital vassal states: essential services running on infrastructure and systems controlled from abroad. It's a political hypothesis to discuss, not a destiny foretold.
+
+Here I'm stepping out of building products and into law and international relations, which aren't my specialties. The question the analogy makes visible is concrete: who can withdraw access, change the terms, or prevent a decision from being examined? And what happens to the people who depend on that service?
+
+For Lia's team, that becomes vendor selection, the ability to export data, decision records, and testing continuity if a service stops. For a country, it also involves infrastructure, research capacity, institutions, and cooperation. Swapping one model for another doesn't settle that discussion.
+
+I like Harari's analogies because they open up questions. I don't take him as a guarantee that his predictions are right. The discussion that matters here is what we can do: build our own capacity, negotiate dependencies, and give a voice to those who will live with the decision. Autonomy exists at that scale too.
+
 <div class="g-lia g-lia-missao" markdown="1">
-**Provocation:** go through the self-assessment. Then pick one item you didn't check: what's stopping you?
+**Provocation:** go through the self-assessment. Then pick one item you didn't check: what's stopping you? Before expanding a project of your own, who might face a consequence and hasn't been heard yet?
 </div>
 
 <div data-widget="checklist" data-key="pratica" data-title="Self-assessment: where am I?" markdown="1">
@@ -126,7 +139,7 @@ Every AI system was designed, trained, configured, and put online by people's de
 - [ ] Before trusting an important answer, I check it against another source
 - [ ] I can say which data I do **not** paste into an AI tool
 - [ ] I give context: who the audience is, what the goal is, and what a good result looks like
-- [ ] When the answer has to be exact and repeatable, I ask for code, not an opinion
+- [ ] I know when to request a reproducible procedure and how to check its rule, inputs, and result
 - [ ] My projects have a place with version history (not just the chat history)
 - [ ] What I learn with AI on a project gets written down for the next session
 - [ ] I've tested more than one tool with the same real task
@@ -139,7 +152,7 @@ Every AI system was designed, trained, configured, and put online by people's de
 
 There's no passing score. The items are more or less in chapter order; the first one you didn't check is a good place to go back to.
 
-## What I don't know
+## What don't I know yet?
 
 An honest guide needs a section like this.
 
@@ -149,39 +162,47 @@ An honest guide needs a section like this.
 
 **I don't know when the "do-it-all" agent will be safe enough.** Maybe it already is, and the resistance is mine. I'd rather err on that side.
 
-What I do know: there's no going back. There are open models anyone can download and run. If today's companies disappeared tomorrow, the technology would still be here. The choice that remains isn't between using and not using. It's between using it with understanding and using it believing in magic.
+The technology is already part of the setting in which we build. That doesn't make every use obligatory. Understanding also helps us choose what to automate, what to keep with a person, and what not to build. For a project of your own, which of those decisions could you explain to someone who will live with it?
 
 And one request, from one builder to another: with so much helping you build, stop making bad products.
 
-<div class="g-box g-key" markdown="1">
-**Key takeaways, from the whole guide**
-
-1. AI is applied math guided by human choices. Look for the choices.
-2. The model learned from data; if the data is a slice of the world, so is the result.
-3. What isn't in the context doesn't exist for it. Anything extra gets in the way.
-4. For what needs to be exact, code. For what needs judgment, you.
-5. Keep your knowledge in a place that's yours.
-6. Give the least access that gets the job done, and know who answers for what can't be undone.
-7. The responsibility is yours. It always was.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Lia's logbook**
 
-- **In dispute:** of what was delivered, what can the team explain and what did it just pass along? Grow now, or prove it for one more semester?
+- **In dispute:** can the team explain the results, hear those left out, and keep the service running if it loses a vendor? Grow now, or check that for one more semester?
 - **Paths on the table:**
-  - *Iara:* take it to the whole state right away. There's budget, and there's a rush.
-  - *Bia:* one more semester in the twelve schools, measuring who came back.
-  - *Caio:* open up what was built, so other organizations can copy it.
-- **What the team did, for now:** wrote, with no help from AI, one page about what it checked and what it still doesn't know. The decision to grow was left for after that page.
+  - *Iara:* take it to the whole state right away, using the available budget and urgency; errors would scale too.
+  - *Bia:* one more semester in the twelve schools, hearing families and measuring who came back; other schools would have to wait.
+  - *Caio:* open up what was built and test changing AI vendors; this would use time that could improve service now.
+- **What the team did, for now:** postponed the expansion recommendation and kept the current service running. Bia took on listening to schools and defining support limits; Caio, testing migration and offline use; Lia and Iara, a route for correcting and challenging records, starting with Ian. Iara agreed to carry the delay back, without agreeing that waiting was better, and requested a support proposal from the vendor. Before they finished, a school reported that its file used another format. Caio opened a task; Bia asked which task would leave that week's schedule to make room. The meeting ended with that still undecided.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## What is worth keeping from this round?
+
+- **Autonomy:** gaining the means to build and change without getting stuck; it does not require mastering every craft before starting.
+- **Critical reading:** asking for explanations, checking evidence, and being willing to revise your own hypothesis are also part of building.
+- **Computational thinking:** organizing rules, parts, and procedures that can be executed, reproduced, and reviewed.
+- **Responsibility:** the next attempt still has consequences for people. Operating includes deciding what to keep, change, and stop.
+
+What can you delegate now — and what do you still need to understand to answer for the delivery?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## What about your project?
+
+Look at the first attempt and at the delivery now. What can you explain, reproduce, and change that you could not before? Choose the next question and what needs to keep working while you investigate it. Improving, changing direction, maintaining, and stopping carry different costs. Which do you accept for now?
+
+If you want to discuss that round, [tell me what you tried and learned]({{ site.data.guia.conversation_url }}).
+
 </div>
 
 <details class="g-aula" markdown="1">
 <summary>Take it to class</summary>
-
-#### Final project — a solution instead of a report
-
-Inspired by business schools that swapped the exam for building: instead of a written paper *about* a case, each group delivers a **working solution** to a real problem (ideally from the organization of someone in the class). The deliverable has three parts: (1) the solution running, demonstrated live; (2) the repository with `README.md`, `AGENTS.md` and the decisions on record; (3) one page, written by the group and not by the AI, answering: what did we check, and how? Where did the tool get it wrong? What should not be automated here? Each person in the group should be able to explain, out loud, any of the three parts.
 
 #### Activity (homework, with follow-up in class) — writing with other people's text
 
@@ -204,6 +225,9 @@ Each person writes three personal commitments for using AI, one sentence each: o
 - What sets someone who uses AI apart from someone who just passes along what the AI said?
 - If a decision made with AI support harms someone, who should answer for it: whoever used it, whoever configured it, whoever trained it, or whoever sold it?
 - What should your organization stop doing with AI tomorrow? And what should it start?
+- In the plane analogy, who's in the cockpit, who bought a ticket, and who boarded without a choice?
+- Which analogy convinced you? What evidence would you still need to accept the conclusion?
+- If the schools' service depended on a single company, what would need to exist for the team to leave it?
 
 </details>
 
@@ -212,18 +236,20 @@ Each person writes three personal commitments for using AI, one sentence each: o
 #### References
 
 - Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). *Navigating the jagged technological frontier: Field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality* (Working Paper No. 24-013). Harvard Business School. <https://www.hbs.edu/faculty/Pages/item.aspx?num=64700>
-- Goldsmith, K. (2011). *Uncreative writing: Managing language in the digital age*. Columbia University Press.
+- Harari, Y. N.. (2026, November 8). *AI will create digital vassal states* [Video; conversation with R. Guest at Forum 2000, October 2026]. YouTube. <https://www.youtube.com/watch?v=kziBrxxE0U0>
 - Lakhani, K. R. (2026, October 30). *Harvard AI professor: The people most at risk from AI aren't who you think* [Video interview]. Silicon Valley Girl. <https://www.youtube.com/watch?v=vFOnDsy58NU>
-- Maranhão Filho, É. (2014). *Trabalhos com plágio* [Assignment instructions, in Portuguese]. <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>
 - Maranhão Filho, É. (2025, August 5). *The best hacks for a product person using a coding agent*. efrem.io. <https://efrem.io/blog/en/the-best-hacks-for-a-product-person-using-a-coding-agent/>
 - Maranhão Filho, É. (2025, February 12). *Becoming a 'full-service' person in tech*. efrem.io. <https://efrem.io/blog/en/becoming-a-full-service-person-in-tech/>
+- Maranhão Filho, É. (2025, June 10). *Deep research with a researcher's mindset*. efrem.io. <https://efrem.io/blog/en/deep-research-with-a-researchers-mindset/>
 - Maranhão Filho, É. (2025, June 20). *Generation and review: the two cycles of GenAI*. efrem.io. <https://efrem.io/blog/en/generation-and-review-the-two-cycles-of-genai/>
-- Maranhão Filho, É. (2025, September 23). *15 minutes of prompting, 5 hours of editing*. efrem.io. <https://efrem.io/blog/en/15-minutes-of-prompting-5-hours-of-editing/>
 - Maranhão Filho, É. (2026, July 13). *How do you teach people to use AI critically? A call for help*. efrem.io. <https://efrem.io/blog/en/how-to-teach-critical-use-of-ai/>
+- Maranhão Filho, É. (2026, July 15). *The problem is being a mere proxy for AI*. efrem.io. <https://efrem.io/blog/en/the-problem-is-being-a-mere-proxy-for-ai/>
 - Maranhão Filho, É. (2026, March 2). *I want to be in the last 1% to be replaced*. efrem.io. <https://efrem.io/blog/en/i-want-to-be-in-the-last-1-percent-to-be-replaced/>
 - Maranhão Filho, É. (2026, November 13). *As the cost of expertise drops, what counts is the will to build*. efrem.io. <https://efrem.io/blog/en/the-cost-of-expertise-and-the-will-to-build/>
 - Maranhão Filho, É. (2026, September 8). *The responsibility is still yours*. efrem.io. <https://efrem.io/blog/en/the-responsibility-is-still-yours/>
 
 *Notes:* The source is an interview with Karim R. Lakhani, a professor at Harvard Business School. Passages used: marginal cost of expertise (minutes 34 and 47), the three ways of working with AI (2 to 4; in the interview, about 60% cyborgs, 14% centaurs and 27% self-automators), "I never take the first answer" (9), accountability and the "meat interface" (3 and 14), the required MBA course, with about 900 students (20 to 22), and who is most at risk (44 and 45). The experiment with consultants is Dell'Acqua et al. (2023).
+
+From Harari's conversation with Robert Guest (2026), the passages used are the Stone Age visitor and abundance (minutes 14–15), the plane and risk discussion (28–31), and digital vassal states (59–61). The visitor is a thought experiment, not a claim about Neanderthals. Harari attributes a 10% to 20% estimate of catastrophic risk to Elon Musk; this is an attribution made in the interview, not a directly verified Musk quotation or a measured probability. The reply that we are already aboard is part of the provocation Harari challenges. The guide revisits it to discuss responsibility and the capacity to act, without concluding that political choices have become impossible. The applications to Lia's case are teaching scenarios created for this guide. The categories and proportions reported in the interview are attributed to Lakhani; the chapter uses the images for reflection without extrapolating percentages to AI users in general.
 
 </div>

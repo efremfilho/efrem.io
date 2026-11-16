@@ -1,20 +1,21 @@
 ---
-title: "Como eu organizo meu trabalho com IA"
+title: "Quem paga o trabalho de mudar de ferramenta?"
+subtitle: "Ambientes, acessos e autonomia do time."
 description: "Pastas que espelham a vida, uma caixinha de texto no lugar de dez abas, ambientes com cerca e uma ferramenta em que eu sou bom de verdade. As ferramentas mudam; os princípios, bem menos."
 lang: pt-BR
 ref: workspace
 order: 12
-part: 3
+part: 2
 permalink: /ia/como-organizo/
 interactive: "anatomia de um ambiente de trabalho"
 piece: "pastas por município e chaves em ordem"
-last_modified: 2026-11-15
+last_modified: 2026-11-16
 ---
 
 <div class="g-lia" markdown="1">
 **A jornada da Lia** · cena 12
 
-Mais dois municípios pediram ajuda. Em uma semana havia três planilhas parecidas na mesma pasta, uma chave de acesso colada no grupo de mensagens, "para facilitar", e uma discussão nova: Caio queria trocar de ferramenta. Tinha testado outra no fim de semana, muito melhor. Era a terceira troca do semestre, e Bia mal tinha aprendido a anterior. Facilitar para quem? E o que o time perde cada vez que troca?
+Mais dois municípios pediram ajuda. Lia pôs os materiais na mesma pasta, "depois a gente separa". Logo havia planilhas parecidas e uma chave de acesso no grupo, para o time inteiro usar. Caio propôs outra ferramenta: numa visita, tinha conseguido trabalhar sem conexão, coisa que a atual ainda não fazia. Bia queria parar de trocar; mal tinha aprendido a anterior e era ela quem ajudava as equipes pelo telefone. Caio pediu ao agente um plano de migração. Bia revisou: a demonstração era simples, mas o plano não contava treinamento nem suporte. Lia viu que organizar por projeto também significava separar acesso. Quanto da troca era melhoria, e quanto trabalho ela empurrava para quem ficaria atendendo?
 </div>
 
 Este capítulo é o mais pessoal do guia. Não é uma receita: é como eu trabalho. As ferramentas vão mudar, e por isso não cito nenhuma pelo nome; o que eu espero que fique são os princípios por trás.
@@ -34,9 +35,9 @@ O princípio número um não tem nada de tecnológico: **cada frente de trabalho
 └── pessoal/        este site, estudos, experimentos
 ```
 
-A consequência prática é enorme. Quando abro um agente dentro de um projeto, ele só enxerga aquele projeto. Quando abro uma pasta acima, ele enxerga todos os projetos daquela frente — e eu posso perguntar "como estão os projetos das minhas turmas?" e receber um panorama de quem fez o quê, em todos os repositórios, sem abrir nenhum.
+A consequência prática é organizar o que peço ao agente para consultar. Posso trabalhar num projeto ou pedir um panorama dos projetos de uma frente. Mas abrir uma pasta **não cria, por si só, uma barreira de acesso**: o que a ferramenta consegue ler ou alterar depende das permissões e do ambiente em que roda.
 
-**O nível da pasta em que eu abro a ferramenta é o tamanho do contexto que eu estou dando.** É a engenharia de contexto do [capítulo 8](/ia/contexto/) feita com o gerenciador de arquivos.
+**A pasta organiza o trabalho; as permissões delimitam o acesso.** E estar acessível não quer dizer que todo arquivo já foi lido e colocado na conversa. É a ponte entre o contexto do [capítulo 8](/ia/contexto/) e os acessos do [15](/ia/agentes-com-redea/).
 
 Também é por isso que eu evito o agente "faz-tudo" que guarda as coisas do jeito dele. Eles se acham na própria bagunça; depois, uma pessoa tentando ler aquilo sofre.
 
@@ -96,7 +97,7 @@ CHAVE_BANCO_TESTE=••••••••
 CHAVE_QUADRO_TAREFAS=••••••••
 ```
 
-A regra é dar só as chaves daquele projeto, com a menor permissão que funciona. O estrago máximo de um agente é o que as chaves dele permitem.
+A regra é dar só as chaves daquele projeto, com a menor permissão que funciona. As chaves são parte do limite; contam também arquivos, sessões abertas e outros acessos disponíveis.
 
 #### Rede
 
@@ -111,7 +112,7 @@ permitido:
 bloqueado: todo o resto
 ```
 
-Para projeto pessoal e inofensivo eu libero tudo. Para projeto de empresa, lista fechada. Se alguma instrução maliciosa aparecer no meio de um documento, o agente simplesmente não tem para onde mandar os dados.
+Para projeto pessoal e inofensivo eu libero tudo. Para projeto de empresa, lista fechada. Essa lista reduz os destinos possíveis; ainda preciso olhar o que os serviços permitidos deixam fazer. Ter acesso a um serviço pode incluir publicar, compartilhar ou apagar por dentro dele.
 
 </div>
 
@@ -144,24 +145,36 @@ Sobre chaves de API, que você vai encontrar quando montar um agente próprio:
 - **Coloque limite de gasto.** Sempre. Antes de usar.
 - **Revogue quando terminar.** Eu crio chaves para estudantes durante um curso e desativo todas no fim. Chave esquecida é conta aberta.
 
-<div class="g-box g-key" markdown="1">
-**Para guardar**
-
-- Organize por pasta e repositório: o lugar onde você abre a ferramenta define o contexto que ela recebe.
-- Ambiente bem configurado tem quatro partes: repositório, preparação, segredos e rede.
-- Fique boa em uma ferramenta — e deixe o conhecimento em texto simples, para poder sair quando quiser.
-- Assinatura para pessoas, API para sistemas — e API sempre com limite.
-</div>
 
 <div class="g-lia g-lia-diario" markdown="1">
 **Diário de bordo da Lia**
 
-- **Em disputa:** quem tem hoje uma chave que não deveria mais ter? Se uma ferramenta saísse do ar amanhã, o que o time perderia? Vale mais ser muito boa em uma ou conhecer todas?
+- **Em disputa:** A ferramenta atual atrapalha em campo; a nova pode atrapalhar quem precisa aprender e dar suporte. Quem tem tempo para pagar essa transição?
 - **Caminhos na mesa:**
-  - *Caio:* testar tudo o que sai. É assim que se descobre o que é melhor.
-  - *Bia:* escolher uma e parar de mexer.
-  - *Lia:* cada pessoa fica boa em uma; o que é do projeto mora no repositório, para que trocar custe uma tarde, e não um mês.
-- **O que o time fez, por enquanto:** pastas por município, uma chave por projeto com limite e data para acabar, e a chave do grupo revogada.
+  - *Caio:* testar a alternativa sem conexão em um projeto isolado. Ataca uma dificuldade real, mas divide a atenção entre duas ferramentas.
+  - *Bia:* ficar na atual e adaptar a rotina de campo. Preserva o aprendizado do time, mas mantém uma limitação que ela própria enfrenta.
+  - *Lia:* adiar qualquer teste até separar projetos e acessos. Reduz a confusão, mas posterga a resposta para quem trabalha sem sinal.
+- **O que o time fez, por enquanto:** separou as pastas e revogou a chave compartilhada, criando acessos por projeto. Depois autorizou o teste limitado de Caio com dados fictícios. Bia continuou apoiando a ferramenta atual; uma melhoria que ela tinha pedido ficou para depois. As novas cidades receberam uma demonstração, não a promessa de atendimento imediato.
+</div>
+
+<div class="g-box g-key g-concepts" markdown="1">
+
+## O que vale guardar desta volta?
+
+- **Organização:** pastas e repositórios ajudam a encontrar o contexto; permissões delimitam o acesso.
+- **Ambiente:** arquivos, preparação, segredos e rede influenciam o que um agente consegue executar.
+- **Portabilidade:** o conhecimento guardado em arquivos ajuda a trocar de ferramenta; a troca ainda pode exigir adaptação e suporte.
+
+O que precisaria acompanhar o projeto para outra pessoa conseguir continuar sem adivinhar suas decisões?
+
+</div>
+
+<div class="g-project" markdown="1">
+
+## E no seu projeto?
+
+Imagine retomar seu projeto em outra ferramenta ou com outra pessoa. O que precisaria ir junto: arquivos, decisões, exemplos, acesso, conhecimento que ninguém escreveu? Experimente uma tarefa pequena nessa passagem. O que funcionou na demonstração e o que ainda dependeria de você para continuar funcionando?
+
 </div>
 
 <details class="g-aula" markdown="1">
