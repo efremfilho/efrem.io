@@ -131,7 +131,7 @@ Com a calculadora do capítulo, cada pessoa estima o próprio uso diário. Somem
 
 - ALTMAN, Sam. **The gentle singularity**. [*S. l.*], 2025. Disponível em: <https://blog.samaltman.com/the-gentle-singularity>. Acesso em: 13 nov. 2026.
 - INTERNATIONAL ENERGY AGENCY. **Energy and AI**. Paris: IEA, 2025. Disponível em: <https://www.iea.org/reports/energy-and-ai>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Ainda vale fazer fine-tuning?**. [*S. l.*]: efrem.io, 21 ago. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/is-fine-tuning-still-worth-it/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Ainda vale fazer fine-tuning?**. [*S. l.*]: efrem.io, 21 ago. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/is-fine-tuning-still-worth-it/>. Acesso em: 17 nov. 2026.
 - O'DONNELL, James; CROWNHART, Casey. We did the math on AI's energy footprint. Here's the story you haven't heard. **MIT Technology Review**, Cambridge, MA, 20 maio 2025. Disponível em: <https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/>. Acesso em: 13 nov. 2026.
 - VAHDAT, Amin; DEAN, Jeff. Measuring the environmental impact of AI inference. **Google Cloud Blog**, [*s. l.*], 21 ago. 2025. Disponível em: <https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference>. Acesso em: 13 nov. 2026.
 

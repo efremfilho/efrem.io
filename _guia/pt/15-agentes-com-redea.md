@@ -182,8 +182,8 @@ Em grupos, escolham um agente hipotético para a organização de vocês (atendi
 #### Referências
 
 - BRASIL. **Lei Complementar nº 214, de 16 de janeiro de 2025**. Institui o Imposto sobre Bens e Serviços (IBS), a Contribuição Social sobre Bens e Serviços (CBS) e o Imposto Seletivo (IS). Brasília, DF: Presidência da República, 2025. Disponível em: <https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm>. Acesso em: 15 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Agentes versus assistentes**. [*S. l.*]: efrem.io, 21 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/agents-vs-assistants/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Processos e guardrails para product builders e devs trabalharem juntos**. [*S. l.*]: efrem.io, 28 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/processes-and-guardrails-for-product-builders-and-devs/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Agentes versus assistentes**. [*S. l.*]: efrem.io, 21 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/agents-vs-assistants/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Processos e guardrails para product builders e devs trabalharem juntos**. [*S. l.*]: efrem.io, 28 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/processes-and-guardrails-for-product-builders-and-devs/>. Acesso em: 17 nov. 2026.
 - OWASP GEN AI SECURITY PROJECT. **LLM01:2025 prompt injection**. [*S. l.*]: OWASP Foundation, 2025. Disponível em: <https://genai.owasp.org/llmrisk/llm01-prompt-injection/>. Acesso em: 13 nov. 2026.
 - WILLISON, Simon. **The lethal trifecta for AI agents**: private data, untrusted content, and external communication. [*S. l.*], 16 jun. 2025. Disponível em: <https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/>. Acesso em: 13 nov. 2026.
 

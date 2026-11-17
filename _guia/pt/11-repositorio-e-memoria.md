@@ -9,7 +9,7 @@ part: 2
 permalink: /ia/repositorio-e-memoria/
 interactive: "linha do tempo de branches + anatomia do repositório"
 piece: "o repositório com as decisões registradas"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -151,7 +151,7 @@ E tem um limite importante: documento guardado não é documento lido. O agente 
 
 Como o conhecimento mora em arquivos de texto simples, em um repositório que é meu, **eu posso trocar de IA quando quiser**. Eu testo várias, e mudar me custa algumas horas de estranhamento: qualquer uma abre o projeto, lê os mesmos arquivos e continua o trabalho. Isso não quer dizer viver trocando — prefiro ser muito bom em uma a ser mediano em todas. A liberdade está em poder sair, não em sair toda semana.
 
-Para mim, os modelos viraram *commodity* — [eu já dizia isso há um tempo](/blog/pt/agentkit-wont-kill-the-ipaas/), comparando com o que aconteceu com a nuvem: a diferença entre os melhores é mais de gosto do que de capacidade. O que não é commodity é o contexto do seu projeto — e esse não deveria morar dentro da conta de um fornecedor, nem dentro de um framework de agente específico. Se a ferramenta da moda mudar amanhã, você conecta a próxima no mesmo repositório.
+Para mim, os modelos viraram *commodity* — [eu já dizia isso há um tempo](/blog/pt/agentkit-wont-kill-the-ipaas/), comparando com o que aconteceu com a nuvem: a diferença entre os melhores é mais de gosto do que de capacidade. Quando resolvi [testar essa troca na prática por alguns meses](/blog/pt/coding-agents-are-becoming-a-commodity/), saindo da minha ferramenta principal para duas concorrentes — inclusive uma que eu antes odiava —, vi que os próprios **agentes de código** estão seguindo o mesmo caminho. O que tornou a mudança possível foi padronizar as instruções no `AGENTS.md`, registrar decisões e aprendizados na pasta `docs/` e me adaptar à linha de comando e ao ambiente web de cada ferramenta. O que não é commodity é o contexto do seu projeto — e esse não deveria morar dentro da conta de um fornecedor, nem dentro de um framework de agente específico. Se a ferramenta da moda mudar amanhã, você conecta a próxima no mesmo repositório.
 
 Vale para gente também. Entrou uma pessoa nova no time? Libera o acesso ao repositório. As decisões, as regras e o histórico já estão lá.
 
@@ -213,10 +213,11 @@ Cada pessoa cria uma conta no GitHub e um repositório privado para um projeto p
 - AGENTS.MD. [*S. l.*], [2025?]. Disponível em: <https://agents.md/>. Acesso em: 13 nov. 2026.
 - CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 1.2: A short history of Git. Disponível em: <https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git>. Acesso em: 13 nov. 2026.
 - CHACON, Scott; STRAUB, Ben. Recording changes to the repository. In: CHACON, Scott; STRAUB, Ben. **Pro Git**. 2. ed. [*S. l.*]: Apress, 2014. Seção 2.2. Disponível em: <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>. Acesso em: 15 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Agentes para codar estão virando commodity**. [*S. l.*]: efrem.io, 17 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/coding-agents-are-becoming-a-commodity/>. Acesso em: 17 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **efrem.io**. [*S. l.*]: GitHub, [s. d.]. Repositório do site e do guia IA sem mágica. Disponível em: <https://github.com/efremfilho/efrem.io>. Acesso em: 15 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **O AgentKit não vai acabar com os iPaaS**. [*S. l.*]: efrem.io, 7 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/agentkit-wont-kill-the-ipaas/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Processos e guardrails para product builders e devs trabalharem juntos**. [*S. l.*]: efrem.io, 28 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/processes-and-guardrails-for-product-builders-and-devs/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **O AgentKit não vai acabar com os iPaaS**. [*S. l.*]: efrem.io, 7 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/agentkit-wont-kill-the-ipaas/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Processos e guardrails para product builders e devs trabalharem juntos**. [*S. l.*]: efrem.io, 28 jul. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/processes-and-guardrails-for-product-builders-and-devs/>. Acesso em: 17 nov. 2026.
 
 *Notas:* A preferência por criar projetos no GitHub mesmo quando a entrega não é código, usando AGENTS.md e pastas docs/ para decisões, caminhos percorridos e atas, é um relato do autor. O caso do próprio site e livro descreve a estrutura do repositório: README.md, AGENTS.md, capítulos, ferramentas e regras de exclusão em .gitignore e _config.yml. A pasta temp/ é material local e privado; seus conteúdos não são reproduzidos neste exemplo. Git mantém o histórico registrado dos arquivos acompanhados, não uma cópia automática de tudo que existe na pasta de trabalho (Chacon; Straub, 2014, seção 2.2).
 

@@ -153,8 +153,8 @@ Distribua um regulamento de quatro ou cinco páginas (o da própria instituiçã
 
 - GOLDSMITH, Kenneth. **Uncreative writing**: managing language in the digital age. New York: Columbia University Press, 2011.
 - LEWIS, Patrick *et al.* **Retrieval-augmented generation for knowledge-intensive NLP tasks**. [*S. l.*]: arXiv, 2020. Aceito na NeurIPS 2020. DOI: <https://doi.org/10.48550/arXiv.2005.11401>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Antes de RAG e MCP, aprenda o básico**. [*S. l.*]: efrem.io, 30 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/before-rag-and-mcp-learn-the-basics/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Meu compromisso público de estudar IA até o fim do ano**. [*S. l.*]: efrem.io, 24 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/my-public-commitment-to-study-ai/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Antes de RAG e MCP, aprenda o básico**. [*S. l.*]: efrem.io, 30 jun. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/before-rag-and-mcp-learn-the-basics/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Meu compromisso público de estudar IA até o fim do ano**. [*S. l.*]: efrem.io, 24 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/my-public-commitment-to-study-ai/>. Acesso em: 17 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Trabalhos com plágio**. [*S. l.*], 2014. Instrução de atividade para estudantes. Disponível em: <https://docs.google.com/document/d/1MFKLA7-5aMS9MI32p3sNLCqLCmIFeQ_NFAfvylH2nzY/edit?usp=sharing>. Acesso em: 15 nov. 2026.
 
 *Notas:* O exercício de escrita com fontes foi proposto pelo autor em 2014, inspirado em Goldsmith (2011). O documento original descreve identificação por cores, fontes múltiplas e discussão da confiabilidade.
