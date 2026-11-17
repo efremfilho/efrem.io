@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Um tutor particular para cada jovem · Éfrem Maranhão Filho</title>
+<meta name="description" content="Palestra de Éfrem Maranhão Filho no painel Moonshots de 18 de novembro de 2026: o mesmo projeto em três altitudes, roofshot, moonshot tradicional e moonshot social.">
+<meta property="og:title" content="Um tutor particular para cada jovem">
+<meta property="og:description" content="O mesmo projeto em três altitudes: roofshot, moonshot tradicional e moonshot social.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* Base equivalente à do Slides: sem margens e títulos com os tamanhos padrão dele. */
+* { margin: 0; }
+html, body { height: 100%; }
+body { font: 32px/1.2 'Instrument Sans', Arial, sans-serif; background: #05070D; overflow: hidden; }
+h1 { font-size: 96px; font-weight: 600; }
+h2 { font-size: 64px; font-weight: 600; }
+h3 { font-size: 44px; font-weight: 600; }
+p, li, h1, h2, h3 { overflow-wrap: break-word; text-wrap: pretty; }
+</style>
+<style>
+/* Estilos do deck, copiados do arquivo deck.css do Slides. */
+body {
+  font-family: 'Instrument Sans', Arial, sans-serif;
+  color: #121A2B;
+}
+
+section {
+  padding: 128px;
+  display: flex;
+  flex-direction: column;
+  background: #F4F6FA;
+  color: #121A2B;
+}
+section.foot { padding: 128px 128px 160px; }
+section.ink { background: #0C1633; color: #E8EDF7; }
+section.accent { background: #2152D9; color: #FFFFFF; }
+
+h1 { font-size: 112px; font-weight: 600; line-height: 1.05; letter-spacing: -3px; }
+h2 { font-size: 72px; font-weight: 600; line-height: 1.1; letter-spacing: -1.5px; }
+h3 { font-size: 44px; font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; }
+p { font-size: 32px; line-height: 1.35; }
+
+.eyebrow { font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: 3px; text-transform: uppercase; color: #1B44BF; }
+.ink .eyebrow { color: #93B4FF; }
+.lead { color: #475467; }
+.ink .lead { color: #A3B0CC; }
+.wide { width: 1400px; }
+.head { display: flex; flex-direction: column; gap: 20px; }
+.spacer { flex: 1; }
+.source { position: absolute; left: 128px; bottom: 64px; width: 1664px; font-size: 24px; line-height: 1.3; color: #475467; }
+
+.sky { position: absolute; left: 0; top: 0; }
+.cover-body { display: flex; flex-direction: column; gap: 36px; }
+.cover-sub { width: 1040px; color: #A3B0CC; }
+.byline { font-size: 24px; font-weight: 600; line-height: 1.3; color: #E8EDF7; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.stat { background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 24px; padding: 48px; display: flex; flex-direction: column; gap: 20px; }
+.num { font-size: 112px; font-weight: 600; line-height: 1; letter-spacing: -3px; color: #2152D9; }
+.cap { color: #475467; }
+
+.split { flex: 1; display: flex; gap: 96px; }
+.split-text { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.points { display: flex; flex-direction: column; gap: 36px; }
+.point { display: flex; gap: 28px; align-items: flex-start; }
+.ico { width: 48px; height: 48px; flex-shrink: 0; color: #2152D9; }
+.point-text { flex: 1; }
+
+.chat { width: 660px; background: #EEF1F6; border: 1px solid #CBD3DE; border-radius: 32px; overflow: hidden; display: flex; flex-direction: column; }
+.chat-top { background: #0C1633; padding: 24px 32px; }
+.chat-name { font-size: 24px; font-weight: 600; line-height: 1.3; color: #E8EDF7; }
+.chat-body { flex: 1; padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; }
+.bubble { align-self: flex-start; max-width: 520px; background: #FFFFFF; border-radius: 20px; padding: 14px 22px; font-size: 24px; line-height: 1.35; color: #121A2B; }
+.bubble.me { align-self: flex-end; background: #2152D9; color: #FFFFFF; }
+.chat-note { padding: 0 32px 24px; font-size: 24px; line-height: 1.3; color: #475467; }
+
+.scene { flex-shrink: 0; }
+.alt-rows { display: flex; flex-direction: column; gap: 16px; }
+.alt-row { border-top: 1px solid #E3E8EF; padding-top: 16px; display: flex; flex-direction: column; gap: 4px; }
+.alt-k { font-size: 24px; line-height: 1.3; color: #475467; }
+.alt-v { font-weight: 600; }
+
+.duo { display: flex; gap: 32px; }
+.fact { flex: 1; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 24px; padding: 48px; display: flex; flex-direction: column; gap: 16px; }
+.fact-tag { font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: 2px; text-transform: uppercase; color: #475467; }
+.fact-note { font-weight: 600; color: #121A2B; }
+
+.tests { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.test { background: #16234A; border: 1px solid #26345E; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.test-n { width: 56px; height: 56px; border-radius: 50%; background: #FFB224; color: #3D2E00; font-size: 24px; font-weight: 600; line-height: 56px; text-align: center; }
+.test h3 { font-size: 32px; line-height: 1.25; letter-spacing: 0; color: #E8EDF7; }
+.test-a { color: #A3B0CC; }
+
+.closing { justify-content: center; gap: 48px; padding: 128px 128px 280px; }
+.accent .eyebrow { color: #D6E2FF; }
+.closing-q { font-size: 44px; line-height: 1.15; color: #D6E2FF; }
+
+.band { margin-top: 32px; background: #0C1633; border-radius: 24px; padding: 40px 48px; display: flex; gap: 48px; color: #E8EDF7; }
+.band-main { flex: 3; display: flex; flex-direction: column; gap: 12px; }
+.band-side { flex: 2; display: flex; flex-direction: column; gap: 12px; border-left: 1px solid #26345E; padding-left: 48px; }
+.band-tag { font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: 2px; text-transform: uppercase; color: #93B4FF; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(32px); } }
+.rise { animation: rise 0.6s ease-out both; }
+.d1 { animation-delay: 150ms; }
+.d2 { animation-delay: 300ms; }
+.d3 { animation-delay: 600ms; }
+.c1 { animation-delay: 300ms; }
+.c2 { animation-delay: 1000ms; }
+.c3 { animation-delay: 1700ms; }
+.c4 { animation-delay: 2400ms; }
+.c5 { animation-delay: 3100ms; }
+</style>
+<style>
+/* Palco: cada slide tem 1920×1080 e é escalado para caber na janela. */
+.deck { position: fixed; inset: 0; overflow: hidden; }
+.stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform: translate(-50%, -50%) scale(var(--s, 0.5)); }
+.stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; box-sizing: border-box; overflow: hidden; isolation: isolate; display: none; }
+.stage > section.is-active,
+.stage > section.is-leaving,
+.stage > section.is-shown { display: flex; }
+.stage > section.is-active { z-index: 1; animation: deck-fade 320ms cubic-bezier(0.33, 0.01, 0.2, 1) both; }
+@keyframes deck-fade { from { opacity: 0; } }
+/* O Slides pinta o fundo desenhado atrás do texto; no navegador isso pede z-index. */
+.sky { z-index: -1; }
+.spacer, .split, .chat-body { min-height: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .stage *, .stage > section.is-active { animation: none !important; }
+}
+
+/* Controles: aparecem quando o mouse se mexe. */
+.controls { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 10; display: flex; gap: 4px; align-items: center; padding: 6px; border-radius: 999px; background: rgba(12, 22, 51, 0.9); color: #E8EDF7; font: 600 15px/1 'Instrument Sans', Arial, sans-serif; opacity: 0; transition: opacity 0.25s; }
+.controls.is-on, .controls:focus-within { opacity: 1; }
+.controls button { font: inherit; color: inherit; background: transparent; border: 0; border-radius: 999px; padding: 10px 14px; cursor: pointer; }
+.controls button:hover { background: rgba(255, 255, 255, 0.12); }
+.controls button:focus-visible, .pv button:focus-visible { outline: 2px solid #93B4FF; outline-offset: 2px; }
+.controls .count { padding: 0 8px; font-variant-numeric: tabular-nums; }
+body.is-idle { cursor: none; }
+
+/* Notas sobre o slide (tecla N): para ensaiar com uma tela só. */
+.notes-panel { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; max-height: 42vh; overflow: auto; box-sizing: border-box; padding: 20px 28px 76px; background: rgba(5, 7, 13, 0.94); color: #E8EDF7; font: 400 20px/1.5 'Instrument Sans', Arial, sans-serif; display: none; }
+.notes-panel.is-on { display: block; }
+.notes-panel strong { color: #FFB224; margin-right: 8px; }
+.noscript { position: fixed; inset: 0; display: grid; place-items: center; color: #E8EDF7; font: 400 22px/1.4 'Instrument Sans', Arial, sans-serif; padding: 24px; text-align: center; }
+
+/* Visão de apresentador (tecla P): slide atual, próximo, notas e cronômetro. */
+body.presenter { overflow: hidden; background: #0B0F17; color: #E8EDF7; }
+.pv { display: grid; grid-template-columns: 3fr 2fr; grid-template-rows: auto auto 1fr; gap: 16px; height: 100vh; box-sizing: border-box; padding: 16px; font-family: 'Instrument Sans', Arial, sans-serif; }
+.pv-bar { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; font-size: 18px; }
+.pv-bar button { font: 600 16px/1 'Instrument Sans', Arial, sans-serif; color: #E8EDF7; background: #16234A; border: 1px solid #26345E; border-radius: 10px; padding: 10px 16px; cursor: pointer; }
+.pv-bar button:hover { background: #1D2E5E; }
+.pv-count, .pv-clock { font-variant-numeric: tabular-nums; font-weight: 600; }
+.pv-clock { font-size: 28px; }
+.pv-spacer { flex: 1; }
+.pv-target { color: #3D2E00; background: #FFB224; border-radius: 999px; padding: 6px 12px; font-weight: 600; }
+.pv-target:empty { display: none; }
+.pv-label { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #93B4FF; margin-bottom: 8px; }
+.pv-cur { grid-column: 1; grid-row: 2 / 4; align-self: start; }
+.pv-next { grid-column: 2; grid-row: 2; }
+.pv-box { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; background: #000; }
+.pv-box .stage * { cursor: default; }
+.pv-next .stage * { animation: none !important; }
+.pv-end { position: absolute; inset: 0; display: grid; place-items: center; color: #A3B0CC; font-size: 22px; }
+.pv-end[hidden] { display: none; }
+.pv-notes { grid-column: 2; grid-row: 3; overflow: auto; font-size: 22px; line-height: 1.55; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<main class="deck" aria-label="Apresentação: Um tutor particular para cada jovem">
+<div class="stage">
+<section aria-roledescription="slide" aria-label="Slide 1 de 8: Um tutor particular para cada jovem" data-notes="[1 min] Bom dia. Eu sou o Éfrem, professor e produteiro. Me pediram um moonshot, e eu trouxe um só, visto de três alturas. É um projeto real, que nós construímos: um tutor de inglês que mora no WhatsApp. A ideia que eu quero deixar: a mesma tecnologia pode virar três coisas muito diferentes, dependendo do que a gente decide perseguir." id="capa" class="ink" data-transition="fade">
+<svg class="sky" width="1920" height="1080" viewBox="0 0 1920 1080" aria-label="Uma trajetória pontilhada sobe de um telhado até a lua">
+<g>
+<animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0s"/>
+<circle cx="220" cy="300" r="3" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="480" cy="220" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="760" cy="380" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="980" cy="180" r="3" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1150" cy="420" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1240" cy="250" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="640" cy="470" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1120" cy="90" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="360" cy="440" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1840" cy="640" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1730" cy="770" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="1330" cy="610" r="2" fill="#A3B0CC" opacity="0.7"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 70" to="0 0" dur="1.8s" begin="0s"/>
+<circle cx="1560" cy="330" r="330" fill="#FFB224" opacity="0.05"/>
+<circle cx="1560" cy="330" r="260" fill="#FFB224" opacity="0.08"/>
+<circle cx="1560" cy="330" r="190" fill="#FFB224"/>
+<circle cx="1500" cy="270" r="34" fill="#E89B0C" opacity="0.55"/>
+<circle cx="1622" cy="384" r="22" fill="#E89B0C" opacity="0.55"/>
+<circle cx="1594" cy="246" r="14" fill="#E89B0C" opacity="0.55"/>
+</g>
+<path d="M 1496 800 C 1380 720 1340 590 1418 474" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 18"/>
+<circle cx="1418" cy="474" r="9" fill="#E8EDF7" opacity="0"><animateMotion path="M 78 326 C -38 246 -78 116 0 0" dur="2.8s" begin="0s"/><animate attributeName="opacity" values="1;1;1;1;1;0" dur="2.8s" begin="0s"/></circle>
+<polyline points="1400,882 1500,820 1600,882" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1424,868 1424,944 1576,944 1576,868" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<p class="eyebrow">Painel Moonshots · 18 de novembro de 2026</p>
+<div class="spacer"></div>
+<div class="cover-body">
+<h1>Um tutor particular<br>para cada jovem</h1>
+<p class="cover-sub">O mesmo projeto em três altitudes: roofshot, moonshot tradicional e moonshot social.</p>
+<p class="byline">Éfrem Filho · Professor | Produteiro</p>
+</div>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 2 de 8: O inglês ainda separa o jovem do emprego" data-notes="[1 min 30] Primeiro critério do Astro Teller: um problema gigante. No Brasil, cerca de 5% das pessoas dizem saber algum inglês. Algum, não fluência; o dado é do British Council, de 2014. No ranking da EF de 2025 estamos em 75º entre 123 países, e a edição nova sai hoje. E temos 7,3 milhões de jovens no ensino médio, que em poucos anos vão procurar emprego. Para muitos deles, o inglês separa a vaga boa da vaga que sobra. E hoje quem aprende inglês de verdade, em geral, aprende fora da escola, pagando." id="problema" class="foot" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Critério 1 · Um problema gigante</p>
+<h2>O inglês ainda separa o jovem do emprego</h2>
+</div>
+<div class="spacer"></div>
+<div class="stats">
+<div class="stat rise">
+<p class="num">5,1%</p>
+<p class="cap">dos brasileiros dizem saber algum inglês</p>
+</div>
+<div class="stat rise d1">
+<p class="num">75º</p>
+<p class="cap">lugar entre 123 países em inglês</p>
+</div>
+<div class="stat rise d2">
+<p class="num">7,3 mi</p>
+<p class="cap">de jovens no ensino médio</p>
+</div>
+</div>
+<p class="source">Fontes: British Council/Data Popular, 2014 (16 anos ou mais); EF EPI 2025; Inep, Censo Escolar 2025.</p>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 3 de 8: O learninc já ensina inglês pelo WhatsApp" data-notes="[2 min] [Antes de dizer que a tela é real, trocar a conversa ilustrativa pela captura real.] Este é o learninc, e essa tela é real. É um tutor de inglês que conversa com o aluno pelo WhatsApp, no tempo que a pessoa tem: cinco minutos no ônibus ou meia hora em casa. Ele entende texto, áudio e foto, ajusta a aula ao nível de cada um, e o nível só sobe quando há evidência de aprendizado. O ponto que eu quero marcar: o primeiro commit deste projeto é de julho deste ano. Poucos anos atrás, isso pediria uma empresa inteira. O custo de construir está caindo, e é isso que abre espaço para ambições maiores." id="learninc" data-transition="fade">
+<div class="split">
+<div class="split-text">
+<div class="head">
+<p class="eyebrow">O ponto de partida</p>
+<h2>O learninc já ensina inglês pelo WhatsApp</h2>
+</div>
+<div class="points">
+<div class="point rise">
+<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+<p class="point-text">No tempo que a pessoa tem, no aplicativo que ela já usa</p>
+</div>
+<div class="point rise d1">
+<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-6 4z"/></svg>
+<p class="point-text">Texto, áudio e foto, no nível de cada um</p>
+</div>
+<div class="point rise d2">
+<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+<p class="point-text">O nível sobe com evidência de aprendizado</p>
+</div>
+</div>
+</div>
+<div class="chat">
+<div class="chat-top">
+<p class="chat-name">Zap · tutor de inglês do learninc</p>
+</div>
+<div class="chat-body">
+<p class="bubble rise c1">Hi, Ana! Select your profession.<br>1 Nurse · 2 Programmer · 3 Designer</p>
+<p class="bubble me rise c2">2</p>
+<p class="bubble rise c3">Great! Complete: “I am a ___.”</p>
+<p class="bubble me rise c4">I am a programmer.</p>
+<p class="bubble rise c5">Perfect! And what do you do at work?</p>
+</div>
+<p class="chat-note">Conversa ilustrativa</p>
+</div>
+</div>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 4 de 8: A IA derrubou o custo do tutor individual" data-notes="[2 min 30] Por que agora? Em 1984, Benjamin Bloom mostrou que o aluno médio com um tutor individual ficava acima de 98% de uma turma tradicional. E concluiu que era caro demais para uma sociedade oferecer a todos. Ficou quarenta anos como sonho. O que mudou: segundo a a16z, o custo de usar uma IA de mesmo desempenho cai dez vezes por ano; foram mil vezes em três anos. E isso muda o tipo de projeto. A Sequoia chama de serviços como o novo software: quem vende a ferramenta corre contra o modelo; quem vende o trabalho fica mais rápido e mais barato a cada melhoria do modelo. Para cada dólar gasto em software, seis são gastos em serviços. O learninc não vende um aplicativo para o professor: ele entrega a aula. E essa alavanca está aberta a qualquer pessoa nesta sala." id="tecnologia" class="foot" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Critérios 2 e 3 · Ficção científica e tecnologia</p>
+<h2>A IA derrubou o custo do tutor individual</h2>
+</div>
+<div class="spacer"></div>
+<div class="duo">
+<div class="fact rise">
+<p class="fact-tag">1984 · O sonho</p>
+<p class="num">98%</p>
+<p class="cap">da turma fica atrás do aluno que tem um tutor individual</p>
+</div>
+<div class="fact rise d1">
+<p class="fact-tag">2024 · A plataforma</p>
+<p class="num">10x</p>
+<p class="cap">mais barata a cada ano: o custo da IA de mesmo desempenho</p>
+</div>
+</div>
+<div class="band rise d3">
+<div class="band-main">
+<p class="band-tag">Serviço como software</p>
+<p>Quem vende o trabalho, e não a ferramenta, fica mais barato a cada melhoria da IA.</p>
+</div>
+</div>
+<p class="source">Fontes: Bloom, “The 2 Sigma Problem” (1984); a16z, “LLMflation” (2024); Sequoia, “Services: The New Software” (2026).</p>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 5 de 8: O roofshot sobe a escada até o telhado" data-notes="[1 min 30] Com essa alavanca na mão, dá para voar em três alturas. A primeira é o roofshot, a escada até o telhado. O termo vem de um ensaio do Luiz André Barroso, do Google, sobre melhorias que chegam com certeza. No inglês, é a escola boutique, o professor remoto: melhor, mais barato, mais conveniente. Não há demérito nenhum. Mas o negócio continua preso às horas de quem ensina, quem paga é o aluno, e a rua continua a mesma." id="roofshot" data-transition="fade">
+<div class="split">
+<div class="split-text">
+<div class="head">
+<p class="eyebrow">Altitude 1 · A escada</p>
+<h2>O roofshot sobe a escada até o telhado</h2>
+<p class="lead">O objetivo é melhorar o que já existe.</p>
+</div>
+<div class="alt-rows">
+<div class="alt-row"><p class="alt-k">Exemplo</p><p class="alt-v">Escola boutique, professor remoto</p></div>
+<div class="alt-row"><p class="alt-k">Quem paga</p><p class="alt-v">O aluno, por mensalidade</p></div>
+<div class="alt-row"><p class="alt-k">Régua</p><p class="alt-v">Alunos por professor</p></div>
+</div>
+</div>
+<svg class="scene" width="720" height="824" viewBox="0 0 720 824" aria-label="Uma escada encostada na casa leva ao telhado; a lua continua longe, só no contorno">
+<rect x="0" y="0" width="720" height="824" rx="32" fill="#0C1633"/>
+<circle cx="60" cy="90" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="150" cy="200" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="250" cy="70" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="330" cy="170" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="90" cy="330" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="220" cy="300" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="400" cy="60" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="660" cy="300" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="640" cy="420" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="120" cy="460" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="540" cy="150" r="90" fill="#16234A" stroke="#7486B0" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 12"/>
+<line x1="40" y1="744" x2="680" y2="744" stroke="#26345E" stroke-width="4" stroke-linecap="round"/>
+<polyline points="150,612 290,500 430,612" fill="none" stroke="#93B4FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="184" y1="585" x2="184" y2="744" stroke="#93B4FF" stroke-width="6" stroke-linecap="round"/>
+<line x1="396" y1="585" x2="396" y2="744" stroke="#93B4FF" stroke-width="6" stroke-linecap="round"/>
+<rect x="262" y="664" width="56" height="80" fill="none" stroke="#93B4FF" stroke-width="6" stroke-linejoin="round"/>
+<rect x="210" y="628" width="36" height="36" rx="4" fill="#FFB224"/>
+<rect x="334" y="628" width="36" height="36" rx="4" fill="#FFB224"/>
+<line x1="500" y1="744" x2="396" y2="566" stroke="#FFB224" stroke-width="6" stroke-linecap="round"/>
+<line x1="532" y1="744" x2="428" y2="566" stroke="#FFB224" stroke-width="6" stroke-linecap="round"/>
+<line x1="484" y1="717" x2="516" y2="717" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<line x1="469" y1="691" x2="501" y2="691" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<line x1="453" y1="664" x2="485" y2="664" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<line x1="438" y1="637" x2="470" y2="637" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<line x1="422" y1="611" x2="454" y2="611" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<line x1="406" y1="584" x2="438" y2="584" stroke="#FFB224" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="226 242;226 242" dur="0.3s" begin="0s"/>
+<animateTransform attributeName="transform" type="translate" values="226 242;174 153;122 64;0 0" dur="2.6s" begin="0.3s"/>
+<circle cx="290" cy="446" r="12" fill="#E8EDF7"/>
+<line x1="290" y1="458" x2="290" y2="486" stroke="#E8EDF7" stroke-width="5" stroke-linecap="round"/>
+<line x1="290" y1="486" x2="278" y2="502" stroke="#E8EDF7" stroke-width="5" stroke-linecap="round"/>
+<line x1="290" y1="486" x2="302" y2="502" stroke="#E8EDF7" stroke-width="5" stroke-linecap="round"/>
+<line x1="290" y1="466" x2="310" y2="452" stroke="#E8EDF7" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>
+</div>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 6 de 8: O moonshot tradicional leva poucos à Lua" data-notes="[2 min] A segunda altura é o moonshot tradicional, o dos exemplos que a gente mais admira: foguete reutilizável, robôs, Marte. O objetivo é a fronteira e o retorno. No inglês, é o tutor de IA por assinatura para o mundo inteiro. A BeConfident, brasileira, captou 85 milhões de reais este ano para isso. Uma ressalva importante: não estou dizendo que esse tipo de moonshot não melhora o mundo. Melhora, e muito. Só que o impacto vem de carona; não é a razão de existir. E o foguete tem poucos assentos: sobe quem pode pagar a passagem." id="tradicional" data-transition="fade">
+<div class="split">
+<div class="split-text">
+<div class="head">
+<p class="eyebrow">Altitude 2 · O foguete</p>
+<h2>O moonshot tradicional leva poucos à Lua</h2>
+<p class="lead">O objetivo é a fronteira; o impacto vem de carona.</p>
+</div>
+<div class="alt-rows">
+<div class="alt-row"><p class="alt-k">Exemplo (Startups.com.br, fev. 2026)</p><p class="alt-v">BeConfident: R$ 85 milhões captados</p></div>
+<div class="alt-row"><p class="alt-k">Quem paga</p><p class="alt-v">Quem pode assinar</p></div>
+<div class="alt-row"><p class="alt-k">Régua</p><p class="alt-v">Receita e valuation</p></div>
+</div>
+</div>
+<svg class="scene" width="720" height="824" viewBox="0 0 720 824" aria-label="Um foguete sobe de uma casa em direção à lua, onde há uma bandeira fincada">
+<rect x="0" y="0" width="720" height="824" rx="32" fill="#0C1633"/>
+<circle cx="60" cy="90" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="150" cy="200" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="250" cy="70" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="330" cy="170" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="90" cy="330" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="400" cy="60" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="660" cy="300" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="640" cy="420" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="120" cy="460" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="520" cy="560" r="2" fill="#A3B0CC" opacity="0.7"/>
+<line x1="40" y1="744" x2="680" y2="744" stroke="#26345E" stroke-width="4" stroke-linecap="round"/>
+<polyline points="70,668 130,620 190,668" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="88" y1="654" x2="88" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="172" y1="654" x2="172" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="116" y="690" width="28" height="28" rx="3" fill="#FFB224"/>
+<circle cx="540" cy="150" r="130" fill="#FFB224" opacity="0.08"/>
+<circle cx="540" cy="150" r="90" fill="#FFB224"/>
+<circle cx="510" cy="122" r="16" fill="#E89B0C" opacity="0.55"/>
+<circle cx="572" cy="180" r="11" fill="#E89B0C" opacity="0.55"/>
+<circle cx="528" cy="196" r="7" fill="#E89B0C" opacity="0.55"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;1" dur="3.6s" begin="0s"/>
+<line x1="556" y1="62" x2="556" y2="20" stroke="#E8EDF7" stroke-width="4" stroke-linecap="round"/>
+<polygon points="556,20 592,32 556,44" fill="#E8EDF7"/>
+</g>
+<path d="M 236 716 Q 300 430 418 262" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 16"/>
+<g>
+<animateMotion path="M -182 454 Q -118 168 0 0" dur="3s" begin="0s"/>
+<g transform="translate(418 262)">
+<g transform="rotate(35)">
+<animateTransform attributeName="transform" type="rotate" from="13" to="35" dur="3s" begin="0s"/>
+<g transform="scale(1.7)">
+<path d="M -8 32 L 0 56 L 8 32 Z" fill="#FFB224"/>
+<path d="M -14 12 L -30 38 L -14 30 Z" fill="#93B4FF"/>
+<path d="M 14 12 L 30 38 L 14 30 Z" fill="#93B4FF"/>
+<path d="M 0 -44 C 16 -26 18 6 14 30 L -14 30 C -18 6 -16 -26 0 -44 Z" fill="#E8EDF7"/>
+<circle cx="0" cy="-8" r="6.5" fill="#2152D9"/>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</div>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 7 de 8: O moonshot social leva todo mundo junto" data-notes="[3 min] A terceira altura é a que eu escolho. O moonshot social usa a mesma tecnologia e sobe tão alto quanto o foguete, mas é infraestrutura: entra quem quiser, e ninguém paga a passagem. O meu moonshot: todo jovem brasileiro sai da escola com um tutor particular. Começa pelo inglês e segue para qualquer habilidade que dê emprego. Quem aprende nunca paga; pagam as universidades e os empregadores que querem encontrar esses jovens, sempre com o consentimento do aluno e da família. Aqui é a riqueza que vem de carona. E a régua não é valuation: são jovens empregados, as metas 4.4 e 8.6 dos Objetivos de Desenvolvimento Sustentável da ONU. Passa nos quatro critérios do Astro Teller: problema gigante, solução com cara de ficção científica, tecnologia que agora existe, e o salto de dez vezes, de mensalidade para custo zero para quem aprende." id="social" data-transition="fade">
+<div class="split">
+<div class="split-text">
+<div class="head">
+<p class="eyebrow">Altitude 3 · O elevador · Meu moonshot</p>
+<h2>O moonshot social leva todo mundo junto</h2>
+<p class="lead">O objetivo são as pessoas; a riqueza vem de carona.</p>
+</div>
+<div class="alt-rows">
+<div class="alt-row"><p class="alt-k">Meu moonshot</p><p class="alt-v">Todo jovem sai da escola com um tutor particular</p></div>
+<div class="alt-row"><p class="alt-k">Quem paga</p><p class="alt-v">Nunca quem aprende</p></div>
+<div class="alt-row"><p class="alt-k">Régua</p><p class="alt-v">Jovens empregados (ODS 4.4 e 8.6)</p></div>
+</div>
+</div>
+<svg class="scene" width="720" height="824" viewBox="0 0 720 824" aria-label="Um elevador com cabines cheias sobe de uma fileira de casas iluminadas até a lua">
+<rect x="0" y="0" width="720" height="824" rx="32" fill="#0C1633"/>
+<circle cx="60" cy="90" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="150" cy="200" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="250" cy="70" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="330" cy="170" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="90" cy="330" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="220" cy="300" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="400" cy="60" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="660" cy="300" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="640" cy="420" r="2.5" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="120" cy="460" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="340" cy="430" r="2" fill="#A3B0CC" opacity="0.7"/>
+<circle cx="540" cy="150" r="130" fill="#FFB224" opacity="0.08"/>
+<circle cx="540" cy="150" r="90" fill="#FFB224"/>
+<circle cx="510" cy="122" r="16" fill="#E89B0C" opacity="0.55"/>
+<circle cx="572" cy="180" r="11" fill="#E89B0C" opacity="0.55"/>
+<circle cx="556" cy="112" r="7" fill="#E89B0C" opacity="0.55"/>
+<line x1="530" y1="238" x2="530" y2="716" stroke="#93B4FF" stroke-width="3" stroke-linecap="round"/>
+<line x1="550" y1="238" x2="550" y2="716" stroke="#93B4FF" stroke-width="3" stroke-linecap="round"/>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 148" to="0 0" dur="3s" begin="0s"/>
+<rect x="504" y="330" width="72" height="88" rx="12" fill="#FFB224"/>
+<circle cx="522" cy="382" r="8" fill="#3D2E00"/>
+<circle cx="540" cy="372" r="8" fill="#3D2E00"/>
+<circle cx="558" cy="382" r="8" fill="#3D2E00"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 80" to="0 0" dur="3s" begin="0s"/>
+<rect x="504" y="548" width="72" height="88" rx="12" fill="#FFB224"/>
+<circle cx="522" cy="600" r="8" fill="#3D2E00"/>
+<circle cx="540" cy="590" r="8" fill="#3D2E00"/>
+<circle cx="558" cy="600" r="8" fill="#3D2E00"/>
+</g>
+<line x1="40" y1="744" x2="680" y2="744" stroke="#26345E" stroke-width="4" stroke-linecap="round"/>
+<rect x="488" y="716" width="104" height="28" rx="6" fill="#16234A" stroke="#93B4FF" stroke-width="4"/>
+<polyline points="42,684 90,646 138,684" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="54" y1="675" x2="54" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="126" y1="675" x2="126" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="78" y="700" width="24" height="24" rx="3" fill="#FFB224"><animate attributeName="opacity" values="0;1;1;1;1;1" dur="2s" begin="0s"/></rect>
+<polyline points="146,684 194,646 242,684" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="158" y1="675" x2="158" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="230" y1="675" x2="230" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="182" y="700" width="24" height="24" rx="3" fill="#FFB224"><animate attributeName="opacity" values="0;0;1;1;1;1" dur="2s" begin="0s"/></rect>
+<polyline points="250,684 298,646 346,684" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="262" y1="675" x2="262" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="334" y1="675" x2="334" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="286" y="700" width="24" height="24" rx="3" fill="#FFB224"><animate attributeName="opacity" values="0;0;0;1;1;1" dur="2s" begin="0s"/></rect>
+<polyline points="354,684 402,646 450,684" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="366" y1="675" x2="366" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="438" y1="675" x2="438" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="390" y="700" width="24" height="24" rx="3" fill="#FFB224"><animate attributeName="opacity" values="0;0;0;0;1;1" dur="2s" begin="0s"/></rect>
+<polyline points="596,684 644,646 692,684" fill="none" stroke="#93B4FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="608" y1="675" x2="608" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="680" y1="675" x2="680" y2="744" stroke="#93B4FF" stroke-width="5" stroke-linecap="round"/>
+<rect x="632" y="700" width="24" height="24" rx="3" fill="#FFB224"><animate attributeName="opacity" values="0;0;0;0;0;1" dur="2s" begin="0s"/></rect>
+</svg>
+</div>
+
+</section>
+<section aria-roledescription="slide" aria-label="Slide 8 de 8: A tecnologia é a mesma nas três altitudes. A ambição é uma escolha." data-notes="[1 min 30] A tecnologia é a mesma nas três altitudes. A startup de 85 milhões e o tutor gratuito para todo jovem usam a mesma IA, cada ano mais barata, e ela está disponível também para quem só quer subir no telhado. O que muda é a pergunta que a gente faz toda manhã. Os dois tipos de moonshot mudam o mundo. Eu só acho que já tem muita gente construindo foguete e pouca gente construindo elevador. Repare na tela: o mesmo tutor chega a cada casa como uma mensagem. É o serviço virando software. As janelas se acendem, e o elevador leva todo mundo. Fica a provocação: qual é a sua altitude? Obrigado." id="fecho" class="accent closing">
+<svg class="sky" width="1920" height="1080" viewBox="0 0 1920 1080" aria-label="O tutor chega a cada casa como uma mensagem, as janelas se acendem e um elevador leva todo mundo até a lua">
+<line x1="1630" y1="428" x2="1630" y2="972" stroke="#D6E2FF" stroke-width="3" stroke-linecap="round"/>
+<line x1="1650" y1="428" x2="1650" y2="972" stroke="#D6E2FF" stroke-width="3" stroke-linecap="round"/>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 60" to="0 0" dur="1.8s" begin="0s"/>
+<circle cx="1640" cy="280" r="230" fill="#FFB224" opacity="0.10"/>
+<circle cx="1640" cy="280" r="150" fill="#FFB224"/>
+<circle cx="1592" cy="232" r="27" fill="#E89B0C" opacity="0.55"/>
+<circle cx="1690" cy="322" r="18" fill="#E89B0C" opacity="0.55"/>
+<circle cx="1668" cy="214" r="11" fill="#E89B0C" opacity="0.55"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 260" to="0 0" dur="5s" begin="0s"/>
+<rect x="1604" y="540" width="72" height="88" rx="12" fill="#FFB224"/>
+<circle cx="1622" cy="592" r="8" fill="#3D2E00"/>
+<circle cx="1640" cy="582" r="8" fill="#3D2E00"/>
+<circle cx="1658" cy="592" r="8" fill="#3D2E00"/>
+</g>
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 150" to="0 0" dur="5s" begin="0s"/>
+<rect x="1604" y="760" width="72" height="88" rx="12" fill="#FFB224"/>
+<circle cx="1622" cy="812" r="8" fill="#3D2E00"/>
+<circle cx="1640" cy="802" r="8" fill="#3D2E00"/>
+<circle cx="1658" cy="812" r="8" fill="#3D2E00"/>
+</g>
+<line x1="128" y1="1000" x2="1792" y2="1000" stroke="#6C8DEB" stroke-width="4" stroke-linecap="round"/>
+<rect x="1588" y="972" width="104" height="28" rx="6" fill="#1A43B8" stroke="#D6E2FF" stroke-width="4"/>
+<polyline points="120,950 168,912 216,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="132" y1="941" x2="132" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="204" y1="941" x2="204" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="156" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="136" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="154,886 168,900 176,886" fill="#FFFFFF"/>
+<circle cx="154" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="168" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="182" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="270,950 318,912 366,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="282" y1="941" x2="282" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="354" y1="941" x2="354" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;1;1;1;1;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="306" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="286" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="304,886 318,900 326,886" fill="#FFFFFF"/>
+<circle cx="304" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="318" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="332" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="420,950 468,912 516,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="432" y1="941" x2="432" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="504" y1="941" x2="504" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;1;1;1;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="456" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="436" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="454,886 468,900 476,886" fill="#FFFFFF"/>
+<circle cx="454" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="468" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="482" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="570,950 618,912 666,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="582" y1="941" x2="582" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="654" y1="941" x2="654" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;1;1;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="606" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="586" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="604,886 618,900 626,886" fill="#FFFFFF"/>
+<circle cx="604" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="618" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="632" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="720,950 768,912 816,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="732" y1="941" x2="732" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="804" y1="941" x2="804" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="756" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="736" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="754,886 768,900 776,886" fill="#FFFFFF"/>
+<circle cx="754" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="768" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="782" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="870,950 918,912 966,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="882" y1="941" x2="882" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="954" y1="941" x2="954" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;0;1;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="906" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="886" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="904,886 918,900 926,886" fill="#FFFFFF"/>
+<circle cx="904" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="918" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="932" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="1020,950 1068,912 1116,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1032" y1="941" x2="1032" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="1104" y1="941" x2="1104" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;1;1;1" dur="3.6s" begin="0s"/>
+<rect x="1056" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="1036" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="1054,886 1068,900 1076,886" fill="#FFFFFF"/>
+<circle cx="1054" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1068" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1082" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="1170,950 1218,912 1266,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1182" y1="941" x2="1182" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="1254" y1="941" x2="1254" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1" dur="3.6s" begin="0s"/>
+<rect x="1206" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="1186" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="1204,886 1218,900 1226,886" fill="#FFFFFF"/>
+<circle cx="1204" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1218" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1232" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+<polyline points="1320,950 1368,912 1416,950" fill="none" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1332" y1="941" x2="1332" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<line x1="1404" y1="941" x2="1404" y2="1000" stroke="#D6E2FF" stroke-width="5" stroke-linecap="round"/>
+<g>
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1" dur="3.6s" begin="0s"/>
+<rect x="1356" y="962" width="24" height="24" rx="3" fill="#FFB224"/>
+<rect x="1336" y="846" width="64" height="40" rx="14" fill="#FFFFFF"/>
+<polygon points="1354,886 1368,900 1376,886" fill="#FFFFFF"/>
+<circle cx="1354" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1368" cy="866" r="4.5" fill="#2152D9"/>
+<circle cx="1382" cy="866" r="4.5" fill="#2152D9"/>
+</g>
+</svg>
+<p class="eyebrow">Minha escolha · Moonshot social, serviço como software</p>
+<h1>A tecnologia é a mesma<br>nas três altitudes.<br>A ambição é uma escolha.</h1>
+<p class="closing-q">Qual é a sua?</p>
+
+</section>
+</div>
+</main>
+<div class="controls" role="toolbar" aria-label="Controles da apresentação">
+<button type="button" data-act="prev" aria-label="Slide anterior">‹</button>
+<span class="count">1 / 8</span>
+<button type="button" data-act="next" aria-label="Próximo slide">›</button>
+<button type="button" data-act="notes">Notas</button>
+<button type="button" data-act="presenter">Apresentador</button>
+<button type="button" data-act="full">Tela cheia</button>
+</div>
+<div class="notes-panel" aria-live="polite"></div>
+<noscript><p class="noscript">Esta apresentação precisa de JavaScript para passar os slides.</p></noscript>
+<script>
+(function () {
+  'use strict';
+
+  var KEY = 'efrem-deck-um-tutor-particular';
+  var W = 1920, H = 1080;
+  var deck = document.querySelector('.deck');
+  var stage = document.querySelector('.stage');
+  var slides = Array.prototype.slice.call(stage.children);
+  var total = slides.length;
+  var presenter = new URLSearchParams(location.search).has('apresentador');
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var index = -1;
+  var leaveTimer = 0;
+  var peer = presenter ? window.opener : null;
+  var ui = {};
+
+  // "[1 min 30] Texto..." vira { target: "1 min 30", body: "Texto..." }.
+  var notes = slides.map(function (s) {
+    var text = s.getAttribute('data-notes') || '';
+    var m = /^\s*\[([^\]]*\bmin\b[^\]]*)\]\s*/.exec(text);
+    return m ? { target: m[1], body: text.slice(m[0].length) } : { target: '', body: text };
+  });
+
+  function fitTo(box, target) {
+    var r = box.getBoundingClientRect();
+    var s = Math.min(r.width / W, r.height / H);
+    target.style.setProperty('--s', String(s > 0 ? s : 1));
+  }
+
+  function fitAll() {
+    if (presenter) {
+      fitTo(ui.curBox, ui.curBox);
+      fitTo(ui.nextBox, ui.nextBox);
+    } else {
+      fitTo(deck, document.documentElement);
+    }
+  }
+
+  // As cenas desenhadas usam SMIL. No navegador elas contam desde o carregamento da
+  // página. Rebobinar o relógio (setCurrentTime) não basta: no Chromium, uma cena que
+  // já tocou às vezes fica parada no primeiro quadro. Por isso cada chegada troca o
+  // desenho por uma cópia nova, que começa do zero como na primeira vez.
+  function setScenes(scope, atEnd) {
+    var svgs = scope.querySelectorAll('svg');
+    for (var i = 0; i < svgs.length; i++) {
+      var svg = svgs[i];
+      if (typeof svg.setCurrentTime !== 'function' || !svg.querySelector('animate, animateMotion, animateTransform, set')) continue;
+      if (atEnd || reduce) {
+        svg.setCurrentTime(120);
+        svg.pauseAnimations();
+      } else {
+        svg.replaceWith(svg.cloneNode(true));
+      }
+    }
+  }
+
+  function send() {
+    if (!peer || peer.closed) return;
+    try { peer.postMessage({ deck: KEY, index: index }, '*'); } catch (e) { /* janela fechada */ }
+  }
+
+  function go(i, quiet) {
+    i = Math.max(0, Math.min(total - 1, i | 0));
+    if (i === index) return;
+    var prev = index >= 0 ? slides[index] : null;
+    var cur = slides[i];
+    var curWasShown = cur.classList.contains('is-leaving');
+    clearTimeout(leaveTimer);
+    for (var k = 0; k < total; k++) {
+      if (slides[k] !== prev && slides[k] !== cur) slides[k].classList.remove('is-leaving', 'is-active');
+    }
+    if (prev) {
+      prev.classList.remove('is-active');
+      if (!reduce) {
+        prev.classList.add('is-leaving');
+        leaveTimer = setTimeout(function () { prev.classList.remove('is-leaving'); }, 340);
+      }
+    }
+    if (curWasShown) {
+      // Tira o slide de cena por um quadro para as animações dele recomeçarem.
+      cur.classList.remove('is-leaving');
+      void cur.offsetWidth;
+    }
+    cur.classList.add('is-active');
+    for (k = 0; k < total; k++) slides[k].setAttribute('aria-hidden', k === i ? 'false' : 'true');
+    index = i;
+    setScenes(cur, false);
+    render();
+    try { history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1)); } catch (e) { /* file:// antigo */ }
+    if (!quiet) send();
+  }
+
+  function next() { go(index + 1); }
+  function prev() { go(index - 1); }
+
+  function render() {
+    var label = (index + 1) + ' / ' + total;
+    if (ui.count) ui.count.textContent = label;
+    if (ui.notesPanel && ui.notesPanel.classList.contains('is-on')) fillNotes(ui.notesPanel, notes[index]);
+    if (presenter) {
+      ui.pvCount.textContent = label;
+      ui.pvTarget.textContent = notes[index].target;
+      ui.pvNotes.textContent = notes[index].body;
+      var ns = ui.nextSlides;
+      for (var k = 0; k < ns.length; k++) ns[k].classList.toggle('is-shown', k === index + 1);
+      ui.pvEnd.hidden = index + 1 < total;
+      if (index + 1 < total) setScenes(ns[index + 1], true);
+    }
+  }
+
+  function fillNotes(panel, n) {
+    panel.textContent = '';
+    if (n.target) {
+      var t = document.createElement('strong');
+      t.textContent = n.target;
+      panel.appendChild(t);
+    }
+    panel.appendChild(document.createTextNode(n.body));
+  }
+
+  function toggleNotes() {
+    var p = ui.notesPanel;
+    p.classList.toggle('is-on');
+    if (p.classList.contains('is-on')) fillNotes(p, notes[index]);
+  }
+
+  function toggleFull() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+  }
+
+  function openPresenter() {
+    var url = location.pathname + '?apresentador#' + (index + 1);
+    var w = window.open(url, KEY + '-apresentador', 'width=1280,height=800');
+    if (w) peer = w;
+  }
+
+  function fromHash() {
+    var n = parseInt(String(location.hash).replace(/^#/, ''), 10);
+    return isNaN(n) ? 0 : n - 1;
+  }
+
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!d || d.deck !== KEY || typeof d.index !== 'number') return;
+    if (!peer && e.source) peer = e.source;
+    go(d.index, true);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    var tag = e.target && e.target.tagName;
+    if (tag === 'BUTTON' && (e.key === ' ' || e.key === 'Enter')) return;
+    switch (e.key) {
+      case 'ArrowRight': case 'ArrowDown': case 'PageDown': case ' ': case 'Enter': next(); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp': case 'Backspace': prev(); break;
+      case 'Home': go(0); break;
+      case 'End': go(total - 1); break;
+      case 'f': case 'F': if (!presenter) toggleFull(); break;
+      case 'n': case 'N': if (!presenter) toggleNotes(); break;
+      case 'p': case 'P': if (!presenter) openPresenter(); break;
+      case 'Escape': if (ui.notesPanel) ui.notesPanel.classList.remove('is-on'); break;
+      default: return;
+    }
+    e.preventDefault();
+  });
+
+  window.addEventListener('hashchange', function () { go(fromHash()); });
+  window.addEventListener('resize', fitAll);
+
+  function buildMain() {
+    ui.count = document.querySelector('.controls .count');
+    ui.notesPanel = document.querySelector('.notes-panel');
+    var controls = document.querySelector('.controls');
+    controls.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      var act = b.getAttribute('data-act');
+      if (act === 'prev') prev();
+      else if (act === 'next') next();
+      else if (act === 'notes') toggleNotes();
+      else if (act === 'presenter') openPresenter();
+      else if (act === 'full') toggleFull();
+    });
+
+    // Clique avança; deslizar o dedo vai e volta.
+    var downX = null, swiped = false;
+    deck.addEventListener('pointerdown', function (e) { downX = e.pointerType === 'mouse' ? null : e.clientX; swiped = false; });
+    deck.addEventListener('pointerup', function (e) {
+      if (downX === null) return;
+      var dx = e.clientX - downX;
+      downX = null;
+      if (Math.abs(dx) > 50) { swiped = true; if (dx < 0) next(); else prev(); }
+    });
+    deck.addEventListener('click', function () { if (swiped) { swiped = false; return; } next(); });
+
+    var idle = 0;
+    document.addEventListener('mousemove', function () {
+      controls.classList.add('is-on');
+      document.body.classList.remove('is-idle');
+      clearTimeout(idle);
+      idle = setTimeout(function () {
+        controls.classList.remove('is-on');
+        document.body.classList.add('is-idle');
+      }, 2500);
+    });
+  }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+
+  function buildPresenter() {
+    document.body.classList.add('presenter');
+    document.title = 'Apresentador · ' + document.title;
+    document.querySelector('.controls').remove();
+    document.querySelector('.notes-panel').remove();
+
+    var pv = el('div', 'pv');
+    var bar = el('div', 'pv-bar');
+    var back = el('button', '', '‹ Anterior');
+    var fwd = el('button', '', 'Próximo ›');
+    back.type = fwd.type = 'button';
+    back.addEventListener('click', prev);
+    fwd.addEventListener('click', next);
+    ui.pvCount = el('span', 'pv-count');
+    ui.pvTarget = el('span', 'pv-target');
+    ui.pvTarget.title = 'Tempo planejado para este slide';
+    var clock = el('span', 'pv-clock', '00:00');
+    var reset = el('button', '', 'Zerar');
+    reset.type = 'button';
+    bar.append(back, fwd, ui.pvCount, ui.pvTarget, el('span', 'pv-spacer'), clock, reset);
+
+    var curWrap = el('div', 'pv-cur');
+    curWrap.append(el('p', 'pv-label', 'Agora'));
+    ui.curBox = el('div', 'pv-box');
+    curWrap.append(ui.curBox);
+
+    var nextWrap = el('div', 'pv-next');
+    nextWrap.append(el('p', 'pv-label', 'Próximo'));
+    ui.nextBox = el('div', 'pv-box');
+    nextWrap.append(ui.nextBox);
+
+    ui.pvNotes = el('div', 'pv-notes');
+    pv.append(bar, curWrap, nextWrap, ui.pvNotes);
+    document.body.append(pv);
+
+    var nextStage = stage.cloneNode(true);
+    ui.nextSlides = Array.prototype.slice.call(nextStage.children);
+    ui.nextSlides.forEach(function (s) { s.removeAttribute('id'); s.className = s.className.replace(/\bis-\S+/g, ''); s.setAttribute('aria-hidden', 'true'); });
+    ui.curBox.append(stage);
+    ui.nextBox.append(nextStage);
+    ui.pvEnd = el('div', 'pv-end', 'Fim da apresentação');
+    ui.nextBox.append(ui.pvEnd);
+    deck.remove();
+
+    var start = Date.now();
+    reset.addEventListener('click', function () { start = Date.now(); tick(); });
+    function tick() {
+      var s = Math.floor((Date.now() - start) / 1000);
+      clock.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+    }
+    setInterval(tick, 500);
+  }
+
+  if (presenter) buildPresenter(); else buildMain();
+  fitAll();
+  go(fromHash(), true);
+})();
+</script>
+</body>
+</html>
