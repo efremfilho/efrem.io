@@ -9,7 +9,7 @@ part: 2
 permalink: /ai/repository-as-memory/
 interactive: "branch timeline + repository anatomy"
 piece: "the repository with the decisions on record"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -151,7 +151,7 @@ And there's an important limit: a stored document isn't necessarily a read docum
 
 Because the knowledge lives in plain text files, in a repository that's mine, **I can switch AIs whenever I want**. I test several, and switching costs me a few hours of awkwardness: any of them opens the project, reads the same files, and carries on with the work. That doesn't mean switching all the time — I'd rather be very good at one than mediocre at all of them. The freedom is in being able to leave, not in leaving every week.
 
-For me, models have become a *commodity* — [I was already saying so a while back](/blog/en/agentkit-wont-kill-the-ipaas/), comparing it with what happened to the cloud: the difference between the best ones is more a matter of taste than of capability. What isn't a commodity is your project's context — and that shouldn't live inside a vendor's account, or inside a specific agent framework. If the trendy tool changes tomorrow, you plug the next one into the same repository.
+For me, models have become a *commodity* — [I was already saying so a while back](/blog/en/agentkit-wont-kill-the-ipaas/), comparing it with what happened to the cloud: the difference between the best ones is more a matter of taste than of capability. When I decided to [put that switch to the test for a few months](/blog/en/coding-agents-are-becoming-a-commodity/), stepping away from my main tool to try two competitors — including one I used to hate —, I saw that **coding agents themselves** are heading the same way. What made the move work was standardizing standing instructions in `AGENTS.md`, recording decisions and learnings in the `docs/` folder, and adapting to each tool's command line and web environment. What isn't a commodity is your project's context — and that shouldn't live inside a vendor's account, or inside a specific agent framework. If the trendy tool changes tomorrow, you plug the next one into the same repository.
 
 The same goes for people. Someone new joined the team? Give them access to the repository. The decisions, the rules, and the history are already there.
 
@@ -216,6 +216,7 @@ Each person creates a GitHub account and a private repository for a project of t
 - Maranhão Filho, É. (2025, October 7). *AgentKit won't kill the iPaaS*. efrem.io. <https://efrem.io/blog/en/agentkit-wont-kill-the-ipaas/>
 - Maranhão Filho, É. (2026, August 18). *Recording calls to think things through with Claude*. efrem.io. <https://efrem.io/blog/en/recording-calls-to-think-with-claude/>
 - Maranhão Filho, É. (2026, July 28). *Processes and guardrails for product builders and devs working together*. efrem.io. <https://efrem.io/blog/en/processes-and-guardrails-for-product-builders-and-devs/>
+- Maranhão Filho, É. (2026, November 17). *Coding agents are becoming a commodity*. efrem.io. <https://efrem.io/blog/en/coding-agents-are-becoming-a-commodity/>
 - Maranhão Filho, É. (n.d.). *efrem.io* [Repository for the website and AI Without the Magic guide]. GitHub. <https://github.com/efremfilho/efrem.io>
 
 *Notes:* The preference for creating GitHub projects even when the deliverable is not code, using AGENTS.md and docs/ folders for decisions, paths taken, and meeting notes, is the author's account. The website and book case describes the repository structure: README.md, AGENTS.md, chapters, tools, and exclusion rules in .gitignore and _config.yml. The temp/ folder is local and private; its contents are not reproduced in this example. Git preserves recorded history for tracked files, not an automatic copy of everything in the working folder (Chacon & Straub, 2014, Section 2.2).

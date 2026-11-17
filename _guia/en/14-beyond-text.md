@@ -9,7 +9,7 @@ part: 3
 permalink: /ai/beyond-text/
 interactive: "four conversions and what to ask each one"
 piece: "the rule for what can be recorded and how long it's kept"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -20,7 +20,7 @@ The communication trial reserved earlier did not produce one winning format: one
 Lia asked an agent for transcripts and summaries by family. Caio reviewed one with Bia: where she said "perhaps she changed shifts," the summary stated that the student had changed; another sentence appeared as the mother's words, but was Bia's interpretation. Going back to the audio settled those questions. Would it settle the ones in records nobody could review that day? Bia wanted to keep the voice notes to preserve context; Caio wanted a short record so service could continue. What needed to reach the next person: what was said, what was understood, or what remained to be checked?
 </div>
 
-For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the context: sometimes I talk, almost always to think out loud. But I still prefer to write. When I write, I think before I send. The machine now accepts the world in the format it happens in. The use that serves me best is one of the simplest: I share my screen with a voice assistant and ask it to guide me through a setup I haven't mastered. "Click the menu on the left. See the button on the right?" It's tech support that sees what I'm seeing.
+For a long time I could only use generative AI professionally with text — I even [asked in public whether I was missing something](/blog/en/am-i-missing-out-on-multimodal-ai/). Today I [record conversations to think about later](/blog/en/recording-calls-to-think-with-claude/). Talking to the machine, for me, depends on the stage of the work. [I started talking a lot more with agents](/blog/en/coding-agents-are-becoming-a-commodity/) and have been finding my multimodal process: I talk to brainstorm, and I stop to write when I need to think before I send — especially in reviews. The machine now accepts the world in the format it happens in. The use that serves me best is one of the simplest: I share my screen with a voice assistant and ask it to guide me through a setup I haven't mastered. "Click the menu on the left. See the button on the right?" It's tech support that sees what I'm seeing.
 
 This has a name — **multimodal** models — and it raises one question before any other.
 
@@ -172,6 +172,7 @@ In groups: (1) record one minute of conversation with at least three proper name
 - Maranhão Filho, É. (2025, January 27). *Am I missing out on multimodal AI?*. efrem.io. <https://efrem.io/blog/en/am-i-missing-out-on-multimodal-ai/>
 - Maranhão Filho, É. (2025, October 22). *Over-engineering: a confession*. efrem.io. <https://efrem.io/blog/en/over-engineering-a-confession/>
 - Maranhão Filho, É. (2026, August 18). *Recording calls to think things through with Claude*. efrem.io. <https://efrem.io/blog/en/recording-calls-to-think-with-claude/>
+- Maranhão Filho, É. (2026, November 17). *Coding agents are becoming a commodity*. efrem.io. <https://efrem.io/blog/en/coding-agents-are-becoming-a-commodity/>
 - Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2022). *Robust speech recognition via large-scale weak supervision*. arXiv. <https://arxiv.org/abs/2212.04356>
 
 *Notes:* Radford et al. (2022) and Ho, Jain, and Abbeel (2020) illustrate different mechanisms for transcription and image generation. Static is a teaching analogy for denoising. The overengineering account is documented in the author's post, cited in the references.

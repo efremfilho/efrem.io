@@ -182,11 +182,11 @@ Toda a turma cola a mesma tabela pequena (20 linhas) em um assistente e pedem a 
 
 #### Referências
 
-- MARANHÃO FILHO, Éfrem. **Multiagentes e a conta dos erros que se acumulam**. [*S. l.*]: efrem.io, 2 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/multi-agent-systems-and-compounding-errors/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Multiagentes e a conta dos erros que se acumulam**. [*S. l.*]: efrem.io, 2 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/multi-agent-systems-and-compounding-errors/>. Acesso em: 17 nov. 2026.
 - MARANHÃO FILHO, Éfrem. **Panorama da IA**. [*S. l.*], [s. d.]. Apresentação de slides. Disponível em: <https://efrem.io/panorama/>. Acesso em: 15 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Pessoas de produto: não tenham medo de um script**. [*S. l.*]: efrem.io, 15 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/product-people-dont-be-afraid-of-a-script/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Quando usei uma bazuca para matar uma mosca**. [*S. l.*]: efrem.io, 4 dez. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/a-bazooka-to-kill-a-fly/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Testando um formato novo: processos agênticos determinísticos e probabilísticos**. [*S. l.*]: efrem.io, 28 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/deterministic-vs-probabilistic-agentic-processes/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Pessoas de produto: não tenham medo de um script**. [*S. l.*]: efrem.io, 15 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/product-people-dont-be-afraid-of-a-script/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Quando usei uma bazuca para matar uma mosca**. [*S. l.*]: efrem.io, 4 dez. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/a-bazooka-to-kill-a-fly/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Testando um formato novo: processos agênticos determinísticos e probabilísticos**. [*S. l.*]: efrem.io, 28 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/deterministic-vs-probabilistic-agentic-processes/>. Acesso em: 17 nov. 2026.
 
 *Notas:* O exercício da planilha de contratos está na página 21 de *Panorama da IA*. A apresentação propõe gerar código para analisar um arquivo e construir um painel a partir da base. As perguntas sobre repetição, critério e uso são o desdobramento didático neste guia, não um relato de resultados obtidos pela turma.
 

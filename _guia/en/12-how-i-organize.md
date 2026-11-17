@@ -9,7 +9,7 @@ part: 2
 permalink: /ai/how-i-organize/
 interactive: "anatomy of a work environment"
 piece: "folders by city and keys in order"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -53,7 +53,7 @@ I went to the **terminal**: that black text screen that looks like DOS. AI codin
 
 I'll admit the irony: a while back I [complained that we were going back to the terminal](/blog/en/are-we-going-back-to-the-terminal/) and throwing away decades of interface work. I still think that, for most people, a good interface wins. For me, today, the little box won.
 
-You **don't need** the terminal to apply anything in this guide. The same products have an app and a web version, and the logic is the same. I've been migrating myself: I use the web version and my phone more and more, and I'm one step away from dictating instead of typing — something I swore I'd never do. I'm already getting ready to eat my words.
+You **don't need** the terminal to apply anything in this guide. The same products have an app and a web version, and the logic is the same. I've been migrating myself: I use the web version and my phone more, and [I ate my words on voice](/blog/en/coding-agents-are-becoming-a-commodity/) — I started talking to agents a lot more, and found a clear split: I talk when I want to brainstorm and stop to write when I need to review carefully.
 
 ## On my machine or in the cloud?
 
@@ -61,6 +61,8 @@ The agent can work in two places:
 
 - **On my machine**: it opens the project folder and works there. Fast, and the files stay with me. It's my default.
 - **In a cloud environment**: the AI vendor spins up a temporary machine, downloads the repository, does the work, and hands me back a pull request. I use it when I want to keep work moving from my phone, leave something running overnight, or keep a company project isolated from my machine.
+
+That is also where tools differ far more today than in model quality: the mobile experience and how easy it is to set up that cloud environment vary widely. I still haven't migrated completely to a tool whose terminal I was enjoying precisely because its mobile web app was rough and it lacked a good cloud environment — while another one I used to hate turned out to be great at setting up that remote environment.
 
 An environment like that is set up once and has four parts:
 
@@ -118,9 +120,9 @@ For a harmless personal project I allow everything. For a company project, a clo
 
 ## One tool, or several?
 
-I pay for more than one and test several. When I blow through the limit on one, I switch to another. But I spend my day in just one, because I'd rather be very good at one than mediocre at all of them. The worst scenario, for me, is switching so often that you never learn to use any of them properly.
+I pay for more than one, test several, and today keep three in my workflow — but my rule hasn't changed: I'd rather be very good at one than mediocre across all three. The worst scenario, for me, is spreading attention so thin that you never learn to use any of them properly. My main one remains the everyday tool, for its ecosystem as a whole; the other two step in for specific moments, leaning on each one's style: a faster and more proactive one for risky tasks, and another that turned out to be the most thorough in reviews — from a vendor I took a while to treat as serious, yet one that has the advantage of an already integrated work ecosystem.
 
-What lets me relax about that choice is the rule from the previous chapter: the knowledge lives in the repository, in plain text. If I need to switch, I switch. It feels strange for a few hours and I move on. For me, it has become a *commodity*.
+What makes that work is the rule from the previous chapter: the knowledge lives in the repository, in plain text. If I need to switch, I switch. It feels strange for a few hours and I move on. For me, it's not just models — coding agents themselves have become a *commodity*, and what still sets one apart from another is its execution style and the ecosystem around it.
 
 For people who are starting out, the recommendation is the opposite of "pick the best one": test more than one with the same real task, stay with the one that best fits the way you work, and get good at it. The difference between top models, today, is more a matter of taste than of capability.
 
@@ -197,8 +199,9 @@ On paper, each person draws their ideal folder tree: what are your areas of work
 #### References
 
 - Maranhão Filho, É. (2025, July 17). *Are we going back to the terminal?*. efrem.io. <https://efrem.io/blog/en/are-we-going-back-to-the-terminal/>
+- Maranhão Filho, É. (2026, November 17). *Coding agents are becoming a commodity*. efrem.io. <https://efrem.io/blog/en/coding-agents-are-becoming-a-commodity/>
 - Zeff, M. (2025, July 28). Anthropic unveils new rate limits to curb Claude Code power users. *TechCrunch*. <https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/>
 
-*Notes:* The vendor that introduced weekly limits is Anthropic (Zeff, 2025). The usage numbers in this chapter come from my own routine: in November 2026, the three subscriptions added up to about R$ 2,000 a month, with Brazil's monthly minimum wage at R$ 1,621.
+*Notes:* The vendor that introduced weekly limits is Anthropic (Zeff, 2025). The usage numbers in this chapter come from my own routine: in November 2026, the three subscriptions added up to about R$ 2,000 a month, with Brazil's monthly minimum wage at R$ 1,621. The account of testing switches across agents and comparing cloud environments, mobile versions, execution styles, and ecosystems refers to the author's use of Claude Code, Codex, and Gemini (Antigravity CLI) and the discussion around the post cited in the references.
 
 </div>

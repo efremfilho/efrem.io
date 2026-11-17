@@ -9,7 +9,7 @@ part: 3
 permalink: /ia/alem-do-texto/
 interactive: "quatro conversões e o que perguntar a cada uma"
 piece: "a regra do que pode ser gravado e por quanto tempo fica guardado"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -20,7 +20,7 @@ O teste de comunicação reservado lá atrás não escolheu um formato vencedor:
 Lia pediu a um agente transcrições e resumos por família. Caio revisou um deles com Bia: onde ela dizia "talvez tenha mudado de turno", o resumo afirmava que a estudante tinha mudado; outra frase aparecia como fala da mãe, mas era uma interpretação de Bia. Voltar ao áudio resolveu aquelas dúvidas. Resolveria as dos registros que ninguém conseguisse revisar naquele dia? Bia queria manter a voz para não perder contexto; Caio queria um registro curto para o atendimento seguir. O que precisava chegar à próxima pessoa: o que foi dito, o que foi entendido ou o que ficou por conferir?
 </div>
 
-Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do contexto: às vezes falo, quase sempre para pensar alto. Mas ainda prefiro escrever. Escrevendo, eu penso antes de enviar. A máquina passou a aceitar o mundo no formato em que ele acontece. O uso que mais me serve é dos mais simples: compartilho a tela com um assistente de voz e peço que me guie numa configuração que eu não domino. "Clique no menu da esquerda. Está vendo o botão à direita?" É um suporte técnico que enxerga o que eu estou enxergando.
+Por muito tempo eu só consegui usar IA generativa profissionalmente com texto — cheguei a [perguntar em público se estava perdendo alguma coisa](/blog/pt/am-i-missing-out-on-multimodal-ai/). Hoje [gravo conversas para pensar depois](/blog/pt/recording-calls-to-think-with-claude/). Falar com a máquina, para mim, depende do momento do trabalho. [Passei a falar bem mais com agentes](/blog/pt/coding-agents-are-becoming-a-commodity/) e fui encontrando meu processo multimodal: falo para fazer *brainstorm*, e paro para escrever quando preciso pensar antes de enviar — principalmente em revisões. A máquina passou a aceitar o mundo no formato em que ele acontece. O uso que mais me serve é dos mais simples: compartilho a tela com um assistente de voz e peço que me guie numa configuração que eu não domino. "Clique no menu da esquerda. Está vendo o botão à direita?" É um suporte técnico que enxerga o que eu estou enxergando.
 
 Isso tem nome — modelos **multimodais** — e levanta uma pergunta antes de qualquer outra.
 
@@ -168,10 +168,11 @@ Em grupos: (1) gravem um minuto de conversa com pelo menos três nomes próprios
 
 - HO, Jonathan; JAIN, Ajay; ABBEEL, Pieter. **Denoising diffusion probabilistic models**. arXiv, 2020. Disponível em: <https://arxiv.org/abs/2006.11239>. Acesso em: 15 nov. 2026.
 - KOENECKE, Allison *et al.* **Careless Whisper**: speech-to-text hallucination harms. [*S. l.*]: arXiv, 2024. DOI: <https://doi.org/10.48550/arXiv.2402.08021>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Estou perdendo algo com IA multimodal?**. [*S. l.*]: efrem.io, 27 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/am-i-missing-out-on-multimodal-ai/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Over-engineering: uma confissão**. [*S. l.*]: efrem.io, 22 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/over-engineering-a-confession/>. Acesso em: 13 nov. 2026.
-- MARANHÃO FILHO, Éfrem. **Um vacilo do speech-to-text que mostra de onde veio o treinamento**. [*S. l.*]: efrem.io, 17 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/a-speech-to-text-slip/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Agentes para codar estão virando commodity**. [*S. l.*]: efrem.io, 17 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/coding-agents-are-becoming-a-commodity/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Estou perdendo algo com IA multimodal?**. [*S. l.*]: efrem.io, 27 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/am-i-missing-out-on-multimodal-ai/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Gravar a call para pensar junto com o Claude**. [*S. l.*]: efrem.io, 18 ago. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/recording-calls-to-think-with-claude/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Over-engineering: uma confissão**. [*S. l.*]: efrem.io, 22 out. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/over-engineering-a-confession/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Um vacilo do speech-to-text que mostra de onde veio o treinamento**. [*S. l.*]: efrem.io, 17 jan. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/a-speech-to-text-slip/>. Acesso em: 17 nov. 2026.
 - RADFORD, Alec et al. **Robust speech recognition via large-scale weak supervision**. arXiv, 2022. Disponível em: <https://arxiv.org/abs/2212.04356>. Acesso em: 15 nov. 2026.
 
 *Notas:* Radford et al. (2022) e Ho, Jain e Abbeel (2020) exemplificam mecanismos diferentes para transcrição e geração de imagens. O chuvisco é uma analogia didática para a remoção de ruído. O relato de excesso de complexidade está documentado no post do autor, citado nas referências.

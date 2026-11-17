@@ -9,7 +9,7 @@ part: 2
 permalink: /ia/como-organizo/
 interactive: "anatomia de um ambiente de trabalho"
 piece: "pastas por município e chaves em ordem"
-last_modified: 2026-11-16
+last_modified: 2026-11-17
 ---
 
 <div class="g-lia" markdown="1">
@@ -53,7 +53,7 @@ Fui para o **terminal**: aquela tela preta de texto que lembra o DOS. As ferrame
 
 Confesso a ironia: tempos atrás eu [reclamei que estávamos voltando para o terminal](/blog/pt/are-we-going-back-to-the-terminal/) e jogando fora décadas de trabalho em interface. Continuo achando que, para a maioria das pessoas, uma boa interface vence. Para mim, hoje, a caixinha venceu.
 
-Você **não precisa** do terminal para aplicar nada deste guia. Os mesmos produtos têm aplicativo e versão web, e a lógica é igual. Eu mesmo tenho migrado: uso cada vez mais a versão web e o celular, e estou a um passo de ditar em vez de digitar — coisa que jurei que não faria. Já estou me preparando para morder a língua.
+Você **não precisa** do terminal para aplicar nada deste guia. Os mesmos produtos têm aplicativo e versão web, e a lógica é igual. Eu mesmo tenho migrado: uso mais a versão web e o celular, e [mordi a língua com a voz](/blog/pt/coding-agents-are-becoming-a-commodity/) — passei a falar bem mais com agentes, mas descobri um recorte claro: falo quando quero fazer *brainstorm* e paro para escrever quando preciso revisar com calma.
 
 ## Na minha máquina ou na nuvem?
 
@@ -61,6 +61,8 @@ O agente pode trabalhar em dois lugares:
 
 - **Na minha máquina**: abre a pasta do projeto e trabalha ali. Rápido, e os arquivos ficam comigo. É o meu padrão.
 - **Em um ambiente na nuvem**: o fornecedor da IA liga uma máquina temporária, baixa o repositório, trabalha e me devolve um pull request. Uso quando quero tocar o trabalho pelo celular, deixar algo rodando durante a noite ou manter um projeto de empresa isolado da minha máquina.
+
+É aí, inclusive, que a diferença entre ferramentas aparece mais hoje do que na qualidade do modelo: a experiência no celular e a facilidade de configurar esse ambiente na nuvem variam muito. Ainda não migrei de vez para uma ferramenta cujo terminal eu estava curtindo justamente porque a versão móvel era ruim e faltava um bom ambiente na nuvem — enquanto outra, que eu antes odiava, acabou se mostrando excelente na hora de configurar esse ambiente remoto.
 
 Um ambiente desses é configurado uma vez e tem quatro partes:
 
@@ -118,9 +120,9 @@ Para projeto pessoal e inofensivo eu libero tudo. Para projeto de empresa, lista
 
 ## Uma ferramenta só, ou várias?
 
-Eu pago mais de uma e testo várias. Quando estouro o limite de uma, passo para outra. Mas é numa só que eu passo o dia, porque prefiro ser muito bom em uma a ser mediano em todas. O pior cenário, para mim, é trocar tanto que não se sabe usar nenhuma direito.
+Eu pago mais de uma, testo várias e hoje mantenho três no fluxo — mas minha regra continua a mesma: prefiro ser muito bom em uma do que mediano nas três. O pior cenário, para mim, é espalhar tanto a atenção que não se sabe usar nenhuma direito. A minha principal segue sendo a do dia a dia, pelo ecossistema como um todo; as outras duas entram em momentos específicos, aproveitando o estilo de cada uma: uma mais rápida e proativa para tarefas arriscadas, e outra mais detalhista nas revisões — de um fornecedor que eu até demorei a encarar como sério, mas que tem a vantagem de um ecossistema de trabalho já integrado.
 
-O que me deixa tranquilo com essa escolha é a regra do capítulo anterior: o conhecimento mora no repositório, em texto simples. Se eu precisar mudar, mudo. Estranho por algumas horas e sigo. Para mim, virou *commodity*.
+O que torna isso viável é a regra do capítulo anterior: o conhecimento mora no repositório, em texto simples. Se eu precisar mudar, mudo. Estranho por algumas horas e sigo. Para mim, não só os modelos — os próprios agentes para codar viraram *commodity*, e o que ainda diferencia um do outro está no estilo de execução e no ecossistema em volta.
 
 Para quem está começando, a recomendação é o contrário de "escolha a melhor": teste mais de uma com a mesma tarefa real, fique com a que conversa melhor com o seu jeito, e fique boa nela. A diferença entre os modelos de ponta, hoje, é mais de gosto do que de capacidade.
 
@@ -196,9 +198,10 @@ No papel, cada pessoa desenha sua árvore de pastas ideal: quais são as frentes
 
 #### Referências
 
-- MARANHÃO FILHO, Éfrem. **Estamos voltando para o terminal?**. [*S. l.*]: efrem.io, 17 jul. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/are-we-going-back-to-the-terminal/>. Acesso em: 13 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Agentes para codar estão virando commodity**. [*S. l.*]: efrem.io, 17 nov. 2026. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/coding-agents-are-becoming-a-commodity/>. Acesso em: 17 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Estamos voltando para o terminal?**. [*S. l.*]: efrem.io, 17 jul. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/are-we-going-back-to-the-terminal/>. Acesso em: 17 nov. 2026.
 - ZEFF, Maxwell. Anthropic unveils new rate limits to curb Claude Code power users. **TechCrunch**, [*s. l.*], 28 jul. 2025. Disponível em: <https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/>. Acesso em: 13 nov. 2026.
 
-*Notas:* O fornecedor que criou limites semanais é a Anthropic (Zeff, 2025). Os números de uso deste capítulo são da minha própria rotina: em novembro de 2026, as três assinaturas somavam cerca de R$ 2.000 por mês, com o salário mínimo em R$ 1.621.
+*Notas:* O fornecedor que criou limites semanais é a Anthropic (Zeff, 2025). Os números de uso deste capítulo são da minha própria rotina: em novembro de 2026, as três assinaturas somavam cerca de R$ 2.000 por mês, com o salário mínimo em R$ 1.621. O relato sobre testar a troca entre agentes e comparar ambiente na nuvem, versão móvel, estilo de execução e ecossistema refere-se ao uso pelo autor de Claude Code, Codex e Gemini (Antigravity CLI) e à discussão no post citado nas referências.
 
 </div>
