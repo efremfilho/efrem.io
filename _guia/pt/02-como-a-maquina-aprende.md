@@ -1,15 +1,15 @@
 ---
 title: "Como aprendeu isso — e o que ficou de fora?"
-subtitle: "Dados, redes neurais, treino e generalização."
+subtitle: "Dados, redes neurais, treino, generalização e quem dá a resposta."
 description: "Como exemplos viram ajustes, ajustes se combinam em redes e uma máquina aprende padrões. Sem precisar resolver a equação."
 lang: pt-BR
 ref: how-machines-learn
 order: 2
 part: 1
 permalink: /ia/como-a-maquina-aprende/
-interactive: "desenhe pixels e treine um modelo"
+interactive: "desenhe pixels, treine um modelo, agrupe pontos e recompense um agente"
 piece: "o que a planilha tem × o que a equipe sabe"
-last_modified: 2026-11-16
+last_modified: 2026-11-20
 ---
 
 <div class="g-lia" markdown="1">
@@ -107,6 +107,46 @@ No experimento, o painel tem só dois ajustes: um inclina a reta; o outro a sobe
 
 Diminuir o erro nesse conjunto é uma parte do trabalho. A outra é [conferir com exemplos que ficaram fora do treino](https://www.3blue1brown.com/lessons/gradient-descent/). No caso do Caio: acertar o passado da planilha não prova que o modelo vai ajudar uma família amanhã. E quem escolheu medir acerto, em vez de medir quantas famílias receberam ajuda? Essa escolha não saiu da equação.
 
+## Quem dá a resposta?
+
+No experimento da reta, cada exemplo trazia a resposta: as horas de estudo e a nota que aconteceu. Nem sempre é assim. Quando resumi a [minha primeira semana de estudos de IA](/blog/pt/week-1-of-ai-studies-a-lot-of-math/), separei o aprendizado de máquina em três famílias. Dá para ler as três pela mesma pergunta: quem dá a resposta?
+
+- **Supervisionado:** os exemplos chegam com a resposta, o gabarito. O modelo procura uma "fórmula" para prever ou classificar casos novos. A reta acima é desse tipo.
+- **Não supervisionado:** não há gabarito. O algoritmo procura padrões escondidos nos dados, como grupos.
+- **Por reforço:** não há resposta pronta, só recompensa ou punição depois de cada tentativa. Naquele resumo, admiti que era o que eu menos sabia e menos lembrava da graduação.
+
+<div class="g-lia g-lia-missao" markdown="1">
+**Provocação:** nos três experimentos abaixo, procure o momento em que o algoritmo erra com toda a confiança. Quem percebeu o erro: ele ou você? E o que você sabia que ele não sabia?
+</div>
+
+## E quando os exemplos já trazem a resposta?
+
+Classificar é prever uma categoria em vez de um número. Um dos jeitos mais simples é o dos **k vizinhos mais próximos**: para responder num lugar novo, o modelo procura os k exemplos de treino mais perto e [fica com a resposta da maioria](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification). Não há equação para ajustar. O modelo guarda os exemplos e pergunta aos vizinhos.
+
+O experimento guarda parte dos pontos para a prova, como pedia a seção anterior. Comece com k = 1: cada ponto de treino é o seu próprio vizinho mais próximo, então o acerto no treino sai perfeito, inclusive nos rótulos errados. Um modelo que só [repete as respostas que acabou de ver tira nota máxima e não prevê nada útil em dados novos](https://scikit-learn.org/stable/modules/cross_validation.html). É o **sobreajuste** (*overfitting*), o "decorar o gabarito" da analogia da prova. Aumente o k: [mais vizinhos abafam o ruído, mas deixam a fronteira menos nítida](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification). Depois, nas luas, troque para o modelo de retas.
+
+<div data-widget="vizinhos"></div>
+
+## E quando ninguém tem o gabarito?
+
+Tire as cores dos pontos. Sobram posições, e a pergunta muda: existem grupos aqui? O **k-means** é um algoritmo clássico para isso. Você diz quantos grupos quer, e agora o k é outro: não é o número de vizinhos, é o número de grupos. O algoritmo [escolhe k pontos de partida, leva cada ponto ao centro mais próximo, move cada centro para a média dos seus pontos e repete até os centros pararem de se mexer](https://scikit-learn.org/stable/modules/clustering.html#k-means).
+
+Ele sempre entrega k grupos. Não diz se o k faz sentido: [num caso real, não existe um número verdadeiro de grupos; ele precisa ser decidido com critérios dos dados e com o conhecimento do objetivo](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_assumptions.html). Como mede distância até um centro, o k-means parte do princípio de que os grupos são compactos e mais ou menos redondos, e [responde mal a grupos alongados ou de formato irregular](https://scikit-learn.org/stable/modules/clustering.html#k-means). O começo sorteado também pesa: ele [sempre termina, mas pode parar numa solução pior](https://scikit-learn.org/stable/modules/clustering.html#k-means), e por isso costuma rodar várias vezes.
+
+<div data-widget="kmeans"></div>
+
+No caso do Caio, um agrupamento das estudantes em quatro grupos sairia com fronteiras tão nítidas quanto as do experimento. Quem daria nome a cada grupo? E o que esse nome passaria a decidir?
+
+## E quando só existe recompensa?
+
+No terceiro jeito, ninguém mostra a resposta nem os grupos. Um agente age, recebe pontos e aprende [por tentativa e erro: recompensar ou punir um comportamento torna mais provável que ele se repita ou seja abandonado](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html). O objetivo do agente é [somar o máximo de recompensa](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html), e [a função de recompensa é peça crítica](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html): alguém escreve quanto vale cada coisa.
+
+No experimento, o agente começa sem saber nada da grade. Treine e veja as setas aparecerem. Depois abra o mapa da moedinha e mude os números: dê mais valor à moedinha, ou tire o custo de cada passo, e treine de novo.
+
+<div data-widget="reforco"></div>
+
+O agente não trapaceou. Fez exatamente o que a conta mandava. É a mesma pergunta do treino da reta, com outra roupa: quem escolheu o que conta como acerto?
+
 ## E em um modelo de linguagem, o que muda?
 
 Quando eu fazia iniciação científica, uma rede com quatro camadas e dezesseis neurônios parava o laboratório por um dia inteiro para rodar. A ideia de ajustar números continua. O tamanho e a organização das redes mudaram muito — não basta esticar aquela reta.
@@ -134,6 +174,7 @@ Daí vem a ponte: **a rede que recebe pixels pode aprender padrões de imagem; a
 - **Representação:** transformar uma situação em dados exige escolher o que entra e o que fica de fora.
 - **Treino:** ajustar parâmetros com exemplos e um critério de erro. Uma rede combina muitas operações simples.
 - **Generalização:** acertar exemplos conhecidos não basta; importa o comportamento em situações que não estavam no treino.
+- **Quem dá a resposta:** exemplos com gabarito (supervisionado), dados sem gabarito (não supervisionado) ou recompensa depois de cada tentativa (reforço). Nos três, alguém escolhe o que conta como acerto.
 
 Se o treino vai bem e o uso vai mal, que parte você investigaria primeiro — e por quê?
 
@@ -159,6 +200,7 @@ Distribua 10 cartões com frutas desenhadas (ou projete fotos). Peça que a turm
 - Na analogia da prova, o que seria "decorar o gabarito"? (É o *overfitting*: ir bem no treino e mal no mundo.)
 - Quem escolheu as características do seu modelo de frutas? O que essa escolha deixou de fora?
 - Se o modelo só reduz erro em relação aos exemplos, o que acontece quando os exemplos estão errados?
+- Que número do seu dia a dia funciona como a moedinha do experimento de reforço: fácil de juntar e longe do objetivo?
 
 </details>
 
@@ -167,13 +209,21 @@ Distribua 10 cartões com frutas desenhadas (ou projete fotos). Peça que a turm
 #### Referências
 
 - 3BLUE1BROWN. **Neural networks**. [*S. l.*], [2017-]. Série de vídeos. Disponível em: <https://www.3blue1brown.com/topics/neural-networks>. Acesso em: 13 nov. 2026.
+- ACHIAM, Joshua. **Part 1**: Key Concepts in RL. *In*: ACHIAM, Joshua. **Spinning Up in Deep Reinforcement Learning**. [*S. l.*]: OpenAI, 2018. Disponível em: <https://spinningup.openai.com/en/latest/spinningup/rl_intro.html>. Acesso em: 20 nov. 2026.
+- MARANHÃO FILHO, Éfrem. **Semana 1 de estudos de IA: muita matemática, pouco para produto**. [*S. l.*]: efrem.io, 30 set. 2025. Publicado originalmente no LinkedIn. Disponível em: <https://efrem.io/blog/pt/week-1-of-ai-studies-a-lot-of-math/>. Acesso em: 17 nov. 2026.
 - SANDERSON, Grant. **But what is a neural network?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 5 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/neural-networks/>. Vídeo correspondente: <https://www.youtube.com/watch?v=aircAruvnKk>. Acesso em: 15 nov. 2026.
 - SANDERSON, Grant. **Gradient descent, how neural networks learn**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 16 out. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/gradient-descent/>. Acesso em: 15 nov. 2026.
 - SANDERSON, Grant. **Large language models explained briefly**. Adaptação textual de Justin Sun. [*S. l.*]: 3Blue1Brown, 20 nov. 2024. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/mini-llm/>. Vídeo correspondente: <https://www.youtube.com/watch?v=LPZh9BOjkQs>. Acesso em: 15 nov. 2026.
 - SANDERSON, Grant. **What is backpropagation really doing?**. Adaptação textual de Josh Pullen. [*S. l.*]: 3Blue1Brown, 3 nov. 2017. Lição ilustrada. Disponível em: <https://www.3blue1brown.com/lessons/backpropagation/>. Acesso em: 15 nov. 2026.
+- SCIKIT-LEARN DEVELOPERS. **Cross-validation**: evaluating estimator performance. *In*: SCIKIT-LEARN DEVELOPERS. **scikit-learn User Guide**. [*S. l.*], [s. d.]. Disponível em: <https://scikit-learn.org/stable/modules/cross_validation.html>. Acesso em: 20 nov. 2026.
+- SCIKIT-LEARN DEVELOPERS. **Demonstration of k-means assumptions**. [*S. l.*], [s. d.]. Exemplo da documentação. Disponível em: <https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_assumptions.html>. Acesso em: 20 nov. 2026.
+- SCIKIT-LEARN DEVELOPERS. **K-means**. *In*: SCIKIT-LEARN DEVELOPERS. **scikit-learn User Guide**: Clustering. [*S. l.*], [s. d.]. Disponível em: <https://scikit-learn.org/stable/modules/clustering.html#k-means>. Acesso em: 20 nov. 2026.
+- SCIKIT-LEARN DEVELOPERS. **Nearest Neighbors Classification**. *In*: SCIKIT-LEARN DEVELOPERS. **scikit-learn User Guide**. [*S. l.*], [s. d.]. Disponível em: <https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification>. Acesso em: 20 nov. 2026.
 
 *Notas:* As lições de Grant Sanderson, do 3Blue1Brown, dão a base visual: algarismos manuscritos e redes em camadas (*But what is a neural network?*); ajuste pelo erro e teste com exemplos separados (*Gradient descent*); contribuição de cada parâmetro para o erro (*Backpropagation*). A combinação de traços e curvas é uma motivação para a arquitetura, não uma descrição garantida do que cada neurônio aprendeu. O painel de ajustes é uma analogia didática para parâmetros. O experimento da reta ilustra uma regressão simples, não uma rede neural completa. O relato da iniciação científica é do autor.
 
 Para continuar pela [série completa](https://www.3blue1brown.com/topics/neural-networks), vale acompanhar primeiro as imagens e as perguntas; as contas podem ficar para outra leitura. Aqui o percurso vai da representação ao treino e, no capítulo seguinte, ao contexto e à geração de linguagem. As datas das referências são as das lições escritas, que também apontam para os vídeos correspondentes.
+
+A divisão em supervisionado, não supervisionado e por reforço vem do resumo de estudos do autor, citado no texto. A votação dos vizinhos, o sobreajuste, o k-means e suas suposições seguem a documentação do scikit-learn; a definição de aprendizado por reforço segue Achiam (2018). Os trechos dessas documentações foram conferidos nos arquivos-fonte das páginas, nos repositórios públicos dos projetos. Os três experimentos de tipos de aprendizado são ilustrações didáticas com dados sorteados. No de vizinhos, a prova usa 30% dos pontos e os rótulos trocados atingem só o treino; o modelo de retas é uma regressão logística ajustada por descida do gradiente. O gabarito do k-means existe só porque o próprio experimento gerou os grupos. A grade usa *Q-learning* em tabela, com taxa de aprendizado 0,5 e desconto 0,95, e a moedinha paga toda vez que o agente entra na casa dela.
 
 </div>

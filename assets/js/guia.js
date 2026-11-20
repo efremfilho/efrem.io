@@ -41,6 +41,98 @@
 		return el;
 	}
 
+	/* ---------- Ajudantes dos experimentos com pontos (cap. 2) ---------- */
+	// Números sorteados com semente: os mesmos dados a cada visita.
+	function rng(seed) {
+		let a = seed >>> 0;
+		return () => {
+			a = (a + 0x6D2B79F5) >>> 0;
+			let x = Math.imul(a ^ (a >>> 15), a | 1);
+			x ^= x + Math.imul(x ^ (x >>> 7), x | 61);
+			return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+		};
+	}
+	const gauss = (r) => { let u = 0; while (!u) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); };
+	const clamp = (v) => Math.max(0, Math.min(100, Math.round(v)));
+	const r2 = (v) => Math.round(v * 100) / 100;
+	const esc = (str) => String(str).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+	// Formato do ponto por grupo (círculo, quadrado, triângulo, losango…): a cor nunca fala sozinha.
+	// x e y vão de 0 a 100, com y para cima; o SVG desenha com y para baixo.
+	function shape(cls, x, y, r, g) {
+		x = r2(x); y = r2(100 - y);
+		const poly = (list) => `<polygon class="${cls}" points="${list.map((q) => r2(x + q[0] * r) + ',' + r2(y + q[1] * r)).join(' ')}"/>`;
+		switch (g > 0 ? g % 7 : 0) {
+			case 1: return poly([[-0.9, -0.9], [0.9, -0.9], [0.9, 0.9], [-0.9, 0.9]]);
+			case 2: return poly([[0, -1.25], [1.1, 0.8], [-1.1, 0.8]]);
+			case 3: return poly([[0, -1.3], [1.3, 0], [0, 1.3], [-1.3, 0]]);
+			case 4: return poly([[0, 1.25], [1.1, -0.8], [-1.1, -0.8]]);
+			case 5: return poly([[-0.4, -1.2], [0.4, -1.2], [0.4, -0.4], [1.2, -0.4], [1.2, 0.4], [0.4, 0.4], [0.4, 1.2], [-0.4, 1.2], [-0.4, 0.4], [-1.2, 0.4], [-1.2, -0.4], [-0.4, -0.4]]);
+			case 6: return poly([[0, -1.15], [1, -0.58], [1, 0.58], [0, 1.15], [-1, 0.58], [-1, -0.58]]);
+			default: return `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}"/>`;
+		}
+	}
+	// Arrastar, criar e apagar pontos num gráfico de 0 a 100. Quem chama guarda os pontos e redesenha.
+	function pointEditor(svg, o) {
+		const HIT = 3.6;
+		let drag = null, cur = -1;
+		const hover = (i, force) => { if (force || i !== cur) { cur = i; o.onHover(i); } };
+		function toData(ev) {
+			const ctm = svg.getScreenCTM && svg.getScreenCTM();
+			if (!ctm || !svg.createSVGPoint) return null;
+			const q = svg.createSVGPoint();
+			q.x = ev.clientX; q.y = ev.clientY;
+			const d = q.matrixTransform(ctm.inverse());
+			return [d.x, 100 - d.y];
+		}
+		function nearest(d) {
+			let bi = -1, bd = HIT * HIT;
+			o.points().forEach((p, i) => { const dd = (p.x - d[0]) * (p.x - d[0]) + (p.y - d[1]) * (p.y - d[1]); if (dd <= bd) { bd = dd; bi = i; } });
+			return bi;
+		}
+		svg.addEventListener('pointerdown', (ev) => {
+			const d = toData(ev);
+			if (!d) return;
+			ev.preventDefault();
+			drag = { i: nearest(d), d0: d, moved: false };
+			try { svg.setPointerCapture(ev.pointerId); } catch (e) { /* segue sem captura */ }
+		});
+		svg.addEventListener('pointermove', (ev) => {
+			const d = toData(ev);
+			if (!d) return;
+			if (!drag) { hover(nearest(d)); return; }
+			if (!drag.moved && Math.hypot(d[0] - drag.d0[0], d[1] - drag.d0[1]) < 1.5) return;
+			drag.moved = true;
+			if (drag.i < 0) return;
+			const p = o.points()[drag.i];
+			p.x = clamp(d[0]); p.y = clamp(d[1]);
+			hover(drag.i, true);
+			o.onMove(drag.i);
+		});
+		svg.addEventListener('pointerup', (ev) => {
+			if (!drag) return;
+			const d = toData(ev), g = drag;
+			drag = null;
+			if (g.moved) return;
+			if (g.i >= 0) { o.onRemove(g.i); hover(-1, true); }
+			else if (d && d[0] >= 0 && d[0] <= 100 && d[1] >= 0 && d[1] <= 100 && o.onAdd(clamp(d[0]), clamp(d[1]))) hover(o.points().length - 1, true);
+		});
+		svg.addEventListener('pointercancel', () => { drag = null; });
+		svg.addEventListener('pointerleave', () => { if (!drag) hover(-1); });
+	}
+	// Lê uma lista colada (de planilha ou à mão): números separados por ponto e vírgula, tab, espaço ou vírgula.
+	function parseRows(txt, max) {
+		const rows = [];
+		txt.split(/\r?\n/).forEach((line) => {
+			line = line.trim();
+			if (!line || line[0] === '#' || rows.length >= max) return;
+			let tok = line.split(/[;\t ]+/).map((x) => x.replace(/,+$/, '')).filter(Boolean);
+			if (tok.length === 1) tok = tok[0].split(',');
+			const v = tok.map((x) => parseFloat(x.replace(',', '.')));
+			if (v.length >= 2 && isFinite(v[0]) && isFinite(v[1])) rows.push(v);
+		});
+		return rows;
+	}
+
 	const W = {};
 
 	/* ---------- Cap. 1: regra escrita ou aprendida? ---------- */
@@ -302,25 +394,10 @@
 		frame(el, t.title, t.sub);
 		el.classList.add('gw-kmeans');
 
-		const KMAX = 7, MAXPTS = 400, HIT = 3.6, STARTS = 10, MINIS = [2, 3, 4, 5, 6, 7];
+		const KMAX = 7, MAXPTS = 400, STARTS = 10, MINIS = [2, 3, 4, 5, 6, 7];
 		const calm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 		const st = { preset: 'blobs', m: 4, spread: 6, dataSeed: 1, k: 4, gab: true, runSeed: 1 };
-		let P = [], best = [], run = null, timer = null, hover = -1, drag = null, queued = false;
-
-		/* ---- números sorteados com semente: os mesmos dados a cada visita ---- */
-		function rng(seed) {
-			let a = seed >>> 0;
-			return () => {
-				a = (a + 0x6D2B79F5) >>> 0;
-				let x = Math.imul(a ^ (a >>> 15), a | 1);
-				x ^= x + Math.imul(x ^ (x >>> 7), x | 61);
-				return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
-			};
-		}
-		const gauss = (r) => { let u = 0; while (!u) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); };
-		const clamp = (v) => Math.max(0, Math.min(100, Math.round(v)));
-		const r2 = (v) => Math.round(v * 100) / 100;
-		const esc = (str) => String(str).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+		let P = [], best = [], run = null, timer = null, hover = -1, queued = false;
 
 		function generate() {
 			const r = rng(st.dataSeed * 7919 + st.spread * 131 + st.m * 17 + Object.keys(t.presets).indexOf(st.preset) * 1009);
@@ -493,19 +570,7 @@
 			return cs.map((poly, j) => (poly.length > 2 ? `<polygon class="gk-area f${j}" points="${pts(poly)}"/>` : '')).join('') +
 				cs.map((poly) => (poly.length > 2 ? `<polygon class="gk-edge" points="${pts(poly)}"/>` : '')).join('');
 		}
-		function mark(cls, p, r) {
-			const x = X(p.x), y = Y(p.y);
-			const poly = (list) => `<polygon class="${cls}" points="${list.map((q) => r2(x + q[0] * r) + ',' + r2(y + q[1] * r)).join(' ')}"/>`;
-			switch (st.gab ? p.g % 7 : 0) {
-				case 1: return poly([[-0.9, -0.9], [0.9, -0.9], [0.9, 0.9], [-0.9, 0.9]]);
-				case 2: return poly([[0, -1.25], [1.1, 0.8], [-1.1, 0.8]]);
-				case 3: return poly([[0, -1.3], [1.3, 0], [0, 1.3], [-1.3, 0]]);
-				case 4: return poly([[0, 1.25], [1.1, -0.8], [-1.1, -0.8]]);
-				case 5: return poly([[-0.4, -1.2], [0.4, -1.2], [0.4, -0.4], [1.2, -0.4], [1.2, 0.4], [0.4, 0.4], [0.4, 1.2], [-0.4, 1.2], [-0.4, 0.4], [-1.2, 0.4], [-1.2, -0.4], [-0.4, -0.4]]);
-				case 6: return poly([[0, -1.15], [1, -0.58], [1, 0.58], [0, 1.15], [-1, 0.58], [-1, -0.58]]);
-				default: return `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}"/>`;
-			}
-		}
+		const mark = (cls, p, r) => shape(cls, p.x, p.y, r, st.gab ? p.g : 0);
 		function drawMain() {
 			let o = '<rect class="gk-frame" x="0" y="0" width="100" height="100"/>';
 			if (run && run.lab) {
@@ -612,20 +677,10 @@
 		el.appendChild(h('details', { class: 'gk-edit' }, [h('summary', { text: t.edit }), h('p', { class: 'gw-note', style: 'margin:.4rem 0', text: t.editHelp }), ta]));
 		el.appendChild(h('p', { class: 'gw-note', text: t.note }));
 
-		function parse(txt) {
-			const list = [];
-			txt.split(/\r?\n/).forEach((line) => {
-				line = line.trim();
-				if (!line || line[0] === '#' || list.length >= MAXPTS) return;
-				let tok = line.split(/[;\t ]+/).map((x) => x.replace(/,+$/, '')).filter(Boolean);
-				if (tok.length === 1) tok = tok[0].split(',');
-				const v = tok.map((x) => parseFloat(x.replace(',', '.')));
-				if (v.length < 2 || !isFinite(v[0]) || !isFinite(v[1])) return;
-				const g = v.length > 2 && isFinite(v[2]) ? Math.round(v[2]) - 1 : -1;
-				list.push({ x: clamp(v[0]), y: clamp(v[1]), g: g >= 0 ? g : -1 });
-			});
-			return list;
-		}
+		const parse = (txt) => parseRows(txt, MAXPTS).map((v) => {
+			const g = v.length > 2 && isFinite(v[2]) ? Math.round(v[2]) - 1 : -1;
+			return { x: clamp(v[0]), y: clamp(v[1]), g: g >= 0 ? g : -1 };
+		});
 		const serialize = () => P.map((p) => `${p.x}; ${p.y}` + (p.g >= 0 ? `; ${p.g + 1}` : '')).join('\n');
 
 		function setK(k) {
@@ -688,53 +743,596 @@
 			});
 		}
 
-		/* ---- arrastar, criar e apagar pontos no gráfico grande ---- */
-		function toData(ev) {
-			const ctm = main.getScreenCTM && main.getScreenCTM();
-			if (!ctm || !main.createSVGPoint) return null;
-			const q = main.createSVGPoint();
-			q.x = ev.clientX; q.y = ev.clientY;
-			const d = q.matrixTransform(ctm.inverse());
-			return [d.x, 100 - d.y];
-		}
-		function nearest(d) {
-			let bi = -1, bd = HIT * HIT;
-			P.forEach((p, i) => { const dd = (p.x - d[0]) * (p.x - d[0]) + (p.y - d[1]) * (p.y - d[1]); if (dd <= bd) { bd = dd; bi = i; } });
-			return bi;
-		}
-		main.addEventListener('pointerdown', (ev) => {
-			const d = toData(ev);
-			if (!d) return;
-			ev.preventDefault();
-			drag = { i: nearest(d), d0: d, moved: false };
-			try { main.setPointerCapture(ev.pointerId); } catch (e) { /* segue sem captura */ }
+		pointEditor(main, {
+			points: () => P,
+			onHover: (i) => { hover = i; showHover(); },
+			onMove: schedule,
+			onRemove: (i) => { P.splice(i, 1); hover = -1; refresh(); },
+			onAdd: (x, y) => { if (P.length >= MAXPTS) return false; P.push({ x, y, g: -1 }); refresh(); return true; }
 		});
-		main.addEventListener('pointermove', (ev) => {
-			const d = toData(ev);
-			if (!d) return;
-			if (!drag) { const i = nearest(d); if (i !== hover) { hover = i; showHover(); } return; }
-			if (!drag.moved && Math.hypot(d[0] - drag.d0[0], d[1] - drag.d0[1]) < 1.5) return;
-			drag.moved = true;
-			if (drag.i < 0) return;
-			const p = P[drag.i];
-			p.x = clamp(d[0]); p.y = clamp(d[1]); hover = drag.i;
-			schedule();
-		});
-		main.addEventListener('pointerup', (ev) => {
-			if (!drag) return;
-			const d = toData(ev), g = drag;
-			drag = null;
-			if (g.moved) return;
-			if (g.i >= 0) { P.splice(g.i, 1); hover = -1; }
-			else if (d && d[0] >= 0 && d[0] <= 100 && d[1] >= 0 && d[1] <= 100 && P.length < MAXPTS) { P.push({ x: clamp(d[0]), y: clamp(d[1]), g: -1 }); hover = P.length - 1; }
-			else return;
-			refresh();
-		});
-		main.addEventListener('pointercancel', () => { drag = null; });
-		main.addEventListener('pointerleave', () => { if (!drag && hover >= 0) { hover = -1; showHover(); } });
 
 		P = generate();
 		refresh();
+	};
+
+	/* ---------- Cap. 2: aprender com gabarito (k vizinhos mais próximos) ---------- */
+	W.vizinhos = function (el) {
+		const t = L({
+			pt: {
+				title: 'Aprender com gabarito: os vizinhos votam',
+				sub: 'Agora cada ponto de treino vem com a resposta: a cor e o formato. Para responder num lugar novo, o modelo procura os k pontos de treino mais perto e fica com a resposta da maioria. Os pontos vazados ficam guardados para a prova: o modelo nunca os vê no treino. Mude o k e os dados: quando ele aprende, e quando só decora?',
+				data: 'Dados',
+				presets: { clouds: 'Duas nuvens', three: 'Três classes', moons: 'Luas', xor: 'Xadrez', rings: 'Anéis' },
+				k: 'Vizinhos que votam (k)', noise: 'Rótulos de treino trocados', spread: 'Espalhamento', reroll: '🎲 Outros dados',
+				model: 'Modelo', knn: 'Vizinhos', line: 'Retas',
+				paint: 'Tocar num espaço vazio cria um ponto de treino da',
+				cls: (c) => `classe ${c}`,
+				train: 'acerto no treino', test: 'acerto na prova',
+				curve: 'Acerto conforme o k',
+				curveTrain: 'treino', curveTest: 'prova',
+				curveNote: 'Com k = 1, o treino sai perfeito por definição. O número que importa é o da prova.',
+				lineNote: 'Este modelo não tem k: ele traça cortes retos e ajusta a inclinação e a posição de cada um, como a reta do experimento anterior.',
+				say: {
+					overfit1: (tr, te, noisy) => `✗ Decorou. Acerta ${tr} no treino e só ${te} na prova. Com k = 1, cada ponto de treino é o seu próprio vizinho mais próximo: o treino sai perfeito por definição` + (noisy ? ', inclusive nos rótulos errados, que viram ilhas no mapa.' : '.'),
+					overfit: (tr, te) => `✗ Decorou. Acerta ${tr} no treino e ${te} na prova: a diferença entre os dois números é o que ele decorou em vez de aprender.`,
+					ok: (te) => `✓ Aprendeu. Acerta ${te} em pontos que não viu no treino, perto do melhor que os vizinhos conseguem com estes dados.`,
+					blurry: (te, kb, tb) => `✗ Borrou. Com tantos vizinhos votando, entram pontos longe demais e a fronteira perde o desenho: ${te} na prova. Com k = ${kb}, a prova chega a ${tb}.`,
+					better: (te, kb, tb) => `Dá para melhorar: com k = ${kb}, a prova sobe de ${te} para ${tb}.`,
+					lineOk: (te, tb, kb) => `✓ Cortes retos chegam perto dos vizinhos aqui: ${te} na prova, contra ${tb} com k = ${kb}.`,
+					lineBad: (te, tb, kb) => `✗ Os cortes retos ficam para trás: ${te} na prova, contra ${tb} dos vizinhos com k = ${kb}. Quando as classes desenham curvas, nenhum corte reto acompanha.`,
+					noTrain: 'Sem pontos de treino, não há o que aprender.',
+					noTest: 'Sem pontos de prova, não dá para saber se ele aprendeu ou decorou.'
+				},
+				readout: (n, m) => `${n} pontos de treino e ${m} de prova. Arraste um ponto para mudar seus números, toque num espaço vazio para criar um ponto de treino, toque num ponto para apagá-lo.`,
+				trainPt: (x, y, c, wrong) => `Ponto de treino (${x}; ${y}) · classe ${c}` + (wrong ? ` · o rótulo foi trocado: o modelo recebeu “classe ${wrong}”` : ''),
+				testPt: (x, y, c, pred, ok) => `Ponto de prova (${x}; ${y}) · classe ${c} · o modelo responde ${pred} ` + (ok ? '✓' : '✗'),
+				legend: 'Cheio: treino, com a resposta que o modelo recebeu. Vazado: prova. ✕: prova errada. Fundo: o que o modelo responderia em cada lugar.',
+				edit: 'Ver e mudar os números',
+				editHelp: 'Uma linha por ponto: característica 1; característica 2; classe (1 a 3); 1 para prova ou 0 para treino. Valores de 0 a 100.',
+				x: 'característica 1 →', y: 'característica 2 →',
+				aria: 'Gráfico de dispersão com as regiões que o modelo atribui a cada classe',
+				note: 'Os rótulos trocados imitam erro de anotação: alguém marcou a resposta errada. O modelo não tem como saber; ele aprende o que recebeu. A prova usa sempre a resposta certa.'
+			},
+			en: {
+				title: 'Learning with an answer key: the neighbors vote',
+				sub: 'Now every training point comes with its answer: the color and the shape. To answer at a new spot, the model finds the k nearest training points and goes with the majority. The hollow points are held back for the test: the model never sees them in training. Change the k and the data: when does it learn, and when does it just memorize?',
+				data: 'Data',
+				presets: { clouds: 'Two clouds', three: 'Three classes', moons: 'Moons', xor: 'Checkerboard', rings: 'Rings' },
+				k: 'Neighbors who vote (k)', noise: 'Swapped training labels', spread: 'Spread', reroll: '🎲 New data',
+				model: 'Model', knn: 'Neighbors', line: 'Lines',
+				paint: 'Tapping an empty spot adds a training point of',
+				cls: (c) => `class ${c}`,
+				train: 'training accuracy', test: 'test accuracy',
+				curve: 'Accuracy by k',
+				curveTrain: 'training', curveTest: 'test',
+				curveNote: 'With k = 1, training is perfect by definition. The number that matters is the test.',
+				lineNote: 'This model has no k: it draws straight cuts and adjusts the slope and position of each one, like the line in the previous experiment.',
+				say: {
+					overfit1: (tr, te, noisy) => `✗ It memorized. ${tr} right in training and only ${te} on the test. With k = 1, each training point is its own nearest neighbor: training is perfect by definition` + (noisy ? ', even on the wrong labels, which become islands on the map.' : '.'),
+					overfit: (tr, te) => `✗ It memorized. ${tr} right in training and ${te} on the test: the gap between the two numbers is what it memorized instead of learning.`,
+					ok: (te) => `✓ It learned. ${te} right on points it never saw in training, close to the best the neighbors can do with this data.`,
+					blurry: (te, kb, tb) => `✗ Blurred. With so many neighbors voting, points that are too far away get a say and the border loses its shape: ${te} on the test. With k = ${kb}, the test reaches ${tb}.`,
+					better: (te, kb, tb) => `It can do better: with k = ${kb}, the test goes from ${te} to ${tb}.`,
+					lineOk: (te, tb, kb) => `✓ Straight cuts come close to the neighbors here: ${te} on the test, against ${tb} with k = ${kb}.`,
+					lineBad: (te, tb, kb) => `✗ Straight cuts fall behind: ${te} on the test, against ${tb} for the neighbors with k = ${kb}. When the classes draw curves, no straight cut can follow them.`,
+					noTrain: 'With no training points, there is nothing to learn.',
+					noTest: 'With no test points, there is no way to tell whether it learned or memorized.'
+				},
+				readout: (n, m) => `${n} training points and ${m} test points. Drag a point to change its numbers, tap an empty spot to add a training point, tap a point to delete it.`,
+				trainPt: (x, y, c, wrong) => `Training point (${x}; ${y}) · class ${c}` + (wrong ? ` · its label was swapped: the model got “class ${wrong}”` : ''),
+				testPt: (x, y, c, pred, ok) => `Test point (${x}; ${y}) · class ${c} · the model answers ${pred} ` + (ok ? '✓' : '✗'),
+				legend: 'Filled: training, with the answer the model received. Hollow: test. ✕: wrong on the test. Background: what the model would answer at each spot.',
+				edit: 'See and change the numbers',
+				editHelp: 'One line per point: feature 1; feature 2; class (1 to 3); 1 for test or 0 for training. Values from 0 to 100.',
+				x: 'feature 1 →', y: 'feature 2 →',
+				aria: 'Scatter plot with the regions the model assigns to each class',
+				note: 'Swapped labels imitate annotation mistakes: someone marked the wrong answer. The model has no way to know; it learns what it was given. The test always uses the right answer.'
+			}
+		});
+		frame(el, t.title, t.sub);
+		el.classList.add('gw-vizinhos');
+
+		const KMAX = 25, GRID = 40, MAXPTS = 400, NCLS = 3;
+		const st = { preset: 'clouds', spread: 8, noise: 10, k: 1, model: 'knn', dataSeed: 1, paint: 0 };
+		let P = [], fit = null, hover = -1, queued = false;
+		const pc = (v) => fmt(v, 0) + '%';
+
+		function generate() {
+			const r = rng(st.dataSeed * 6007 + st.spread * 97 + Object.keys(t.presets).indexOf(st.preset) * 3001);
+			const sd = st.spread, out = [];
+			const add = (x, y, c) => out.push({ x: clamp(x), y: clamp(y), c, test: r() < 0.3, r1: r(), r2: r() });
+			const blob = (cx, cy, n, s, c) => { for (let i = 0; i < n; i++) add(cx + gauss(r) * s, cy + gauss(r) * s, c); };
+			const ring = (rad, n, c) => { for (let i = 0; i < n; i++) { const a = 2 * Math.PI * r(), d = rad + gauss(r) * sd * 0.45; add(50 + d * Math.cos(a), 50 + d * Math.sin(a), c); } };
+			if (st.preset === 'clouds') { blob(37, 60, 130, sd * 1.4, 0); blob(63, 40, 130, sd * 1.4, 1); }
+			else if (st.preset === 'three') { blob(30, 66, 90, sd * 1.3, 0); blob(70, 66, 90, sd * 1.3, 1); blob(50, 30, 90, sd * 1.3, 2); }
+			else if (st.preset === 'moons') {
+				for (let i = 0; i < 130; i++) { const a = Math.PI * r(); add(37 + 26 * Math.cos(a) + gauss(r) * sd * 0.5, 42 + 26 * Math.sin(a) + gauss(r) * sd * 0.5, 0); }
+				for (let i = 0; i < 130; i++) { const a = Math.PI * r(); add(63 - 26 * Math.cos(a) + gauss(r) * sd * 0.5, 58 - 26 * Math.sin(a) + gauss(r) * sd * 0.5, 1); }
+			} else if (st.preset === 'xor') { blob(28, 28, 60, sd, 0); blob(72, 72, 60, sd, 0); blob(28, 72, 60, sd, 1); blob(72, 28, 60, sd, 1); }
+			else if (st.preset === 'rings') { ring(14, 100, 0); ring(35, 150, 1); }
+			return out;
+		}
+
+		/* ---- o modelo: guardar os exemplos e perguntar aos vizinhos ---- */
+		const classes = () => Math.max(2, ...P.map((p) => p.c + 1));
+		const label = (p, C) => (!p.test && p.r1 < st.noise / 100 ? (p.c + 1 + Math.floor(p.r2 * (C - 1))) % C : p.c);
+		// self: o próprio ponto de treino vem antes de qualquer outro no mesmo lugar
+		function neighbors(x, y, T, K, self) {
+			const idx = [], dist = [];
+			for (let i = 0; i < T.length; i++) {
+				const d = i === self ? -1 : (T[i].x - x) * (T[i].x - x) + (T[i].y - y) * (T[i].y - y);
+				if (idx.length === K && d >= dist[K - 1]) continue;
+				if (idx.length < K) { idx.push(i); dist.push(d); } else { idx[K - 1] = i; dist[K - 1] = d; }
+				for (let j = idx.length - 1; j > 0 && dist[j - 1] > dist[j]; j--) {
+					[idx[j - 1], idx[j]] = [idx[j], idx[j - 1]];
+					[dist[j - 1], dist[j]] = [dist[j], dist[j - 1]];
+				}
+			}
+			return idx;
+		}
+		function vote(nb, T, k, C) {
+			const n = Math.min(k, nb.length), count = new Array(C).fill(0);
+			for (let i = 0; i < n; i++) count[T[nb[i]].l]++;
+			const top = Math.max(...count);
+			for (let i = 0; i < n; i++) if (count[T[nb[i]].l] === top) return T[nb[i]].l; // empate: vale o mais próximo
+			return 0;
+		}
+		// Cortes retos: regressão logística (softmax) com descida do gradiente, como a reta do experimento anterior.
+		function lines(T, C) {
+			const Wt = Array.from({ length: C }, () => [0, 0, 0]);
+			const f = (x, y) => [(x - 50) / 25, (y - 50) / 25, 1];
+			const X = T.map((q) => f(q.x, q.y));
+			const score = (v) => Wt.map((w) => w[0] * v[0] + w[1] * v[1] + w[2]);
+			for (let it = 0; it < 600 && X.length; it++) {
+				const G = Array.from({ length: C }, () => [0, 0, 0]);
+				X.forEach((v, n) => {
+					const z = score(v), m = Math.max(...z), e = z.map((u) => Math.exp(u - m)), sum = e.reduce((a, b) => a + b, 0);
+					for (let c = 0; c < C; c++) { const g = e[c] / sum - (T[n].l === c ? 1 : 0); G[c][0] += g * v[0]; G[c][1] += g * v[1]; G[c][2] += g; }
+				});
+				for (let c = 0; c < C; c++) for (let j = 0; j < 3; j++) Wt[c][j] -= 1.5 * (G[c][j] / X.length + 0.001 * Wt[c][j]);
+			}
+			return (x, y) => { const z = score(f(x, y)); return z.indexOf(Math.max(...z)); };
+		}
+		function refit() {
+			const C = classes(), T = [], E = [];
+			P.forEach((p, i) => { if (p.test) E.push({ x: p.x, y: p.y, c: p.c, i }); else T.push({ x: p.x, y: p.y, c: p.c, l: label(p, C), i }); });
+			const res = { C, T, E, trainAcc: [], testAcc: [], best: 0, kb: 1, line: null, lineTrain: 0, lineTest: 0 };
+			if (!T.length) return res;
+			const K = Math.min(KMAX, T.length);
+			const nbT = T.map((q, i) => neighbors(q.x, q.y, T, K, i)), nbE = E.map((q) => neighbors(q.x, q.y, T, K));
+			for (let k = 1; k <= K; k++) {
+				res.trainAcc[k] = T.filter((q, i) => vote(nbT[i], T, k, C) === q.l).length / T.length * 100;
+				res.testAcc[k] = E.length ? E.filter((q, i) => vote(nbE[i], T, k, C) === q.c).length / E.length * 100 : 0;
+				if (res.testAcc[k] > res.best + 1e-9) { res.best = res.testAcc[k]; res.kb = k; }
+			}
+			res.line = lines(T, C);
+			res.lineTrain = T.filter((q) => res.line(q.x, q.y) === q.l).length / T.length * 100;
+			res.lineTest = E.length ? E.filter((q) => res.line(q.x, q.y) === q.c).length / E.length * 100 : 0;
+			return res;
+		}
+		const kNow = () => Math.min(st.k, fit.T.length);
+		function predictor() {
+			if (!fit.T.length) return null;
+			if (st.model === 'line') return fit.line;
+			const k = kNow();
+			return (x, y) => vote(neighbors(x, y, fit.T, k), fit.T, k, fit.C);
+		}
+
+		/* ---- desenho ---- */
+		const X = (x) => r2(x), Y = (y) => r2(100 - y);
+		let predict = null;
+		function drawMain() {
+			predict = predictor();
+			let o = '<rect class="gk-frame" x="0" y="0" width="100" height="100"/>';
+			if (predict) {
+				const sz = 100 / GRID;
+				for (let row = 0; row < GRID; row++) {
+					const yc = 100 - (row + 0.5) * sz;
+					let start = 0, cur = predict(0.5 * sz, yc);
+					for (let col = 1; col <= GRID; col++) {
+						const c = col < GRID ? predict((col + 0.5) * sz, yc) : -1;
+						if (c === cur) continue;
+						o += `<rect class="gk-area gv-region f${cur}" x="${r2(start * sz)}" y="${r2(row * sz)}" width="${r2((col - start) * sz)}" height="${r2(sz)}"/>`;
+						start = col; cur = c;
+					}
+				}
+			}
+			fit.T.forEach((q) => { o += shape('gk-pt f' + q.l, q.x, q.y, 1.35, q.l); });
+			fit.E.forEach((q) => {
+				o += shape('gv-test s' + q.c, q.x, q.y, 1.2, q.c);
+				if (predict && predict(q.x, q.y) !== q.c) {
+					const x = X(q.x), y = Y(q.y), d = 1.7;
+					o += `<path class="gv-wrong" d="M${r2(x - d)} ${r2(y - d)}L${r2(x + d)} ${r2(y + d)}M${r2(x + d)} ${r2(y - d)}L${r2(x - d)} ${r2(y + d)}"/>`;
+				}
+			});
+			o += `<text class="gk-axis" x="50" y="106" text-anchor="middle">${esc(t.x)}</text>`;
+			o += `<text class="gk-axis" transform="translate(-3 50) rotate(-90)" text-anchor="middle">${esc(t.y)}</text>`;
+			layer.innerHTML = o;
+		}
+		function drawCurve() {
+			const K = Math.min(KMAX, fit.T.length);
+			const px = (k) => r2(30 + (k - 1) * 8.4), py = (v) => r2(90 - (Math.max(50, v) - 50) * 1.52); // de 50% (acaso, com duas classes) a 100%
+			let o = '';
+			[50, 75, 100].forEach((v) => { o += `<line class="${v > 50 ? 'gk-grid' : 'gk-base'}" x1="28" y1="${py(v)}" x2="234" y2="${py(v)}"/><text x="2" y="${py(v) + 3}">${v}%</text>`; });
+			o += `<text x="2" y="106">k</text>`;
+			[1, 5, 10, 15, 20, 25].forEach((k) => { o += `<text x="${px(k)}" y="106" text-anchor="middle"${k === st.k ? ' class="gk-val"' : ''}>${k}</text>`; });
+			if (K) {
+				const line = (arr) => Array.from({ length: K }, (_, i) => px(i + 1) + ',' + py(arr[i + 1])).join(' ');
+				o += `<line class="gv-now" x1="${px(kNow())}" y1="${py(100)}" x2="${px(kNow())}" y2="${py(50)}"/>`;
+				o += `<polyline class="gv-ctrain" points="${line(fit.trainAcc)}"/>`;
+				if (fit.E.length) o += `<polyline class="gv-ctest" points="${line(fit.testAcc)}"/>`;
+				o += `<circle class="gv-dtrain" cx="${px(kNow())}" cy="${py(fit.trainAcc[kNow()])}" r="3.5"/>`;
+				if (fit.E.length) o += `<circle class="gk-dot" cx="${px(kNow())}" cy="${py(fit.testAcc[kNow()])}" r="4"/>`;
+			}
+			for (let k = 1; k <= KMAX; k++) o += `<rect data-hit data-k="${k}" x="${r2(px(k) - 4.2)}" y="0" width="8.4" height="112"><title>k = ${k}${k <= K ? ` · ${esc(t.curveTrain)} ${pc(fit.trainAcc[k])} · ${esc(t.curveTest)} ${pc(fit.testAcc[k])}` : ''}</title></rect>`;
+			curve.innerHTML = o;
+		}
+
+		/* ---- montagem ---- */
+		const presetBtns = Object.keys(t.presets).map((id) => {
+			const b = btn(t.presets[id], () => { st.preset = id; P = generate(); refresh(); });
+			b.dataset.preset = id;
+			return b;
+		});
+		const kVal = h('b'), noiseVal = h('b'), sdVal = h('b');
+		const kIn = h('input', { type: 'range', min: 1, max: KMAX, value: st.k, oninput: (e) => setK(+e.target.value) });
+		const noiseIn = h('input', { type: 'range', min: 0, max: 40, step: 5, value: st.noise, oninput: (e) => { st.noise = +e.target.value; refresh(); } });
+		const sdIn = h('input', { type: 'range', min: 3, max: 16, value: st.spread, oninput: (e) => { st.spread = +e.target.value; P = generate(); refresh(); } });
+		const kBox = h('label', { class: 'gk-slider' }, [h('span', null, [t.k + ': ', kVal]), kIn]);
+		const sdBox = h('label', { class: 'gk-slider' }, [h('span', null, [t.spread + ': ', sdVal]), sdIn]);
+		const layer = s('g'), hl = s('g');
+		const main = s('svg', { class: 'gk-svg gk-main', viewBox: '-7 -3 110 112', role: 'img', 'aria-label': t.aria }, [layer, hl]);
+		const readout = h('p', { class: 'gk-readout', 'aria-live': 'polite' });
+		const modelBtns = ['knn', 'line'].map((m) => { const b = btn(t[m], () => { st.model = m; render(); }); b.dataset.model = m; return b; });
+		const trainStat = h('b'), testStat = h('b');
+		const curve = s('svg', { class: 'gk-elbow', viewBox: '0 0 240 112', role: 'img', 'aria-label': t.curve });
+		curve.addEventListener('click', (e) => { const hit = e.target.closest && e.target.closest('[data-k]'); if (hit) setK(+hit.getAttribute('data-k')); });
+		const curveBox = h('div', null, [
+			h('span', { class: 'gk-label', style: 'margin-top:.9rem', text: t.curve }),
+			curve,
+			h('p', { class: 'gv-key' }, [h('span', null, [h('i', { class: 'te' }), t.curveTest]), h('span', null, [h('i', { class: 'tr' }), t.curveTrain])]),
+			h('p', { class: 'gw-note', style: 'margin-top:.3rem', text: t.curveNote })
+		]);
+		const lineNote = h('p', { class: 'gw-note', text: t.lineNote });
+		const GLYPH = ['●', '■', '▲'];
+		const paintBtns = Array.from({ length: NCLS }, (_, c) => {
+			const b = h('button', { type: 'button', class: 'gw-btn', onclick: () => { st.paint = c; render(); } }, [h('span', { class: 'gv-g' + c, text: GLYPH[c] + ' ' }), t.cls(c + 1)]);
+			return b;
+		});
+		const out = h('div', { class: 'gw-out', 'aria-live': 'polite' });
+		const ta = h('textarea', { rows: 10, spellcheck: 'false', 'aria-label': t.edit });
+		let typing = null;
+		ta.addEventListener('input', () => {
+			clearTimeout(typing);
+			typing = setTimeout(() => { P = parse(ta.value); st.preset = 'custom'; refresh(true); }, 350);
+		});
+
+		el.appendChild(h('div', { class: 'gw-row gk-presets' }, [h('span', { class: 'gk-label', text: t.data + ':' })].concat(presetBtns)));
+		el.appendChild(h('div', { class: 'gk-controls' }, [
+			kBox,
+			h('label', { class: 'gk-slider' }, [h('span', null, [t.noise + ': ', noiseVal]), noiseIn]),
+			h('div', { class: 'gv-spread' }, [sdBox, btn(t.reroll, () => { st.dataSeed++; P = generate(); refresh(); }, 'ghost')])
+		]));
+		el.appendChild(h('div', { class: 'gk-top' }, [
+			h('div', null, [main, readout, h('p', { class: 'gk-legend', text: t.legend })]),
+			h('div', { class: 'gk-side' }, [
+				h('span', { class: 'gk-label', text: t.model }),
+				h('div', { class: 'gw-row' }, modelBtns),
+				h('div', { class: 'gw-stats' }, [h('div', { class: 'gw-stat' }, [trainStat, h('span', { text: t.train })]), h('div', { class: 'gw-stat' }, [testStat, h('span', { text: t.test })])]),
+				curveBox,
+				lineNote
+			])
+		]));
+		el.appendChild(out);
+		el.appendChild(h('div', { class: 'gw-row gv-paint' }, [h('span', { class: 'gk-label', text: t.paint })].concat(paintBtns)));
+		el.appendChild(h('details', { class: 'gk-edit' }, [h('summary', { text: t.edit }), h('p', { class: 'gw-note', style: 'margin:.4rem 0', text: t.editHelp }), ta]));
+		el.appendChild(h('p', { class: 'gw-note', text: t.note }));
+
+		function parse(txt) {
+			const r = rng(777);
+			return parseRows(txt, MAXPTS).map((v) => {
+				const c = v.length > 2 && isFinite(v[2]) ? Math.max(0, Math.min(NCLS - 1, Math.round(v[2]) - 1)) : 0;
+				return { x: clamp(v[0]), y: clamp(v[1]), c, test: v.length > 3 && v[3] === 1, r1: r(), r2: r() };
+			});
+		}
+		const serialize = () => P.map((p) => `${p.x}; ${p.y}; ${p.c + 1}; ${p.test ? 1 : 0}`).join('\n');
+
+		function setK(k) { st.k = k; kIn.value = k; render(); }
+		function refresh(fromText) {
+			fit = refit();
+			render();
+			if (!fromText && document.activeElement !== ta) ta.value = serialize();
+		}
+		function schedule() {
+			if (queued) return;
+			queued = true;
+			(window.requestAnimationFrame || setTimeout)(() => { queued = false; refresh(); });
+		}
+		function showHover() {
+			const p = P[hover];
+			hl.innerHTML = p ? `<circle class="gk-hl" cx="${X(p.x)}" cy="${Y(p.y)}" r="3"/>` : '';
+			if (!p) { readout.textContent = t.readout(fmt(fit.T.length), fmt(fit.E.length)); return; }
+			if (!p.test) { const l = label(p, fit.C); readout.textContent = t.trainPt(fmt(p.x), fmt(p.y), p.c + 1, l !== p.c ? l + 1 : null); return; }
+			const guess = predict ? predict(p.x, p.y) : null;
+			readout.textContent = guess === null ? t.trainPt(fmt(p.x), fmt(p.y), p.c + 1, null) : t.testPt(fmt(p.x), fmt(p.y), p.c + 1, guess + 1, guess === p.c);
+		}
+		function verdict() {
+			if (!fit.T.length) return [t.say.noTrain, ''];
+			if (!fit.E.length) return [t.say.noTest, ''];
+			if (st.model === 'line') return fit.lineTest >= fit.best - 6 ? [t.say.lineOk(pc(fit.lineTest), pc(fit.best), fit.kb), 'ok'] : [t.say.lineBad(pc(fit.lineTest), pc(fit.best), fit.kb), 'bad'];
+			const k = kNow(), tr = fit.trainAcc[k], te = fit.testAcc[k];
+			if (tr - te >= 12) return [k === 1 ? t.say.overfit1(pc(tr), pc(te), st.noise > 0) : t.say.overfit(pc(tr), pc(te)), 'bad'];
+			if (te >= fit.best - 5) return [t.say.ok(pc(te)), 'ok'];
+			if (k >= 2 * fit.kb) return [t.say.blurry(pc(te), fit.kb, pc(fit.best)), 'bad'];
+			return [t.say.better(pc(te), fit.kb, pc(fit.best)), ''];
+		}
+		function render() {
+			presetBtns.forEach((b) => b.classList.toggle('active', b.dataset.preset === st.preset));
+			modelBtns.forEach((b) => { const on = b.dataset.model === st.model; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+			paintBtns.forEach((b, c) => { const on = c === st.paint; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+			kVal.textContent = st.k; noiseVal.textContent = st.noise + '%'; sdVal.textContent = st.spread;
+			sdBox.hidden = st.preset === 'custom';
+			kIn.disabled = st.model === 'line';
+			curveBox.hidden = st.model === 'line'; lineNote.hidden = st.model !== 'line';
+			drawMain(); drawCurve(); showHover();
+			const has = fit.T.length > 0;
+			const tr = !has ? null : st.model === 'line' ? fit.lineTrain : fit.trainAcc[kNow()];
+			const te = !has || !fit.E.length ? null : st.model === 'line' ? fit.lineTest : fit.testAcc[kNow()];
+			trainStat.textContent = tr === null ? '—' : pc(tr);
+			testStat.textContent = te === null ? '—' : pc(te);
+			const [msg, cls] = verdict();
+			out.className = 'gw-out' + (cls ? ' ' + cls : '');
+			out.textContent = msg;
+		}
+
+		pointEditor(main, {
+			points: () => P,
+			onHover: (i) => { hover = i; showHover(); },
+			onMove: schedule,
+			onRemove: (i) => { P.splice(i, 1); hover = -1; refresh(); },
+			// quem cria o ponto escolhe a classe: o rótulo dele nunca vem trocado (r1 = 1)
+			onAdd: (x, y) => { if (P.length >= MAXPTS) return false; P.push({ x, y, c: st.paint, test: false, r1: 1, r2: 0 }); refresh(); return true; }
+		});
+
+		P = generate();
+		refresh();
+	};
+
+	/* ---------- Cap. 2: aprender com recompensa (um agente numa grade) ---------- */
+	W.reforco = function (el) {
+		const t = L({
+			pt: {
+				title: 'Aprender com recompensa: um agente numa grade',
+				sub: 'Ninguém mostra o caminho. O agente sai de casa, tenta, cai em buraco, bate em parede e às vezes chega à bandeira. Cada passo rende pontos, e ele vai ajustando o que fazer em cada casa para somar mais. As setas mostram o que ele aprendeu; a linha, o caminho que ele faria agora. Depois, mude os números da recompensa.',
+				map: 'Mapa', maps: { maze: 'Labirinto', cliff: 'Beira do buraco', coin: 'Moedinha' },
+				rewards: 'Pontos de cada coisa',
+				rw: { goal: '🏁 Chegar', hole: '🕳️ Cair no buraco', step: '👣 Cada passo', coin: '🪙 Passar na moedinha' },
+				eps: 'Exploração (chance de tentar uma direção ao acaso)',
+				train: (n) => `Treinar ${n} episódios`, show: '▶ Ver o agente andar', forget: 'Esquecer tudo',
+				brush: 'Tocar numa casa põe:',
+				tools: { wall: 'Parede', hole: 'Buraco', coin: 'Moedinha', goal: 'Chegada', start: 'Início', empty: 'Apagar' },
+				episodes: 'episódios de treino', avg: 'pontos por episódio (média dos últimos 20)',
+				curve: 'Pontos por episódio ao longo do treino (média de 20)',
+				legend: 'Fundo azul: casa boa para estar; laranja: casa ruim, pelo que ele aprendeu até agora.',
+				say: {
+					untrained: 'Ainda não treinou: sem tentativa, não há setas. Clique em “Treinar 10 episódios” algumas vezes e veja o mapa mudar.',
+					goal: (n) => `✓ Chega à bandeira em ${n} passos, desviando dos buracos. Ninguém mostrou o caminho: só as recompensas.`,
+					hole: '✗ O caminho que ele aprendeu termina no buraco. Pode faltar treino. Ou cada passo custa tanto que acabar logo no buraco compensa mais do que andar até a bandeira.',
+					coin: '✗ Fica rodando na moedinha. Para ele, passar e repassar por ela rende mais do que chegar: aprendeu a recompensa que você deu, não o objetivo que você queria.',
+					stuck: '✗ Anda em círculos sem chegar. Falta treino; ou, sem custo por passo, não há pressa nenhuma.',
+					broken: 'Ponha no mapa um início e pelo menos uma chegada.'
+				},
+				aria: 'Grade com o mapa, as setas do que o agente aprendeu e o caminho que ele faria',
+				note: 'A cada passo, o agente soma os pontos do passo e da casa onde chegou, e corrige uma tabela que diz quanto vale cada direção em cada casa. Às vezes tenta uma direção ao acaso, para descobrir o que não conhece. Mudou o mapa ou os números? Ele recomeça do zero.'
+			},
+			en: {
+				title: 'Learning from rewards: an agent on a grid',
+				sub: 'Nobody shows the way. The agent leaves home, tries, falls into holes, bumps into walls, and sometimes reaches the flag. Every step is worth points, and it keeps adjusting what to do in each square to collect more. The arrows show what it learned; the line, the route it would take now. Then change the reward numbers.',
+				map: 'Map', maps: { maze: 'Maze', cliff: 'Cliff edge', coin: 'Coin' },
+				rewards: 'Points for each thing',
+				rw: { goal: '🏁 Arriving', hole: '🕳️ Falling in a hole', step: '👣 Each step', coin: '🪙 Passing the coin' },
+				eps: 'Exploration (chance of trying a random direction)',
+				train: (n) => `Train ${n} episodes`, show: '▶ Watch the agent', forget: 'Forget everything',
+				brush: 'Tapping a square places:',
+				tools: { wall: 'Wall', hole: 'Hole', coin: 'Coin', goal: 'Finish', start: 'Start', empty: 'Erase' },
+				episodes: 'training episodes', avg: 'points per episode (average of the last 20)',
+				curve: 'Points per episode during training (average of 20)',
+				legend: 'Blue background: a good square to be in; orange: a bad one, according to what it has learned so far.',
+				say: {
+					untrained: 'Not trained yet: no attempts, no arrows. Click “Train 10 episodes” a few times and watch the map change.',
+					goal: (n) => `✓ It reaches the flag in ${n} steps, avoiding the holes. Nobody showed the way: only the rewards.`,
+					hole: '✗ The route it learned ends in a hole. It may need more training. Or each step costs so much that ending early in the hole pays better than walking to the flag.',
+					coin: '✗ It keeps circling the coin. For the agent, passing it again and again pays more than arriving: it learned the reward you gave, not the goal you wanted.',
+					stuck: '✗ It walks in circles and never arrives. It needs more training; or, with no cost per step, it is in no hurry at all.',
+					broken: 'Put a start and at least one finish on the map.'
+				},
+				aria: 'Grid with the map, arrows for what the agent learned and the route it would take',
+				note: 'At each step, the agent adds up the points for the step and for the square it reached, and corrects a table of how much each direction is worth in each square. Sometimes it tries a random direction, to find out what it does not know. Changed the map or the numbers? It starts from scratch.'
+			}
+		});
+		frame(el, t.title, t.sub);
+		el.classList.add('gw-reforco');
+
+		const COLS = 7, ROWS = 5, CELL = 10, MAXSTEPS = 100, GAMMA = 0.95, ALPHA = 0.5, WINDOW = 20;
+		const MAPS = {
+			maze: ['...#..G', '.#.#O..', '.#...#.', '.O.#...', 'S..#O..'],
+			cliff: ['.......', '.......', '.......', '.......', 'SOOOOOG'],
+			coin: ['...#..G', '.#.#O..', '$#...#.', '.O.#...', 'S..#O..']
+		};
+		const ACT = [[0, -1], [1, 0], [0, 1], [-1, 0]]; // cima, direita, baixo, esquerda (na grade, y cresce para baixo)
+		const calm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+		const R = { goal: 10, hole: -10, step: -1, coin: 1 };
+		const st = { map: 'maze', eps: 10, tool: 'wall' };
+		let grid = [], Q = [], returns = [], rnd = rng(99), timer = null, agent = -1;
+
+		const terminal = (s) => grid[s] === 'G' || grid[s] === 'O';
+		const startAt = () => grid.indexOf('S');
+		function loadMap(id) { st.map = id; grid = MAPS[id].join('').split(''); forget(); }
+		function forget() { stop(); Q = grid.map(() => [0, 0, 0, 0]); returns = []; rnd = rng(99); agent = -1; }
+		function stop() { clearTimeout(timer); timer = null; }
+		function move(s, a) {
+			const x = s % COLS + ACT[a][0], y = Math.floor(s / COLS) + ACT[a][1];
+			if (x < 0 || y < 0 || x >= COLS || y >= ROWS || grid[y * COLS + x] === '#') return s;
+			return y * COLS + x;
+		}
+		function reward(s, s2) {
+			if (s2 === s) return R.step; // bateu na parede: só paga o passo
+			const c = grid[s2];
+			return R.step + (c === 'G' ? R.goal : c === 'O' ? R.hole : c === '$' ? R.coin : 0);
+		}
+		function choose(s, random) {
+			const q = Q[s], top = Math.max(...q), tied = [0, 1, 2, 3].filter((a) => q[a] === top);
+			return random ? tied[Math.floor(rnd() * tied.length)] : tied[0];
+		}
+		const ready = () => startAt() >= 0 && grid.indexOf('G') >= 0;
+
+		/* ---- o aprendizado: tentar, somar os pontos e corrigir a tabela (Q-learning) ---- */
+		function episode() {
+			let s = startAt(), total = 0;
+			for (let n = 0; n < MAXSTEPS; n++) {
+				const a = rnd() < st.eps / 100 ? Math.floor(rnd() * 4) : choose(s, true);
+				const s2 = move(s, a), r = reward(s, s2);
+				total += r;
+				Q[s][a] += ALPHA * ((terminal(s2) ? r : r + GAMMA * Math.max(...Q[s2])) - Q[s][a]);
+				s = s2;
+				if (terminal(s)) break;
+			}
+			returns.push(total);
+		}
+		function route() {
+			const path = [startAt()];
+			let s = path[0], coins = 0;
+			for (let n = 1; n <= 60; n++) {
+				const s2 = move(s, choose(s, false));
+				if (grid[s2] === '$' && s2 !== s) coins++;
+				path.push(s2); s = s2;
+				if (grid[s] === 'G') return { path, end: 'goal', steps: n };
+				if (grid[s] === 'O') return { path, end: 'hole' };
+				if (coins >= 3) return { path, end: 'coin' };
+			}
+			return { path, end: 'stuck' };
+		}
+		function train(n) {
+			if (!ready()) { render(); return; }
+			stop(); agent = -1;
+			if (calm || n <= 10) { for (let i = 0; i < n; i++) episode(); render(); return; }
+			let left = n;
+			const tick = () => { for (let i = 0; i < 10 && left > 0; i++, left--) episode(); render(); timer = left > 0 ? setTimeout(tick, 40) : null; };
+			tick();
+		}
+		function walk() {
+			if (!ready() || !returns.length) return;
+			stop();
+			const path = route().path;
+			if (calm) { agent = path[path.length - 1]; render(); return; }
+			let i = 0;
+			const tick = () => { agent = path[i++]; render(); timer = i < Math.min(path.length, 40) ? setTimeout(tick, 260) : null; };
+			tick();
+		}
+
+		/* ---- desenho ---- */
+		const cx = (s) => (s % COLS) * CELL + CELL / 2, cy = (s) => Math.floor(s / COLS) * CELL + CELL / 2;
+		const signed = (v, d = 0) => (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), d);
+		function drawGrid() {
+			let o = '';
+			const trained = returns.length > 0;
+			const vals = Q.map((q, s) => (grid[s] === '#' || terminal(s) ? 0 : Math.max(...q)));
+			const top = Math.max(1e-9, ...vals.map(Math.abs));
+			grid.forEach((c, s) => {
+				const x = (s % COLS) * CELL, y = Math.floor(s / COLS) * CELL;
+				o += `<rect class="gr-cell" x="${x}" y="${y}" width="${CELL}" height="${CELL}"/>`;
+				if (c === '#') { o += `<rect class="gr-wall" x="${x + 0.4}" y="${y + 0.4}" width="${CELL - 0.8}" height="${CELL - 0.8}" rx="1"/>`; return; }
+				if (trained && vals[s]) o += `<rect class="${vals[s] > 0 ? 'gr-pos' : 'gr-neg'}" x="${x + 0.4}" y="${y + 0.4}" width="${CELL - 0.8}" height="${CELL - 0.8}" rx="1" fill-opacity="${r2(0.08 + 0.42 * Math.abs(vals[s]) / top)}"/>`;
+				const emoji = (e, val) => { o += `<text class="gr-emoji" x="${cx(s)}" y="${cy(s) - (val === null ? 0 : 1.2)}">${e}</text>`; if (val !== null) o += `<text class="gr-num" x="${cx(s)}" y="${cy(s) + 3.9}">${esc(signed(val))}</text>`; };
+				if (c === 'G') emoji('🏁', R.goal);
+				else if (c === 'O') emoji('🕳️', R.hole);
+				else if (c === '$') { o += `<circle class="gr-coin" cx="${x + 2.3}" cy="${y + 2.3}" r="1.5"/><text class="gr-num gr-corner" x="${x + 4.4}" y="${y + 3.1}">${esc(signed(R.coin))}</text>`; }
+				else if (c === 'S') o += `<text class="gr-emoji gr-small" x="${x + 2.4}" y="${y + 2.5}">🏠</text>`;
+				if (trained && !terminal(s) && Q[s].some((v) => v !== 0)) {
+					const a = choose(s, false), deg = [0, 90, 180, 270][a], X0 = cx(s), Y0 = cy(s) + 0.6, len = 2.4;
+					o += `<path class="gr-arrow" transform="rotate(${deg} ${X0} ${Y0})" d="M${X0} ${r2(Y0 + len)}L${X0} ${r2(Y0 - len)}M${r2(X0 - 1.4)} ${r2(Y0 - len + 1.4)}L${X0} ${r2(Y0 - len)}L${r2(X0 + 1.4)} ${r2(Y0 - len + 1.4)}"/>`;
+				}
+			});
+			if (trained && ready()) {
+				const p = route().path.slice(0, 25);
+				o += `<polyline class="gr-route" points="${p.map((s) => cx(s) + ',' + cy(s)).join(' ')}"/>`;
+			}
+			if (agent >= 0) o += `<text class="gr-emoji gr-agent" x="${cx(agent)}" y="${cy(agent)}">🤖</text>`;
+			grid.forEach((c, s) => { o += `<rect data-hit data-s="${s}" class="gr-hit" x="${(s % COLS) * CELL}" y="${Math.floor(s / COLS) * CELL}" width="${CELL}" height="${CELL}"/>`; });
+			board.innerHTML = o;
+		}
+		function drawCurve() {
+			const avg = returns.map((_, i) => { const a = returns.slice(Math.max(0, i - WINDOW + 1), i + 1); return a.reduce((x, y) => x + y, 0) / a.length; });
+			if (!avg.length) { curve.innerHTML = `<line class="gk-base" x1="12" y1="45" x2="232" y2="45"/><text x="12" y="40">0</text>`; return; }
+			const lo = Math.min(0, ...avg), hi = Math.max(0, ...avg), span = hi - lo || 1;
+			const px = (i) => r2(12 + (avg.length < 2 ? 0 : i / (avg.length - 1)) * 220), py = (v) => r2(80 - (v - lo) / span * 66);
+			let o = `<line class="gk-grid" x1="12" y1="${py(0)}" x2="232" y2="${py(0)}"/>`;
+			o += `<text x="12" y="${py(hi) - 3}">${esc(signed(Math.round(hi)))}</text>`;
+			if (lo < 0) o += `<text x="12" y="${py(lo) + 10}">${esc(signed(Math.round(lo)))}</text>`;
+			o += `<polyline class="gk-line" points="${avg.map((v, i) => px(i) + ',' + py(v)).join(' ')}"/>`;
+			o += `<text x="232" y="${py(lo) + 10}" text-anchor="end">${fmt(avg.length)}</text>`;
+			curve.innerHTML = o;
+		}
+
+		/* ---- montagem ---- */
+		const mapBtns = Object.keys(t.maps).map((id) => { const b = btn(t.maps[id], () => { loadMap(id); render(); }); b.dataset.map = id; return b; });
+		const inputs = Object.keys(R).map((key) => {
+			const i = h('input', { type: 'number', step: 1, min: -100, max: 100, value: R[key], inputmode: 'numeric' });
+			i.addEventListener('input', () => { const v = parseFloat(i.value); if (!isFinite(v)) return; R[key] = Math.max(-100, Math.min(100, v)); forget(); render(); });
+			return h('label', { class: 'gr-num-in' }, [h('span', { text: t.rw[key] }), i]);
+		});
+		const epsVal = h('b');
+		const epsIn = h('input', { type: 'range', min: 0, max: 50, step: 5, value: st.eps, oninput: (e) => { st.eps = +e.target.value; render(); } });
+		const board = s('svg', { class: 'gr-board', viewBox: `-0.5 -0.5 ${COLS * CELL + 1} ${ROWS * CELL + 1}`, role: 'img', 'aria-label': t.aria });
+		board.addEventListener('click', (e) => { const hit = e.target.closest && e.target.closest('[data-s]'); if (hit) paint(+hit.getAttribute('data-s')); });
+		const epStat = h('b'), avgStat = h('b');
+		const curve = s('svg', { class: 'gk-elbow', viewBox: '0 0 240 90', role: 'img', 'aria-label': t.curve });
+		const out = h('div', { class: 'gw-out', 'aria-live': 'polite' });
+		const toolBtns = Object.keys(t.tools).map((id) => { const b = btn(t.tools[id], () => { st.tool = id; render(); }); b.dataset.tool = id; return b; });
+
+		el.appendChild(h('div', { class: 'gw-row gk-presets' }, [h('span', { class: 'gk-label', text: t.map + ':' })].concat(mapBtns)));
+		el.appendChild(h('div', { class: 'gk-top gr-top' }, [
+			h('div', null, [board, h('p', { class: 'gk-legend', text: t.legend })]),
+			h('div', { class: 'gk-side' }, [
+				h('span', { class: 'gk-label', text: t.rewards }),
+				h('div', { class: 'gr-rewards' }, inputs),
+				h('label', { class: 'gk-slider', style: 'margin-top:.8rem' }, [h('span', null, [t.eps + ': ', epsVal]), epsIn]),
+				h('div', { class: 'gw-row', style: 'margin-top:.8rem' }, [btn(t.train(10), () => train(10), 'primary'), btn(t.train(200), () => train(200)), btn(t.show, walk), btn(t.forget, () => { forget(); render(); }, 'ghost')]),
+				h('div', { class: 'gw-stats' }, [h('div', { class: 'gw-stat' }, [epStat, h('span', { text: t.episodes })]), h('div', { class: 'gw-stat' }, [avgStat, h('span', { text: t.avg })])]),
+				h('span', { class: 'gk-label', style: 'margin-top:.9rem', text: t.curve }),
+				curve
+			])
+		]));
+		el.appendChild(out);
+		el.appendChild(h('div', { class: 'gw-row gv-paint' }, [h('span', { class: 'gk-label', text: t.brush })].concat(toolBtns)));
+		el.appendChild(h('p', { class: 'gw-note', text: t.note }));
+
+		function paint(s) {
+			const c = { wall: '#', hole: 'O', coin: '$', goal: 'G', start: 'S', empty: '.' }[st.tool];
+			if (grid[s] === c) return;
+			if (c === 'S') grid = grid.map((v) => (v === 'S' ? '.' : v));
+			grid[s] = c;
+			st.map = 'custom';
+			forget(); render();
+		}
+		function render() {
+			mapBtns.forEach((b) => b.classList.toggle('active', b.dataset.map === st.map));
+			toolBtns.forEach((b) => { const on = b.dataset.tool === st.tool; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+			epsVal.textContent = st.eps + '%';
+			drawGrid(); drawCurve();
+			epStat.textContent = fmt(returns.length);
+			const last = returns.slice(-WINDOW);
+			avgStat.textContent = last.length ? signed(last.reduce((x, y) => x + y, 0) / last.length, 1) : '—';
+			out.className = 'gw-out';
+			if (!ready()) { out.textContent = t.say.broken; return; }
+			if (!returns.length) { out.textContent = t.say.untrained; return; }
+			const r = route();
+			out.textContent = r.end === 'goal' ? t.say.goal(r.steps) : t.say[r.end];
+			out.classList.add(r.end === 'goal' ? 'ok' : 'bad');
+		}
+
+		loadMap('maze');
+		render();
 	};
 
 	/* ---------- Cap. 3: viés urso × cachorro ---------- */
