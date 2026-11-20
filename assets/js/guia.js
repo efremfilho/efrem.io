@@ -207,6 +207,536 @@
 		reset();
 	};
 
+	/* ---------- Cap. 2: agrupar sem gabarito (k-means) ---------- */
+	W.kmeans = function (el) {
+		const t = L({
+			pt: {
+				title: 'Agrupar sem gabarito: k-means',
+				sub: 'Ninguém diz ao algoritmo quais são os grupos: você escolhe quantos quer (o k). Ele sorteia k centros, leva cada ponto ao centro mais próximo, muda cada centro para o meio dos seus pontos e repete até ninguém trocar de grupo. Mude os dados e o k: quando ele acerta, e quando erra?',
+				data: 'Dados',
+				presets: { blobs: 'Bolhas', few: 'Poucos pontos', sizes: 'Tamanhos diferentes', stretched: 'Faixas compridas', moons: 'Luas', rings: 'Anéis', uniform: 'Sem grupos' },
+				groups: 'Grupos de verdade', spread: 'Espalhamento', reroll: '🎲 Outros dados',
+				k: 'Quantos grupos pedir (k)', run: '▶ Rodar', step: 'Um passo', restart: '↺ Novo começo',
+				gab: 'Mostrar o gabarito (na vida real, ninguém tem)',
+				init: (k) => `Volta 0: sorteou ${k} pontos para servir de centro. Ainda não há grupos.`,
+				assigned: (i) => `Volta ${i}: cada ponto foi para o centro mais próximo.`,
+				moved: (i) => `Volta ${i}: cada centro foi para o meio dos seus pontos.`,
+				done: (i) => `Parou na volta ${i}: ninguém mudou de grupo.`,
+				elbow: 'Quanto sobra de distância até os centros (k = 1 vale 100%)',
+				elbowNote: 'Mais grupos sempre encurtam a distância. Sem gabarito, a pista é o cotovelo: o ponto em que aumentar o k para de ajudar muito.',
+				minis: 'Os mesmos dados, de k = 2 a k = 7',
+				minisNote: 'Cada painel mostra o melhor de 10 começos sorteados. Clique em um para ver em detalhe.',
+				left: (p) => `sobra ${p}`,
+				badge: { ok: '✓ bateu', merge: '✗ juntou grupos', split: '✗ partiu grupos', wrong: '✗ fronteira errada', invent: '✗ inventou grupos', oneOk: '✓ bateu' },
+				few: 'poucos pontos',
+				say: {
+					ok: (k) => `✓ Certo. Você pediu k = ${k}, o mesmo número de grupos de verdade, e a divisão bateu com o gabarito.`,
+					oneOk: () => '✓ Certo. Aqui não há grupos, e com k = 1 o algoritmo não inventou nenhum.',
+					merge: (k, m) => `✗ Errado. Há ${m} grupos de verdade e você pediu ${k}: o algoritmo é obrigado a juntar grupos diferentes.`,
+					split: (k, m) => `✗ Errado. Há ${m} grupos de verdade e você pediu ${k}: ele parte grupos ao meio, e as fronteiras parecem tão convincentes quanto as certas.`,
+					invent: (k) => `✗ Errado. Aqui não há grupos, e o algoritmo entregou ${k} mesmo assim: ele sempre devolve o número que você pedir.`,
+					shape: () => '✗ Errado mesmo com o k certo. O k-means corta o plano com linhas retas em volta de centros, então só acha bem grupos redondos e de tamanho parecido. Luas, anéis e faixas compridas escapam.',
+					sizes: () => '✗ Errado mesmo com o k certo. A fronteira fica no meio do caminho entre os centros, e o grupo grande e espalhado perde pontos para os pequenos.',
+					overlap: () => '✗ Errado mesmo com o k certo. Os grupos se misturam e a fronteira caiu em outro lugar. Diminua o espalhamento e compare.',
+					custom: () => '✗ Errado mesmo com o k certo: a fronteira caiu em outro lugar. Grupos misturados, compridos ou curvos costumam enganar o k-means.',
+					badStart: (k) => `✗ Errado, e desta vez a culpa é do começo sorteado. Com outros centros iniciais, o mesmo k = ${k} acerta: veja o painel de k = ${k} abaixo ou clique em “Novo começo”.`,
+					noGab: (k, p) => `Sem gabarito, não dá para dizer se acertou. Com k = ${k}, sobra ${p} da distância: compare no cotovelo.`,
+					tooFew: (k) => `Para pedir k = ${k}, são necessários pelo menos ${k} pontos.`
+				},
+				running: 'Rodando…',
+				readout: (n) => `${n} pontos. Arraste um ponto para mudar seus números, toque num espaço vazio para criar um ponto, toque num ponto para apagá-lo.`,
+				point: (x, y, c, g) => `Ponto (${x}; ${y}) · grupo ${c} do algoritmo` + (g ? ` · grupo ${g} do gabarito` : ''),
+				legend: 'Cor, área e número: o grupo que o algoritmo achou. Formato do ponto: o grupo do gabarito.',
+				legendNoGab: 'Cor, área e número: o grupo que o algoritmo achou.',
+				edit: 'Ver e mudar os números',
+				editHelp: 'Uma linha por ponto: característica 1; característica 2; grupo do gabarito (opcional). Valores de 0 a 100. Dá para colar de uma planilha.',
+				x: 'característica 1 →', y: 'característica 2 →',
+				aria: 'Gráfico de dispersão com os pontos coloridos pelo grupo que o k-means achou',
+				note: 'Na vida real não existe gabarito: por isso isto se chama aprendizado não supervisionado. O algoritmo sempre entrega k grupos, existam eles ou não. Quem decide se a divisão serve é quem conhece o problema.'
+			},
+			en: {
+				title: 'Grouping without an answer key: k-means',
+				sub: 'Nobody tells the algorithm what the groups are: you choose how many you want (the k). It picks k random centers, sends each point to the nearest center, moves each center to the middle of its points, and repeats until no point changes group. Change the data and the k: when does it get it right, and when does it fail?',
+				data: 'Data',
+				presets: { blobs: 'Blobs', few: 'A few points', sizes: 'Different sizes', stretched: 'Long stripes', moons: 'Moons', rings: 'Rings', uniform: 'No groups' },
+				groups: 'True groups', spread: 'Spread', reroll: '🎲 New data',
+				k: 'How many groups to ask for (k)', run: '▶ Run', step: 'One step', restart: '↺ New start',
+				gab: 'Show the answer key (real life has none)',
+				init: (k) => `Round 0: picked ${k} random points as centers. No groups yet.`,
+				assigned: (i) => `Round ${i}: each point went to the nearest center.`,
+				moved: (i) => `Round ${i}: each center moved to the middle of its points.`,
+				done: (i) => `Stopped at round ${i}: no point changed group.`,
+				elbow: 'How much distance to the centers is left (k = 1 is 100%)',
+				elbowNote: 'More groups always shorten the distance. Without an answer key, the hint is the elbow: the point where raising k stops helping much.',
+				minis: 'The same data, from k = 2 to k = 7',
+				minisNote: 'Each panel shows the best of 10 random starts. Click one to see it in detail.',
+				left: (p) => `${p} left`,
+				badge: { ok: '✓ matched', merge: '✗ merged groups', split: '✗ split groups', wrong: '✗ wrong border', invent: '✗ invented groups', oneOk: '✓ matched' },
+				few: 'too few points',
+				say: {
+					ok: (k) => `✓ Right. You asked for k = ${k}, the same number as the true groups, and the split matched the answer key.`,
+					oneOk: () => '✓ Right. There are no groups here, and with k = 1 the algorithm did not invent any.',
+					merge: (k, m) => `✗ Wrong. There are ${m} true groups and you asked for ${k}: the algorithm is forced to merge different groups.`,
+					split: (k, m) => `✗ Wrong. There are ${m} true groups and you asked for ${k}: it cuts groups in half, and those borders look just as convincing as the right ones.`,
+					invent: (k) => `✗ Wrong. There are no groups here, and the algorithm delivered ${k} anyway: it always returns the number you ask for.`,
+					shape: () => '✗ Wrong even with the right k. K-means cuts the plane with straight lines around centers, so it only finds round groups of similar size well. Moons, rings and long stripes slip through.',
+					sizes: () => '✗ Wrong even with the right k. The border sits halfway between the centers, and the big, spread-out group loses points to the small ones.',
+					overlap: () => '✗ Wrong even with the right k. The groups blend and the border landed somewhere else. Lower the spread and compare.',
+					custom: () => '✗ Wrong even with the right k: the border landed somewhere else. Blended, long or curved groups tend to fool k-means.',
+					badStart: (k) => `✗ Wrong, and this time the random start is to blame. With other initial centers, the same k = ${k} gets it right: see the k = ${k} panel below or click “New start”.`,
+					noGab: (k, p) => `Without an answer key, there is no way to tell whether it got it right. With k = ${k}, ${p} of the distance is left: compare on the elbow.`,
+					tooFew: (k) => `To ask for k = ${k}, you need at least ${k} points.`
+				},
+				running: 'Running…',
+				readout: (n) => `${n} points. Drag a point to change its numbers, tap an empty spot to add a point, tap a point to delete it.`,
+				point: (x, y, c, g) => `Point (${x}; ${y}) · algorithm group ${c}` + (g ? ` · answer key group ${g}` : ''),
+				legend: 'Color, area and number: the group the algorithm found. Point shape: the answer key group.',
+				legendNoGab: 'Color, area and number: the group the algorithm found.',
+				edit: 'See and change the numbers',
+				editHelp: 'One line per point: feature 1; feature 2; answer key group (optional). Values from 0 to 100. You can paste from a spreadsheet.',
+				x: 'feature 1 →', y: 'feature 2 →',
+				aria: 'Scatter plot with points colored by the group k-means found',
+				note: 'In real life there is no answer key: that is why this is called unsupervised learning. The algorithm always delivers k groups, whether they exist or not. Whoever knows the problem decides whether the split is useful.'
+			}
+		});
+		frame(el, t.title, t.sub);
+		el.classList.add('gw-kmeans');
+
+		const KMAX = 7, MAXPTS = 400, HIT = 3.6, STARTS = 10, MINIS = [2, 3, 4, 5, 6, 7];
+		const calm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+		const st = { preset: 'blobs', m: 4, spread: 6, dataSeed: 1, k: 4, gab: true, runSeed: 1 };
+		let P = [], best = [], run = null, timer = null, hover = -1, drag = null, queued = false;
+
+		/* ---- números sorteados com semente: os mesmos dados a cada visita ---- */
+		function rng(seed) {
+			let a = seed >>> 0;
+			return () => {
+				a = (a + 0x6D2B79F5) >>> 0;
+				let x = Math.imul(a ^ (a >>> 15), a | 1);
+				x ^= x + Math.imul(x ^ (x >>> 7), x | 61);
+				return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+			};
+		}
+		const gauss = (r) => { let u = 0; while (!u) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); };
+		const clamp = (v) => Math.max(0, Math.min(100, Math.round(v)));
+		const r2 = (v) => Math.round(v * 100) / 100;
+		const esc = (str) => String(str).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+		function generate() {
+			const r = rng(st.dataSeed * 7919 + st.spread * 131 + st.m * 17 + Object.keys(t.presets).indexOf(st.preset) * 1009);
+			const sd = st.spread, out = [];
+			const add = (x, y, g) => out.push({ x: clamp(x), y: clamp(y), g });
+			const centers = (m, margin, minD) => {
+				const C = [], span = 100 - 2 * margin;
+				for (let i = 0; C.length < m && i < 3000; i++) {
+					const c = [margin + r() * span, margin + r() * span];
+					if (C.every((d) => Math.hypot(d[0] - c[0], d[1] - c[1]) >= minD)) C.push(c);
+				}
+				while (C.length < m) C.push([margin + r() * span, margin + r() * span]);
+				return C;
+			};
+			const blob = (c, n, s, g) => { for (let i = 0; i < n; i++) add(c[0] + gauss(r) * s, c[1] + gauss(r) * s, g); };
+			if (st.preset === 'blobs') centers(st.m, 16, st.m > 5 ? 23 : 28).forEach((c, g) => blob(c, st.m > 4 ? 24 : 30, sd, g));
+			else if (st.preset === 'few') centers(3, 20, 36).forEach((c, g) => blob(c, 5, sd, g));
+			else if (st.preset === 'sizes') { blob([36, 50], 90, sd * 2.6, 0); blob([77, 79], 18, sd * 0.6, 1); blob([79, 22], 18, sd * 0.6, 2); }
+			else if (st.preset === 'stretched') {
+				const a = -0.35, ca = Math.cos(a), sa = Math.sin(a);
+				for (let g = 0; g < 3; g++) for (let i = 0; i < 45; i++) {
+					const u = (r() - 0.5) * 80, v = (g - 1) * 22 + gauss(r) * sd * 0.45;
+					add(50 + u * ca - v * sa, 50 + u * sa + v * ca, g);
+				}
+			} else if (st.preset === 'moons') {
+				for (let i = 0; i < 75; i++) { const a = Math.PI * r(); add(37 + 26 * Math.cos(a) + gauss(r) * sd * 0.4, 42 + 26 * Math.sin(a) + gauss(r) * sd * 0.4, 0); }
+				for (let i = 0; i < 75; i++) { const a = Math.PI * r(); add(63 - 26 * Math.cos(a) + gauss(r) * sd * 0.4, 58 - 26 * Math.sin(a) + gauss(r) * sd * 0.4, 1); }
+			} else if (st.preset === 'rings') {
+				for (let i = 0; i < 50; i++) { const a = 2 * Math.PI * r(), d = 10 + gauss(r) * sd * 0.3; add(50 + d * Math.cos(a), 50 + d * Math.sin(a), 0); }
+				for (let i = 0; i < 110; i++) { const a = 2 * Math.PI * r(), d = 36 + gauss(r) * sd * 0.3; add(50 + d * Math.cos(a), 50 + d * Math.sin(a), 1); }
+			} else if (st.preset === 'uniform') for (let i = 0; i < 160; i++) add(5 + r() * 90, 5 + r() * 90, 0);
+			return out;
+		}
+
+		/* ---- o algoritmo: atribuir ao centro mais próximo, mover o centro para a média ---- */
+		function assign(C) {
+			const lab = new Array(P.length);
+			let inertia = 0;
+			P.forEach((p, i) => {
+				let bj = 0, bd = Infinity;
+				C.forEach((c, j) => { const d = (p.x - c[0]) * (p.x - c[0]) + (p.y - c[1]) * (p.y - c[1]); if (d < bd) { bd = d; bj = j; } });
+				lab[i] = bj; inertia += bd;
+			});
+			return { lab, inertia };
+		}
+		function means(lab, C) {
+			const S = C.map(() => [0, 0, 0]);
+			P.forEach((p, i) => { const q = S[lab[i]]; q[0] += p.x; q[1] += p.y; q[2]++; });
+			return S.map((q, j) => (q[2] ? [q[0] / q[2], q[1] / q[2]] : C[j].slice()));
+		}
+		const same = (a, b) => !!a && !!b && a.length === b.length && a.every((v, i) => v === b[i]);
+		function lloyd(C) {
+			let a = assign(C);
+			for (let it = 0; it < 200; it++) {
+				C = means(a.lab, C);
+				const b = assign(C);
+				const stop = same(a.lab, b.lab);
+				a = b;
+				if (stop) break;
+			}
+			return { C, lab: a.lab, inertia: a.inertia };
+		}
+		function plusplus(k, r) {
+			const pick = (i) => [P[i].x, P[i].y];
+			const C = [pick(Math.floor(r() * P.length))];
+			while (C.length < k) {
+				const D = P.map((p) => Math.min(...C.map((c) => (p.x - c[0]) * (p.x - c[0]) + (p.y - c[1]) * (p.y - c[1]))));
+				const sum = D.reduce((x, y) => x + y, 0);
+				if (!sum) { C.push(pick(Math.floor(r() * P.length))); continue; }
+				let x = r() * sum, i = 0;
+				while (i < P.length - 1 && (x -= D[i]) > 0) i++;
+				C.push(pick(i));
+			}
+			return C;
+		}
+		function solve(k) {
+			if (P.length < k) return null;
+			const r = rng(4242 + k);
+			let b = null;
+			for (let n = 0; n < STARTS; n++) { const C0 = plusplus(k, r), res = lloyd(C0); res.C0 = C0; if (!b || res.inertia < b.inertia - 1e-9) b = res; }
+			return b;
+		}
+
+		/* ---- certo ou errado: compara com o gabarito (índice de Rand ajustado) ---- */
+		function ari(a, b) {
+			const n = a.length;
+			if (n < 2) return 1;
+			const c2 = (x) => x * (x - 1) / 2, cell = new Map(), A = new Map(), B = new Map();
+			for (let i = 0; i < n; i++) {
+				const key = a[i] + ':' + b[i];
+				cell.set(key, (cell.get(key) || 0) + 1); A.set(a[i], (A.get(a[i]) || 0) + 1); B.set(b[i], (B.get(b[i]) || 0) + 1);
+			}
+			let sij = 0, sa = 0, sb = 0;
+			cell.forEach((v) => { sij += c2(v); }); A.forEach((v) => { sa += c2(v); }); B.forEach((v) => { sb += c2(v); });
+			const exp = sa * sb / c2(n), max = (sa + sb) / 2;
+			return max === exp ? 1 : (sij - exp) / (max - exp);
+		}
+		function truth() {
+			const idx = [];
+			P.forEach((p, i) => { if (p.g >= 0) idx.push(i); });
+			return { idx, m: new Set(idx.map((i) => P[i].g)).size };
+		}
+		function judge(lab, k) {
+			if (!st.gab) return null;
+			const tr = truth();
+			if (!tr.idx.length) return null;
+			if (tr.m === 1) return k === 1 ? 'oneOk' : 'invent';
+			if (k < tr.m) return 'merge';
+			if (k > tr.m) return 'split';
+			return ari(tr.idx.map((i) => P[i].g), tr.idx.map((i) => lab[i])) >= 0.9 ? 'ok' : 'wrong';
+		}
+
+		/* ---- a rodada do gráfico grande, passo a passo ---- */
+		function stop() { clearTimeout(timer); timer = null; }
+		// fromBest: começa pelo mesmo sorteio que venceu nos painéis; senão, k pontos quaisquer
+		function newRun(fromBest) {
+			stop();
+			const k = st.k;
+			if (P.length < k) { run = null; return; }
+			let C = [];
+			if (fromBest && best[k]) C = best[k].C0.map((c) => c.slice());
+			else {
+				const r = rng(st.runSeed * 101 + k * 7), pool = P.map((_, i) => i);
+				for (let j = 0; j < k; j++) { const i = pool.splice(Math.floor(r() * pool.length), 1)[0]; C.push([P[i].x, P[i].y]); }
+			}
+			run = { C, lab: null, inertia: 0, iter: 0, phase: 'init', trail: C.map((c) => [c.slice()]) };
+		}
+		function stepRun() {
+			if (!run || run.phase === 'done') return;
+			if (run.phase === 'assigned') {
+				run.C = means(run.lab, run.C);
+				run.C.forEach((c, j) => run.trail[j].push(c.slice()));
+				run.phase = 'moved';
+				return;
+			}
+			const a = assign(run.C), unchanged = same(run.lab, a.lab);
+			run.lab = a.lab; run.inertia = a.inertia;
+			if (unchanged) run.phase = 'done'; else { run.iter++; run.phase = 'assigned'; }
+		}
+		function finishRun() { for (let g = 0; run && run.phase !== 'done' && g < 500; g++) stepRun(); }
+		function play() {
+			stop();
+			if (!run) return;
+			if (calm) { finishRun(); render(); return; }
+			const tick = () => { stepRun(); render(); if (run && run.phase !== 'done') timer = setTimeout(tick, 380); else timer = null; };
+			tick();
+		}
+
+		/* ---- desenho ---- */
+		const X = (x) => r2(x), Y = (y) => r2(100 - y);
+		const pts = (list) => list.map((q) => X(q[0]) + ',' + Y(q[1])).join(' ');
+		function clip(poly, nx, ny, b) {
+			const out = [];
+			for (let i = 0; i < poly.length; i++) {
+				const p = poly[i], q = poly[(i + 1) % poly.length], fp = nx * p[0] + ny * p[1] - b, fq = nx * q[0] + ny * q[1] - b;
+				if (fp <= 0) out.push(p);
+				if ((fp < 0 && fq > 0) || (fp > 0 && fq < 0)) { const u = fp / (fp - fq); out.push([p[0] + (q[0] - p[0]) * u, p[1] + (q[1] - p[1]) * u]); }
+			}
+			return out;
+		}
+		function cells(C) {
+			return C.map((c, i) => C.reduce((poly, d, j) => {
+				const nx = d[0] - c[0], ny = d[1] - c[1];
+				if (j === i || (!nx && !ny)) return poly;
+				return clip(poly, nx, ny, (d[0] * d[0] + d[1] * d[1] - c[0] * c[0] - c[1] * c[1]) / 2);
+			}, [[0, 0], [100, 0], [100, 100], [0, 100]]));
+		}
+		function territories(C) {
+			const cs = cells(C);
+			return cs.map((poly, j) => (poly.length > 2 ? `<polygon class="gk-area f${j}" points="${pts(poly)}"/>` : '')).join('') +
+				cs.map((poly) => (poly.length > 2 ? `<polygon class="gk-edge" points="${pts(poly)}"/>` : '')).join('');
+		}
+		function mark(cls, p, r) {
+			const x = X(p.x), y = Y(p.y);
+			const poly = (list) => `<polygon class="${cls}" points="${list.map((q) => r2(x + q[0] * r) + ',' + r2(y + q[1] * r)).join(' ')}"/>`;
+			switch (st.gab ? p.g % 7 : 0) {
+				case 1: return poly([[-0.9, -0.9], [0.9, -0.9], [0.9, 0.9], [-0.9, 0.9]]);
+				case 2: return poly([[0, -1.25], [1.1, 0.8], [-1.1, 0.8]]);
+				case 3: return poly([[0, -1.3], [1.3, 0], [0, 1.3], [-1.3, 0]]);
+				case 4: return poly([[0, 1.25], [1.1, -0.8], [-1.1, -0.8]]);
+				case 5: return poly([[-0.4, -1.2], [0.4, -1.2], [0.4, -0.4], [1.2, -0.4], [1.2, 0.4], [0.4, 0.4], [0.4, 1.2], [-0.4, 1.2], [-0.4, 0.4], [-1.2, 0.4], [-1.2, -0.4], [-0.4, -0.4]]);
+				case 6: return poly([[0, -1.15], [1, -0.58], [1, 0.58], [0, 1.15], [-1, 0.58], [-1, -0.58]]);
+				default: return `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}"/>`;
+			}
+		}
+		function drawMain() {
+			let o = '<rect class="gk-frame" x="0" y="0" width="100" height="100"/>';
+			if (run && run.lab) {
+				o += territories(run.C);
+				P.forEach((p, i) => { const c = run.C[run.lab[i]]; o += `<line class="gk-link s${run.lab[i]}" x1="${X(p.x)}" y1="${Y(p.y)}" x2="${X(c[0])}" y2="${Y(c[1])}"/>`; });
+			}
+			if (run) run.trail.forEach((tr, j) => { if (tr.length > 1) o += `<polyline class="gk-trail s${j}" points="${pts(tr)}"/>`; });
+			P.forEach((p, i) => {
+				const j = run && run.lab ? run.lab[i] : -1;
+				if (st.gab && p.g < 0) o += `<circle class="gk-open ${j >= 0 ? 's' + j : 'gk-nones'}" cx="${X(p.x)}" cy="${Y(p.y)}" r="1.15"/>`;
+				else o += mark('gk-pt ' + (j >= 0 ? 'f' + j : 'gk-none'), p, 1.35);
+			});
+			if (run) run.C.forEach((c, j) => { o += `<circle class="gk-center s${j}" cx="${X(c[0])}" cy="${Y(c[1])}" r="3.4"/><text class="gk-num" x="${X(c[0])}" y="${r2(Y(c[1]) + 1.3)}">${j + 1}</text>`; });
+			o += `<text class="gk-axis" x="50" y="106" text-anchor="middle">${esc(t.x)}</text>`;
+			o += `<text class="gk-axis" transform="translate(-3 50) rotate(-90)" text-anchor="middle">${esc(t.y)}</text>`;
+			layer.innerHTML = o;
+		}
+		function drawMini(res) {
+			let o = '<rect class="gk-frame" x="0" y="0" width="100" height="100"/>';
+			if (!res) return o + P.map((p) => `<circle class="gk-pt gk-none" cx="${X(p.x)}" cy="${Y(p.y)}" r="1.8"/>`).join('');
+			o += territories(res.C);
+			P.forEach((p, i) => { o += `<circle class="gk-pt f${res.lab[i]}" cx="${X(p.x)}" cy="${Y(p.y)}" r="1.8"/>`; });
+			res.C.forEach((c, j) => { o += `<circle class="gk-center s${j}" cx="${X(c[0])}" cy="${Y(c[1])}" r="3"/>`; });
+			return o;
+		}
+		const pct = (k) => {
+			const base = best[1] ? best[1].inertia : 0, v = best[k] && base ? best[k].inertia / base * 100 : 0;
+			return fmt(v, v > 0 && v < 10 ? 1 : 0) + '%';
+		};
+		function drawElbow() {
+			const base = best[1] ? best[1].inertia : 0;
+			const px = (k) => 30 + (k - 1) * 32, py = (k) => r2(90 - (best[k] && base ? best[k].inertia / base : 0) * 76);
+			const ks = [];
+			for (let k = 1; k <= KMAX; k++) if (best[k]) ks.push(k);
+			let o = `<line class="gk-base" x1="12" y1="90" x2="232" y2="90"/><line class="gk-grid" x1="12" y1="14" x2="232" y2="14"/>`;
+			o += `<text x="12" y="10">100%</text><text x="4" y="104">k</text>`;
+			o += `<polyline class="gk-line" points="${ks.map((k) => px(k) + ',' + py(k)).join(' ')}"/>`;
+			for (let k = 1; k <= KMAX; k++) {
+				o += `<text x="${px(k)}" y="104" text-anchor="middle"${k === st.k ? ' class="gk-val"' : ''}>${k}</text>`;
+				if (best[k]) o += `<circle class="gk-dot${k === st.k ? ' on' : ''}" cx="${px(k)}" cy="${py(k)}" r="${k === st.k ? 5.5 : 4}"/>`;
+			}
+			if (best[st.k]) o += `<text class="gk-val" x="${px(st.k) + (st.k > 5 ? -8 : 8)}" y="${r2(py(st.k) - 8)}" text-anchor="${st.k > 5 ? 'end' : 'start'}">${esc(t.left(pct(st.k)))}</text>`;
+			for (let k = 1; k <= KMAX; k++) o += `<rect data-hit data-k="${k}" x="${px(k) - 16}" y="0" width="32" height="112"><title>k = ${k}${best[k] ? ' · ' + esc(t.left(pct(k))) : ''}</title></rect>`;
+			elbow.innerHTML = o;
+		}
+
+		/* ---- montagem ---- */
+		const presetBtns = Object.keys(t.presets).map((id) => {
+			const b = btn(t.presets[id], () => { st.preset = id; P = generate(); refresh(); });
+			b.dataset.preset = id;
+			return b;
+		});
+		const slider = (min, max, key) => h('input', { type: 'range', min, max, value: st[key], oninput: (e) => { st[key] = +e.target.value; P = generate(); refresh(); } });
+		const mIn = slider(1, 7, 'm'), sdIn = slider(2, 16, 'spread');
+		const mVal = h('b'), sdVal = h('b');
+		const mBox = h('label', { class: 'gk-slider' }, [h('span', null, [t.groups + ': ', mVal]), mIn]);
+		const sdBox = h('label', { class: 'gk-slider' }, [h('span', null, [t.spread + ': ', sdVal]), sdIn]);
+		const layer = s('g'), hl = s('g');
+		const main = s('svg', { class: 'gk-svg gk-main', viewBox: '-7 -3 110 112', role: 'img', 'aria-label': t.aria }, [layer, hl]);
+		const readout = h('p', { class: 'gk-readout', 'aria-live': 'polite' });
+		const legend = h('p', { class: 'gk-legend' });
+		const kBtns = [];
+		for (let k = 1; k <= KMAX; k++) kBtns.push(btn(String(k), () => setK(k)));
+		const runBtn = btn(t.run, () => { if (!run) return; if (run.phase === 'done') { st.runSeed++; newRun(); } play(); }, 'primary');
+		const stepBtn = btn(t.step, () => { stop(); stepRun(); render(); });
+		const newBtn = btn(t.restart, () => { st.runSeed++; newRun(); render(); }, 'ghost');
+		const status = h('p', { class: 'gk-status', 'aria-live': 'polite' });
+		const elbow = s('svg', { class: 'gk-elbow', viewBox: '0 0 240 112', role: 'img', 'aria-label': t.elbow });
+		elbow.addEventListener('click', (e) => { const hit = e.target.closest && e.target.closest('[data-k]'); if (hit) setK(+hit.getAttribute('data-k')); });
+		const gab = h('input', { type: 'checkbox', checked: st.gab, onchange: (e) => { st.gab = e.target.checked; render(); } });
+		const out = h('div', { class: 'gw-out', 'aria-live': 'polite' });
+		const minis = MINIS.map((k) => {
+			const pic = s('svg', { class: 'gk-svg', viewBox: '-1 -1 102 102', 'aria-hidden': 'true' });
+			const cap = h('span', { class: 'gk-cap' });
+			const b = h('button', { type: 'button', class: 'gw-btn gk-mini', onclick: () => setK(k) }, [pic, cap]);
+			return { k, b, pic, cap };
+		});
+		const ta = h('textarea', { rows: 10, spellcheck: 'false', 'aria-label': t.edit });
+		let typing = null;
+		ta.addEventListener('input', () => {
+			clearTimeout(typing);
+			typing = setTimeout(() => { P = parse(ta.value); st.preset = 'custom'; refresh(true); }, 350);
+		});
+
+		el.appendChild(h('div', { class: 'gw-row gk-presets' }, [h('span', { class: 'gk-label', text: t.data + ':' })].concat(presetBtns)));
+		el.appendChild(h('div', { class: 'gk-controls' }, [mBox, sdBox, btn(t.reroll, () => { st.dataSeed++; P = generate(); refresh(); }, 'ghost')]));
+		el.appendChild(h('div', { class: 'gk-top' }, [
+			h('div', null, [main, readout, legend]),
+			h('div', { class: 'gk-side' }, [
+				h('span', { class: 'gk-label', text: t.k }),
+				h('div', { class: 'gk-ks' }, kBtns),
+				h('div', { class: 'gw-row', style: 'margin-top:.6rem' }, [runBtn, stepBtn, newBtn]),
+				status,
+				h('span', { class: 'gk-label', style: 'margin-top:.8rem', text: t.elbow }),
+				elbow,
+				h('p', { class: 'gw-note', style: 'margin-top:.3rem', text: t.elbowNote }),
+				h('label', { class: 'gk-check' }, [gab, h('span', { text: t.gab })])
+			])
+		]));
+		el.appendChild(out);
+		el.appendChild(h('p', { class: 'gk-sec', text: t.minis }));
+		el.appendChild(h('p', { class: 'gw-note', style: 'margin:0 0 .6rem', text: t.minisNote }));
+		el.appendChild(h('div', { class: 'gk-minis' }, minis.map((x) => x.b)));
+		el.appendChild(h('details', { class: 'gk-edit' }, [h('summary', { text: t.edit }), h('p', { class: 'gw-note', style: 'margin:.4rem 0', text: t.editHelp }), ta]));
+		el.appendChild(h('p', { class: 'gw-note', text: t.note }));
+
+		function parse(txt) {
+			const list = [];
+			txt.split(/\r?\n/).forEach((line) => {
+				line = line.trim();
+				if (!line || line[0] === '#' || list.length >= MAXPTS) return;
+				let tok = line.split(/[;\t ]+/).map((x) => x.replace(/,+$/, '')).filter(Boolean);
+				if (tok.length === 1) tok = tok[0].split(',');
+				const v = tok.map((x) => parseFloat(x.replace(',', '.')));
+				if (v.length < 2 || !isFinite(v[0]) || !isFinite(v[1])) return;
+				const g = v.length > 2 && isFinite(v[2]) ? Math.round(v[2]) - 1 : -1;
+				list.push({ x: clamp(v[0]), y: clamp(v[1]), g: g >= 0 ? g : -1 });
+			});
+			return list;
+		}
+		const serialize = () => P.map((p) => `${p.x}; ${p.y}` + (p.g >= 0 ? `; ${p.g + 1}` : '')).join('\n');
+
+		function setK(k) {
+			if (k === st.k && run) return;
+			st.k = k; newRun(true);
+			if (run) play(); else render();
+		}
+		function refresh(fromText) {
+			best = [];
+			for (let k = 1; k <= KMAX; k++) best[k] = solve(k);
+			newRun(true); finishRun(); render();
+			if (!fromText && document.activeElement !== ta) ta.value = serialize();
+		}
+		function schedule() {
+			if (queued) return;
+			queued = true;
+			(window.requestAnimationFrame || setTimeout)(() => { queued = false; refresh(); });
+		}
+		function showHover() {
+			const p = P[hover];
+			hl.innerHTML = p ? `<circle class="gk-hl" cx="${X(p.x)}" cy="${Y(p.y)}" r="3"/>` : '';
+			if (!p) { readout.textContent = t.readout(fmt(P.length)); return; }
+			const j = run && run.lab ? run.lab[hover] + 1 : null;
+			readout.textContent = t.point(fmt(p.x), fmt(p.y), j || '—', st.gab && p.g >= 0 ? p.g + 1 : null);
+		}
+		function render() {
+			presetBtns.forEach((b) => b.classList.toggle('active', b.dataset.preset === st.preset));
+			mBox.hidden = st.preset !== 'blobs';
+			sdBox.hidden = st.preset === 'uniform' || st.preset === 'custom';
+			mVal.textContent = st.m; sdVal.textContent = st.spread;
+			kBtns.forEach((b, i) => { const on = i + 1 === st.k; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.disabled = P.length < i + 1; });
+			drawMain(); drawElbow(); showHover();
+			legend.textContent = st.gab && truth().idx.length ? t.legend : t.legendNoGab;
+			const done = !run || run.phase === 'done';
+			stepBtn.disabled = done; newBtn.disabled = !run; runBtn.disabled = !run;
+			status.textContent = !run ? '' : t[run.phase](run.phase === 'init' ? st.k : run.iter);
+			out.className = 'gw-out';
+			if (!run) out.textContent = t.say.tooFew(st.k);
+			else if (!done) out.textContent = t.running;
+			else {
+				let v = judge(run.lab, st.k);
+				if (v === 'wrong') {
+					const top = best[st.k];
+					if (top && run.inertia > top.inertia * 1.01 && judge(top.lab, st.k) === 'ok') v = 'badStart';
+					else v = { moons: 'shape', rings: 'shape', stretched: 'shape', sizes: 'sizes', blobs: 'overlap', few: 'overlap' }[st.preset] || 'custom';
+				}
+				const m = truth().m;
+				out.textContent = v ? t.say[v](st.k, m) : t.say.noGab(st.k, pct(st.k));
+				if (v) out.classList.add(v === 'ok' || v === 'oneOk' ? 'ok' : 'bad');
+			}
+			minis.forEach(({ k, b, pic, cap }) => {
+				const res = best[k], v = res ? judge(res.lab, k) : null;
+				pic.innerHTML = drawMini(res);
+				cap.textContent = '';
+				cap.appendChild(h('b', { text: 'k = ' + k }));
+				cap.appendChild(h('span', { text: res ? t.left(pct(k)) : t.few }));
+				if (v) cap.appendChild(h('span', { class: 'gk-badge ' + (v === 'ok' || v === 'oneOk' ? 'ok' : 'bad'), text: t.badge[v] }));
+				b.classList.toggle('active', k === st.k);
+				b.setAttribute('aria-label', `k = ${k}: ` + (res ? t.left(pct(k)) : t.few) + (v ? ' · ' + t.badge[v] : ''));
+			});
+		}
+
+		/* ---- arrastar, criar e apagar pontos no gráfico grande ---- */
+		function toData(ev) {
+			const ctm = main.getScreenCTM && main.getScreenCTM();
+			if (!ctm || !main.createSVGPoint) return null;
+			const q = main.createSVGPoint();
+			q.x = ev.clientX; q.y = ev.clientY;
+			const d = q.matrixTransform(ctm.inverse());
+			return [d.x, 100 - d.y];
+		}
+		function nearest(d) {
+			let bi = -1, bd = HIT * HIT;
+			P.forEach((p, i) => { const dd = (p.x - d[0]) * (p.x - d[0]) + (p.y - d[1]) * (p.y - d[1]); if (dd <= bd) { bd = dd; bi = i; } });
+			return bi;
+		}
+		main.addEventListener('pointerdown', (ev) => {
+			const d = toData(ev);
+			if (!d) return;
+			ev.preventDefault();
+			drag = { i: nearest(d), d0: d, moved: false };
+			try { main.setPointerCapture(ev.pointerId); } catch (e) { /* segue sem captura */ }
+		});
+		main.addEventListener('pointermove', (ev) => {
+			const d = toData(ev);
+			if (!d) return;
+			if (!drag) { const i = nearest(d); if (i !== hover) { hover = i; showHover(); } return; }
+			if (!drag.moved && Math.hypot(d[0] - drag.d0[0], d[1] - drag.d0[1]) < 1.5) return;
+			drag.moved = true;
+			if (drag.i < 0) return;
+			const p = P[drag.i];
+			p.x = clamp(d[0]); p.y = clamp(d[1]); hover = drag.i;
+			schedule();
+		});
+		main.addEventListener('pointerup', (ev) => {
+			if (!drag) return;
+			const d = toData(ev), g = drag;
+			drag = null;
+			if (g.moved) return;
+			if (g.i >= 0) { P.splice(g.i, 1); hover = -1; }
+			else if (d && d[0] >= 0 && d[0] <= 100 && d[1] >= 0 && d[1] <= 100 && P.length < MAXPTS) { P.push({ x: clamp(d[0]), y: clamp(d[1]), g: -1 }); hover = P.length - 1; }
+			else return;
+			refresh();
+		});
+		main.addEventListener('pointercancel', () => { drag = null; });
+		main.addEventListener('pointerleave', () => { if (!drag && hover >= 0) { hover = -1; showHover(); } });
+
+		P = generate();
+		refresh();
+	};
+
 	/* ---------- Cap. 3: viés urso × cachorro ---------- */
 	W.vies = function (el) {
 		const t = L({
