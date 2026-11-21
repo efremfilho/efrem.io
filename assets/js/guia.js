@@ -2173,22 +2173,96 @@
 	}
 
 	/* ---------- Feedback: monta o e-mail com a página e o texto de quem lê ---------- */
+	// Selecionar um trecho da página mostra "Feedback" (abre o painel com o trecho entre aspas)
+	// e "Copiar" (copia o trecho entre aspas, com o título e o endereço da seção).
 	function feedback() {
-		document.querySelectorAll('[data-feedback]').forEach((box) => {
-			const send = box.querySelector('.g-feedback-send'), text = box.querySelector('textarea'), copy = box.querySelector('[data-feedback-copy]');
-			const email = box.getAttribute('data-email');
-			if (send && text) send.addEventListener('click', () => {
-				const body = `${box.dataset.pageLabel}: ${location.href}\n\n${box.dataset.textLabel}:\n${text.value.trim()}\n`;
-				send.href = `mailto:${email}?subject=${encodeURIComponent(box.dataset.subject)}&body=${encodeURIComponent(body)}`;
+		const box = document.querySelector('[data-feedback]');
+		if (!box) return;
+		const summary = box.querySelector('summary'), send = box.querySelector('.g-feedback-send'), text = box.querySelector('textarea'), copy = box.querySelector('[data-feedback-copy]');
+		const email = box.getAttribute('data-email'), d = box.dataset;
+		let pageUrl = null; // endereço da seção do trecho, quando o painel abre a partir de uma seleção
+		function copyText(value, button) {
+			const done = () => { button.textContent = d.copied; };
+			const fallback = () => { const ta = h('textarea', { style: 'position:fixed;opacity:0' }); ta.value = value; document.body.appendChild(ta); ta.select(); try { if (document.execCommand('copy')) done(); } catch (e) { /* sem cópia */ } ta.remove(); };
+			try { navigator.clipboard.writeText(value).then(done, fallback); } catch (e) { fallback(); }
+		}
+		send.addEventListener('click', () => {
+			const body = `${d.pageLabel}: ${pageUrl || location.href}\n\n${d.textLabel}:\n${text.value.trim()}\n`;
+			send.href = `mailto:${email}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(body)}`;
+		});
+		if (copy) copy.addEventListener('click', () => copyText(email, copy));
+		summary.addEventListener('click', () => { box.classList.remove('is-floating'); pageUrl = null; });
+		box.addEventListener('toggle', () => {
+			if (!box.open) { box.classList.remove('is-floating'); return; }
+			text.focus({ preventScroll: true }); // quem está lendo no meio da página não volta ao topo
+			text.setSelectionRange(text.value.length, text.value.length);
+		});
+		box.addEventListener('keydown', (e) => { if (e.key === 'Escape') { box.open = false; summary.focus(); } });
+		document.addEventListener('click', (e) => { if (box.open && !box.contains(e.target)) box.open = false; });
+
+		/* ---- trecho selecionado: barrinha com "Feedback" e "Copiar" ---- */
+		const fbBtn = h('button', { type: 'button', text: '💬 ' + summary.textContent.trim() });
+		const cpBtn = h('button', { type: 'button', text: d.copyLabel });
+		const bar = h('div', { class: 'g-quote-bar', role: 'toolbar', 'aria-label': d.selectionLabel, hidden: true }, [fbBtn, cpBtn]);
+		document.body.appendChild(bar);
+		const SKIP = '.g-feedback, .g-quote-bar, .gw, nav, input, textarea, button, select';
+		let quote = '', quoteUrl = '', down = false, timer = null;
+		function selected() {
+			const sel = window.getSelection();
+			if (!sel || sel.isCollapsed || !sel.rangeCount) return null;
+			const range = sel.getRangeAt(0), c = range.commonAncestorContainer;
+			const el = c.nodeType === 1 ? c : c.parentElement;
+			if (!el || !el.closest('main') || el.closest(SKIP)) return null;
+			const str = sel.toString().replace(/\s+/g, ' ').trim();
+			return str.length < 2 ? null : { range, str };
+		}
+		function sectionUrl(range) {
+			// a seção mais próxima antes do trecho: um título com id ou um capítulo do livro
+			let id = '';
+			document.querySelectorAll('main h2[id], main h3[id], main section[id]').forEach((el) => {
+				if (el.compareDocumentPosition(range.startContainer) & Node.DOCUMENT_POSITION_FOLLOWING) id = el.id;
 			});
-			if (copy) copy.addEventListener('click', () => {
-				const done = () => { copy.textContent = box.dataset.copied; };
-				const select = () => { const r = document.createRange(); r.selectNodeContents(box.querySelector('.g-feedback-mail')); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); };
-				try { navigator.clipboard.writeText(email).then(done, select); } catch (e) { select(); }
-			});
-			box.addEventListener('toggle', () => { if (box.open && text) text.focus(); });
-			box.addEventListener('keydown', (e) => { if (e.key === 'Escape') { box.open = false; box.querySelector('summary').focus(); } });
-			document.addEventListener('click', (e) => { if (box.open && !box.contains(e.target)) box.open = false; });
+			return location.origin + location.pathname + (id ? '#' + encodeURIComponent(id) : '');
+		}
+		function hide() { bar.hidden = true; cpBtn.textContent = d.copyLabel; }
+		function show() {
+			const hit = selected();
+			if (!hit) { hide(); return; }
+			quote = hit.str.length > 500 ? hit.str.slice(0, 500).trim() + '…' : hit.str;
+			quoteUrl = sectionUrl(hit.range);
+			const r = hit.range.getBoundingClientRect();
+			if (!r.width && !r.height) { hide(); return; }
+			bar.hidden = false;
+			const touch = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+			const bw = bar.offsetWidth, bh = bar.offsetHeight;
+			// no toque, o menu do próprio sistema aparece em cima da seleção: a barrinha vai para baixo
+			const top = touch || r.top < bh + 16 ? r.bottom + (touch ? 28 : 10) : r.top - bh - 10;
+			const left = Math.max(8, Math.min(r.left + r.width / 2 - bw / 2, document.documentElement.clientWidth - bw - 8));
+			bar.style.top = Math.round(top + window.scrollY) + 'px';
+			bar.style.left = Math.round(left + window.scrollX) + 'px';
+		}
+		const later = () => { clearTimeout(timer); timer = setTimeout(show, 180); };
+		document.addEventListener('pointerdown', (e) => { if (bar.contains(e.target)) return; if (e.pointerType === 'mouse') down = true; hide(); });
+		document.addEventListener('pointerup', () => { down = false; later(); });
+		document.addEventListener('pointercancel', () => { down = false; later(); });
+		document.addEventListener('selectionchange', () => { if (!down) later(); });
+		document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
+		window.addEventListener('resize', hide);
+		bar.addEventListener('pointerdown', (e) => e.preventDefault()); // clicar na barrinha não desfaz a seleção
+		fbBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			hide();
+			pageUrl = quoteUrl;
+			text.value = `“${quote}”\n\n`;
+			box.classList.add('is-floating');
+			if (box.open) { text.focus({ preventScroll: true }); text.setSelectionRange(text.value.length, text.value.length); } else box.open = true;
+			const sel = window.getSelection();
+			if (sel) sel.removeAllRanges();
+		});
+		cpBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const title = d.title.indexOf(d.guide) >= 0 ? d.title : `${d.title} (${d.guide})`;
+			copyText(`“${quote}”\n— ${title}\n${quoteUrl}`, cpBtn);
 		});
 	}
 

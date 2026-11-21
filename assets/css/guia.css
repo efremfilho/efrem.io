@@ -295,6 +295,46 @@
 	font-size: .8rem;
 	cursor: pointer;
 }
+.g-feedback-tip { font-size: .8rem; }
+/* A animação de entrada do site (style.css) segura o transform do main depois de terminar, e isso
+   faria o main, e não a tela, ser a referência do painel flutuante. Aqui ela só vale durante a entrada. */
+main { animation-fill-mode: backwards; }
+/* aberto a partir de um trecho selecionado: o painel flutua no alto da tela, onde a pessoa está lendo */
+.g-feedback.is-floating .g-feedback-panel {
+	position: fixed;
+	top: max(1rem, env(safe-area-inset-top, 0px));
+	left: 50%;
+	right: auto;
+	width: min(24rem, calc(100vw - 2rem));
+	transform: translateX(-50%);
+}
+.g-feedback.is-floating .g-feedback-tip { display: none; }
+.g-quote-bar {
+	position: absolute;
+	z-index: 40;
+	display: flex;
+	gap: .25rem;
+	padding: .25rem;
+	border: 1px solid var(--border-focus);
+	border-radius: .75rem;
+	background: var(--bg);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+.g-quote-bar[hidden] { display: none; }
+.g-quote-bar button {
+	padding: .4rem .7rem;
+	border: 0;
+	border-radius: .55rem;
+	background: transparent;
+	color: var(--text);
+	font: 600 .84rem/1.2 inherit;
+	font-family: inherit;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.g-quote-bar button:hover { background: var(--surface-hover); }
+.g-quote-bar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media print { .g-quote-bar { display: none !important; } }
 @media (max-width: 600px) {
 	/* no celular a navegação quebra em linhas: o painel se alinha à largura dela, não ao botão */
 	.site-nav { position: relative; flex-wrap: wrap; row-gap: .7rem; }
