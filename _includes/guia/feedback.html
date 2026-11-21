@@ -1,0 +1,18 @@
+{% comment %}
+Botão de feedback das páginas do guia (/ia e /ai). Abre um painel e monta um e-mail com o
+título e o endereço da página. Não há servidor: o envio é pelo programa de e-mail de quem lê.
+Sem JavaScript, o link já leva título e endereço; com JavaScript, leva também o texto do painel.
+Usa o `t` (textos do idioma) definido pelo layout.
+{% endcomment %}{% assign fb_email = site.data.guia.feedback_email %}{% if page.title contains t.name %}{% capture fb_subject %}{{ t.feedback_label }} · {{ page.title }}{% endcapture %}{% else %}{% capture fb_subject %}{{ t.feedback_label }} · {{ t.name }} · {{ page.title }}{% endcapture %}{% endif %}{% capture fb_body %}{{ t.feedback_page }}: {{ site.url }}{{ page.url }}
+
+{{ t.feedback_label }}:
+{% endcapture %}
+<details class="g-feedback" data-feedback data-email="{{ fb_email }}" data-subject="{{ fb_subject | strip | escape }}" data-page-label="{{ t.feedback_page }}" data-text-label="{{ t.feedback_label }}" data-copied="{{ t.feedback_copied }}">
+	<summary class="chip">{{ t.feedback }}</summary>
+	<div class="g-feedback-panel">
+		<p>{{ t.feedback_intro }}</p>
+		<textarea rows="4" aria-label="{{ t.feedback }}" placeholder="{{ t.feedback_placeholder }}"></textarea>
+		<a class="g-feedback-send" href="mailto:{{ fb_email }}?subject={{ fb_subject | strip | url_encode | replace: '+', '%20' }}&amp;body={{ fb_body | url_encode | replace: '+', '%20' }}">{{ t.feedback_send }}</a>
+		<p class="g-feedback-alt">{{ t.feedback_alt }} <span class="g-feedback-mail">{{ fb_email }}</span> <button type="button" data-feedback-copy>{{ t.feedback_copy }}</button></p>
+	</div>
+</details>
