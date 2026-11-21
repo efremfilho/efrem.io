@@ -2172,6 +2172,26 @@
 		}
 	}
 
+	/* ---------- Feedback: monta o e-mail com a página e o texto de quem lê ---------- */
+	function feedback() {
+		document.querySelectorAll('[data-feedback]').forEach((box) => {
+			const send = box.querySelector('.g-feedback-send'), text = box.querySelector('textarea'), copy = box.querySelector('[data-feedback-copy]');
+			const email = box.getAttribute('data-email');
+			if (send && text) send.addEventListener('click', () => {
+				const body = `${box.dataset.pageLabel}: ${location.href}\n\n${box.dataset.textLabel}:\n${text.value.trim()}\n`;
+				send.href = `mailto:${email}?subject=${encodeURIComponent(box.dataset.subject)}&body=${encodeURIComponent(body)}`;
+			});
+			if (copy) copy.addEventListener('click', () => {
+				const done = () => { copy.textContent = box.dataset.copied; };
+				const select = () => { const r = document.createRange(); r.selectNodeContents(box.querySelector('.g-feedback-mail')); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+				try { navigator.clipboard.writeText(email).then(done, select); } catch (e) { select(); }
+			});
+			box.addEventListener('toggle', () => { if (box.open && text) text.focus(); });
+			box.addEventListener('keydown', (e) => { if (e.key === 'Escape') { box.open = false; box.querySelector('summary').focus(); } });
+			document.addEventListener('click', (e) => { if (box.open && !box.contains(e.target)) box.open = false; });
+		});
+	}
+
 	/* ---------- Impressão: widgets viram notas, abas e notas de aula abrem ---------- */
 	const STATIC = { tabs: 1, checklist: 1 }; // estes já imprimem bem: o conteúdo vem do Markdown
 	function printNote(el) {
@@ -2203,6 +2223,7 @@
 		});
 		reading();
 		printing();
+		feedback();
 	}
 	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

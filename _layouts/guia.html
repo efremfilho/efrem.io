@@ -29,6 +29,7 @@ layout: default
 	<div class="nav-right">
 		{% if sibling %}<a href="{{ sibling.url }}" class="chip" hreflang="{{ sibling.lang }}">{{ t.other_flag }} {{ t.other_lang }}</a>{% endif %}
 		<a href="/" class="chip">efrem.io</a>
+		{% include guia/feedback.html %}
 	</div>
 </nav>
 
